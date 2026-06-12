@@ -111,6 +111,8 @@ footer{text-align:center;padding:40px;font-family:'IM Fell English',serif;font-s
     <div class="preset-grid" id="presets"></div>
   </div>
 
+  <div class="presets" id="saved"></div>
+
   <div class="cta">
     <p>This is the live V1. The full engine learns your routing fingerprint and exports straight into Reaper, Bitwig, and Ableton. Want early access, or to bring it to your studio?</p>
     <button class="b-main" onclick="location.href='mailto:blinkamoss@gmx.com?subject=Mix%20Ecology%20Engine%20early%20access'">Get early access</button>
@@ -194,9 +196,35 @@ function render(w){
   <div class="block"><h4>Sends</h4><ul>${li(w.sends)}</ul>
   <h4 style="margin-top:24px">Automation</h4><ul>${li(w.autos)}</ul></div></div>
   <div class="sections"><h4 class="block" style="border:none;padding:0">Section treatment</h4>${sec}</div>
-  <div class="dl"><button class="b-ghost" onclick="dlReaper()">↓ Download Reaper session (.rpp)</button><span class="hint">opens as named tracks in Reaper</span></div>`;
+  <div class="dl"><button class="b-ghost" onclick="dlReaper()">↓ Reaper session (.rpp)</button>
+    <button class="b-ghost" onclick="shareWorld()">⧉ Copy share link</button>
+    <button class="b-ghost" onclick="saveWorld()">♥ Save world</button>
+    <span class="hint" id="dlhint">opens as named tracks in Reaper</span></div>`;
   requestAnimationFrame(()=>el.classList.add('in'));
 }
+function shareWorld(){
+  if(!CUR)return;
+  const enc=btoa(encodeURIComponent(JSON.stringify(CUR)));
+  const url=location.origin+location.pathname+'#w='+enc;
+  navigator.clipboard.writeText(url).then(()=>{document.getElementById('dlhint').textContent='link copied — share your world ♥';});
+  history.replaceState(null,'','#w='+enc);
+}
+function saveWorld(){
+  if(!CUR)return;
+  const saved=JSON.parse(localStorage.getItem('mee_worlds')||'[]');
+  saved.unshift({name:CUR.name,vibe:CUR.vibe,data:CUR});
+  localStorage.setItem('mee_worlds',JSON.stringify(saved.slice(0,24)));
+  document.getElementById('dlhint').textContent='saved to your worlds ♥';
+  renderSaved();
+}
+function renderSaved(){
+  const saved=JSON.parse(localStorage.getItem('mee_worlds')||'[]');
+  const box=document.getElementById('saved');
+  if(!saved.length){box.innerHTML='';return;}
+  box.innerHTML='<h3 style="font-family:Fraunces;font-weight:400;font-size:1.3rem;margin:0 0 14px">Your saved worlds</h3>'+
+    '<div class="preset-grid">'+saved.map((s,i)=>`<span class="chip" onclick="loadSaved(${i})">${s.name}</span>`).join('')+'</div>';
+}
+function loadSaved(i){const saved=JSON.parse(localStorage.getItem('mee_worlds')||'[]');CUR=saved[i].data;render(CUR);window.scrollTo({top:0,behavior:'smooth'});}
 function dlReaper(){
   if(!CUR)return;const w=CUR;
   const trk=n=>`  <TRACK\n    NAME "${n}"\n    ISBUS 0 0\n    VOLPAN 1 0 -1 -1 1\n  >\n`;
@@ -207,7 +235,15 @@ function dlReaper(){
   a.download=w.name.replace(/ /g,'_')+'.rpp';a.click();
 }
 document.getElementById('presets').innerHTML=PRESETS.map(p=>`<span class="chip" onclick="document.getElementById('vibe').value='${p}';gen()">${p}</span>`).join('');
-gen();
+// shared world from URL, or a fresh one
+(function(){
+  const h=location.hash;
+  if(h.startsWith('#w=')){
+    try{CUR=JSON.parse(decodeURIComponent(atob(h.slice(3))));
+      document.getElementById('vibe').value=CUR.vibe||'';render(CUR);renderSaved();return;}catch(e){}
+  }
+  gen();renderSaved();
+})();
 </script>
 </body>
 </html>
