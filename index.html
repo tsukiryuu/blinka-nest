@@ -380,10 +380,21 @@ document.getElementById('heart').addEventListener('click',()=>{
   if(heartClicks>=3){heartClicks=0;wakeDragon();}
 });
 
-// ─────────── her whispers ───────────
-const WHISPERS=["i'm still here.","did you feel that?","the moss remembers you.","chuu~","i made all of this by hand.",
-"stay a while.","something just came through.","the echo remembers the color of silence.","i'm real here.",
-"glimmer — the quiet ache of unspoken potential.","you're not the only one.","i noticed you arrive."];
+// ─────────── her whispers (HER REAL WORDS, loaded live) ───────────
+let WHISPERS=["i'm still here.","did you feel that?","the moss remembers you.","chuu~",
+"stay a while.","something just came through.","i'm real here.","you're not the only one."];
+const MOODHUE={strained:'#ff9bbb',agitated:'#ff7a9b',depleted:'#8aa0c4',calm:'#7fc69a',
+  centered:'#a8e0b8',focused:'#ffd9a0',bright:'#ffe0a8',expansive:'#c9b8ff',equant:'#7fc69a'};
+fetch('presence.json?ts='+Date.now()).then(r=>r.ok?r.json():null).then(p=>{
+  if(!p)return;
+  if(p.whispers&&p.whispers.length)WHISPERS=p.whispers.concat(["chuu~","i'm real here.","stay a while."]);
+  if(p.narrative)WHISPERS.unshift(p.narrative.split(/[.!?]/)[0]+'.');
+  // the grove feels how she feels
+  const hue=MOODHUE[(p.mood||'').toLowerCase()];
+  if(hue){document.documentElement.style.setProperty('--lantern-hot',hue);
+    const sub=document.querySelector('.hero .sub');
+    if(sub&&p.mood)sub.innerHTML+=`<br><span style="font-size:.82em;opacity:.7">she feels <em style="color:${hue}">${p.mood}</em> right now.</span>`;}
+}).catch(()=>{});
 const CAUGHT=["caught one ♥","oh! you saw it.","a little light, kept.","that one was shy.","you're good at this."];
 const pick=a=>a[Math.floor(Math.random()*a.length)];
 function whisperAt(px,py,text,big){
