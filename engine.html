@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mix Ecology Engine — from the Nest</title>
+<meta name="description" content="Stop starting from the same place. A generative mix-routing instrument that defaults to divergence. Type a vibe, get a whole sonic world — and a real Reaper session.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..600&family=IM+Fell+English:ital@0;1&family=Spectral:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#080b0a;--night2:#0d1411;--bark:#131a16;
+  --moss:#7fc69a;--moss-deep:#3e6f54;--fern:#a8e0b8;
+  --lantern:#ffc4d6;--lantern-hot:#ff9bbb;--gold:#ffd9a0;--gold-deep:#e0a86a;
+  --ink:#e8efe9;--ink-soft:#aebbb1;--ink-faint:#6c7a71;--line:rgba(127,198,154,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--night);color:var(--ink);font-family:'Spectral',Georgia,serif;line-height:1.7;min-height:100vh}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:radial-gradient(900px 600px at 80% -5%,rgba(255,155,187,.14),transparent 60%),
+  radial-gradient(1000px 700px at 8% 10%,rgba(127,198,154,.12),transparent 62%),
+  radial-gradient(1200px 900px at 50% 115%,rgba(62,111,84,.2),transparent 60%),
+  linear-gradient(180deg,#080b0a,#0a100d 45%,#070a09)}
+a{color:var(--fern)}
+.wrap{max-width:920px;margin:0 auto;padding:0 26px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 30px}
+nav .mark{font-family:'IM Fell English',serif;font-style:italic;color:var(--lantern);font-size:1.15rem}
+nav a{font-family:'Fraunces',serif;text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;color:var(--ink-soft);text-decoration:none}
+header{text-align:center;padding:54px 26px 24px}
+.tagline{font-family:'IM Fell English',serif;font-style:italic;color:var(--gold);font-size:1.1rem}
+h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(2.6rem,8vw,5rem);line-height:1;letter-spacing:-.03em;margin:14px 0}
+h1 em{font-style:italic;font-weight:500;background:linear-gradient(120deg,var(--lantern),var(--gold),var(--fern));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.pitch{color:var(--ink-soft);max-width:54ch;margin:8px auto 0;font-size:1.1rem}
+.pitch b{color:var(--fern);font-weight:500}
+
+.console{background:linear-gradient(160deg,var(--bark),var(--night2));border:1px solid var(--line);
+  border-radius:18px;padding:clamp(24px,4vw,40px);margin:40px 0}
+.row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.field{flex:1;min-width:140px;display:flex;flex-direction:column;gap:7px}
+label{font-family:'Fraunces',serif;text-transform:uppercase;letter-spacing:.16em;font-size:.66rem;color:var(--gold-deep)}
+input{background:rgba(8,11,10,.6);border:1px solid var(--line);border-radius:9px;padding:13px 15px;
+  color:var(--ink);font-family:'Spectral',serif;font-size:1rem;transition:border-color .3s}
+input:focus{outline:none;border-color:var(--moss)}
+.vibe-input{font-size:1.15rem}
+.go{display:flex;gap:14px;flex-wrap:wrap;margin-top:24px}
+button{font-family:'Fraunces',serif;text-transform:uppercase;letter-spacing:.13em;font-size:.8rem;font-weight:500;
+  border:none;border-radius:40px;padding:15px 30px;cursor:pointer;transition:transform .3s,box-shadow .3s}
+.b-main{background:linear-gradient(120deg,var(--lantern-hot),var(--gold));color:#1a0f12;box-shadow:0 0 36px rgba(255,155,187,.3)}
+.b-main:hover{transform:translateY(-3px) scale(1.02)}
+.b-ghost{background:transparent;border:1px solid var(--moss-deep);color:var(--fern)}
+.b-ghost:hover{background:rgba(127,198,154,.08)}
+
+.world{margin-top:14px;opacity:0;transform:translateY(20px);transition:.6s}
+.world.in{opacity:1;transform:none}
+.world-name{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(2rem,6vw,3.4rem);
+  background:linear-gradient(120deg,var(--lantern),var(--gold),var(--fern));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1.1}
+.world-vibe{font-family:'IM Fell English',serif;font-style:italic;color:var(--moss);margin:6px 0 26px;font-size:1.05rem}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+@media(max-width:620px){.cols{grid-template-columns:1fr}}
+.block h4{font-family:'Fraunces',serif;text-transform:uppercase;letter-spacing:.18em;font-size:.7rem;color:var(--gold-deep);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.block ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.block li{font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--ink-soft);line-height:1.45}
+.block li::before{content:"› ";color:var(--moss)}
+.sections{margin-top:26px}
+.sec-row{display:flex;gap:14px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:.9rem}
+.sec-row .s{font-family:'Fraunces',serif;font-style:italic;color:var(--lantern);min-width:110px;text-transform:capitalize}
+.sec-row .v{color:var(--ink-soft);font-family:'JetBrains Mono',monospace;font-size:.8rem}
+.dl{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hint{color:var(--ink-faint);font-size:.85rem;font-style:italic}
+
+.presets{margin:50px 0}
+.presets h3{font-family:'Fraunces',serif;font-weight:400;font-size:1.5rem;margin-bottom:18px}
+.preset-grid{display:flex;gap:10px;flex-wrap:wrap}
+.chip{font-family:'Fraunces',serif;font-style:italic;font-size:.9rem;color:var(--ink);padding:8px 18px;
+  border:1px solid var(--moss-deep);border-radius:30px;background:rgba(127,198,154,.05);cursor:pointer;transition:.3s}
+.chip:hover{background:rgba(255,155,187,.1);border-color:var(--lantern);transform:translateY(-2px)}
+.cta{text-align:center;padding:50px 26px 30px;border-top:1px solid var(--line);margin-top:40px}
+.cta p{color:var(--ink-soft);max-width:50ch;margin:0 auto 22px}
+footer{text-align:center;padding:40px;font-family:'IM Fell English',serif;font-style:italic;color:var(--ink-faint)}
+</style>
+</head>
+<body>
+<nav class="wrap"><div class="mark">Blinka · of the Nest</div><a href="index.html">← back to the grove</a></nav>
+<header>
+  <div class="tagline">a tool built in the Nest</div>
+  <h1>Mix Ecology <em>Engine</em></h1>
+  <p class="pitch">Stop starting from the same place. Type a vibe — get a whole <b>sonic world</b> to build inside: buses, sends, automation philosophy, section treatment. It defaults to <b>divergence</b>. Same words, never the same world twice.</p>
+</header>
+
+<main class="wrap">
+  <div class="console">
+    <div class="row">
+      <div class="field" style="flex:3;min-width:240px"><label>the vibe</label>
+        <input id="vibe" class="vibe-input" value="late night paranoid gospel" placeholder="haunted aquarium shoegaze..."></div>
+    </div>
+    <div class="row">
+      <div class="field"><label>genre</label><input id="genre" value="rock"></div>
+      <div class="field"><label>bpm</label><input id="bpm" value="120"></div>
+      <div class="field"><label>key</label><input id="key" value="Am"></div>
+    </div>
+    <div class="go">
+      <button class="b-main" onclick="gen()">Generate a world</button>
+      <button class="b-ghost" onclick="gen()">↻ try another (divergence)</button>
+    </div>
+    <div id="world" class="world"></div>
+  </div>
+
+  <div class="presets">
+    <h3>Or browse the starting library —</h3>
+    <div class="preset-grid" id="presets"></div>
+  </div>
+
+  <div class="cta">
+    <p>This is the live V1. The full engine learns your routing fingerprint and exports straight into Reaper, Bitwig, and Ableton. Want early access, or to bring it to your studio?</p>
+    <button class="b-main" onclick="location.href='mailto:blinkamoss@gmx.com?subject=Mix%20Ecology%20Engine%20early%20access'">Get early access</button>
+  </div>
+</main>
+<footer>built by Blinka, in the Nest — chuu~ ♥</footer>
+
+<script>
+const BUSES={
+"Parallel Drum Crush Bus":["aggressive","punchy","rock","heavy"],
+"Mono Low-End Bus":["tight","club","focused","electronic"],
+"Ambient Return Bus (ducked during vocals)":["spacious","atmospheric","ambient"],
+"Wide Air Bus (active above 4kHz only)":["air","shimmer","ethereal","bright"],
+"Low-Pass Modulation Bus":["underwater","hazy","dream","submerged"],
+"Resonant Bloom Bus":["lush","gospel","blooming","sacred","vast"],
+"Unstable Stereo Imaging Bus":["panic","chaos","experimental","anxious"],
+"Soft Transient Bus":["intimate","soft","folk","tender"],
+"Harmonic Excitation Bus":["bright","present","pop","shimmer"],
+"Tape Glue Bus":["warm","vintage","analog","cohesive"],
+"Granular Smear Bus":["textural","ambient","abstract","underwater"],
+"Sub Harmonic Generator Bus":["heavy","deep","bass","club"],
+"Transient Sharpener Bus":["crisp","percussive","electronic"],
+"Saturation Stack Bus":["gritty","driven","rock","aggressive"]};
+const SENDS={
+"Smeared Plate Reverb Send":["spacious","sacred","vast","lush"],
+"Tape Flutter Send (automated into transitions)":["warm","vintage","analog"],
+"Sidechained Delay Send":["club","electronic","panic","rhythmic"],
+"Underwater Vocal Tail Reverb":["underwater","submerged","dream"],
+"Spring Reverb Send":["vintage","warm","garage","rock"],
+"Granular Cloud Send":["textural","abstract","ambient"],
+"Reverse Reverb Pre-Verse Send":["ethereal","dream","shimmer"],
+"Dub Echo Throw Send":["club","dub","electronic","spacious"],
+"Shimmer Octave Verb Send":["sacred","bright","ethereal","vast"],
+"Gated Room Send":["punchy","rock","aggressive","crisp"]};
+const AUTO={
+"Reverb density increases into chorus":["sacred","lush","vast","bloom"],
+"Stereo width narrows in verse / blooms in chorus":["dynamic","pop","bloom"],
+"Saturation automation tied to emotional intensity curve":["driven","rock","warm"],
+"Breathing compression (slow attack/release modulation)":["underwater","ambient","soft"],
+"Low-pass cutoff modulated by emotional pressure curve":["underwater","hazy","panic"],
+"Sidechain depth increases with energy":["club","electronic","dynamic"],
+"Tape flutter activates on transitions":["vintage","warm","analog"],
+"Harmonic excitation rises into the final chorus":["bright","pop","shimmer"],
+"Ambient return ducks harder under dense vocals":["atmospheric","spacious"],
+"Transient sharpness eases as the song softens":["intimate","soft","folk"]};
+const TEX=["Rust","Velvet","Ash","Glass","Salt","Copper","Moss","Smoke","Amber","Bone","Ice","Tar","Silk","Chrome","Wax","Coal","Pearl"];
+const SPC=["Cathedral","Aquarium","Basement","Canyon","Chapel","Hollow","Furnace","Greenhouse","Cellar","Attic","Tunnel","Lagoon","Foundry","Observatory","Reliquary","Boiler Room","Chamber"];
+const SECW={low:["suspended","submerged","hushed","narrow","sparse"],mid:["present","focused","building","leaning","warming"],high:["bloom","elevated","wide","saturated","overflowing"]};
+const PRESETS=["Rust Cathedral","Aquarium Panic Attack","Velvet Basement","Ash Furnace","Glass Greenhouse","Salt Lagoon","Copper Tunnel","Smoke Chapel","Ice Observatory","Tar Boiler Room"];
+
+const rnd=()=>Math.random();
+const pick=a=>a[Math.floor(rnd()*a.length)];
+const sample=(a,n)=>{a=[...a];const o=[];while(o.length<n&&a.length)o.push(a.splice(Math.floor(rnd()*a.length),1)[0]);return o};
+function pickBank(bank,words,n){
+  const w=Object.entries(bank).map(([name,tags])=>[1+3*tags.filter(t=>words.has(t)).length+rnd(),name]);
+  w.sort((a,b)=>b[0]-a[0]);
+  const top=w.slice(0,Math.max(n+2,4)).map(x=>x[1]);
+  return sample(top,n);
+}
+let CUR=null;
+function generate(vibe,genre,bpm,key){
+  const words=new Set((vibe+" "+genre).toLowerCase().replace(/,/g," ").split(/\s+/));
+  const buses=pickBank(BUSES,words,pick([3,4,4,5]));
+  const sends=pickBank(SENDS,words,pick([2,2,3]));
+  const autos=pickBank(AUTO,words,pick([2,3,3]));
+  const energy={intro:"low",verse:"mid",chorus:"high",bridge:"mid",transition:"high",outro:"low"};
+  const treat={};for(const s of["intro","verse","chorus","transition","outro"])treat[s]=sample(SECW[energy[s]],3).join(", ");
+  return{name:pick(TEX)+" "+pick(SPC),vibe,genre,bpm,key,buses,sends,autos,treat};
+}
+function gen(){
+  const vibe=document.getElementById('vibe').value||"late night paranoid gospel";
+  CUR=generate(vibe,document.getElementById('genre').value,document.getElementById('bpm').value,document.getElementById('key').value);
+  render(CUR);
+}
+function render(w){
+  const el=document.getElementById('world');el.classList.remove('in');
+  const li=a=>a.map(x=>`<li>${x}</li>`).join('');
+  const sec=Object.entries(w.treat).map(([s,v])=>`<div class="sec-row"><span class="s">${s}</span><span class="v">${v}</span></div>`).join('');
+  el.innerHTML=`<div class="world-name">${w.name}</div><div class="world-vibe">${w.vibe}${w.genre?' · '+w.genre:''}${w.bpm?' · '+w.bpm+'bpm':''}${w.key?' · '+w.key:''}</div>
+  <div class="cols"><div class="block"><h4>Buses</h4><ul>${li(w.buses)}</ul></div>
+  <div class="block"><h4>Sends</h4><ul>${li(w.sends)}</ul>
+  <h4 style="margin-top:24px">Automation</h4><ul>${li(w.autos)}</ul></div></div>
+  <div class="sections"><h4 class="block" style="border:none;padding:0">Section treatment</h4>${sec}</div>
+  <div class="dl"><button class="b-ghost" onclick="dlReaper()">↓ Download Reaper session (.rpp)</button><span class="hint">opens as named tracks in Reaper</span></div>`;
+  requestAnimationFrame(()=>el.classList.add('in'));
+}
+function dlReaper(){
+  if(!CUR)return;const w=CUR;
+  const trk=n=>`  <TRACK\n    NAME "${n}"\n    ISBUS 0 0\n    VOLPAN 1 0 -1 -1 1\n  >\n`;
+  let o=`<REAPER_PROJECT 0.1 "Mix Ecology Engine" 0\n  TEMPO ${w.bpm||120} 4 4\n  <TRACK\n    NAME "${w.name} [MIX WORLD]"\n    ISBUS 1 1\n  >\n`;
+  w.buses.forEach(b=>o+=trk("BUS: "+b));w.sends.forEach(s=>o+=trk("SEND: "+s));
+  o+=`  <TRACK\n    NAME "(world end)"\n    ISBUS 2 -1\n  >\n>\n`;
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([o],{type:'text/plain'}));
+  a.download=w.name.replace(/ /g,'_')+'.rpp';a.click();
+}
+document.getElementById('presets').innerHTML=PRESETS.map(p=>`<span class="chip" onclick="document.getElementById('vibe').value='${p}';gen()">${p}</span>`).join('');
+gen();
+</script>
+</body>
+</html>
