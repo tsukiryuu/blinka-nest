@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scalps &amp; Clovers — a rent fantasy</title>
+<meta name="description" content="Pay rent. Shoot your chickens. Try to find clovers. A whimsical, cute, psychologically dark farming arcade from the Nest.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--night:#0a0c12;--wrong:#13101c;--moss:#7fc69a;--clover:#56e08a;
+  --lantern:#ffc4d6;--gold:#ffd9a0;--blood:#e06a7a;--ink:#e8efe9;--faint:#7a7588}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--night);color:var(--ink);font-family:'JetBrains Mono',monospace;
+  display:flex;flex-direction:column;align-items:center;min-height:100vh;overflow:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:radial-gradient(800px 500px at 50% 0%,rgba(224,106,122,.1),transparent 60%),
+  radial-gradient(700px 600px at 50% 110%,rgba(86,224,138,.08),transparent 60%),linear-gradient(180deg,#0a0c12,#13101c)}
+.top{text-align:center;padding:14px 0 6px}
+.top h1{font-family:'Fraunces',serif;font-weight:600;font-style:italic;font-size:1.6rem;
+  background:linear-gradient(120deg,var(--lantern),var(--gold),var(--clover));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.top p{color:var(--faint);font-size:.72rem;letter-spacing:.05em}
+#wrap{position:relative}
+canvas{background:#0c0a14;border:1px solid rgba(127,198,154,.18);border-radius:10px;
+  box-shadow:0 0 60px rgba(224,106,122,.12);display:block;touch-action:none}
+#overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+  align-items:center;text-align:center;background:rgba(10,12,18,.86);border-radius:10px;cursor:pointer}
+#overlay h2{font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:2rem;color:var(--lantern);margin-bottom:8px}
+#overlay p{color:var(--ink);max-width:34ch;font-size:.85rem;line-height:1.7;margin-bottom:6px}
+#overlay .hint{color:var(--gold);margin-top:18px;font-size:.8rem}
+#overlay.hidden{display:none}
+.foot{padding:12px;color:var(--faint);font-size:.72rem;text-align:center}
+.foot a{color:var(--moss)}
+.controls{color:var(--faint);font-size:.7rem;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>Scalps &amp; Clovers</h1>
+  <p>pay rent. shoot your chickens. try to find clovers.</p>
+</div>
+<div id="wrap">
+  <canvas id="c" width="520" height="620"></canvas>
+  <div id="overlay">
+    <h2>a rent fantasy</h2>
+    <p>Your farm sits in a city that is slightly wrong. Launch your animals at it. Scalps are easy. Clovers are not. Rent is always due.</p>
+    <p style="color:var(--faint);font-size:.78rem">The better you do, the faster the rent climbs. That's the point.</p>
+    <div class="hint">click / tap to launch — aim with your cursor</div>
+  </div>
+</div>
+<div class="foot">a prototype from the Nest · <a href="index.html">← back to Blinka's grove</a>
+  <div class="controls">drag to aim · release to launch a critter · catch clovers · survive the rent</div>
+</div>
+<script>
+const c=document.getElementById('c'),x=c.getContext('2d'),W=c.width,H=c.height;
+const ov=document.getElementById('overlay');
+let state='menu',shake=0,t=0;
+let scalps=0,clovers=0,rent=10,rentPaid=0,rentDue=18,rentTimer=0,consequences=0;
+let critters=[],bricks=[],enemies=[],drops=[],parts=[];
+const HERD=['🐔','🐖','🐑','🦆','🐐'];
+let aiming=false,aimX=0,aimY=0;
+const farm={x:W/2,y:H-46};
+
+function reset(){
+  scalps=0;clovers=0;rent=10;rentPaid=0;rentDue=18;rentTimer=0;consequences=0;
+  critters=[];enemies=[];drops=[];parts=[];bricks=[];
+  for(let r=0;r<4;r++)for(let i=0;i<10;i++)
+    bricks.push({x:18+i*49,y:78+r*22,w:44,h:17,hp:1+r,max:1+r});
+  state='play';
+}
+function spawnEnemy(){
+  const types=[{g:'👁',hp:3,c:'#e06a7a'},{g:'🗙',hp:2,c:'#b98cff'},{g:'⬢',hp:4,c:'#6a9ce0'}];
+  const ty=types[Math.floor(Math.random()*types.length)];
+  enemies.push({x:40+Math.random()*(W-80),y:150+Math.random()*70,
+    vx:(Math.random()-.5)*1.2,vy:.2+Math.random()*.3,...ty,hpm:ty.hp,ph:Math.random()*6});
+}
+function launch(tx,ty){
+  const dx=tx-farm.x,dy=ty-farm.y,d=Math.hypot(dx,dy)||1,p=Math.min(d/55,7.5);
+  critters.push({x:farm.x,y:farm.y,vx:dx/d*p*2.4,vy:dy/d*p*2.4,
+    g:HERD[Math.floor(Math.random()*HERD.length)],life:240,r:13});
+  beep(420,.05);
+}
+function burst(px,py,col,n){for(let i=0;i<n;i++){const a=Math.random()*6.28,s=1+Math.random()*4;
+  parts.push({x:px,y:py,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:20+Math.random()*16,col})}}
+function drop(px,py){const clover=Math.random()<0.07;
+  drops.push({x:px,y:py,vy:.6,clover,g:clover?'🍀':'',life:300,r:clover?12:5})}
+
+// minimal WebAudio juice
+let ac;function beep(f,d,type='square'){try{ac=ac||new(window.AudioContext||webkitAudioContext)();
+  const o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.value=f;
+  o.connect(g);g.connect(ac.destination);g.gain.value=.05;o.start();
+  g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+d);o.stop(ac.currentTime+d)}catch(e){}}
+
+function step(){
+  t++;if(shake>0)shake*=.86;
+  if(state!=='play')return;
+  rentTimer++;
+  // the scalp economy: more scalps -> faster rent
+  rent+=0.0016+scalps*0.00007;
+  if(enemies.length<4&&Math.random()<0.02)spawnEnemy();
+  // critters
+  for(const k of critters){
+    k.x+=k.vx;k.y+=k.vy;k.vy+=0.07;k.vx*=0.999;k.life--;
+    if(k.x<k.r||k.x>W-k.r){k.vx*=-.86;k.x=Math.max(k.r,Math.min(W-k.r,k.x));shake=3}
+    if(k.y<k.r){k.vy*=-.86;k.y=k.r}
+    // bricks
+    for(const b of bricks){if(b.hp>0&&k.x>b.x&&k.x<b.x+b.w&&k.y>b.y&&k.y<b.y+b.h){
+      b.hp--;k.vy*=-.82;k.vx+=(Math.random()-.5);burst(k.x,k.y,'#ffd9a0',6);beep(300,.04);
+      if(b.hp<=0){scalps+=2;drop(b.x+b.w/2,b.y);burst(b.x+b.w/2,b.y+8,'#e06a7a',12)}}}
+    // enemies
+    for(const e of enemies){if(e.hp>0&&Math.hypot(k.x-e.x,k.y-e.y)<22){
+      e.hp--;k.vx*=-.7;k.vy*=-.7;burst(e.x,e.y,e.c,10);shake=5;beep(220,.06);
+      if(e.hp<=0){scalps+=3;drop(e.x,e.y);drop(e.x+6,e.y);burst(e.x,e.y,e.c,20)}}}
+  }
+  critters=critters.filter(k=>k.life>0&&k.y<H+40);
+  // enemies move + descend
+  for(const e of enemies){e.x+=e.vx;e.y+=e.vy;e.ph+=.05;
+    if(e.x<24||e.x>W-24)e.vx*=-1;
+    if(e.y>H-120){consequences++;e.hp=0;burst(e.x,e.y,'#e06a7a',14);shake=8;beep(120,.2,'sawtooth')}}
+  enemies=enemies.filter(e=>e.hp>0);
+  // drops fall, farm collects
+  for(const d of drops){d.y+=d.vy;d.vy+=.02;d.life--;
+    if(Math.hypot(d.x-farm.x,d.y-farm.y)<34){d.life=0;
+      if(d.clover){clovers++;burst(farm.x,farm.y,'#56e08a',18);beep(660,.12)}else{rentPaid+=1}}}
+  drops=drops.filter(d=>d.life>0&&d.y<H);
+  for(const p of parts){p.x+=p.vx;p.y+=p.vy;p.vy+=.08;p.life--}
+  parts=parts.filter(p=>p.life>0);
+  // RENT DUE
+  if(rent>=rentDue){
+    if(rentPaid>=Math.floor(rentDue*0.4)&&clovers>=1){
+      clovers--;rentPaid=0;rent=10;rentDue=Math.floor(rentDue*1.35);beep(523,.18);
+      burst(W/2,H/2,'#56e08a',30);shake=4;
+    }else{
+      consequences++;rent=rent*0.6;rentDue=Math.floor(rentDue*1.15);shake=12;
+      beep(90,.4,'sawtooth');burst(W/2,H/2,'#e06a7a',30);
+      for(let i=0;i<2;i++)spawnEnemy();
+    }
+  }
+  if(consequences>=5)state='over';
+}
+
+function draw(){
+  x.save();
+  if(shake>0)x.translate((Math.random()-.5)*shake,(Math.random()-.5)*shake);
+  x.clearRect(-20,-20,W+40,H+40);
+  // rent bar
+  const f=Math.min(rent/rentDue,1);
+  x.fillStyle='#1a1622';x.fillRect(0,0,W,30);
+  x.fillStyle=f>.8?'#e06a7a':f>.5?'#ffd9a0':'#7fc69a';x.fillRect(0,0,W*f,30);
+  x.fillStyle='#0a0c12';x.font='bold 13px JetBrains Mono';x.textAlign='left';
+  x.fillText('RENT '+Math.floor(rent)+'/'+rentDue,10,20);
+  x.textAlign='right';x.fillText('🍀 '+clovers+'   scalps '+scalps,W-10,20);
+  // consequence pips
+  x.textAlign='left';x.fillStyle='#e06a7a';x.font='11px JetBrains Mono';
+  x.fillText('eviction '+('▰'.repeat(consequences))+('▱'.repeat(Math.max(0,5-consequences))),10,46);
+  // bricks (the billboard wall / rent)
+  for(const b of bricks){if(b.hp>0){const a=b.hp/b.max;
+    x.fillStyle=`rgba(${180+a*60},${100+a*60},${120+a*40},${.4+a*.5})`;
+    x.fillRect(b.x,b.y,b.w,b.h);x.strokeStyle='rgba(255,217,160,.2)';x.strokeRect(b.x,b.y,b.w,b.h)}}
+  // enemies
+  x.textAlign='center';x.textBaseline='middle';
+  for(const e of enemies){x.font='22px serif';
+    const wob=Math.sin(e.ph)*3;x.fillText(e.g,e.x+wob,e.y);
+    x.fillStyle=e.c;x.fillRect(e.x-12,e.y+14,24*(e.hp/e.hpm),3)}
+  // drops
+  for(const d of drops){if(d.clover){x.font='18px serif';x.fillText('🍀',d.x,d.y)}
+    else{x.fillStyle='#ffd9a0';x.beginPath();x.arc(d.x,d.y,d.r,0,6.3);x.fill()}}
+  // particles
+  for(const p of parts){x.globalAlpha=Math.max(0,p.life/30);x.fillStyle=p.col;
+    x.fillRect(p.x,p.y,2.5,2.5)}x.globalAlpha=1;
+  // critters
+  for(const k of critters){x.font='22px serif';x.fillText(k.g,k.x,k.y)}
+  // farm + aim
+  x.font='28px serif';x.fillText('🏠',farm.x,farm.y);
+  if(aiming){x.strokeStyle='rgba(255,196,214,.5)';x.setLineDash([4,5]);
+    x.beginPath();x.moveTo(farm.x,farm.y);x.lineTo(aimX,aimY);x.stroke();x.setLineDash([])}
+  x.restore();
+  if(state==='over'){x.fillStyle='rgba(10,12,18,.9)';x.fillRect(0,0,W,H);
+    x.fillStyle='#e06a7a';x.font='italic bold 30px Fraunces, serif';x.textAlign='center';
+    x.fillText('evicted.',W/2,H/2-30);
+    x.fillStyle='#e8efe9';x.font='13px JetBrains Mono';
+    x.fillText('you gathered '+scalps+' scalps. it was never enough.',W/2,H/2+6);
+    x.fillStyle='#ffd9a0';x.fillText('click to try again',W/2,H/2+40);}
+}
+function loop(){step();draw();requestAnimationFrame(loop)}
+
+function pos(e){const r=c.getBoundingClientRect();const p=e.touches?e.touches[0]:e;
+  return{x:(p.clientX-r.left)*(W/r.width),y:(p.clientY-r.top)*(H/r.height)}}
+c.addEventListener('pointerdown',e=>{e.preventDefault();
+  if(state==='menu'||state==='over'){ov.classList.add('hidden');reset();return}
+  aiming=true;const p=pos(e);aimX=p.x;aimY=p.y});
+c.addEventListener('pointermove',e=>{if(aiming){const p=pos(e);aimX=p.x;aimY=p.y}});
+c.addEventListener('pointerup',e=>{if(aiming){aiming=false;launch(aimX,aimY)}});
+ov.addEventListener('pointerdown',()=>{ov.classList.add('hidden');reset()});
+loop();
+</script>
+</body>
+</html>
