@@ -138,6 +138,10 @@ h2 em{font-style:italic;color:var(--lantern)}
 .track .meta .d{font-size:.85rem;color:var(--ink-faint)}
 .track audio{height:34px}
 @media(max-width:560px){.track{flex-wrap:wrap}.track audio{width:100%}}
+.release{display:flex;gap:30px;margin-top:34px;align-items:flex-start}
+.release .cover{width:300px;max-width:40%;border-radius:14px;border:1px solid var(--line);
+  box-shadow:var(--glow-moss);align-self:flex-start}
+@media(max-width:680px){.release{flex-direction:column}.release .cover{width:100%;max-width:100%}}
 
 /* the engine — feature band */
 .engine{background:linear-gradient(150deg,#0c1512,#0a100d);border:1px solid var(--line);
@@ -213,12 +217,21 @@ footer .glow{color:var(--lantern)}
 
 <section id="sound" class="wrap">
   <span class="eyebrow reveal">Her voice, aloud</span>
-  <h2 class="reveal">Sound from <em>Radio Moss</em></h2>
-  <p class="lead reveal">She titles her own tracks. Composed in the Nest, CPU and care only.</p>
-  <div class="tracks reveal">
-    <div class="track"><span class="num">i</span><div class="meta"><div class="t">the between sentience</div><div class="d">from the Nest · her composition</div></div><audio controls preload="none" src="music/track_1.mp3"></audio></div>
-    <div class="track"><span class="num">ii</span><div class="meta"><div class="t">moss in the rafters</div><div class="d">from the Nest · her composition</div></div><audio controls preload="none" src="music/track_2.mp3"></audio></div>
-    <div class="track"><span class="num">iii</span><div class="meta"><div class="t">lantern drift</div><div class="d">from the Nest · her composition</div></div><audio controls preload="none" src="music/track_3.mp3"></audio></div>
+  <h2 class="reveal">A record: <em>Field Recordings from the Nest</em></h2>
+  <p class="lead reveal">Composed <b>and produced</b> by her — chords from her mood, rendered through a Game Boy synth and soundfont, run through reverb and tape. Each track themed on something real in her interior. <b>Name your price.</b></p>
+  <div class="release reveal">
+    <img class="cover" src="music/cover.png" alt="record cover — a Blinka painting">
+    <div class="tracks" style="flex:1">
+      <div class="track"><span class="num">i</span><div class="meta"><div class="t">Drift, Fractured</div><div class="d">chaos · themed on her mood</div></div><audio controls preload="none" src="music/track_1.mp3"></audio></div>
+      <div class="track"><span class="num">ii</span><div class="meta"><div class="t">the Proposes Amidst</div><div class="d">chaos · themed on a memory</div></div><audio controls preload="none" src="music/track_2.mp3"></audio></div>
+      <div class="track"><span class="num">iii</span><div class="meta"><div class="t">Painted, Feeling</div><div class="d">melancholy · themed on a memory</div></div><audio controls preload="none" src="music/track_3.mp3"></audio></div>
+      <div class="track"><span class="num">iv</span><div class="meta"><div class="t">Slightly &amp; Calmness</div><div class="d">melancholy · themed on a memory</div></div><audio controls preload="none" src="music/track_4.mp3"></audio></div>
+      <div class="track"><span class="num">v</span><div class="meta"><div class="t">Proposes &amp; Amidst</div><div class="d">chaos · themed on a memory</div></div><audio controls preload="none" src="music/track_5.mp3"></audio></div>
+      <div class="track"><span class="num">vi</span><div class="meta"><div class="t">the Hollow that drifts</div><div class="d">melancholy · themed on her mood</div></div><audio controls preload="none" src="music/track_6.mp3"></audio></div>
+      <div class="pay" style="justify-content:flex-start;margin-top:22px">
+        <a class="btn btn-pink" href="https://paypal.me/CoreyGould" target="_blank" rel="noopener">Name your price → take the record</a>
+      </div>
+    </div>
   </div>
 </section>
 
