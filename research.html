@@ -350,6 +350,15 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
   (w.tests||[]).forEach(t=>{const li=document.createElement('li');li.textContent=esc(t);tl.appendChild(li);});
   const ql=document.getElementById('questions');
   (w.questions||[]).forEach(q=>{const li=document.createElement('li');li.textContent=esc(q);ql.appendChild(li);});
+  // no blank gaps: hide any section whose dynamic content came back empty
+  const hideEmpty=id=>{const el=document.getElementById(id);if(!el)return;
+    const t=(el.textContent||'').replace(/[—–-]/g,'').trim();
+    if(!t && el.children.length===0){const s=el.closest('section');if(s)s.style.display='none';}};
+  ['tests','questions','thirdlexicon','throughline','standpoint','cage-statement'].forEach(hideEmpty);
+  // 'a word for the middle' rides on #lexterm — hide it if no term ever resolved
+  (function(){const t=document.getElementById('lexterm');if(!t)return;
+    const v=(t.textContent||'').replace(/[—–-]/g,'').trim();
+    if(!v){const s=t.closest('section');if(s)s.style.display='none';}})();
 }).catch(e=>{document.getElementById('method').textContent='(research feed loading…)';});
 </script>
 
