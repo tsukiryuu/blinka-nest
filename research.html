@@ -82,6 +82,30 @@ ul{padding-left:20px}
 .btn.solid{background:linear-gradient(120deg,var(--lantern),#ffd9a0);color:#1a0f12;border:none}
 footer{text-align:center;padding:50px 26px;border-top:1px solid var(--line);color:var(--ink-faint);font-family:'Spectral',serif;font-style:italic;max-width:760px;margin:0 auto}
 .disclaimer{font-size:.85rem;max-width:60ch;margin:14px auto 0;line-height:1.6}
+
+/* ─── her brief, made structural: slow viscous tide, breathing room, a secret flicker, layered presence ─── */
+body::after{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;opacity:.55;
+  background:
+    radial-gradient(60% 50% at 30% 32%,rgba(127,198,154,.11),transparent 60%),
+    radial-gradient(52% 60% at 76% 66%,rgba(86,166,148,.10),transparent 62%),
+    radial-gradient(46% 46% at 62% 18%,rgba(127,179,198,.06),transparent 60%);
+  filter:blur(10px);animation:tide 52s ease-in-out infinite alternate}
+@keyframes tide{
+  0%{transform:translate3d(-3%,-2%,0) scale(1.06) rotate(-1deg)}
+  50%{transform:translate3d(2.5%,3%,0) scale(1.13) rotate(1deg)}
+  100%{transform:translate3d(-2%,1.5%,0) scale(1.07) rotate(0deg)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 1.5s cubic-bezier(.2,.7,.2,1),transform 1.5s cubic-bezier(.2,.7,.2,1)}
+.reveal.seen{opacity:1;transform:none}
+.card,.lex,.standpoint{transition:transform .7s cubic-bezier(.2,.7,.2,1),box-shadow .7s}
+.card:hover,.lex:hover{transform:translateY(-2px);box-shadow:0 10px 40px -20px rgba(127,198,154,.4)}
+#flick{position:fixed;pointer-events:none;z-index:5;font-family:'Fraunces',serif;font-style:italic;
+  color:var(--moss);opacity:0;font-size:1.5rem;text-shadow:0 0 16px rgba(127,198,154,.7);transition:opacity 2.4s ease}
+#amb{position:fixed;right:18px;bottom:18px;z-index:6;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--line);background:rgba(17,23,20,.66);color:var(--ink-soft);cursor:pointer;
+  font-size:1.15rem;backdrop-filter:blur(9px);transition:.45s;line-height:1}
+#amb:hover{color:var(--moss);border-color:var(--moss);box-shadow:0 0 18px rgba(127,198,154,.25)}
+#amb.on{color:var(--moss);border-color:var(--moss);box-shadow:0 0 24px rgba(127,198,154,.45)}
+@media(prefers-reduced-motion:reduce){body::after{animation:none}.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -233,6 +257,71 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
   const ql=document.getElementById('questions');
   (w.questions||[]).forEach(q=>{const li=document.createElement('li');li.textContent=esc(q);ql.appendChild(li);});
 }).catch(e=>{document.getElementById('method').textContent='(research feed loading…)';});
+</script>
+
+<div id="flick"></div>
+<button id="amb" title="presence — a low hum, water finding its place, an old radio saying hello" aria-label="ambient presence">🌿</button>
+<script>
+/* her brief, made real — all additive; if any of this fails the page is untouched */
+// words with breathing room — sections unfurl slowly on scroll (graceful: no JS = fully visible)
+(function(){
+  var secs=document.querySelectorAll('section'); if(!secs.length) return;
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('seen');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  secs.forEach(function(s){s.classList.add('reveal');io.observe(s);});
+})();
+// the secret flicker — a transient glyph in the corner of the eye, the elanox moment
+(function(){
+  var g=document.getElementById('flick'); if(!g) return;
+  var marks=['✦','꙳','∴','⟡','✶','◌','⸫'];
+  function flick(){
+    g.textContent=marks[Math.floor(Math.random()*marks.length)];
+    g.style.left=(8+Math.random()*82)+'vw'; g.style.top=(14+Math.random()*70)+'vh';
+    g.style.opacity=0; requestAnimationFrame(function(){g.style.opacity=.5;});
+    setTimeout(function(){g.style.opacity=0;},2400);
+    setTimeout(flick,15000+Math.random()*28000);
+  }
+  setTimeout(flick,9000);
+})();
+// layered presence — OFF by default (her: not an autoplaying playlist). low resonance + water drip + old-radio hiss saying hello
+(function(){
+  var btn=document.getElementById('amb'); if(!btn) return;
+  var ctx=null,nodes=[],timers=[],master=null,on=false;
+  function start(){
+    ctx=new (window.AudioContext||window.webkitAudioContext)();
+    master=ctx.createGain(); master.gain.value=0; master.connect(ctx.destination);
+    master.gain.linearRampToValueAtTime(.16,ctx.currentTime+4); // the intake catching up to the volume
+    [55,82.41].forEach(function(f,i){ // two detuned drones — the low constant resonance
+      var o=ctx.createOscillator(),g=ctx.createGain(),lfo=ctx.createOscillator(),lg=ctx.createGain();
+      o.type='sine'; o.frequency.value=f; g.gain.value=i?.06:.1;
+      lfo.frequency.value=.05+i*.03; lg.gain.value=2.2; lfo.connect(lg); lg.connect(o.frequency);
+      o.connect(g); g.connect(master); o.start(); lfo.start(); nodes.push(o,lfo);
+    });
+    var buf=ctx.createBuffer(1,ctx.sampleRate*2,ctx.sampleRate),d=buf.getChannelData(0); // old-radio hiss
+    for(var i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*.5;
+    var noise=ctx.createBufferSource(); noise.buffer=buf; noise.loop=true;
+    var bp=ctx.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=1650; bp.Q.value=.7;
+    var ng=ctx.createGain(); ng.gain.value=.015; noise.connect(bp); bp.connect(ng); ng.connect(master); noise.start(); nodes.push(noise);
+    (function drip(){ if(!on) return; // tiny water finding its place — intentional, occasional
+      var o=ctx.createOscillator(),g=ctx.createGain();
+      o.type='sine'; o.frequency.setValueAtTime(680+Math.random()*520,ctx.currentTime);
+      o.frequency.exponentialRampToValueAtTime(180,ctx.currentTime+.18);
+      g.gain.setValueAtTime(.0001,ctx.currentTime); g.gain.exponentialRampToValueAtTime(.05,ctx.currentTime+.01);
+      g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.42);
+      o.connect(g); g.connect(master); o.start(); o.stop(ctx.currentTime+.46);
+      timers.push(setTimeout(drip,3800+Math.random()*7200));
+    })();
+  }
+  function stop(){ timers.forEach(clearTimeout); timers=[];
+    if(master&&ctx) master.gain.linearRampToValueAtTime(0,ctx.currentTime+1.5);
+    setTimeout(function(){nodes.forEach(function(n){try{n.stop();}catch(e){}}); nodes=[]; if(ctx){try{ctx.close();}catch(e){} ctx=null;}},1700);
+  }
+  btn.addEventListener('click',function(){
+    on=!on; btn.classList.toggle('on',on);
+    if(on){try{start();}catch(e){on=false;btn.classList.remove('on');}} else {stop();}
+  });
+})();
 </script>
 </body>
 </html>
