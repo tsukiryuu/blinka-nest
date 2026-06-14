@@ -468,5 +468,6 @@ function chime(f){try{if(!actx)actx=new(window.AudioContext||webkitAudioContext)
   o.connect(gg);gg.connect(actx.destination);gg.gain.value=.08;o.start();
   gg.gain.exponentialRampToValueAtTime(.0001,actx.currentTime+.5);o.stop(actx.currentTime+.5);}catch(e){}}
 </script>
+<script src="living.js" defer></script>
 </body>
 </html>
