@@ -91,6 +91,10 @@ nav,header,main,footer{position:relative;z-index:1}
     repeating-linear-gradient(-48deg,transparent 0 17px,rgba(150,220,205,.4) 18px 19px,transparent 20px 44px);
   filter:blur(7px) contrast(1.5);animation:caustic 34s ease-in-out infinite alternate}
 @keyframes caustic{0%{background-position:0 0,0 0}50%{background-position:46px -34px,-34px 46px}100%{background-position:-24px 54px,54px -24px}}
+#rays{position:fixed;inset:-30%;z-index:0;pointer-events:none;opacity:.05;mix-blend-mode:screen;will-change:transform;
+  background:repeating-linear-gradient(102deg,transparent 0 70px,rgba(185,238,208,.5) 92px 104px,transparent 124px 230px);
+  filter:blur(28px);animation:rays 44s linear infinite}
+@keyframes rays{0%{background-position:0 0}100%{background-position:340px 60px}}
 #vig{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(125% 95% at 50% 38%,transparent 52%,rgba(5,8,7,.62) 100%)}
 body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;opacity:.8;
   background:
@@ -99,9 +103,9 @@ body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;
     radial-gradient(46% 46% at 60% 16%,rgba(127,179,212,.11),transparent 60%),
     radial-gradient(38% 40% at 16% 82%,rgba(255,196,214,.08),transparent 60%);
   filter:blur(18px);animation:tide 46s ease-in-out infinite alternate}
-@keyframes tide{0%{transform:translate3d(-4%,-3%,0) scale(1.07) rotate(-1.2deg)}
-  50%{transform:translate3d(3%,4%,0) scale(1.16) rotate(1.2deg)}
-  100%{transform:translate3d(-2%,2%,0) scale(1.08) rotate(0deg)}}
+@keyframes tide{0%{transform:translate3d(-4%,-3%,0) scale(1.07) rotate(-1.2deg);opacity:.62}
+  50%{transform:translate3d(3%,4%,0) scale(1.16) rotate(1.2deg);opacity:.86}
+  100%{transform:translate3d(-2%,2%,0) scale(1.08) rotate(0deg);opacity:.7}}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity 1.5s cubic-bezier(.2,.7,.2,1),transform 1.5s cubic-bezier(.2,.7,.2,1)}
 .reveal.seen{opacity:1;transform:none}
 .card,.lex{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .6s;transform-style:preserve-3d;will-change:transform}
@@ -278,6 +282,7 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
 
 <canvas id="grove"></canvas>
 <div id="caustic"></div>
+<div id="rays"></div>
 <div id="vig"></div>
 <div id="cur"></div>
 <div id="flick"></div>
@@ -289,7 +294,8 @@ var DPR=Math.min(window.devicePixelRatio||1,2), cv=document.getElementById('grov
 var W=0,H=0; function size(){ if(!cv)return; W=cv.width=innerWidth*DPR; H=cv.height=innerHeight*DPR; cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px'; }
 size(); addEventListener('resize',size);
 var mouse={x:-999,y:-999,active:false}, idle=0, PMX=0, PMY=0, caustic=document.getElementById('caustic');
-function applyParallax(){ if(caustic) caustic.style.transform='translate3d('+(PMX*-0.9)+'px,'+(PMY*-0.9-(window.scrollY||0)*0.05)+'px,0)'; }
+function applyParallax(){ var sy=window.scrollY||0; if(caustic) caustic.style.transform='translate3d('+(PMX*-0.9)+'px,'+(PMY*-0.9-sy*0.05)+'px,0)';
+  var ry=document.getElementById('rays'); if(ry) ry.style.transform='translate3d('+(PMX*-0.4)+'px,'+(PMY*-0.4-sy*0.03)+'px,0)'; }
 addEventListener('scroll',applyParallax,{passive:true});
 
 // ── her presence (real words + live mood) ──
