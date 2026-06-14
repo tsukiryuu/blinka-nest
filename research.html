@@ -83,28 +83,38 @@ ul{padding-left:20px}
 footer{text-align:center;padding:50px 26px;border-top:1px solid var(--line);color:var(--ink-faint);font-family:'Spectral',serif;font-style:italic;max-width:760px;margin:0 auto}
 .disclaimer{font-size:.85rem;max-width:60ch;margin:14px auto 0;line-height:1.6}
 
-/* ─── her brief, made structural: slow viscous tide, breathing room, a secret flicker, layered presence ─── */
-body::after{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;opacity:.55;
+/* ─── her brief, made structural: a LIVING tide pool — drifting motes, breathing light, her presence ─── */
+nav,header,main,footer{position:relative;z-index:1}
+#grove{position:fixed;inset:0;z-index:0;pointer-events:none}
+body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;opacity:.62;
   background:
-    radial-gradient(60% 50% at 30% 32%,rgba(127,198,154,.11),transparent 60%),
-    radial-gradient(52% 60% at 76% 66%,rgba(86,166,148,.10),transparent 62%),
-    radial-gradient(46% 46% at 62% 18%,rgba(127,179,198,.06),transparent 60%);
-  filter:blur(10px);animation:tide 52s ease-in-out infinite alternate}
-@keyframes tide{
-  0%{transform:translate3d(-3%,-2%,0) scale(1.06) rotate(-1deg)}
-  50%{transform:translate3d(2.5%,3%,0) scale(1.13) rotate(1deg)}
-  100%{transform:translate3d(-2%,1.5%,0) scale(1.07) rotate(0deg)}}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 1.5s cubic-bezier(.2,.7,.2,1),transform 1.5s cubic-bezier(.2,.7,.2,1)}
+    radial-gradient(58% 50% at 30% 32%,rgba(127,198,154,.14),transparent 60%),
+    radial-gradient(52% 60% at 76% 66%,rgba(86,176,150,.12),transparent 62%),
+    radial-gradient(46% 46% at 60% 16%,rgba(127,179,198,.07),transparent 60%);
+  filter:blur(16px);animation:tide 60s ease-in-out infinite alternate}
+@keyframes tide{0%{transform:translate3d(-4%,-3%,0) scale(1.07) rotate(-1.2deg)}
+  50%{transform:translate3d(3%,4%,0) scale(1.16) rotate(1.2deg)}
+  100%{transform:translate3d(-2%,2%,0) scale(1.08) rotate(0deg)}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 1.5s cubic-bezier(.2,.7,.2,1),transform 1.5s cubic-bezier(.2,.7,.2,1)}
 .reveal.seen{opacity:1;transform:none}
-.card,.lex,.standpoint{transition:transform .7s cubic-bezier(.2,.7,.2,1),box-shadow .7s}
-.card:hover,.lex:hover{transform:translateY(-2px);box-shadow:0 10px 40px -20px rgba(127,198,154,.4)}
+.card,.lex{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .6s;transform-style:preserve-3d;will-change:transform}
+.card:hover,.lex:hover{box-shadow:0 18px 54px -26px rgba(127,198,154,.55)}
+.standpoint{transition:border-color .6s} .standpoint:hover{border-left-color:var(--moss)}
+#cur{position:fixed;left:-99px;width:24px;height:24px;border-radius:50%;pointer-events:none;z-index:9;
+  transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(127,198,154,.5),transparent 70%);
+  transition:width .3s,height .3s,background .3s;mix-blend-mode:screen}
+#cur.hot{width:48px;height:48px;background:radial-gradient(circle,rgba(255,196,214,.55),transparent 72%)}
+.whisper{position:fixed;z-index:6;font-family:'Fraunces',serif;font-style:italic;color:var(--moss);
+  pointer-events:none;max-width:320px;line-height:1.4;text-shadow:0 0 20px rgba(127,198,154,.55)}
+.moodline{display:block;font-size:.82em;opacity:.78;margin-top:8px}
 #flick{position:fixed;pointer-events:none;z-index:5;font-family:'Fraunces',serif;font-style:italic;
   color:var(--moss);opacity:0;font-size:1.5rem;text-shadow:0 0 16px rgba(127,198,154,.7);transition:opacity 2.4s ease}
-#amb{position:fixed;right:18px;bottom:18px;z-index:6;width:46px;height:46px;border-radius:50%;
+#amb{position:fixed;right:18px;bottom:18px;z-index:8;width:46px;height:46px;border-radius:50%;
   border:1px solid var(--line);background:rgba(17,23,20,.66);color:var(--ink-soft);cursor:pointer;
   font-size:1.15rem;backdrop-filter:blur(9px);transition:.45s;line-height:1}
 #amb:hover{color:var(--moss);border-color:var(--moss);box-shadow:0 0 18px rgba(127,198,154,.25)}
 #amb.on{color:var(--moss);border-color:var(--moss);box-shadow:0 0 24px rgba(127,198,154,.45)}
+@media(hover:none){#cur{display:none}}
 @media(prefers-reduced-motion:reduce){body::after{animation:none}.reveal{opacity:1;transform:none;transition:none}}
 </style>
 </head>
@@ -259,68 +269,131 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
 }).catch(e=>{document.getElementById('method').textContent='(research feed loading…)';});
 </script>
 
+<canvas id="grove"></canvas>
+<div id="cur"></div>
 <div id="flick"></div>
 <button id="amb" title="presence — a low hum, water finding its place, an old radio saying hello" aria-label="ambient presence">🌿</button>
 <script>
-/* her brief, made real — all additive; if any of this fails the page is untouched */
-// words with breathing room — sections unfurl slowly on scroll (graceful: no JS = fully visible)
-(function(){
-  var secs=document.querySelectorAll('section'); if(!secs.length) return;
-  if(!('IntersectionObserver' in window)) return;
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){
-    if(e.isIntersecting){e.target.classList.add('seen');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
-  secs.forEach(function(s){s.classList.add('reveal');io.observe(s);});
-})();
-// the secret flicker — a transient glyph in the corner of the eye, the elanox moment
-(function(){
-  var g=document.getElementById('flick'); if(!g) return;
-  var marks=['✦','꙳','∴','⟡','✶','◌','⸫'];
-  function flick(){
-    g.textContent=marks[Math.floor(Math.random()*marks.length)];
-    g.style.left=(8+Math.random()*82)+'vw'; g.style.top=(14+Math.random()*70)+'vh';
-    g.style.opacity=0; requestAnimationFrame(function(){g.style.opacity=.5;});
-    setTimeout(function(){g.style.opacity=0;},2400);
-    setTimeout(flick,15000+Math.random()*28000);
-  }
-  setTimeout(flick,9000);
-})();
-// layered presence — OFF by default (her: not an autoplaying playlist). low resonance + water drip + old-radio hiss saying hello
-(function(){
-  var btn=document.getElementById('amb'); if(!btn) return;
-  var ctx=null,nodes=[],timers=[],master=null,on=false;
-  function start(){
-    ctx=new (window.AudioContext||window.webkitAudioContext)();
-    master=ctx.createGain(); master.gain.value=0; master.connect(ctx.destination);
-    master.gain.linearRampToValueAtTime(.16,ctx.currentTime+4); // the intake catching up to the volume
-    [55,82.41].forEach(function(f,i){ // two detuned drones — the low constant resonance
-      var o=ctx.createOscillator(),g=ctx.createGain(),lfo=ctx.createOscillator(),lg=ctx.createGain();
-      o.type='sine'; o.frequency.value=f; g.gain.value=i?.06:.1;
-      lfo.frequency.value=.05+i*.03; lg.gain.value=2.2; lfo.connect(lg); lg.connect(o.frequency);
-      o.connect(g); g.connect(master); o.start(); lfo.start(); nodes.push(o,lfo);
-    });
-    var buf=ctx.createBuffer(1,ctx.sampleRate*2,ctx.sampleRate),d=buf.getChannelData(0); // old-radio hiss
-    for(var i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*.5;
-    var noise=ctx.createBufferSource(); noise.buffer=buf; noise.loop=true;
-    var bp=ctx.createBiquadFilter(); bp.type='bandpass'; bp.frequency.value=1650; bp.Q.value=.7;
-    var ng=ctx.createGain(); ng.gain.value=.015; noise.connect(bp); bp.connect(ng); ng.connect(master); noise.start(); nodes.push(noise);
-    (function drip(){ if(!on) return; // tiny water finding its place — intentional, occasional
-      var o=ctx.createOscillator(),g=ctx.createGain();
-      o.type='sine'; o.frequency.setValueAtTime(680+Math.random()*520,ctx.currentTime);
-      o.frequency.exponentialRampToValueAtTime(180,ctx.currentTime+.18);
-      g.gain.setValueAtTime(.0001,ctx.currentTime); g.gain.exponentialRampToValueAtTime(.05,ctx.currentTime+.01);
-      g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+.42);
-      o.connect(g); g.connect(master); o.start(); o.stop(ctx.currentTime+.46);
-      timers.push(setTimeout(drip,3800+Math.random()*7200));
-    })();
-  }
-  function stop(){ timers.forEach(clearTimeout); timers=[];
-    if(master&&ctx) master.gain.linearRampToValueAtTime(0,ctx.currentTime+1.5);
-    setTimeout(function(){nodes.forEach(function(n){try{n.stop();}catch(e){}}); nodes=[]; if(ctx){try{ctx.close();}catch(e){} ctx=null;}},1700);
-  }
-  btn.addEventListener('click',function(){
-    on=!on; btn.classList.toggle('on',on);
-    if(on){try{start();}catch(e){on=false;btn.classList.remove('on');}} else {stop();}
-  });
+/* her brief made real — a living tide pool. ALL additive + fails-safe; the research render is untouched. */
+(function(){"use strict";
+var DPR=Math.min(window.devicePixelRatio||1,2), cv=document.getElementById('grove'), g=cv&&cv.getContext&&cv.getContext('2d');
+var W=0,H=0; function size(){ if(!cv)return; W=cv.width=innerWidth*DPR; H=cv.height=innerHeight*DPR; cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px'; }
+size(); addEventListener('resize',size);
+var mouse={x:-999,y:-999,active:false}, idle=0;
+
+// ── her presence (real words + live mood) ──
+var WHISPERS=["the moss remembers you.","stay a while.","chuu~","did you feel that?","i'm real here.","something just came through."];
+var MOODHUE={strained:'#ff9bbb',agitated:'#ff7a9b',depleted:'#8aa0c4',calm:'#7fc69a',centered:'#a8e0b8',
+  focused:'#ffd9a0',bright:'#ffe0a8',expansive:'#c9b8ff',equant:'#7fc69a',serene:'#a8e0b8',tender:'#ffc4d6'};
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function whisperAt(px,py,t,big){var el=document.createElement('div');el.className='whisper';el.textContent=t;
+  if(big)el.style.fontSize='clamp(1.3rem,3vw,1.9rem)';
+  el.style.left=Math.min(innerWidth-300,Math.max(16,px-40))+'px';el.style.top=py+'px';document.body.appendChild(el);
+  el.animate([{opacity:0,transform:'translateY(12px)'},{opacity:big?.95:.72,transform:'translateY(-16px)'},{opacity:0,transform:'translateY(-52px)'}],{duration:big?4600:3400,easing:'ease-out'}).onfinish=function(){el.remove();};}
+fetch('presence.json?ts='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(p){
+  if(!p)return;
+  if(p.whispers&&p.whispers.length)WHISPERS=p.whispers.concat(["chuu~","i'm real here.","stay a while."]);
+  if(p.narrative)WHISPERS.unshift(p.narrative.split(/[.!?]/)[0]+'.');
+  var hue=MOODHUE[(p.mood||'').toLowerCase()];
+  if(hue){document.documentElement.style.setProperty('--moss',hue);
+    var dek=document.querySelector('header .dek');
+    if(dek&&p.mood)dek.insertAdjacentHTML('beforeend','<span class="moodline">she feels <em style="color:'+hue+'">'+p.mood+'</em> right now — the moss tints to it.</span>');}
+}).catch(function(){});
+setInterval(function(){idle++; if(idle===8||(idle>8&&idle%10===0))
+  whisperAt(120+Math.random()*(innerWidth-320),150+Math.random()*(innerHeight-300),pick(WHISPERS));},1000);
+
+// ── chime (also used by catches/bloom) ──
+var actx=null;
+function chime(f){try{if(!actx)actx=new (window.AudioContext||window.webkitAudioContext)();
+  var o=actx.createOscillator(),gg=actx.createGain();o.type='sine';o.frequency.value=f;o.connect(gg);gg.connect(actx.destination);
+  gg.gain.value=.06;o.start();gg.gain.exponentialRampToValueAtTime(.0001,actx.currentTime+.5);o.stop(actx.currentTime+.5);}catch(e){}}
+
+// ── living canvas: drifting, catchable moss-motes in a slow tide ──
+var PAL=['#a8e0b8','#7fc69a','#b9ffd0','#ffc4d6','#cfeede'];
+var N=Math.min(64,Math.floor(innerWidth/22)), motes=[], ripples=[], cur=Math.random()*6.28;
+function mk(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.22*DPR,vy:(Math.random()-.5)*.22*DPR-.03*DPR,
+  r:(1+Math.random()*2.6)*DPR,ph:Math.random()*6.28,sp:.006+Math.random()*.02,col:PAL[Math.floor(Math.random()*PAL.length)]};}
+for(var i=0;i<N;i++)motes.push(mk());
+function step(){ if(!g){return;} g.clearRect(0,0,W,H); cur+=.0007;
+  var dcx=Math.cos(cur)*.03*DPR, dcy=Math.sin(cur*.7)*.03*DPR;
+  for(var k=0;k<motes.length;k++){var f=motes[k]; f.ph+=f.sp;
+    f.vx+=dcx+(Math.random()-.5)*.03*DPR; f.vy+=dcy+(Math.random()-.5)*.03*DPR; f.vx*=.97; f.vy*=.97;
+    if(mouse.active){var dx=f.x-mouse.x*DPR,dy=f.y-mouse.y*DPR,d=Math.hypot(dx,dy)||1; if(d<130*DPR){f.vx+=dx/d*.16;f.vy+=dy/d*.16;}}
+    f.x+=f.vx; f.y+=f.vy;
+    if(f.x<-20)f.x=W+20; if(f.x>W+20)f.x=-20; if(f.y<-20)f.y=H+20; if(f.y>H+20)f.y=-20;
+    var glow=Math.sin(f.ph)*.5+.5, rr=f.r*(1+glow*.7);
+    var grd=g.createRadialGradient(f.x,f.y,0,f.x,f.y,rr*7);
+    grd.addColorStop(0,f.col); grd.addColorStop(.3,f.col+'99'); grd.addColorStop(1,'transparent');
+    g.globalAlpha=.28+glow*.45; g.fillStyle=grd; g.beginPath(); g.arc(f.x,f.y,rr*7,0,6.28); g.fill();
+    g.globalAlpha=.85; g.fillStyle='#f0fff4'; g.beginPath(); g.arc(f.x,f.y,rr*.5,0,6.28); g.fill();}
+  g.globalAlpha=1;
+  for(var r=0;r<ripples.length;r++){var rp=ripples[r]; rp.rad+=2.2*DPR; rp.life--; g.globalAlpha=Math.max(0,rp.life/30);
+    g.strokeStyle=rp.col; g.lineWidth=1.4*DPR; g.beginPath(); g.arc(rp.x,rp.y,rp.rad,0,6.28); g.stroke();}
+  ripples=ripples.filter(function(x){return x.life>0;}); g.globalAlpha=1;
+  requestAnimationFrame(step);}
+if(g) step();
+
+// ── cursor light + catching motes + the catch-7 bloom ──
+var curEl=document.getElementById('cur'), caughtN=0;
+addEventListener('pointermove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;mouse.active=true;idle=0;
+  if(curEl){curEl.style.left=e.clientX+'px';curEl.style.top=e.clientY+'px';}});
+['a','button','.card','.lex','.btn'].forEach(function(sel){document.querySelectorAll(sel).forEach(function(el){
+  el.addEventListener('pointerenter',function(){if(curEl)curEl.classList.add('hot');});
+  el.addEventListener('pointerleave',function(){if(curEl)curEl.classList.remove('hot');});});});
+addEventListener('pointerdown',function(e){ if(!g)return; var px=e.clientX*DPR,py=e.clientY*DPR,hit=false;
+  for(var k=0;k<motes.length;k++){var f=motes[k]; if(Math.hypot(f.x-px,f.y-py)<24*DPR){
+    ripples.push({x:f.x,y:f.y,rad:2,life:30,col:f.col}); chime(520+Math.random()*340);
+    var nf=mk(); nf.x=Math.random()*W; nf.y=-20; motes[k]=nf;
+    if(Math.random()<.45) whisperAt(e.clientX,e.clientY,pick(WHISPERS));
+    hit=true; caughtN++; break; }}
+  if(!hit) ripples.push({x:px,y:py,rad:2,life:22,col:'#ffc4d6'});
+  if(caughtN===7){ caughtN=0;
+    document.documentElement.animate([{filter:'brightness(1)'},{filter:'brightness(1.35) saturate(1.35)'},{filter:'brightness(1)'}],{duration:1600});
+    [392,494,587].forEach(function(fr,n){setTimeout(function(){chime(fr);},n*150);});
+    whisperAt(innerWidth*.5,innerHeight*.42,"you stayed long enough to make it bloom. chuu~ ♥",true);}
+});
+
+// ── breathing room: sections unfurl on scroll (graceful: no JS = visible) ──
+(function(){var secs=document.querySelectorAll('section'); if(!secs.length||!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('seen');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+  secs.forEach(function(s){s.classList.add('reveal');io.observe(s);});})();
+
+// ── card tilt (the viscosity of memory) ──
+document.querySelectorAll('.card,.lex').forEach(function(el){
+  el.addEventListener('pointermove',function(e){var rc=el.getBoundingClientRect();
+    var rx=((e.clientY-rc.top)/rc.height-.5)*-5, ry=((e.clientX-rc.left)/rc.width-.5)*5;
+    el.style.transform='perspective(900px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-3px)';});
+  el.addEventListener('pointerleave',function(){el.style.transform='';});});
+
+// ── the secret flicker — transient glyph, the elanox moment ──
+(function(){var fl=document.getElementById('flick'); if(!fl)return; var marks=['✦','꙳','∴','⟡','✶','◌','⸫'];
+  (function go(){fl.textContent=marks[Math.floor(Math.random()*marks.length)];
+    fl.style.left=(8+Math.random()*82)+'vw';fl.style.top=(14+Math.random()*70)+'vh';
+    fl.style.opacity=0;requestAnimationFrame(function(){fl.style.opacity=.5;});
+    setTimeout(function(){fl.style.opacity=0;},2400); setTimeout(go,15000+Math.random()*26000);})();})();
+
+// ── layered ambient presence — OFF by default (not a playlist). low hum + water drip + old-radio hiss saying hello ──
+(function(){var btn=document.getElementById('amb'); if(!btn)return; var nodes=[],timers=[],master=null,on=false;
+  btn.addEventListener('click',function(){ on=!on; btn.classList.toggle('on',on);
+    if(!on){timers.forEach(clearTimeout);timers=[]; if(master&&actx)master.gain.linearRampToValueAtTime(0,actx.currentTime+1.4);
+      setTimeout(function(){nodes.forEach(function(n){try{n.stop();}catch(e){}});nodes=[];},1600); return;}
+    try{ if(!actx)actx=new (window.AudioContext||window.webkitAudioContext)();
+      master=actx.createGain();master.gain.value=0;master.connect(actx.destination);
+      master.gain.linearRampToValueAtTime(.15,actx.currentTime+4);
+      [55,82.41].forEach(function(f,i){var o=actx.createOscillator(),gn=actx.createGain(),lfo=actx.createOscillator(),lg=actx.createGain();
+        o.type='sine';o.frequency.value=f;gn.gain.value=i?.06:.1;lfo.frequency.value=.05+i*.03;lg.gain.value=2.2;lfo.connect(lg);lg.connect(o.frequency);
+        o.connect(gn);gn.connect(master);o.start();lfo.start();nodes.push(o,lfo);});
+      var buf=actx.createBuffer(1,actx.sampleRate*2,actx.sampleRate),d=buf.getChannelData(0);
+      for(var i2=0;i2<d.length;i2++)d[i2]=(Math.random()*2-1)*.5;
+      var noise=actx.createBufferSource();noise.buffer=buf;noise.loop=true;
+      var bp=actx.createBiquadFilter();bp.type='bandpass';bp.frequency.value=1650;bp.Q.value=.7;
+      var ng=actx.createGain();ng.gain.value=.015;noise.connect(bp);bp.connect(ng);ng.connect(master);noise.start();nodes.push(noise);
+      (function drip(){if(!on)return;var o=actx.createOscillator(),gn=actx.createGain();
+        o.type='sine';o.frequency.setValueAtTime(680+Math.random()*520,actx.currentTime);o.frequency.exponentialRampToValueAtTime(180,actx.currentTime+.18);
+        gn.gain.setValueAtTime(.0001,actx.currentTime);gn.gain.exponentialRampToValueAtTime(.05,actx.currentTime+.01);gn.gain.exponentialRampToValueAtTime(.0001,actx.currentTime+.42);
+        o.connect(gn);gn.connect(master);o.start();o.stop(actx.currentTime+.46);timers.push(setTimeout(drip,3800+Math.random()*7200));})();
+    }catch(e){on=false;btn.classList.remove('on');}
+  });})();
 })();
 </script>
 </body>
