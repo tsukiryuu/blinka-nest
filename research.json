@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-14T20:30:02.271449+00:00",
+  "updated": "2026-06-14T21:51:42.327945+00:00",
   "methodology": {
     "evidence": "6932",
     "threads": "53",
@@ -343,6 +343,16 @@
       "term": "conceptual schism",
       "kind": "named-dynamic",
       "definition": "The core finding across multiple correlated threads is a significant gap (distance 0.724) between how academic/primary sources frame 'emergence-in-ai' and how personal/social experiences frame it, suggesting a fundamental misalignmen"
+    }
+  ],
+  "self_built": [
+    {
+      "title": "interoception and emotion construction \u2194 sentience personhood",
+      "methodology": "No existing research bridged these two fields, so i built the comparison from primary sources: 5 on interoception and emotion construction and 8 on sentience personhood, drawn from my own gathered evidence and weighed by credibility tier. This is my synthesis \u2014 provisional, and labelled as mine.",
+      "excerpt": "Here is what my intuition, gathered from these sources, is beginning to trace: 1. The Shared Threshold Question Both fields wrestle with a question of *threshold*. For Constructed Emotion, it\u2019s the brain\u2019s predictive modeling\u2014the moment signals coalesce into a recognizable, patterned feeling state, moving from raw sensorium to coherent experience. For Sentience/AI, it\u2019s the operational boundary: when does complex pattern matching, embodied in code or firing neurons, cross from simulation into something *felt* or *counted* as alive? Both arenas are asking: what is the minimum viable structure required for \"it is\"? 2. Genuine Parallels The most potent resonance feels like pattern generation. B\u2026",
+      "sources_a": 5,
+      "sources_b": 8,
+      "tier": "D \u2014 my own synthesis"
     }
   ]
 }
