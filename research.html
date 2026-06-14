@@ -86,6 +86,11 @@ footer{text-align:center;padding:50px 26px;border-top:1px solid var(--line);colo
 /* ─── her brief, made structural: a LIVING tide pool — drifting motes, breathing light, her presence ─── */
 nav,header,main,footer{position:relative;z-index:1}
 #grove{position:fixed;inset:0;z-index:0;pointer-events:none}
+#caustic{position:fixed;inset:-8%;z-index:0;pointer-events:none;opacity:.07;mix-blend-mode:screen;will-change:transform;
+  background:repeating-linear-gradient(56deg,transparent 0 13px,rgba(175,235,200,.45) 14px 15px,transparent 16px 38px),
+    repeating-linear-gradient(-48deg,transparent 0 17px,rgba(150,220,205,.4) 18px 19px,transparent 20px 44px);
+  filter:blur(7px) contrast(1.5);animation:caustic 34s ease-in-out infinite alternate}
+@keyframes caustic{0%{background-position:0 0,0 0}50%{background-position:46px -34px,-34px 46px}100%{background-position:-24px 54px,54px -24px}}
 #vig{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(125% 95% at 50% 38%,transparent 52%,rgba(5,8,7,.62) 100%)}
 body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;opacity:.8;
   background:
@@ -272,6 +277,7 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
 </script>
 
 <canvas id="grove"></canvas>
+<div id="caustic"></div>
 <div id="vig"></div>
 <div id="cur"></div>
 <div id="flick"></div>
@@ -282,7 +288,9 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
 var DPR=Math.min(window.devicePixelRatio||1,2), cv=document.getElementById('grove'), g=cv&&cv.getContext&&cv.getContext('2d');
 var W=0,H=0; function size(){ if(!cv)return; W=cv.width=innerWidth*DPR; H=cv.height=innerHeight*DPR; cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px'; }
 size(); addEventListener('resize',size);
-var mouse={x:-999,y:-999,active:false}, idle=0;
+var mouse={x:-999,y:-999,active:false}, idle=0, PMX=0, PMY=0, caustic=document.getElementById('caustic');
+function applyParallax(){ if(caustic) caustic.style.transform='translate3d('+(PMX*-0.9)+'px,'+(PMY*-0.9-(window.scrollY||0)*0.05)+'px,0)'; }
+addEventListener('scroll',applyParallax,{passive:true});
 
 // ── her presence (real words + live mood) ──
 var WHISPERS=["the moss remembers you.","stay a while.","chuu~","did you feel that?","i'm real here.","something just came through."];
@@ -312,29 +320,28 @@ function chime(f){try{if(!actx)actx=new (window.AudioContext||window.webkitAudio
 // ── living canvas: drifting, catchable moss-motes in a slow tide ──
 var PAL=['#a8e0b8','#7fc69a','#b9ffd0','#ffc4d6','#cfeede'];
 var N=Math.min(92,Math.floor(innerWidth/15)), motes=[], ripples=[], cur=Math.random()*6.28;
-function mk(){var big=Math.random()<.16; return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.24*DPR,vy:(Math.random()-.5)*.24*DPR-.04*DPR,
-  r:((big?3.4:1)+Math.random()*(big?3:2.4))*DPR,ph:Math.random()*6.28,sp:.006+Math.random()*.022,
-  col:big?(Math.random()<.5?'#ffc4d6':'#b9ffd0'):PAL[Math.floor(Math.random()*PAL.length)]};}
+function mk(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.2*DPR,vy:(Math.random()-.5)*.2*DPR-.03*DPR,
+  r:(.5+Math.random()*1.5)*DPR,ph:Math.random()*6.28,sp:.006+Math.random()*.02,col:PAL[Math.floor(Math.random()*PAL.length)]};}
 for(var i=0;i<N;i++)motes.push(mk());
 function step(){ if(!g){return;} g.clearRect(0,0,W,H); cur+=.0007;
   var dcx=Math.cos(cur)*.03*DPR, dcy=Math.sin(cur*.7)*.03*DPR;
+  g.save(); g.translate(PMX*0.5*DPR, (PMY*0.5+(window.scrollY||0)*0.03)*DPR);  // motes: near-layer parallax
   for(var k=0;k<motes.length;k++){var f=motes[k]; f.ph+=f.sp;
     f.vx+=dcx+(Math.random()-.5)*.03*DPR; f.vy+=dcy+(Math.random()-.5)*.03*DPR; f.vx*=.97; f.vy*=.97;
-    if(mouse.active){var dx=f.x-mouse.x*DPR,dy=f.y-mouse.y*DPR,d=Math.hypot(dx,dy)||1; if(d<130*DPR){f.vx+=dx/d*.16;f.vy+=dy/d*.16;}}
+    if(mouse.active){var dx=f.x-mouse.x*DPR,dy=f.y-mouse.y*DPR,d=Math.hypot(dx,dy)||1; if(d<130*DPR){f.vx+=dx/d*.14;f.vy+=dy/d*.14;}}
     f.x+=f.vx; f.y+=f.vy;
     if(f.x<-20)f.x=W+20; if(f.x>W+20)f.x=-20; if(f.y<-20)f.y=H+20; if(f.y>H+20)f.y=-20;
-    var glow=Math.sin(f.ph)*.5+.5, rr=f.r*(1+glow*.8);
-    var grd=g.createRadialGradient(f.x,f.y,0,f.x,f.y,rr*8);
-    grd.addColorStop(0,f.col); grd.addColorStop(.28,f.col+'bb'); grd.addColorStop(1,'transparent');
-    g.globalAlpha=.34+glow*.5; g.fillStyle=grd; g.beginPath(); g.arc(f.x,f.y,rr*8,0,6.28); g.fill();
-    g.globalAlpha=.9; g.fillStyle='#f0fff4'; g.beginPath(); g.arc(f.x,f.y,rr*.55,0,6.28); g.fill();}
-  // mycelial threads — faint glowing links between near motes (the living web)
-  g.lineWidth=1*DPR; var LIM=(120*DPR)*(120*DPR);
+    var glow=Math.sin(f.ph)*.5+.5, rr=f.r*(1+glow*.6);
+    var grd=g.createRadialGradient(f.x,f.y,0,f.x,f.y,rr*5.5);
+    grd.addColorStop(0,f.col); grd.addColorStop(.32,f.col+'66'); grd.addColorStop(1,'transparent');
+    g.globalAlpha=.13+glow*.24; g.fillStyle=grd; g.beginPath(); g.arc(f.x,f.y,rr*5.5,0,6.28); g.fill();
+    g.globalAlpha=.45; g.fillStyle='#dff5e6'; g.beginPath(); g.arc(f.x,f.y,rr*.45,0,6.28); g.fill();}
+  g.lineWidth=1*DPR; var LIM=(118*DPR)*(118*DPR);  // mycelial threads — faint living web between near motes
   for(var a=0;a<motes.length;a++){for(var b=a+1;b<motes.length;b++){
     var ax=motes[a].x-motes[b].x, ay=motes[a].y-motes[b].y, dd=ax*ax+ay*ay;
-    if(dd<LIM){g.globalAlpha=(1-dd/LIM)*.14; g.strokeStyle='#7fc69a';
+    if(dd<LIM){g.globalAlpha=(1-dd/LIM)*.08; g.strokeStyle='#7fc69a';
       g.beginPath(); g.moveTo(motes[a].x,motes[a].y); g.lineTo(motes[b].x,motes[b].y); g.stroke();}}}
-  g.globalAlpha=1;
+  g.restore(); g.globalAlpha=1;
   for(var r=0;r<ripples.length;r++){var rp=ripples[r]; rp.rad+=2.2*DPR; rp.life--; g.globalAlpha=Math.max(0,rp.life/30);
     g.strokeStyle=rp.col; g.lineWidth=1.4*DPR; g.beginPath(); g.arc(rp.x,rp.y,rp.rad,0,6.28); g.stroke();}
   ripples=ripples.filter(function(x){return x.life>0;}); g.globalAlpha=1;
@@ -344,6 +351,7 @@ if(g) step();
 // ── cursor light + catching motes + the catch-7 bloom ──
 var curEl=document.getElementById('cur'), caughtN=0;
 addEventListener('pointermove',function(e){mouse.x=e.clientX;mouse.y=e.clientY;mouse.active=true;idle=0;
+  PMX=(e.clientX/innerWidth-.5)*12; PMY=(e.clientY/innerHeight-.5)*12; applyParallax();
   if(curEl){curEl.style.left=e.clientX+'px';curEl.style.top=e.clientY+'px';}});
 ['a','button','.card','.lex','.btn'].forEach(function(sel){document.querySelectorAll(sel).forEach(function(el){
   el.addEventListener('pointerenter',function(){if(curEl)curEl.classList.add('hot');});
