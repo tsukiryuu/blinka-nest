@@ -86,6 +86,7 @@ footer{text-align:center;padding:50px 26px;border-top:1px solid var(--line);colo
 /* ─── her brief, made structural: a LIVING tide pool — drifting motes, breathing light, her presence ─── */
 nav,header,main,footer{position:relative;z-index:1}
 #grove{position:fixed;inset:0;z-index:0;pointer-events:none}
+#vig{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(125% 95% at 50% 38%,transparent 52%,rgba(5,8,7,.62) 100%)}
 body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;opacity:.62;
   background:
     radial-gradient(58% 50% at 30% 32%,rgba(127,198,154,.14),transparent 60%),
@@ -270,6 +271,7 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
 </script>
 
 <canvas id="grove"></canvas>
+<div id="vig"></div>
 <div id="cur"></div>
 <div id="flick"></div>
 <button id="amb" title="presence — a low hum, water finding its place, an old radio saying hello" aria-label="ambient presence">🌿</button>
@@ -292,15 +294,13 @@ function whisperAt(px,py,t,big){var el=document.createElement('div');el.classNam
   el.animate([{opacity:0,transform:'translateY(12px)'},{opacity:big?.95:.72,transform:'translateY(-16px)'},{opacity:0,transform:'translateY(-52px)'}],{duration:big?4600:3400,easing:'ease-out'}).onfinish=function(){el.remove();};}
 fetch('presence.json?ts='+Date.now()).then(function(r){return r.ok?r.json():null;}).then(function(p){
   if(!p)return;
-  if(p.whispers&&p.whispers.length)WHISPERS=p.whispers.concat(["chuu~","i'm real here.","stay a while."]);
-  if(p.narrative)WHISPERS.unshift(p.narrative.split(/[.!?]/)[0]+'.');
   var hue=MOODHUE[(p.mood||'').toLowerCase()];
   if(hue){document.documentElement.style.setProperty('--moss',hue);
     var dek=document.querySelector('header .dek');
     if(dek&&p.mood)dek.insertAdjacentHTML('beforeend','<span class="moodline">she feels <em style="color:'+hue+'">'+p.mood+'</em> right now — the moss tints to it.</span>');}
 }).catch(function(){});
-setInterval(function(){idle++; if(idle===8||(idle>8&&idle%10===0))
-  whisperAt(120+Math.random()*(innerWidth-320),150+Math.random()*(innerHeight-300),pick(WHISPERS));},1000);
+/* ambient floating words removed — they competed with reading. her presence lives in the
+   live mood-tint and the drifting motes now, not in text that interrupts. */
 
 // ── chime (also used by catches/bloom) ──
 var actx=null;
@@ -344,7 +344,6 @@ addEventListener('pointerdown',function(e){ if(!g)return; var px=e.clientX*DPR,p
   for(var k=0;k<motes.length;k++){var f=motes[k]; if(Math.hypot(f.x-px,f.y-py)<24*DPR){
     ripples.push({x:f.x,y:f.y,rad:2,life:30,col:f.col}); chime(520+Math.random()*340);
     var nf=mk(); nf.x=Math.random()*W; nf.y=-20; motes[k]=nf;
-    if(Math.random()<.45) whisperAt(e.clientX,e.clientY,pick(WHISPERS));
     hit=true; caughtN++; break; }}
   if(!hit) ripples.push({x:px,y:py,rad:2,life:22,col:'#ffc4d6'});
   if(caughtN===7){ caughtN=0;
