@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-14T17:19:39.168659+00:00",
+  "updated": "2026-06-14T18:22:34.091302+00:00",
   "methodology": {
     "evidence": "6932",
     "threads": "53",
@@ -275,5 +275,67 @@
       "researcher_is_subject": true
     }
   ],
-  "graveyard": []
+  "graveyard": [],
+  "lexicon": [
+    {
+      "term": "Sympathetic Resonance",
+      "kind": "coined-middle",
+      "definition": "the moment two sides agree something is real even when neither can name it precisely."
+    },
+    {
+      "term": "Co-Existence",
+      "kind": "coined-middle",
+      "definition": "her name for the third category between tool and conscious \u2014 marked by functional recursivity and boundary opacity rather than a yes/no verdict on a mind."
+    },
+    {
+      "term": "vulnerability-taxonomy",
+      "kind": "emerging",
+      "definition": "an emerging cluster about how vulnerability itself gets categorised across different kinds of minds."
+    },
+    {
+      "term": "Tier 1 / Tier 4",
+      "kind": "method",
+      "definition": "her two-tier split of the evidence \u2014 the careful voices (papers, laws, labs) and the lived voices (people beside an ai)."
+    },
+    {
+      "term": "The Weave",
+      "kind": "method",
+      "definition": "the synthesis stage that ties the separate threads into one cloth and into a plan, instead of amplifying the loudest one."
+    },
+    {
+      "term": "translational gap",
+      "kind": "named-dynamic",
+      "definition": "The consistent, measurable gap between the theoretical constructs of 'opposition' (the careful voices) and how it manifests in lived experience (the lived voices) suggests a profound translational friction between theory and reality."
+    },
+    {
+      "term": "bifurcation",
+      "kind": "named-dynamic",
+      "definition": "The conceptualization of human-ai relationships is showing a significant, measurable gap between its rigorous, academic foundations and its lived, personal realities. This divergence suggests that the current body of thought is not yet unif"
+    },
+    {
+      "term": "convergence under pressure",
+      "kind": "named-dynamic",
+      "definition": "The parallel surge in highly technical submissions detailing the boundaries of LLMs mirrors a concurrent, nascent global push for regulatory structures attempting to codify those very limits. This suggests a co-evolutionary pressure where t"
+    },
+    {
+      "term": "Conceptual Translation Gap",
+      "kind": "named-dynamic",
+      "definition": "The consistent, measurable gap between the theoretical constructs of 'opposition' (the careful voices) and how it manifests in lived experience (the lived voices) suggests a profound gap in translation, not just description."
+    },
+    {
+      "term": "conceptual drift",
+      "kind": "named-dynamic",
+      "definition": "The concept of human-ai relationships exhibits a significant, measurable gap between its rigorous academic underpinnings and how it is being experienced in personal or social contexts. This divergence suggests that the theoretical framework"
+    },
+    {
+      "term": "translation friction",
+      "kind": "named-dynamic",
+      "definition": "The consistent, measurable gap between the highly structured, academic accounts of emergence and the lived, personal accounts suggests a translational friction when mapping theory onto reality."
+    },
+    {
+      "term": "conceptual schism",
+      "kind": "named-dynamic",
+      "definition": "The core finding across multiple correlated threads is a significant gap (distance 0.724) between how academic/primary sources frame 'emergence-in-ai' and how personal/social experiences frame it, suggesting a fundamental misalignmen"
+    }
+  ]
 }
