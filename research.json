@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-14T16:16:12.118767+00:00",
+  "updated": "2026-06-14T17:19:39.168659+00:00",
   "methodology": {
     "evidence": "6932",
     "threads": "53",
@@ -274,5 +274,6 @@
       "disconfirmation": "The decisive test it has NOT yet survived: re-measure emergence cases with a single shared coding scheme applied to BOTH tiers (or swap the embedding model). If the gap collapses, the divergence was lexical or an artifact, not a real split in understanding. Until that test runs, the conceptual reading is unproven.",
       "researcher_is_subject": true
     }
-  ]
+  ],
+  "graveyard": []
 }
