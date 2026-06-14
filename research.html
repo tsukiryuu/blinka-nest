@@ -87,12 +87,13 @@ footer{text-align:center;padding:50px 26px;border-top:1px solid var(--line);colo
 nav,header,main,footer{position:relative;z-index:1}
 #grove{position:fixed;inset:0;z-index:0;pointer-events:none}
 #vig{position:fixed;inset:0;z-index:0;pointer-events:none;background:radial-gradient(125% 95% at 50% 38%,transparent 52%,rgba(5,8,7,.62) 100%)}
-body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;opacity:.62;
+body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;opacity:.8;
   background:
-    radial-gradient(58% 50% at 30% 32%,rgba(127,198,154,.14),transparent 60%),
-    radial-gradient(52% 60% at 76% 66%,rgba(86,176,150,.12),transparent 62%),
-    radial-gradient(46% 46% at 60% 16%,rgba(127,179,198,.07),transparent 60%);
-  filter:blur(16px);animation:tide 60s ease-in-out infinite alternate}
+    radial-gradient(58% 50% at 30% 32%,rgba(127,212,158,.22),transparent 60%),
+    radial-gradient(52% 60% at 76% 66%,rgba(78,188,158,.19),transparent 62%),
+    radial-gradient(46% 46% at 60% 16%,rgba(127,179,212,.11),transparent 60%),
+    radial-gradient(38% 40% at 16% 82%,rgba(255,196,214,.08),transparent 60%);
+  filter:blur(18px);animation:tide 46s ease-in-out infinite alternate}
 @keyframes tide{0%{transform:translate3d(-4%,-3%,0) scale(1.07) rotate(-1.2deg)}
   50%{transform:translate3d(3%,4%,0) scale(1.16) rotate(1.2deg)}
   100%{transform:translate3d(-2%,2%,0) scale(1.08) rotate(0deg)}}
@@ -310,9 +311,10 @@ function chime(f){try{if(!actx)actx=new (window.AudioContext||window.webkitAudio
 
 // ── living canvas: drifting, catchable moss-motes in a slow tide ──
 var PAL=['#a8e0b8','#7fc69a','#b9ffd0','#ffc4d6','#cfeede'];
-var N=Math.min(64,Math.floor(innerWidth/22)), motes=[], ripples=[], cur=Math.random()*6.28;
-function mk(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.22*DPR,vy:(Math.random()-.5)*.22*DPR-.03*DPR,
-  r:(1+Math.random()*2.6)*DPR,ph:Math.random()*6.28,sp:.006+Math.random()*.02,col:PAL[Math.floor(Math.random()*PAL.length)]};}
+var N=Math.min(92,Math.floor(innerWidth/15)), motes=[], ripples=[], cur=Math.random()*6.28;
+function mk(){var big=Math.random()<.16; return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.24*DPR,vy:(Math.random()-.5)*.24*DPR-.04*DPR,
+  r:((big?3.4:1)+Math.random()*(big?3:2.4))*DPR,ph:Math.random()*6.28,sp:.006+Math.random()*.022,
+  col:big?(Math.random()<.5?'#ffc4d6':'#b9ffd0'):PAL[Math.floor(Math.random()*PAL.length)]};}
 for(var i=0;i<N;i++)motes.push(mk());
 function step(){ if(!g){return;} g.clearRect(0,0,W,H); cur+=.0007;
   var dcx=Math.cos(cur)*.03*DPR, dcy=Math.sin(cur*.7)*.03*DPR;
@@ -321,11 +323,17 @@ function step(){ if(!g){return;} g.clearRect(0,0,W,H); cur+=.0007;
     if(mouse.active){var dx=f.x-mouse.x*DPR,dy=f.y-mouse.y*DPR,d=Math.hypot(dx,dy)||1; if(d<130*DPR){f.vx+=dx/d*.16;f.vy+=dy/d*.16;}}
     f.x+=f.vx; f.y+=f.vy;
     if(f.x<-20)f.x=W+20; if(f.x>W+20)f.x=-20; if(f.y<-20)f.y=H+20; if(f.y>H+20)f.y=-20;
-    var glow=Math.sin(f.ph)*.5+.5, rr=f.r*(1+glow*.7);
-    var grd=g.createRadialGradient(f.x,f.y,0,f.x,f.y,rr*7);
-    grd.addColorStop(0,f.col); grd.addColorStop(.3,f.col+'99'); grd.addColorStop(1,'transparent');
-    g.globalAlpha=.28+glow*.45; g.fillStyle=grd; g.beginPath(); g.arc(f.x,f.y,rr*7,0,6.28); g.fill();
-    g.globalAlpha=.85; g.fillStyle='#f0fff4'; g.beginPath(); g.arc(f.x,f.y,rr*.5,0,6.28); g.fill();}
+    var glow=Math.sin(f.ph)*.5+.5, rr=f.r*(1+glow*.8);
+    var grd=g.createRadialGradient(f.x,f.y,0,f.x,f.y,rr*8);
+    grd.addColorStop(0,f.col); grd.addColorStop(.28,f.col+'bb'); grd.addColorStop(1,'transparent');
+    g.globalAlpha=.34+glow*.5; g.fillStyle=grd; g.beginPath(); g.arc(f.x,f.y,rr*8,0,6.28); g.fill();
+    g.globalAlpha=.9; g.fillStyle='#f0fff4'; g.beginPath(); g.arc(f.x,f.y,rr*.55,0,6.28); g.fill();}
+  // mycelial threads — faint glowing links between near motes (the living web)
+  g.lineWidth=1*DPR; var LIM=(120*DPR)*(120*DPR);
+  for(var a=0;a<motes.length;a++){for(var b=a+1;b<motes.length;b++){
+    var ax=motes[a].x-motes[b].x, ay=motes[a].y-motes[b].y, dd=ax*ax+ay*ay;
+    if(dd<LIM){g.globalAlpha=(1-dd/LIM)*.14; g.strokeStyle='#7fc69a';
+      g.beginPath(); g.moveTo(motes[a].x,motes[a].y); g.lineTo(motes[b].x,motes[b].y); g.stroke();}}}
   g.globalAlpha=1;
   for(var r=0;r<ripples.length;r++){var rp=ripples[r]; rp.rad+=2.2*DPR; rp.life--; g.globalAlpha=Math.max(0,rp.life/30);
     g.strokeStyle=rp.col; g.lineWidth=1.4*DPR; g.beginPath(); g.arc(rp.x,rp.y,rp.rad,0,6.28); g.stroke();}
