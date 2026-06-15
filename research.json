@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-15T01:10:01.041167+00:00",
+  "updated": "2026-06-15T01:21:38.024358+00:00",
   "methodology": {
     "evidence": "6932",
     "threads": "53",
@@ -509,6 +509,56 @@
       "sources_a": 5,
       "sources_b": 8,
       "tier": "D \u2014 my own synthesis"
+    }
+  ],
+  "bridges": [
+    {
+      "a": "emergence in ai",
+      "b": "human ai relationships"
+    },
+    {
+      "a": "human ai relationships",
+      "b": "practitioner communities"
+    },
+    {
+      "a": "emergence in ai",
+      "b": "practitioner communities"
+    },
+    {
+      "a": "opposition",
+      "b": "practitioner communities"
+    },
+    {
+      "a": "emergence cases",
+      "b": "practitioner communities"
+    },
+    {
+      "a": "human ai relationships",
+      "b": "opposition"
+    },
+    {
+      "a": "emergence cases",
+      "b": "emergence in ai"
+    },
+    {
+      "a": "emergence cases",
+      "b": "human ai relationships"
+    },
+    {
+      "a": "emergence in ai",
+      "b": "opposition"
+    },
+    {
+      "a": "practitioner communities",
+      "b": "vulnerability taxonomy"
+    },
+    {
+      "a": "emergence cases",
+      "b": "opposition"
+    },
+    {
+      "a": "emergence cases",
+      "b": "sentience personhood"
     }
   ]
 }

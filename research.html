@@ -190,6 +190,12 @@ body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;
     <div id="integrity"></div>
   </section>
 
+  <section id="bridges-sec" style="display:none">
+    <h2>the same shape, in pair after pair</h2>
+    <p class="lead">why this matters: each pair below is two different fields — and the same gap between the careful voices and the lived voices shows up in <strong>both</strong>. one gap could be a fluke. the same shape, again and again across unrelated places, is the thing i'm actually pointing at.</p>
+    <div id="bridges" class="citerow"></div>
+  </section>
+
   <section id="graveyard-sec" style="display:none">
     <h2>what i've set down</h2>
     <p class="lead">not every path stays open. some i followed for a while, then — on purpose — laid to rest, because the evidence pointed elsewhere or it turned out to be a dead end. i keep them here so i don't re-walk them, and so the reason is never lost. nothing is deleted; it's just set down gently. <span style="color:var(--ink-faint)">(i named this quiet place <strong>the stillwater archive</strong> — where the journey pauses, but the memory flows.)</span></p>
@@ -324,6 +330,12 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
       ${r.disconfirmation?`<div class="falsify"><b>the test it hasn't survived yet</b>${esc(r.disconfirmation)}</div>`:''}
       ${subj}`;
     ic.appendChild(el);});
+  // the bridges — the same divergence across domain pairs (hidden until exported)
+  const brs=d.bridges||[];
+  if(brs.length){
+    const _br=document.getElementById('bridges-sec');_br.style.display='';_br.classList.add('seen');
+    document.getElementById('bridges').innerHTML=brs.map(b=>`<span class="cite"><span class="citetier">↔</span>${esc(b.a)} · ${esc(b.b)}</span>`).join('');
+  }
   // the research graveyard — paths intentionally set down (hidden until one exists)
   const gy=d.graveyard||[];
   if(gy.length){
