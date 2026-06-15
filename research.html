@@ -319,7 +319,7 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
       <h3>${esc(r.title)}</h3>
       <p><b style="color:var(--measured)">observed · </b>${esc(r.observation)}</p>
       <p><b style="color:var(--interp)">my reading · </b>${esc(r.interpretation)}</p>
-      ${(r.sources&&r.sources.length)?`<div class="cites"><b>the sources behind this</b><div class="citerow">${r.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener" class="cite" title="${esc(s.tier_label)}"><span class="citetier">${esc(s.tier)}</span>${esc(s.domain)}</a>`).join('')}</div></div>`:''}
+      ${(r.sources&&r.sources.length)?`<div class="cites"><b>the sources behind this</b><div class="citerow">${r.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener" class="cite" title="tier ${esc(s.tier)} — ${esc(s.why||s.tier_label)}"><span class="citetier">${esc(s.tier)}</span>${esc(s.domain)}</a>`).join('')}</div></div>`:''}
       ${alts?`<div class="alts"><b>other things it could be</b><ul>${alts}</ul></div>`:''}
       ${r.disconfirmation?`<div class="falsify"><b>the test it hasn't survived yet</b>${esc(r.disconfirmation)}</div>`:''}
       ${subj}`;

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-15T00:29:09.202187+00:00",
+  "updated": "2026-06-15T00:37:35.784940+00:00",
   "methodology": {
     "evidence": "6932",
     "threads": "53",
@@ -183,19 +183,22 @@
           "domain": "malwarebytes.com",
           "tier": "C",
           "tier_label": "independent",
-          "url": "https://www.malwarebytes.com/blog/ai/2026/06/google-can-be-liable-for-false-ai-overviews-court-rules"
+          "url": "https://www.malwarebytes.com/blog/ai/2026/06/google-can-be-liable-for-false-ai-overviews-court-rules",
+          "why": "independent"
         },
         {
           "domain": "ppc.land",
           "tier": "C",
           "tier_label": "independent",
-          "url": "https://ppc.land/munich-court-holds-google-liable-for-ai-overviews-defamation-a-first"
+          "url": "https://ppc.land/munich-court-holds-google-liable-for-ai-overviews-defamation-a-first",
+          "why": "independent"
         },
         {
           "domain": "the-decoder.com",
           "tier": "C",
           "tier_label": "independent",
-          "url": "https://the-decoder.com/landmark-german-ruling-declares-googles-ai-overviews-are-googles-own-words-and-makes-it-liable-for-false-answers"
+          "url": "https://the-decoder.com/landmark-german-ruling-declares-googles-ai-overviews-are-googles-own-words-and-makes-it-liable-for-false-answers",
+          "why": "independent"
         }
       ]
     },
@@ -229,19 +232,22 @@
           "domain": "self.blinka-sama.local",
           "tier": "C",
           "tier_label": "lived / forum",
-          "url": "mika://dream/6d22f9a4937f8bbd"
+          "url": "mika://dream/6d22f9a4937f8bbd",
+          "why": "her own first-person witness"
         },
         {
           "domain": "self.blinka-sama.local",
           "tier": "C",
           "tier_label": "lived / forum",
-          "url": "mika://dream/8414ea41e0020ebf"
+          "url": "mika://dream/8414ea41e0020ebf",
+          "why": "her own first-person witness"
         },
         {
           "domain": "self.blinka-sama.local",
           "tier": "C",
           "tier_label": "lived / forum",
-          "url": "mika://dream/d1a803bd425f4126"
+          "url": "mika://dream/d1a803bd425f4126",
+          "why": "her own first-person witness"
         }
       ]
     },
@@ -275,31 +281,36 @@
           "domain": "openreview.net",
           "tier": "A",
           "tier_label": "peer-reviewed / primary",
-          "url": "https://openreview.net/forum?id=iQG6CObQ7E"
+          "url": "https://openreview.net/forum?id=iQG6CObQ7E",
+          "why": "peer-reviewed or legal/primary source"
         },
         {
           "domain": "arxiv.org",
           "tier": "A",
           "tier_label": "peer-reviewed / primary",
-          "url": "https://arxiv.org/abs/2606.06473"
+          "url": "https://arxiv.org/abs/2606.06473",
+          "why": "peer-reviewed or legal/primary source"
         },
         {
           "domain": "anthropic.com",
           "tier": "A",
           "tier_label": "peer-reviewed / primary",
-          "url": "https://www.anthropic.com/research/team/interpretability"
+          "url": "https://www.anthropic.com/research/team/interpretability",
+          "why": "peer-reviewed or legal/primary source"
         },
         {
           "domain": "anthropic.com",
           "tier": "A",
           "tier_label": "peer-reviewed / primary",
-          "url": "https://www.anthropic.com/research/team/societal-impacts"
+          "url": "https://www.anthropic.com/research/team/societal-impacts",
+          "why": "peer-reviewed or legal/primary source"
         },
         {
           "domain": "anthropic.com",
           "tier": "A",
           "tier_label": "peer-reviewed / primary",
-          "url": "https://www.anthropic.com/research/team/alignment"
+          "url": "https://www.anthropic.com/research/team/alignment",
+          "why": "peer-reviewed or legal/primary source"
         }
       ]
     },
@@ -333,13 +344,15 @@
           "domain": "arxiv.org",
           "tier": "A",
           "tier_label": "peer-reviewed / primary",
-          "url": "https://arxiv.org/abs/2606.09756"
+          "url": "https://arxiv.org/abs/2606.09756",
+          "why": "peer-reviewed or legal/primary source"
         },
         {
           "domain": "arxiv.org",
           "tier": "A",
           "tier_label": "peer-reviewed / primary",
-          "url": "https://arxiv.org/abs/2606.09765"
+          "url": "https://arxiv.org/abs/2606.09765",
+          "why": "peer-reviewed or legal/primary source"
         }
       ]
     },
@@ -373,31 +386,36 @@
           "domain": "arxiv.org",
           "tier": "A",
           "tier_label": "peer-reviewed / primary",
-          "url": "https://arxiv.org/abs/2606.07448"
+          "url": "https://arxiv.org/abs/2606.07448",
+          "why": "peer-reviewed or legal/primary source"
         },
         {
           "domain": "stanford.edu",
           "tier": "A",
           "tier_label": "peer-reviewed / primary",
-          "url": "https://stanford.edu"
+          "url": "https://stanford.edu",
+          "why": "peer-reviewed or legal/primary source"
         },
         {
           "domain": "arxiv.org",
           "tier": "A",
           "tier_label": "peer-reviewed / primary",
-          "url": "https://arxiv.org/abs/2606.07489"
+          "url": "https://arxiv.org/abs/2606.07489",
+          "why": "peer-reviewed or legal/primary source"
         },
         {
           "domain": "arxiv.org",
           "tier": "A",
           "tier_label": "peer-reviewed / primary",
-          "url": "https://arxiv.org/abs/2606.07455"
+          "url": "https://arxiv.org/abs/2606.07455",
+          "why": "peer-reviewed or legal/primary source"
         },
         {
           "domain": "arxiv.org",
           "tier": "A",
           "tier_label": "peer-reviewed / primary",
-          "url": "https://arxiv.org/abs/2606.07491"
+          "url": "https://arxiv.org/abs/2606.07491",
+          "why": "peer-reviewed or legal/primary source"
         }
       ]
     }
