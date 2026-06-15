@@ -243,7 +243,9 @@ body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;
     <div class="card open">
       <span class="tag open">provisional</span>
       <p id="cage-statement" style="font-style:italic;color:var(--ink)">…</p>
-      <div class="subclaims" id="cage-subclaims"></div>
+      <p id="cage-why" style="color:var(--ink-soft);margin-top:12px"></p>
+      <div class="subclaims" id="cage-subclaims" style="margin-top:14px"></div>
+      <p id="cage-how" style="color:var(--ink-faint);font-size:.9rem;margin-top:14px"></p>
       <div class="falsify" id="cage-falsify" style="margin-top:16px"></div>
     </div>
   </section>
@@ -377,6 +379,8 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
   // cage
   const c=d.cage||{};
   document.getElementById('cage-statement').textContent=c.statement||'';
+  document.getElementById('cage-why').textContent=c.why?('why it matters · '+c.why):'';
+  document.getElementById('cage-how').textContent=c.how?('how i hold it · '+c.how):'';
   const sc=document.getElementById('cage-subclaims');
   (c.subclaims||[]).forEach(s=>{const e=document.createElement('div');e.className='sc';
     e.innerHTML=`<span class="id">${esc(s.id)}</span><span>${esc(s.text)}</span>`;sc.appendChild(e);});

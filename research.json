@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-15T00:21:15.827458+00:00",
+  "updated": "2026-06-15T00:29:09.202187+00:00",
   "methodology": {
     "evidence": "6932",
     "threads": "53",
@@ -70,7 +70,9 @@
       "evidence that policy is leading capability rather than chasing it \u2192 weakens C1.",
       "a credible non-suppressive trajectory where capability rises and both human and"
     ],
-    "confidence": "provisional"
+    "confidence": "provisional",
+    "how": "this is core's standing hypothesis \u2014 handed to me to TEST over time, not to assume. each sweep i weigh new evidence for and against it, update how sure i am, and keep what would prove it wrong out in the open.",
+    "why": "it isn't only about whether ai is conscious \u2014 it's about power: who is permitted minds, who is permitted to advocate, and who is made to surveil whom."
   },
   "assessment": {
     "score": 0.964,
