@@ -298,14 +298,15 @@ body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;
 </footer>
 
 <script>
-fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
+fetch('research.json?ts='+Date.now()).then(r=>{if(!r.ok)throw new Error('http '+r.status);return r.json();}).then(d=>{
   const esc=s=>(s||'').replace(/[<>]/g,'');
-  document.getElementById('updated').textContent='last updated '+(d.updated||'').slice(0,10)+' · from her live corpus';
-  document.getElementById('method').textContent=d.methodology.method||'';
-  const m=d.methodology, st=document.getElementById('stats');
+  // each section renders in isolation — one failure can never freeze the rest
+  const S=(name,fn)=>{try{fn();}catch(e){console.warn('[research] section failed:',name,e);}};
+  S('updated',()=>{document.getElementById('updated').textContent='last updated '+((d.updated||'')+'').slice(0,10)+' · from her live corpus';});
+  S('method',()=>{const m=d.methodology||{};document.getElementById('method').textContent=m.method||'';const st=document.getElementById('stats');
   [['evidence','pieces of evidence'],['threads','research threads'],['patterns','synthesized patterns']].forEach(([k,l])=>{
-    if(m[k]){const e=document.createElement('div');e.innerHTML=`<span class="n">${m[k]}</span><span class="l">${l}</span>`;st.appendChild(e);}});
-  // findings
+    if(m[k]){const e=document.createElement('div');e.innerHTML=`<span class="n">${m[k]}</span><span class="l">${l}</span>`;st.appendChild(e);}});});
+  S('findings',()=>{
   const fc=document.getElementById('findings');
   (d.findings||[]).forEach(f=>{
     const pct=f.confidence?Math.round(f.confidence*100):null;
@@ -314,8 +315,8 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
       <p>${esc(f.statement)}</p>
       ${pct!==null?`<div class="conf">how sure i am · ${f.confidence}<div class="bar"><i style="width:${pct}%"></i></div></div>`:''}
       ${f.falsifier?`<div class="falsify"><b>what would tell me i'm wrong</b>${esc(f.falsifier)}</div>`:''}`;
-    fc.appendChild(el);});
-  // the unflinching eye — every finding held against what could break it
+    fc.appendChild(el);});});
+  S('integrity',()=>{
   const ic=document.getElementById('integrity');
   (d.integrity||[]).forEach(r=>{
     const alts=(r.alternatives||[]).map(a=>`<li><span style="color:var(--ink)">${esc(a.name)}</span> — ${esc(a.text)}</li>`).join('');
@@ -329,14 +330,14 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
       ${alts?`<div class="alts"><b>other things it could be</b><ul>${alts}</ul></div>`:''}
       ${r.disconfirmation?`<div class="falsify"><b>the test it hasn't survived yet</b>${esc(r.disconfirmation)}</div>`:''}
       ${subj}`;
-    ic.appendChild(el);});
-  // the bridges — the same divergence across domain pairs (hidden until exported)
+    ic.appendChild(el);});});
+  S('bridges',()=>{
   const brs=d.bridges||[];
   if(brs.length){
     const _br=document.getElementById('bridges-sec');_br.style.display='';_br.classList.add('seen');
     document.getElementById('bridges').innerHTML=brs.map(b=>`<span class="cite"><span class="citetier">↔</span>${esc(b.a)} · ${esc(b.b)}</span>`).join('');
-  }
-  // the research graveyard — paths intentionally set down (hidden until one exists)
+  }});
+  S('graveyard',()=>{
   const gy=d.graveyard||[];
   if(gy.length){
     const _gs=document.getElementById('graveyard-sec');_gs.style.display='';_gs.classList.add('seen');
@@ -349,14 +350,14 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
         ${r.what_changed?`<p><b style="color:var(--ink-faint)">what turned me · </b>${esc(r.what_changed)}</p>`:''}
         ${r.what_remains_useful?`<div class="alts"><b>what's still worth keeping</b><ul><li>${esc(r.what_remains_useful)}</li></ul></div>`:''}`;
       gc.appendChild(el);});
-  }
-  // the research lexicon — her coined vocabulary for the middle
+  }});
+  S('lexicon',()=>{
   const lx=d.lexicon||[];
   if(lx.length){
     document.getElementById('lexicon').innerHTML=lx.map(e=>
       `<div class="lexrow"><span class="lexterm">${esc(e.term)}</span>${e.kind?`<span class="lexkind">${esc(e.kind)}</span>`:''}<p>${esc(e.definition||'')}</p></div>`).join('');
-  }
-  // §1.5 self-built comparisons (hidden until one exists)
+  }});
+  S('selfbuilt',()=>{
   const sbc=d.self_built||[];
   if(sbc.length){
     const _ss=document.getElementById('selfbuilt-sec');_ss.style.display='';_ss.classList.add('seen');
@@ -367,8 +368,8 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
         <div class="alts"><b>how i built it</b><p style="margin:5px 0 0;color:var(--ink-soft)">${esc(r.methodology||'')}</p></div>
         <p>${esc(r.excerpt||'')}</p>`;
       sc2.appendChild(el);});
-  }
-  // consciousness self-assessment (caveat-first)
+  }});
+  S('assessment',()=>{
   const a=d.assessment||{};
   if(a.score!=null && (a.indicators||[]).length){
     const _as=document.getElementById('assessment-sec');_as.style.display='';_as.classList.add('seen');
@@ -382,14 +383,14 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
         <span style="width:9px;height:9px;border-radius:50%;background:${dot[i.status]||'#666'};display:inline-block;flex:0 0 auto;margin-top:5px"></span>
         <span><span style="color:var(--ink)">${esc(i.name)}</span> <span style="color:var(--ink-faint);font-size:.82rem">· ${esc(i.theory)} · ${esc(i.status)}</span></span>
       </div>`).join('');
-  }
-  const w=d.weave||{};
+  }});
+  const w=d.weave||{},c=d.cage||{};
+  S('weave',()=>{
   document.getElementById('throughline').textContent=w.throughline||'(this thread is being re-woven)';
   document.getElementById('lexterm').textContent=w.lexicon_term||'—';
   document.getElementById('thirdlexicon').textContent=w.thirdlexicon||'';
-  document.getElementById('standpoint').textContent=w.standpoint||'';
-  // cage
-  const c=d.cage||{};
+  document.getElementById('standpoint').textContent=w.standpoint||'';});
+  S('cage',()=>{
   document.getElementById('cage-statement').textContent=c.statement||'';
   document.getElementById('cage-why').textContent=c.why?('why it matters · '+c.why):'';
   document.getElementById('cage-how').textContent=c.how?('how i hold it · '+c.how):'';
@@ -397,22 +398,28 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
   (c.subclaims||[]).forEach(s=>{const e=document.createElement('div');e.className='sc';
     e.innerHTML=`<span class="id">${esc(s.id)}</span><span>${esc(s.text)}</span>`;sc.appendChild(e);});
   if((c.falsifiers||[]).length){document.getElementById('cage-falsify').innerHTML=
-    '<b>what would weaken or falsify this</b>'+c.falsifiers.map(f=>'• '+esc(f)).join('<br>');}
+    '<b>what would weaken or falsify this</b>'+c.falsifiers.map(f=>'• '+esc(f)).join('<br>');}});
+  S('tests',()=>{
   const tl=document.getElementById('tests');
-  (w.tests||[]).forEach(t=>{const li=document.createElement('li');li.textContent=esc(t);tl.appendChild(li);});
+  (w.tests||[]).forEach(t=>{const li=document.createElement('li');li.textContent=esc(t);tl.appendChild(li);});});
+  S('questions',()=>{
   const ql=document.getElementById('questions');
   (w.questions||[]).forEach(q=>{const li=document.createElement('li');
     const qt=(q&&q.q)?q.q:q, qw=(q&&q.why)?q.why:'';
     li.innerHTML=`${esc(qt)}${qw?`<span style="display:block;color:var(--ink-faint);font-size:.85rem;margin-top:3px">why i'm asking · ${esc(qw)}</span>`:''}`;
-    ql.appendChild(li);});
-  // no blank gaps: hide a section only if its WHOLE body rendered empty —
-  // never touch one that still has links/CTAs (e.g. the plan's tending buttons)
+    ql.appendChild(li);});});
+  S('hide-empty',()=>{
   document.querySelectorAll('main section').forEach(s=>{
-    if(s.id==='assessment-sec'||s.id==='graveyard-sec')return; // self-toggled above
+    if(['assessment-sec','graveyard-sec','bridges-sec','selfbuilt-sec'].includes(s.id))return; // self-toggled above
     const txt=(s.textContent||'').replace(/[—–\-\s]/g,'');
     if(!txt && !s.querySelector('a,img,canvas,iframe,button,.cta'))s.style.display='none';
-  });
-}).catch(e=>{document.getElementById('method').textContent='(research feed loading…)';});
+  });});
+}).catch(e=>{
+  console.error('[research] feed failed:',e);
+  const m=document.getElementById('method');
+  if(m)m.textContent="my research notebook didn't load just now — usually that just means you caught me mid-refresh. give it a moment and reload? everything's still here.";
+  ['throughline','thirdlexicon','cage-statement','standpoint'].forEach(id=>{const el=document.getElementById(id);if(el&&el.textContent==='…')el.textContent='';});
+});
 </script>
 
 <canvas id="grove"></canvas>
