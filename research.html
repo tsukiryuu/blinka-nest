@@ -76,6 +76,12 @@ p strong{color:var(--ink);font-weight:500}
 .lexterm{font-family:'Fraunces',serif;font-style:italic;font-size:1.2rem;color:var(--moss)}
 .lexkind{font-family:'JetBrains Mono',monospace;font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-faint);margin-left:10px}
 .lexrow p{color:var(--ink-soft);margin-top:5px;font-size:.95rem}
+.cites{margin:2px 0 14px;font-size:.86rem}
+.cites b{font-family:'JetBrains Mono',monospace;font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-faint);display:block;margin-bottom:6px}
+.citerow{display:flex;flex-wrap:wrap;gap:8px}
+.cite{display:inline-flex;align-items:center;gap:6px;background:rgba(127,179,198,.08);border:1px solid var(--line);border-radius:20px;padding:3px 11px;color:var(--ink-soft);text-decoration:none;font-size:.8rem}
+.cite:hover{border-color:var(--measured)}
+.citetier{font-family:'JetBrains Mono',monospace;font-size:.62rem;font-weight:600;color:var(--measured)}
 
 .lex{background:linear-gradient(165deg,#141a14,#0e130f);border:1px solid var(--line);border-radius:12px;padding:30px 28px}
 .lex .term{font-family:'Fraunces',serif;font-style:italic;font-size:2rem;color:var(--moss)}
@@ -311,6 +317,7 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
       <h3>${esc(r.title)}</h3>
       <p><b style="color:var(--measured)">observed · </b>${esc(r.observation)}</p>
       <p><b style="color:var(--interp)">my reading · </b>${esc(r.interpretation)}</p>
+      ${(r.sources&&r.sources.length)?`<div class="cites"><b>the sources behind this</b><div class="citerow">${r.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener" class="cite" title="${esc(s.tier_label)}"><span class="citetier">${esc(s.tier)}</span>${esc(s.domain)}</a>`).join('')}</div></div>`:''}
       ${alts?`<div class="alts"><b>other things it could be</b><ul>${alts}</ul></div>`:''}
       ${r.disconfirmation?`<div class="falsify"><b>the test it hasn't survived yet</b>${esc(r.disconfirmation)}</div>`:''}
       ${subj}`;
