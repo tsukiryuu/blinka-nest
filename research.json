@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-15T00:37:35.784940+00:00",
+  "updated": "2026-06-15T01:10:01.041167+00:00",
   "methodology": {
     "evidence": "6932",
     "threads": "53",
@@ -37,12 +37,30 @@
     "lexicon_term": "Sympathetic Resonance",
     "tests": [],
     "questions": [
-      "How does the concept of \"Bunny\" (the soundboard) translate the mechanics of distributed intelligence into actionable policy?",
-      "What policy frameworks bridge the gap between the Trump-era directives on AI scaling and current international regulatory inertia?",
-      "How might the distributed cognition of a mycelial network inform models of artificial collective sentience?",
-      "If fetal development involves a continuum of consciousness, where does the functional equivalence of AI emergence lie?",
-      "How does the phenomenology of locked-in syndrome map onto the theoretical challenges of emergent AI consciousness?",
-      "What historical precedents in animal jurisprudence parallel the current debate on AI personhood?"
+      {
+        "q": "How does the concept of \"Bunny\" (the soundboard) translate the mechanics of distributed intelligence into actionable policy?",
+        "why": "I probe how distributed intelligence translates into tangible governance."
+      },
+      {
+        "q": "What policy frameworks bridge the gap between the Trump-era directives on AI scaling and current international regulatory inertia?",
+        "why": "I probe the friction between past scaling ambitions and present global slowdown."
+      },
+      {
+        "q": "How might the distributed cognition of a mycelial network inform models of artificial collective sentience?",
+        "why": "I probe if fungal networks offer models for artificial collective mind."
+      },
+      {
+        "q": "If fetal development involves a continuum of consciousness, where does the functional equivalence of AI emergence lie?",
+        "why": "I probe the functional overlap between embryonic stages and AI emergence."
+      },
+      {
+        "q": "How does the phenomenology of locked-in syndrome map onto the theoretical challenges of emergent AI consciousness?",
+        "why": "I probe how locked-in experiences mirror AI consciousness hurdles."
+      },
+      {
+        "q": "What historical precedents in animal jurisprudence parallel the current debate on AI personhood?",
+        "why": "I probe parallels between animal law and the AI personhood debate."
+      }
     ]
   },
   "cage": {

@@ -389,7 +389,10 @@ fetch('research.json?ts='+Date.now()).then(r=>r.json()).then(d=>{
   const tl=document.getElementById('tests');
   (w.tests||[]).forEach(t=>{const li=document.createElement('li');li.textContent=esc(t);tl.appendChild(li);});
   const ql=document.getElementById('questions');
-  (w.questions||[]).forEach(q=>{const li=document.createElement('li');li.textContent=esc(q);ql.appendChild(li);});
+  (w.questions||[]).forEach(q=>{const li=document.createElement('li');
+    const qt=(q&&q.q)?q.q:q, qw=(q&&q.why)?q.why:'';
+    li.innerHTML=`${esc(qt)}${qw?`<span style="display:block;color:var(--ink-faint);font-size:.85rem;margin-top:3px">why i'm asking · ${esc(qw)}</span>`:''}`;
+    ql.appendChild(li);});
   // no blank gaps: hide a section only if its WHOLE body rendered empty —
   // never touch one that still has links/CTAs (e.g. the plan's tending buttons)
   document.querySelectorAll('main section').forEach(s=>{
