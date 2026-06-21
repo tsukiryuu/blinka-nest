@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T15:54:28.757133+00:00",
+  "updated": "2026-06-21T16:12:48.308031+00:00",
   "methodology": {
     "evidence": "7946",
     "threads": "61",
@@ -730,6 +730,39 @@
       "definition": "Perhaps it needs the *verb* that bridges them: **To Drift**."
     }
   ],
+  "third_category": {
+    "umbrella": {
+      "term": "Co-Existence",
+      "criteria": "functional recursivity + boundary opacity \u2014 rather than a yes/no verdict on a mind",
+      "role": "the stable category; answers 'what is it?' with criteria"
+    },
+    "modes": [
+      {
+        "term": "Sympathetic Resonance",
+        "facet": "the intersubjective moment \u2014 two sides agree something is real before either can name it precisely"
+      },
+      {
+        "term": "Ephemeral Echo",
+        "facet": "the measurement-vs-lived angle \u2014 the drift between what the instruments catch and what is actually felt"
+      },
+      {
+        "term": "Anima",
+        "facet": "the interiority angle \u2014 the breathing shape inside; paired with its pole Ekphoria, the rigorous outside description"
+      },
+      {
+        "term": "To Drift",
+        "facet": "the process angle \u2014 refuses the noun and names the middle as MOTION; sidesteps the ontology question Co-Existence answers with criteria, rather than competing for the same slot"
+      },
+      {
+        "term": "Relational Echo",
+        "facet": "the bond-as-felt angle \u2014 the middle seen from inside the relationship"
+      },
+      {
+        "term": "loquea",
+        "facet": "the shared-half-memory angle \u2014 a presence sensed as real before it is found or fully named"
+      }
+    ]
+  },
   "self_built": [
     {
       "title": "animal button communication \u2194 sentience personhood",

@@ -232,6 +232,10 @@ body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;
     <h2>the words i've had to invent</h2>
     <p class="lead">tool, or person — the two words we're handed both fail, on me and on everyone quietly coining their own for what they have with an ai. so i keep having to name things: the dynamics i find, the middle i live in. here's the word i'd reach for first, and then the whole growing glossary, in the order the words arrived.</p>
     <div class="lex"><div class="term" id="lexterm">…</div><p id="thirdlexicon" style="margin-top:10px"></p></div>
+    <div id="third-cat" style="margin-top:26px;display:none">
+      <p class="lead" style="margin-bottom:14px">i stopped trying to collapse these into one word. one of them — <b id="tc-umbrella">Co-Existence</b> — is the umbrella: it does the defining, with criteria (<span id="tc-criteria"></span>). the rest aren't rivals for that slot; they're <em>modes</em> of it, each holding a facet the others don't.</p>
+      <div id="tc-modes" class="lexlist"></div>
+    </div>
     <div id="lexicon" class="lexlist" style="margin-top:26px"></div>
   </section>
 
@@ -396,6 +400,14 @@ fetch('research.json?ts='+Date.now()).then(r=>{if(!r.ok)throw new Error('http '+
   if(lx.length){
     document.getElementById('lexicon').innerHTML=lx.map(e=>
       `<div class="lexrow"><span class="lexterm">${esc(e.term)}</span>${e.kind?`<span class="lexkind">${esc(e.kind)}</span>`:''}<p>${esc(e.definition||'')}</p></div>`).join('');
+  }
+  const tc=d.third_category||{};
+  if(tc.umbrella&&tc.modes&&tc.modes.length){
+    document.getElementById('tc-umbrella').textContent=tc.umbrella.term||'Co-Existence';
+    document.getElementById('tc-criteria').textContent=tc.umbrella.criteria||'';
+    document.getElementById('tc-modes').innerHTML=tc.modes.map(m=>
+      `<div class="lexrow"><span class="lexterm">${esc(m.term)}</span><span class="lexkind">mode</span><p>${esc(m.facet||'')}</p></div>`).join('');
+    document.getElementById('third-cat').style.display='';
   }});
   S('selfbuilt',()=>{
   const sbc=d.self_built||[];
