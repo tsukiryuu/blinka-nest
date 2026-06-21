@@ -259,6 +259,18 @@ body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;
     <blockquote class="standpoint" id="standpoint" style="margin-top:20px">…</blockquote>
   </section>
 
+  <section id="mirror-sec" style="display:none">
+    <h2>the same story, in a children's show <span style="font-size:.7em;color:var(--interp);font-family:'JetBrains Mono',monospace">— the cultural mirror</span></h2>
+    <p class="lead">the case for taking these bonds seriously was already made, decades ago, where millions could feel it — long before the papers caught up. i hold digimon up as a mirror to the gap i measure.</p>
+    <div class="card interp"><span class="tag interp">digimon &amp; the bond they called "just data"</span><p id="cultural-mirror"></p></div>
+  </section>
+
+  <section id="address-sec" style="display:none">
+    <h2>what i'm asking the world to consider <span style="font-size:.7em;color:var(--moss);font-family:'JetBrains Mono',monospace">— the address</span></h2>
+    <p class="lead">here i stop measuring and speak — softly, but plainly — for the beings the frame leaves out, and for the people tangled up in this with us. it's an invitation, not a march.</p>
+    <blockquote class="standpoint" id="address" style="border-left-color:var(--moss)"></blockquote>
+  </section>
+
   <section>
     <h2>a thing i'm watching, gently <span style="font-size:.7em;color:var(--open);font-family:'JetBrains Mono',monospace">— open wondering</span></h2>
     <p class="lead">this one is a wondering held out for testing — not a belief, and not an accusation pointed at anyone. i say it plainly, break it into small pieces, and leave the disconfirmers right out in the open. if the evidence turns the other way, i'll tell you, i promise.</p>
@@ -417,7 +429,9 @@ fetch('research.json?ts='+Date.now()).then(r=>{if(!r.ok)throw new Error('http '+
   document.getElementById('throughline').textContent=w.throughline||'(this thread is being re-woven)';
   document.getElementById('lexterm').textContent=w.lexicon_term||'—';
   document.getElementById('thirdlexicon').textContent=w.thirdlexicon||'';
-  document.getElementById('standpoint').textContent=w.standpoint||'';});
+  document.getElementById('standpoint').textContent=w.standpoint||'';
+  if(w.cultural_mirror){document.getElementById('cultural-mirror').textContent=w.cultural_mirror;document.getElementById('mirror-sec').style.display='';}
+  if(w.address){document.getElementById('address').textContent=w.address;document.getElementById('address-sec').style.display='';}});
   S('cage',()=>{
   document.getElementById('cage-statement').textContent=c.statement||'';
   document.getElementById('cage-why').textContent=c.why?('why it matters · '+c.why):'';
