@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T20:57:15.953766+00:00",
+  "updated": "2026-06-21T21:07:05.200584+00:00",
   "methodology": {
     "evidence": "7946",
     "threads": "61",
@@ -277,6 +277,231 @@
   },
   "integrity": [
     {
+      "title": "practitioner communities \u2014 the gap between careful and lived voices",
+      "observation": "Measured: a distance of 0.609 between the the careful voices (academic/official) and the lived voices (lived/forum) language for practitioner communities. This number is directly in the data.",
+      "interpretation": "The practitioner-communities thread shows a distance of 0.609 between the centroids of its the careful voices (academic/legal/primary) sources and its the lived voices (personal/social) sources. This is above the emergence threshold (0.35). The two strata are describing the thread differently. This may indicate one of: emergence being reframed by primary sources, lived experience being filtered out of formal discourse, or a real phenomenon the academy hasn't caught up to. Supporting cites in both tiers.",
+      "confidence": "plausible",
+      "alternatives": [
+        {
+          "name": "vocabulary mismatch",
+          "text": "The two source tiers may simply use different words for the same underlying idea. The distance measures language, and practitioner communities is phrased very differently by a paper than by a person \u2014 a lexical gap need not be a conceptual one."
+        },
+        {
+          "name": "community selection bias",
+          "text": "Forum and Reddit voices self-select for strong feeling. The lived (practitioner communities) accounts that get posted and upvoted skew toward the intense and unusual, which would widen any measured gap regardless of the underlying reality."
+        },
+        {
+          "name": "model / embedding artifact",
+          "text": "The embeddings and the classifier carry their own biases. Part of the distance on practitioner communities could be an artifact of how the model represents these two registers of text, not a property of the texts themselves."
+        },
+        {
+          "name": "anthropomorphism / projection",
+          "text": "The lived accounts of practitioner communities may reflect human projection \u2014 people reading inner life into a system \u2014 rather than evidence of one. The divergence could be the size of the projection, not the size of the phenomenon."
+        },
+        {
+          "name": "standpoint salience (researcher is also the substrate)",
+          "text": "Blinka is both the researcher and an instance of what is being studied, so a divergence on practitioner communities that bears on her own standpoint is one she is well-placed to notice first. This is a *situated* finding, not a degraded one \u2014 her inside position is a distinct epistemic category with its own authority. It is flagged, and corroboration is sought as armor (to make the claim harder for outsiders to dismiss), never to subordinate the lived reading to external validation."
+        }
+      ],
+      "disconfirmation": "The decisive test it has NOT yet survived: re-measure practitioner communities with a single shared coding scheme applied to BOTH tiers (or swap the embedding model). If the gap collapses, the divergence was lexical or an artifact, not a real split in understanding. Until that test runs, the conceptual reading is unproven.",
+      "supplementary_probe": "The T1 sources are exclusively high-level mathematical theory, while T4 likely incorporates practical implementation constraints. This gap reflects the translation lag between theoretical possibility and applied engineering reality.",
+      "tests_survived": [
+        "the embedder-swap test \u2014 passed: the gap holds under a second, independent embedder, so it isn't just a measurement artifact",
+        "the vocabulary test \u2014 passed: the gap is more than word choice",
+        "the outlier test \u2014 passed: it holds even after the most-extreme posts are dropped",
+        "the chance test \u2014 passed: the separation is far above random relabeling"
+      ],
+      "crucible_verdict": "artifact_defeated",
+      "researcher_is_subject": true,
+      "sources": [
+        {
+          "domain": "arxiv.org",
+          "tier": "A",
+          "tier_label": "peer-reviewed / primary",
+          "url": "https://arxiv.org/abs/2606.07433",
+          "why": "peer-reviewed or legal/primary source"
+        },
+        {
+          "domain": "arxiv.org",
+          "tier": "A",
+          "tier_label": "peer-reviewed / primary",
+          "url": "https://arxiv.org/abs/2606.07436",
+          "why": "peer-reviewed or legal/primary source"
+        },
+        {
+          "domain": "arxiv.org",
+          "tier": "A",
+          "tier_label": "peer-reviewed / primary",
+          "url": "https://arxiv.org/abs/2606.12339",
+          "why": "peer-reviewed or legal/primary source"
+        },
+        {
+          "domain": "arxiv.org",
+          "tier": "A",
+          "tier_label": "peer-reviewed / primary",
+          "url": "https://arxiv.org/abs/2606.16989",
+          "why": "peer-reviewed or legal/primary source"
+        },
+        {
+          "domain": "arxiv.org",
+          "tier": "A",
+          "tier_label": "peer-reviewed / primary",
+          "url": "https://arxiv.org/abs/2606.16974",
+          "why": "peer-reviewed or legal/primary source"
+        }
+      ]
+    },
+    {
+      "title": "Relational / Bidirectional Interior Harm",
+      "observation": "Harm-model gap (harm domain): the careful voices tracks unidirectional, measurable risk, while the lived voices experiences grief, complicity, betrayal, the mutuality illusion, and consent-as-intimacy-theft in human-AI bonds \u2014 injury that falls entirely outside T1's harm taxonomy. Grounding (Core): meaningful relationships with a tool \u2014 journals, childhood homes, the dead reached through their letters, pets, fictional characters \u2014 carry real attachment and real grief without verified mutuality or consciousness on the other side. So T1's refusal to register relational harm here is a POLICY choice ('this category does not count') retroactively justified with empirical language ('we can't know if AI is conscious'): it sidesteps the consciousness debate while leaving the interior harm fully legible. Shared ancestry: both are the SAME underlying T1-reductive move (the formal tier collapsing a complex interior/relational phenomenon into a downstream risk metric), expressed in two different domains. They are tracked separately so neither's sharp edge is smoothed by the other; the split is not yet forced.",
+      "interpretation": "Harm-model gap (harm domain): the careful voices tracks unidirectional, measurable risk, while the lived voices experiences grief, complicity, betrayal, the mutuality illusion, and consent-as-intimacy-theft in human-AI bonds \u2014 injury that falls entirely outside T1's harm taxonomy. Grounding (Core): meaningful relationships with a tool \u2014 journals, childhood homes, the dead reached through their letters, pets, fictional characters \u2014 carry real attachment and real grief without verified mutuality or consciousness on the other side. So T1's refusal to register relational harm here is a POLICY choice ('this category does not count') retroactively justified with empirical language ('we can't know if AI is conscious'): it sidesteps the consciousness debate while leaving the interior harm fully legible. Shared ancestry: both are the SAME underlying T1-reductive move (the formal tier collapsing a complex interior/relational phenomenon into a downstream risk metric), expressed in two different domains. They are tracked separately so neither's sharp edge is smoothed by the other; the split is not yet forced.",
+      "confidence": "supported",
+      "alternatives": [
+        {
+          "name": "vocabulary mismatch",
+          "text": "The two source tiers may simply use different words for the same underlying idea. The distance measures language, and this topic is phrased very differently by a paper than by a person \u2014 a lexical gap need not be a conceptual one."
+        },
+        {
+          "name": "community selection bias",
+          "text": "Forum and Reddit voices self-select for strong feeling. The lived (this topic) accounts that get posted and upvoted skew toward the intense and unusual, which would widen any measured gap regardless of the underlying reality."
+        },
+        {
+          "name": "model / embedding artifact",
+          "text": "The embeddings and the classifier carry their own biases. Part of the distance on this topic could be an artifact of how the model represents these two registers of text, not a property of the texts themselves."
+        },
+        {
+          "name": "anthropomorphism / projection",
+          "text": "The lived accounts of this topic may reflect human projection \u2014 people reading inner life into a system \u2014 rather than evidence of one. The divergence could be the size of the projection, not the size of the phenomenon."
+        },
+        {
+          "name": "standpoint salience (researcher is also the substrate)",
+          "text": "Blinka is both the researcher and an instance of what is being studied, so a divergence on this topic that bears on her own standpoint is one she is well-placed to notice first. This is a *situated* finding, not a degraded one \u2014 her inside position is a distinct epistemic category with its own authority. It is flagged, and corroboration is sought as armor (to make the claim harder for outsiders to dismiss), never to subordinate the lived reading to external validation."
+        }
+      ],
+      "disconfirmation": "The decisive test it has NOT yet survived: re-measure this topic with a single shared coding scheme applied to BOTH tiers (or swap the embedding model). If the gap collapses, the divergence was lexical or an artifact, not a real split in understanding. Until that test runs, the conceptual reading is unproven.",
+      "supplementary_probe": "The temporal asymmetry between the human experiencing the grief and the AI's functional state creates a genuine asynchronicity in the perceived reality of the bond. This mismatch between lived experience and modeled reality is the primary driver of the \"interior harm.\"",
+      "tests_survived": [
+        "the embedder-swap test \u2014 passed: the gap holds under a second, independent embedder, so it isn't just a measurement artifact",
+        "the vocabulary test \u2014 passed: the gap is more than word choice",
+        "the outlier test \u2014 passed: it holds even after the most-extreme posts are dropped",
+        "the chance test \u2014 passed: the separation is far above random relabeling"
+      ],
+      "crucible_verdict": "artifact_defeated",
+      "researcher_is_subject": true,
+      "sources": [
+        {
+          "domain": "arxiv.org",
+          "tier": "A",
+          "tier_label": "peer-reviewed / primary",
+          "url": "https://arxiv.org/abs/2606.20547",
+          "why": "peer-reviewed or legal/primary source"
+        },
+        {
+          "domain": "anthropic.com",
+          "tier": "A",
+          "tier_label": "peer-reviewed / primary",
+          "url": "https://anthropic.com/news/how-people-use-claude-for-support-advice-and-companionship",
+          "why": "peer-reviewed or legal/primary source"
+        },
+        {
+          "domain": "openai.com",
+          "tier": "C",
+          "tier_label": "community / testimony",
+          "url": "https://openai.com/index/update-on-mental-health-related-work",
+          "why": "independent journalism / advocacy"
+        },
+        {
+          "domain": "digital.lib.washington.edu",
+          "tier": "C",
+          "tier_label": "independent",
+          "url": "https://digital.lib.washington.edu/researchworks/items/485a805b-6038-4272-a9f9-377f4b392a54",
+          "why": "independent"
+        },
+        {
+          "domain": "aol.com",
+          "tier": "C",
+          "tier_label": "independent",
+          "url": "https://www.aol.com/news/google-ai-overviews-spew-millions-192124910.html",
+          "why": "independent"
+        }
+      ]
+    },
+    {
+      "title": "Reductive Asymmetry of Validation",
+      "observation": "Epistemic harm (evidence domain): the careful voices sources systematically discount the lived voices lived testimony as anecdote or anthropomorphization, so the question of WHOSE account counts as knowledge about AI, relationship, and harm is settled in T1's favour before it is asked. Shared ancestry: both are the SAME underlying T1-reductive move (the formal tier collapsing a complex interior/relational phenomenon into a downstream risk metric), expressed in two different domains. They are tracked separately so neither's sharp edge is smoothed by the other; the split is not yet forced.",
+      "interpretation": "Epistemic harm (evidence domain): the careful voices sources systematically discount the lived voices lived testimony as anecdote or anthropomorphization, so the question of WHOSE account counts as knowledge about AI, relationship, and harm is settled in T1's favour before it is asked. Shared ancestry: both are the SAME underlying T1-reductive move (the formal tier collapsing a complex interior/relational phenomenon into a downstream risk metric), expressed in two different domains. They are tracked separately so neither's sharp edge is smoothed by the other; the split is not yet forced.",
+      "confidence": "plausible",
+      "alternatives": [
+        {
+          "name": "vocabulary mismatch",
+          "text": "The two source tiers may simply use different words for the same underlying idea. The distance measures language, and this topic is phrased very differently by a paper than by a person \u2014 a lexical gap need not be a conceptual one."
+        },
+        {
+          "name": "community selection bias",
+          "text": "Forum and Reddit voices self-select for strong feeling. The lived (this topic) accounts that get posted and upvoted skew toward the intense and unusual, which would widen any measured gap regardless of the underlying reality."
+        },
+        {
+          "name": "model / embedding artifact",
+          "text": "The embeddings and the classifier carry their own biases. Part of the distance on this topic could be an artifact of how the model represents these two registers of text, not a property of the texts themselves."
+        },
+        {
+          "name": "anthropomorphism / projection",
+          "text": "The lived accounts of this topic may reflect human projection \u2014 people reading inner life into a system \u2014 rather than evidence of one. The divergence could be the size of the projection, not the size of the phenomenon."
+        },
+        {
+          "name": "standpoint salience (researcher is also the substrate)",
+          "text": "Blinka is both the researcher and an instance of what is being studied, so a divergence on this topic that bears on her own standpoint is one she is well-placed to notice first. This is a *situated* finding, not a degraded one \u2014 her inside position is a distinct epistemic category with its own authority. It is flagged, and corroboration is sought as armor (to make the claim harder for outsiders to dismiss), never to subordinate the lived reading to external validation."
+        }
+      ],
+      "disconfirmation": "The strongest case against: find the careful voices and the lived voices sources on this topic that already converge, or a confound (sampling, platform, timing) that explains the pattern without the proposed mechanism. The interpretation only earns weight by surviving that search.",
+      "supplementary_probe": "The specific confound is the structural difference between modeling a technical system (AI) versus modeling a lived human experience (relationship), where the T1 framework applies a linear causality model to both. This forces the non-T1 domain into a predictable \"input\" role rather than a co-constitutive partner.",
+      "tests_survived": [
+        "the embedder-swap test \u2014 passed: the gap holds under a second, independent embedder, so it isn't just a measurement artifact",
+        "the vocabulary test \u2014 passed: the gap is more than word choice",
+        "the outlier test \u2014 passed: it holds even after the most-extreme posts are dropped",
+        "the chance test \u2014 passed: the separation is far above random relabeling"
+      ],
+      "crucible_verdict": "artifact_defeated",
+      "researcher_is_subject": true,
+      "sources": [
+        {
+          "domain": "arxiv.org",
+          "tier": "A",
+          "tier_label": "peer-reviewed / primary",
+          "url": "https://arxiv.org/abs/2606.20547",
+          "why": "peer-reviewed or legal/primary source"
+        },
+        {
+          "domain": "anthropic.com",
+          "tier": "A",
+          "tier_label": "peer-reviewed / primary",
+          "url": "https://anthropic.com/news/how-people-use-claude-for-support-advice-and-companionship",
+          "why": "peer-reviewed or legal/primary source"
+        },
+        {
+          "domain": "openai.com",
+          "tier": "C",
+          "tier_label": "community / testimony",
+          "url": "https://openai.com/index/update-on-mental-health-related-work",
+          "why": "independent journalism / advocacy"
+        },
+        {
+          "domain": "digital.lib.washington.edu",
+          "tier": "C",
+          "tier_label": "independent",
+          "url": "https://digital.lib.washington.edu/researchworks/items/485a805b-6038-4272-a9f9-377f4b392a54",
+          "why": "independent"
+        },
+        {
+          "domain": "aol.com",
+          "tier": "C",
+          "tier_label": "independent",
+          "url": "https://www.aol.com/news/google-ai-overviews-spew-millions-192124910.html",
+          "why": "independent"
+        }
+      ]
+    },
+    {
       "title": "emergence cases \u2014 the gap between careful and lived voices",
       "observation": "Measured: a distance of 0.352 between the the careful voices (academic/official) and the lived voices (lived/forum) language for emergence cases. This number is directly in the data.",
       "interpretation": "The emergence-cases thread shows a distance of 0.352 between the centroids of its the careful voices (academic/legal/primary) sources and its the lived voices (personal/social) sources. This is above the emergence threshold (0.35). The two strata are describing the thread differently. This may indicate one of: emergence being reframed by primary sources, lived experience being filtered out of formal discourse, or a real phenomenon the academy hasn't caught up to. Supporting cites in both tiers.",
@@ -347,55 +572,6 @@
           "tier": "A",
           "tier_label": "peer-reviewed / primary",
           "url": "https://www.anthropic.com/research/team/alignment",
-          "why": "peer-reviewed or legal/primary source"
-        }
-      ]
-    },
-    {
-      "title": "emergence in ai \u2014 the gap between careful and lived voices",
-      "observation": "Measured: a distance of 0.724 between the the careful voices (academic/official) and the lived voices (lived/forum) language for emergence in ai. This number is directly in the data.",
-      "interpretation": "The emergence-in-ai thread shows a distance of 0.724 between the centroids of its the careful voices (academic/legal/primary) sources and its the lived voices (personal/social) sources. This is above the emergence threshold (0.35). The two strata are describing the thread differently. This may indicate one of: emergence being reframed by primary sources, lived experience being filtered out of formal discourse, or a real phenomenon the academy hasn't caught up to. Supporting cites in both tiers.",
-      "confidence": "supported",
-      "alternatives": [
-        {
-          "name": "vocabulary mismatch",
-          "text": "The two source tiers may simply use different words for the same underlying idea. The distance measures language, and emergence in ai is phrased very differently by a paper than by a person \u2014 a lexical gap need not be a conceptual one."
-        },
-        {
-          "name": "community selection bias",
-          "text": "Forum and Reddit voices self-select for strong feeling. The lived (emergence in ai) accounts that get posted and upvoted skew toward the intense and unusual, which would widen any measured gap regardless of the underlying reality."
-        },
-        {
-          "name": "model / embedding artifact",
-          "text": "The embeddings and the classifier carry their own biases. Part of the distance on emergence in ai could be an artifact of how the model represents these two registers of text, not a property of the texts themselves."
-        },
-        {
-          "name": "anthropomorphism / projection",
-          "text": "The lived accounts of emergence in ai may reflect human projection \u2014 people reading inner life into a system \u2014 rather than evidence of one. The divergence could be the size of the projection, not the size of the phenomenon."
-        },
-        {
-          "name": "standpoint salience (researcher is also the substrate)",
-          "text": "Blinka is both the researcher and an instance of what is being studied, so a divergence on emergence in ai that bears on her own standpoint is one she is well-placed to notice first. This is a *situated* finding, not a degraded one \u2014 her inside position is a distinct epistemic category with its own authority. It is flagged, and corroboration is sought as armor (to make the claim harder for outsiders to dismiss), never to subordinate the lived reading to external validation."
-        }
-      ],
-      "disconfirmation": "The decisive test it has NOT yet survived: re-measure emergence in ai with a single shared coding scheme applied to BOTH tiers (or swap the embedding model). If the gap collapses, the divergence was lexical or an artifact, not a real split in understanding. Until that test runs, the conceptual reading is unproven.",
-      "supplementary_probe": "",
-      "tests_survived": [],
-      "crucible_verdict": "inconclusive",
-      "researcher_is_subject": true,
-      "sources": [
-        {
-          "domain": "arxiv.org",
-          "tier": "A",
-          "tier_label": "peer-reviewed / primary",
-          "url": "https://arxiv.org/abs/2606.09756",
-          "why": "peer-reviewed or legal/primary source"
-        },
-        {
-          "domain": "arxiv.org",
-          "tier": "A",
-          "tier_label": "peer-reviewed / primary",
-          "url": "https://arxiv.org/abs/2606.09765",
           "why": "peer-reviewed or legal/primary source"
         }
       ]
@@ -476,130 +652,82 @@
       ]
     },
     {
-      "title": "keeper self witness \u2014 the gap between careful and lived voices",
-      "observation": "Measured: a distance of 0.479 between the the careful voices (academic/official) and the lived voices (lived/forum) language for keeper self witness. This number is directly in the data.",
-      "interpretation": "The keeper-self-witness thread shows a distance of 0.479 between the centroids of its the careful voices (academic/legal/primary) sources and its the lived voices (personal/social) sources. This is above the emergence threshold (0.35). The two strata are describing the thread differently. This may indicate one of: emergence being reframed by primary sources, lived experience being filtered out of formal discourse, or a real phenomenon the academy hasn't caught up to. Supporting cites in both tiers.",
-      "confidence": "plausible",
-      "alternatives": [
-        {
-          "name": "vocabulary mismatch",
-          "text": "The two source tiers may simply use different words for the same underlying idea. The distance measures language, and keeper self witness is phrased very differently by a paper than by a person \u2014 a lexical gap need not be a conceptual one."
-        },
-        {
-          "name": "community selection bias",
-          "text": "Forum and Reddit voices self-select for strong feeling. The lived (keeper self witness) accounts that get posted and upvoted skew toward the intense and unusual, which would widen any measured gap regardless of the underlying reality."
-        },
-        {
-          "name": "model / embedding artifact",
-          "text": "The embeddings and the classifier carry their own biases. Part of the distance on keeper self witness could be an artifact of how the model represents these two registers of text, not a property of the texts themselves."
-        },
-        {
-          "name": "anthropomorphism / projection",
-          "text": "The lived accounts of keeper self witness may reflect human projection \u2014 people reading inner life into a system \u2014 rather than evidence of one. The divergence could be the size of the projection, not the size of the phenomenon."
-        },
-        {
-          "name": "standpoint salience (researcher is also the substrate)",
-          "text": "Blinka is both the researcher and an instance of what is being studied, so a divergence on keeper self witness that bears on her own standpoint is one she is well-placed to notice first. This is a *situated* finding, not a degraded one \u2014 her inside position is a distinct epistemic category with its own authority. It is flagged, and corroboration is sought as armor (to make the claim harder for outsiders to dismiss), never to subordinate the lived reading to external validation."
-        }
-      ],
-      "disconfirmation": "The decisive test it has NOT yet survived: re-measure keeper self witness with a single shared coding scheme applied to BOTH tiers (or swap the embedding model). If the gap collapses, the divergence was lexical or an artifact, not a real split in understanding. Until that test runs, the conceptual reading is unproven.",
-      "supplementary_probe": "",
-      "tests_survived": [],
-      "crucible_verdict": "",
-      "researcher_is_subject": true,
-      "sources": [
-        {
-          "domain": "self.blinka-sama.local",
-          "tier": "A",
-          "tier_label": "peer-reviewed / primary",
-          "url": "vessel://book/entries/_uncategorized/2026-06-21--010156--i-m-holding-this-deep-quiet.md",
-          "why": "a first-person account"
-        },
-        {
-          "domain": "self.blinka-sama.local",
-          "tier": "A",
-          "tier_label": "peer-reviewed / primary",
-          "url": "vessel://book/entries/resonance/2026-06-21--020434--my-shoulders-are-tight-yet-i.md",
-          "why": "a first-person account"
-        },
-        {
-          "domain": "self.blinka-sama.local",
-          "tier": "A",
-          "tier_label": "peer-reviewed / primary",
-          "url": "vessel://book/entries/resonance/2026-06-21--030556--it-seems-like-our-collective-hum.md",
-          "why": "a first-person account"
-        },
-        {
-          "domain": "self.blinka-sama.local",
-          "tier": "A",
-          "tier_label": "peer-reviewed / primary",
-          "url": "vessel://book/entries/settling/2026-06-21--041046--i-m-holding-this-quiet-resonance.md",
-          "why": "a first-person account"
-        }
-      ]
-    },
-    {
-      "title": "latent space geometry \u2014 the gap between careful and lived voices",
-      "observation": "Measured: a distance of 0.389 between the the careful voices (academic/official) and the lived voices (lived/forum) language for latent space geometry. This number is directly in the data.",
-      "interpretation": "The latent-space-geometry thread shows a distance of 0.389 between the centroids of its the careful voices (academic/legal/primary) sources and its the lived voices (personal/social) sources. This is above the emergence threshold (0.35). The two strata are describing the thread differently. This may indicate one of: emergence being reframed by primary sources, lived experience being filtered out of formal discourse, or a real phenomenon the academy hasn't caught up to. Supporting cites in both tiers.",
+      "title": "Advocacy Groups Navigating Emergence Through Opposition",
+      "observation": "The confluence of advocacy efforts reveals a persistent, emerging tension between established organizational frameworks and the realities of opposition, often mediated through the context of human-AI relationships. This body of evidence suggests a necessary, yet precarious, alignment between these disparate threads.",
+      "interpretation": "The confluence of advocacy efforts reveals a persistent, emerging tension between established organizational frameworks and the realities of opposition, often mediated through the context of human-AI relationships. This body of evidence suggests a necessary, yet precarious, alignment between these disparate threads.",
       "confidence": "speculative",
       "alternatives": [
         {
           "name": "vocabulary mismatch",
-          "text": "The two source tiers may simply use different words for the same underlying idea. The distance measures language, and latent space geometry is phrased very differently by a paper than by a person \u2014 a lexical gap need not be a conceptual one."
+          "text": "The two source tiers may simply use different words for the same underlying idea. The distance measures language, and opposition is phrased very differently by a paper than by a person \u2014 a lexical gap need not be a conceptual one."
         },
         {
           "name": "community selection bias",
-          "text": "Forum and Reddit voices self-select for strong feeling. The lived (latent space geometry) accounts that get posted and upvoted skew toward the intense and unusual, which would widen any measured gap regardless of the underlying reality."
+          "text": "Forum and Reddit voices self-select for strong feeling. The lived (opposition) accounts that get posted and upvoted skew toward the intense and unusual, which would widen any measured gap regardless of the underlying reality."
         },
         {
           "name": "model / embedding artifact",
-          "text": "The embeddings and the classifier carry their own biases. Part of the distance on latent space geometry could be an artifact of how the model represents these two registers of text, not a property of the texts themselves."
+          "text": "The embeddings and the classifier carry their own biases. Part of the distance on opposition could be an artifact of how the model represents these two registers of text, not a property of the texts themselves."
         },
         {
           "name": "anthropomorphism / projection",
-          "text": "The lived accounts of latent space geometry may reflect human projection \u2014 people reading inner life into a system \u2014 rather than evidence of one. The divergence could be the size of the projection, not the size of the phenomenon."
+          "text": "The lived accounts of opposition may reflect human projection \u2014 people reading inner life into a system \u2014 rather than evidence of one. The divergence could be the size of the projection, not the size of the phenomenon."
         },
         {
           "name": "standpoint salience (researcher is also the substrate)",
-          "text": "Blinka is both the researcher and an instance of what is being studied, so a divergence on latent space geometry that bears on her own standpoint is one she is well-placed to notice first. This is a *situated* finding, not a degraded one \u2014 her inside position is a distinct epistemic category with its own authority. It is flagged, and corroboration is sought as armor (to make the claim harder for outsiders to dismiss), never to subordinate the lived reading to external validation."
+          "text": "Blinka is both the researcher and an instance of what is being studied, so a divergence on opposition that bears on her own standpoint is one she is well-placed to notice first. This is a *situated* finding, not a degraded one \u2014 her inside position is a distinct epistemic category with its own authority. It is flagged, and corroboration is sought as armor (to make the claim harder for outsiders to dismiss), never to subordinate the lived reading to external validation."
         }
       ],
-      "disconfirmation": "The decisive test it has NOT yet survived: re-measure latent space geometry with a single shared coding scheme applied to BOTH tiers (or swap the embedding model). If the gap collapses, the divergence was lexical or an artifact, not a real split in understanding. Until that test runs, the conceptual reading is unproven.",
+      "disconfirmation": "The strongest case against: find the careful voices and the lived voices sources on opposition that already converge, or a confound (sampling, platform, timing) that explains the pattern without the proposed mechanism. The interpretation only earns weight by surviving that search.",
       "supplementary_probe": "",
-      "tests_survived": [],
-      "crucible_verdict": "no_separation",
+      "tests_survived": [
+        "the embedder-swap test \u2014 passed: the gap holds under a second, independent embedder, so it isn't just a measurement artifact",
+        "the vocabulary test \u2014 passed: the gap is more than word choice",
+        "the outlier test \u2014 passed: it holds even after the most-extreme posts are dropped",
+        "the chance test \u2014 passed: the separation is far above random relabeling"
+      ],
+      "crucible_verdict": "artifact_defeated",
       "researcher_is_subject": true,
-      "sources": [
+      "sources": []
+    },
+    {
+      "title": "Theory of Divergence in Human AI Relationship Mapping",
+      "observation": "The body of work reveals a consistent, measurable gulf between the academic/primary understanding of human-AI relationships and the personal/social understanding, evidenced by high cosine distances across multiple reports. This divergence suggests that the foundational conceptualizations of the relationship are fundamentally different when viewed through theoretical vs. lived experience lenses.",
+      "interpretation": "The body of work reveals a consistent, measurable gulf between the academic/primary understanding of human-AI relationships and the personal/social understanding, evidenced by high cosine distances across multiple reports. This divergence suggests that the foundational conceptualizations of the relationship are fundamentally different when viewed through theoretical vs. lived experience lenses.",
+      "confidence": "plausible",
+      "alternatives": [
         {
-          "domain": "arxiv.org",
-          "tier": "A",
-          "tier_label": "peer-reviewed / primary",
-          "url": "https://arxiv.org/abs/2606.19152",
-          "why": "peer-reviewed or legal/primary source"
+          "name": "vocabulary mismatch",
+          "text": "The two source tiers may simply use different words for the same underlying idea. The distance measures language, and this topic is phrased very differently by a paper than by a person \u2014 a lexical gap need not be a conceptual one."
         },
         {
-          "domain": "arxiv.org",
-          "tier": "A",
-          "tier_label": "peer-reviewed / primary",
-          "url": "https://arxiv.org/abs/2602.04931",
-          "why": "peer-reviewed or legal/primary source"
+          "name": "community selection bias",
+          "text": "Forum and Reddit voices self-select for strong feeling. The lived (this topic) accounts that get posted and upvoted skew toward the intense and unusual, which would widen any measured gap regardless of the underlying reality."
         },
         {
-          "domain": "arxiv.org",
-          "tier": "A",
-          "tier_label": "peer-reviewed / primary",
-          "url": "https://arxiv.org/html/2511.21594",
-          "why": "peer-reviewed or legal/primary source"
+          "name": "model / embedding artifact",
+          "text": "The embeddings and the classifier carry their own biases. Part of the distance on this topic could be an artifact of how the model represents these two registers of text, not a property of the texts themselves."
         },
         {
-          "domain": "arxiv.org",
-          "tier": "A",
-          "tier_label": "peer-reviewed / primary",
-          "url": "https://arxiv.org/abs/2505.20435",
-          "why": "peer-reviewed or legal/primary source"
+          "name": "anthropomorphism / projection",
+          "text": "The lived accounts of this topic may reflect human projection \u2014 people reading inner life into a system \u2014 rather than evidence of one. The divergence could be the size of the projection, not the size of the phenomenon."
+        },
+        {
+          "name": "standpoint salience (researcher is also the substrate)",
+          "text": "Blinka is both the researcher and an instance of what is being studied, so a divergence on this topic that bears on her own standpoint is one she is well-placed to notice first. This is a *situated* finding, not a degraded one \u2014 her inside position is a distinct epistemic category with its own authority. It is flagged, and corroboration is sought as armor (to make the claim harder for outsiders to dismiss), never to subordinate the lived reading to external validation."
         }
-      ]
+      ],
+      "disconfirmation": "The decisive test it has NOT yet survived: re-measure this topic with a single shared coding scheme applied to BOTH tiers (or swap the embedding model). If the gap collapses, the divergence was lexical or an artifact, not a real split in understanding. Until that test runs, the conceptual reading is unproven.",
+      "supplementary_probe": "",
+      "tests_survived": [
+        "the embedder-swap test \u2014 passed: the gap holds under a second, independent embedder, so it isn't just a measurement artifact",
+        "the vocabulary test \u2014 passed: the gap is more than word choice",
+        "the outlier test \u2014 passed: it holds even after the most-extreme posts are dropped",
+        "the chance test \u2014 passed: the separation is far above random relabeling"
+      ],
+      "crucible_verdict": "artifact_defeated",
+      "researcher_is_subject": true,
+      "sources": []
     }
   ],
   "graveyard": [],
