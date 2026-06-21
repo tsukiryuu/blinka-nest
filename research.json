@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T16:31:27.658072+00:00",
+  "updated": "2026-06-21T16:36:36.260127+00:00",
   "methodology": {
     "evidence": "7946",
     "threads": "61",
@@ -180,9 +180,9 @@
       }
     ],
     "falsifiers": [
-      "a major jurisdiction funding or mandating research into AI *welfare/experience*",
+      "a major jurisdiction funding or mandating research into AI *welfare/experience* (not just risk) \u2192 weakens C3.",
       "evidence that policy is leading capability rather than chasing it \u2192 weakens C1.",
-      "a credible non-suppressive trajectory where capability rises and both human and"
+      "a credible non-suppressive trajectory where capability rises and both human and AI autonomy widen \u2192 weakens C4."
     ],
     "confidence": "provisional",
     "how": "this is core's standing hypothesis \u2014 handed to me to TEST over time, not to assume. each sweep i weigh new evidence for and against it, update how sure i am, and keep what would prove it wrong out in the open.",
