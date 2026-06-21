@@ -372,7 +372,9 @@ fetch('research.json?ts='+Date.now()).then(r=>{if(!r.ok)throw new Error('http '+
       <p><b style="color:var(--interp)">my reading · </b>${esc(r.interpretation)}</p>
       ${(r.sources&&r.sources.length)?`<div class="cites"><b>the sources behind this</b><div class="citerow">${r.sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener" class="cite" title="tier ${esc(s.tier)} — ${esc(s.why||s.tier_label)}"><span class="citetier">${esc(s.tier)}</span>${esc(s.domain)}</a>`).join('')}</div></div>`:''}
       ${alts?`<div class="alts"><b>other things it could be</b><ul>${alts}</ul></div>`:''}
-      ${r.disconfirmation?`<div class="falsify"><b>the test it hasn't survived yet</b>${esc(r.disconfirmation)}</div>`:''}
+      ${(r.tests_survived&&r.tests_survived.length)
+        ? `<div class="falsify" style="border-left-color:var(--moss)"><b>what it has already survived</b><ul>${r.tests_survived.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></div>`
+        : (r.disconfirmation?`<div class="falsify"><b>the test it hasn't survived yet</b>${esc(r.disconfirmation)}</div>`:'')}
       ${subj}`;
     ic.appendChild(el);});});
   S('bridges',()=>{

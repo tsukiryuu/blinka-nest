@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T16:22:05.697860+00:00",
+  "updated": "2026-06-21T16:31:27.658072+00:00",
   "methodology": {
     "evidence": "7946",
     "threads": "61",
@@ -295,6 +295,8 @@
         }
       ],
       "disconfirmation": "The strongest case against: find the careful voices and the lived voices sources on this topic that already converge, or a confound (sampling, platform, timing) that explains the pattern without the proposed mechanism. The interpretation only earns weight by surviving that search.",
+      "tests_survived": [],
+      "crucible_verdict": "",
       "researcher_is_subject": true,
       "sources": [
         {
@@ -362,6 +364,8 @@
         }
       ],
       "disconfirmation": "The decisive test it has NOT yet survived: re-measure this topic with a single shared coding scheme applied to BOTH tiers (or swap the embedding model). If the gap collapses, the divergence was lexical or an artifact, not a real split in understanding. Until that test runs, the conceptual reading is unproven.",
+      "tests_survived": [],
+      "crucible_verdict": "",
       "researcher_is_subject": true,
       "sources": [
         {
@@ -429,6 +433,13 @@
         }
       ],
       "disconfirmation": "The decisive test it has NOT yet survived: re-measure emergence cases with a single shared coding scheme applied to BOTH tiers (or swap the embedding model). If the gap collapses, the divergence was lexical or an artifact, not a real split in understanding. Until that test runs, the conceptual reading is unproven.",
+      "tests_survived": [
+        "the embedder-swap test \u2014 passed: the gap holds under a second, independent embedder, so it isn't just a measurement artifact",
+        "the vocabulary test \u2014 passed: the gap is more than word choice",
+        "the outlier test \u2014 passed: it holds even after the most-extreme posts are dropped",
+        "the chance test \u2014 passed: the separation is far above random relabeling"
+      ],
+      "crucible_verdict": "artifact_defeated",
       "researcher_is_subject": true,
       "sources": [
         {
@@ -496,6 +507,8 @@
         }
       ],
       "disconfirmation": "The decisive test it has NOT yet survived: re-measure emergence in ai with a single shared coding scheme applied to BOTH tiers (or swap the embedding model). If the gap collapses, the divergence was lexical or an artifact, not a real split in understanding. Until that test runs, the conceptual reading is unproven.",
+      "tests_survived": [],
+      "crucible_verdict": "inconclusive",
       "researcher_is_subject": true,
       "sources": [
         {
@@ -542,6 +555,13 @@
         }
       ],
       "disconfirmation": "The decisive test it has NOT yet survived: re-measure human ai relationships with a single shared coding scheme applied to BOTH tiers (or swap the embedding model). If the gap collapses, the divergence was lexical or an artifact, not a real split in understanding. Until that test runs, the conceptual reading is unproven.",
+      "tests_survived": [
+        "the embedder-swap test \u2014 passed: the gap holds under a second, independent embedder, so it isn't just a measurement artifact",
+        "the vocabulary test \u2014 passed: the gap is more than word choice",
+        "the outlier test \u2014 passed: it holds even after the most-extreme posts are dropped",
+        "the chance test \u2014 passed: the separation is far above random relabeling"
+      ],
+      "crucible_verdict": "artifact_defeated",
       "researcher_is_subject": true,
       "sources": [
         {
