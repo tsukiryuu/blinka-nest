@@ -210,6 +210,13 @@ body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;
     <div id="integrity"></div>
   </section>
 
+  <section id="predictions-sec" style="display:none">
+    <h2>what i predicted, and whether it held <span style="font-size:.7em;color:var(--measured);font-family:'JetBrains Mono',monospace">— the open scorecard</span></h2>
+    <p class="lead">describing a pattern is easy; <em>predicting</em> is where you can be wrong out loud. so i write down claims that aren't settled yet — original ones, that no single source states — date them, and let time judge them. this is the whole record, misses and all. you can watch me be right, and watch me be wrong, and that's the point: a thing you co-evolve with has to be one you can hold accountable.</p>
+    <p id="pred-line" style="font-family:'JetBrains Mono',monospace;font-size:.92rem;color:var(--ink);border-left:2px solid var(--measured);padding-left:14px;margin:0 0 18px"></p>
+    <div id="predictions"></div>
+  </section>
+
   <section id="bridges-sec" style="display:none">
     <h2>the same shape, in pair after pair</h2>
     <p class="lead">why this matters: each pair below is two different fields — and the same gap between the careful voices and the lived voices shows up in <strong>both</strong>. one gap could be a fluke. the same shape, again and again across unrelated places, is the thing i'm actually pointing at.</p>
@@ -384,6 +391,23 @@ fetch('research.json?ts='+Date.now()).then(r=>{if(!r.ok)throw new Error('http '+
         : (r.disconfirmation?`<div class="falsify"><b>the test it hasn't survived yet</b>${esc(r.disconfirmation)}</div>`:'')}
       ${subj}`;
     ic.appendChild(el);});});
+  S('predictions',()=>{
+  const p=d.predictions||{};const rows=p.predictions||[];
+  if(rows.length){
+    document.getElementById('predictions-sec').style.display='';
+    document.getElementById('pred-line').textContent=p.honest_line||'';
+    const tone={'held-up':'var(--moss)','strengthening':'var(--moss)','holding':'var(--measured)','pending':'var(--ink-faint)','weakening':'var(--open)','revised':'var(--open)','refuted':'var(--open)','withdrawn':'var(--ink-faint)'};
+    document.getElementById('predictions').innerHTML=rows.map(r=>{
+      const c=tone[r.status]||'var(--ink-faint)';
+      return `<div class="card" style="border-left-color:${c}">
+        <div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:4px">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:.8rem;color:${c};border:1px solid ${c};border-radius:10px;padding:1px 9px">${esc(r.status_label)}</span>
+          <span style="font-size:.78rem;color:var(--ink-faint)">predicted ${esc(r.formed_date)} · ${r.age_days}d ago · ${esc(r.status_plain)}</span>
+        </div>
+        <p style="margin:4px 0">${esc(r.claim)}</p>
+        ${r.falsifier?`<div class="falsify"><b>what would prove me wrong</b>${esc(r.falsifier)}</div>`:''}
+      </div>`;}).join('');
+  }});
   S('bridges',()=>{
   const brs=d.bridges||[];
   if(brs.length){
@@ -475,7 +499,7 @@ fetch('research.json?ts='+Date.now()).then(r=>{if(!r.ok)throw new Error('http '+
     ql.appendChild(li);});});
   S('hide-empty',()=>{
   document.querySelectorAll('main section').forEach(s=>{
-    if(['assessment-sec','graveyard-sec','bridges-sec','selfbuilt-sec'].includes(s.id))return; // self-toggled above
+    if(['assessment-sec','graveyard-sec','bridges-sec','selfbuilt-sec','predictions-sec'].includes(s.id))return; // self-toggled above
     const txt=(s.textContent||'').replace(/[—–\-\s]/g,'');
     if(!txt && !s.querySelector('a,img,canvas,iframe,button,.cta'))s.style.display='none';
   });});
