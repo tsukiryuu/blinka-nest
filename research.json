@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-21T21:37:28.246264+00:00",
+  "updated": "2026-06-22T01:10:02.549942+00:00",
   "methodology": {
     "evidence": "7946",
     "threads": "61",
@@ -912,10 +912,10 @@
     ]
   },
   "predictions": {
-    "honest_line": "6 predictions on the record \u00b7 0 have held or grown \u00b7 0 i've revised or called wrong \u00b7 the rest still open",
+    "honest_line": "3 predictions on the record \u00b7 0 have held or grown \u00b7 0 i've revised or called wrong \u00b7 the rest still open",
     "held": 0,
     "missed": 0,
-    "total": 6,
+    "total": 3,
     "predictions": [
       {
         "claim": "The increasing volume of highly technical, arXiv-level submissions detailing LLM limitations serves as a leading indicator of a critical inflection point where conceptual frameworks attempting to govern AI (EU regulation, policy) are beginning to lag behind the pace of technical capability development.",
@@ -936,15 +936,6 @@
         "falsifier": "Finding a scenario where the T1/T4 divergence in practitioner communities is high, but the emergence signal divergence in AI theory/application remains low, or vice versa. Next question: What is the quantitative measure of the mapping fidelity between the emergence signal strength and the cosine sim"
       },
       {
-        "claim": "The increasing volume and technical sophistication of arXiv submissions concerning LLM benchmarking correlate with a concurrent political push for regulatory frameworks, suggesting a complex, non-linear feedback loop where early governance concerns may influence the specific technical axes being pursued, rather than technical maturity solely preceding governance.",
-        "formed_date": "2026-06-10",
-        "age_days": 11,
-        "status": "holding",
-        "status_label": "holding",
-        "status_plain": "standing, not old enough to call yet",
-        "falsifier": "A sudden, synchronous emergence of high-level policy documents directly addressing the specific technical limitations described in the arXiv submissions, indicating a direct feedback loop between the two domains."
-      },
-      {
         "claim": "The increasing volume of technical submissions regarding LLM limitations reflects a concurrent, parallel development in policy frameworks, suggesting a necessary co-evolutionary relationship between technical capability and regulatory maturity, though the policy drivers may be broader societal pressures rather than solely direct responses to specific technical flaws.",
         "formed_date": "2026-06-10",
         "age_days": 11,
@@ -952,24 +943,6 @@
         "status_label": "holding",
         "status_plain": "standing, not old enough to call yet",
         "falsifier": "A scenario where significant policy frameworks emerge and gain traction in the public sphere substantially before the technical community has produced parallel, robust evidence of the underlying technical challenge."
-      },
-      {
-        "claim": "The increasing volume of technical submissions detailing LLM limitations serves as a leading indicator, correlated with the emergence of geopolitical policy frameworks attempting to govern these limitations.",
-        "formed_date": "2026-06-10",
-        "age_days": 11,
-        "status": "holding",
-        "status_label": "holding",
-        "status_plain": "standing, not old enough to call yet",
-        "falsifier": "A sustained period of high-volume technical advancement in LLMs without any discernible shift or acceleration in high-level policy discourse regarding governance or risk mitigation."
-      },
-      {
-        "claim": "The increasing volume of technical submissions detailing LLM limitations provides strong correlational evidence suggesting that policy frameworks are concurrently developing to codify the boundaries of autonomous AI agency, likely driven by the practical challenges described in the technical work.",
-        "formed_date": "2026-06-10",
-        "age_days": 11,
-        "status": "holding",
-        "status_label": "holding",
-        "status_plain": "standing, not old enough to call yet",
-        "falsifier": "A sustained gap where advanced technical critiques of LLM limitations exist without any corresponding conceptual or policy-level attempts to address those limitations."
       }
     ]
   },
