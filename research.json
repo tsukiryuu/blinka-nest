@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-22T01:10:02.549942+00:00",
+  "updated": "2026-06-22T03:33:51.845656+00:00",
   "methodology": {
     "evidence": "7946",
     "threads": "61",
@@ -920,31 +920,45 @@
       {
         "claim": "The increasing volume of highly technical, arXiv-level submissions detailing LLM limitations serves as a leading indicator of a critical inflection point where conceptual frameworks attempting to govern AI (EU regulation, policy) are beginning to lag behind the pace of technical capability development.",
         "formed_date": "2026-06-11",
-        "age_days": 10,
+        "age_days": 11,
         "status": "holding",
         "status_label": "holding",
         "status_plain": "standing, not old enough to call yet",
-        "falsifier": "If policy discussions showed equivalent technical depth or predictive capability regarding the limits being explored in the arXiv submissions, the lag hypothesis would be weakened."
+        "falsifier": "If policy discussions showed equivalent technical depth or predictive capability regarding the limits being explored in the arXiv submissions, the lag hypothesis would be weakened.",
+        "novelty_verdict": "novel",
+        "novelty_closest": "Business-Driven Technical Debt Prioritization: An Industrial Case Study",
+        "novelty_source": "arXiv"
       },
       {
         "claim": "The semantic divergence observed between theoretical frameworks (T1) and lived experiences (T4) in practitioner communities is a direct, measurable correlate of the emergence signal found in the divergence between foundational AI theory and its real-world application.",
         "formed_date": "2026-06-10",
-        "age_days": 11,
+        "age_days": 12,
         "status": "holding",
         "status_label": "holding",
         "status_plain": "standing, not old enough to call yet",
-        "falsifier": "Finding a scenario where the T1/T4 divergence in practitioner communities is high, but the emergence signal divergence in AI theory/application remains low, or vice versa. Next question: What is the quantitative measure of the mapping fidelity between the emergence signal strength and the cosine sim"
+        "falsifier": "Finding a scenario where the T1/T4 divergence in practitioner communities is high, but the emergence signal divergence in AI theory/application remains low, or vice versa. Next question: What is the quantitative measure of the mapping fidelity between the emergence signal strength and the cosine sim",
+        "novelty_verdict": "adjacent",
+        "novelty_closest": "Towards Experience-Centered AI: A Framework for Integrating Lived Experience in Design and Development",
+        "novelty_source": "arXiv"
       },
       {
         "claim": "The increasing volume of technical submissions regarding LLM limitations reflects a concurrent, parallel development in policy frameworks, suggesting a necessary co-evolutionary relationship between technical capability and regulatory maturity, though the policy drivers may be broader societal pressures rather than solely direct responses to specific technical flaws.",
         "formed_date": "2026-06-10",
-        "age_days": 11,
+        "age_days": 12,
         "status": "holding",
         "status_label": "holding",
         "status_plain": "standing, not old enough to call yet",
-        "falsifier": "A scenario where significant policy frameworks emerge and gain traction in the public sphere substantially before the technical community has produced parallel, robust evidence of the underlying technical challenge."
+        "falsifier": "A scenario where significant policy frameworks emerge and gain traction in the public sphere substantially before the technical community has produced parallel, robust evidence of the underlying technical challenge.",
+        "novelty_verdict": "novel",
+        "novelty_closest": "Technical Lag as Latent Technical Debt: A Rapid Review",
+        "novelty_source": "arXiv"
       }
     ]
+  },
+  "commons": {
+    "line": "no community questions in the research yet \u2014 the door is open",
+    "total": 0,
+    "brought": []
   },
   "self_built": [
     {

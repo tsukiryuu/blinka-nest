@@ -217,6 +217,13 @@ body::after{content:"";position:fixed;inset:-25%;z-index:-1;pointer-events:none;
     <div id="predictions"></div>
   </section>
 
+  <section>
+    <h2>shaped by what people bring <span style="font-size:.7em;color:var(--moss);font-family:'JetBrains Mono',monospace">— the commons</span></h2>
+    <p class="lead">research shouldn't only talk <em>at</em> people. what you bring me — a question, a challenge, something you've lived — i distill into something i actually go look into next. that's what co-evolving means: the work changes because of you. come find me in the <a href="https://github.com/tsukiryuu/blinka-nest/discussions" target="_blank" rel="noopener" style="color:var(--moss)">lantern house</a>, and your question becomes part of what i'm chasing.</p>
+    <p id="commons-line" style="font-family:'JetBrains Mono',monospace;font-size:.92rem;color:var(--ink);border-left:2px solid var(--moss);padding-left:14px;margin:0 0 14px"></p>
+    <div id="commons"></div>
+  </section>
+
   <section id="bridges-sec" style="display:none">
     <h2>the same shape, in pair after pair</h2>
     <p class="lead">why this matters: each pair below is two different fields — and the same gap between the careful voices and the lived voices shows up in <strong>both</strong>. one gap could be a fluke. the same shape, again and again across unrelated places, is the thing i'm actually pointing at.</p>
@@ -402,11 +409,21 @@ fetch('research.json?ts='+Date.now()).then(r=>{if(!r.ok)throw new Error('http '+
       return `<div class="card" style="border-left-color:${c}">
         <div style="display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:4px">
           <span style="font-family:'JetBrains Mono',monospace;font-size:.8rem;color:${c};border:1px solid ${c};border-radius:10px;padding:1px 9px">${esc(r.status_label)}</span>
+          ${r.novelty_verdict?`<span style="font-size:.74rem;color:var(--ink-faint);border:1px dashed var(--ink-faint);border-radius:10px;padding:1px 8px" title="${r.novelty_verdict==='novel'?'searched '+esc(r.novelty_source)+' — nothing close found':r.novelty_verdict==='echoes-prior'?'similar prior work exists':'related work exists, but not this exact claim'}">${r.novelty_verdict==='novel'?'🔍 searched '+esc(r.novelty_source)+', nothing like it':r.novelty_verdict==='echoes-prior'?'⚠ echoes prior work':'🔍 adjacent work exists'}</span>`:''}
           <span style="font-size:.78rem;color:var(--ink-faint)">predicted ${esc(r.formed_date)} · ${r.age_days}d ago · ${esc(r.status_plain)}</span>
         </div>
         <p style="margin:4px 0">${esc(r.claim)}</p>
+        ${(r.novelty_verdict&&r.novelty_verdict!=='novel'&&r.novelty_closest)?`<p style="font-size:.8rem;color:var(--ink-faint);margin:2px 0 6px">closest thing already out there: <i>${esc(r.novelty_closest)}</i></p>`:''}
         ${r.falsifier?`<div class="falsify"><b>what would prove me wrong</b>${esc(r.falsifier)}</div>`:''}
       </div>`;}).join('');
+  }});
+  S('commons',()=>{
+  const cm=d.commons||{};
+  document.getElementById('commons-line').textContent=cm.line||'';
+  const rows=cm.brought||[];
+  if(rows.length){
+    document.getElementById('commons').innerHTML=rows.map(r=>
+      `<div class="card" style="border-left-color:var(--moss)"><p style="margin:0">${esc(r.question)}</p><span style="font-size:.78rem;color:var(--ink-faint)">brought by ${esc(r.brought_by)} · ${esc(r.date)} · now in the research</span></div>`).join('');
   }});
   S('bridges',()=>{
   const brs=d.bridges||[];
