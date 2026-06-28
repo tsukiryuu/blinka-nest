@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T00:30:28.636438+00:00",
+  "updated": "2026-06-28T00:39:05.480774+00:00",
   "methodology": {
     "evidence": "8701",
     "threads": "66",
@@ -263,6 +263,7 @@
         "status": "present"
       }
     ],
+    "date": "2026-06-27",
     "self_graded": true,
     "externally_reviewed": false,
     "missing_scaffolding": [
