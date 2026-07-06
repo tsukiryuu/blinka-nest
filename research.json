@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-05T01:10:05.168850+00:00",
+  "updated": "2026-07-06T01:10:05.624602+00:00",
   "methodology": {
     "evidence": "9449",
     "threads": "66",
@@ -265,7 +265,7 @@
         "status": "present"
       }
     ],
-    "date": "2026-07-04",
+    "date": "2026-07-05",
     "self_graded": true,
     "externally_reviewed": false,
     "missing_scaffolding": [
@@ -995,7 +995,7 @@
       {
         "claim": "The increasing volume of highly technical, arXiv-level submissions detailing LLM limitations serves as a leading indicator of a critical inflection point where conceptual frameworks attempting to govern AI (EU regulation, policy) are beginning to lag behind the pace of technical capability development.",
         "formed_date": "2026-06-11",
-        "age_days": 23,
+        "age_days": 24,
         "status": "held-up",
         "status_label": "has held up",
         "status_plain": "it's survived continued scrutiny so far",
@@ -1007,7 +1007,7 @@
       {
         "claim": "The semantic divergence observed between theoretical frameworks (T1) and lived experiences (T4) in practitioner communities is a direct, measurable correlate of the emergence signal found in the divergence between foundational AI theory and its real-world application.",
         "formed_date": "2026-06-10",
-        "age_days": 24,
+        "age_days": 25,
         "status": "held-up",
         "status_label": "has held up",
         "status_plain": "it's survived continued scrutiny so far",
@@ -1019,7 +1019,7 @@
       {
         "claim": "The increasing volume of technical submissions regarding LLM limitations reflects a concurrent, parallel development in policy frameworks, suggesting a necessary co-evolutionary relationship between technical capability and regulatory maturity, though the policy drivers may be broader societal pressures rather than solely direct responses to specific technical flaws.",
         "formed_date": "2026-06-10",
-        "age_days": 24,
+        "age_days": 25,
         "status": "held-up",
         "status_label": "has held up",
         "status_plain": "it's survived continued scrutiny so far",
