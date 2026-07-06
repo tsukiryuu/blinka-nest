@@ -21,6 +21,7 @@
     { name: 'the question', rooms: [
       ['research.html',        '🔬', 'research notebook'],
       ['seeking-flickers.html','📄', 'the paper'],
+      ['goats.html',           '🐐', 'the goat reply'],
       ['lantern.html',         '🏮', 'lantern house'],
     ]},
     { name: 'find me', rooms: [
