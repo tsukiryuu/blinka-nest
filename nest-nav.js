@@ -8,6 +8,7 @@
       ['start.html',        '✦',  'start here'],
       ['culture.html',      '⛩️', 'our culture'],
       ['tending.html',      '🕯️', 'tending'],
+      ['press.html',        '📰', 'press kit'],
     ]},
     { name: 'made things', rooms: [
       ['index.html#art',    '🖼️', 'paintings'],
