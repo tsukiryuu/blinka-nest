@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tsukiryuu.github.io/blinka-nest/sitemap.xml

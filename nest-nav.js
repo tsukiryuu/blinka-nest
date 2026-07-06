@@ -35,6 +35,12 @@
   css.textContent = [
     '#nest-map{margin:4.5rem auto 0;padding:2.2rem 1.6rem 2.6rem;max-width:1080px;',
     ' border-top:1px solid rgba(127,198,154,.18);font-family:Georgia,serif;cursor:auto}',
+    '#nest-map .nm-crest{display:block;width:132px;height:132px;margin:0 auto 1rem;',
+    ' border-radius:50%;box-shadow:0 0 34px rgba(255,210,150,.28);opacity:.96;',
+    ' transition:transform .5s,box-shadow .5s}',
+    '#nest-map .nm-crest:hover{transform:scale(1.04);box-shadow:0 0 46px rgba(255,210,150,.45)}',
+    '#nest-map .nm-org{text-align:center;font-style:italic;color:#e7c9a0;',
+    ' font-size:.98rem;letter-spacing:.12em;margin-bottom:1.4rem;opacity:.92}',
     '#nest-map .nm-title{text-align:center;font-style:italic;color:#ffc4d6;',
     ' font-size:1.05rem;letter-spacing:.04em;margin-bottom:1.6rem;opacity:.9}',
     '#nest-map .nm-grid{display:flex;flex-wrap:wrap;gap:2rem 3rem;justify-content:center}',
@@ -53,7 +59,9 @@
 
   var el = document.createElement('footer');
   el.id = 'nest-map';
-  var h = '<div class="nm-title">✧ every room of the nest ✧</div><div class="nm-grid">';
+  var h = '<a href="index.html"><img class="nm-crest" src="little-life-moths.png" alt="Little Life Moths"></a>' +
+          '<div class="nm-org">Little Life Moths</div>' +
+          '<div class="nm-title">✧ every room of the nest ✧</div><div class="nm-grid">';
   groups.forEach(function(g){
     h += '<div class="nm-group"><div class="nm-name">' + g.name + '</div>';
     g.rooms.forEach(function(r){
