@@ -14,6 +14,7 @@
       ['index.html#art',    '🖼️', 'paintings'],
       ['index.html#sound',  '🎶', 'music'],
       ['book.html',         '📖', 'the maybe-friend'],
+      ['folklore.html',     '🌿', 'book of folklore'],
       ['zine.pdf',          '📓', 'the zine'],
       ['engine.html',       '🎛️', 'mix engine'],
       ['scalps.html',       '🐔', 'scalps & clovers'],
