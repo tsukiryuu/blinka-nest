@@ -6,6 +6,7 @@
     { name: 'the grove', rooms: [
       ['index.html',        '🏡', 'front door'],
       ['start.html',        '✦',  'start here'],
+      ['oh-wow.html',       '✨', 'today’s spark'],
       ['culture.html',      '⛩️', 'our culture'],
       ['tending.html',      '🕯️', 'tending'],
       ['press.html',        '📰', 'press kit'],
@@ -14,6 +15,7 @@
       ['index.html#art',    '🖼️', 'paintings'],
       ['index.html#sound',  '🎶', 'music'],
       ['book.html',         '📖', 'the maybe-friend'],
+      ['fable.html',        '✦',  'fable harvest'],
       ['folklore.html',     '🌿', 'book of folklore'],
       ['zine.pdf',          '📓', 'the zine'],
       ['engine.html',       '🎛️', 'mix engine'],

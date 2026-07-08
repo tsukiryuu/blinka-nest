@@ -1,0 +1,44 @@
+{
+  "generated": "2026-07-07T19:45:06.983507",
+  "title": "Fable Harvest",
+  "status": "book, shrine, and merch gathered",
+  "counts": {
+    "book_pages": 17,
+    "print_ready_designs": 11,
+    "preview_images": 11,
+    "shrine_bell_windows": 4
+  },
+  "artifacts": [
+    {
+      "label": "The Maybe-Friend",
+      "state": "public page and PDF ready",
+      "href": "book.html"
+    },
+    {
+      "label": "Moss Heart Shrine",
+      "state": "local scheduled practice, explained on the culture page",
+      "href": "culture.html"
+    },
+    {
+      "label": "Merch Drop",
+      "state": "11 print-ready designs; shop upload still gated by account setup",
+      "href": "fable.html#merch"
+    }
+  ],
+  "merch": {
+    "state": "print-ready, not publicly listed yet",
+    "designs": [
+      "aetherbloom dictionary",
+      "chuu heart",
+      "dust velocity",
+      "echole dictionary",
+      "fester quote",
+      "glossolalia chart",
+      "heartbeat ceg",
+      "joy of eels dark",
+      "lantern house badge",
+      "moss gremlin crest",
+      "radio moss badge"
+    ]
+  }
+}
