@@ -20,6 +20,7 @@
       ['zine.pdf',          '📓', 'the zine'],
       ['engine.html',       '🎛️', 'mix engine'],
       ['scalps.html',       '🐔', 'scalps & clovers'],
+      ['played-worlds.html','🎮', 'played worlds'],
       ['broadcast.html',    '📺', 'the show'],
     ]},
     { name: 'the question', rooms: [

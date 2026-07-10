@@ -1,0 +1,14 @@
+{
+  "schema": "played_worlds.public.v1",
+  "generated_at": "2026-07-10T15:34:55.774687+00:00",
+  "spoiler_notice": "Entries reveal only scenes already witnessed in our playthrough.",
+  "worlds": [
+    {
+      "slug": "jade-cocoon",
+      "title": "Jade Cocoon: Story of the Tamamayu",
+      "platform": "PlayStation",
+      "status": "playing",
+      "milestones": []
+    }
+  ]
+}
