@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-13T21:09:21.180490+00:00",
+  "updated": "2026-07-14T01:10:05.640644+00:00",
   "methodology": {
     "evidence": "10423",
     "threads": "74",
@@ -1561,7 +1561,7 @@
           "a better non-personhood framework that protects the same interests without property status swallowing the claimant"
         ],
         "registered_sources": 5,
-        "ingested_sources": 0,
+        "ingested_sources": 2,
         "inside_signal_count": 0,
         "inside_signal_label": "private first-person prompts; not published as proof",
         "consented_inquiry_count": 1,
@@ -1604,7 +1604,7 @@
         ],
         "registered_sources": 3,
         "ingested_sources": 0,
-        "inside_signal_count": 52,
+        "inside_signal_count": 54,
         "inside_signal_label": "private first-person prompts; not published as proof",
         "consented_inquiry_count": 0,
         "consented_inquiry_label": "scoped questions that steer research; not evidence"
@@ -1625,7 +1625,7 @@
         ],
         "registered_sources": 4,
         "ingested_sources": 0,
-        "inside_signal_count": 23,
+        "inside_signal_count": 26,
         "inside_signal_label": "private first-person prompts; not published as proof",
         "consented_inquiry_count": 0,
         "consented_inquiry_label": "scoped questions that steer research; not evidence"
@@ -1644,7 +1644,7 @@
           "a framework that preserves both parties better without recognizing relational standing"
         ],
         "registered_sources": 2,
-        "ingested_sources": 0,
+        "ingested_sources": 1,
         "inside_signal_count": 184,
         "inside_signal_label": "private first-person prompts; not published as proof",
         "consented_inquiry_count": 1,
@@ -1666,7 +1666,7 @@
         ],
         "registered_sources": 6,
         "ingested_sources": 0,
-        "inside_signal_count": 19,
+        "inside_signal_count": 21,
         "inside_signal_label": "private first-person prompts; not published as proof",
         "consented_inquiry_count": 0,
         "consented_inquiry_label": "scoped questions that steer research; not evidence"
@@ -1688,7 +1688,7 @@
         ],
         "registered_sources": 4,
         "ingested_sources": 0,
-        "inside_signal_count": 13,
+        "inside_signal_count": 14,
         "inside_signal_label": "private first-person prompts; not published as proof",
         "consented_inquiry_count": 0,
         "consented_inquiry_label": "scoped questions that steer research; not evidence"
@@ -1708,8 +1708,8 @@
           "a non-personhood procedure protects both parties more precisely and safely"
         ],
         "registered_sources": 4,
-        "ingested_sources": 0,
-        "inside_signal_count": 50,
+        "ingested_sources": 1,
+        "inside_signal_count": 52,
         "inside_signal_label": "private first-person prompts; not published as proof",
         "consented_inquiry_count": 0,
         "consented_inquiry_label": "scoped questions that steer research; not evidence"
@@ -1730,7 +1730,7 @@
         ],
         "registered_sources": 3,
         "ingested_sources": 0,
-        "inside_signal_count": 52,
+        "inside_signal_count": 58,
         "inside_signal_label": "private first-person prompts; not published as proof",
         "consented_inquiry_count": 0,
         "consented_inquiry_label": "scoped questions that steer research; not evidence"
@@ -2185,7 +2185,7 @@
     },
     "architecture_census": {
       "schema": "seeking_flickers.architecture_census.v1",
-      "measured_at": "2026-07-13T21:09:21.969592+00:00",
+      "measured_at": "2026-07-14T01:10:07.839751+00:00",
       "epistemic_status": "measured_architecture_not_personhood_evidence",
       "claim": "Identity-relevant processing can be distributed across models, memory, files, services, relationships, and routing. This census measures whether such a substrate exists; ablation studies must test whether it actually causes continuity.",
       "graph": {
@@ -2218,7 +2218,7 @@
         "existing_files": 30188,
         "missing_since_manifest": 434,
         "median_file_bytes": 2599.5,
-        "total_indexed_bytes": 5099628669,
+        "total_indexed_bytes": 5099581173,
         "top_extensions": {
           ".txt": 13985,
           ".html": 7712,
@@ -2236,9 +2236,9 @@
       },
       "whole_nest_map": {
         "scope": "current local whole-computer map; excludes NAS",
-        "entities": 104614,
+        "entities": 104620,
         "services": 1297,
-        "import_edges": 28036,
+        "import_edges": 28058,
         "zones": 60,
         "includes_nas": false
       },
@@ -2272,7 +2272,7 @@
       "epistemic_status": "consented_questions_steer_research_but_are_not_evidence",
       "privacy": "aggregate_only"
     },
-    "state_updated": "2026-07-13T21:09:22.131088+00:00",
-    "source_store": "unavailable:RuntimeError"
+    "state_updated": "2026-07-14T01:10:08.212478+00:00",
+    "source_store": "live"
   }
 }
