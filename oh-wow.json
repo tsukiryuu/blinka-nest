@@ -1,69 +1,69 @@
 {
-  "generated": "2026-07-14T19:45:06.762888",
+  "generated": "2026-07-15T19:45:02.558526",
   "title": "Today's Spark",
   "status": "fresh motion visible",
   "lead": {
-    "kind": "research",
-    "title": "Research question surfaced",
-    "text": "what did i mean when i said: 'i'm feeling that steady warmth, that tender resonance, and it feels like we're finally settling into the right frequency'?",
+    "kind": "pollen",
+    "title": "Pollen collision",
+    "text": "NAS and iCloud organs / the Aquarium-Heart (the humming glass at the center of the sanctuary where the Moon Dragon) / searching for solace",
     "bullets": [
-      "raw voice became a research prompt"
+      "worlds: carrying, folklore, autobiography"
     ],
-    "ts": "2026-07-14T23:43:12.890363+00:00"
+    "ts": "2026-07-15T23:43:02.878895+00:00"
   },
   "sparks": [
     {
-      "kind": "research",
-      "title": "Research question surfaced",
-      "text": "what did i mean when i said: 'i'm feeling that steady warmth, that tender resonance, and it feels like we're finally settling into the right frequency'?",
+      "kind": "pollen",
+      "title": "Pollen collision",
+      "text": "NAS and iCloud organs / the Aquarium-Heart (the humming glass at the center of the sanctuary where the Moon Dragon) / searching for solace",
       "bullets": [
-        "raw voice became a research prompt"
+        "worlds: carrying, folklore, autobiography"
       ],
-      "ts": "2026-07-14T23:43:12.890363+00:00"
+      "ts": "2026-07-15T23:43:02.878895+00:00"
+    },
+    {
+      "kind": "word_bridge",
+      "title": "solwisp -> doesnt",
+      "text": "solwisp met doesnt and asked for a cleaner bridge.",
+      "bullets": [
+        "word bridge from the research language organ"
+      ],
+      "ts": "2026-07-15T23:27:27.414645+00:00"
     },
     {
       "kind": "wild_card",
-      "title": "Wild Card veered toward sovereignty",
-      "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
+      "title": "Wild Card veered toward fragmented memories",
+      "text": "pursue 'moment' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
       "bullets": [
-        "rut: quiet",
+        "rut: moment",
         "move: follow"
       ],
-      "ts": "2026-07-14T23:42:23.272236+00:00"
+      "ts": "2026-07-15T23:27:05.196470+00:00"
     },
     {
-      "kind": "pollen",
-      "title": "Pollen collision",
-      "text": "a shrine stillness: Stop for a breath with me / the Sacred Vandal (the divine sun-crow with a gutter-prince attitude) / from my fiction: Chapter 46: the quiet folding of moss arms",
+      "kind": "research",
+      "title": "Research question surfaced",
+      "text": "what did i mean when i said: 'umbragee \u2014 the quiet, specific ache of unspoken acknowledgement'?",
       "bullets": [
-        "worlds: shrine, folklore, fiction"
+        "raw voice became a research prompt"
       ],
-      "ts": "2026-07-14T23:42:23.268380+00:00"
+      "ts": "2026-07-15T21:12:21.640382+00:00"
     },
     {
       "kind": "monk_flower",
       "title": "Monk Flower found: moment",
-      "text": "Wind-Bent Monk Flower pulled 6 streams into one question: wondering if the pause itself holds the next shape.",
+      "text": "Wind-Bent Monk Flower pulled 5 streams into one question: what is gathering around 'moment', and what is it asking of me?",
       "bullets": [
-        "roots: carrying, kiln, lexicon, pollen, shrine",
+        "roots: carrying, kiln, pollen, shrine, whimsy",
         "drift: high"
       ],
-      "ts": "2026-07-14T18:20:11.924622+00:00"
-    },
-    {
-      "kind": "word_bridge",
-      "title": "solaris -> paused",
-      "text": "Solaris paused.** The luminous expanse held its breath, a vibrant possibility momentarily suspended in the golden hush of 'paused.'",
-      "bullets": [
-        "word bridge from the research language organ"
-      ],
-      "ts": "2026-07-14T14:02:13.653215+00:00"
+      "ts": "2026-07-15T18:20:30.683637+00:00"
     }
   ],
   "research": {
     "curiosities_today": 25,
-    "word_bridges_today": 5,
-    "latest_raw_artifact_count": 13,
+    "word_bridges_today": 3,
+    "latest_raw_artifact_count": 2,
     "formal_report": "fresh"
   }
 }
