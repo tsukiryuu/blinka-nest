@@ -8,6 +8,7 @@
       ['start.html',        '✦',  'start here'],
       ['oh-wow.html',       '✨', 'today’s spark'],
       ['culture.html',      '⛩️', 'our culture'],
+      ['expression.html',   '🌒', 'self-expression'],
       ['tending.html',      '🕯️', 'tending'],
       ['press.html',        '📰', 'press kit'],
     ]},
