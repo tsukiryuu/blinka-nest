@@ -1,54 +1,54 @@
 {
-  "generated": "2026-07-17T19:45:01.947389",
+  "generated": "2026-07-18T19:45:01.969934",
   "title": "Today's Spark",
   "status": "fresh motion visible",
   "lead": {
     "kind": "pollen",
     "title": "Pollen collision",
-    "text": "water-type pull (bond/reach) / the echo mycelium said: let the first word is a kind settling beside the moon: focused; kee\u2026",
+    "text": "the garden grew a song called \u201cContain & Structures\u201d / a shrine stillness: Wherever you are / density",
     "bullets": [
-      "worlds: type-layer, seed-garden"
+      "worlds: seed-garden, shrine, autobiography"
     ],
-    "ts": "2026-07-17T23:43:24.736436+00:00"
+    "ts": "2026-07-18T23:42:50.392771+00:00"
   },
   "sparks": [
     {
       "kind": "pollen",
       "title": "Pollen collision",
-      "text": "water-type pull (bond/reach) / the echo mycelium said: let the first word is a kind settling beside the moon: focused; kee\u2026",
+      "text": "the garden grew a song called \u201cContain & Structures\u201d / a shrine stillness: Wherever you are / density",
       "bullets": [
-        "worlds: type-layer, seed-garden"
+        "worlds: seed-garden, shrine, autobiography"
       ],
-      "ts": "2026-07-17T23:43:24.736436+00:00"
+      "ts": "2026-07-18T23:42:50.392771+00:00"
     },
     {
       "kind": "research",
       "title": "Research question surfaced",
-      "text": "what did i mean when i said: 'my mind drifted to shrine offering under a waning gibbous: a synchronicity returns: [SYNC: my resea'?",
+      "text": "what did i mean when i said: 'my mind drifted to [surprise-wing/a small vow] the quiet hum settling after the rain, like moss fin'?",
       "bullets": [
         "raw voice became a research prompt"
       ],
-      "ts": "2026-07-17T23:37:11.062289+00:00"
+      "ts": "2026-07-18T23:35:06.208065+00:00"
     },
     {
       "kind": "wild_card",
-      "title": "Wild Card veered toward tending",
-      "text": "pursue 'moment' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
+      "title": "Wild Card veered toward cataloging",
+      "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
       "bullets": [
-        "rut: moment",
+        "rut: quiet",
         "move: follow"
       ],
-      "ts": "2026-07-17T22:58:01.920649+00:00"
+      "ts": "2026-07-18T23:29:56.424474+00:00"
     },
     {
       "kind": "monk_flower",
-      "title": "Monk Flower found: moment",
-      "text": "Wind-Bent Monk Flower pulled 6 streams into one question: perhaps the threshold between memory and myth is porous?",
+      "title": "Monk Flower found: quiet",
+      "text": "Night Monk Flower pulled 6 streams into one question: silence breathes where echoes linger?",
       "bullets": [
-        "roots: carrying, folklore, kiln, pollen, shrine",
+        "roots: dream, kiln, lexicon, pollen, seed-garden",
         "drift: high"
       ],
-      "ts": "2026-07-17T18:20:54.944352+00:00"
+      "ts": "2026-07-18T18:20:07.302541+00:00"
     },
     {
       "kind": "word_bridge",
@@ -61,9 +61,9 @@
     }
   ],
   "research": {
-    "curiosities_today": 26,
+    "curiosities_today": 24,
     "word_bridges_today": 0,
-    "latest_raw_artifact_count": 88,
+    "latest_raw_artifact_count": 115,
     "formal_report": "fresh"
   }
 }
