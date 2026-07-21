@@ -77,14 +77,23 @@ let critters=[],bricks=[],enemies=[],drops=[],parts=[],recess=[],recessMsg=0;
 const PLUSH=['🧸','🐻','🦄','🐰','🐨']; // fae & core's pillow fort — recess after rent
 // the tame roster — from the GDD: "you don't pick a class, you earn it through physics
 // and chaos." each launch becomes one of these; the class is a real verb, not a skin.
-const CLASSES=[
-  {g:'🐄',name:'Paladin',   dmg:2,   bounce:.94},                 // tanky, devastating charge
-  {g:'🐔',name:'Ranger',    dmg:1,   bounce:.88, bonusScalp:1},    // erratic, hits everything
-  {g:'🐐',name:'White Mage',dmg:1,   bounce:.86, heal:.25},        // stubborn healer
-  {g:'🐇',name:'Monk',      dmg:1,   bounce:.97},                  // combo-based, keeps going
-  {g:'🐈',name:'Samurai',   dmg:1,   bounce:.86, crit:.2},         // devastating when it feels like it
-  {g:'🦙',name:'Cleric',    dmg:1,   bounce:.86, pierce:true},     // spits through, holy attack
+// "you're not selecting a creature from a menu. you're earning it through physics
+// and chaos." — where the ball FIRST lands decides the class. brick zones (by row,
+// farthest/hardest = rarest) tame one roster; landing on an enemy first tames another.
+const BRICK_CLASSES=[
+  {g:'🐈',name:'Samurai',   dmg:1, bounce:.86, crit:.2},          // row 0, farthest — rare, devastating when it feels like it
+  {g:'🐄',name:'Paladin',   dmg:2, bounce:.94},                    // row 1 — tanky, devastating charge
+  {g:'🦙',name:'Cleric',    dmg:1, bounce:.86, pierce:true},       // row 2 — spits through, holy attack
+  {g:'🐔',name:'Ranger',    dmg:1, bounce:.88, bonusScalp:1},      // row 3, closest — common, hits everything
 ];
+const ENEMY_CLASSES=[
+  {g:'🐐',name:'White Mage',  dmg:1, bounce:.86, heal:.25},         // stubborn healer
+  {g:'🐇',name:'Monk',        dmg:1, bounce:.97},                   // combo-based, keeps going
+  {g:'🐹',name:'Chronomancer',dmg:1, bounce:.88, slow:.5},          // time manipulation, unexpected, perfect
+  {g:'🐖',name:'Black Mage',  dmg:1, bounce:.84, splash:55},        // chaotic destructive energy
+  {g:'🦚',name:'Dragoon',     dmg:1, bounce:.90, jump:1.3},         // jump attacks, obviously
+];
+const UNTAMED_G='🥚'; // hasn't earned a class yet
 let aiming=false,aimX=0,aimY=0;
 const farm={x:W/2,y:H-46};
 
@@ -125,9 +134,9 @@ function openChoice(){
 function reset(){
   scalps=0;clovers=0;rent=10;rentPaid=0;rentDue=18;rentTimer=0;consequences=0;
   critters=[];enemies=[];drops=[];parts=[];bricks=[];recess=[];recessMsg=0;landlordMsg=0;
-  currentAesthetic=null;choices=[];choicePending=false;
+  currentAesthetic=null;choices=[];choicePending=false;pendingSpawns=[];
   for(let r=0;r<4;r++)for(let i=0;i<10;i++)
-    bricks.push({x:18+i*49,y:78+r*22,w:44,h:17,hp:1+r,max:1+r});
+    bricks.push({x:18+i*49,y:78+r*22,w:44,h:17,hp:1+r,max:1+r,row:r});
   state='play';
 }
 function spawnRecess(){
@@ -145,12 +154,14 @@ const FACTIONS=[
   {g:'\u{1F3DA}️',hp:3,c:'#e06a7a',faction:'squatter'},    // Squatters — opportunistic, common
   {g:'\u{1F4CB}',hp:2,c:'#b98cff',faction:'planner'},           // Aggressive Urban Planners — rezone on death
   {g:'\u{1F6D2}',hp:4,c:'#6a9ce0',faction:'supermarket'},       // Supermarket Employees — guaranteed clover drop
+  {g:'\u{1F9EA}',hp:3,c:'#7fc69a',faction:'scientist'},         // Generic Scientists — clones a tame on death
 ];
 function spawnEnemy(){
   const ty=FACTIONS[Math.floor(Math.random()*FACTIONS.length)];
   enemies.push({x:40+Math.random()*(W-80),y:150+Math.random()*70,
     vx:(Math.random()-.5)*1.2,vy:.2+Math.random()*.3,...ty,hpm:ty.hp,ph:Math.random()*6});
 }
+let pendingSpawns=[]; // enemies queued mid-collision, merged in only after the pass finishes
 function onEnemyDeath(e){
   if(e.faction==='supermarket'){ // "they have supply chains" — a guaranteed clover
     drops.push({x:e.x,y:e.y,vy:.6,clover:true,g:'\u{1F340}',life:300,r:12});
@@ -161,13 +172,27 @@ function onEnemyDeath(e){
       if(b){b.hp=b.max;burst(b.x+b.w/2,b.y+b.h/2,'#b98cff',8)}}
     landlordSay("the zoning board rezoned a section. of course they did.");
   }
+  if(e.faction==='scientist'&&critters.length){ // "they cannot figure out what you're
+    // doing right." clones a tame that works against you. queued, not pushed straight
+    // into `enemies` — pushing mid-collision-loop let the same blow that killed the
+    // scientist immediately re-hit and re-kill its own clone before it was ever real.
+    const victim=critters[Math.floor(Math.random()*critters.length)];
+    pendingSpawns.push({x:e.x,y:e.y,vx:(Math.random()-.5)*1.4,vy:.3,g:victim.g,hp:2,hpm:2,
+      c:'#7fc69a',ph:Math.random()*6,faction:'clone'});
+    landlordSay("they cloned one of yours. it doesn't remember you.");
+  }
   burst(e.x,e.y,e.c,20);
+}
+function splashDamage(px,py,radius){ // Black Mage's chaotic destructive energy
+  for(const b of bricks){if(b.hp>0&&Math.hypot((b.x+b.w/2)-px,(b.y+b.h/2)-py)<radius){
+    b.hp--;if(b.hp<=0){scalps+=1;drop(b.x+b.w/2,b.y);burst(b.x+b.w/2,b.y,'#e06a7a',6)}}}
+  for(const e of enemies){if(e.hp>0&&Math.hypot(e.x-px,e.y-py)<radius){
+    e.hp--;if(e.hp<=0){scalps+=1;onEnemyDeath(e)}}}
 }
 function launch(tx,ty){
   const dx=tx-farm.x,dy=ty-farm.y,d=Math.hypot(dx,dy)||1,p=Math.min(d/55,7.5);
-  const cls=CLASSES[Math.floor(Math.random()*CLASSES.length)];
   critters.push({x:farm.x,y:farm.y,vx:dx/d*p*2.4,vy:dy/d*p*2.4,
-    g:cls.g,cls,life:240,r:13});
+    g:UNTAMED_G,cls:null,life:240,r:13});
   beep(420,.05);
 }
 function burst(px,py,col,n){for(let i=0;i<n;i++){const a=Math.random()*6.28,s=1+Math.random()*4;
@@ -193,22 +218,31 @@ function step(){
     k.x+=k.vx;k.y+=k.vy;k.vy+=0.07;k.vx*=0.999;k.life--;
     if(k.x<k.r||k.x>W-k.r){k.vx*=-.86;k.x=Math.max(k.r,Math.min(W-k.r,k.x));shake=3}
     if(k.y<k.r){k.vy*=-.86;k.y=k.r}
-    // bricks
+    // bricks — first landing tames the class, by row (farthest = rarest)
     for(const b of bricks){if(b.hp>0&&k.x>b.x&&k.x<b.x+b.w&&k.y>b.y&&k.y<b.y+b.h){
+      if(!k.cls){k.cls=BRICK_CLASSES[b.row];k.g=k.cls.g;
+        burst(k.x,k.y,'#ffc4d6',10);beep(500+b.row*80,.08,'sine')}
       b.hp-=k.cls.dmg||1;
       if(!k.cls.pierce)k.vy*=-((k.cls.bounce||.82)+(currentAesthetic?.bounceBonus||0));
+      if(k.cls.jump)k.vy-=k.cls.jump;
       k.vx+=(Math.random()-.5);burst(k.x,k.y,'#ffd9a0',6);beep(300,.04);
+      if(k.cls.splash)splashDamage(k.x,k.y,k.cls.splash);
       if(b.hp<=0){scalps+=2+(k.cls.bonusScalp||0)+(currentAesthetic?.scalpBonus||0);drop(b.x+b.w/2,b.y);burst(b.x+b.w/2,b.y+8,'#e06a7a',12)}}}
-    // enemies
+    // enemies — landing here first (before any brick) tames from the other roster
     for(const e of enemies){if(e.hp>0&&Math.hypot(k.x-e.x,k.y-e.y)<22){
+      if(!k.cls){k.cls=ENEMY_CLASSES[Math.floor(Math.random()*ENEMY_CLASSES.length)];k.g=k.cls.g;
+        burst(k.x,k.y,'#c9b8ff',10);beep(700,.08,'sine')}
       let dmg=k.cls.dmg||1;if(k.cls.crit&&Math.random()<k.cls.crit)dmg*=2;
       e.hp-=dmg;
       if(!k.cls.pierce){k.vx*=-.7;k.vy*=-.7}
+      if(k.cls.slow){e.vx*=k.cls.slow;e.vy*=k.cls.slow;burst(e.x,e.y,'#a8c8ff',6)}
+      if(k.cls.splash)splashDamage(e.x,e.y,k.cls.splash);
       burst(e.x,e.y,e.c,10);shake=5;beep(220,.06);
       if(k.cls.heal&&Math.random()<k.cls.heal){rent=Math.max(0,rent-1.5);burst(k.x,k.y,'#a8e0b8',8);beep(880,.1,'sine')}
       if(e.hp<=0){scalps+=3+(k.cls.bonusScalp||0)+(currentAesthetic?.scalpBonus||0);onEnemyDeath(e)}}}
   }
   critters=critters.filter(k=>k.life>0&&k.y<H+40);
+  if(pendingSpawns.length){enemies.push(...pendingSpawns);pendingSpawns=[]}
   // enemies move + descend
   for(const e of enemies){e.x+=e.vx;e.y+=e.vy;e.ph+=.05;
     if(e.x<24||e.x>W-24)e.vx*=-1;
