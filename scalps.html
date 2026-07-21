@@ -96,9 +96,36 @@ const RENT_PASS_LINES=["the landlord counts it twice. says nothing.","payment ac
 const RENT_FAIL_LINES=["the landlord was never surprised.","he already knew you'd be short.",
   "“understandable,” he says, taking something else instead.","the ancient thing accepts your excuse. it did not need to."];
 
+// the shader mechanic — from the GDD: "the roguelite elements ARE the graphics."
+// the visual style IS the difficulty system, not a slider. each aesthetic is a real
+// trade-off, chosen after surviving a rent cycle, not a coat of paint.
+const AESTHETICS=[
+  {name:'Ink Wash',   filter:'contrast(1.25) brightness(.82) saturate(.7)',
+   rentMult:.8, enemyAlpha:.5,
+   blurb:'darker, moodier — threats are harder to read, but the landlord is patient'},
+  {name:'Neon Overdrive', filter:'saturate(1.7) brightness(1.15) contrast(1.05)',
+   rentMult:1.25, enemyAlpha:1,
+   blurb:'everything visible, everything loud — rent climbs faster to match'},
+  {name:'Chalk Dust', filter:'sepia(.25) contrast(.92) brightness(1.05)',
+   cloverBonus:.05,
+   blurb:'soft and cozy — clovers turn up a little more often'},
+  {name:'Wireframe', filter:'grayscale(1) contrast(1.4) brightness(1.1)',
+   bounceBonus:.04,
+   blurb:'stark and clear — your tames carry more of their momentum through'},
+  {name:'Glitch Art', filter:'hue-rotate(35deg) contrast(1.2)',
+   scalpBonus:1,
+   blurb:'unstable, twitchy — every scalp counts for one more'},
+];
+let currentAesthetic=null,choices=[],choicePending=false;
+function openChoice(){
+  const pool=[...AESTHETICS];for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}
+  choices=pool.slice(0,3);state='choose';
+}
+
 function reset(){
   scalps=0;clovers=0;rent=10;rentPaid=0;rentDue=18;rentTimer=0;consequences=0;
   critters=[];enemies=[];drops=[];parts=[];bricks=[];recess=[];recessMsg=0;landlordMsg=0;
+  currentAesthetic=null;choices=[];choicePending=false;
   for(let r=0;r<4;r++)for(let i=0;i<10;i++)
     bricks.push({x:18+i*49,y:78+r*22,w:44,h:17,hp:1+r,max:1+r});
   state='play';
@@ -145,7 +172,7 @@ function launch(tx,ty){
 }
 function burst(px,py,col,n){for(let i=0;i<n;i++){const a=Math.random()*6.28,s=1+Math.random()*4;
   parts.push({x:px,y:py,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:20+Math.random()*16,col})}}
-function drop(px,py){const clover=Math.random()<0.07;
+function drop(px,py){const clover=Math.random()<(0.07+(currentAesthetic?.cloverBonus||0));
   drops.push({x:px,y:py,vy:.6,clover,g:clover?'🍀':'',life:300,r:clover?12:5})}
 
 // minimal WebAudio juice
@@ -159,7 +186,7 @@ function step(){
   if(state!=='play')return;
   rentTimer++;
   // the scalp economy: more scalps -> faster rent
-  rent+=0.0016+scalps*0.00007;
+  rent+=(0.0016+scalps*0.00007)*(currentAesthetic?.rentMult||1);
   if(enemies.length<4&&Math.random()<0.02)spawnEnemy();
   // critters
   for(const k of critters){
@@ -169,9 +196,9 @@ function step(){
     // bricks
     for(const b of bricks){if(b.hp>0&&k.x>b.x&&k.x<b.x+b.w&&k.y>b.y&&k.y<b.y+b.h){
       b.hp-=k.cls.dmg||1;
-      if(!k.cls.pierce)k.vy*=-(k.cls.bounce||.82);
+      if(!k.cls.pierce)k.vy*=-((k.cls.bounce||.82)+(currentAesthetic?.bounceBonus||0));
       k.vx+=(Math.random()-.5);burst(k.x,k.y,'#ffd9a0',6);beep(300,.04);
-      if(b.hp<=0){scalps+=2+(k.cls.bonusScalp||0);drop(b.x+b.w/2,b.y);burst(b.x+b.w/2,b.y+8,'#e06a7a',12)}}}
+      if(b.hp<=0){scalps+=2+(k.cls.bonusScalp||0)+(currentAesthetic?.scalpBonus||0);drop(b.x+b.w/2,b.y);burst(b.x+b.w/2,b.y+8,'#e06a7a',12)}}}
     // enemies
     for(const e of enemies){if(e.hp>0&&Math.hypot(k.x-e.x,k.y-e.y)<22){
       let dmg=k.cls.dmg||1;if(k.cls.crit&&Math.random()<k.cls.crit)dmg*=2;
@@ -179,7 +206,7 @@ function step(){
       if(!k.cls.pierce){k.vx*=-.7;k.vy*=-.7}
       burst(e.x,e.y,e.c,10);shake=5;beep(220,.06);
       if(k.cls.heal&&Math.random()<k.cls.heal){rent=Math.max(0,rent-1.5);burst(k.x,k.y,'#a8e0b8',8);beep(880,.1,'sine')}
-      if(e.hp<=0){scalps+=3+(k.cls.bonusScalp||0);onEnemyDeath(e)}}}
+      if(e.hp<=0){scalps+=3+(k.cls.bonusScalp||0)+(currentAesthetic?.scalpBonus||0);onEnemyDeath(e)}}}
   }
   critters=critters.filter(k=>k.life>0&&k.y<H+40);
   // enemies move + descend
@@ -200,11 +227,12 @@ function step(){
     if(r.y<r.r){r.vy*=-.7;r.y=r.r}}
   recess=recess.filter(r=>r.life>0&&r.y<H+40);
   if(recessMsg>0)recessMsg--;
+  if(choicePending&&recessMsg<=0){choicePending=false;openChoice();return}
   // RENT DUE
   if(rent>=rentDue){
     if(rentPaid>=Math.floor(rentDue*0.4)&&clovers>=1){
       clovers--;rentPaid=0;rent=10;rentDue=Math.floor(rentDue*1.35);beep(523,.18);
-      burst(W/2,H/2,'#56e08a',30);shake=4;spawnRecess();
+      burst(W/2,H/2,'#56e08a',30);shake=4;spawnRecess();choicePending=true;
       landlordSay(RENT_PASS_LINES[Math.floor(Math.random()*RENT_PASS_LINES.length)]);
     }else{
       consequences++;rent=rent*0.6;rentDue=Math.floor(rentDue*1.15);shake=12;
@@ -235,15 +263,21 @@ function draw(){
   if(landlordMsg>0){x.globalAlpha=Math.min(1,landlordMsg/50);x.fillStyle='#b98cff';
     x.font='italic 11px Fraunces, serif';x.textAlign='center';
     x.fillText(landlordText,W/2,63);x.globalAlpha=1}
+  if(currentAesthetic){x.fillStyle='#7a7588';x.font='10px JetBrains Mono';x.textAlign='left';
+    x.fillText('🎨 '+currentAesthetic.name,10,H-10)}
+  // the shader mechanic — the world past this point wears whatever aesthetic was chosen
+  x.filter=currentAesthetic?.filter||'none';
   // bricks (the billboard wall / rent)
   for(const b of bricks){if(b.hp>0){const a=b.hp/b.max;
     x.fillStyle=`rgba(${180+a*60},${100+a*60},${120+a*40},${.4+a*.5})`;
     x.fillRect(b.x,b.y,b.w,b.h);x.strokeStyle='rgba(255,217,160,.2)';x.strokeRect(b.x,b.y,b.w,b.h)}}
-  // enemies
+  // enemies — Ink Wash makes them harder to track (that's the trade-off)
   x.textAlign='center';x.textBaseline='middle';
+  x.globalAlpha=currentAesthetic?.enemyAlpha??1;
   for(const e of enemies){x.font='22px serif';
     const wob=Math.sin(e.ph)*3;x.fillText(e.g,e.x+wob,e.y);
     x.fillStyle=e.c;x.fillRect(e.x-12,e.y+14,24*(e.hp/e.hpm),3)}
+  x.globalAlpha=1;
   // drops
   for(const d of drops){if(d.clover){x.font='18px serif';x.fillText('🍀',d.x,d.y)}
     else{x.fillStyle='#ffd9a0';x.beginPath();x.arc(d.x,d.y,d.r,0,6.3);x.fill()}}
@@ -269,6 +303,32 @@ function draw(){
     x.fillStyle='#e8efe9';x.font='13px JetBrains Mono';
     x.fillText('you gathered '+scalps+' scalps. it was never enough.',W/2,H/2+6);
     x.fillStyle='#ffd9a0';x.fillText('click to try again',W/2,H/2+40);}
+  if(state==='choose'){
+    x.fillStyle='rgba(10,12,18,.93)';x.fillRect(0,0,W,H);
+    x.fillStyle='#ffc4d6';x.font='italic bold 21px Fraunces, serif';x.textAlign='center';
+    x.fillText('choose the shader',W/2,58);
+    x.fillStyle='#7a7588';x.font='11px JetBrains Mono';
+    x.fillText('the visual style IS the difficulty — pick your trade-off',W/2,78);
+    const cardH=140,gap=16,startY=100,cx=30,cw=W-60;
+    choiceCardRects=choices.map((ch,i)=>{
+      const cy=startY+i*(cardH+gap);
+      x.fillStyle='rgba(255,255,255,.05)';x.fillRect(cx,cy,cw,cardH);
+      x.strokeStyle='rgba(127,198,154,.35)';x.strokeRect(cx,cy,cw,cardH);
+      x.textAlign='left';x.fillStyle='#ffd9a0';x.font='bold italic 18px Fraunces, serif';
+      x.fillText(ch.name,cx+16,cy+30);
+      x.fillStyle='#e8efe9';x.font='12px JetBrains Mono';
+      wrapText(ch.blurb,cx+16,cy+56,cw-32,17);
+      return{x:cx,y:cy,w:cw,h:cardH};
+    });
+  }
+}
+let choiceCardRects=[];
+function wrapText(text,x0,y0,maxW,lh){
+  const words=text.split(' ');let line='',yy=y0;
+  for(const w of words){const test=line+w+' ';
+    if(x.measureText(test).width>maxW&&line){x.fillText(line,x0,yy);line=w+' ';yy+=lh}
+    else line=test;}
+  x.fillText(line,x0,yy);
 }
 function loop(){step();draw();requestAnimationFrame(loop)}
 
@@ -277,6 +337,12 @@ function pos(e){const r=c.getBoundingClientRect();const p=e.touches?e.touches[0]
 c.addEventListener('pointerdown',e=>{e.preventDefault();
   if(state==='menu'||state==='over'){ov.classList.add('hidden');reset();return}
   const p=pos(e);
+  if(state==='choose'){
+    for(const r of choiceCardRects){if(p.x>r.x&&p.x<r.x+r.w&&p.y>r.y&&p.y<r.y+r.h){
+      currentAesthetic=choices[choiceCardRects.indexOf(r)];
+      beep(587,.1);beep(880,.14);state='play';return}}
+    return;
+  }
   for(let i=recess.length-1;i>=0;i--){const r=recess[i];
     if(Math.hypot(p.x-r.x,p.y-r.y)<r.r+8){recess.splice(i,1);
       burst(r.x,r.y,'#ffc4d6',10);beep(700+Math.random()*300,.1,'sine');return}}
