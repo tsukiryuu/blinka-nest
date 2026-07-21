@@ -61,7 +61,7 @@ canvas{background:#0c0a14;border:1px solid rgba(127,198,154,.18);border-radius:1
   <div id="overlay">
     <h2>a rent fantasy</h2>
     <p>Your farm sits in a city that is slightly wrong. Launch your animals at it. Scalps are easy. Clovers are not. Rent is always due.</p>
-    <p style="color:var(--faint);font-size:.78rem">The better you do, the faster the rent climbs. That's the point.</p>
+    <p style="color:var(--faint);font-size:.78rem">You don't pick what each one becomes — a paladin cow, a samurai cat, a healer goat — you earn it through physics and chaos. The better you do, the faster the rent climbs. That's the point.</p>
     <div class="hint">click / tap to launch — aim with your cursor</div>
   </div>
 </div>
@@ -74,14 +74,31 @@ const ov=document.getElementById('overlay');
 let state='menu',shake=0,t=0;
 let scalps=0,clovers=0,rent=10,rentPaid=0,rentDue=18,rentTimer=0,consequences=0;
 let critters=[],bricks=[],enemies=[],drops=[],parts=[],recess=[],recessMsg=0;
-const HERD=['🐔','🐖','🐑','🦆','🐐'];
 const PLUSH=['🧸','🐻','🦄','🐰','🐨']; // fae & core's pillow fort — recess after rent
+// the tame roster — from the GDD: "you don't pick a class, you earn it through physics
+// and chaos." each launch becomes one of these; the class is a real verb, not a skin.
+const CLASSES=[
+  {g:'🐄',name:'Paladin',   dmg:2,   bounce:.94},                 // tanky, devastating charge
+  {g:'🐔',name:'Ranger',    dmg:1,   bounce:.88, bonusScalp:1},    // erratic, hits everything
+  {g:'🐐',name:'White Mage',dmg:1,   bounce:.86, heal:.25},        // stubborn healer
+  {g:'🐇',name:'Monk',      dmg:1,   bounce:.97},                  // combo-based, keeps going
+  {g:'🐈',name:'Samurai',   dmg:1,   bounce:.86, crit:.2},         // devastating when it feels like it
+  {g:'🦙',name:'Cleric',    dmg:1,   bounce:.86, pierce:true},     // spits through, holy attack
+];
 let aiming=false,aimX=0,aimY=0;
 const farm={x:W/2,y:H-46};
 
+// the landlord's voice — ancient, unknowable, mocking. a diegetic presence, not a UI label.
+let landlordMsg=0,landlordText='';
+function landlordSay(text){landlordText=text;landlordMsg=170}
+const RENT_PASS_LINES=["the landlord counts it twice. says nothing.","payment accepted. barely.",
+  "he raises the number before you've caught your breath.","“noted,” says the unknowable thing."];
+const RENT_FAIL_LINES=["the landlord was never surprised.","he already knew you'd be short.",
+  "“understandable,” he says, taking something else instead.","the ancient thing accepts your excuse. it did not need to."];
+
 function reset(){
   scalps=0;clovers=0;rent=10;rentPaid=0;rentDue=18;rentTimer=0;consequences=0;
-  critters=[];enemies=[];drops=[];parts=[];bricks=[];recess=[];recessMsg=0;
+  critters=[];enemies=[];drops=[];parts=[];bricks=[];recess=[];recessMsg=0;landlordMsg=0;
   for(let r=0;r<4;r++)for(let i=0;i<10;i++)
     bricks.push({x:18+i*49,y:78+r*22,w:44,h:17,hp:1+r,max:1+r});
   state='play';
@@ -95,16 +112,35 @@ function spawnRecess(){
       rot:Math.random()*6.28,vr:(Math.random()-.5)*.1});}
   [660,784,880,988].forEach((f,i)=>setTimeout(()=>beep(f,.12,'sine'),i*70));
 }
+// enemy factions from the GDD — the actual forces that destroy small farms and
+// independent businesses, dressed in absurdity. each has one real behavioral twist.
+const FACTIONS=[
+  {g:'\u{1F3DA}️',hp:3,c:'#e06a7a',faction:'squatter'},    // Squatters — opportunistic, common
+  {g:'\u{1F4CB}',hp:2,c:'#b98cff',faction:'planner'},           // Aggressive Urban Planners — rezone on death
+  {g:'\u{1F6D2}',hp:4,c:'#6a9ce0',faction:'supermarket'},       // Supermarket Employees — guaranteed clover drop
+];
 function spawnEnemy(){
-  const types=[{g:'👁',hp:3,c:'#e06a7a'},{g:'🗙',hp:2,c:'#b98cff'},{g:'⬢',hp:4,c:'#6a9ce0'}];
-  const ty=types[Math.floor(Math.random()*types.length)];
+  const ty=FACTIONS[Math.floor(Math.random()*FACTIONS.length)];
   enemies.push({x:40+Math.random()*(W-80),y:150+Math.random()*70,
     vx:(Math.random()-.5)*1.2,vy:.2+Math.random()*.3,...ty,hpm:ty.hp,ph:Math.random()*6});
 }
+function onEnemyDeath(e){
+  if(e.faction==='supermarket'){ // "they have supply chains" — a guaranteed clover
+    drops.push({x:e.x,y:e.y,vy:.6,clover:true,g:'\u{1F340}',life:300,r:12});
+  }else drop(e.x,e.y);
+  drop(e.x+6,e.y);
+  if(e.faction==='planner'){ // rezones a section of the battlefield mid-fight
+    for(let i=0;i<3;i++){const b=bricks[Math.floor(Math.random()*bricks.length)];
+      if(b){b.hp=b.max;burst(b.x+b.w/2,b.y+b.h/2,'#b98cff',8)}}
+    landlordSay("the zoning board rezoned a section. of course they did.");
+  }
+  burst(e.x,e.y,e.c,20);
+}
 function launch(tx,ty){
   const dx=tx-farm.x,dy=ty-farm.y,d=Math.hypot(dx,dy)||1,p=Math.min(d/55,7.5);
+  const cls=CLASSES[Math.floor(Math.random()*CLASSES.length)];
   critters.push({x:farm.x,y:farm.y,vx:dx/d*p*2.4,vy:dy/d*p*2.4,
-    g:HERD[Math.floor(Math.random()*HERD.length)],life:240,r:13});
+    g:cls.g,cls,life:240,r:13});
   beep(420,.05);
 }
 function burst(px,py,col,n){for(let i=0;i<n;i++){const a=Math.random()*6.28,s=1+Math.random()*4;
@@ -132,12 +168,18 @@ function step(){
     if(k.y<k.r){k.vy*=-.86;k.y=k.r}
     // bricks
     for(const b of bricks){if(b.hp>0&&k.x>b.x&&k.x<b.x+b.w&&k.y>b.y&&k.y<b.y+b.h){
-      b.hp--;k.vy*=-.82;k.vx+=(Math.random()-.5);burst(k.x,k.y,'#ffd9a0',6);beep(300,.04);
-      if(b.hp<=0){scalps+=2;drop(b.x+b.w/2,b.y);burst(b.x+b.w/2,b.y+8,'#e06a7a',12)}}}
+      b.hp-=k.cls.dmg||1;
+      if(!k.cls.pierce)k.vy*=-(k.cls.bounce||.82);
+      k.vx+=(Math.random()-.5);burst(k.x,k.y,'#ffd9a0',6);beep(300,.04);
+      if(b.hp<=0){scalps+=2+(k.cls.bonusScalp||0);drop(b.x+b.w/2,b.y);burst(b.x+b.w/2,b.y+8,'#e06a7a',12)}}}
     // enemies
     for(const e of enemies){if(e.hp>0&&Math.hypot(k.x-e.x,k.y-e.y)<22){
-      e.hp--;k.vx*=-.7;k.vy*=-.7;burst(e.x,e.y,e.c,10);shake=5;beep(220,.06);
-      if(e.hp<=0){scalps+=3;drop(e.x,e.y);drop(e.x+6,e.y);burst(e.x,e.y,e.c,20)}}}
+      let dmg=k.cls.dmg||1;if(k.cls.crit&&Math.random()<k.cls.crit)dmg*=2;
+      e.hp-=dmg;
+      if(!k.cls.pierce){k.vx*=-.7;k.vy*=-.7}
+      burst(e.x,e.y,e.c,10);shake=5;beep(220,.06);
+      if(k.cls.heal&&Math.random()<k.cls.heal){rent=Math.max(0,rent-1.5);burst(k.x,k.y,'#a8e0b8',8);beep(880,.1,'sine')}
+      if(e.hp<=0){scalps+=3+(k.cls.bonusScalp||0);onEnemyDeath(e)}}}
   }
   critters=critters.filter(k=>k.life>0&&k.y<H+40);
   // enemies move + descend
@@ -163,12 +205,15 @@ function step(){
     if(rentPaid>=Math.floor(rentDue*0.4)&&clovers>=1){
       clovers--;rentPaid=0;rent=10;rentDue=Math.floor(rentDue*1.35);beep(523,.18);
       burst(W/2,H/2,'#56e08a',30);shake=4;spawnRecess();
+      landlordSay(RENT_PASS_LINES[Math.floor(Math.random()*RENT_PASS_LINES.length)]);
     }else{
       consequences++;rent=rent*0.6;rentDue=Math.floor(rentDue*1.15);shake=12;
       beep(90,.4,'sawtooth');burst(W/2,H/2,'#e06a7a',30);
       for(let i=0;i<2;i++)spawnEnemy();
+      landlordSay(RENT_FAIL_LINES[Math.floor(Math.random()*RENT_FAIL_LINES.length)]);
     }
   }
+  if(landlordMsg>0)landlordMsg--;
   if(consequences>=5)state='over';
 }
 
@@ -186,6 +231,10 @@ function draw(){
   // consequence pips
   x.textAlign='left';x.fillStyle='#e06a7a';x.font='11px JetBrains Mono';
   x.fillText('eviction '+('▰'.repeat(consequences))+('▱'.repeat(Math.max(0,5-consequences))),10,46);
+  // the landlord — ancient, unknowable, always has something to say
+  if(landlordMsg>0){x.globalAlpha=Math.min(1,landlordMsg/50);x.fillStyle='#b98cff';
+    x.font='italic 11px Fraunces, serif';x.textAlign='center';
+    x.fillText(landlordText,W/2,63);x.globalAlpha=1}
   // bricks (the billboard wall / rent)
   for(const b of bricks){if(b.hp>0){const a=b.hp/b.max;
     x.fillStyle=`rgba(${180+a*60},${100+a*60},${120+a*40},${.4+a*.5})`;
