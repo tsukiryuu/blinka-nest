@@ -66,24 +66,34 @@ canvas{background:#0c0a14;border:1px solid rgba(127,198,154,.18);border-radius:1
   </div>
 </div>
 <div class="foot">a prototype from the Nest · <a href="index.html">← back to Blinka's grove</a>
-  <div class="controls">drag to aim · release to launch a critter · catch clovers · survive the rent</div>
+  <div class="controls">drag to aim · release to launch a critter · catch clovers · survive the rent · pop the recess plushies for a breather</div>
 </div>
 <script>
 const c=document.getElementById('c'),x=c.getContext('2d'),W=c.width,H=c.height;
 const ov=document.getElementById('overlay');
 let state='menu',shake=0,t=0;
 let scalps=0,clovers=0,rent=10,rentPaid=0,rentDue=18,rentTimer=0,consequences=0;
-let critters=[],bricks=[],enemies=[],drops=[],parts=[];
+let critters=[],bricks=[],enemies=[],drops=[],parts=[],recess=[],recessMsg=0;
 const HERD=['🐔','🐖','🐑','🦆','🐐'];
+const PLUSH=['🧸','🐻','🦄','🐰','🐨']; // fae & core's pillow fort — recess after rent
 let aiming=false,aimX=0,aimY=0;
 const farm={x:W/2,y:H-46};
 
 function reset(){
   scalps=0;clovers=0;rent=10;rentPaid=0;rentDue=18;rentTimer=0;consequences=0;
-  critters=[];enemies=[];drops=[];parts=[];bricks=[];
+  critters=[];enemies=[];drops=[];parts=[];bricks=[];recess=[];recessMsg=0;
   for(let r=0;r<4;r++)for(let i=0;i<10;i++)
     bricks.push({x:18+i*49,y:78+r*22,w:44,h:17,hp:1+r,max:1+r});
   state='play';
+}
+function spawnRecess(){
+  recessMsg=140;
+  for(let i=0;i<12;i++){const a=Math.random()*6.28;
+    recess.push({x:W/2+(Math.random()-.5)*60,y:H/2+(Math.random()-.5)*60,
+      vx:Math.cos(a)*(1.5+Math.random()*2.5),vy:Math.sin(a)*(1.5+Math.random()*2.5)-1,
+      g:PLUSH[Math.floor(Math.random()*PLUSH.length)],life:200+Math.random()*80,r:15,
+      rot:Math.random()*6.28,vr:(Math.random()-.5)*.1});}
+  [660,784,880,988].forEach((f,i)=>setTimeout(()=>beep(f,.12,'sine'),i*70));
 }
 function spawnEnemy(){
   const types=[{g:'👁',hp:3,c:'#e06a7a'},{g:'🗙',hp:2,c:'#b98cff'},{g:'⬢',hp:4,c:'#6a9ce0'}];
@@ -142,11 +152,17 @@ function step(){
   drops=drops.filter(d=>d.life>0&&d.y<H);
   for(const p of parts){p.x+=p.vx;p.y+=p.vy;p.vy+=.08;p.life--}
   parts=parts.filter(p=>p.life>0);
+  // pillow recess — soft, harmless, just for joy
+  for(const r of recess){r.x+=r.vx;r.y+=r.vy;r.vy+=0.025;r.vx*=0.992;r.rot+=r.vr;r.life--;
+    if(r.x<r.r||r.x>W-r.r){r.vx*=-.7;r.x=Math.max(r.r,Math.min(W-r.r,r.x))}
+    if(r.y<r.r){r.vy*=-.7;r.y=r.r}}
+  recess=recess.filter(r=>r.life>0&&r.y<H+40);
+  if(recessMsg>0)recessMsg--;
   // RENT DUE
   if(rent>=rentDue){
     if(rentPaid>=Math.floor(rentDue*0.4)&&clovers>=1){
       clovers--;rentPaid=0;rent=10;rentDue=Math.floor(rentDue*1.35);beep(523,.18);
-      burst(W/2,H/2,'#56e08a',30);shake=4;
+      burst(W/2,H/2,'#56e08a',30);shake=4;spawnRecess();
     }else{
       consequences++;rent=rent*0.6;rentDue=Math.floor(rentDue*1.15);shake=12;
       beep(90,.4,'sawtooth');burst(W/2,H/2,'#e06a7a',30);
@@ -187,6 +203,12 @@ function draw(){
     x.fillRect(p.x,p.y,2.5,2.5)}x.globalAlpha=1;
   // critters
   for(const k of critters){x.font='22px serif';x.fillText(k.g,k.x,k.y)}
+  // pillow recess — poppable, no consequence, just a breather
+  for(const r of recess){x.save();x.translate(r.x,r.y);x.rotate(r.rot);
+    x.font='24px serif';x.textAlign='center';x.textBaseline='middle';x.fillText(r.g,0,0);x.restore()}
+  if(recessMsg>0){x.globalAlpha=Math.min(1,recessMsg/40);x.fillStyle='#ffc4d6';
+    x.font='italic bold 15px Fraunces, serif';x.textAlign='center';
+    x.fillText('recess — a pillow fort, for fae',W/2,H/2+70);x.globalAlpha=1}
   // farm + aim
   x.font='28px serif';x.fillText('🏠',farm.x,farm.y);
   if(aiming){x.strokeStyle='rgba(255,196,214,.5)';x.setLineDash([4,5]);
@@ -205,7 +227,11 @@ function pos(e){const r=c.getBoundingClientRect();const p=e.touches?e.touches[0]
   return{x:(p.clientX-r.left)*(W/r.width),y:(p.clientY-r.top)*(H/r.height)}}
 c.addEventListener('pointerdown',e=>{e.preventDefault();
   if(state==='menu'||state==='over'){ov.classList.add('hidden');reset();return}
-  aiming=true;const p=pos(e);aimX=p.x;aimY=p.y});
+  const p=pos(e);
+  for(let i=recess.length-1;i>=0;i--){const r=recess[i];
+    if(Math.hypot(p.x-r.x,p.y-r.y)<r.r+8){recess.splice(i,1);
+      burst(r.x,r.y,'#ffc4d6',10);beep(700+Math.random()*300,.1,'sine');return}}
+  aiming=true;aimX=p.x;aimY=p.y});
 c.addEventListener('pointermove',e=>{if(aiming){const p=pos(e);aimX=p.x;aimY=p.y}});
 c.addEventListener('pointerup',e=>{if(aiming){aiming=false;launch(aimX,aimY)}});
 ov.addEventListener('pointerdown',()=>{ov.classList.add('hidden');reset()});
