@@ -79,12 +79,17 @@ const PLUSH=['🧸','🐻','🦄','🐰','🐨']; // fae & core's pillow fort �
 // and chaos." each launch becomes one of these; the class is a real verb, not a skin.
 // "you're not selecting a creature from a menu. you're earning it through physics
 // and chaos." — where the ball FIRST lands decides the class. brick zones (by row,
-// farthest/hardest = rarest) tame one roster; landing on an enemy first tames another.
-const BRICK_CLASSES=[
-  {g:'🐈',name:'Samurai',   dmg:1, bounce:.86, crit:.2},          // row 0, farthest — rare, devastating when it feels like it
-  {g:'🐄',name:'Paladin',   dmg:2, bounce:.94},                    // row 1 — tanky, devastating charge
-  {g:'🦙',name:'Cleric',    dmg:1, bounce:.86, pierce:true},       // row 2 — spits through, holy attack
-  {g:'🐔',name:'Ranger',    dmg:1, bounce:.88, bonusScalp:1},      // row 3, closest — common, hits everything
+// farthest/hardest = rarest) each hold a small pool; landing on an enemy first draws
+// from a separate pool. the full 17-animal roster from the GDD, now complete.
+const BRICK_ZONES=[
+  [{g:'🐈',name:'Samurai', dmg:1, bounce:.86, crit:.2},                    // devastating when it feels like it
+   {g:'🐃',name:'Sentinel', dmg:3, bounce:.30}],                            // immovable tank
+  [{g:'🐄',name:'Paladin', dmg:2, bounce:.94},                             // tanky, devastating charge
+   {g:'🐹',name:'Berserker',dmg:1, bounce:.90, berserk:true}],              // wheel energy → violence, escalating
+  [{g:'🦙',name:'Cleric',  dmg:1, bounce:.86, pierce:true},                 // spits through, holy attack
+   {g:'🦌',name:'Red Mage', dmg:1, bounce:.88, heal:.15, crit:.1}],         // hybrid casting — a little of both
+  [{g:'🐔',name:'Ranger',  dmg:1, bounce:.88, bonusScalp:1},                // common, hits everything
+   {g:'🐟',name:'Fighter',  dmg:1, bounce:.88, neverTires:true}],           // 3-second memory, never gets tired
 ];
 const ENEMY_CLASSES=[
   {g:'🐐',name:'White Mage',  dmg:1, bounce:.86, heal:.25},         // stubborn healer
@@ -92,6 +97,10 @@ const ENEMY_CLASSES=[
   {g:'🐹',name:'Chronomancer',dmg:1, bounce:.88, slow:.5},          // time manipulation, unexpected, perfect
   {g:'🐖',name:'Black Mage',  dmg:1, bounce:.84, splash:55},        // chaotic destructive energy
   {g:'🦚',name:'Dragoon',     dmg:1, bounce:.90, jump:1.3},         // jump attacks, obviously
+  {g:'🦡',name:'Rogue',       dmg:1, bounce:.90, stealBonus:2},     // steals scalps mid-combat
+  {g:'🐀',name:'Green Mage',  dmg:1, bounce:.88, poison:true},      // poison, nature, scrappy
+  {g:'🐕',name:'Beastmaster', dmg:1, bounce:.86, retame:.15},       // you can tame tamers. yes.
+  {g:'🐦',name:'Dancer',      dmg:1, bounce:.86, danceBuff:true},   // buff/debuff through movement patterns
 ];
 const UNTAMED_G='🥚'; // hasn't earned a class yet
 let aiming=false,aimX=0,aimY=0;
@@ -216,37 +225,53 @@ function step(){
   // critters
   for(const k of critters){
     k.x+=k.vx;k.y+=k.vy;k.vy+=0.07;k.vx*=0.999;k.life--;
-    if(k.x<k.r||k.x>W-k.r){k.vx*=-.86;k.x=Math.max(k.r,Math.min(W-k.r,k.x));shake=3}
+    if(k.x<k.r||k.x>W-k.r){k.vx*=-.86;k.x=Math.max(k.r,Math.min(W-k.r,k.x));shake=3;
+      if(k.cls?.danceBuff){k.vx*=1.32;k.vy*=1.2}} // Dancer — buffs itself through movement patterns (net gain, not just a softer bounce)
     if(k.y<k.r){k.vy*=-.86;k.y=k.r}
-    // bricks — first landing tames the class, by row (farthest = rarest)
+    // bricks — first landing tames the class, by row (farthest = rarest pool)
     for(const b of bricks){if(b.hp>0&&k.x>b.x&&k.x<b.x+b.w&&k.y>b.y&&k.y<b.y+b.h){
-      if(!k.cls){k.cls=BRICK_CLASSES[b.row];k.g=k.cls.g;
+      if(!k.cls){const pool=BRICK_ZONES[b.row];k.cls=pool[Math.floor(Math.random()*pool.length)];k.g=k.cls.g;
         burst(k.x,k.y,'#ffc4d6',10);beep(500+b.row*80,.08,'sine')}
-      b.hp-=k.cls.dmg||1;
+      let dmg=k.cls.dmg||1;
+      if(k.cls.berserk){k.hits=(k.hits||0)+1;dmg=Math.min(dmg+k.hits*0.5,4)} // Berserker — escalating rage
+      if(k.cls.retame&&Math.random()<k.cls.retame){ // Beastmaster — tames a tamer. the recursion is intentional.
+        const pool2=[...BRICK_ZONES.flat(),...ENEMY_CLASSES];k.cls=pool2[Math.floor(Math.random()*pool2.length)];
+        k.g=k.cls.g;burst(k.x,k.y,'#ffe0a8',8);beep(660,.08,'sine')}
+      b.hp-=dmg;
       if(!k.cls.pierce)k.vy*=-((k.cls.bounce||.82)+(currentAesthetic?.bounceBonus||0));
       if(k.cls.jump)k.vy-=k.cls.jump;
+      if(k.cls.neverTires)k.life=240; // Fighter — three second memory, every attack feels fresh
       k.vx+=(Math.random()-.5);burst(k.x,k.y,'#ffd9a0',6);beep(300,.04);
       if(k.cls.splash)splashDamage(k.x,k.y,k.cls.splash);
-      if(b.hp<=0){scalps+=2+(k.cls.bonusScalp||0)+(currentAesthetic?.scalpBonus||0);drop(b.x+b.w/2,b.y);burst(b.x+b.w/2,b.y+8,'#e06a7a',12)}}}
+      if(b.hp<=0){scalps+=2+(k.cls.bonusScalp||0)+(k.cls.stealBonus||0)+(currentAesthetic?.scalpBonus||0);drop(b.x+b.w/2,b.y);burst(b.x+b.w/2,b.y+8,'#e06a7a',12)}}}
     // enemies — landing here first (before any brick) tames from the other roster
     for(const e of enemies){if(e.hp>0&&Math.hypot(k.x-e.x,k.y-e.y)<22){
       if(!k.cls){k.cls=ENEMY_CLASSES[Math.floor(Math.random()*ENEMY_CLASSES.length)];k.g=k.cls.g;
         burst(k.x,k.y,'#c9b8ff',10);beep(700,.08,'sine')}
       let dmg=k.cls.dmg||1;if(k.cls.crit&&Math.random()<k.cls.crit)dmg*=2;
+      if(k.cls.berserk){k.hits=(k.hits||0)+1;dmg=Math.min(dmg+k.hits*0.5,4)}
+      if(k.cls.retame&&Math.random()<k.cls.retame){
+        const pool2=[...BRICK_ZONES.flat(),...ENEMY_CLASSES];k.cls=pool2[Math.floor(Math.random()*pool2.length)];
+        k.g=k.cls.g;burst(k.x,k.y,'#ffe0a8',8);beep(660,.08,'sine')}
       e.hp-=dmg;
       if(!k.cls.pierce){k.vx*=-.7;k.vy*=-.7}
       if(k.cls.slow){e.vx*=k.cls.slow;e.vy*=k.cls.slow;burst(e.x,e.y,'#a8c8ff',6)}
+      if(k.cls.poison){e.poison=(e.poison||0)+3;burst(e.x,e.y,'#7fc69a',6)} // Green Mage — poison, nature, scrappy
       if(k.cls.splash)splashDamage(e.x,e.y,k.cls.splash);
+      if(k.cls.neverTires)k.life=240;
       burst(e.x,e.y,e.c,10);shake=5;beep(220,.06);
       if(k.cls.heal&&Math.random()<k.cls.heal){rent=Math.max(0,rent-1.5);burst(k.x,k.y,'#a8e0b8',8);beep(880,.1,'sine')}
-      if(e.hp<=0){scalps+=3+(k.cls.bonusScalp||0)+(currentAesthetic?.scalpBonus||0);onEnemyDeath(e)}}}
+      if(e.hp<=0){scalps+=3+(k.cls.bonusScalp||0)+(k.cls.stealBonus||0)+(currentAesthetic?.scalpBonus||0);onEnemyDeath(e)}}}
   }
   critters=critters.filter(k=>k.life>0&&k.y<H+40);
   if(pendingSpawns.length){enemies.push(...pendingSpawns);pendingSpawns=[]}
   // enemies move + descend
   for(const e of enemies){e.x+=e.vx;e.y+=e.vy;e.ph+=.05;
     if(e.x<24||e.x>W-24)e.vx*=-1;
-    if(e.y>H-120){consequences++;e.hp=0;burst(e.x,e.y,'#e06a7a',14);shake=8;beep(120,.2,'sawtooth')}}
+    if(e.poison>0){e.poisonTimer=(e.poisonTimer||0)+1; // Green Mage's poison ticking down
+      if(e.poisonTimer>=20){e.poisonTimer=0;e.poison--;e.hp--;burst(e.x,e.y,'#7fc69a',4);
+        if(e.hp<=0){scalps+=2;onEnemyDeath(e)}}}
+    if(e.hp>0&&e.y>H-120){consequences++;e.hp=0;burst(e.x,e.y,'#e06a7a',14);shake=8;beep(120,.2,'sawtooth')}}
   enemies=enemies.filter(e=>e.hp>0);
   // drops fall, farm collects
   for(const d of drops){d.y+=d.vy;d.vy+=.02;d.life--;
