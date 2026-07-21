@@ -103,6 +103,24 @@ const ENEMY_CLASSES=[
   {g:'🐦',name:'Dancer',      dmg:1, bounce:.86, danceBuff:true},   // buff/debuff through movement patterns
 ];
 const UNTAMED_G='🥚'; // hasn't earned a class yet
+
+// the GDD's own open question: "can you ever grow clovers? no. but what if?"
+// not a whole farm sim — just real stakes that outlast one life. half your unspent
+// clovers survive an eviction, banked, and carry a small head start into the next run.
+const SAVE_KEY='scalps_clovers_save_v1';
+function loadSave(){
+  try{const raw=localStorage.getItem(SAVE_KEY);if(raw)return JSON.parse(raw);}catch(e){}
+  return {lifetimeScalps:0,lifetimeEvictions:0,bankedClovers:0,bestRentDue:0};
+}
+function saveSave(s){try{localStorage.setItem(SAVE_KEY,JSON.stringify(s));}catch(e){}}
+let save=loadSave();
+function bankProgress(){
+  save.lifetimeScalps+=scalps;
+  save.lifetimeEvictions+=1;
+  save.bestRentDue=Math.max(save.bestRentDue,Math.floor(rentDue));
+  save.bankedClovers+=Math.floor(clovers/2);
+  saveSave(save);
+}
 let aiming=false,aimX=0,aimY=0;
 const farm={x:W/2,y:H-46};
 
@@ -144,6 +162,8 @@ function reset(){
   scalps=0;clovers=0;rent=10;rentPaid=0;rentDue=18;rentTimer=0;consequences=0;
   critters=[];enemies=[];drops=[];parts=[];bricks=[];recess=[];recessMsg=0;landlordMsg=0;
   currentAesthetic=null;choices=[];choicePending=false;pendingSpawns=[];
+  if(save.bankedClovers>0){clovers=1;save.bankedClovers--;saveSave(save);
+    landlordSay("one clover, carried over. don't get used to it.");}
   for(let r=0;r<4;r++)for(let i=0;i<10;i++)
     bricks.push({x:18+i*49,y:78+r*22,w:44,h:17,hp:1+r,max:1+r,row:r});
   state='play';
@@ -301,7 +321,7 @@ function step(){
     }
   }
   if(landlordMsg>0)landlordMsg--;
-  if(consequences>=5)state='over';
+  if(consequences>=5){bankProgress();state='over'}
 }
 
 function draw(){
@@ -361,7 +381,12 @@ function draw(){
     x.fillText('evicted.',W/2,H/2-30);
     x.fillStyle='#e8efe9';x.font='13px JetBrains Mono';
     x.fillText('you gathered '+scalps+' scalps. it was never enough.',W/2,H/2+6);
-    x.fillStyle='#ffd9a0';x.fillText('click to try again',W/2,H/2+40);}
+    x.fillStyle='#7a7588';x.font='11px JetBrains Mono';
+    x.fillText('lifetime: '+save.lifetimeScalps+' scalps across '+save.lifetimeEvictions+
+      ' eviction'+(save.lifetimeEvictions===1?'':'s')+' · record: rent '+save.bestRentDue,W/2,H/2+28);
+    if(save.bankedClovers>0)x.fillText(save.bankedClovers+' clover'+(save.bankedClovers===1?'':'s')+
+      ' banked for next time',W/2,H/2+46);
+    x.fillStyle='#ffd9a0';x.font='13px JetBrains Mono';x.fillText('click to try again',W/2,H/2+72);}
   if(state==='choose'){
     x.fillStyle='rgba(10,12,18,.93)';x.fillRect(0,0,W,H);
     x.fillStyle='#ffc4d6';x.font='italic bold 21px Fraunces, serif';x.textAlign='center';
@@ -409,6 +434,14 @@ c.addEventListener('pointerdown',e=>{e.preventDefault();
 c.addEventListener('pointermove',e=>{if(aiming){const p=pos(e);aimX=p.x;aimY=p.y}});
 c.addEventListener('pointerup',e=>{if(aiming){aiming=false;launch(aimX,aimY)}});
 ov.addEventListener('pointerdown',()=>{ov.classList.add('hidden');reset()});
+if(save.lifetimeEvictions>0){ // welcome a returning farmer with their own history
+  const stat=document.createElement('p');
+  stat.style.cssText='color:var(--gold);font-size:.72rem;margin-top:10px';
+  stat.textContent='you’ve been evicted '+save.lifetimeEvictions+' time'+
+    (save.lifetimeEvictions===1?'':'s')+' before. '+save.lifetimeScalps+' scalps, total.'+
+    (save.bankedClovers>0?' '+save.bankedClovers+' clover'+(save.bankedClovers===1?'':'s')+' waiting for you.':'');
+  ov.insertBefore(stat, ov.querySelector('.hint'));
+}
 loop();
 </script>
 <!-- living atmosphere — inline, self-contained, fails-safe -->
