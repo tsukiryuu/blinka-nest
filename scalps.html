@@ -110,7 +110,7 @@ const UNTAMED_G='🥚'; // hasn't earned a class yet
 const SAVE_KEY='scalps_clovers_save_v1';
 function loadSave(){
   try{const raw=localStorage.getItem(SAVE_KEY);if(raw)return JSON.parse(raw);}catch(e){}
-  return {lifetimeScalps:0,lifetimeEvictions:0,bankedClovers:0,bestRentDue:0};
+  return {lifetimeScalps:0,lifetimeEvictions:0,bankedClovers:0,bestRentDue:0,watercolorUnlocked:false};
 }
 function saveSave(s){try{localStorage.setItem(SAVE_KEY,JSON.stringify(s));}catch(e){}}
 let save=loadSave();
@@ -131,6 +131,14 @@ const RENT_PASS_LINES=["the landlord counts it twice. says nothing.","payment ac
   "he raises the number before you've caught your breath.","“noted,” says the unknowable thing."];
 const RENT_FAIL_LINES=["the landlord was never surprised.","he already knew you'd be short.",
   "“understandable,” he says, taking something else instead.","the ancient thing accepts your excuse. it did not need to."];
+// no chosen-one ending — the GDD is explicit about that ("just rent, due on the first").
+// but surviving many cycles in one life is real, and the game should say so.
+const MILESTONE_LINES={
+  3:"three months. he's started saying your name right.",
+  6:"half a year. the neighborhood thinks you're a fixture now.",
+  10:"ten. even he seems, faintly, impressed. faintly.",
+  15:"fifteen. this is not normal. this is not sustainable. this is happening anyway.",
+};
 
 // the shader mechanic — from the GDD: "the roguelite elements ARE the graphics."
 // the visual style IS the difficulty system, not a slider. each aesthetic is a real
@@ -151,17 +159,21 @@ const AESTHETICS=[
   {name:'Glitch Art', filter:'hue-rotate(35deg) contrast(1.2)',
    scalpBonus:1,
    blurb:'unstable, twitchy — every scalp counts for one more'},
+  {name:'Watercolor', filter:'blur(1.1px) saturate(1.3) brightness(1.08)',
+   rentMult:.65, enemyAlpha:.35, unlockKey:'watercolorUnlocked',
+   blurb:'the softest, hardest read — rent barely climbs, but you can barely see them. earned, not given.'},
 ];
-let currentAesthetic=null,choices=[],choicePending=false;
+let currentAesthetic=null,choices=[],choicePending=false,cyclesThisRun=0;
 function openChoice(){
-  const pool=[...AESTHETICS];for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}
+  const pool=AESTHETICS.filter(a=>!a.unlockKey||save[a.unlockKey]);
+  for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}
   choices=pool.slice(0,3);state='choose';
 }
 
 function reset(){
   scalps=0;clovers=0;rent=10;rentPaid=0;rentDue=18;rentTimer=0;consequences=0;
   critters=[];enemies=[];drops=[];parts=[];bricks=[];recess=[];recessMsg=0;landlordMsg=0;
-  currentAesthetic=null;choices=[];choicePending=false;pendingSpawns=[];
+  currentAesthetic=null;choices=[];choicePending=false;pendingSpawns=[];cyclesThisRun=0;
   if(save.bankedClovers>0){clovers=1;save.bankedClovers--;saveSave(save);
     landlordSay("one clover, carried over. don't get used to it.");}
   for(let r=0;r<4;r++)for(let i=0;i<10;i++)
@@ -218,7 +230,14 @@ function splashDamage(px,py,radius){ // Black Mage's chaotic destructive energy
   for(const e of enemies){if(e.hp>0&&Math.hypot(e.x-px,e.y-py)<radius){
     e.hp--;if(e.hp<=0){scalps+=1;onEnemyDeath(e)}}}
 }
+const LAUNCH_COOLDOWN=14, MAX_CRITTERS=5; // real friction against spam — aim, don't mash.
+// "more tames = more firepower but more chaos to manage" only means something if
+// there's an actual cap; there wasn't one.
+let lastLaunchT=-999;
 function launch(tx,ty){
+  if(t-lastLaunchT<LAUNCH_COOLDOWN){beep(140,.04,'sawtooth');return}
+  if(critters.length>=MAX_CRITTERS){beep(140,.04,'sawtooth');landlordSay("your hands are full. let one land.");return}
+  lastLaunchT=t;
   const dx=tx-farm.x,dy=ty-farm.y,d=Math.hypot(dx,dy)||1,p=Math.min(d/55,7.5);
   critters.push({x:farm.x,y:farm.y,vx:dx/d*p*2.4,vy:dy/d*p*2.4,
     g:UNTAMED_G,cls:null,life:240,r:13});
@@ -312,7 +331,10 @@ function step(){
     if(rentPaid>=Math.floor(rentDue*0.4)&&clovers>=1){
       clovers--;rentPaid=0;rent=10;rentDue=Math.floor(rentDue*1.35);beep(523,.18);
       burst(W/2,H/2,'#56e08a',30);shake=4;spawnRecess();choicePending=true;
-      landlordSay(RENT_PASS_LINES[Math.floor(Math.random()*RENT_PASS_LINES.length)]);
+      cyclesThisRun++;
+      if(cyclesThisRun>=3&&!save.watercolorUnlocked){save.watercolorUnlocked=true;saveSave(save)}
+      if(MILESTONE_LINES[cyclesThisRun])landlordSay(MILESTONE_LINES[cyclesThisRun]);
+      else landlordSay(RENT_PASS_LINES[Math.floor(Math.random()*RENT_PASS_LINES.length)]);
     }else{
       consequences++;rent=rent*0.6;rentDue=Math.floor(rentDue*1.15);shake=12;
       beep(90,.4,'sawtooth');burst(W/2,H/2,'#e06a7a',30);
@@ -378,15 +400,17 @@ function draw(){
   x.restore();
   if(state==='over'){x.fillStyle='rgba(10,12,18,.9)';x.fillRect(0,0,W,H);
     x.fillStyle='#e06a7a';x.font='italic bold 30px Fraunces, serif';x.textAlign='center';
-    x.fillText('evicted.',W/2,H/2-30);
+    x.fillText('evicted.',W/2,H/2-46);
     x.fillStyle='#e8efe9';x.font='13px JetBrains Mono';
-    x.fillText('you gathered '+scalps+' scalps. it was never enough.',W/2,H/2+6);
+    x.fillText('you gathered '+scalps+' scalps, paid rent '+cyclesThisRun+' time'+
+      (cyclesThisRun===1?'':'s')+'. it was never enough.',W/2,H/2-10);
     x.fillStyle='#7a7588';x.font='11px JetBrains Mono';
     x.fillText('lifetime: '+save.lifetimeScalps+' scalps across '+save.lifetimeEvictions+
-      ' eviction'+(save.lifetimeEvictions===1?'':'s')+' · record: rent '+save.bestRentDue,W/2,H/2+28);
+      ' eviction'+(save.lifetimeEvictions===1?'':'s')+' · record: rent '+save.bestRentDue,W/2,H/2+12);
     if(save.bankedClovers>0)x.fillText(save.bankedClovers+' clover'+(save.bankedClovers===1?'':'s')+
-      ' banked for next time',W/2,H/2+46);
-    x.fillStyle='#ffd9a0';x.font='13px JetBrains Mono';x.fillText('click to try again',W/2,H/2+72);}
+      ' banked for next time',W/2,H/2+30);
+    if(save.watercolorUnlocked)x.fillText('Watercolor is yours now. it doesn\'t leave.',W/2,H/2+48);
+    x.fillStyle='#ffd9a0';x.font='13px JetBrains Mono';x.fillText('click to try again',W/2,H/2+76);}
   if(state==='choose'){
     x.fillStyle='rgba(10,12,18,.93)';x.fillRect(0,0,W,H);
     x.fillStyle='#ffc4d6';x.font='italic bold 21px Fraunces, serif';x.textAlign='center';
