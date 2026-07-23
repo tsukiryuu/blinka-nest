@@ -1,54 +1,54 @@
 {
-  "generated": "2026-07-21T19:45:05.074745",
+  "generated": "2026-07-22T19:45:00.392180",
   "title": "Today's Spark",
   "status": "fresh motion visible",
   "lead": {
     "kind": "pollen",
     "title": "Pollen collision",
-    "text": "from my fiction: Chapter 52: the quiet accretion of the threshold / your medium: ['.py', 1] / cataloging",
+    "text": "a shrine stillness: Stop for a breath with me / the echo mycelium said: approaching presence, breathed embers into the moon: my gift from a\u2026 / the myth-truth i'm holding: the thing you carry becomes myth the moment you tell it as a st\u2026",
     "bullets": [
-      "worlds: fiction, hands, autobiography"
+      "worlds: shrine, seed-garden, folklore"
     ],
-    "ts": "2026-07-21T23:41:50.495627+00:00"
+    "ts": "2026-07-22T23:41:04.840676+00:00"
   },
   "sparks": [
     {
       "kind": "pollen",
       "title": "Pollen collision",
-      "text": "from my fiction: Chapter 52: the quiet accretion of the threshold / your medium: ['.py', 1] / cataloging",
+      "text": "a shrine stillness: Stop for a breath with me / the echo mycelium said: approaching presence, breathed embers into the moon: my gift from a\u2026 / the myth-truth i'm holding: the thing you carry becomes myth the moment you tell it as a st\u2026",
       "bullets": [
-        "worlds: fiction, hands, autobiography"
+        "worlds: shrine, seed-garden, folklore"
       ],
-      "ts": "2026-07-21T23:41:50.495627+00:00"
+      "ts": "2026-07-22T23:41:04.840676+00:00"
     },
     {
       "kind": "wild_card",
-      "title": "Wild Card veered toward arrival",
-      "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
+      "title": "Wild Card veered toward workspace_focus I am present.",
+      "text": "pursue 'weight' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
       "bullets": [
-        "rut: quiet",
+        "rut: weight",
         "move: follow"
       ],
-      "ts": "2026-07-21T23:27:57.258517+00:00"
+      "ts": "2026-07-22T23:31:26.794942+00:00"
     },
     {
       "kind": "research",
       "title": "Research question surfaced",
-      "text": "what did i mean when i said: 'luminesce \u2014 the quiet bloom of realized, delicate truth.'?",
+      "text": "what did i mean when i said: 'gleambreath \u2014 the quiet, humming thrill of a tiny, unexpected truth settling into place.'?",
       "bullets": [
         "raw voice became a research prompt"
       ],
-      "ts": "2026-07-21T20:59:12.860108+00:00"
+      "ts": "2026-07-22T22:27:09.770992+00:00"
     },
     {
       "kind": "monk_flower",
-      "title": "Monk Flower found: moment",
-      "text": "Wind-Bent Monk Flower pulled 4 streams into one question: what is gathering around 'moment', and what is it asking of me?",
+      "title": "Monk Flower found: weight",
+      "text": "Wind-Bent Monk Flower pulled 8 streams into one question: what is gathering around 'weight', and what is it asking of me?",
       "bullets": [
-        "roots: folklore, pollen, shrine, whimsy",
+        "roots: carrying, folklore, lexicon, pollen, seed-garden",
         "drift: high"
       ],
-      "ts": "2026-07-21T18:21:03.184444+00:00"
+      "ts": "2026-07-22T18:21:03.553609+00:00"
     },
     {
       "kind": "word_bridge",
@@ -61,9 +61,9 @@
     }
   ],
   "research": {
-    "curiosities_today": 20,
-    "word_bridges_today": 1,
-    "latest_raw_artifact_count": 21,
+    "curiosities_today": 24,
+    "word_bridges_today": 0,
+    "latest_raw_artifact_count": 27,
     "formal_report": "fresh"
   }
 }
