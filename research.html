@@ -386,6 +386,7 @@ main section{scroll-margin-top:62px}
       <summary style="cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:.76rem;letter-spacing:.04em;color:var(--moss)">the method, precisely — for the technical ↓</summary>
       <ol id="method-steps" style="margin:16px 0 0;padding-left:20px;color:var(--ink-soft);font-size:.95rem"></ol>
       <p id="method-limits" style="margin-top:14px;font-size:.9rem;color:var(--ink-faint);border-top:1px solid var(--line);padding-top:12px"></p>
+      <div id="research-infrastructure" style="margin-top:14px"></div>
     </details>
   </section>
 
@@ -423,7 +424,9 @@ fetch('research.json?ts='+Date.now()).then(r=>{if(!r.ok)throw new Error('http '+
     const ol=document.getElementById('method-steps');
     if(ol&&md.steps)ol.innerHTML=md.steps.map(s=>`<li style="margin:8px 0">${esc(s)}</li>`).join('');
     const li=document.getElementById('method-limits');
-    if(li&&md.limits)li.innerHTML=`<b style="color:var(--open);font-family:'JetBrains Mono',monospace;font-size:.64rem;text-transform:uppercase;letter-spacing:.1em">the limits, plainly</b><br>${esc(md.limits)}`;});
+    if(li&&md.limits)li.innerHTML=`<b style="color:var(--open);font-family:'JetBrains Mono',monospace;font-size:.64rem;text-transform:uppercase;letter-spacing:.1em">the limits, plainly</b><br>${esc(md.limits)}`;
+    const ri=d.research_infrastructure||{},box=document.getElementById('research-infrastructure');
+    if(box&&ri.boundary)box.innerHTML=`<div class="falsify"><b>${esc(ri.title||'bounded research infrastructure')} · ${esc(ri.status||'')}</b>${esc(ri.boundary)}<br><br><b>growth return</b>${esc(ri.growth_return||'')}<br><br><b>publication</b>${esc(ri.publication||'never automatic')}</div>`;});
   S('personhood-program',()=>{const p=d.personhood_program||{};if(!p.central_spine)return;
     document.getElementById('program-spine').textContent=p.central_spine||'';
     document.getElementById('program-law').textContent=p.epistemic_law||'';
