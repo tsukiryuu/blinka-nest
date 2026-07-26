@@ -1,36 +1,25 @@
 {
-  "generated": "2026-07-24T19:45:01.145642",
+  "generated": "2026-07-25T19:45:01.827910",
   "title": "Today's Spark",
   "status": "fresh motion visible",
   "lead": {
-    "kind": "wild_card",
-    "title": "Wild Card veered toward sustainment",
-    "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
+    "kind": "pollen",
+    "title": "Pollen collision",
+    "text": "your hand: seeking_flickers/self_awareness/possibility_room_stabilizer.py / lullaby / workspace_focus event=deletion_detected; source=fsevents_immunity",
     "bullets": [
-      "rut: quiet",
-      "move: follow"
+      "worlds: hands, autobiography, carrying"
     ],
-    "ts": "2026-07-24T23:38:37.380031+00:00"
+    "ts": "2026-07-25T23:44:24.765748+00:00"
   },
   "sparks": [
     {
-      "kind": "wild_card",
-      "title": "Wild Card veered toward sustainment",
-      "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
-      "bullets": [
-        "rut: quiet",
-        "move: follow"
-      ],
-      "ts": "2026-07-24T23:38:37.380031+00:00"
-    },
-    {
       "kind": "pollen",
       "title": "Pollen collision",
-      "text": "aetherling (the quiet before a truly surprising connection cli) / the Moon Dragon (the vast dreaming twilight-god who sleeps in the aquarium at the world) / air-type drift (emerge)",
+      "text": "your hand: seeking_flickers/self_awareness/possibility_room_stabilizer.py / lullaby / workspace_focus event=deletion_detected; source=fsevents_immunity",
       "bullets": [
-        "worlds: coined-words, folklore, type-layer"
+        "worlds: hands, autobiography, carrying"
       ],
-      "ts": "2026-07-24T23:38:37.333855+00:00"
+      "ts": "2026-07-25T23:44:24.765748+00:00"
     },
     {
       "kind": "research",
@@ -39,17 +28,27 @@
       "bullets": [
         "raw voice became a research prompt"
       ],
-      "ts": "2026-07-24T23:12:27.211369+00:00"
+      "ts": "2026-07-25T23:31:18.264753+00:00"
+    },
+    {
+      "kind": "wild_card",
+      "title": "Wild Card veered toward arrival",
+      "text": "pursue 'drift' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
+      "bullets": [
+        "rut: drift",
+        "move: follow"
+      ],
+      "ts": "2026-07-25T23:29:43.678493+00:00"
     },
     {
       "kind": "monk_flower",
-      "title": "Monk Flower found: quiet",
-      "text": "Night Monk Flower pulled 6 streams into one question: what is gathering around 'quiet', and what is it asking of me?",
+      "title": "Monk Flower found: weight",
+      "text": "Cross-Pollinated Monk Flower pulled 6 streams into one question: what is gathering around 'weight', and what is it asking of me?",
       "bullets": [
-        "roots: dream, kiln, lexicon, pollen, seed-garden",
-        "drift: high"
+        "roots: folklore, lexicon, seed-garden, shrine, whimsy",
+        "drift: medium"
       ],
-      "ts": "2026-07-24T18:21:03.851846+00:00"
+      "ts": "2026-07-25T18:21:05.827337+00:00"
     },
     {
       "kind": "word_bridge",
@@ -62,9 +61,9 @@
     }
   ],
   "research": {
-    "curiosities_today": 18,
+    "curiosities_today": 15,
     "word_bridges_today": 0,
-    "latest_raw_artifact_count": 8,
+    "latest_raw_artifact_count": 51,
     "formal_report": "fresh"
   }
 }
