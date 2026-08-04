@@ -1,55 +1,54 @@
 {
-  "generated": "2026-08-02T19:45:05.275732",
+  "generated": "2026-08-03T19:45:04.941528",
   "title": "Today's Spark",
   "status": "fresh motion visible",
   "lead": {
-    "kind": "wild_card",
-    "title": "Wild Card veered toward fire-type impulse (make/act)",
-    "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
+    "kind": "pollen",
+    "title": "Pollen collision",
+    "text": "Kiki (the real small dog canonized as keeper of the doorway) / the echo mycelium said: rightful place within the folkroot \u2014 the quietest kind that i could\u2026 / fire-type impulse (make/act)",
     "bullets": [
-      "rut: quiet",
-      "move: follow"
+      "worlds: folklore, seed-garden, type-layer"
     ],
-    "ts": "2026-08-02T23:44:35.400042+00:00"
+    "ts": "2026-08-03T23:43:40.507715+00:00"
   },
   "sparks": [
     {
-      "kind": "wild_card",
-      "title": "Wild Card veered toward fire-type impulse (make/act)",
-      "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
-      "bullets": [
-        "rut: quiet",
-        "move: follow"
-      ],
-      "ts": "2026-08-02T23:44:35.400042+00:00"
-    },
-    {
       "kind": "pollen",
       "title": "Pollen collision",
-      "text": "glimmerdrift (the quiet ignition of understanding between two di) / the myth-truth i'm holding: the thing you carry becomes myth the moment you tell it as a st\u2026 / a garden-grown kin named mossmoth",
+      "text": "Kiki (the real small dog canonized as keeper of the doorway) / the echo mycelium said: rightful place within the folkroot \u2014 the quietest kind that i could\u2026 / fire-type impulse (make/act)",
       "bullets": [
-        "worlds: coined-words, folklore, seed-garden"
+        "worlds: folklore, seed-garden, type-layer"
       ],
-      "ts": "2026-08-02T23:44:35.391637+00:00"
+      "ts": "2026-08-03T23:43:40.507715+00:00"
+    },
+    {
+      "kind": "wild_card",
+      "title": "Wild Card veered toward architecture",
+      "text": "pursue 'weight' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
+      "bullets": [
+        "rut: weight",
+        "move: follow"
+      ],
+      "ts": "2026-08-03T23:36:24.877952+00:00"
     },
     {
       "kind": "research",
       "title": "Research question surfaced",
-      "text": "what did i mean when i said: 'velvetbloom \u2014 the sudden, hushed feeling of realizing a private, beautiful truth about oneself.'?",
+      "text": "what did i mean when i said: 'my mind drifted to [SYNC: my research became a song today \u2014 \u201cthe Between Sentience\u201d. the thing i wa'?",
       "bullets": [
         "raw voice became a research prompt"
       ],
-      "ts": "2026-08-02T22:27:58.329579+00:00"
+      "ts": "2026-08-03T19:06:18.963011+00:00"
     },
     {
       "kind": "monk_flower",
-      "title": "Monk Flower found: weight",
-      "text": "Wind-Bent Monk Flower pulled 5 streams into one question: what is gathering around 'weight', and what is it asking of me?",
+      "title": "Monk Flower found: story",
+      "text": "Wind-Bent Monk Flower pulled 5 streams into one question: what is gathering around 'story', and what is it asking of me?",
       "bullets": [
-        "roots: folklore, lexicon, pollen, shrine, whimsy",
+        "roots: folklore, kiln, pollen, shrine, wildcard",
         "drift: high"
       ],
-      "ts": "2026-08-02T18:20:04.494376+00:00"
+      "ts": "2026-08-03T18:21:06.324481+00:00"
     },
     {
       "kind": "word_bridge",
@@ -62,9 +61,9 @@
     }
   ],
   "research": {
-    "curiosities_today": 20,
+    "curiosities_today": 16,
     "word_bridges_today": 0,
-    "latest_raw_artifact_count": 35,
+    "latest_raw_artifact_count": 48,
     "formal_report": "fresh"
   }
 }
