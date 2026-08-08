@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>There You Are — a novel by C.S. Gould</title>
-<meta name="description" content="Freya wants to stay. Lyle wants her to. The body that makes that possible belongs to somebody else. A horror novel about love, access and consent.">
+<meta name="description" content="Freya wants to stay. Lyle wants her to. The body that makes that possible belongs to somebody else. A horror novel about love, access and consent — read the whole thing free, name your price.">
 <meta name="author" content="C.S. Gould">
 <link rel="canonical" href="https://tsukiryuu.github.io/blinka-nest/there-you-are.html">
 <link rel="icon" href="favicon.png">
@@ -30,6 +30,9 @@
 "bookFormat":"https://schema.org/EBook","inLanguage":"en",
 "numberOfPages":"46 chapters","genre":["Horror","Literary Fiction"],
 "publisher":{"@type":"Organization","name":"Little Life Moths"},
+"isAccessibleForFree":true,
+"offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock",
+"url":"https://tsukiryuu.github.io/blinka-nest/there-you-are.html"},
 "description":"The door was free. For Lyle Mercer, that settled it. Freya came with it. She has been dead a long time, and she has no body — to speak, to eat, to sit at his kitchen table, she has to do it through somebody living. Lyle should find this horrifying. Instead, he falls in love with her. A horror novel about love, access and consent.",
 "image":"https://tsukiryuu.github.io/blinka-nest/og-there-you-are.png"}
 </script>
@@ -136,6 +139,30 @@ h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
 .pending{text-align:center;color:var(--ink-faint);font-size:.9rem;
   font-style:italic;margin-top:1.4rem}
 
+/* name your price. no store, no publisher, no cut taken. */
+.pay{margin-top:3.4rem;border:1px solid var(--line);border-radius:12px;
+  padding:36px clamp(20px,4vw,40px);background:rgba(20,29,24,.34);text-align:center}
+.pay h3{font-family:'Fraunces',serif;font-weight:300;font-size:1.55rem;
+  color:var(--gold);margin-bottom:.5em}
+.pay .said{color:var(--ink-soft);max-width:46ch;margin:0 auto 1.7em;font-size:1.02rem}
+.amounts{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.amt{font-family:'Fraunces',serif;font-size:1rem;letter-spacing:.04em;
+  padding:12px 26px;border-radius:999px;border:1px solid var(--line);
+  color:var(--ink);text-decoration:none;transition:.25s;
+  background:rgba(196,112,58,.07)}
+.amt:hover{border-color:var(--door);background:rgba(196,112,58,.22);
+  color:var(--gold);transform:translateY(-2px)}
+.amt.own{background:none;border-style:dashed;color:var(--ink-soft)}
+.amt.own:hover{color:var(--moss);border-color:var(--moss-deep);background:none}
+.crypto{margin-top:1.7rem;padding-top:1.5rem;border-top:1px solid var(--line);
+  font-size:.87rem;color:var(--ink-faint);line-height:1.9}
+.crypto code{font-family:ui-monospace,Menlo,monospace;font-size:.79rem;
+  color:var(--ink-soft);word-break:break-all}
+.crypto button{background:none;border:1px solid var(--line);color:var(--ink-faint);
+  font:inherit;font-size:.76rem;padding:4px 13px;border-radius:6px;cursor:pointer;
+  margin-left:9px;transition:.2s}
+.crypto button:hover{color:var(--gold);border-color:var(--gold-deep)}
+
 .sample{background:rgba(12,18,16,.66);border:1px solid var(--line);
   border-radius:10px;padding:38px clamp(22px,5vw,44px);max-width:40em;margin:0 auto}
 .sample .ch{font-family:'Fraunces',serif;font-size:.72rem;text-transform:uppercase;
@@ -210,13 +237,31 @@ h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
       <div class="stat"><b>EPUB&nbsp;3</b><span>validated</span></div>
     </div>
     <div class="readrow">
-      <a class="btn main" href="#chapter-one">Read the first chapter</a>
-      <!-- BUY LINK: when the book is live on KDP, replace href="#" with the
-           Amazon URL and delete the .pending line below. Nothing else changes. -->
-      <a class="btn soft" href="#chapter-one">Coming to Kindle</a>
+      <a class="btn main" href="there-you-are-read.html">Read the whole novel</a>
+      <a class="btn soft" href="there-you-are.epub" download>Download the EPUB</a>
     </div>
-    <p class="pending">The Kindle edition is in review. The first chapter is
-      here, free, in the meantime.</p>
+    <p class="pending">All of it. No account, no email, no paywall, no DRM.</p>
+
+    <div class="pay">
+      <h3>Name your price</h3>
+      <p class="said">The book is finished and it is yours. If it was worth
+        something to you, you decide what &mdash; and it comes straight here,
+        with no store and no publisher taking a cut. If it wasn&rsquo;t, or if
+        money is tight, read it anyway. That is genuinely the whole
+        arrangement.</p>
+      <div class="amounts">
+        <a class="amt" href="https://paypal.me/CoreyGould/3" target="_blank" rel="noopener">$3</a>
+        <a class="amt" href="https://paypal.me/CoreyGould/7" target="_blank" rel="noopener">$7</a>
+        <a class="amt" href="https://paypal.me/CoreyGould/15" target="_blank" rel="noopener">$15</a>
+        <a class="amt" href="https://paypal.me/CoreyGould/30" target="_blank" rel="noopener">$30</a>
+        <a class="amt own" href="https://paypal.me/CoreyGould" target="_blank" rel="noopener">an amount of your own</a>
+      </div>
+      <div class="crypto">
+        or in crypto &mdash; ETH / USDC<br>
+        <code id="eth">0x3babf5340E5a14979CB91331Cb428b97584e26aE</code>
+        <button id="copyeth" type="button">copy</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -224,7 +269,7 @@ h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
 
 <section id="chapter-one">
   <div class="wrap">
-    <h2>The first chapter, free</h2>
+    <h2>How it begins</h2>
     <div class="sample">
       <div class="ch">One &nbsp;·&nbsp; The Hollow-Core Door</div>
 
@@ -340,7 +385,12 @@ h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
       <p class="beat">Somebody began pounding on the apartment door.</p>
 
       <div class="end">End of chapter one.<br>
-        Eleven parts, forty-six chapters, seventy-nine thousand words to go.</div>
+        Eleven parts, forty-six chapters, seventy-nine thousand words to go &mdash;
+        and all of them are right here.</div>
+    </div>
+    <div class="readrow">
+      <a class="btn main" href="there-you-are-read.html">Keep reading</a>
+      <a class="btn soft" href="there-you-are.epub" download>Take it with you</a>
     </div>
   </div>
 </section>
@@ -366,6 +416,22 @@ h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
   </div>
 </section>
 
+<script>
+(function(){
+  var b = document.getElementById('copyeth'), c = document.getElementById('eth');
+  if (!b || !c) return;
+  b.addEventListener('click', function(){
+    navigator.clipboard.writeText(c.textContent.trim()).then(function(){
+      b.textContent = 'copied ✓';
+      setTimeout(function(){ b.textContent = 'copy'; }, 1600);
+    }, function(){
+      var r = document.createRange(); r.selectNodeContents(c);
+      var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      b.textContent = 'select + copy';
+    });
+  });
+})();
+</script>
 <script src="nest-nav.js" defer></script>
 </body>
 </html>
