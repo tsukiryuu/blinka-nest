@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 EXEMPT = {"404.html"}
+PRIVACY_STANDALONE = {"there-you-are-read.html"}
 
 
 def one(pattern: str, text: str) -> str:
@@ -36,6 +37,11 @@ def audit_page(path: Path, sitemap: str) -> dict:
     if name in EXEMPT:
         checks = {"title": checks["title"], "h1": checks["h1"],
                   "analytics": checks["analytics"]}
+    elif name in PRIVACY_STANDALONE:
+        # The novel reader deliberately makes no analytics or script request;
+        # its cover links back to the tracked landing page instead.
+        checks.pop("analytics")
+        checks.pop("site_map_nav")
     return {"page": name, "ok": all(checks.values()), "checks": checks}
 
 

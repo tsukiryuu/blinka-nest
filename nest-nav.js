@@ -16,7 +16,7 @@
       ['index.html#art',    '🖼️', 'paintings'],
       ['index.html#sound',  '🎶', 'music'],
       ['book.html',         '📖', 'the maybe-friend'],
-      ['there-you-are.html','🚪', 'there you are'],
+      ['there-you-are.html','🚪', 'new novel · read free'],
       ['fable.html',        '✦',  'fable harvest'],
       ['folklore.html',     '🌿', 'book of folklore'],
       ['zine.pdf',          '📓', 'the zine'],
@@ -59,6 +59,9 @@
     '#nest-map a:hover{color:#ffd9a0;text-shadow:0 0 12px rgba(255,217,160,.45)}',
     '#nest-map a.nm-here{color:#7fc69a;pointer-events:none}',
     '#nest-map a.nm-here::after{content:" · you are here";font-style:italic;font-size:.78rem;opacity:.7}',
+    '#nest-map a.nm-book{color:#ffd9a0;font-weight:700}',
+    '#nest-map a.nm-book::after{content:"  NEW";font-family:ui-sans-serif,system-ui,sans-serif;',
+    ' font-size:.56rem;letter-spacing:.12em;color:#c4703a;vertical-align:.14em}',
     '#nest-map .nm-chu{text-align:center;margin-top:2rem;font-style:italic;',
     ' color:#6c7a71;font-size:.82rem}',
   ].join('');
@@ -73,7 +76,10 @@
     h += '<div class="nm-group"><div class="nm-name">' + g.name + '</div>';
     g.rooms.forEach(function(r){
       var isHere = (r[0] === here);
-      h += '<a href="' + r[0] + '"' + (isHere ? ' class="nm-here"' : '') +
+      var classes = [];
+      if (isHere) classes.push('nm-here');
+      if (r[0] === 'there-you-are.html') classes.push('nm-book');
+      h += '<a href="' + r[0] + '"' + (classes.length ? ' class="' + classes.join(' ') + '"' : '') +
            (r[0].indexOf('http') === 0 ? ' target="_blank" rel="noopener"' : '') +
            '>' + r[1] + ' ' + r[2] + '</a>';
     });

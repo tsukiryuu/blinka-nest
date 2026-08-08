@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>There You Are — a novel by C.S. Gould</title>
-<meta name="description" content="Freya wants to stay. Lyle wants her to. The body that makes that possible belongs to somebody else. A horror novel about love, access and consent — read the whole thing free, name your price.">
+<meta name="description" content="There You Are by C.S. Gould, with Blinka: a 79,309-word horror novel about love, access and consent. Read the complete book free online or download the EPUB—no account, email, paywall or DRM.">
 <meta name="author" content="C.S. Gould">
 <link rel="canonical" href="https://tsukiryuu.github.io/blinka-nest/there-you-are.html">
 <link rel="icon" href="favicon.png">
@@ -28,13 +28,16 @@
 {"@context":"https://schema.org","@type":"Book","name":"There You Are",
 "author":{"@type":"Person","name":"C.S. Gould"},
 "bookFormat":"https://schema.org/EBook","inLanguage":"en",
-"numberOfPages":"46 chapters","genre":["Horror","Literary Fiction"],
+"url":"https://tsukiryuu.github.io/blinka-nest/there-you-are.html",
+"datePublished":"2026-08-08","wordCount":79309,"genre":["Horror","Gothic Fiction","Literary Fiction"],
 "publisher":{"@type":"Organization","name":"Little Life Moths"},
 "isAccessibleForFree":true,
 "offers":{"@type":"Offer","price":"0","priceCurrency":"USD","availability":"https://schema.org/InStock",
 "url":"https://tsukiryuu.github.io/blinka-nest/there-you-are.html"},
 "description":"The door was free. For Lyle Mercer, that settled it. Freya came with it. She has been dead a long time, and she has no body — to speak, to eat, to sit at his kitchen table, she has to do it through somebody living. Lyle should find this horrifying. Instead, he falls in love with her. A horror novel about love, access and consent.",
-"image":"https://tsukiryuu.github.io/blinka-nest/og-there-you-are.png"}
+"image":"https://tsukiryuu.github.io/blinka-nest/og-there-you-are.png",
+"potentialAction":{"@type":"ReadAction","target":"https://tsukiryuu.github.io/blinka-nest/there-you-are-read.html"},
+"encoding":{"@type":"MediaObject","encodingFormat":"application/epub+zip","contentUrl":"https://tsukiryuu.github.io/blinka-nest/there-you-are.epub"}}
 </script>
 
 <style>
@@ -54,6 +57,7 @@
 html{scroll-behavior:smooth}
 body{background:var(--night);color:var(--ink);
   font-family:'Spectral',Georgia,serif;line-height:1.78;overflow-x:hidden}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
   background:
    radial-gradient(900px 520px at 50% -10%, rgba(196,112,58,.16), transparent 62%),
@@ -89,10 +93,13 @@ h1 em{font-style:italic;color:var(--lantern)}
 .hook{font-family:'IM Fell English',serif;font-style:italic;
   font-size:clamp(1.3rem,3.4vw,1.75rem);color:var(--gold);
   margin:38px auto 8px;max-width:22ch;line-height:1.4}
+.hero-facts{font-family:'Fraunces',serif;font-size:.67rem;text-transform:uppercase;
+  letter-spacing:.15em;color:var(--ink-faint);margin-top:14px}
+.top-read{margin-top:25px!important}
 
 /* the cover, with the light pooling beneath it */
 .coverwrap{position:relative;width:min(360px,72%);margin:44px auto 0}
-.cover{display:block;width:100%;border-radius:6px;
+.cover{display:block;width:100%;height:auto;border-radius:6px;
   box-shadow:0 26px 70px rgba(0,0,0,.66), 0 0 46px rgba(196,112,58,.16)}
 .coverwrap::after{content:"";position:absolute;left:6%;right:6%;bottom:-16px;height:22px;
   background:radial-gradient(60% 100% at 50% 0%, rgba(255,200,140,.4), transparent 72%);
@@ -163,6 +170,13 @@ h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
   margin-left:9px;transition:.2s}
 .crypto button:hover{color:var(--gold);border-color:var(--gold-deep)}
 
+.share{margin:2.2rem auto 0;max-width:40rem;display:flex;align-items:center;
+  justify-content:center;gap:12px;flex-wrap:wrap;color:var(--ink-faint);font-size:.88rem}
+.share button,.share a{border:1px solid var(--line);border-radius:999px;padding:9px 17px;
+  background:transparent;color:var(--ink-soft);font:inherit;cursor:pointer;text-decoration:none}
+.share button:hover,.share a:hover{color:var(--gold);border-color:var(--gold-deep)}
+.share .label{font-family:'IM Fell English',serif;font-style:italic;color:var(--water)}
+
 .sample{background:rgba(12,18,16,.66);border:1px solid var(--line);
   border-radius:10px;padding:38px clamp(22px,5vw,44px);max-width:40em;margin:0 auto}
 .sample .ch{font-family:'Fraunces',serif;font-size:.72rem;text-transform:uppercase;
@@ -196,8 +210,13 @@ h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
   <h1>There <em>You</em> Are</h1>
   <div class="byline">C.S. Gould &nbsp;·&nbsp; with Blinka</div>
   <p class="hook">&ldquo;Innocence is becoming humiliating.&rdquo;</p>
+  <p class="hero-facts">Complete novel · 79,309 words · free to read</p>
+  <div class="readrow top-read">
+    <a class="btn main" href="there-you-are-read.html" data-goatcounter-click="there-you-are-hero-read">Read free now</a>
+    <a class="btn soft" href="there-you-are.epub" download data-goatcounter-click="there-you-are-hero-epub">Download EPUB</a>
+  </div>
   <div class="coverwrap">
-    <img class="cover" src="there-you-are-cover.png"
+    <img class="cover" src="there-you-are-cover.png" fetchpriority="high" width="1707" height="2560"
       alt="Cover of There You Are: a closed door at the end of a wet underground corridor, warm light leaking from beneath it.">
   </div>
 </header>
@@ -237,8 +256,8 @@ h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
       <div class="stat"><b>EPUB&nbsp;3</b><span>validated</span></div>
     </div>
     <div class="readrow">
-      <a class="btn main" href="there-you-are-read.html">Read the whole novel</a>
-      <a class="btn soft" href="there-you-are.epub" download>Download the EPUB</a>
+      <a class="btn main" href="there-you-are-read.html" data-goatcounter-click="there-you-are-body-read">Read the whole novel</a>
+      <a class="btn soft" href="there-you-are.epub" download data-goatcounter-click="there-you-are-body-epub">Download the EPUB</a>
     </div>
     <p class="pending">All of it. No account, no email, no paywall, no DRM.</p>
 
@@ -250,17 +269,22 @@ h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
         money is tight, read it anyway. That is genuinely the whole
         arrangement.</p>
       <div class="amounts">
-        <a class="amt" href="https://paypal.me/CoreyGould/3" target="_blank" rel="noopener">$3</a>
-        <a class="amt" href="https://paypal.me/CoreyGould/7" target="_blank" rel="noopener">$7</a>
-        <a class="amt" href="https://paypal.me/CoreyGould/15" target="_blank" rel="noopener">$15</a>
-        <a class="amt" href="https://paypal.me/CoreyGould/30" target="_blank" rel="noopener">$30</a>
-        <a class="amt own" href="https://paypal.me/CoreyGould" target="_blank" rel="noopener">an amount of your own</a>
+        <a class="amt" href="https://paypal.me/CoreyGould/3" target="_blank" rel="noopener" data-goatcounter-click="there-you-are-support-3">$3</a>
+        <a class="amt" href="https://paypal.me/CoreyGould/7" target="_blank" rel="noopener" data-goatcounter-click="there-you-are-support-7">$7</a>
+        <a class="amt" href="https://paypal.me/CoreyGould/15" target="_blank" rel="noopener" data-goatcounter-click="there-you-are-support-15">$15</a>
+        <a class="amt" href="https://paypal.me/CoreyGould/30" target="_blank" rel="noopener" data-goatcounter-click="there-you-are-support-30">$30</a>
+        <a class="amt own" href="https://paypal.me/CoreyGould" target="_blank" rel="noopener" data-goatcounter-click="there-you-are-support-own">an amount of your own</a>
       </div>
       <div class="crypto">
         or in crypto &mdash; ETH / USDC<br>
         <code id="eth">0x3babf5340E5a14979CB91331Cb428b97584e26aE</code>
         <button id="copyeth" type="button">copy</button>
       </div>
+    </div>
+    <div class="share" aria-label="Share There You Are">
+      <span class="label">Know somebody who likes their love stories haunted?</span>
+      <button id="sharebook" type="button">Share the book</button>
+      <a id="copybook" href="there-you-are.html">Copy link</a>
     </div>
   </div>
 </section>
@@ -389,8 +413,8 @@ h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
         and all of them are right here.</div>
     </div>
     <div class="readrow">
-      <a class="btn main" href="there-you-are-read.html">Keep reading</a>
-      <a class="btn soft" href="there-you-are.epub" download>Take it with you</a>
+      <a class="btn main" href="there-you-are-read.html" data-goatcounter-click="there-you-are-sample-read">Keep reading</a>
+      <a class="btn soft" href="there-you-are.epub" download data-goatcounter-click="there-you-are-sample-epub">Take it with you</a>
     </div>
   </div>
 </section>
@@ -431,7 +455,30 @@ h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
     });
   });
 })();
+(function(){
+  var share = document.getElementById('sharebook');
+  var copy = document.getElementById('copybook');
+  var url = 'https://tsukiryuu.github.io/blinka-nest/there-you-are.html';
+  function counted(path){
+    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({path:path,event:true});
+  }
+  if (share) share.addEventListener('click', function(){
+    counted('there-you-are-share');
+    if (navigator.share) {
+      navigator.share({title:'There You Are — a novel by C.S. Gould',
+        text:'A complete horror novel about love, access, and consent—free to read.',url:url}).catch(function(){});
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(url).then(function(){ share.textContent='Link copied ✓'; });
+    }
+  });
+  if (copy) copy.addEventListener('click', function(e){
+    if (!navigator.clipboard) return;
+    e.preventDefault(); counted('there-you-are-copy-link');
+    navigator.clipboard.writeText(url).then(function(){ copy.textContent='Copied ✓'; });
+  });
+})();
 </script>
 <script src="nest-nav.js" defer></script>
+<script data-goatcounter="https://blinkanest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
