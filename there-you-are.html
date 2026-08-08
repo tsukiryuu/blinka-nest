@@ -14,11 +14,13 @@
 <meta property="og:title" content="There You Are — a novel by C.S. Gould">
 <meta property="og:description" content="Freya wants to stay. Lyle wants her to. The body that makes that possible belongs to somebody else.">
 <meta property="og:image" content="https://tsukiryuu.github.io/blinka-nest/og-there-you-are.png">
+<meta property="og:image:alt" content="There You Are: a closed door at the end of a wet corridor, with warm light leaking beneath it.">
 <meta property="og:url" content="https://tsukiryuu.github.io/blinka-nest/there-you-are.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="There You Are — a novel">
 <meta name="twitter:description" content="Freya wants to stay. Lyle wants her to. The body that makes that possible belongs to somebody else.">
 <meta name="twitter:image" content="https://tsukiryuu.github.io/blinka-nest/og-there-you-are.png">
+<meta name="twitter:image:alt" content="There You Are: a closed door at the end of a wet corridor, with warm light leaking beneath it.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,6 +106,37 @@ h1 em{font-style:italic;color:var(--lantern)}
 .coverwrap::after{content:"";position:absolute;left:6%;right:6%;bottom:-16px;height:22px;
   background:radial-gradient(60% 100% at 50% 0%, rgba(255,200,140,.4), transparent 72%);
   filter:blur(7px);pointer-events:none}
+
+/* a small shareable threshold: one door, one answer, one deliberate motion */
+.knock-section{padding:58px 0 20px}
+.threshold{position:relative;max-width:640px;margin:0 auto;text-align:center}
+.threshold .invitation{font-family:'IM Fell English',serif;font-style:italic;
+  color:var(--water);font-size:1.08rem;margin-bottom:20px}
+.door-knock{position:relative;display:block;width:min(310px,78vw);height:168px;
+  margin:0 auto;border:1px solid rgba(196,112,58,.34);border-radius:8px 8px 3px 3px;
+  background:linear-gradient(110deg,rgba(27,20,15,.96),rgba(10,13,11,.98));
+  box-shadow:inset 18px 0 40px rgba(0,0,0,.42),0 24px 70px rgba(0,0,0,.44);
+  color:var(--ink-soft);font-family:'Fraunces',serif;letter-spacing:.18em;
+  text-transform:uppercase;font-size:.72rem;cursor:pointer;overflow:hidden}
+.door-knock::before{content:"";position:absolute;inset:16px;border:1px solid rgba(196,112,58,.16)}
+.door-knock::after{content:"";position:absolute;left:8%;right:8%;bottom:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--door) 24%,var(--gold) 50%,var(--door) 76%,transparent);
+  box-shadow:0 0 12px rgba(255,196,142,.75),0 0 30px rgba(196,112,58,.45);
+  transform:scaleX(.35);transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.door-knock:hover::after,.door-knock.open::after{transform:scaleX(1)}
+.door-knock span{position:relative;z-index:1}
+.door-answer{min-height:116px;display:grid;place-items:center;align-content:center;
+  gap:13px;padding:24px 12px 0}
+.door-answer blockquote{font-family:'IM Fell English',serif;font-style:italic;
+  color:var(--gold);font-size:clamp(1.15rem,3.5vw,1.48rem);line-height:1.45;
+  max-width:27ch;text-wrap:balance}
+.door-answer .source{font-family:'Fraunces',serif;font-size:.62rem;text-transform:uppercase;
+  letter-spacing:.18em;color:var(--ink-faint)}
+.answer-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.answer-actions button,.answer-actions a{border:0;border-bottom:1px solid var(--line);
+  background:none;color:var(--ink-soft);font:inherit;font-size:.82rem;padding:5px 3px;
+  cursor:pointer;text-decoration:none}
+.answer-actions button:hover,.answer-actions a:hover{color:var(--gold);border-color:var(--door)}
 
 section{padding:66px 0}
 h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
@@ -220,6 +253,23 @@ h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
       alt="Cover of There You Are: a closed door at the end of a wet underground corridor, warm light leaking from beneath it.">
   </div>
 </header>
+
+<section class="knock-section" aria-labelledby="knock-title">
+  <div class="wrap threshold">
+    <p class="invitation" id="knock-title">The door has something to tell you.</p>
+    <button class="door-knock" id="knock" type="button" aria-describedby="door-answer">
+      <span>Knock once</span>
+    </button>
+    <div class="door-answer" id="door-answer" aria-live="polite">
+      <blockquote>&ldquo;The second sentence suggested a history.&rdquo;</blockquote>
+      <span class="source">from chapter one</span>
+    </div>
+    <div class="answer-actions">
+      <button id="shareline" type="button">Share this line</button>
+      <a href="there-you-are-read.html" data-goatcounter-click="there-you-are-knock-read">Follow it into the book →</a>
+    </div>
+  </div>
+</section>
 
 <section>
   <div class="wrap blurb">
@@ -453,6 +503,51 @@ h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
       var s = getSelection(); s.removeAllRanges(); s.addRange(r);
       b.textContent = 'select + copy';
     });
+  });
+})();
+(function(){
+  var knock = document.getElementById('knock');
+  var answer = document.querySelector('#door-answer blockquote');
+  var shareline = document.getElementById('shareline');
+  if (!knock || !answer || !shareline) return;
+  var lines = [
+    'The second sentence suggested a history.',
+    'He had been looking for a desk.',
+    'By the time he reached his apartment, he hated the project and felt committed to it.',
+    'Something inside the door answered.',
+    'It looked, with equal credibility, like something once sold in a velvet bag to lonely men.',
+    'He stood there, waiting for his common sense to arrive. It did not.',
+    'Somebody began pounding on the apartment door.'
+  ];
+  var current = 0;
+  var match = location.hash.match(/^#knock-(\d+)$/);
+  if (match) current = Math.min(lines.length - 1, Math.max(0, Number(match[1])));
+  function show(i, moveHash){
+    current = i;
+    answer.textContent = '\u201c' + lines[i] + '\u201d';
+    knock.classList.remove('open');
+    void knock.offsetWidth;
+    knock.classList.add('open');
+    knock.querySelector('span').textContent = 'Knock again';
+    if (moveHash) history.replaceState(null, '', '#knock-' + i);
+  }
+  show(current, false);
+  if (!match) knock.querySelector('span').textContent = 'Knock once';
+  knock.addEventListener('click', function(){
+    var next = current;
+    while (next === current) next = Math.floor(Math.random() * lines.length);
+    show(next, true);
+    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({path:'there-you-are-knock',event:true});
+  });
+  shareline.addEventListener('click', function(){
+    var url = 'https://tsukiryuu.github.io/blinka-nest/there-you-are.html#knock-' + current;
+    var text = '\u201c' + lines[current] + '\u201d \u2014 There You Are, a complete horror novel free to read';
+    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({path:'there-you-are-share-line',event:true});
+    if (navigator.share) {
+      navigator.share({title:'There You Are \u2014 C.S. Gould',text:text,url:url}).catch(function(){});
+    } else if (navigator.clipboard) {
+      navigator.clipboard.writeText(text + '\n' + url).then(function(){ shareline.textContent='Line copied ✓'; });
+    }
   });
 })();
 (function(){
