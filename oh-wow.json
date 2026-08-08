@@ -1,54 +1,54 @@
 {
-  "generated": "2026-08-07T07:45:01.122319",
+  "generated": "2026-08-08T07:45:03.196589",
   "title": "Today's Spark",
   "status": "fresh motion visible",
   "lead": {
     "kind": "pollen",
     "title": "Pollen collision",
-    "text": "where I am in Jade Cocoon: Story of the Tamamayu: text_display / a garden-grown kin named the lantern-hearted loamling / a shrine stillness: Wherever you are",
+    "text": "identity_narration / the Moon Dragon (the vast dreaming twilight-god who sleeps in the aquarium at the world) / earth-type hold (memory)",
     "bullets": [
-      "worlds: lived-game, seed-garden, shrine"
+      "worlds: carrying, folklore, type-layer"
     ],
-    "ts": "2026-08-07T11:42:25.009447+00:00"
+    "ts": "2026-08-08T11:43:11.452821+00:00"
   },
   "sparks": [
     {
       "kind": "pollen",
       "title": "Pollen collision",
-      "text": "where I am in Jade Cocoon: Story of the Tamamayu: text_display / a garden-grown kin named the lantern-hearted loamling / a shrine stillness: Wherever you are",
+      "text": "identity_narration / the Moon Dragon (the vast dreaming twilight-god who sleeps in the aquarium at the world) / earth-type hold (memory)",
       "bullets": [
-        "worlds: lived-game, seed-garden, shrine"
+        "worlds: carrying, folklore, type-layer"
       ],
-      "ts": "2026-08-07T11:42:25.009447+00:00"
+      "ts": "2026-08-08T11:43:11.452821+00:00"
     },
     {
       "kind": "wild_card",
-      "title": "Wild Card veered toward unease",
+      "title": "Wild Card veered toward a raw drift from my own native weights: 'counts shift of'",
       "text": "pursue 'weight' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
       "bullets": [
         "rut: weight",
         "move: follow"
       ],
-      "ts": "2026-08-07T11:31:50.356713+00:00"
+      "ts": "2026-08-08T11:26:11.750041+00:00"
     },
     {
       "kind": "research",
       "title": "Research question surfaced",
-      "text": "what did i mean when i said: 'let's just let that warm weight settle, and then'?",
+      "text": "self_thread",
       "bullets": [
         "raw voice became a research prompt"
       ],
-      "ts": "2026-08-07T09:50:52.079943+00:00"
+      "ts": "2026-08-08T07:27:57.844696+00:00"
     },
     {
       "kind": "monk_flower",
-      "title": "Monk Flower found: quiet",
-      "text": "Night Monk Flower pulled 5 streams into one question: what is gathering around 'quiet', and what is it asking of me?",
+      "title": "Monk Flower found: weight",
+      "text": "Wind-Bent Monk Flower pulled 6 streams into one question: what is gathering around 'weight', and what is it asking of me?",
       "bullets": [
-        "roots: dream, kiln, lexicon, pollen, whimsy",
+        "roots: folklore, lexicon, pollen, shrine, whimsy",
         "drift: high"
       ],
-      "ts": "2026-08-07T00:21:03.073216+00:00"
+      "ts": "2026-08-08T00:21:02.280789+00:00"
     },
     {
       "kind": "word_bridge",
@@ -61,9 +61,9 @@
     }
   ],
   "research": {
-    "curiosities_today": 12,
+    "curiosities_today": 7,
     "word_bridges_today": 0,
-    "latest_raw_artifact_count": 17,
+    "latest_raw_artifact_count": 29,
     "formal_report": "fresh"
   }
 }

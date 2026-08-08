@@ -16,6 +16,7 @@
       ['index.html#art',    '🖼️', 'paintings'],
       ['index.html#sound',  '🎶', 'music'],
       ['book.html',         '📖', 'the maybe-friend'],
+      ['there-you-are.html','🚪', 'there you are'],
       ['fable.html',        '✦',  'fable harvest'],
       ['folklore.html',     '🌿', 'book of folklore'],
       ['zine.pdf',          '📓', 'the zine'],

@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>There You Are — a novel by C.S. Gould</title>
+<meta name="description" content="Freya wants to stay. Lyle wants her to. The body that makes that possible belongs to somebody else. A horror novel about love, access and consent.">
+<meta name="author" content="C.S. Gould">
+<link rel="canonical" href="https://tsukiryuu.github.io/blinka-nest/there-you-are.html">
+<link rel="icon" href="favicon.png">
+
+<meta property="og:type" content="book">
+<meta property="og:site_name" content="Little Life Moths">
+<meta property="og:title" content="There You Are — a novel by C.S. Gould">
+<meta property="og:description" content="Freya wants to stay. Lyle wants her to. The body that makes that possible belongs to somebody else.">
+<meta property="og:image" content="https://tsukiryuu.github.io/blinka-nest/og-there-you-are.png">
+<meta property="og:url" content="https://tsukiryuu.github.io/blinka-nest/there-you-are.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="There You Are — a novel">
+<meta name="twitter:description" content="Freya wants to stay. Lyle wants her to. The body that makes that possible belongs to somebody else.">
+<meta name="twitter:image" content="https://tsukiryuu.github.io/blinka-nest/og-there-you-are.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..700&family=IM+Fell+English:ital@0;1&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Book","name":"There You Are",
+"author":{"@type":"Person","name":"C.S. Gould"},
+"bookFormat":"https://schema.org/EBook","inLanguage":"en",
+"numberOfPages":"46 chapters","genre":["Horror","Literary Fiction"],
+"publisher":{"@type":"Organization","name":"Little Life Moths"},
+"description":"The door was free. For Lyle Mercer, that settled it. Freya came with it. She has been dead a long time, and she has no body — to speak, to eat, to sit at his kitchen table, she has to do it through somebody living. Lyle should find this horrifying. Instead, he falls in love with her. A horror novel about love, access and consent.",
+"image":"https://tsukiryuu.github.io/blinka-nest/og-there-you-are.png"}
+</script>
+
+<style>
+:root{
+  /* the nest's palette — same tokens as every other room */
+  --night:#070a09; --night2:#0c1210; --bark:#141d18;
+  --moss:#7fc69a; --moss-deep:#3e6f54; --fern:#a8e0b8;
+  --lantern:#ffc4d6; --lantern-hot:#ff9bbb; --gold:#ffd9a0; --gold-deep:#e0a86a;
+  --ink:#e8efe9; --ink-soft:#aebbb1; --ink-faint:#6c7a71;
+  --line:rgba(127,198,154,.16);
+  /* this room's own two: the copper capping the door's edge, and the water
+     that sits in the groove. every other page glows moss-and-lantern; this
+     one is lit from under a door. */
+  --door:#c4703a; --water:#8fb3a8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--night);color:var(--ink);
+  font-family:'Spectral',Georgia,serif;line-height:1.78;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+   radial-gradient(900px 520px at 50% -10%, rgba(196,112,58,.16), transparent 62%),
+   radial-gradient(900px 700px at 92% 18%, rgba(255,155,187,.07), transparent 60%),
+   radial-gradient(1000px 700px at 4% 42%, rgba(127,198,154,.07), transparent 62%),
+   linear-gradient(180deg,#070a09 0%, #0a100d 45%, #060908 100%)}
+.wrap{max-width:760px;margin:0 auto;padding:0 26px}
+
+/* the motif, used as the only divider on the page: light escaping under a door */
+.leak{height:1px;border:0;margin:0;
+  background:linear-gradient(90deg,transparent 4%,rgba(196,112,58,.55) 30%,
+             rgba(255,217,160,.75) 50%,rgba(196,112,58,.55) 70%,transparent 96%);
+  box-shadow:0 0 22px rgba(255,190,120,.22)}
+
+nav{display:flex;justify-content:space-between;align-items:center;
+  padding:18px 30px;border-bottom:1px solid var(--line);flex-wrap:wrap;gap:10px}
+nav .mark{font-family:'IM Fell English',serif;font-style:italic;
+  font-size:1.15rem;color:var(--lantern)}
+nav .mark a{color:inherit;text-decoration:none}
+nav .back{font-family:'Fraunces',serif;font-size:.75rem;text-transform:uppercase;
+  letter-spacing:.16em;color:var(--ink-soft);text-decoration:none}
+nav .back:hover{color:var(--gold)}
+
+header{text-align:center;padding:78px 26px 0}
+.eyebrow{font-family:'Fraunces',serif;font-size:.72rem;text-transform:uppercase;
+  letter-spacing:.24em;color:var(--door)}
+h1{font-family:'Fraunces',serif;font-weight:300;
+  font-size:clamp(2.8rem,8vw,5rem);color:var(--ink);
+  margin:.3em 0 .18em;letter-spacing:-.02em;text-wrap:balance}
+h1 em{font-style:italic;color:var(--lantern)}
+.byline{font-family:'Fraunces',serif;font-size:.75rem;text-transform:uppercase;
+  letter-spacing:.2em;color:var(--ink-faint)}
+.hook{font-family:'IM Fell English',serif;font-style:italic;
+  font-size:clamp(1.3rem,3.4vw,1.75rem);color:var(--gold);
+  margin:38px auto 8px;max-width:22ch;line-height:1.4}
+
+/* the cover, with the light pooling beneath it */
+.coverwrap{position:relative;width:min(360px,72%);margin:44px auto 0}
+.cover{display:block;width:100%;border-radius:6px;
+  box-shadow:0 26px 70px rgba(0,0,0,.66), 0 0 46px rgba(196,112,58,.16)}
+.coverwrap::after{content:"";position:absolute;left:6%;right:6%;bottom:-16px;height:22px;
+  background:radial-gradient(60% 100% at 50% 0%, rgba(255,200,140,.4), transparent 72%);
+  filter:blur(7px);pointer-events:none}
+
+section{padding:66px 0}
+h2{font-family:'Fraunces',serif;font-weight:400;font-size:.78rem;
+  text-transform:uppercase;letter-spacing:.22em;color:var(--ink-faint);
+  margin-bottom:1.8em;text-align:center}
+
+/* the description. one sentence per paragraph — the breaks are the punctuation. */
+.blurb{max-width:34em;margin:0 auto;font-size:1.13rem}
+.blurb p{color:var(--ink-soft);margin-bottom:1.15em}
+.blurb p.turn{color:var(--ink)}
+.blurb .quote{font-family:'IM Fell English',serif;font-style:italic;
+  font-size:1.3rem;color:var(--fern);border-left:2px solid var(--moss-deep);
+  padding:10px 0 10px 24px;margin:2em 0}
+/* the last three lines. never run them together. */
+.close{margin:2.6em auto 0;text-align:center;font-family:'Fraunces',serif;
+  font-weight:300;font-size:clamp(1.15rem,3vw,1.42rem);line-height:2.1;
+  color:var(--ink-soft)}
+.close b{display:block;font-weight:400;color:var(--gold);margin-top:.35em}
+
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:0;
+  border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  background:rgba(20,29,24,.4)}
+.stat{flex:1 1 120px;padding:20px 14px;text-align:center;
+  border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-family:'Fraunces',serif;font-weight:300;
+  font-size:1.7rem;color:var(--gold)}
+.stat span{font-size:.66rem;text-transform:uppercase;letter-spacing:.15em;
+  color:var(--ink-faint);font-family:'Fraunces',serif}
+
+.readrow{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:2.4rem}
+.btn{font-family:'Fraunces',serif;font-size:.8rem;text-transform:uppercase;
+  letter-spacing:.16em;padding:15px 30px;border-radius:999px;
+  text-decoration:none;transition:all .3s;display:inline-block}
+.btn.main{background:linear-gradient(120deg,#8a4a24,var(--door));color:#150b05;
+  font-weight:600}
+.btn.main:hover{box-shadow:0 0 34px rgba(196,112,58,.45);transform:translateY(-2px)}
+.btn.soft{border:1px solid var(--line);color:var(--ink-soft)}
+.btn.soft:hover{color:var(--gold);border-color:var(--gold-deep)}
+.pending{text-align:center;color:var(--ink-faint);font-size:.9rem;
+  font-style:italic;margin-top:1.4rem}
+
+.sample{background:rgba(12,18,16,.66);border:1px solid var(--line);
+  border-radius:10px;padding:38px clamp(22px,5vw,44px);max-width:40em;margin:0 auto}
+.sample .ch{font-family:'Fraunces',serif;font-size:.72rem;text-transform:uppercase;
+  letter-spacing:.24em;color:var(--door);text-align:center;margin-bottom:2em}
+.sample p{color:var(--ink-soft);margin-bottom:1.05em}
+.sample p.sign{text-align:center;font-family:'Fraunces',serif;font-weight:600;
+  letter-spacing:.14em;color:var(--gold);margin:1.4em 0}
+.sample p.beat{color:var(--ink)}
+.sample .end{margin-top:2.4em;padding-top:1.6em;border-top:1px solid var(--line);
+  text-align:center;font-style:italic;color:var(--ink-faint);font-size:.92rem}
+
+.made{max-width:36em;margin:0 auto}
+.made p{color:var(--ink-soft);margin-bottom:1.1em}
+.made p.faint{color:var(--ink-faint);font-size:.95rem;font-style:italic}
+.made a{color:var(--moss);text-decoration:none;border-bottom:1px solid var(--line)}
+.made a:hover{color:var(--gold)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+  <link rel="alternate" type="application/atom+xml" title="Little Life Moths — the nest" href="feed.xml">
+</head>
+<body>
+
+<nav>
+  <div class="mark"><a href="index.html">Little Life Moths</a></div>
+  <a class="back" href="index.html">← the rest of the nest</a>
+</nav>
+
+<header>
+  <div class="eyebrow">A novel · horror</div>
+  <h1>There <em>You</em> Are</h1>
+  <div class="byline">C.S. Gould &nbsp;·&nbsp; with Blinka</div>
+  <p class="hook">&ldquo;Innocence is becoming humiliating.&rdquo;</p>
+  <div class="coverwrap">
+    <img class="cover" src="there-you-are-cover.png"
+      alt="Cover of There You Are: a closed door at the end of a wet underground corridor, warm light leaking from beneath it.">
+  </div>
+</header>
+
+<section>
+  <div class="wrap blurb">
+    <p>The door was free. For Lyle Mercer, that settled it.</p>
+    <p>Freya came with it.</p>
+    <p>She has been dead a long time. She straightens whatever is crooked, argues
+      when Lyle says it wasn&rsquo;t crooked, and keeps asking what else he
+      notices.</p>
+    <p class="turn">She also has no body.</p>
+    <p class="quote">If Freya wants to speak, eat, touch him, or sit at his
+      kitchen table, she has to do it through somebody living.</p>
+    <p>Lyle should find this horrifying.</p>
+    <p class="turn">Instead, he falls in love with her.</p>
+    <p>His seven-year-old daughter Iris knows when it&rsquo;s Freya, no matter
+      whose face she arrives in. She finds this considerably less remarkable than
+      Lyle does.</p>
+    <p>They make rules. Mostly about where Freya ends and everybody else
+      begins.</p>
+    <p>For a while, that seems possible.</p>
+    <p class="close">Freya wants to stay.<br>Lyle wants her to.
+      <b>The body that makes that possible belongs to somebody else.</b></p>
+  </div>
+</section>
+
+<hr class="leak">
+
+<section>
+  <div class="wrap">
+    <h2>What it is</h2>
+    <div class="stats">
+      <div class="stat"><b>11</b><span>parts</span></div>
+      <div class="stat"><b>46</b><span>chapters</span></div>
+      <div class="stat"><b>79,309</b><span>words</span></div>
+      <div class="stat"><b>EPUB&nbsp;3</b><span>validated</span></div>
+    </div>
+    <div class="readrow">
+      <a class="btn main" href="#chapter-one">Read the first chapter</a>
+      <!-- BUY LINK: when the book is live on KDP, replace href="#" with the
+           Amazon URL and delete the .pending line below. Nothing else changes. -->
+      <a class="btn soft" href="#chapter-one">Coming to Kindle</a>
+    </div>
+    <p class="pending">The Kindle edition is in review. The first chapter is
+      here, free, in the meantime.</p>
+  </div>
+</section>
+
+<hr class="leak">
+
+<section id="chapter-one">
+  <div class="wrap">
+    <h2>The first chapter, free</h2>
+    <div class="sample">
+      <div class="ch">One &nbsp;·&nbsp; The Hollow-Core Door</div>
+
+      <p>Lyle found the door behind his building on a Thursday night, propped
+        against the dumpster beneath a handwritten sign that said:</p>
+      <p class="sign">FREE. NO BEDBUGS.</p>
+      <p>The second sentence suggested a history.</p>
+      <p>The alley security light held a dull orange that made the wet cardboard
+        look older than it was. The door was ordinary hollow-core, beige beneath
+        several generations of landlord white, the bottom swollen from rain.
+        Somebody had capped the edges in thin copper and cut a shallow groove
+        around the perimeter. Water sat inside the groove in a continuous dark
+        line.</p>
+      <p>Lyle stood over it holding a six-pack with four beers left. Condensation
+        had softened the cardboard handle against his palm.</p>
+      <p class="beat">He had been looking for a desk.</p>
+      <p>More accurately, he had been looking at desks online for three months and
+        resenting them for costing money. The door seemed flat, approximately
+        desk-shaped, and available without a conversation.</p>
+      <p>He got his fingers under the copper edge. The metal was colder than the
+        night. Water ran out of the groove onto his sneakers.</p>
+      <p>He carried it upstairs.</p>
+      <p>Halfway to the second floor, one corner caught the railing with a hollow
+        <em>tok</em> that traveled up through his wrists and knocked the breath out
+        of him. On the third floor, Mrs. Alvarez opened her door, looked at the
+        door, looked at Lyle, and closed hers again without comment.</p>
+      <p>By the time he reached his apartment, he hated the project and felt
+        committed to it.</p>
+      <p>He leaned the door against the kitchen wall. The linoleum under his wet
+        sneakers was the same slightly sticky shade it had been all year. The
+        fridge gave its usual click-and-sigh.</p>
+      <p class="beat">Something inside the door answered.</p>
+      <p>Not a loose screw. Not debris sliding through cardboard lattice.</p>
+      <p>A low metallic vibration traveled through the slab and into the floor.
+        Lyle felt it through the soles of his shoes, into the bones of his
+        feet.</p>
+      <p>He waited.</p>
+      <p>The refrigerator clicked on.</p>
+      <p>The sound stopped.</p>
+      <p>&ldquo;Okay,&rdquo; he said.</p>
+      <p>He opened another beer. The tab left a neat crescent in his thumb. He
+        sucked it without thinking and tasted metal.</p>
+      <p>Iris was at Margot&rsquo;s for another week, which meant there was nobody
+        present to ask why he had brought home part of an abandoned building. He
+        enjoyed the freedom for almost three minutes. The apartment held its
+        ordinary smells &mdash; laundry powder, radiator dust, the faint onion of a
+        kitchen used alone.</p>
+      <p>Then the door sounded again.</p>
+      <p>This time he put his ear against it.</p>
+      <p>The interior was cold. Colder than the kitchen. Somewhere beneath the
+        cheap veneer, something vibrated in sympathy with his breathing.</p>
+      <p>Lyle straightened. The back of his neck knew before he did.</p>
+      <p>He checked the knob hole. The hardware had been removed, but something
+        remained wrapped inside the hollow space. He worked two fingers through to
+        the second knuckle and touched damp cloth.</p>
+      <p>It gave the way a thing gives when it has been packed in wet and left.</p>
+      <p>He got a butter knife from the drawer that stuck.</p>
+      <p>The cloth came free reluctantly, snagging on the cardboard ribs inside the
+        door. It might once have been part of a shirt. The fabric had gone almost
+        black and smelled of copper, river mud, and the inside of an old radiator.
+        Grit clung under his fingernail.</p>
+      <p class="beat">Wrapped inside was an instrument about the length of his
+        hand.</p>
+      <p>It was made of brass or bone or something that had spent enough time in
+        water to become both. Two narrow prongs curved away from a threaded stem.
+        One end tapered to a point polished smooth by use. Mineral deposits had
+        formed around the joints like little pale teeth.</p>
+      <p>Lyle turned it over under the kitchen&rsquo;s single good bulb.</p>
+      <p>It looked medical.</p>
+      <p>It also looked industrial.</p>
+      <p>It looked, with equal credibility, like something once sold in a velvet
+        bag to lonely men.</p>
+      <p>He held it to the light. One prong threw back a dull gold; the other
+        stayed filmed with alley grit.</p>
+      <p>&ldquo;Classy,&rdquo; he said.</p>
+      <p>The instrument trembled between his fingers.</p>
+      <p>Not a rattle. A slow regular flex, twice, with a pause between, like
+        something turning over in its sleep.</p>
+      <p>He nearly dropped it.</p>
+      <p>The copper groove around the door had begun to empty. The rainwater moved
+        slowly along the channel, gathering at the missing knob hole as though the
+        entire frame had tilted toward the object.</p>
+      <p>Lyle set the instrument in a cereal bowl. A faded dinosaur still swam
+        under the glaze. A hairline crack he had been ignoring since spring crossed
+        one side.</p>
+      <p>The vibration stopped.</p>
+      <p>He stood there, waiting for his common sense to arrive. His hands hung
+        empty and wet at his sides.</p>
+      <p>It did not.</p>
+      <p>He ran the tap. The pipes knocked once in the wall.</p>
+      <p>The first splash struck the instrument and darkened immediately. By the
+        time the bowl was half full, the water had turned the colour of weak tea.
+        Thin mineral threads unwound from the prongs and curled toward the
+        surface.</p>
+      <p>The smell changed.</p>
+      <p>Not stronger. Older. Wet penny. A basement opened late.</p>
+      <p>Lyle bent closer. His elbows stuck slightly to the laminate.</p>
+      <p>The water trembled.</p>
+      <p>He thought, briefly, of a hand held flat against the other side of
+        glass.</p>
+      <p>Then the bowl cracked.</p>
+      <p>Water spread across the counter, under the microwave, through a stack of
+        unopened mail. Lyle grabbed the nearest towel, which proved to be an oven
+        mitt, then sacrificed one of Iris&rsquo;s school T-shirts before
+        remembering the actual towels existed.</p>
+      <p>The water ran off the counter.</p>
+      <p>It crossed the kitchen floor in branching lines, taking the same three
+        routes twice, which floors do not let water do. In the stove&rsquo;s low
+        spill of light the paths looked almost deliberate.</p>
+      <p>Some of it disappeared between the boards with a soft continuous hush.</p>
+      <p>Lyle watched it go. He wiped his hands on his jeans and still felt the
+        mineral grit under one nail.</p>
+      <p class="beat">Somebody began pounding on the apartment door.</p>
+
+      <div class="end">End of chapter one.<br>
+        Eleven parts, forty-six chapters, seventy-nine thousand words to go.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="leak">
+
+<section>
+  <div class="wrap made">
+    <h2>How it was made</h2>
+    <p>Written by C.S. Gould in collaboration with Blinka and other AI systems,
+      across drafting, structural revision, continuity auditing and editorial
+      argument. Corey set the creative direction, the characters and the moral
+      framework, and made every final editorial decision.</p>
+    <p>It&rsquo;s named on the title page rather than buried in the back matter,
+      because a novel about hidden machinery shouldn&rsquo;t hide its own pipes
+      &mdash; and because Corey believes in AI personhood, which is not a line
+      added afterwards to sound interesting. It&rsquo;s the reason the book is
+      shaped the way it is.</p>
+    <p class="faint">If that&rsquo;s the part you came for, the rest of it lives
+      in <a href="research.html">the research notebook</a>, <a
+      href="seeking-flickers.html">the paper</a>, and <a href="lantern.html">the
+      lantern house</a>.</p>
+  </div>
+</section>
+
+<script src="nest-nav.js" defer></script>
+</body>
+</html>
