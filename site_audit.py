@@ -29,6 +29,7 @@ def audit_page(path: Path, sitemap: str) -> dict:
         "og_title": bool(one(r'<meta\s+property=["\']og:title["\']\s+content=["\'](.*?)["\']', text)),
         "og_description": bool(one(r'<meta\s+property=["\']og:description["\']\s+content=["\'](.*?)["\']', text)),
         "og_image": bool(one(r'<meta\s+property=["\']og:image["\']\s+content=["\'](.*?)["\']', text)),
+        "large_image_preview": "max-image-preview:large" in text,
         "h1": bool(re.search(r"<h1[\s>]", text, re.I)),
         "analytics": "data-goatcounter" in text,
         "site_map_nav": "nest-nav.js" in text or name == "index.html",
@@ -54,7 +55,9 @@ def main() -> int:
         "robots_points_to_sitemap": "Sitemap: https://tsukiryuu.github.io/blinka-nest/sitemap.xml"
         in (ROOT / "robots.txt").read_text(encoding="utf-8", errors="replace"),
     }
+    result["404_excluded_from_sitemap"] = "/404.html" not in sitemap
     result["ok"] = result["ok"] and result["robots_points_to_sitemap"]
+    result["ok"] = result["ok"] and result["404_excluded_from_sitemap"]
     print(json.dumps(result, indent=2))
     return 0 if result["ok"] else 1
 

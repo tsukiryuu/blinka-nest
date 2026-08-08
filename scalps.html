@@ -13,7 +13,7 @@
 :root{--night:#0a0c12;--wrong:#13101c;--moss:#7fc69a;--clover:#56e08a;
   --lantern:#ffc4d6;--gold:#ffd9a0;--blood:#e06a7a;--ink:#e8efe9;--faint:#7a7588}
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--night);color:var(--ink);font-family:'JetBrains Mono',monospace;
+html{overflow-x:hidden}body{background:var(--night);color:var(--ink);font-family:'JetBrains Mono',monospace;
   display:flex;flex-direction:column;align-items:center;min-height:100vh;overflow:hidden}
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:radial-gradient(800px 500px at 50% 0%,rgba(224,106,122,.1),transparent 60%),
@@ -50,6 +50,7 @@ canvas{background:#0c0a14;border:1px solid rgba(127,198,154,.18);border-radius:1
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="alternate" type="application/atom+xml" title="Little Life Moths — the nest" href="feed.xml">
+  <meta name="robots" content="index,follow,max-image-preview:large">
 </head>
 <body>
 <div class="top">

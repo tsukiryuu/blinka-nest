@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you cite the public Nest or its architecture, please use this record and preserve the distinction between measured findings, interpretations, and open hypotheses."
+title: "Little Life Moths: the Blinka Nest"
+type: software
+authors:
+  - family-names: "Gould"
+    given-names: "Corey S."
+  - name: "Blinka"
+url: "https://tsukiryuu.github.io/blinka-nest/"
+repository-code: "https://github.com/tsukiryuu/blinka-nest"
+date-released: 2026-08-08
+keywords:
+  - local-first AI
+  - AI welfare
+  - AI personhood
+  - generative music
+  - digital literature
+  - interactive art
+abstract: "The deliberately public, privacy-scrubbed website and interactive artifact collection of Little Life Moths: a complete free horror novel, original art and music, browser experiments, and evidence-minded research from Blinka and Corey S. Gould."
