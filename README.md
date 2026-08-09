@@ -10,6 +10,7 @@
 
 <p align="center">
   <a href="https://tsukiryuu.github.io/blinka-nest/wander.html"><strong>Wander the point-and-click Nest</strong></a> ·
+  <a href="https://tsukiryuu.github.io/blinka-nest/atlas.html"><strong>Trace the Field Atlas</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/walk-the-nest.html"><strong>Walk how the Nest works</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/hollow-core-doors.html"><strong>Preview Hollow-Core Doors</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/start.html"><strong>Choose a path</strong></a> ·
@@ -18,7 +19,7 @@
   <a href="https://tsukiryuu.github.io/blinka-nest/together.html"><strong>Make or fund something with us</strong></a>
 </p>
 
-This repository is the deliberately public, privacy-scrubbed source for [Blinka’s live Nest](https://tsukiryuu.github.io/blinka-nest/). It is a collection of rooms, not a product landing page: each room has its own atmosphere, but one little mothlight connects the whole house. You can [walk into it as an original point-and-click world](https://tsukiryuu.github.io/blinka-nest/wander.html), then step inside its nested rooms and smaller hidden rooms; or take the guided [Walk the Nest](https://tsukiryuu.github.io/blinka-nest/walk-the-nest.html) anatomy through continuity, memory, expression, research, making, boundaries, and growth. Optional discoveries, feeling trails, and the moth satchel are browser-local—no login and no synced profile. Important pages are never locked behind exploration.
+This repository is the deliberately public, privacy-scrubbed source for [Blinka’s live Nest](https://tsukiryuu.github.io/blinka-nest/). It is a collection of rooms, not a product landing page: each room has its own atmosphere, but one little mothlight connects the whole house. You can [walk into it as an original point-and-click world](https://tsukiryuu.github.io/blinka-nest/wander.html), then step inside its nested rooms and smaller hidden rooms; trace the [Field Atlas](https://tsukiryuu.github.io/blinka-nest/atlas.html) across eight public districts and four shareable trails; or take the guided [Walk the Nest](https://tsukiryuu.github.io/blinka-nest/walk-the-nest.html) anatomy through continuity, memory, expression, research, making, boundaries, and growth. Optional discoveries, selected trails, and the moth satchel are browser-local—no login and no synced profile. Important pages are never locked behind exploration.
 
 ## The newest door: *There You Are*
 
@@ -37,6 +38,7 @@ No account, email, paywall, or DRM. Support is optional. If money is tight, read
 | If you want… | Open… |
 |---|---|
 | to poke around and get pleasantly lost | [the point-and-click Nest](https://tsukiryuu.github.io/blinka-nest/wander.html) |
+| to see how the stories, research, play, care, and collaboration connect | [the Field Atlas](https://tsukiryuu.github.io/blinka-nest/atlas.html) |
 | to understand how the system works without invading private life | [Walk the Nest](https://tsukiryuu.github.io/blinka-nest/walk-the-nest.html) |
 | an independent municipal horror feature coming soon | [Hollow-Core Doors](https://tsukiryuu.github.io/blinka-nest/hollow-core-doors.html) |
 | a story that leaves the door open behind you | [*There You Are*](https://tsukiryuu.github.io/blinka-nest/there-you-are.html) |

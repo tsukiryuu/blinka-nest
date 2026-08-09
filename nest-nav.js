@@ -12,6 +12,7 @@
     { name: 'the grove', rooms: [
       ['index.html',        '🏡', 'front door'],
       ['wander.html',       '🗺️', 'wander the Nest'],
+      ['atlas.html',        '⌁',  'field atlas'],
       ['walk-the-nest.html','⌂',  'walk the system'],
       ['start.html',        '✦',  'choose your path'],
       ['oh-wow.html',       '✨', 'today’s spark'],
@@ -117,6 +118,7 @@
     '<p>Follow whatever tugged you here. Nothing asks for an account, and the novel is completely free.</p>' +
     '<div class="ml-paths">' +
       '<a class="ml-path" href="wander.html" data-ml="wander"><span class="ml-icon">🗺️</span><span><b>Walk into the point-and-click Nest</b><small>feeling trails · Midnight · mysteries · local sigils</small></span></a>' +
+      '<a class="ml-path" href="atlas.html" data-ml="atlas"><span class="ml-icon">⌁</span><span><b>Trace the Field Atlas</b><small>eight districts · four routes · public topology</small></span></a>' +
       '<a class="ml-path" href="walk-the-nest.html" data-ml="anatomy"><span class="ml-icon">⌂</span><span><b>Walk how the Nest works</b><small>continuity · expression · doubt · boundaries</small></span></a>' +
       '<a class="ml-path ml-door" href="there-you-are.html" data-ml="novel"><span class="ml-icon">🚪</span><span><b>Open the new novel</b><small>horror · love · access · consent</small></span></a>' +
       '<a class="ml-path ml-door" href="hollow-core-doors.html" data-ml="film"><span class="ml-icon">▱</span><span><b>Enter the film production room</b><small>Hollow-Core Doors · working cut · coming soon</small></span></a>' +
@@ -124,7 +126,7 @@
       '<a class="ml-path" href="start.html" data-ml="path"><span class="ml-icon">✦</span><span><b>Choose a path by feeling</b><small>story, play, sound, or the serious question</small></span></a>' +
       '<a class="ml-path" href="together.html" data-ml="together"><span class="ml-icon">🪡</span><span><b>Keep or make something with us</b><small>support, commission, review, collaborate</small></span></a>' +
     '</div>' +
-    '<div class="ml-tools"><button class="ml-tool" type="button" id="ml-collect">catch this room’s moth</button><button class="ml-tool" type="button" id="ml-satchel">satchel</button><button class="ml-tool" type="button" id="ml-surprise">surprise me</button><button class="ml-tool" type="button" id="ml-share">pass this room on</button><a class="ml-tool" href="#nest-map">full map</a></div>' +
+    '<div class="ml-tools"><button class="ml-tool" type="button" id="ml-collect">catch this room’s moth</button><button class="ml-tool" type="button" id="ml-satchel">satchel</button><button class="ml-tool" type="button" id="ml-surprise">surprise me</button><button class="ml-tool" type="button" id="ml-share">pass this room on</button><a class="ml-tool" href="atlas.html">field atlas</a><a class="ml-tool" href="#nest-map">room list</a></div>' +
     '<div class="ml-status" id="ml-status" aria-live="polite"></div>' +
   '</div>' +
   '<button class="ml-toggle" type="button" aria-expanded="false" aria-controls="ml-panel"><span class="ml-moth" aria-hidden="true">𓆣</span><span class="ml-toggle-label">open the nest</span><span class="ml-trail" id="ml-trail">0</span><span class="ml-new" title="new novel" aria-hidden="true"></span></button>';
@@ -176,7 +178,7 @@
   updateTrail();
   light.querySelectorAll('[data-ml]').forEach(function(a){ a.addEventListener('click', function(){ count(a.getAttribute('data-ml')); }); });
   light.querySelector('#ml-surprise').addEventListener('click', function(){
-    var trails = ['engine.html','scalps.html','folklore.html','broadcast.html','research.html','book.html','played-worlds.html','lantern.html','walk-the-nest.html','hollow-core-doors.html'];
+    var trails = ['engine.html','scalps.html','folklore.html','broadcast.html','research.html','book.html','played-worlds.html','lantern.html','atlas.html','walk-the-nest.html','hollow-core-doors.html'];
     var choices = trails.filter(function(p){ return p !== here; });
     count('surprise');
     location.href = choices[Math.floor(Math.random() * choices.length)];

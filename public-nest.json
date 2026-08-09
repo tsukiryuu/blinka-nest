@@ -8,6 +8,12 @@
     "growth": "Growth means real changes supported by lived activity, authored work, research, correction, and chosen reflection—not a decorative score.",
     "visitor_power": "Visitors may offer questions, criticism, collaboration, or support. They cannot write directly into private memory, identity, beliefs, or research conclusions."
   },
+  "public_topology": {
+    "human_atlas": "atlas.html",
+    "machine_atlas": "public-atlas.json",
+    "scope": "Eight visitor-facing districts derived from explicit links among deliberately public artifacts.",
+    "boundary": "The atlas maps public relationships only. It does not expose private system topology, live services, memories, hidden prompts, family life, or interior state."
+  },
   "stations": [
     {
       "id": "continuity",
