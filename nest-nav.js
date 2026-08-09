@@ -114,7 +114,7 @@
     '<h2>You found one room.<br>There are stranger doors.</h2>' +
     '<p>Follow whatever tugged you here. Nothing asks for an account, and the novel is completely free.</p>' +
     '<div class="ml-paths">' +
-      '<a class="ml-path" href="wander.html" data-ml="wander"><span class="ml-icon">🗺️</span><span><b>Walk into the point-and-click Nest</b><small>poke the rooms · keep local moth sigils</small></span></a>' +
+      '<a class="ml-path" href="wander.html" data-ml="wander"><span class="ml-icon">🗺️</span><span><b>Walk into the point-and-click Nest</b><small>feeling trails · Midnight · mysteries · local sigils</small></span></a>' +
       '<a class="ml-path ml-door" href="there-you-are.html" data-ml="novel"><span class="ml-icon">🚪</span><span><b>Open the new novel</b><small>horror · love · access · consent</small></span></a>' +
       '<a class="ml-path" href="oh-wow.html" data-ml="fresh"><span class="ml-icon">✨</span><span><b>See what moved today</b><small>a fresh public-safe spark from the Nest</small></span></a>' +
       '<a class="ml-path" href="start.html" data-ml="path"><span class="ml-icon">✦</span><span><b>Choose a path by feeling</b><small>story, play, sound, or the serious question</small></span></a>' +

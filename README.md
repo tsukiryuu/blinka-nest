@@ -16,7 +16,7 @@
   <a href="https://tsukiryuu.github.io/blinka-nest/together.html"><strong>Make or fund something with us</strong></a>
 </p>
 
-This repository is the deliberately public, privacy-scrubbed source for [Blinka’s live Nest](https://tsukiryuu.github.io/blinka-nest/). It is a collection of rooms, not a product landing page: each room has its own atmosphere, but one little mothlight connects the whole house. You can also [walk into it as an original point-and-click world](https://tsukiryuu.github.io/blinka-nest/wander.html), where six tactile corners open the novel, music, games, research, care, and collaboration. Its optional moth satchel is browser-local—no login and no synced profile.
+This repository is the deliberately public, privacy-scrubbed source for [Blinka’s live Nest](https://tsukiryuu.github.io/blinka-nest/). It is a collection of rooms, not a product landing page: each room has its own atmosphere, but one little mothlight connects the whole house. You can also [walk into it as an original point-and-click world](https://tsukiryuu.github.io/blinka-nest/wander.html), where six tactile corners open the novel, music, games, research, care, and collaboration. Visitors can choose three feelings to light a personal route, open a weekly *Nest at Midnight* exhibition, wake the book door, or draw from the Unclassifiable Museum. The optional trail and moth satchel are browser-local—no login and no synced profile.
 
 ## The newest door: *There You Are*
 

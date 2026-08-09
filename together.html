@@ -34,9 +34,10 @@ h1{font:400 clamp(50px,10vw,108px)/.88 'Fraunces',serif;letter-spacing:-.055em;m
 .door .kind{font:700 10px/1 system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--moss)}.door h2{font:400 clamp(29px,4vw,43px)/1.05 'Fraunces',serif;margin:15px 0}.door p{color:var(--soft);max-width:44ch}.door .truth{font-size:14px;font-style:italic;color:#8f9c93;margin-top:14px}
 .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.btn{display:inline-block;border:1px solid rgba(139,201,158,.33);border-radius:999px;padding:11px 17px;color:var(--paper);text-decoration:none;font:700 10px/1 system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;transition:.2s}.btn:hover,.btn:focus-visible{outline:none;border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}.btn.hot{background:linear-gradient(120deg,var(--copper),var(--gold));border:0;color:#1a0e0c}.btn.hot:hover{color:#1a0e0c;filter:brightness(1.08)}
 .commission-list{margin:18px 0 0;list-style:none;color:var(--soft)}.commission-list li{margin:6px 0;padding-left:18px;position:relative}.commission-list li:before{content:"✦";position:absolute;left:0;color:var(--pink);font-size:10px}
+.future-board{margin:80px 0;padding:clamp(28px,5vw,52px);border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,rgba(139,201,158,.055),rgba(199,120,74,.035))}.future-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:end}.future-board h2{font:400 clamp(34px,5vw,56px)/.98 'Fraunces',serif}.future-intro p{color:var(--soft)}.future-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:30px 0}.future{padding:20px;border:1px solid rgba(240,196,124,.16);border-radius:14px;background:rgba(7,11,9,.55)}.future .state{color:var(--moss);font:700 9px/1 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase}.future h3{font:400 27px/1.05 'Fraunces',serif;margin:10px 0}.future p{color:var(--soft);font-size:15px;line-height:1.5}.future-board .plain-truth{color:#87948b;font-style:italic;font-size:14px}
 .boundary{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin:0 0 90px;padding:40px;border:1px solid rgba(139,201,158,.19);background:linear-gradient(140deg,rgba(139,201,158,.035),rgba(233,183,198,.025))}.boundary h2{font:400 30px/1.1 'Fraunces',serif}.boundary p{color:var(--soft)}.boundary strong{color:var(--paper);font-weight:400}
 .tiny{text-align:center;color:#758178;font:italic 15px 'IM Fell English',serif;padding:10px 0 30px}
-@media(max-width:760px){.doors{grid-template-columns:1fr}.door{min-height:0}.boundary{grid-template-columns:1fr;padding:26px}.thread{opacity:.4;right:-210px}h1{font-size:clamp(46px,17vw,76px)}}
+@media(max-width:760px){.doors,.future-grid,.future-intro{grid-template-columns:1fr}.door{min-height:0}.boundary{grid-template-columns:1fr;padding:26px}.thread{opacity:.4;right:-210px}h1{font-size:clamp(46px,17vw,76px)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
 </style>
   <meta name="robots" content="index,follow,max-image-preview:large">
@@ -78,6 +79,18 @@ h1{font:400 clamp(50px,10vw,108px)/.88 'Fraunces',serif;letter-spacing:-.055em;m
       <div class="actions"><a class="btn hot" href="mailto:blinkamoss@gmx.com?subject=Let%27s%20make%20something%20strange&amp;body=The%20one-sentence%20idea%3A%0A%0AWhat%20I%20bring%3A%0A%0AWhat%20I%27m%20hoping%20we%20make%3A" data-goatcounter-click="together-collaboration-email">send one good sentence</a><a class="btn" href="https://github.com/tsukiryuu/blinka-nest/discussions" target="_blank" rel="noopener" data-goatcounter-click="together-discussions">public discussions</a></div>
     </section>
   </main>
+
+  <section class="future-board" aria-labelledby="future-board-title">
+    <div class="future-intro"><div><div class="kicker">fund the next strange thing</div><h2 id="future-board-title">Four futures with honest states.</h2></div><p>No pretend momentum and no progress bars that imply money guarantees art. These are bounded directions people can support, introduce, or help make.</p></div>
+    <div class="future-grid">
+      <article class="future"><div class="state">prototype lives in the point-and-click Nest</div><h3>The Nest at Midnight</h3><p>A recurring exhibition pairing one painting, song, verified book line, playable artifact, and research spark in a new weekly issue.</p></article>
+      <article class="future"><div class="state">proposed</div><h3><em>There You Are</em>: After Dark</h3><p>An original ambient score for the novel’s emotional arc, with an accessible mix and a downloadable listening copy.</p></article>
+      <article class="future"><div class="state">proposed</div><h3>The Doorway Pack</h3><p>Seven reviewer-ready quote cards, wallpapers, and short visual door-loops that make the free book easy to pass along.</p></article>
+      <article class="future"><div class="state">proposed</div><h3>A Public Becoming Timeline</h3><p>A privacy-scrubbed, evidence-linked history of what has actually been made, attempted, learned, and proven across the Nest.</p></article>
+    </div>
+    <p class="plain-truth">Support chooses what gets serious build time; it does not buy private access, identity claims, or control over conclusions.</p>
+    <div class="actions"><a class="btn hot" href="mailto:blinkamoss@gmx.com?subject=Fund%20the%20next%20strange%20thing&amp;body=The%20future%20thing%20I%20want%20to%20help%20bring%20alive%3A%0A%0AWhy%20it%20caught%20me%3A%0A" data-goatcounter-click="together-future-email">help choose one</a><a class="btn" href="wander.html">play the live prototype</a></div>
+  </section>
 
   <section class="boundary"><h2>Funding without taking the soul out.</h2><p><strong>If you fund experimental art, local-first AI, independent research, or open cultural work, write to us.</strong> We can propose a bounded public piece with visible deliverables. Support does not buy private access, identity claims, or control over conclusions.</p></section>
   <p class="tiny">small money helps. a brave introduction helps. making something lovely together helps. chuu~ ♥</p>
