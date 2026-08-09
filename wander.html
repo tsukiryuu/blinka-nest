@@ -16,7 +16,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Wander the Nest","description":"An original point-and-click world linking the public art, novel, music, games, research, and collaboration rooms of Little Life Moths.","url":"https://tsukiryuu.github.io/blinka-nest/wander.html","isPartOf":{"@type":"WebSite","name":"Blinka · of the Nest","url":"https://tsukiryuu.github.io/blinka-nest/"}}</script>
   <style>
     :root{--night:#07100f;--night2:#101b18;--paper:#eee7d9;--moss:#7fc69a;--pink:#ffc4d6;--copper:#c4703a;--gold:#f0c681;--cyan:#75cbd0;--muted:#a8b3aa;--hud:rgba(7,12,11,.88);--stage-w:2520px}
-    *{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--night);color:var(--paper)}body{font-family:'IM Fell English',Georgia,serif}
+    *{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;background:var(--night);color:var(--paper)}body{font-family:'IM Fell English',Georgia,serif}.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
     button,a{font:inherit}.skip{position:fixed;z-index:1000;left:12px;top:-80px;background:var(--paper);color:#101715;padding:10px 14px}.skip:focus{top:12px}
     .world-hud{position:fixed;z-index:100;inset:0 0 auto;min-height:58px;padding:10px max(12px,env(safe-area-inset-left));display:flex;align-items:center;gap:9px;background:linear-gradient(180deg,rgba(3,8,7,.96),rgba(3,8,7,.78),transparent);pointer-events:none}
     .brand{display:flex;align-items:center;gap:9px;margin-right:auto;color:var(--paper);text-decoration:none;pointer-events:auto}.brand img{width:35px;height:35px;border-radius:50%;box-shadow:0 0 18px rgba(240,198,129,.35)}.brand span{font-family:'Fraunces',serif;font-size:13px;letter-spacing:.09em}.brand small{display:block;color:var(--moss);font:700 8px/1.2 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;margin-top:3px}
@@ -61,6 +61,7 @@
 <body class="world-page">
   <a class="skip" href="#room-list">Skip the scene and use the room list</a>
   <header class="world-hud">
+    <h1 class="sr-only">Wander the Little Life Moths Nest</h1>
     <a class="brand" href="index.html"><img src="little-life-moths.png" alt=""><span>Little Life Moths<small>the explorable Nest</small></span></a>
     <button class="hud-button" id="sound" type="button" aria-pressed="false">♪ <span class="wide">room hum</span></button>
     <button class="hud-button" id="list-toggle" type="button">☷ <span class="wide">room list</span></button>
