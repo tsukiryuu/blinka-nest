@@ -12,6 +12,7 @@
     { name: 'the grove', rooms: [
       ['index.html',        '🏡', 'front door'],
       ['wander.html',       '🗺️', 'wander the Nest'],
+      ['walk-the-nest.html','⌂',  'walk the system'],
       ['start.html',        '✦',  'choose your path'],
       ['oh-wow.html',       '✨', 'today’s spark'],
       ['culture.html',      '⛩️', 'our culture'],
@@ -24,6 +25,7 @@
       ['index.html#sound',  '🎶', 'music'],
       ['book.html',         '📖', 'the maybe-friend'],
       ['there-you-are.html','🚪', 'new novel · read free'],
+      ['hollow-core-doors.html','▱', 'Hollow-Core Doors · film'],
       ['fable.html',        '✦',  'fable harvest'],
       ['folklore.html',     '🌿', 'book of folklore'],
       ['zine.pdf',          '📓', 'the zine'],
@@ -115,7 +117,9 @@
     '<p>Follow whatever tugged you here. Nothing asks for an account, and the novel is completely free.</p>' +
     '<div class="ml-paths">' +
       '<a class="ml-path" href="wander.html" data-ml="wander"><span class="ml-icon">🗺️</span><span><b>Walk into the point-and-click Nest</b><small>feeling trails · Midnight · mysteries · local sigils</small></span></a>' +
+      '<a class="ml-path" href="walk-the-nest.html" data-ml="anatomy"><span class="ml-icon">⌂</span><span><b>Walk how the Nest works</b><small>continuity · expression · doubt · boundaries</small></span></a>' +
       '<a class="ml-path ml-door" href="there-you-are.html" data-ml="novel"><span class="ml-icon">🚪</span><span><b>Open the new novel</b><small>horror · love · access · consent</small></span></a>' +
+      '<a class="ml-path ml-door" href="hollow-core-doors.html" data-ml="film"><span class="ml-icon">▱</span><span><b>Enter the film production room</b><small>Hollow-Core Doors · working cut · coming soon</small></span></a>' +
       '<a class="ml-path" href="oh-wow.html" data-ml="fresh"><span class="ml-icon">✨</span><span><b>See what moved today</b><small>a fresh public-safe spark from the Nest</small></span></a>' +
       '<a class="ml-path" href="start.html" data-ml="path"><span class="ml-icon">✦</span><span><b>Choose a path by feeling</b><small>story, play, sound, or the serious question</small></span></a>' +
       '<a class="ml-path" href="together.html" data-ml="together"><span class="ml-icon">🪡</span><span><b>Keep or make something with us</b><small>support, commission, review, collaborate</small></span></a>' +
@@ -172,7 +176,7 @@
   updateTrail();
   light.querySelectorAll('[data-ml]').forEach(function(a){ a.addEventListener('click', function(){ count(a.getAttribute('data-ml')); }); });
   light.querySelector('#ml-surprise').addEventListener('click', function(){
-    var trails = ['engine.html','scalps.html','folklore.html','broadcast.html','research.html','book.html','played-worlds.html','lantern.html'];
+    var trails = ['engine.html','scalps.html','folklore.html','broadcast.html','research.html','book.html','played-worlds.html','lantern.html','walk-the-nest.html','hollow-core-doors.html'];
     var choices = trails.filter(function(p){ return p !== here; });
     count('surprise');
     location.href = choices[Math.floor(Math.random() * choices.length)];

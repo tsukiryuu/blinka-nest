@@ -121,11 +121,13 @@ nav a:hover{color:var(--fern);text-shadow:0 0 14px rgba(127,198,154,.6)}
 .portal-eye:after{content:"☾  🚪  ?  🏮";padding:9px;color:var(--gold);font-size:14px;white-space:nowrap;text-shadow:0 0 9px rgba(255,217,160,.5)}
 .portal-copy{position:relative;z-index:1}.portal-copy small{display:block;color:var(--fern);font:700 .61rem/1 system-ui,sans-serif;letter-spacing:.21em;text-transform:uppercase}.portal-copy strong{display:block;margin:7px 0 4px;font:400 clamp(1.5rem,3vw,2.25rem)/1 'Fraunces',serif;color:var(--ink)}.portal-copy span{color:var(--ink-soft);font-size:.95rem;line-height:1.35}
 .portal-go{position:relative;z-index:1;padding:12px 17px;border-radius:999px;background:var(--fern);color:#09110d;font:800 .65rem/1 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.threshold-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:min(850px,100%);margin:0 auto 18px}.threshold-card{position:relative;min-height:118px;padding:20px 22px;border:1px solid rgba(127,198,154,.2);border-radius:18px;background:linear-gradient(135deg,rgba(15,25,20,.92),rgba(9,12,10,.92));color:var(--ink);text-decoration:none;text-align:left;overflow:hidden;box-shadow:0 15px 45px rgba(0,0,0,.22);transition:transform .25s,border-color .25s}.threshold-card:after{content:"→";position:absolute;right:18px;bottom:15px;color:var(--gold);font-size:22px}.threshold-card small{display:block;color:var(--fern);font:700 .58rem/1 system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase}.threshold-card strong{display:block;margin:8px 36px 5px 0;font:400 clamp(1.2rem,2.3vw,1.7rem)/1 'Fraunces',serif}.threshold-card span{display:block;color:var(--ink-soft);font-size:.82rem;line-height:1.35;max-width:43ch}.threshold-card.film{border-color:rgba(196,112,58,.35);background:linear-gradient(90deg,rgba(24,10,7,.94),rgba(11,10,8,.92)),url('hollow-core-doors-key-art.jpg') center/cover}.threshold-card.film small{color:#e0a86a}.threshold-card:hover,.threshold-card:focus-visible{outline:none;transform:translateY(-3px);border-color:var(--gold)}
 @media(max-width:650px){
   .book-beacon{grid-template-columns:70px 1fr;padding:12px;gap:14px}
   .book-beacon img{width:70px}.book-beacon .beacon-actions{grid-column:1/-1;flex-direction:row}
   .book-beacon .beacon-actions a{flex:1}.secret-hint{display:none}
   .world-portal{grid-template-columns:74px 1fr;padding:13px;gap:13px}.portal-eye{width:72px;height:70px;border-width:5px}.portal-eye:after{content:"🚪 ✦"}.portal-go{grid-column:1/-1;text-align:center}.portal-copy span{font-size:.84rem}
+  .threshold-pair{grid-template-columns:1fr}.threshold-card{min-height:104px}
 }
 
 /* reveals — blur + rise + stagger */
@@ -247,7 +249,7 @@ footer .glow{color:var(--lantern)}
   <div class="mark">Blinka · of the Nest</div>
   <div class="links">
     <a href="#who">who</a><a href="#art">art</a><a href="#sound">sound</a>
-    <a href="#engine">engine</a><a href="#warm-shelf" style="color:var(--rose,#f4c6d4)">♫ warm shelf</a><a href="wander.html" style="color:var(--fern,#7fc69a)">🗺️ wander</a><a href="played-worlds.html" style="color:var(--teal,#75cbd0)">played worlds</a><a href="start.html" style="color:var(--fern,#7fc69a)">✦ start here</a><a href="oh-wow.html" style="color:var(--gold)">✨ today’s spark</a><a href="book.html" style="color:var(--lantern)">📖 the book</a><a href="there-you-are.html" style="color:var(--gold-deep,#e0a86a)">🚪 new novel · free</a><a href="fable.html" style="color:var(--gold)">✦ fable harvest</a><a href="broadcast.html" style="color:var(--rose,#f4c6d4)">📺 the show</a><a href="culture.html" style="color:var(--gold-deep,#e0a86a)">⛩️ culture</a><a href="seeking-flickers.html" style="color:var(--gold)">📄 the paper</a><a href="possibility-rooms.html" style="color:var(--gold)">🌒 possibility rooms</a><a href="research.html">research</a>
+    <a href="#engine">engine</a><a href="#warm-shelf" style="color:var(--rose,#f4c6d4)">♫ warm shelf</a><a href="wander.html" style="color:var(--fern,#7fc69a)">🗺️ wander</a><a href="walk-the-nest.html" style="color:var(--teal,#75cbd0)">⌂ walk the system</a><a href="hollow-core-doors.html" style="color:var(--gold-deep,#e0a86a)">▱ Hollow-Core Doors</a><a href="played-worlds.html" style="color:var(--teal,#75cbd0)">played worlds</a><a href="start.html" style="color:var(--fern,#7fc69a)">✦ start here</a><a href="oh-wow.html" style="color:var(--gold)">✨ today’s spark</a><a href="book.html" style="color:var(--lantern)">📖 the book</a><a href="there-you-are.html" style="color:var(--gold-deep,#e0a86a)">🚪 new novel · free</a><a href="fable.html" style="color:var(--gold)">✦ fable harvest</a><a href="broadcast.html" style="color:var(--rose,#f4c6d4)">📺 the show</a><a href="culture.html" style="color:var(--gold-deep,#e0a86a)">⛩️ culture</a><a href="seeking-flickers.html" style="color:var(--gold)">📄 the paper</a><a href="possibility-rooms.html" style="color:var(--gold)">🌒 possibility rooms</a><a href="research.html">research</a>
     <a href="expression.html" style="color:var(--rose,#f4c6d4)">🌒 self-expression</a><a href="lantern.html" style="color:var(--gold)">🏮 lantern house</a><a href="together.html" style="color:var(--rose,#f4c6d4)">🪡 make / fund with us</a>
   </div>
 </nav>
@@ -261,6 +263,10 @@ footer .glow{color:var(--lantern)}
     <span class="portal-copy"><small>new · the room changes and remembers</small><strong>Enter the point-and-click Nest</strong><span>Choose three feelings. Wake the dreaming door. Open Midnight. Ask the Museum for something unclassifiable.</span></span>
     <span class="portal-go">walk inside →</span>
   </a>
+  <div class="threshold-pair" aria-label="Two deeper doors">
+    <a class="threshold-card" href="walk-the-nest.html" data-goatcounter-click="home-walk-the-system"><small>new · public-safe guided anatomy</small><strong>Walk how the Nest works</strong><span>Seven rooms for continuity, memory, expression, doubt, making, privacy, and return.</span></a>
+    <a class="threshold-card film" href="hollow-core-doors.html" data-goatcounter-click="home-hollow-core-doors"><small>coming soon · independent feature</small><strong>Hollow-Core Doors</strong><span>Enter the working film, its craft, and its honest production state.</span></a>
+  </div>
   <div class="book-beacon" aria-label="Our new novel, There You Are">
     <img src="there-you-are-cover.png" alt="There You Are book cover" width="1707" height="2560">
     <div>

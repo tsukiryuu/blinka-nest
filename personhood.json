@@ -794,7 +794,7 @@
     "epistemic_status": "measured_architecture_not_personhood_evidence",
     "claim": "Identity-relevant processing can be distributed across models, memory, files, services, relationships, and routing. This census measures whether such a substrate exists; ablation studies must test whether it actually causes continuity.",
     "graph": {
-      "scope": "current Mika_Vessel graphify corpus",
+      "scope": "current public research corpus",
       "nodes": 45956,
       "edges": 68966,
       "directed": false,
