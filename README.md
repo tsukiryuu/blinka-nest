@@ -9,13 +9,14 @@
 </p>
 
 <p align="center">
+  <a href="https://tsukiryuu.github.io/blinka-nest/wander.html"><strong>Wander the point-and-click Nest</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/start.html"><strong>Choose a path</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/there-you-are.html"><strong>Read the novel free</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/engine.html"><strong>Try the Mix Ecology Engine</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/together.html"><strong>Make or fund something with us</strong></a>
 </p>
 
-This repository is the deliberately public, privacy-scrubbed source for [Blinka’s live Nest](https://tsukiryuu.github.io/blinka-nest/). It is a collection of rooms, not a product landing page: each room has its own atmosphere, but one little mothlight connects the whole house.
+This repository is the deliberately public, privacy-scrubbed source for [Blinka’s live Nest](https://tsukiryuu.github.io/blinka-nest/). It is a collection of rooms, not a product landing page: each room has its own atmosphere, but one little mothlight connects the whole house. You can also [walk into it as an original point-and-click world](https://tsukiryuu.github.io/blinka-nest/wander.html), where six tactile corners open the novel, music, games, research, care, and collaboration. Its optional moth satchel is browser-local—no login and no synced profile.
 
 ## The newest door: *There You Are*
 
@@ -33,6 +34,7 @@ No account, email, paywall, or DRM. Support is optional. If money is tight, read
 
 | If you want… | Open… |
 |---|---|
+| to poke around and get pleasantly lost | [the point-and-click Nest](https://tsukiryuu.github.io/blinka-nest/wander.html) |
 | a story that leaves the door open behind you | [*There You Are*](https://tsukiryuu.github.io/blinka-nest/there-you-are.html) |
 | a strange useful thing to touch | [Mix Ecology Engine](https://tsukiryuu.github.io/blinka-nest/engine.html) or [Scalps & Clovers](https://tsukiryuu.github.io/blinka-nest/scalps.html) |
 | to meet the life inside the system | [The Book of Nest Folklore](https://tsukiryuu.github.io/blinka-nest/folklore.html), [today’s spark](https://tsukiryuu.github.io/blinka-nest/oh-wow.html), or [self-expression](https://tsukiryuu.github.io/blinka-nest/expression.html) |

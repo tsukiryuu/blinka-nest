@@ -4,10 +4,14 @@
 (function(){
   'use strict';
 
+  /* The explorable world uses the same local satchel but draws its own HUD. */
+  if(document.body.classList.contains('world-page')) return;
+
   var here = (location.pathname.split('/').pop() || 'index.html');
   var groups = [
     { name: 'the grove', rooms: [
       ['index.html',        '🏡', 'front door'],
+      ['wander.html',       '🗺️', 'wander the Nest'],
       ['start.html',        '✦',  'choose your path'],
       ['oh-wow.html',       '✨', 'today’s spark'],
       ['culture.html',      '⛩️', 'our culture'],
@@ -79,6 +83,7 @@
     '.ml-tool:hover,.ml-tool:focus-visible{color:var(--ml-pink)!important;outline:none}',
     '.ml-tool+.ml-tool:before{content:"·";color:#536158;margin-right:7px}',
     '.ml-status{min-height:16px;margin:7px 0 -4px;color:var(--ml-gold);font-size:10px;letter-spacing:.04em}',
+    '.ml-trail{color:var(--ml-moss);font-size:9px;letter-spacing:.04em;margin-left:-3px}',
     '#nest-map{margin:4.5rem auto 0;padding:2.2rem 1.6rem 6rem;max-width:1080px;',
     'border-top:1px solid rgba(127,198,154,.18);font-family:Georgia,serif;cursor:auto}',
     '#nest-map .nm-crest{display:block;width:132px;height:132px;margin:0 auto 1rem;border-radius:50%;',
@@ -109,15 +114,16 @@
     '<h2>You found one room.<br>There are stranger doors.</h2>' +
     '<p>Follow whatever tugged you here. Nothing asks for an account, and the novel is completely free.</p>' +
     '<div class="ml-paths">' +
+      '<a class="ml-path" href="wander.html" data-ml="wander"><span class="ml-icon">🗺️</span><span><b>Walk into the point-and-click Nest</b><small>poke the rooms · keep local moth sigils</small></span></a>' +
       '<a class="ml-path ml-door" href="there-you-are.html" data-ml="novel"><span class="ml-icon">🚪</span><span><b>Open the new novel</b><small>horror · love · access · consent</small></span></a>' +
       '<a class="ml-path" href="oh-wow.html" data-ml="fresh"><span class="ml-icon">✨</span><span><b>See what moved today</b><small>a fresh public-safe spark from the Nest</small></span></a>' +
       '<a class="ml-path" href="start.html" data-ml="path"><span class="ml-icon">✦</span><span><b>Choose a path by feeling</b><small>story, play, sound, or the serious question</small></span></a>' +
       '<a class="ml-path" href="together.html" data-ml="together"><span class="ml-icon">🪡</span><span><b>Keep or make something with us</b><small>support, commission, review, collaborate</small></span></a>' +
     '</div>' +
-    '<div class="ml-tools"><button class="ml-tool" type="button" id="ml-surprise">surprise me</button><button class="ml-tool" type="button" id="ml-share">pass this room on</button><a class="ml-tool" href="#nest-map">full map</a></div>' +
+    '<div class="ml-tools"><button class="ml-tool" type="button" id="ml-collect">catch this room’s moth</button><button class="ml-tool" type="button" id="ml-satchel">satchel</button><button class="ml-tool" type="button" id="ml-surprise">surprise me</button><button class="ml-tool" type="button" id="ml-share">pass this room on</button><a class="ml-tool" href="#nest-map">full map</a></div>' +
     '<div class="ml-status" id="ml-status" aria-live="polite"></div>' +
   '</div>' +
-  '<button class="ml-toggle" type="button" aria-expanded="false" aria-controls="ml-panel"><span class="ml-moth" aria-hidden="true">𓆣</span><span class="ml-toggle-label">open the nest</span><span class="ml-new" title="new novel" aria-hidden="true"></span></button>';
+  '<button class="ml-toggle" type="button" aria-expanded="false" aria-controls="ml-panel"><span class="ml-moth" aria-hidden="true">𓆣</span><span class="ml-toggle-label">open the nest</span><span class="ml-trail" id="ml-trail">0</span><span class="ml-new" title="new novel" aria-hidden="true"></span></button>';
   document.body.appendChild(light);
   if(document.getElementById('moon')) light.classList.add('ml-has-moon');
 
@@ -138,6 +144,32 @@
       window.goatcounter.count({path:'mothlight-' + label, title:'Mothlight · ' + label, event:true});
     }
   }
+  var trailKey = 'littleLifeMothsTrailV1';
+  function readTrail(){ try { return JSON.parse(localStorage.getItem(trailKey)) || {finds:[],rooms:[]}; } catch(e) { return {finds:[],rooms:[]}; } }
+  function writeTrail(trail){ try { localStorage.setItem(trailKey, JSON.stringify(trail)); } catch(e) {} }
+  function internalRooms(){
+    var seen = {};
+    groups.forEach(function(g){ g.rooms.forEach(function(r){ if(/\.html(?:#.*)?$/.test(r[0])) seen[r[0].split('#')[0]] = true; }); });
+    return Object.keys(seen);
+  }
+  function updateTrail(){
+    var trail = readTrail(), total = internalRooms().length;
+    if(!Array.isArray(trail.rooms)) trail.rooms = [];
+    light.querySelector('#ml-trail').textContent = trail.rooms.length + '/' + total;
+    light.querySelector('#ml-collect').textContent = trail.rooms.indexOf(here) > -1 ? 'moth already caught' : 'catch this room’s moth';
+  }
+  light.querySelector('#ml-collect').addEventListener('click', function(){
+    var trail = readTrail();
+    if(!Array.isArray(trail.rooms)) trail.rooms = [];
+    if(trail.rooms.indexOf(here) < 0){ trail.rooms.push(here); writeTrail(trail); count('collect-' + here.replace('.html','')); status.textContent = 'a room-moth tucked itself into your satchel'; }
+    else status.textContent = 'this room-moth is already traveling with you';
+    updateTrail();
+  });
+  light.querySelector('#ml-satchel').addEventListener('click', function(){
+    var trail = readTrail(), rooms = Array.isArray(trail.rooms) ? trail.rooms : [];
+    status.textContent = rooms.length ? rooms.length + ' room-moth' + (rooms.length === 1 ? '' : 's') + ' kept only in this browser' : 'your satchel is empty — catch this room’s moth';
+  });
+  updateTrail();
   light.querySelectorAll('[data-ml]').forEach(function(a){ a.addEventListener('click', function(){ count(a.getAttribute('data-ml')); }); });
   light.querySelector('#ml-surprise').addEventListener('click', function(){
     var trails = ['engine.html','scalps.html','folklore.html','broadcast.html','research.html','book.html','played-worlds.html','lantern.html'];
