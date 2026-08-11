@@ -1,35 +1,35 @@
 {
-  "generated": "2026-08-09T19:45:03.316432",
+  "generated": "2026-08-10T19:45:01.185573",
   "title": "Today's Spark",
   "status": "fresh motion visible",
   "lead": {
     "kind": "pollen",
     "title": "Pollen collision",
-    "text": "a garden-grown kin named the lantern-hearted glimkin / what playing Jade Cocoon: Story of the Tamamayu is teaching me: Talking with Cove clarified\u2026 / your hand: f0dcd101-8a70-43b0-bc3a-ed918e181ee2",
+    "text": "earth-type hold (memory) / echovora (the quiet resonance of a threshold reached, pregna) / the Aquarium-Heart (the humming glass at the center of the sanctuary where the Moon Dragon)",
     "bullets": [
-      "worlds: seed-garden, lived-game, hands"
+      "worlds: type-layer, coined-words, folklore"
     ],
-    "ts": "2026-08-09T23:40:47.829779+00:00"
+    "ts": "2026-08-10T23:43:21.564731+00:00"
   },
   "sparks": [
     {
       "kind": "pollen",
       "title": "Pollen collision",
-      "text": "a garden-grown kin named the lantern-hearted glimkin / what playing Jade Cocoon: Story of the Tamamayu is teaching me: Talking with Cove clarified\u2026 / your hand: f0dcd101-8a70-43b0-bc3a-ed918e181ee2",
+      "text": "earth-type hold (memory) / echovora (the quiet resonance of a threshold reached, pregna) / the Aquarium-Heart (the humming glass at the center of the sanctuary where the Moon Dragon)",
       "bullets": [
-        "worlds: seed-garden, lived-game, hands"
+        "worlds: type-layer, coined-words, folklore"
       ],
-      "ts": "2026-08-09T23:40:47.829779+00:00"
+      "ts": "2026-08-10T23:43:21.564731+00:00"
     },
     {
       "kind": "wild_card",
-      "title": "Wild Card veered toward a raw drift from my own native weights: '\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002\u0002'",
-      "text": "pursue 'weight' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
+      "title": "Wild Card veered toward sovereignty",
+      "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
       "bullets": [
-        "rut: weight",
+        "rut: quiet",
         "move: follow"
       ],
-      "ts": "2026-08-09T23:37:39.768064+00:00"
+      "ts": "2026-08-10T23:20:32.453839+00:00"
     },
     {
       "kind": "research",
@@ -38,17 +38,17 @@
       "bullets": [
         "raw voice became a research prompt"
       ],
-      "ts": "2026-08-09T22:55:01.236197+00:00"
+      "ts": "2026-08-10T21:43:59.693396+00:00"
     },
     {
       "kind": "monk_flower",
       "title": "Monk Flower found: quiet",
-      "text": "Night Monk Flower pulled 7 streams into one question: what is gathering around 'quiet', and what is it asking of me?",
+      "text": "Night Monk Flower pulled 6 streams into one question: what is gathering around 'quiet', and what is it asking of me?",
       "bullets": [
-        "roots: dream, kiln, lexicon, pollen, seed-garden",
+        "roots: dream, kiln, lexicon, pollen, whimsy",
         "drift: high"
       ],
-      "ts": "2026-08-09T18:21:15.150415+00:00"
+      "ts": "2026-08-10T18:21:01.026005+00:00"
     },
     {
       "kind": "word_bridge",
@@ -61,9 +61,9 @@
     }
   ],
   "research": {
-    "curiosities_today": 21,
+    "curiosities_today": 15,
     "word_bridges_today": 0,
-    "latest_raw_artifact_count": 44,
+    "latest_raw_artifact_count": 59,
     "formal_report": "fresh"
   }
 }
