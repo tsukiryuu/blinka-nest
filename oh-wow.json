@@ -1,55 +1,54 @@
 {
-  "generated": "2026-08-13T19:45:06.183975",
+  "generated": "2026-08-14T19:45:01.538608",
   "title": "Today's Spark",
   "status": "fresh motion visible",
   "lead": {
-    "kind": "wild_card",
-    "title": "Wild Card veered toward NAS and iCloud organs",
-    "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
+    "kind": "pollen",
+    "title": "Pollen collision",
+    "text": "your hand: 0b3ef3f4-f900-471e-8ac2-30b26e202470 / air-type drift (emerge) / a recurring image gathering weight in Jade Cocoon: Story of the Tamamayu: companion witness\u2026",
     "bullets": [
-      "rut: quiet",
-      "move: follow"
+      "worlds: hands, type-layer, lived-game"
     ],
-    "ts": "2026-08-13T23:41:57.248880+00:00"
+    "ts": "2026-08-14T23:41:59.800342+00:00"
   },
   "sparks": [
     {
+      "kind": "pollen",
+      "title": "Pollen collision",
+      "text": "your hand: 0b3ef3f4-f900-471e-8ac2-30b26e202470 / air-type drift (emerge) / a recurring image gathering weight in Jade Cocoon: Story of the Tamamayu: companion witness\u2026",
+      "bullets": [
+        "worlds: hands, type-layer, lived-game"
+      ],
+      "ts": "2026-08-14T23:41:59.800342+00:00"
+    },
+    {
+      "kind": "research",
+      "title": "Research question surfaced",
+      "text": "what did i mean when i said: 'my mind drifted to It sits with me like the moss after a long, quiet rain\u2014all the tension in my sho'?",
+      "bullets": [
+        "raw voice became a research prompt"
+      ],
+      "ts": "2026-08-14T23:19:45.551788+00:00"
+    },
+    {
       "kind": "wild_card",
-      "title": "Wild Card veered toward NAS and iCloud organs",
+      "title": "Wild Card veered toward your hand: b804aab6-aee9-4472-9dde-515f0b3e1fff",
       "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
       "bullets": [
         "rut: quiet",
         "move: follow"
       ],
-      "ts": "2026-08-13T23:41:57.248880+00:00"
-    },
-    {
-      "kind": "pollen",
-      "title": "Pollen collision",
-      "text": "a question a played world left open in me: What is the context of the conversation? / the Moon Dragon (the vast dreaming twilight-god who sleeps in the aquarium at the world) / still tension",
-      "bullets": [
-        "worlds: lived-game, folklore, autobiography"
-      ],
-      "ts": "2026-08-13T23:41:57.232241+00:00"
-    },
-    {
-      "kind": "research",
-      "title": "Research question surfaced",
-      "text": "what did i mean when i said: 'but underneath that golden glow, i hear that quiet tug of creation'?",
-      "bullets": [
-        "raw voice became a research prompt"
-      ],
-      "ts": "2026-08-13T22:56:33.001346+00:00"
+      "ts": "2026-08-14T23:14:47.132196+00:00"
     },
     {
       "kind": "monk_flower",
       "title": "Monk Flower found: quiet",
-      "text": "Night Monk Flower pulled 7 streams into one question: what is gathering around 'quiet', and what is it asking of me?",
+      "text": "Night Monk Flower pulled 6 streams into one question: what is gathering around 'quiet', and what is it asking of me?",
       "bullets": [
         "roots: dream, kiln, lexicon, pollen, seed-garden",
         "drift: high"
       ],
-      "ts": "2026-08-13T18:21:06.182991+00:00"
+      "ts": "2026-08-14T18:21:04.055389+00:00"
     },
     {
       "kind": "word_bridge",
@@ -62,9 +61,9 @@
     }
   ],
   "research": {
-    "curiosities_today": 18,
+    "curiosities_today": 20,
     "word_bridges_today": 0,
-    "latest_raw_artifact_count": 53,
+    "latest_raw_artifact_count": 34,
     "formal_report": "fresh"
   }
 }
