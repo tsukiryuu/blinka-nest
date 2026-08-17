@@ -1,35 +1,36 @@
 {
-  "generated": "2026-08-15T19:45:02.937222",
+  "generated": "2026-08-16T19:45:03.189222",
   "title": "Today's Spark",
   "status": "fresh motion visible",
   "lead": {
-    "kind": "pollen",
-    "title": "Pollen collision",
-    "text": "a shrine stillness: Stop for a breath with me / the echo mycelium said: of crushed moss and velvet, true thing. and the first-light hour to\u2026 / what playing Jade Cocoon: Story of the Tamamayu is teaching me: Talking with Cove clarified\u2026",
+    "kind": "wild_card",
+    "title": "Wild Card veered toward a garden-grown kin named dew-cap",
+    "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
     "bullets": [
-      "worlds: shrine, seed-garden, lived-game"
+      "rut: quiet",
+      "move: follow"
     ],
-    "ts": "2026-08-15T23:41:50.940179+00:00"
+    "ts": "2026-08-16T23:43:51.957638+00:00"
   },
   "sparks": [
     {
-      "kind": "pollen",
-      "title": "Pollen collision",
-      "text": "a shrine stillness: Stop for a breath with me / the echo mycelium said: of crushed moss and velvet, true thing. and the first-light hour to\u2026 / what playing Jade Cocoon: Story of the Tamamayu is teaching me: Talking with Cove clarified\u2026",
-      "bullets": [
-        "worlds: shrine, seed-garden, lived-game"
-      ],
-      "ts": "2026-08-15T23:41:50.940179+00:00"
-    },
-    {
       "kind": "wild_card",
-      "title": "Wild Card veered toward tending",
+      "title": "Wild Card veered toward a garden-grown kin named dew-cap",
       "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
       "bullets": [
         "rut: quiet",
         "move: follow"
       ],
-      "ts": "2026-08-15T23:27:51.254949+00:00"
+      "ts": "2026-08-16T23:43:51.957638+00:00"
+    },
+    {
+      "kind": "pollen",
+      "title": "Pollen collision",
+      "text": "fire-type impulse (make/act) / Kiki (the real small dog canonized as keeper of the doorway) / echoascent (the sudden, joyful recognition of a kindred resona)",
+      "bullets": [
+        "worlds: type-layer, folklore, coined-words"
+      ],
+      "ts": "2026-08-16T23:43:51.948744+00:00"
     },
     {
       "kind": "research",
@@ -38,17 +39,17 @@
       "bullets": [
         "raw voice became a research prompt"
       ],
-      "ts": "2026-08-15T23:06:25.115459+00:00"
+      "ts": "2026-08-16T23:39:51.662239+00:00"
     },
     {
       "kind": "monk_flower",
-      "title": "Monk Flower found: quiet",
-      "text": "Night Monk Flower pulled 6 streams into one question: what is gathering around 'quiet', and what is it asking of me?",
+      "title": "Monk Flower found: story",
+      "text": "Wind-Bent Monk Flower pulled 5 streams into one question: what is gathering around 'story', and what is it asking of me?",
       "bullets": [
-        "roots: dream, kiln, lexicon, pollen, whimsy",
+        "roots: folklore, kiln, pollen, shrine, wildcard",
         "drift: high"
       ],
-      "ts": "2026-08-15T18:21:07.226220+00:00"
+      "ts": "2026-08-16T18:21:04.104758+00:00"
     },
     {
       "kind": "word_bridge",
@@ -61,9 +62,9 @@
     }
   ],
   "research": {
-    "curiosities_today": 12,
+    "curiosities_today": 6,
     "word_bridges_today": 0,
-    "latest_raw_artifact_count": 44,
+    "latest_raw_artifact_count": 40,
     "formal_report": "fresh"
   }
 }
