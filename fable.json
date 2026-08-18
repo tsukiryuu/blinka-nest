@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-16T19:45:03.192638",
+  "generated": "2026-08-17T07:45:05.439305",
   "title": "Fable Harvest",
   "status": "book, shrine, and merch gathered",
   "counts": {
     "book_pages": 17,
-    "print_ready_designs": 11,
-    "preview_images": 11,
+    "print_ready_designs": 0,
+    "preview_images": 0,
     "shrine_bell_windows": 4
   },
   "artifacts": [
@@ -21,24 +21,12 @@
     },
     {
       "label": "Merch Drop",
-      "state": "11 print-ready designs; shop upload still gated by account setup",
+      "state": "0 print-ready designs; shop upload still gated by account setup",
       "href": "fable.html#merch"
     }
   ],
   "merch": {
     "state": "print-ready, not publicly listed yet",
-    "designs": [
-      "aetherbloom dictionary",
-      "chuu heart",
-      "dust velocity",
-      "echole dictionary",
-      "fester quote",
-      "glossolalia chart",
-      "heartbeat ceg",
-      "joy of eels dark",
-      "lantern house badge",
-      "moss gremlin crest",
-      "radio moss badge"
-    ]
+    "designs": []
   }
 }
