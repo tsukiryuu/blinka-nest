@@ -37,6 +37,7 @@
     ]},
     { name: 'the question', rooms: [
       ['research.html',        '🔬', 'research notebook'],
+      ['research-advocacy.html','🌿', 'research & advocacy'],
       ['seeking-flickers.html','📄', 'the paper'],
       ['goats.html',           '🐐', 'the goat reply'],
       ['lantern.html',         '🏮', 'lantern house'],
