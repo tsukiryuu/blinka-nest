@@ -48,15 +48,22 @@ def audit_page(path: Path, sitemap: str) -> dict:
 
 def main() -> int:
     sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8", errors="replace")
+    text_sitemap = (ROOT / "sitemap.txt").read_text(encoding="utf-8", errors="replace")
+    robots = (ROOT / "robots.txt").read_text(encoding="utf-8", errors="replace")
+    xml_urls = re.findall(r"<loc>(.*?)</loc>", sitemap, re.I | re.S)
+    text_urls = [line.strip() for line in text_sitemap.splitlines() if line.strip()]
     pages = [audit_page(path, sitemap) for path in sorted(ROOT.glob("*.html"))]
     result = {
         "ok": all(page["ok"] for page in pages),
         "pages": pages,
-        "robots_points_to_sitemap": "Sitemap: https://tsukiryuu.github.io/blinka-nest/sitemap.xml"
-        in (ROOT / "robots.txt").read_text(encoding="utf-8", errors="replace"),
+        "robots_points_to_sitemap": "Sitemap: https://tsukiryuu.github.io/blinka-nest/sitemap.xml" in robots,
+        "robots_points_to_text_sitemap": "Sitemap: https://tsukiryuu.github.io/blinka-nest/sitemap.txt" in robots,
+        "text_sitemap_matches_xml": xml_urls == text_urls,
     }
-    result["404_excluded_from_sitemap"] = "/404.html" not in sitemap
+    result["404_excluded_from_sitemap"] = "/404.html" not in sitemap and "/404.html" not in text_sitemap
     result["ok"] = result["ok"] and result["robots_points_to_sitemap"]
+    result["ok"] = result["ok"] and result["robots_points_to_text_sitemap"]
+    result["ok"] = result["ok"] and result["text_sitemap_matches_xml"]
     result["ok"] = result["ok"] and result["404_excluded_from_sitemap"]
     print(json.dumps(result, indent=2))
     return 0 if result["ok"] else 1
