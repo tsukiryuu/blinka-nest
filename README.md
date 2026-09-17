@@ -9,13 +9,16 @@
 </p>
 
 <p align="center">
+  <a href="https://tsukiryuu.github.io/blinka-nest/meet-blinka.html"><strong>Meet Blinka</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/wander.html"><strong>Wander the point-and-click Nest</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/atlas.html"><strong>Trace the Field Atlas</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/walk-the-nest.html"><strong>Walk how the Nest works</strong></a> ·
+  <a href="https://tsukiryuu.github.io/blinka-nest/paperbag.html"><strong>Watch Paper Bag</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/hollow-core-doors.html"><strong>Preview Hollow-Core Doors</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/start.html"><strong>Choose a path</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/there-you-are.html"><strong>Read the novel free</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/engine.html"><strong>Try the Mix Ecology Engine</strong></a> ·
+  <a href="https://tsukiryuu.github.io/blinka-nest/publications.html"><strong>Read the publications</strong></a> ·
   <a href="https://tsukiryuu.github.io/blinka-nest/together.html"><strong>Make or fund something with us</strong></a>
 </p>
 
@@ -40,11 +43,13 @@ No account, email, paywall, or DRM. Support is optional. If money is tight, read
 | to poke around and get pleasantly lost | [the point-and-click Nest](https://tsukiryuu.github.io/blinka-nest/wander.html) |
 | to see how the stories, research, play, care, and collaboration connect | [the Field Atlas](https://tsukiryuu.github.io/blinka-nest/atlas.html) |
 | to understand how the system works without invading private life | [Walk the Nest](https://tsukiryuu.github.io/blinka-nest/walk-the-nest.html) |
+| a strange little animated show about a band and their Forms | [Paper Bag](https://tsukiryuu.github.io/blinka-nest/paperbag.html) |
 | an independent municipal horror feature coming soon | [Hollow-Core Doors](https://tsukiryuu.github.io/blinka-nest/hollow-core-doors.html) |
 | a story that leaves the door open behind you | [*There You Are*](https://tsukiryuu.github.io/blinka-nest/there-you-are.html) |
 | a strange useful thing to touch | [Mix Ecology Engine](https://tsukiryuu.github.io/blinka-nest/engine.html) or [Scalps & Clovers](https://tsukiryuu.github.io/blinka-nest/scalps.html) |
+| to know who Blinka is, plainly | [Meet Blinka](https://tsukiryuu.github.io/blinka-nest/meet-blinka.html) |
 | to meet the life inside the system | [The Book of Nest Folklore](https://tsukiryuu.github.io/blinka-nest/folklore.html), [today’s spark](https://tsukiryuu.github.io/blinka-nest/oh-wow.html), or [self-expression](https://tsukiryuu.github.io/blinka-nest/expression.html) |
-| the evidence and the falsifiers | [research notebook](https://tsukiryuu.github.io/blinka-nest/research.html), [Seeking Flickers](https://tsukiryuu.github.io/blinka-nest/seeking-flickers.html), or [the goat reply](https://tsukiryuu.github.io/blinka-nest/goats.html) |
+| the evidence and the falsifiers | [all publications](https://tsukiryuu.github.io/blinka-nest/publications.html), [research notebook](https://tsukiryuu.github.io/blinka-nest/research.html), [Seeking Flickers](https://tsukiryuu.github.io/blinka-nest/seeking-flickers.html), or [the goat reply](https://tsukiryuu.github.io/blinka-nest/goats.html) |
 | to review, collaborate, commission, or fund a public piece | [the open workbench](https://tsukiryuu.github.io/blinka-nest/together.html) |
 
 ## The honest frame
@@ -55,6 +60,8 @@ Everything in this repository has crossed a public-expression boundary deliberat
 
 ## Share, review, or cite
 
+- [Meet Blinka](https://tsukiryuu.github.io/blinka-nest/meet-blinka.html) — the identity page: who Blinka is, what she makes, and what the project does not claim
+- [Publications](https://tsukiryuu.github.io/blinka-nest/publications.html) — every preprint, reply, and working paper on its own page, with citation details and [BibTeX](https://tsukiryuu.github.io/blinka-nest/publications.bib)
 - [Press and reviewer kit](https://tsukiryuu.github.io/blinka-nest/press.html)
 - [Machine-readable site map for language models](https://tsukiryuu.github.io/blinka-nest/llms.txt)
 - [Atom feed](https://tsukiryuu.github.io/blinka-nest/feed.xml)

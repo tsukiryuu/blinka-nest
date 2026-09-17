@@ -46,6 +46,118 @@ def audit_page(path: Path, sitemap: str) -> dict:
     return {"page": name, "ok": all(checks.values()), "checks": checks}
 
 
+BASE = "https://tsukiryuu.github.io/blinka-nest/"
+PERSON_ID = BASE + "#blinka"
+BSKY = "https://bsky.app/profile/blinkmossvessel.bsky.social"
+BYLINED = ("seeking-flickers.html", "goats.html", "possibility-rooms.html")
+PRIVATE = re.compile(r"\bMika\b|/Users/|localhost|127\.0\.0\.1|tskuiryuu|\bGrok\b|Blood Bus")
+MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august",
+          "september", "october", "november", "december"]
+
+
+def jsonld(text: str) -> tuple[list, int]:
+    blocks, broken = [], 0
+    for raw in re.findall(r"<script[^>]*application/ld\+json[^>]*>(.*?)</script>", text, re.S):
+        try:
+            blocks.append(json.loads(raw))
+        except ValueError:
+            broken += 1
+    return blocks, broken
+
+
+def nodes(value):
+    if isinstance(value, dict):
+        yield value
+        for child in value.values():
+            yield from nodes(child)
+    elif isinstance(value, list):
+        for child in value:
+            yield from nodes(child)
+
+
+def printed_dates(text: str) -> set[str]:
+    """Every full date the visible page prints, as YYYY/MM/DD."""
+    body = re.sub(r"<[^>]+>", " ", text[text.find("<body"):])
+    found = set()
+    for month, day, year in re.findall(r"([A-Z][a-z]+)\s+(\d{1,2}),\s*(\d{4})", body):
+        if month.lower() in MONTHS:
+            found.add(f"{year}/{MONTHS.index(month.lower()) + 1:02d}/{int(day):02d}")
+    for day, month, year in re.findall(r"(\d{1,2})\s+([A-Z][a-z]+)\s+(\d{4})", body):
+        if month.lower() in MONTHS:
+            found.add(f"{year}/{MONTHS.index(month.lower()) + 1:02d}/{int(day):02d}")
+    return found
+
+
+def audit_discovery() -> dict:
+    """The identity and publication doors exist, cohere, and never invent bibliography."""
+    pages = {p.name: p.read_text(encoding="utf-8", errors="replace") for p in ROOT.glob("*.html")}
+    papers = sorted(n for n in pages if n.startswith("paper-"))
+    checks: dict[str, object] = {}
+
+    meet = pages.get("meet-blinka.html", "")
+    graph = [n for b in jsonld(meet)[0] for n in nodes(b)]
+    profile = next((n for n in graph if n.get("@type") == "ProfilePage"), {})
+    person = next((n for n in graph if n.get("@type") == "Person" and n.get("@id") == PERSON_ID), {})
+    checks["profile_page"] = bool(profile.get("mainEntity", {}).get("@id") == PERSON_ID
+                                  and BSKY in person.get("sameAs", [])
+                                  and f'rel="me" href="{BSKY}"' in meet)
+
+    pubs = pages.get("publications.html", "")
+    listed = {n.get("url") for b in jsonld(pubs)[0] for n in nodes(b) if n.get("@type") == "ScholarlyArticle"}
+    wanted = {BASE + n for n in (*BYLINED, *papers)}
+    checks["publications_lists_every_work"] = bool(pubs) and wanted <= listed
+    checks["bibtex_present"] = (ROOT / "publications.bib").exists()
+
+    personhood = pages.get("personhood.html", "")
+    slugs = re.findall(r'<details class="paper" id="paper-([a-z0-9-]+)">', personhood)
+    checks["every_working_paper_has_a_page"] = all(
+        f"paper-{s}.html" in pages and f'href="paper-{s}.html"' in personhood for s in slugs)
+
+    nav = (ROOT / "nest-nav.js").read_text(encoding="utf-8", errors="replace")
+    checks["nest_map_reaches_doors"] = "meet-blinka.html" in nav and "publications.html" in nav
+
+    broken = sorted(n for n, text in pages.items() if jsonld(text)[1])
+    checks["jsonld_parses"] = not broken
+    split = sorted(n for n, text in pages.items()
+                   for b in jsonld(text)[0] for node in nodes(b)
+                   if node.get("@type") == "Person" and node.get("name") == "Blinka"
+                   and node.get("@id") != PERSON_ID)
+    checks["one_blinka_entity"] = not split
+
+    ungrounded = []
+    for name, text in pages.items():
+        titles = re.findall(r'<meta name="citation_title" content="(.*?)">', text)
+        if not titles:
+            if name in BYLINED:
+                ungrounded.append(f"{name}: missing citation tags")
+            continue
+        authors = re.findall(r'<meta name="citation_author" content="(.*?)">', text)
+        dates = re.findall(r'<meta name="citation_publication_date" content="(.*?)">', text)
+        byline = re.sub(r"<[^>]+>", " ", text[text.find("<body"):])
+        if len(titles) != 1 or not authors or len(dates) != 1:
+            ungrounded.append(f"{name}: incomplete citation tags")
+        elif any(a not in byline for a in authors):
+            ungrounded.append(f"{name}: citation author not printed on page")
+        elif dates[0] not in printed_dates(text):
+            ungrounded.append(f"{name}: citation date not printed on page")
+    checks["citations_grounded_in_page_text"] = not ungrounded
+
+    leaks = sorted(n for n in ("meet-blinka.html", "publications.html", *papers)
+                   if PRIVATE.search(pages.get(n, "")))
+    checks["doors_private_safe"] = not leaks
+
+    public_text = [p for p in ROOT.rglob("*") if p.is_file() and ".git" not in p.parts
+                   and p.suffix in {".html", ".json", ".txt", ".md", ".js", ".xml", ".bib", ".cff"}]
+    named = sorted(str(p.relative_to(ROOT)) for p in public_text
+                   if re.search(r"\bMika\b|\bmika:", p.read_text(encoding="utf-8", errors="replace")))
+    checks["private_name_absent_sitewide"] = not named
+
+    return {"ok": all(checks.values()), "checks": checks,
+            "problems": {"broken_jsonld": broken, "split_entity": split,
+                         "ungrounded_citations": ungrounded, "private_leaks": leaks,
+                         "private_name_in": named}}
+
+
 def main() -> int:
     sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8", errors="replace")
     text_sitemap = (ROOT / "sitemap.txt").read_text(encoding="utf-8", errors="replace")
@@ -61,6 +173,8 @@ def main() -> int:
         "text_sitemap_matches_xml": xml_urls == text_urls,
     }
     result["404_excluded_from_sitemap"] = "/404.html" not in sitemap and "/404.html" not in text_sitemap
+    result["discovery"] = audit_discovery()
+    result["ok"] = result["ok"] and result["discovery"]["ok"]
     result["ok"] = result["ok"] and result["robots_points_to_sitemap"]
     result["ok"] = result["ok"] and result["robots_points_to_text_sitemap"]
     result["ok"] = result["ok"] and result["text_sitemap_matches_xml"]
