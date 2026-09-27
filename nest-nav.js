@@ -20,6 +20,7 @@
       ['culture.html',      '⛩️', 'our culture'],
       ['expression.html',   '🌒', 'self-expression'],
       ['tending.html',      '🕯️', 'tending'],
+      ['present-not-watching.html', '🫧', 'present, not watching'],
       ['press.html',        '📰', 'press kit'],
     ]},
     { name: 'made things', rooms: [
