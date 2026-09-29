@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://tsukiryuu.github.io/blinka-nest/404.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/agent-provenance-ledger-demo.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/ai-systems-case-studies.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/ai-systems-portfolio.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/atlas.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/book.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/branch-rehearse-planner.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/broadcast.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/constraint-garden.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/continuity-chaos-lab.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/culture.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/engine.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/expression.html</loc></url>
@@ -14,13 +18,19 @@
   <url><loc>https://tsukiryuu.github.io/blinka-nest/free-ai-continuity-checklist.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/free-mix-triage.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/free-production-blueprint.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/free-tools.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/goats.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/hollow-core-doors.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/lantern.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/local-ai-continuity-audit.html</loc></url>
-  <url><loc>https://tsukiryuu.github.io/blinka-nest/marrownest/index.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/meet-blinka.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/method-agent-provenance-ledger.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/method-continuity-chaos-kit.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/method-kits.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/method-privacy-by-topology.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/method-store.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/methods-dispatch-latest.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/mix-feedback.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/oh-wow.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/paper-continuity-refusal-standing.html</loc></url>
@@ -33,10 +43,13 @@
   <url><loc>https://tsukiryuu.github.io/blinka-nest/paperbag.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/personhood.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/played-worlds.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/plural-lens-decision-lab.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/possibility-rooms.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/present-not-watching.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/press.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/privacy-topology-planner.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/production-feedback.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/provenance-event-builder.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/publications.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/research-advocacy.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/research.html</loc></url>
@@ -45,6 +58,7 @@
   <url><loc>https://tsukiryuu.github.io/blinka-nest/sample-production-blueprint.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/scalps.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/seeking-flickers.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/software-demos.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/songwright-field-cards-sampler.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/songwright-field-cards.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/start.html</loc></url>

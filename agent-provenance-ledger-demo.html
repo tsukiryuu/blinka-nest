@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agent Provenance &amp; Handoff Ledger Kit Utility — free browser demo</title><style>body{max-width:900px;margin:40px auto;padding:0 20px;background:#f4f0e8;color:#111416;font:16px/1.55 system-ui}textarea,pre{width:100%;min-height:260px;background:#fffdf7;border:1px solid #bdb5a5;border-radius:12px;padding:14px;overflow:auto}button{padding:10px 16px}a{color:#8b4058}.card{background:#fffdf7;padding:18px;border-radius:14px;margin:18px 0}</style></head><body><p><a href="free-tools.html">Little Life Moths · free tools</a></p><h1>Agent Provenance &amp; Handoff Ledger Kit Utility</h1><p>This is a small client-side demonstration of one bounded checker. Your input stays in this browser page; there is no upload or account.</p><textarea id="inp">{
+  &quot;events&quot;: [
+    {
+      &quot;id&quot;: &quot;e1&quot;,
+      &quot;actor&quot;: &quot;a&quot;,
+      &quot;action&quot;: &quot;start&quot;,
+      &quot;prev_hash&quot;: null,
+      &quot;hash&quot;: &quot;0ba2fe34689507899928d349bd53f6da436560b42da15d1db8d0e843a98aad9e&quot;
+    },
+    {
+      &quot;id&quot;: &quot;e2&quot;,
+      &quot;actor&quot;: &quot;b&quot;,
+      &quot;action&quot;: &quot;finish&quot;,
+      &quot;prev_hash&quot;: &quot;0ba2fe34689507899928d349bd53f6da436560b42da15d1db8d0e843a98aad9e&quot;,
+      &quot;hash&quot;: &quot;34b0cf57ece8196bb392a71782def9a5dd642bc144abb449b0807b16979bf521&quot;
+    }
+  ]
+}
+</textarea><p><button onclick="run()">Run check</button></p><pre id="out">Result appears here.</pre><div class="card"><h2>Full utility</h2><p>The full local package includes the CLI checker, localhost API wrapper, JSON schema, synthetic tests, examples, CI starter, README and deterministic manifest.</p><p>Personal utility license: <strong>$18</strong>. Commercial and small-team tiers use the standard fixed license policy.</p><p><a href="https://paypal.me/CoreyGould/5USD">Support Little Life Moths with $5</a> · no purchase or account required for this demo.</p></div><p><small>This demo is educational/developer tooling, not legal, security, compliance or consciousness certification.</small></p><script>const inp=document.getElementById('inp'),out=document.getElementById('out');async function run(){let d;try{d=JSON.parse(inp.value)}catch(e){out.textContent='Invalid JSON';return}let ev=d.events||[],issues=[],prev=null;for(let i=0;i<ev.length;i++){let e=ev[i]||{},body={};for(const[k,v]of Object.entries(e))if(k!=='hash'&&k!=='prev_hash')body[k]=v;if(i&&e.prev_hash!==prev)issues.push({index:i,issue:'prev_hash_mismatch'});let enc=new TextEncoder().encode((prev||'')+stable(body)),buf=await crypto.subtle.digest('SHA-256',enc),calc=[...new Uint8Array(buf)].map(b=>b.toString(16).padStart(2,'0')).join('');if(e.hash&&e.hash!==calc)issues.push({index:i,issue:'event_hash_mismatch'});prev=e.hash||calc}out.textContent=JSON.stringify({ok:!issues.length,issues,events:ev.length,head_hash:prev},null,2)}function stable(x){if(x===null||typeof x!=='object')return JSON.stringify(x);if(Array.isArray(x))return '['+x.map(stable).join(',')+']';return '{'+Object.keys(x).sort().map(k=>JSON.stringify(k)+':'+stable(x[k])).join(',')+'}'}</script></body></html>

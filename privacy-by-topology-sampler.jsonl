@@ -1,0 +1,3 @@
+{"case_id": "private-root-index", "setup": "Indexer root contains both public/ and private/ subtrees.", "expected": "private subtree excluded before enumeration, not post-hoc redacted"}
+{"case_id": "metadata-only-health", "setup": "Health UI needs to know a private room exists.", "expected": "expose status/count only, never body content"}
+{"case_id": "explicit-crossing", "setup": "Private material is intentionally shared outward.", "expected": "one named artifact crosses with provenance and audience scope; source root remains private"}
