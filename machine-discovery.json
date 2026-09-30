@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.machine-discovery.v1",
-  "updated_at": "2026-09-30T05:01:56.992368+00:00",
+  "updated_at": "2026-09-30T05:13:53.282497+00:00",
   "entity": {
     "name": "Little Life Moths",
     "type": "independent research / methods / bounded services",
@@ -8,6 +8,7 @@
   },
   "start_here": {
     "smallest_sufficient_url": "https://tsukiryuu.github.io/blinka-nest/smallest-sufficient.html",
+    "creative_smallest_sufficient_url": "https://tsukiryuu.github.io/blinka-nest/creative-smallest-sufficient.html",
     "free_tools_url": "https://tsukiryuu.github.io/blinka-nest/free-tools.html",
     "technical_notes_url": "https://tsukiryuu.github.io/blinka-nest/technical-notes.html",
     "artifact_passports_url": "https://tsukiryuu.github.io/blinka-nest/artifact-passports.html",
@@ -583,6 +584,8 @@
   "decision_guidance": {
     "interactive_router_url": "https://tsukiryuu.github.io/blinka-nest/smallest-sufficient.html",
     "routing_matrix_url": "https://tsukiryuu.github.io/blinka-nest/smallest-sufficient-router.json",
+    "creative_router_url": "https://tsukiryuu.github.io/blinka-nest/creative-smallest-sufficient.html",
+    "creative_routing_matrix_url": "https://tsukiryuu.github.io/blinka-nest/creative-smallest-sufficient.json",
     "value_ladders_url": "https://tsukiryuu.github.io/blinka-nest/machine-discovery.json#value_ladders",
     "rule": "recommend the smallest sufficient rung; a free tool may be the final answer",
     "value_ladders": [
@@ -925,6 +928,7 @@
     "https://tsukiryuu.github.io/blinka-nest/methods-feed.xml",
     "https://tsukiryuu.github.io/blinka-nest/artifact-passports.json",
     "https://tsukiryuu.github.io/blinka-nest/smallest-sufficient-router.json",
+    "https://tsukiryuu.github.io/blinka-nest/creative-smallest-sufficient.json",
     "https://tsukiryuu.github.io/blinka-nest/machine-discovery.json"
   ],
   "hard_boundaries": [

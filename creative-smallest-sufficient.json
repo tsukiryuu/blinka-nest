@@ -1,0 +1,182 @@
+{
+  "schema": "little-life-moths.creative-smallest-sufficient.v1",
+  "updated_at": "2026-09-30T05:13:51.536910+00:00",
+  "page_url": "https://tsukiryuu.github.io/blinka-nest/creative-smallest-sufficient.html",
+  "matrix": {
+    "songcraft|explore": {
+      "state": "free_is_enough",
+      "recommended": {
+        "kind": "free",
+        "id": "songwright-sampler",
+        "name": "Songwright Field Cards sampler",
+        "price_usd": 0,
+        "public_url": "https://tsukiryuu.github.io/blinka-nest/songwright-field-cards-sampler.html",
+        "why": "six full cards can answer whether the method is useful before payment"
+      },
+      "purchase_recommended": false,
+      "why": "read six complete cards first; no purchase is needed to see whether the method helps"
+    },
+    "songcraft|reusable": {
+      "state": "routed",
+      "recommended": {
+        "kind": "digital_product",
+        "id": "songwright-field-cards",
+        "name": "Songwright Field Cards",
+        "price_usd": 12,
+        "public_url": "https://tsukiryuu.github.io/blinka-nest/songwright-field-cards.html",
+        "why": "reusable craft prompts when you want a self-serve pack rather than project-specific judgment",
+        "requires_core_review": false
+      },
+      "free_first": {
+        "kind": "free",
+        "id": "songwright-sampler",
+        "name": "Songwright Field Cards sampler",
+        "price_usd": 0,
+        "public_url": "https://tsukiryuu.github.io/blinka-nest/songwright-field-cards-sampler.html",
+        "why": "six full cards can answer whether the method is useful before payment"
+      },
+      "purchase_recommended": true,
+      "why": "you asked for a reusable self-serve craft pack, not project-specific labor"
+    },
+    "songcraft|specific": {
+      "state": "routed",
+      "recommended": {
+        "kind": "bounded_service",
+        "id": "production-blueprint",
+        "name": "Production Blueprint",
+        "price_usd": 45,
+        "public_url": "https://tsukiryuu.github.io/blinka-nest/production-feedback.html",
+        "why": "one owner-authorized demo/song needs project-specific arrangement and production planning",
+        "requires_core_review": true
+      },
+      "free_first": [
+        {
+          "kind": "free",
+          "id": "songwright-sampler",
+          "name": "Songwright Field Cards sampler",
+          "price_usd": 0,
+          "public_url": "https://tsukiryuu.github.io/blinka-nest/songwright-field-cards-sampler.html",
+          "why": "six full cards can answer whether the method is useful before payment"
+        },
+        {
+          "kind": "free",
+          "id": "production-blueprint-sheet",
+          "name": "Production Before Plugins worksheet",
+          "price_usd": 0,
+          "public_url": "https://tsukiryuu.github.io/blinka-nest/free-production-blueprint.html",
+          "why": "self-guided arrangement/production planning before customer-specific work"
+        }
+      ],
+      "purchase_recommended": true,
+      "why": "for one actual demo/song, project-specific arrangement/production judgment is a better fit than buying more generic prompts"
+    },
+    "mix|explore": {
+      "state": "free_is_enough",
+      "recommended": {
+        "kind": "free",
+        "id": "mix-triage",
+        "name": "15-minute Mix Triage",
+        "price_usd": 0,
+        "public_url": "https://tsukiryuu.github.io/blinka-nest/free-mix-triage.html",
+        "why": "self-guided diagnosis before paying for another set of ears"
+      },
+      "purchase_recommended": false,
+      "why": "there is no reason to buy a service just to run a first-pass mix diagnosis"
+    },
+    "mix|reusable": {
+      "state": "free_is_enough",
+      "recommended": {
+        "kind": "free",
+        "id": "mix-triage",
+        "name": "15-minute Mix Triage",
+        "price_usd": 0,
+        "public_url": "https://tsukiryuu.github.io/blinka-nest/free-mix-triage.html",
+        "why": "self-guided diagnosis before paying for another set of ears"
+      },
+      "purchase_recommended": false,
+      "why": "there is no reason to buy a service just to run a first-pass mix diagnosis"
+    },
+    "mix|specific": {
+      "state": "routed",
+      "recommended": {
+        "kind": "bounded_service",
+        "id": "mix-autopsy",
+        "name": "Mix Autopsy",
+        "price_usd": 25,
+        "public_url": "https://tsukiryuu.github.io/blinka-nest/mix-feedback.html",
+        "why": "one owner-authorized stereo mix needs project-specific diagnosis",
+        "requires_core_review": true
+      },
+      "free_first": {
+        "kind": "free",
+        "id": "mix-triage",
+        "name": "15-minute Mix Triage",
+        "price_usd": 0,
+        "public_url": "https://tsukiryuu.github.io/blinka-nest/free-mix-triage.html",
+        "why": "self-guided diagnosis before paying for another set of ears"
+      },
+      "purchase_recommended": true,
+      "why": "project-specific mix diagnosis needs the bounded review; the free triage remains useful first"
+    },
+    "production|explore": {
+      "state": "free_is_enough",
+      "recommended": {
+        "kind": "free",
+        "id": "production-blueprint-sheet",
+        "name": "Production Before Plugins worksheet",
+        "price_usd": 0,
+        "public_url": "https://tsukiryuu.github.io/blinka-nest/free-production-blueprint.html",
+        "why": "self-guided arrangement/production planning before customer-specific work"
+      },
+      "purchase_recommended": false,
+      "why": "the free worksheet is the smallest sufficient option for self-guided production planning"
+    },
+    "production|reusable": {
+      "state": "free_is_enough",
+      "recommended": {
+        "kind": "free",
+        "id": "production-blueprint-sheet",
+        "name": "Production Before Plugins worksheet",
+        "price_usd": 0,
+        "public_url": "https://tsukiryuu.github.io/blinka-nest/free-production-blueprint.html",
+        "why": "self-guided arrangement/production planning before customer-specific work"
+      },
+      "purchase_recommended": false,
+      "why": "the free worksheet is the smallest sufficient option for self-guided production planning"
+    },
+    "production|specific": {
+      "state": "routed",
+      "recommended": {
+        "kind": "bounded_service",
+        "id": "production-blueprint",
+        "name": "Production Blueprint",
+        "price_usd": 45,
+        "public_url": "https://tsukiryuu.github.io/blinka-nest/production-feedback.html",
+        "why": "one owner-authorized demo/song needs project-specific arrangement and production planning",
+        "requires_core_review": true
+      },
+      "free_first": {
+        "kind": "free",
+        "id": "production-blueprint-sheet",
+        "name": "Production Before Plugins worksheet",
+        "price_usd": 0,
+        "public_url": "https://tsukiryuu.github.io/blinka-nest/free-production-blueprint.html",
+        "why": "self-guided arrangement/production planning before customer-specific work"
+      },
+      "purchase_recommended": true,
+      "why": "a specific demo needs judgment about its own form, roles, transitions and next-pass decisions"
+    }
+  },
+  "input_policy": "browser-only; choices are not transmitted or stored",
+  "live_offer_boundary": [
+    "only already-authorized public creative offers appear here",
+    "local music-economy candidates are deliberately absent until separately approved"
+  ],
+  "laws": [
+    "free may be the final answer",
+    "customer-specific judgment routes to bounded Core-reviewed services",
+    "generic/reusable need should not be converted into bespoke labor",
+    "new local candidate packs cannot appear here merely because they are technically coherent",
+    "payment never expands the published service scope"
+  ]
+}

@@ -4,7 +4,8 @@
 > This file is a convenience index only; it grants no authority and contains no private AI life or customer material.
 
 ## Start here
-- [Smallest sufficient router](https://tsukiryuu.github.io/blinka-nest/smallest-sufficient.html)
+- [Smallest sufficient AI/method router](https://tsukiryuu.github.io/blinka-nest/smallest-sufficient.html)
+- [Smallest sufficient creative router](https://tsukiryuu.github.io/blinka-nest/creative-smallest-sufficient.html)
 - [Free browser tools](https://tsukiryuu.github.io/blinka-nest/free-tools.html)
 - [Technical notes](https://tsukiryuu.github.io/blinka-nest/technical-notes.html)
 - [Artifact passports](https://tsukiryuu.github.io/blinka-nest/artifact-passports.html)

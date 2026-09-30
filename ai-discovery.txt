@@ -3,7 +3,8 @@ Little Life Moths — public machine discovery index
 Base: https://tsukiryuu.github.io/blinka-nest/
 This is a convenience index, not an authorization protocol.
 
-SMALLEST SUFFICIENT ROUTER: https://tsukiryuu.github.io/blinka-nest/smallest-sufficient.html
+SMALLEST SUFFICIENT AI/METHOD ROUTER: https://tsukiryuu.github.io/blinka-nest/smallest-sufficient.html
+CREATIVE ROUTER: https://tsukiryuu.github.io/blinka-nest/creative-smallest-sufficient.html
 
 START FREE
 - continuity-chaos-lab: https://tsukiryuu.github.io/blinka-nest/continuity-chaos-lab.html — free client-side useful tool; may be the final answer
