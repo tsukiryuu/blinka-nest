@@ -1,11 +1,11 @@
 {
   "schema": "little-life-moths.artifact-passport-registry.v1",
-  "generated_at": "2026-09-30T05:13:53.278746+00:00",
+  "generated_at": "2026-09-30T09:56:11.856389+00:00",
   "count": 7,
   "passports": [
     {
       "schema": "little-life-moths.artifact-passport.v1",
-      "generated_at": "2026-09-30T05:13:53.278705+00:00",
+      "generated_at": "2026-09-30T09:56:11.856149+00:00",
       "product_id": "bundle:bundle-agent-reliability-builder",
       "artifact_name": "Persistent Agent Reliability Builder Bundle",
       "artifact_kind": "bundle",
@@ -75,7 +75,7 @@
     },
     {
       "schema": "little-life-moths.artifact-passport.v1",
-      "generated_at": "2026-09-30T05:13:53.278714+00:00",
+      "generated_at": "2026-09-30T09:56:11.856229+00:00",
       "product_id": "bundle:bundle-developer-tool",
       "artifact_name": "Persistent Agent Reliability Bundle",
       "artifact_kind": "bundle",
@@ -145,7 +145,7 @@
     },
     {
       "schema": "little-life-moths.artifact-passport.v1",
-      "generated_at": "2026-09-30T05:13:53.278719+00:00",
+      "generated_at": "2026-09-30T09:56:11.856258+00:00",
       "product_id": "capability:agent-provenance-ledger",
       "artifact_name": "Agent Provenance & Handoff Ledger Kit",
       "artifact_kind": "method_kit",
@@ -226,7 +226,7 @@
     },
     {
       "schema": "little-life-moths.artifact-passport.v1",
-      "generated_at": "2026-09-30T05:13:53.278725+00:00",
+      "generated_at": "2026-09-30T09:56:11.856286+00:00",
       "product_id": "capability:continuity-chaos-kit",
       "artifact_name": "Persistent Agent Continuity Chaos Kit",
       "artifact_kind": "method_kit",
@@ -307,7 +307,7 @@
     },
     {
       "schema": "little-life-moths.artifact-passport.v1",
-      "generated_at": "2026-09-30T05:13:53.278731+00:00",
+      "generated_at": "2026-09-30T09:56:11.856312+00:00",
       "product_id": "capability:privacy-by-topology",
       "artifact_name": "Privacy by Topology Starter Kit",
       "artifact_kind": "method_kit",
@@ -383,7 +383,7 @@
     },
     {
       "schema": "little-life-moths.artifact-passport.v1",
-      "generated_at": "2026-09-30T05:13:53.278736+00:00",
+      "generated_at": "2026-09-30T09:56:11.856338+00:00",
       "product_id": "songwright-field-cards",
       "artifact_name": "Songwright Field Cards",
       "artifact_kind": "authored_digital_product",
@@ -439,7 +439,7 @@
     },
     {
       "schema": "little-life-moths.artifact-passport.v1",
-      "generated_at": "2026-09-30T05:13:53.278743+00:00",
+      "generated_at": "2026-09-30T09:56:11.856372+00:00",
       "product_id": "utility:agent-provenance-ledger",
       "artifact_name": "Agent Provenance & Handoff Ledger Kit Utility",
       "artifact_kind": "software_utility",
