@@ -3,6 +3,8 @@ Little Life Moths — public machine discovery index
 Base: https://tsukiryuu.github.io/blinka-nest/
 This is a convenience index, not an authorization protocol.
 
+SMALLEST SUFFICIENT ROUTER: https://tsukiryuu.github.io/blinka-nest/smallest-sufficient.html
+
 START FREE
 - continuity-chaos-lab: https://tsukiryuu.github.io/blinka-nest/continuity-chaos-lab.html — free client-side useful tool; may be the final answer
 - provenance-event-builder: https://tsukiryuu.github.io/blinka-nest/provenance-event-builder.html — free client-side useful tool; may be the final answer
@@ -12,8 +14,8 @@ START FREE
 - constraint-garden: https://tsukiryuu.github.io/blinka-nest/constraint-garden.html — free client-side useful tool; may be the final answer
 
 ARTIFACT PASSPORTS
-- Persistent Agent Reliability Builder Bundle [bundle:bundle-agent-reliability-builder] content-28c9dea0e158 — https://tsukiryuu.github.io/blinka-nest/passport-bundle-bundle-agent-reliability-builder.html
-- Persistent Agent Reliability Bundle [bundle:bundle-developer-tool] content-8e8a94e0b7e4 — https://tsukiryuu.github.io/blinka-nest/passport-bundle-bundle-developer-tool.html
+- Persistent Agent Reliability Builder Bundle [bundle:bundle-agent-reliability-builder] content-db54ccfebd0f — https://tsukiryuu.github.io/blinka-nest/passport-bundle-bundle-agent-reliability-builder.html
+- Persistent Agent Reliability Bundle [bundle:bundle-developer-tool] content-9d231afd6375 — https://tsukiryuu.github.io/blinka-nest/passport-bundle-bundle-developer-tool.html
 - Agent Provenance & Handoff Ledger Kit [capability:agent-provenance-ledger] content-464020003ded — https://tsukiryuu.github.io/blinka-nest/passport-capability-agent-provenance-ledger.html
 - Persistent Agent Continuity Chaos Kit [capability:continuity-chaos-kit] content-094dbff24c4d — https://tsukiryuu.github.io/blinka-nest/passport-capability-continuity-chaos-kit.html
 - Privacy by Topology Starter Kit [capability:privacy-by-topology] content-49c6f7301496 — https://tsukiryuu.github.io/blinka-nest/passport-capability-privacy-by-topology.html

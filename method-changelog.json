@@ -1,18 +1,18 @@
 {
   "schema": "method-changelog-public.v1",
-  "updated": "2026-09-30T03:54:44.336471+00:00",
+  "updated": "2026-09-30T05:01:18.765389+00:00",
   "products": [
     {
       "product_id": "bundle:bundle-agent-reliability-builder",
       "name": "Persistent Agent Reliability Builder Bundle",
       "kind": "bundle",
-      "version": "content-8f76a59e51f2"
+      "version": "content-33846e6eefb9"
     },
     {
       "product_id": "bundle:bundle-developer-tool",
       "name": "Persistent Agent Reliability Bundle",
       "kind": "bundle",
-      "version": "content-265021c9d40e"
+      "version": "content-3af55aa829ac"
     },
     {
       "product_id": "capability:agent-provenance-ledger",

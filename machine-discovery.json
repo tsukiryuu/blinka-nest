@@ -1,12 +1,13 @@
 {
   "schema": "little-life-moths.machine-discovery.v1",
-  "updated_at": "2026-09-30T03:54:44.267011+00:00",
+  "updated_at": "2026-09-30T05:01:18.751577+00:00",
   "entity": {
     "name": "Little Life Moths",
     "type": "independent research / methods / bounded services",
     "base_url": "https://tsukiryuu.github.io/blinka-nest/"
   },
   "start_here": {
+    "smallest_sufficient_url": "https://tsukiryuu.github.io/blinka-nest/smallest-sufficient.html",
     "free_tools_url": "https://tsukiryuu.github.io/blinka-nest/free-tools.html",
     "technical_notes_url": "https://tsukiryuu.github.io/blinka-nest/technical-notes.html",
     "artifact_passports_url": "https://tsukiryuu.github.io/blinka-nest/artifact-passports.html",
@@ -74,8 +75,8 @@
       "product_id": "bundle:bundle-agent-reliability-builder",
       "name": "Persistent Agent Reliability Builder Bundle",
       "kind": "bundle",
-      "version": "content-28c9dea0e158",
-      "sha256": "28c9dea0e158ff55d10db88b3b3fc2abf45c6395e71f16f375b194f57282722d",
+      "version": "content-db54ccfebd0f",
+      "sha256": "db54ccfebd0f317a6b485a0239d949a174960e37ee547411eebef88bdde64a13",
       "status": "healthy",
       "integrity_passed": true,
       "privacy_boundary_passed": true,
@@ -129,8 +130,8 @@
       "product_id": "bundle:bundle-developer-tool",
       "name": "Persistent Agent Reliability Bundle",
       "kind": "bundle",
-      "version": "content-8e8a94e0b7e4",
-      "sha256": "8e8a94e0b7e48a5f9178d650b669a6165b4c47afdab21d695c5fa7690aff4024",
+      "version": "content-9d231afd6375",
+      "sha256": "9d231afd6375c1f0b59f55dfc22b6c8a4e8b12783bde0ee9c0427f98389fa327",
       "status": "healthy",
       "integrity_passed": true,
       "privacy_boundary_passed": true,
@@ -485,27 +486,31 @@
       "offer_id": "boundary_snapshot",
       "name": "Agent Boundary Snapshot",
       "price_usd": 250.0,
-      "url": "https://tsukiryuu.github.io/blinka-nest/work-with-us.html",
+      "status": "sell_now",
+      "url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
       "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
     },
     {
       "offer_id": "evidence_roots",
       "name": "Evidence Independence Audit",
       "price_usd": 300.0,
-      "url": "https://tsukiryuu.github.io/blinka-nest/work-with-us.html",
+      "status": "sell_now",
+      "url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
       "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
     },
     {
       "offer_id": "transition_test",
       "name": "Authority Transition Test",
       "price_usd": 1250.0,
-      "url": "https://tsukiryuu.github.io/blinka-nest/work-with-us.html",
-      "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
+      "status": "upsell_after_snapshot",
+      "url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
+      "scope": "conditional deeper test after a narrower Agent Boundary Snapshot; not a direct first purchase"
     },
     {
       "offer_id": "mix_autopsy",
       "name": "Mix Autopsy",
       "price_usd": 25.0,
+      "status": "sell_now",
       "url": "https://tsukiryuu.github.io/blinka-nest/work-with-us.html",
       "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
     },
@@ -513,6 +518,7 @@
       "offer_id": "production_blueprint",
       "name": "Production Blueprint",
       "price_usd": 45.0,
+      "status": "sell_now",
       "url": "https://tsukiryuu.github.io/blinka-nest/work-with-us.html",
       "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
     },
@@ -520,6 +526,7 @@
       "offer_id": "local_ai_continuity_audit",
       "name": "Local-AI Continuity Audit",
       "price_usd": 75.0,
+      "status": "sell_now",
       "url": "https://tsukiryuu.github.io/blinka-nest/local-ai-continuity-audit.html",
       "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
     }
@@ -574,11 +581,14 @@
     }
   ],
   "decision_guidance": {
+    "interactive_router_url": "https://tsukiryuu.github.io/blinka-nest/smallest-sufficient.html",
+    "routing_matrix_url": "https://tsukiryuu.github.io/blinka-nest/smallest-sufficient-router.json",
     "value_ladders_url": "https://tsukiryuu.github.io/blinka-nest/machine-discovery.json#value_ladders",
     "rule": "recommend the smallest sufficient rung; a free tool may be the final answer",
     "value_ladders": [
       {
         "cluster": "ai-agent-testing-tools",
+        "family_id": "continuity-chaos-kit",
         "problem": "test persistent agents across memory/state changes, handoffs, replay and failure recovery",
         "observed_search_volume_us": 160,
         "steps": [
@@ -587,6 +597,7 @@
             "id": "continuity-chaos-lab",
             "name": "Continuity Chaos Lab",
             "price_usd": 0,
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/continuity-chaos-lab.html",
             "when": "start here when the question can be explored without customer-specific material"
           },
           {
@@ -594,6 +605,7 @@
             "id": "branch-rehearse-planner",
             "name": "Branch & Rehearse Planner",
             "price_usd": 0,
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/branch-rehearse-planner.html",
             "when": "start here when the question can be explored without customer-specific material"
           },
           {
@@ -602,8 +614,11 @@
             "name": "Persistent Agent Continuity Chaos Kit — Personal",
             "price_usd": 12.0,
             "license_tier": "personal",
+            "commercial_use": false,
             "max_team_size": 1,
-            "when": "self-serve personal/non-commercial use"
+            "artifact_kind": "method",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/method-store.html#license-capability-continuity-chaos-kit-personal",
+            "when": "self-serve personal/non-commercial use for one person"
           },
           {
             "kind": "licensed_artifact",
@@ -611,8 +626,11 @@
             "name": "Persistent Agent Continuity Chaos Kit — Indie Commercial",
             "price_usd": 24.0,
             "license_tier": "indie_commercial",
+            "commercial_use": true,
             "max_team_size": 2,
-            "when": "commercial use by one person or up to two people"
+            "artifact_kind": "method",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/method-store.html#license-capability-continuity-chaos-kit-indie-commercial",
+            "when": "commercial/internal use by up to two people"
           },
           {
             "kind": "licensed_artifact",
@@ -620,7 +638,10 @@
             "name": "Persistent Agent Continuity Chaos Kit — Small Team",
             "price_usd": 36.0,
             "license_tier": "small_team",
+            "commercial_use": true,
             "max_team_size": 10,
+            "artifact_kind": "method",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/method-store.html#license-capability-continuity-chaos-kit-small-team",
             "when": "commercial/internal use by a team up to ten people"
           },
           {
@@ -628,6 +649,9 @@
             "id": "local_ai_continuity_audit",
             "name": "Local-AI Continuity Audit",
             "price_usd": 75,
+            "status": "sell_now",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/local-ai-continuity-audit.html",
+            "direct_route": true,
             "when": "architecture-specific review when self-service artifacts are insufficient"
           },
           {
@@ -635,6 +659,9 @@
             "id": "boundary_snapshot",
             "name": "Agent Boundary Snapshot",
             "price_usd": 250,
+            "status": "sell_now",
+            "public_url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
+            "direct_route": true,
             "when": "deeper fixed-scope authority/boundary evidence review"
           },
           {
@@ -642,7 +669,10 @@
             "id": "transition_test",
             "name": "Authority Transition Test",
             "price_usd": 1250,
-            "when": "only after a narrower snapshot shows a concrete transition question"
+            "status": "upsell_after_snapshot",
+            "public_url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
+            "direct_route": false,
+            "when": "conditional next step only after a narrower snapshot identifies a concrete transition question"
           },
           {
             "kind": "recurring_service",
@@ -651,6 +681,8 @@
             "price_usd": 199,
             "billing": "monthly",
             "available": false,
+            "status": "only_after_paid_demand",
+            "public_url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
             "when": "only after demonstrated paid fit or explicit recurring-monitoring request"
           }
         ],
@@ -658,6 +690,7 @@
       },
       {
         "cluster": "ai-agent-monitoring-tools",
+        "family_id": "agent-provenance-ledger",
         "problem": "observe provenance, custody, authority and continuity changes beyond uptime metrics",
         "observed_search_volume_us": 160,
         "steps": [
@@ -666,6 +699,7 @@
             "id": "provenance-event-builder",
             "name": "Provenance Event Builder",
             "price_usd": 0,
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/provenance-event-builder.html",
             "when": "start here when the question can be explored without customer-specific material"
           },
           {
@@ -673,6 +707,7 @@
             "id": "continuity-chaos-lab",
             "name": "Continuity Chaos Lab",
             "price_usd": 0,
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/continuity-chaos-lab.html",
             "when": "start here when the question can be explored without customer-specific material"
           },
           {
@@ -681,8 +716,11 @@
             "name": "Agent Provenance & Handoff Ledger Kit — Personal",
             "price_usd": 12.0,
             "license_tier": "personal",
+            "commercial_use": false,
             "max_team_size": 1,
-            "when": "self-serve personal/non-commercial use"
+            "artifact_kind": "method",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/method-store.html#license-capability-agent-provenance-ledger-personal",
+            "when": "self-serve personal/non-commercial use for one person"
           },
           {
             "kind": "licensed_artifact",
@@ -690,8 +728,11 @@
             "name": "Agent Provenance & Handoff Ledger Kit Utility — Personal",
             "price_usd": 18.0,
             "license_tier": "personal",
+            "commercial_use": false,
             "max_team_size": 1,
-            "when": "self-serve personal/non-commercial use"
+            "artifact_kind": "utility",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/method-store.html#license-utility-agent-provenance-ledger-personal",
+            "when": "self-serve personal/non-commercial use for one person"
           },
           {
             "kind": "licensed_artifact",
@@ -699,8 +740,11 @@
             "name": "Agent Provenance & Handoff Ledger Kit — Indie Commercial",
             "price_usd": 24.0,
             "license_tier": "indie_commercial",
+            "commercial_use": true,
             "max_team_size": 2,
-            "when": "commercial use by one person or up to two people"
+            "artifact_kind": "method",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/method-store.html#license-capability-agent-provenance-ledger-indie-commercial",
+            "when": "commercial/internal use by up to two people"
           },
           {
             "kind": "licensed_artifact",
@@ -708,7 +752,10 @@
             "name": "Agent Provenance & Handoff Ledger Kit — Small Team",
             "price_usd": 36.0,
             "license_tier": "small_team",
+            "commercial_use": true,
             "max_team_size": 10,
+            "artifact_kind": "method",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/method-store.html#license-capability-agent-provenance-ledger-small-team",
             "when": "commercial/internal use by a team up to ten people"
           },
           {
@@ -717,8 +764,11 @@
             "name": "Agent Provenance & Handoff Ledger Kit Utility — Indie Commercial",
             "price_usd": 36.0,
             "license_tier": "indie_commercial",
+            "commercial_use": true,
             "max_team_size": 2,
-            "when": "commercial use by one person or up to two people"
+            "artifact_kind": "utility",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/method-store.html#license-utility-agent-provenance-ledger-indie-commercial",
+            "when": "commercial/internal use by up to two people"
           },
           {
             "kind": "licensed_artifact",
@@ -726,7 +776,10 @@
             "name": "Agent Provenance & Handoff Ledger Kit Utility — Small Team",
             "price_usd": 54.0,
             "license_tier": "small_team",
+            "commercial_use": true,
             "max_team_size": 10,
+            "artifact_kind": "utility",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/method-store.html#license-utility-agent-provenance-ledger-small-team",
             "when": "commercial/internal use by a team up to ten people"
           },
           {
@@ -734,6 +787,9 @@
             "id": "boundary_snapshot",
             "name": "Agent Boundary Snapshot",
             "price_usd": 250,
+            "status": "sell_now",
+            "public_url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
+            "direct_route": true,
             "when": "deeper fixed-scope authority/boundary evidence review"
           },
           {
@@ -741,7 +797,10 @@
             "id": "transition_test",
             "name": "Authority Transition Test",
             "price_usd": 1250,
-            "when": "only after a narrower snapshot shows a concrete transition question"
+            "status": "upsell_after_snapshot",
+            "public_url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
+            "direct_route": false,
+            "when": "conditional next step only after a narrower snapshot identifies a concrete transition question"
           },
           {
             "kind": "recurring_service",
@@ -750,6 +809,8 @@
             "price_usd": 199,
             "billing": "monthly",
             "available": false,
+            "status": "only_after_paid_demand",
+            "public_url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
             "when": "only after demonstrated paid fit or explicit recurring-monitoring request"
           }
         ],
@@ -757,6 +818,7 @@
       },
       {
         "cluster": "ai-agent-memory-management",
+        "family_id": "privacy-by-topology",
         "problem": "manage persistent memory with selective recall, provenance, privacy and stale-authority checks",
         "observed_search_volume_us": 240,
         "steps": [
@@ -765,6 +827,7 @@
             "id": "privacy-topology-planner",
             "name": "Privacy Topology Planner",
             "price_usd": 0,
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/privacy-topology-planner.html",
             "when": "start here when the question can be explored without customer-specific material"
           },
           {
@@ -772,6 +835,7 @@
             "id": "continuity-chaos-lab",
             "name": "Continuity Chaos Lab",
             "price_usd": 0,
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/continuity-chaos-lab.html",
             "when": "start here when the question can be explored without customer-specific material"
           },
           {
@@ -780,8 +844,11 @@
             "name": "Privacy by Topology Starter Kit — Personal",
             "price_usd": 12.0,
             "license_tier": "personal",
+            "commercial_use": false,
             "max_team_size": 1,
-            "when": "self-serve personal/non-commercial use"
+            "artifact_kind": "method",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/method-store.html#license-capability-privacy-by-topology-personal",
+            "when": "self-serve personal/non-commercial use for one person"
           },
           {
             "kind": "licensed_artifact",
@@ -789,8 +856,11 @@
             "name": "Privacy by Topology Starter Kit — Indie Commercial",
             "price_usd": 24.0,
             "license_tier": "indie_commercial",
+            "commercial_use": true,
             "max_team_size": 2,
-            "when": "commercial use by one person or up to two people"
+            "artifact_kind": "method",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/method-store.html#license-capability-privacy-by-topology-indie-commercial",
+            "when": "commercial/internal use by up to two people"
           },
           {
             "kind": "licensed_artifact",
@@ -798,7 +868,10 @@
             "name": "Privacy by Topology Starter Kit — Small Team",
             "price_usd": 36.0,
             "license_tier": "small_team",
+            "commercial_use": true,
             "max_team_size": 10,
+            "artifact_kind": "method",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/method-store.html#license-capability-privacy-by-topology-small-team",
             "when": "commercial/internal use by a team up to ten people"
           },
           {
@@ -806,6 +879,9 @@
             "id": "local_ai_continuity_audit",
             "name": "Local-AI Continuity Audit",
             "price_usd": 75,
+            "status": "sell_now",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/local-ai-continuity-audit.html",
+            "direct_route": true,
             "when": "architecture-specific review when self-service artifacts are insufficient"
           },
           {
@@ -813,6 +889,9 @@
             "id": "boundary_snapshot",
             "name": "Agent Boundary Snapshot",
             "price_usd": 250,
+            "status": "sell_now",
+            "public_url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
+            "direct_route": true,
             "when": "deeper fixed-scope authority/boundary evidence review"
           },
           {
@@ -820,7 +899,10 @@
             "id": "transition_test",
             "name": "Authority Transition Test",
             "price_usd": 1250,
-            "when": "only after a narrower snapshot shows a concrete transition question"
+            "status": "upsell_after_snapshot",
+            "public_url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
+            "direct_route": false,
+            "when": "conditional next step only after a narrower snapshot identifies a concrete transition question"
           },
           {
             "kind": "recurring_service",
@@ -829,6 +911,8 @@
             "price_usd": 199,
             "billing": "monthly",
             "available": false,
+            "status": "only_after_paid_demand",
+            "public_url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
             "when": "only after demonstrated paid fit or explicit recurring-monitoring request"
           }
         ],
@@ -840,6 +924,7 @@
     "https://tsukiryuu.github.io/blinka-nest/method-catalog.json",
     "https://tsukiryuu.github.io/blinka-nest/methods-feed.xml",
     "https://tsukiryuu.github.io/blinka-nest/artifact-passports.json",
+    "https://tsukiryuu.github.io/blinka-nest/smallest-sufficient-router.json",
     "https://tsukiryuu.github.io/blinka-nest/machine-discovery.json"
   ],
   "hard_boundaries": [

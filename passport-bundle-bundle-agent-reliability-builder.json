@@ -1,12 +1,12 @@
 {
   "schema": "little-life-moths.artifact-passport.v1",
-  "generated_at": "2026-09-30T03:54:44.204012+00:00",
+  "generated_at": "2026-09-30T05:01:18.746365+00:00",
   "product_id": "bundle:bundle-agent-reliability-builder",
   "artifact_name": "Persistent Agent Reliability Builder Bundle",
   "artifact_kind": "bundle",
-  "version": "content-28c9dea0e158",
-  "artifact_sha256": "28c9dea0e158ff55d10db88b3b3fc2abf45c6395e71f16f375b194f57282722d",
-  "expected_sha256": "28c9dea0e158ff55d10db88b3b3fc2abf45c6395e71f16f375b194f57282722d",
+  "version": "content-db54ccfebd0f",
+  "artifact_sha256": "db54ccfebd0f317a6b485a0239d949a174960e37ee547411eebef88bdde64a13",
+  "expected_sha256": "db54ccfebd0f317a6b485a0239d949a174960e37ee547411eebef88bdde64a13",
   "status": "healthy",
   "integrity": {
     "passed": true,

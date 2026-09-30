@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths-method-catalog.v1",
-  "updated": "2026-09-30T03:54:47.102900+00:00",
+  "updated": "2026-09-30T05:01:19.199984+00:00",
   "base_url": "https://tsukiryuu.github.io/blinka-nest/",
   "method_kits": [
     {
@@ -102,7 +102,7 @@
         "privacy-by-topology",
         "agent-provenance-ledger"
       ],
-      "payload_sha256": "28c9dea0e158ff55d10db88b3b3fc2abf45c6395e71f16f375b194f57282722d",
+      "payload_sha256": "db54ccfebd0f317a6b485a0239d949a174960e37ee547411eebef88bdde64a13",
       "exclusive": false
     },
     {
@@ -115,7 +115,7 @@
         "continuity-chaos-kit",
         "privacy-by-topology"
       ],
-      "payload_sha256": "8e8a94e0b7e48a5f9178d650b669a6165b4c47afdab21d695c5fa7690aff4024",
+      "payload_sha256": "9d231afd6375c1f0b59f55dfc22b6c8a4e8b12783bde0ee9c0427f98389fa327",
       "exclusive": false
     }
   ],
@@ -180,13 +180,13 @@
       "product_id": "bundle:bundle-agent-reliability-builder",
       "name": "Persistent Agent Reliability Builder Bundle",
       "kind": "bundle",
-      "version": "content-8f76a59e51f2"
+      "version": "content-33846e6eefb9"
     },
     {
       "product_id": "bundle:bundle-developer-tool",
       "name": "Persistent Agent Reliability Bundle",
       "kind": "bundle",
-      "version": "content-265021c9d40e"
+      "version": "content-3af55aa829ac"
     },
     {
       "product_id": "capability:agent-provenance-ledger",
