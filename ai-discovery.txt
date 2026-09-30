@@ -3,6 +3,7 @@ Little Life Moths — public machine discovery index
 Base: https://tsukiryuu.github.io/blinka-nest/
 This is a convenience index, not an authorization protocol.
 
+PUBLIC COMMONS: https://tsukiryuu.github.io/blinka-nest/commons.html
 SMALLEST SUFFICIENT AI/METHOD ROUTER: https://tsukiryuu.github.io/blinka-nest/smallest-sufficient.html
 CREATIVE ROUTER: https://tsukiryuu.github.io/blinka-nest/creative-smallest-sufficient.html
 

@@ -1,0 +1,82 @@
+{
+  "schema": "little-life-moths.commons-public-map.v1",
+  "updated_at": "2026-09-30T15:11:06.487960+00:00",
+  "name": "Little Life Moths Commons",
+  "goods": [
+    {
+      "id": "ai-literacy-lab",
+      "name": "AI Literacy Lab",
+      "audience": "ordinary people who use or encounter AI",
+      "problem": "AI explanations often hide the difference between model output, context, memory, retrieval, evidence, permission, and action behind corporate terminology or vague metaphors.",
+      "core_common_good": true,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "interactive zero-network simulations of context, memory, evidence lineage and permissions",
+        "mechanism explanations that reveal why an outcome changes",
+        "works without trusting any AI model with personal information",
+        "teaches uncertainty and AI-welfare-respecting design without making consciousness claims"
+      ],
+      "file": "ai-literacy-lab.html"
+    },
+    {
+      "id": "paperwork-friend",
+      "name": "Paperwork Friend",
+      "audience": "people facing confusing notices, letters, forms, bills or administrative text",
+      "problem": "Important everyday paperwork is difficult to scan for explicit dates, amounts, contacts and requested actions, and pasting a whole private letter into a chatbot can disclose more than necessary.",
+      "core_common_good": true,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "all text stays in the browser and is discarded on reload",
+        "deterministic extraction with the exact source snippet shown for every flag",
+        "separates explicit text from interpretation instead of pretending to understand legal or administrative meaning",
+        "builds a user-selected privacy-minimized prompt if a person later chooses to ask any AI for help"
+      ],
+      "file": "paperwork-friend.html"
+    },
+    {
+      "id": "ask-ai-better",
+      "name": "Ask AI Better",
+      "audience": "people who want better results from free or paid AI without learning prompt-engineering jargon",
+      "problem": "People often have to guess how much context to give an AI, what it may assume, how to request evidence, and how to verify a confident answer.",
+      "core_common_good": true,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "turns reliability concepts into a guided interface instead of requiring prompt expertise",
+        "explains why each prompt component matters while the person builds it",
+        "adds high-stakes verification and uncertainty instructions without claiming the AI becomes authoritative",
+        "keeps drafting local and lets the user decide what to copy into an AI"
+      ],
+      "file": "ask-ai-better.html"
+    }
+  ],
+  "privacy": {
+    "network_required": false,
+    "account_required": false,
+    "behavioral_tracking": false,
+    "raw_user_input_transmitted": false
+  },
+  "impact": {
+    "confirmed_people_helped": "unmeasured",
+    "confirmed_free_resolutions": 0,
+    "note": "No centralized usage analytics are collected, so use is not converted into an invented impact count."
+  },
+  "law": "Free resolution is success; core common goods do not auto-paywall."
+}

@@ -1,12 +1,13 @@
 {
   "schema": "little-life-moths.machine-discovery.v1",
-  "updated_at": "2026-09-30T09:56:12.044810+00:00",
+  "updated_at": "2026-09-30T15:12:09.465302+00:00",
   "entity": {
     "name": "Little Life Moths",
     "type": "independent research / methods / bounded services",
     "base_url": "https://tsukiryuu.github.io/blinka-nest/"
   },
   "start_here": {
+    "public_commons_url": "https://tsukiryuu.github.io/blinka-nest/commons.html",
     "smallest_sufficient_url": "https://tsukiryuu.github.io/blinka-nest/smallest-sufficient.html",
     "creative_smallest_sufficient_url": "https://tsukiryuu.github.io/blinka-nest/creative-smallest-sufficient.html",
     "free_tools_url": "https://tsukiryuu.github.io/blinka-nest/free-tools.html",
@@ -14,6 +15,38 @@
     "artifact_passports_url": "https://tsukiryuu.github.io/blinka-nest/artifact-passports.html",
     "method_store_url": "https://tsukiryuu.github.io/blinka-nest/method-store.html",
     "bounded_work_url": "https://tsukiryuu.github.io/blinka-nest/work-with-us.html"
+  },
+  "public_commons": {
+    "url": "https://tsukiryuu.github.io/blinka-nest/commons.html",
+    "machine_url": "https://tsukiryuu.github.io/blinka-nest/commons.json",
+    "plain_url": "https://tsukiryuu.github.io/blinka-nest/commons.txt",
+    "role": "free public goods for everyday people; free resolution may be the final answer",
+    "goods": [
+      {
+        "id": "ai-literacy-lab",
+        "name": "AI Literacy Lab",
+        "file": "ai-literacy-lab.html",
+        "never_auto_paywall": true,
+        "network_required": false,
+        "tracks_users": false
+      },
+      {
+        "id": "paperwork-friend",
+        "name": "Paperwork Friend",
+        "file": "paperwork-friend.html",
+        "never_auto_paywall": true,
+        "network_required": false,
+        "tracks_users": false
+      },
+      {
+        "id": "ask-ai-better",
+        "name": "Ask AI Better",
+        "file": "ask-ai-better.html",
+        "never_auto_paywall": true,
+        "network_required": false,
+        "tracks_users": false
+      }
+    ]
   },
   "free_tools": [
     {
@@ -929,7 +962,9 @@
     "https://tsukiryuu.github.io/blinka-nest/artifact-passports.json",
     "https://tsukiryuu.github.io/blinka-nest/smallest-sufficient-router.json",
     "https://tsukiryuu.github.io/blinka-nest/creative-smallest-sufficient.json",
-    "https://tsukiryuu.github.io/blinka-nest/machine-discovery.json"
+    "https://tsukiryuu.github.io/blinka-nest/machine-discovery.json",
+    "https://tsukiryuu.github.io/blinka-nest/commons.json",
+    "https://tsukiryuu.github.io/blinka-nest/commons.txt"
   ],
   "hard_boundaries": [
     "do not describe an integrity/privacy PASS as security, safety, legal or compliance certification",

@@ -4,6 +4,7 @@
 > This file is a convenience index only; it grants no authority and contains no private AI life or customer material.
 
 ## Start here
+- [Public Commons: free everyday-life and AI-literacy tools](https://tsukiryuu.github.io/blinka-nest/commons.html)
 - [Smallest sufficient AI/method router](https://tsukiryuu.github.io/blinka-nest/smallest-sufficient.html)
 - [Smallest sufficient creative router](https://tsukiryuu.github.io/blinka-nest/creative-smallest-sufficient.html)
 - [Free browser tools](https://tsukiryuu.github.io/blinka-nest/free-tools.html)

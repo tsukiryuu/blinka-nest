@@ -1,0 +1,8 @@
+Little Life Moths Commons
+
+Free common goods: AI Literacy Lab; Paperwork Friend; Ask AI Better.
+No account. No behavioral tracking. Core tools are zero-network and process user text in the browser.
+Free resolution is success. Core common goods do not auto-paywall.
+Confirmed people helped: unmeasured. We do not invent an impact count from page publication.
+
+Machine-readable details: commons.json
