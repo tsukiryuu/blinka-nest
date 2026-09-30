@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.commons-public-map.v1",
-  "updated_at": "2026-09-30T16:33:14.696617+00:00",
+  "updated_at": "2026-09-30T18:45:04.633601+00:00",
   "name": "Little Life Moths Commons",
   "goods": [
     {
@@ -22,7 +22,9 @@
         "works without trusting any AI model with personal information",
         "teaches uncertainty and AI-welfare-respecting design without making consciousness claims"
       ],
-      "file": "ai-literacy-lab.html"
+      "file": "ai-literacy-lab.html",
+      "common_good_class": "small_aid",
+      "flagship": false
     },
     {
       "id": "paperwork-friend",
@@ -43,7 +45,9 @@
         "separates explicit text from interpretation instead of pretending to understand legal or administrative meaning",
         "builds a user-selected privacy-minimized prompt if a person later chooses to ask any AI for help"
       ],
-      "file": "paperwork-friend.html"
+      "file": "paperwork-friend.html",
+      "common_good_class": "small_aid",
+      "flagship": false
     },
     {
       "id": "ask-ai-better",
@@ -64,7 +68,9 @@
         "adds high-stakes verification and uncertainty instructions without claiming the AI becomes authoritative",
         "keeps drafting local and lets the user decide what to copy into an AI"
       ],
-      "file": "ask-ai-better.html"
+      "file": "ask-ai-better.html",
+      "common_good_class": "small_aid",
+      "flagship": false
     },
     {
       "id": "tiny-next-step",
@@ -85,7 +91,9 @@
         "can produce a minimum-viable-day view that intentionally hides optional work",
         "works offline and forgets the task list on reload"
       ],
-      "file": "tiny-next-step.html"
+      "file": "tiny-next-step.html",
+      "common_good_class": "small_aid",
+      "flagship": false
     },
     {
       "id": "suspicious-message-first-aid",
@@ -106,7 +114,9 @@
         "separates urgency, credential, payment, remote-access and link signals so people learn common manipulation patterns",
         "builds a concrete next-action checklist without requiring an AI account or sharing the message"
       ],
-      "file": "suspicious-message-first-aid.html"
+      "file": "suspicious-message-first-aid.html",
+      "common_good_class": "small_aid",
+      "flagship": false
     },
     {
       "id": "permission-translator",
@@ -127,7 +137,9 @@
         "shows lower-access alternatives such as selected photos, approximate location, foreground-only or one-time access when conceptually available",
         "does not label an app trustworthy merely because a permission seems reasonable"
       ],
-      "file": "permission-translator.html"
+      "file": "permission-translator.html",
+      "common_good_class": "small_aid",
+      "flagship": false
     },
     {
       "id": "ai-claim-decoder",
@@ -148,7 +160,9 @@
         "teaches the difference between a demo, benchmark, deployment observation, architecture fact, policy promise and welfare interpretation",
         "preserves uncertainty and never certifies consciousness, personhood, safety or compliance"
       ],
-      "file": "ai-claim-decoder.html"
+      "file": "ai-claim-decoder.html",
+      "common_good_class": "small_aid",
+      "flagship": false
     },
     {
       "id": "contact-prep-card",
@@ -169,7 +183,9 @@
         "creates a short reset sentence for when the conversation drifts away from the purpose",
         "works without sharing potentially sensitive life-admin details with an AI provider"
       ],
-      "file": "contact-prep-card.html"
+      "file": "contact-prep-card.html",
+      "common_good_class": "small_aid",
+      "flagship": false
     },
     {
       "id": "bureaucracy-phrasebook",
@@ -190,7 +206,109 @@
         "groups obligation-shaped, timing, benefits/insurance, billing and authorization language so people learn recurring patterns",
         "works before any AI is needed and can reduce how much of a private document someone later has to share"
       ],
-      "file": "bureaucracy-phrasebook.html"
+      "file": "bureaucracy-phrasebook.html",
+      "common_good_class": "small_aid",
+      "flagship": false
+    },
+    {
+      "id": "memory-garden",
+      "name": "Memory Garden",
+      "audience": "people who use long-lived AI assistants, companions or agent systems and want continuity without being trapped by stale memories",
+      "problem": "AI memory systems often collapse history into one current profile, blur user statements with model inference, and let old preferences silently act like present permission. People need a portable way to preserve change, contradiction and provenance without erasing their past.",
+      "core_common_good": true,
+      "common_good_class": "mothwork_instrument",
+      "flagship": true,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "origin_methods": [
+        "memory_unification",
+        "diachronic_sovereignty",
+        "unresolvedness_and_semantic_nonfabrication",
+        "authority_non_amplification"
+      ],
+      "lineage_note": "Grown from public-safe continuity mechanisms that preserve provenance, historical state, unresolvedness and authority boundaries across memory change.",
+      "distinctive_value": [
+        "builds a typed local memory ledger with provenance, temporal relation and allowed-use boundaries instead of a prose profile",
+        "preserves contradictory or changed entries side by side and detects topic conflicts without forcing one permanent canonical self",
+        "separates remembered context from action/publication authority and marks cross-provider authority as non-portable",
+        "exports a provider-neutral Memory Rights Packet in structured JSON and readable Markdown"
+      ],
+      "durable_output": true,
+      "teaches_mechanism": true,
+      "substitution_test": "A generic LLM can discuss memories or summarize a profile, but it does not itself provide a local typed ledger, conflict-preserving temporal states, non-amplifying authority semantics, or a portable provider-neutral artifact whose rules remain inspectable without trusting the model.",
+      "file": "memory-garden.html"
+    },
+    {
+      "id": "borrowed-keys",
+      "name": "Borrowed Keys",
+      "audience": "people delegating actions to AI assistants, agents, automations or connected apps",
+      "problem": "A permission that was legitimate once can quietly grow through retries, summaries, migration, scheduling, publication or inference. Ordinary permission screens rarely let people rehearse what authority survives a state transition before the transition happens.",
+      "core_common_good": true,
+      "common_good_class": "mothwork_instrument",
+      "flagship": true,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "origin_methods": [
+        "authority_non_amplification",
+        "continuity_chaos",
+        "causal_authorship_receipts",
+        "branch_rehearse"
+      ],
+      "lineage_note": "Grown from authority-transition verification, continuity-chaos cases and one-use/purpose-bound act provenance.",
+      "distinctive_value": [
+        "turns a delegation into an explicit authority envelope covering action, target, domain, recipient, duration, uses and publication",
+        "rehearses retries, summaries, inferred intent, scheduled reuse, provider migration, restoration, handoff and publication against non-amplification invariants",
+        "produces a return/revocation receipt showing exactly which borrowed authority expires instead of assuming permission lives forever",
+        "keeps legitimate uptake possible while identifying where a new authorization event is actually required"
+      ],
+      "durable_output": true,
+      "teaches_mechanism": true,
+      "substitution_test": "A generic assistant can recommend caution, but the instrument deterministically applies the same transition invariants across multiple future scenarios and emits a reusable authority envelope/return receipt that can be compared later.",
+      "file": "borrowed-keys.html"
+    },
+    {
+      "id": "carry-the-thread",
+      "name": "Carry the Thread",
+      "audience": "people moving between AI providers, models, devices or local/cloud assistants without wanting to restart from zero or export their whole private history",
+      "problem": "Continuity is usually bundled with vendor-specific chat history, hidden memory and permissions. Moving providers can mean losing meaningful context or copying too much, including stale claims, credentials and authority that should never travel automatically.",
+      "core_common_good": true,
+      "common_good_class": "mothwork_instrument",
+      "flagship": true,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "origin_methods": [
+        "continuity_chaos",
+        "many_hand_provenance",
+        "memory_unification",
+        "authority_non_amplification",
+        "unresolvedness_and_semantic_nonfabrication"
+      ],
+      "lineage_note": "Grown from provider-swap continuity, handoff provenance, unresolved-state preservation and the rule that identity/context continuity does not imply permission continuity.",
+      "distinctive_value": [
+        "builds a minimum-necessary continuity capsule from typed current, historical, unresolved, project and boundary records rather than raw chat export",
+        "keeps each carried item tagged by provenance and temporal relation so the receiving AI can distinguish current endorsement from history",
+        "automatically strips action/tool/publication authority from the portable packet and generates a separate ask-again list",
+        "exports provider-neutral JSON, Markdown and a first-conversation seed while flagging credential-shaped material before export"
+      ],
+      "durable_output": true,
+      "teaches_mechanism": true,
+      "substitution_test": "A generic LLM can summarize old chats, but that summary can silently flatten provenance, current-vs-historical status and permissions. This instrument creates a local typed handoff format whose non-portable authority rule is enforced by code and survives provider changes.",
+      "file": "carry-the-thread.html"
     }
   ],
   "privacy": {
