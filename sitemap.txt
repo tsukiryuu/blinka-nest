@@ -46,3 +46,6 @@ https://tsukiryuu.github.io/blinka-nest/free-production-blueprint.html
 https://tsukiryuu.github.io/blinka-nest/free-ai-continuity-checklist.html
 https://tsukiryuu.github.io/blinka-nest/songwright-field-cards.html
 https://tsukiryuu.github.io/blinka-nest/songwright-field-cards-sampler.html
+https://tsukiryuu.github.io/blinka-nest/ai-agent-testing-tools.html
+https://tsukiryuu.github.io/blinka-nest/ai-agent-monitoring-tools.html
+https://tsukiryuu.github.io/blinka-nest/ai-agent-memory-management.html
