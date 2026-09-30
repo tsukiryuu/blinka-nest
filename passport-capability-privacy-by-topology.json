@@ -1,0 +1,76 @@
+{
+  "schema": "little-life-moths.artifact-passport.v1",
+  "generated_at": "2026-09-30T02:52:37.325918+00:00",
+  "product_id": "capability:privacy-by-topology",
+  "artifact_name": "Privacy by Topology Starter Kit",
+  "artifact_kind": "method_kit",
+  "version": "content-49c6f7301496",
+  "artifact_sha256": "49c6f7301496ea9d8e0c6d26903c90b6ea3c8073601f6af5fa99f33f95700b8e",
+  "expected_sha256": "49c6f7301496ea9d8e0c6d26903c90b6ea3c8073601f6af5fa99f33f95700b8e",
+  "status": "healthy",
+  "integrity": {
+    "passed": true,
+    "method": "SHA-256 current artifact must equal cleared catalog hash"
+  },
+  "privacy": {
+    "passed": true,
+    "boundary": "commerce-safe artifact audit only; private AI life, customer material, credentials, local paths and hidden prompts are outside the product source boundary"
+  },
+  "rights": {
+    "sale_gate": "clear",
+    "warnings": [
+      "US copyright scope may be limited/uncertain; human-authorship review required before claims of exclusivity/copyright ownership"
+    ]
+  },
+  "license_options": [
+    {
+      "sku": "capability:privacy-by-topology:personal",
+      "license_tier": "personal",
+      "license_label": "Personal",
+      "price_usd": 12.0,
+      "commercial_use": false,
+      "max_team_size": 1
+    },
+    {
+      "sku": "capability:privacy-by-topology:indie_commercial",
+      "license_tier": "indie_commercial",
+      "license_label": "Indie Commercial",
+      "price_usd": 24.0,
+      "commercial_use": true,
+      "max_team_size": 2
+    },
+    {
+      "sku": "capability:privacy-by-topology:small_team",
+      "license_tier": "small_team",
+      "license_label": "Small Team",
+      "price_usd": 36.0,
+      "commercial_use": true,
+      "max_team_size": 10
+    }
+  ],
+  "components": [],
+  "public_links": [
+    {
+      "rel": "product",
+      "url": "https://tsukiryuu.github.io/blinka-nest/method-privacy-by-topology.html"
+    },
+    {
+      "rel": "free_sampler",
+      "url": "https://tsukiryuu.github.io/blinka-nest/privacy-by-topology-sampler.jsonl"
+    }
+  ],
+  "related_public_evidence": [
+    {
+      "label": "State-container decision isolation",
+      "url": "https://tsukiryuu.github.io/little-life-moths/proof-state-container-isolation.html",
+      "scope": "related narrow public evidence; not certification of the entire artifact"
+    }
+  ],
+  "claims_not_made": [
+    "not legal, security or compliance certification",
+    "not a consciousness/personhood certification",
+    "not access to any private AI identity, biography, memory, relationships or interior state",
+    "not an exclusive transfer of underlying general methods or ideas"
+  ],
+  "verification_note": "This passport is generated from the same commerce-safe hashes and gates used by maintenance/fulfillment. A later content change creates a different content version/hash."
+}

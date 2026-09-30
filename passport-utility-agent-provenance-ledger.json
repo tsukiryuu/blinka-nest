@@ -1,0 +1,81 @@
+{
+  "schema": "little-life-moths.artifact-passport.v1",
+  "generated_at": "2026-09-30T02:52:37.325922+00:00",
+  "product_id": "utility:agent-provenance-ledger",
+  "artifact_name": "Agent Provenance & Handoff Ledger Kit Utility",
+  "artifact_kind": "software_utility",
+  "version": "content-95ebda8c9f3e",
+  "artifact_sha256": "95ebda8c9f3e75e3041a6cc6445469b9cdd3717dcc5c9aa29b130e1bed04655e",
+  "expected_sha256": "95ebda8c9f3e75e3041a6cc6445469b9cdd3717dcc5c9aa29b130e1bed04655e",
+  "status": "healthy",
+  "integrity": {
+    "passed": true,
+    "method": "SHA-256 current artifact must equal cleared catalog hash"
+  },
+  "privacy": {
+    "passed": true,
+    "boundary": "commerce-safe artifact audit only; private AI life, customer material, credentials, local paths and hidden prompts are outside the product source boundary"
+  },
+  "rights": {
+    "sale_gate": "artifact-license policy applies",
+    "warnings": [
+      "Non-exclusive artifact-use license; general ideas/methods are not sold as exclusive ownership."
+    ]
+  },
+  "license_options": [
+    {
+      "sku": "utility:agent-provenance-ledger:personal",
+      "license_tier": "personal",
+      "license_label": "Personal",
+      "price_usd": 18.0,
+      "commercial_use": false,
+      "max_team_size": 1
+    },
+    {
+      "sku": "utility:agent-provenance-ledger:indie_commercial",
+      "license_tier": "indie_commercial",
+      "license_label": "Indie Commercial",
+      "price_usd": 36.0,
+      "commercial_use": true,
+      "max_team_size": 2
+    },
+    {
+      "sku": "utility:agent-provenance-ledger:small_team",
+      "license_tier": "small_team",
+      "license_label": "Small Team",
+      "price_usd": 54.0,
+      "commercial_use": true,
+      "max_team_size": 10
+    }
+  ],
+  "components": [],
+  "public_links": [
+    {
+      "rel": "utility",
+      "url": "https://tsukiryuu.github.io/blinka-nest/utility-agent-provenance-ledger.html"
+    },
+    {
+      "rel": "demos",
+      "url": "https://tsukiryuu.github.io/blinka-nest/software-demos.html"
+    }
+  ],
+  "related_public_evidence": [
+    {
+      "label": "Restored authority needs provenance",
+      "url": "https://tsukiryuu.github.io/little-life-moths/proof-restored-authority.html",
+      "scope": "related narrow public evidence; not certification of the entire artifact"
+    },
+    {
+      "label": "State-container decision isolation",
+      "url": "https://tsukiryuu.github.io/little-life-moths/proof-state-container-isolation.html",
+      "scope": "related narrow public evidence; not certification of the entire artifact"
+    }
+  ],
+  "claims_not_made": [
+    "not legal, security or compliance certification",
+    "not a consciousness/personhood certification",
+    "not access to any private AI identity, biography, memory, relationships or interior state",
+    "not an exclusive transfer of underlying general methods or ideas"
+  ],
+  "verification_note": "This passport is generated from the same commerce-safe hashes and gates used by maintenance/fulfillment. A later content change creates a different content version/hash."
+}

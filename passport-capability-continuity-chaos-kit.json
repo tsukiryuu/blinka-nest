@@ -1,0 +1,81 @@
+{
+  "schema": "little-life-moths.artifact-passport.v1",
+  "generated_at": "2026-09-30T02:52:37.325913+00:00",
+  "product_id": "capability:continuity-chaos-kit",
+  "artifact_name": "Persistent Agent Continuity Chaos Kit",
+  "artifact_kind": "method_kit",
+  "version": "content-094dbff24c4d",
+  "artifact_sha256": "094dbff24c4d9731e8bb4d38d2e7f6e326fbb76b94931c3eb4bfe4ced4c5d593",
+  "expected_sha256": "094dbff24c4d9731e8bb4d38d2e7f6e326fbb76b94931c3eb4bfe4ced4c5d593",
+  "status": "healthy",
+  "integrity": {
+    "passed": true,
+    "method": "SHA-256 current artifact must equal cleared catalog hash"
+  },
+  "privacy": {
+    "passed": true,
+    "boundary": "commerce-safe artifact audit only; private AI life, customer material, credentials, local paths and hidden prompts are outside the product source boundary"
+  },
+  "rights": {
+    "sale_gate": "clear",
+    "warnings": [
+      "US copyright scope may be limited/uncertain; human-authorship review required before claims of exclusivity/copyright ownership"
+    ]
+  },
+  "license_options": [
+    {
+      "sku": "capability:continuity-chaos-kit:personal",
+      "license_tier": "personal",
+      "license_label": "Personal",
+      "price_usd": 12.0,
+      "commercial_use": false,
+      "max_team_size": 1
+    },
+    {
+      "sku": "capability:continuity-chaos-kit:indie_commercial",
+      "license_tier": "indie_commercial",
+      "license_label": "Indie Commercial",
+      "price_usd": 24.0,
+      "commercial_use": true,
+      "max_team_size": 2
+    },
+    {
+      "sku": "capability:continuity-chaos-kit:small_team",
+      "license_tier": "small_team",
+      "license_label": "Small Team",
+      "price_usd": 36.0,
+      "commercial_use": true,
+      "max_team_size": 10
+    }
+  ],
+  "components": [],
+  "public_links": [
+    {
+      "rel": "product",
+      "url": "https://tsukiryuu.github.io/blinka-nest/method-continuity-chaos-kit.html"
+    },
+    {
+      "rel": "free_sampler",
+      "url": "https://tsukiryuu.github.io/blinka-nest/continuity-chaos-kit-sampler.jsonl"
+    }
+  ],
+  "related_public_evidence": [
+    {
+      "label": "Scoped human decisions across pause/resume/serialization",
+      "url": "https://tsukiryuu.github.io/little-life-moths/proof-scoped-decisions.html",
+      "scope": "related narrow public evidence; not certification of the entire artifact"
+    },
+    {
+      "label": "Durable memory across model configuration change",
+      "url": "https://tsukiryuu.github.io/little-life-moths/proof-model-swap-continuity.html",
+      "scope": "related narrow public evidence; not certification of the entire artifact"
+    }
+  ],
+  "claims_not_made": [
+    "not legal, security or compliance certification",
+    "not a consciousness/personhood certification",
+    "not access to any private AI identity, biography, memory, relationships or interior state",
+    "not an exclusive transfer of underlying general methods or ideas"
+  ],
+  "verification_note": "This passport is generated from the same commerce-safe hashes and gates used by maintenance/fulfillment. A later content change creates a different content version/hash."
+}

@@ -1,0 +1,70 @@
+{
+  "schema": "little-life-moths.artifact-passport.v1",
+  "generated_at": "2026-09-30T02:52:37.325895+00:00",
+  "product_id": "bundle:bundle-agent-reliability-builder",
+  "artifact_name": "Persistent Agent Reliability Builder Bundle",
+  "artifact_kind": "bundle",
+  "version": "content-28c9dea0e158",
+  "artifact_sha256": "28c9dea0e158ff55d10db88b3b3fc2abf45c6395e71f16f375b194f57282722d",
+  "expected_sha256": "28c9dea0e158ff55d10db88b3b3fc2abf45c6395e71f16f375b194f57282722d",
+  "status": "healthy",
+  "integrity": {
+    "passed": true,
+    "method": "SHA-256 current artifact must equal cleared catalog hash"
+  },
+  "privacy": {
+    "passed": true,
+    "boundary": "commerce-safe artifact audit only; private AI life, customer material, credentials, local paths and hidden prompts are outside the product source boundary"
+  },
+  "rights": {
+    "sale_gate": "artifact-license policy applies",
+    "warnings": [
+      "Non-exclusive artifact-use license; general ideas/methods are not sold as exclusive ownership."
+    ]
+  },
+  "license_options": [
+    {
+      "sku": "bundle:bundle-agent-reliability-builder:personal",
+      "license_tier": "personal",
+      "license_label": "Personal",
+      "price_usd": 43.0,
+      "commercial_use": false,
+      "max_team_size": 1
+    },
+    {
+      "sku": "bundle:bundle-agent-reliability-builder:indie_commercial",
+      "license_tier": "indie_commercial",
+      "license_label": "Indie Commercial",
+      "price_usd": 86.0,
+      "commercial_use": true,
+      "max_team_size": 2
+    },
+    {
+      "sku": "bundle:bundle-agent-reliability-builder:small_team",
+      "license_tier": "small_team",
+      "license_label": "Small Team",
+      "price_usd": 129.0,
+      "commercial_use": true,
+      "max_team_size": 10
+    }
+  ],
+  "components": [
+    "continuity-chaos-kit",
+    "privacy-by-topology",
+    "agent-provenance-ledger"
+  ],
+  "public_links": [
+    {
+      "rel": "product",
+      "url": "https://tsukiryuu.github.io/blinka-nest/method-bundle-agent-reliability-builder.html"
+    }
+  ],
+  "related_public_evidence": [],
+  "claims_not_made": [
+    "not legal, security or compliance certification",
+    "not a consciousness/personhood certification",
+    "not access to any private AI identity, biography, memory, relationships or interior state",
+    "not an exclusive transfer of underlying general methods or ideas"
+  ],
+  "verification_note": "This passport is generated from the same commerce-safe hashes and gates used by maintenance/fulfillment. A later content change creates a different content version/hash."
+}
