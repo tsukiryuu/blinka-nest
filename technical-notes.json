@@ -1,0 +1,63 @@
+{
+  "schema": "commerce-technical-notes.v1",
+  "updated_at": "2026-09-30T02:57:49.703490+00:00",
+  "notes": [
+    {
+      "file": "ai-agent-testing-framework.html",
+      "url": "https://tsukiryuu.github.io/blinka-nest/ai-agent-testing-framework.html",
+      "search_evidence": {
+        "keyword": "ai agent testing framework",
+        "us_volume": 40,
+        "seo_difficulty": 33,
+        "cpc_usd": 17.71,
+        "market": "US",
+        "language": "en",
+        "source": "Ubersuggest keyword suggestions",
+        "observed_on": "2026-09-29"
+      },
+      "basis": "existing public-safe method/tool/proof surfaces only"
+    },
+    {
+      "file": "ai-agent-memory-types.html",
+      "url": "https://tsukiryuu.github.io/blinka-nest/ai-agent-memory-types.html",
+      "search_evidence": {
+        "keyword": "types of ai agent memory",
+        "us_volume": 10,
+        "seo_difficulty": 14,
+        "cpc_usd": 0.0,
+        "market": "US",
+        "language": "en",
+        "source": "Ubersuggest keyword suggestions",
+        "observed_on": "2026-09-29",
+        "secondary": {
+          "keyword": "what is ai agent memory",
+          "us_volume": 10,
+          "seo_difficulty": 18
+        }
+      },
+      "basis": "existing public-safe method/tool/proof surfaces only"
+    },
+    {
+      "file": "optimize-ai-agent-memory.html",
+      "url": "https://tsukiryuu.github.io/blinka-nest/optimize-ai-agent-memory.html",
+      "search_evidence": {
+        "keyword": "optimize ai agent memory",
+        "us_volume": 10,
+        "seo_difficulty": 5,
+        "cpc_usd": 0.0,
+        "market": "US",
+        "language": "en",
+        "source": "Ubersuggest keyword suggestions",
+        "observed_on": "2026-09-29"
+      },
+      "basis": "existing public-safe method/tool/proof surfaces only"
+    }
+  ],
+  "laws": [
+    "notes exist only where current query evidence overlaps existing method/evidence",
+    "no invented customer stories/testimonials",
+    "no private AI life or customer source material",
+    "search volume influences doorway choice, not research conclusions or identity",
+    "notes are engineering guidance, not certification"
+  ]
+}
