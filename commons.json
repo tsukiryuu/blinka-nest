@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.commons-public-map.v1",
-  "updated_at": "2026-09-30T16:29:47.788761+00:00",
+  "updated_at": "2026-09-30T16:33:14.696617+00:00",
   "name": "Little Life Moths Commons",
   "goods": [
     {
@@ -149,6 +149,48 @@
         "preserves uncertainty and never certifies consciousness, personhood, safety or compliance"
       ],
       "file": "ai-claim-decoder.html"
+    },
+    {
+      "id": "contact-prep-card",
+      "name": "Contact Prep Card",
+      "audience": "people preparing for a call, email, appointment or in-person conversation",
+      "problem": "Important contacts are harder when a person must remember the goal, facts, questions, accessibility needs and next steps while also managing the conversation itself.",
+      "core_common_good": true,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "turns only user-provided facts and goals into a printable one-page conversation card without inventing context",
+        "separates what happened, what the person wants, what they need to ask, and what must be recorded before hanging up/leaving",
+        "creates a short reset sentence for when the conversation drifts away from the purpose",
+        "works without sharing potentially sensitive life-admin details with an AI provider"
+      ],
+      "file": "contact-prep-card.html"
+    },
+    {
+      "id": "bureaucracy-phrasebook",
+      "name": "Bureaucracy Phrasebook",
+      "audience": "people reading administrative, insurance, billing, school, housing, benefits or service-provider language",
+      "problem": "Administrative documents reuse compact words whose ordinary meaning, procedural meaning and consequence can differ, while copying the whole document into an AI may be unnecessary or too revealing.",
+      "core_common_good": true,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "locally finds a transparent dictionary of common administrative terms and shows the exact source snippet",
+        "keeps common-language hints explicitly separate from the official meaning in the user’s specific document",
+        "groups obligation-shaped, timing, benefits/insurance, billing and authorization language so people learn recurring patterns",
+        "works before any AI is needed and can reduce how much of a private document someone later has to share"
+      ],
+      "file": "bureaucracy-phrasebook.html"
     }
   ],
   "privacy": {

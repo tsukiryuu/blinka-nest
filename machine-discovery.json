@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.machine-discovery.v1",
-  "updated_at": "2026-09-30T16:30:12.797346+00:00",
+  "updated_at": "2026-09-30T16:33:59.498893+00:00",
   "entity": {
     "name": "Little Life Moths",
     "type": "independent research / methods / bounded services",
@@ -74,6 +74,22 @@
         "id": "ai-claim-decoder",
         "name": "AI Claim Decoder",
         "file": "ai-claim-decoder.html",
+        "never_auto_paywall": true,
+        "network_required": false,
+        "tracks_users": false
+      },
+      {
+        "id": "contact-prep-card",
+        "name": "Contact Prep Card",
+        "file": "contact-prep-card.html",
+        "never_auto_paywall": true,
+        "network_required": false,
+        "tracks_users": false
+      },
+      {
+        "id": "bureaucracy-phrasebook",
+        "name": "Bureaucracy Phrasebook",
+        "file": "bureaucracy-phrasebook.html",
         "never_auto_paywall": true,
         "network_required": false,
         "tracks_users": false
