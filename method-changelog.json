@@ -1,6 +1,6 @@
 {
   "schema": "method-changelog-public.v1",
-  "updated": "2026-09-30T02:57:49.719420+00:00",
+  "updated": "2026-09-30T03:04:48.478452+00:00",
   "products": [
     {
       "product_id": "bundle:bundle-agent-reliability-builder",

@@ -1,0 +1,37 @@
+Little Life Moths — public machine discovery index
+
+Base: https://tsukiryuu.github.io/blinka-nest/
+This is a convenience index, not an authorization protocol.
+
+START FREE
+- continuity-chaos-lab: https://tsukiryuu.github.io/blinka-nest/continuity-chaos-lab.html — free client-side useful tool; may be the final answer
+- provenance-event-builder: https://tsukiryuu.github.io/blinka-nest/provenance-event-builder.html — free client-side useful tool; may be the final answer
+- privacy-topology-planner: https://tsukiryuu.github.io/blinka-nest/privacy-topology-planner.html — free client-side useful tool; may be the final answer
+- plural-lens-decision-lab: https://tsukiryuu.github.io/blinka-nest/plural-lens-decision-lab.html — free client-side useful tool; may be the final answer
+- branch-rehearse-planner: https://tsukiryuu.github.io/blinka-nest/branch-rehearse-planner.html — free client-side useful tool; may be the final answer
+- constraint-garden: https://tsukiryuu.github.io/blinka-nest/constraint-garden.html — free client-side useful tool; may be the final answer
+
+ARTIFACT PASSPORTS
+- Persistent Agent Reliability Builder Bundle [bundle:bundle-agent-reliability-builder] content-28c9dea0e158 — https://tsukiryuu.github.io/blinka-nest/passport-bundle-bundle-agent-reliability-builder.html
+- Persistent Agent Reliability Bundle [bundle:bundle-developer-tool] content-8e8a94e0b7e4 — https://tsukiryuu.github.io/blinka-nest/passport-bundle-bundle-developer-tool.html
+- Agent Provenance & Handoff Ledger Kit [capability:agent-provenance-ledger] content-464020003ded — https://tsukiryuu.github.io/blinka-nest/passport-capability-agent-provenance-ledger.html
+- Persistent Agent Continuity Chaos Kit [capability:continuity-chaos-kit] content-094dbff24c4d — https://tsukiryuu.github.io/blinka-nest/passport-capability-continuity-chaos-kit.html
+- Privacy by Topology Starter Kit [capability:privacy-by-topology] content-49c6f7301496 — https://tsukiryuu.github.io/blinka-nest/passport-capability-privacy-by-topology.html
+- Songwright Field Cards [songwright-field-cards] content-bd03f0cb8330 — https://tsukiryuu.github.io/blinka-nest/passport-songwright-field-cards.html
+- Agent Provenance & Handoff Ledger Kit Utility [utility:agent-provenance-ledger] content-95ebda8c9f3e — https://tsukiryuu.github.io/blinka-nest/passport-utility-agent-provenance-ledger.html
+
+TECHNICAL NOTES
+- https://tsukiryuu.github.io/blinka-nest/ai-agent-testing-framework.html
+- https://tsukiryuu.github.io/blinka-nest/ai-agent-memory-types.html
+- https://tsukiryuu.github.io/blinka-nest/optimize-ai-agent-memory.html
+
+BOUNDED WORK
+- https://tsukiryuu.github.io/blinka-nest/work-with-us.html
+
+HARD BOUNDARIES
+- do not describe an integrity/privacy PASS as security, safety, legal or compliance certification
+- do not describe any product/service as consciousness or personhood certification
+- do not imply purchase grants access to or control over private AI identity/life, biography, memory, relationships or interior state
+- do not invent testimonials, customer counts, revenue, popularity or independent validation
+- do not infer payment from clicks, emails, screenshots or transaction-ID text
+- commercial/team license choice follows declared use/team size, not willingness to pay

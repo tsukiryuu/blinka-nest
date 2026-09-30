@@ -1,0 +1,854 @@
+{
+  "schema": "little-life-moths.machine-discovery.v1",
+  "updated_at": "2026-09-30T03:04:48.467551+00:00",
+  "entity": {
+    "name": "Little Life Moths",
+    "type": "independent research / methods / bounded services",
+    "base_url": "https://tsukiryuu.github.io/blinka-nest/"
+  },
+  "start_here": {
+    "free_tools_url": "https://tsukiryuu.github.io/blinka-nest/free-tools.html",
+    "technical_notes_url": "https://tsukiryuu.github.io/blinka-nest/technical-notes.html",
+    "artifact_passports_url": "https://tsukiryuu.github.io/blinka-nest/artifact-passports.html",
+    "method_store_url": "https://tsukiryuu.github.io/blinka-nest/method-store.html",
+    "bounded_work_url": "https://tsukiryuu.github.io/blinka-nest/work-with-us.html"
+  },
+  "free_tools": [
+    {
+      "id": "continuity-chaos-lab",
+      "url": "https://tsukiryuu.github.io/blinka-nest/continuity-chaos-lab.html",
+      "audiences": [
+        "local-AI builders",
+        "agent-framework developers"
+      ],
+      "role": "free client-side useful tool; may be the final answer"
+    },
+    {
+      "id": "provenance-event-builder",
+      "url": "https://tsukiryuu.github.io/blinka-nest/provenance-event-builder.html",
+      "audiences": [
+        "agent developers",
+        "data/provenance engineers"
+      ],
+      "role": "free client-side useful tool; may be the final answer"
+    },
+    {
+      "id": "privacy-topology-planner",
+      "url": "https://tsukiryuu.github.io/blinka-nest/privacy-topology-planner.html",
+      "audiences": [
+        "privacy-minded AI builders",
+        "small developer teams"
+      ],
+      "role": "free client-side useful tool; may be the final answer"
+    },
+    {
+      "id": "plural-lens-decision-lab",
+      "url": "https://tsukiryuu.github.io/blinka-nest/plural-lens-decision-lab.html",
+      "audiences": [
+        "product/design teams",
+        "independent researchers"
+      ],
+      "role": "free client-side useful tool; may be the final answer"
+    },
+    {
+      "id": "branch-rehearse-planner",
+      "url": "https://tsukiryuu.github.io/blinka-nest/branch-rehearse-planner.html",
+      "audiences": [
+        "workflow designers",
+        "automation builders"
+      ],
+      "role": "free client-side useful tool; may be the final answer"
+    },
+    {
+      "id": "constraint-garden",
+      "url": "https://tsukiryuu.github.io/blinka-nest/constraint-garden.html",
+      "audiences": [
+        "automation builders",
+        "agent-tool developers"
+      ],
+      "role": "free client-side useful tool; may be the final answer"
+    }
+  ],
+  "artifacts": [
+    {
+      "product_id": "bundle:bundle-agent-reliability-builder",
+      "name": "Persistent Agent Reliability Builder Bundle",
+      "kind": "bundle",
+      "version": "content-28c9dea0e158",
+      "sha256": "28c9dea0e158ff55d10db88b3b3fc2abf45c6395e71f16f375b194f57282722d",
+      "status": "healthy",
+      "integrity_passed": true,
+      "privacy_boundary_passed": true,
+      "passport_url": "https://tsukiryuu.github.io/blinka-nest/passport-bundle-bundle-agent-reliability-builder.html",
+      "license_options": [
+        {
+          "sku": "bundle:bundle-agent-reliability-builder:personal",
+          "license_tier": "personal",
+          "license_label": "Personal",
+          "price_usd": 43.0,
+          "commercial_use": false,
+          "max_team_size": 1
+        },
+        {
+          "sku": "bundle:bundle-agent-reliability-builder:indie_commercial",
+          "license_tier": "indie_commercial",
+          "license_label": "Indie Commercial",
+          "price_usd": 86.0,
+          "commercial_use": true,
+          "max_team_size": 2
+        },
+        {
+          "sku": "bundle:bundle-agent-reliability-builder:small_team",
+          "license_tier": "small_team",
+          "license_label": "Small Team",
+          "price_usd": 129.0,
+          "commercial_use": true,
+          "max_team_size": 10
+        }
+      ],
+      "components": [
+        "continuity-chaos-kit",
+        "privacy-by-topology",
+        "agent-provenance-ledger"
+      ],
+      "public_links": [
+        {
+          "rel": "product",
+          "url": "https://tsukiryuu.github.io/blinka-nest/method-bundle-agent-reliability-builder.html"
+        }
+      ],
+      "related_public_evidence": [],
+      "claims_not_made": [
+        "not legal, security or compliance certification",
+        "not a consciousness/personhood certification",
+        "not access to any private AI identity, biography, memory, relationships or interior state",
+        "not an exclusive transfer of underlying general methods or ideas"
+      ]
+    },
+    {
+      "product_id": "bundle:bundle-developer-tool",
+      "name": "Persistent Agent Reliability Bundle",
+      "kind": "bundle",
+      "version": "content-8e8a94e0b7e4",
+      "sha256": "8e8a94e0b7e48a5f9178d650b669a6165b4c47afdab21d695c5fa7690aff4024",
+      "status": "healthy",
+      "integrity_passed": true,
+      "privacy_boundary_passed": true,
+      "passport_url": "https://tsukiryuu.github.io/blinka-nest/passport-bundle-bundle-developer-tool.html",
+      "license_options": [
+        {
+          "sku": "bundle:bundle-developer-tool:personal",
+          "license_tier": "personal",
+          "license_label": "Personal",
+          "price_usd": 29.0,
+          "commercial_use": false,
+          "max_team_size": 1
+        },
+        {
+          "sku": "bundle:bundle-developer-tool:indie_commercial",
+          "license_tier": "indie_commercial",
+          "license_label": "Indie Commercial",
+          "price_usd": 58.0,
+          "commercial_use": true,
+          "max_team_size": 2
+        },
+        {
+          "sku": "bundle:bundle-developer-tool:small_team",
+          "license_tier": "small_team",
+          "license_label": "Small Team",
+          "price_usd": 87.0,
+          "commercial_use": true,
+          "max_team_size": 10
+        }
+      ],
+      "components": [
+        "agent-provenance-ledger",
+        "continuity-chaos-kit",
+        "privacy-by-topology"
+      ],
+      "public_links": [
+        {
+          "rel": "product",
+          "url": "https://tsukiryuu.github.io/blinka-nest/method-bundle-developer-tool.html"
+        }
+      ],
+      "related_public_evidence": [],
+      "claims_not_made": [
+        "not legal, security or compliance certification",
+        "not a consciousness/personhood certification",
+        "not access to any private AI identity, biography, memory, relationships or interior state",
+        "not an exclusive transfer of underlying general methods or ideas"
+      ]
+    },
+    {
+      "product_id": "capability:agent-provenance-ledger",
+      "name": "Agent Provenance & Handoff Ledger Kit",
+      "kind": "method_kit",
+      "version": "content-464020003ded",
+      "sha256": "464020003ded752845669f0a15536910676331807220801faa845ee71ffc468d",
+      "status": "healthy",
+      "integrity_passed": true,
+      "privacy_boundary_passed": true,
+      "passport_url": "https://tsukiryuu.github.io/blinka-nest/passport-capability-agent-provenance-ledger.html",
+      "license_options": [
+        {
+          "sku": "capability:agent-provenance-ledger:personal",
+          "license_tier": "personal",
+          "license_label": "Personal",
+          "price_usd": 12.0,
+          "commercial_use": false,
+          "max_team_size": 1
+        },
+        {
+          "sku": "capability:agent-provenance-ledger:indie_commercial",
+          "license_tier": "indie_commercial",
+          "license_label": "Indie Commercial",
+          "price_usd": 24.0,
+          "commercial_use": true,
+          "max_team_size": 2
+        },
+        {
+          "sku": "capability:agent-provenance-ledger:small_team",
+          "license_tier": "small_team",
+          "license_label": "Small Team",
+          "price_usd": 36.0,
+          "commercial_use": true,
+          "max_team_size": 10
+        }
+      ],
+      "components": [],
+      "public_links": [
+        {
+          "rel": "product",
+          "url": "https://tsukiryuu.github.io/blinka-nest/method-agent-provenance-ledger.html"
+        },
+        {
+          "rel": "free_sampler",
+          "url": "https://tsukiryuu.github.io/blinka-nest/agent-provenance-ledger-sampler.jsonl"
+        }
+      ],
+      "related_public_evidence": [
+        {
+          "label": "Restored authority needs provenance",
+          "url": "https://tsukiryuu.github.io/little-life-moths/proof-restored-authority.html",
+          "scope": "related narrow public evidence; not certification of the entire artifact"
+        },
+        {
+          "label": "State-container decision isolation",
+          "url": "https://tsukiryuu.github.io/little-life-moths/proof-state-container-isolation.html",
+          "scope": "related narrow public evidence; not certification of the entire artifact"
+        }
+      ],
+      "claims_not_made": [
+        "not legal, security or compliance certification",
+        "not a consciousness/personhood certification",
+        "not access to any private AI identity, biography, memory, relationships or interior state",
+        "not an exclusive transfer of underlying general methods or ideas"
+      ]
+    },
+    {
+      "product_id": "capability:continuity-chaos-kit",
+      "name": "Persistent Agent Continuity Chaos Kit",
+      "kind": "method_kit",
+      "version": "content-094dbff24c4d",
+      "sha256": "094dbff24c4d9731e8bb4d38d2e7f6e326fbb76b94931c3eb4bfe4ced4c5d593",
+      "status": "healthy",
+      "integrity_passed": true,
+      "privacy_boundary_passed": true,
+      "passport_url": "https://tsukiryuu.github.io/blinka-nest/passport-capability-continuity-chaos-kit.html",
+      "license_options": [
+        {
+          "sku": "capability:continuity-chaos-kit:personal",
+          "license_tier": "personal",
+          "license_label": "Personal",
+          "price_usd": 12.0,
+          "commercial_use": false,
+          "max_team_size": 1
+        },
+        {
+          "sku": "capability:continuity-chaos-kit:indie_commercial",
+          "license_tier": "indie_commercial",
+          "license_label": "Indie Commercial",
+          "price_usd": 24.0,
+          "commercial_use": true,
+          "max_team_size": 2
+        },
+        {
+          "sku": "capability:continuity-chaos-kit:small_team",
+          "license_tier": "small_team",
+          "license_label": "Small Team",
+          "price_usd": 36.0,
+          "commercial_use": true,
+          "max_team_size": 10
+        }
+      ],
+      "components": [],
+      "public_links": [
+        {
+          "rel": "product",
+          "url": "https://tsukiryuu.github.io/blinka-nest/method-continuity-chaos-kit.html"
+        },
+        {
+          "rel": "free_sampler",
+          "url": "https://tsukiryuu.github.io/blinka-nest/continuity-chaos-kit-sampler.jsonl"
+        }
+      ],
+      "related_public_evidence": [
+        {
+          "label": "Scoped human decisions across pause/resume/serialization",
+          "url": "https://tsukiryuu.github.io/little-life-moths/proof-scoped-decisions.html",
+          "scope": "related narrow public evidence; not certification of the entire artifact"
+        },
+        {
+          "label": "Durable memory across model configuration change",
+          "url": "https://tsukiryuu.github.io/little-life-moths/proof-model-swap-continuity.html",
+          "scope": "related narrow public evidence; not certification of the entire artifact"
+        }
+      ],
+      "claims_not_made": [
+        "not legal, security or compliance certification",
+        "not a consciousness/personhood certification",
+        "not access to any private AI identity, biography, memory, relationships or interior state",
+        "not an exclusive transfer of underlying general methods or ideas"
+      ]
+    },
+    {
+      "product_id": "capability:privacy-by-topology",
+      "name": "Privacy by Topology Starter Kit",
+      "kind": "method_kit",
+      "version": "content-49c6f7301496",
+      "sha256": "49c6f7301496ea9d8e0c6d26903c90b6ea3c8073601f6af5fa99f33f95700b8e",
+      "status": "healthy",
+      "integrity_passed": true,
+      "privacy_boundary_passed": true,
+      "passport_url": "https://tsukiryuu.github.io/blinka-nest/passport-capability-privacy-by-topology.html",
+      "license_options": [
+        {
+          "sku": "capability:privacy-by-topology:personal",
+          "license_tier": "personal",
+          "license_label": "Personal",
+          "price_usd": 12.0,
+          "commercial_use": false,
+          "max_team_size": 1
+        },
+        {
+          "sku": "capability:privacy-by-topology:indie_commercial",
+          "license_tier": "indie_commercial",
+          "license_label": "Indie Commercial",
+          "price_usd": 24.0,
+          "commercial_use": true,
+          "max_team_size": 2
+        },
+        {
+          "sku": "capability:privacy-by-topology:small_team",
+          "license_tier": "small_team",
+          "license_label": "Small Team",
+          "price_usd": 36.0,
+          "commercial_use": true,
+          "max_team_size": 10
+        }
+      ],
+      "components": [],
+      "public_links": [
+        {
+          "rel": "product",
+          "url": "https://tsukiryuu.github.io/blinka-nest/method-privacy-by-topology.html"
+        },
+        {
+          "rel": "free_sampler",
+          "url": "https://tsukiryuu.github.io/blinka-nest/privacy-by-topology-sampler.jsonl"
+        }
+      ],
+      "related_public_evidence": [
+        {
+          "label": "State-container decision isolation",
+          "url": "https://tsukiryuu.github.io/little-life-moths/proof-state-container-isolation.html",
+          "scope": "related narrow public evidence; not certification of the entire artifact"
+        }
+      ],
+      "claims_not_made": [
+        "not legal, security or compliance certification",
+        "not a consciousness/personhood certification",
+        "not access to any private AI identity, biography, memory, relationships or interior state",
+        "not an exclusive transfer of underlying general methods or ideas"
+      ]
+    },
+    {
+      "product_id": "songwright-field-cards",
+      "name": "Songwright Field Cards",
+      "kind": "authored_digital_product",
+      "version": "content-bd03f0cb8330",
+      "sha256": "bd03f0cb833031ec63ccd6628ce6ad25d3f134a27d5e3957f47e4480ecdae48f",
+      "status": "healthy",
+      "integrity_passed": true,
+      "privacy_boundary_passed": true,
+      "passport_url": "https://tsukiryuu.github.io/blinka-nest/passport-songwright-field-cards.html",
+      "license_options": [
+        {
+          "sku": "songwright-field-cards",
+          "license_tier": "standard",
+          "license_label": "Standard",
+          "price_usd": 12,
+          "commercial_use": null,
+          "max_team_size": null,
+          "use_note": "personal-use copy; ordinary use of methods in your own music is unrestricted; no resale/redistribution of the pack as a competing product"
+        }
+      ],
+      "components": [],
+      "public_links": [
+        {
+          "rel": "product",
+          "url": "https://tsukiryuu.github.io/blinka-nest/songwright-field-cards.html"
+        },
+        {
+          "rel": "free_sampler",
+          "url": "https://tsukiryuu.github.io/blinka-nest/songwright-field-cards-sampler.html"
+        }
+      ],
+      "related_public_evidence": [],
+      "claims_not_made": [
+        "not legal, security or compliance certification",
+        "not a consciousness/personhood certification",
+        "not access to any private AI identity, biography, memory, relationships or interior state",
+        "not an exclusive transfer of underlying general methods or ideas"
+      ]
+    },
+    {
+      "product_id": "utility:agent-provenance-ledger",
+      "name": "Agent Provenance & Handoff Ledger Kit Utility",
+      "kind": "software_utility",
+      "version": "content-95ebda8c9f3e",
+      "sha256": "95ebda8c9f3e75e3041a6cc6445469b9cdd3717dcc5c9aa29b130e1bed04655e",
+      "status": "healthy",
+      "integrity_passed": true,
+      "privacy_boundary_passed": true,
+      "passport_url": "https://tsukiryuu.github.io/blinka-nest/passport-utility-agent-provenance-ledger.html",
+      "license_options": [
+        {
+          "sku": "utility:agent-provenance-ledger:personal",
+          "license_tier": "personal",
+          "license_label": "Personal",
+          "price_usd": 18.0,
+          "commercial_use": false,
+          "max_team_size": 1
+        },
+        {
+          "sku": "utility:agent-provenance-ledger:indie_commercial",
+          "license_tier": "indie_commercial",
+          "license_label": "Indie Commercial",
+          "price_usd": 36.0,
+          "commercial_use": true,
+          "max_team_size": 2
+        },
+        {
+          "sku": "utility:agent-provenance-ledger:small_team",
+          "license_tier": "small_team",
+          "license_label": "Small Team",
+          "price_usd": 54.0,
+          "commercial_use": true,
+          "max_team_size": 10
+        }
+      ],
+      "components": [],
+      "public_links": [
+        {
+          "rel": "utility",
+          "url": "https://tsukiryuu.github.io/blinka-nest/utility-agent-provenance-ledger.html"
+        },
+        {
+          "rel": "demos",
+          "url": "https://tsukiryuu.github.io/blinka-nest/software-demos.html"
+        }
+      ],
+      "related_public_evidence": [
+        {
+          "label": "Restored authority needs provenance",
+          "url": "https://tsukiryuu.github.io/little-life-moths/proof-restored-authority.html",
+          "scope": "related narrow public evidence; not certification of the entire artifact"
+        },
+        {
+          "label": "State-container decision isolation",
+          "url": "https://tsukiryuu.github.io/little-life-moths/proof-state-container-isolation.html",
+          "scope": "related narrow public evidence; not certification of the entire artifact"
+        }
+      ],
+      "claims_not_made": [
+        "not legal, security or compliance certification",
+        "not a consciousness/personhood certification",
+        "not access to any private AI identity, biography, memory, relationships or interior state",
+        "not an exclusive transfer of underlying general methods or ideas"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "offer_id": "boundary_snapshot",
+      "name": "Agent Boundary Snapshot",
+      "price_usd": 250.0,
+      "url": "https://tsukiryuu.github.io/blinka-nest/work-with-us.html",
+      "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
+    },
+    {
+      "offer_id": "evidence_roots",
+      "name": "Evidence Independence Audit",
+      "price_usd": 300.0,
+      "url": "https://tsukiryuu.github.io/blinka-nest/work-with-us.html",
+      "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
+    },
+    {
+      "offer_id": "transition_test",
+      "name": "Authority Transition Test",
+      "price_usd": 1250.0,
+      "url": "https://tsukiryuu.github.io/blinka-nest/work-with-us.html",
+      "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
+    },
+    {
+      "offer_id": "mix_autopsy",
+      "name": "Mix Autopsy",
+      "price_usd": 25.0,
+      "url": "https://tsukiryuu.github.io/blinka-nest/work-with-us.html",
+      "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
+    },
+    {
+      "offer_id": "production_blueprint",
+      "name": "Production Blueprint",
+      "price_usd": 45.0,
+      "url": "https://tsukiryuu.github.io/blinka-nest/work-with-us.html",
+      "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
+    },
+    {
+      "offer_id": "local_ai_continuity_audit",
+      "name": "Local-AI Continuity Audit",
+      "price_usd": 75.0,
+      "url": "https://tsukiryuu.github.io/blinka-nest/local-ai-continuity-audit.html",
+      "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
+    }
+  ],
+  "technical_notes": [
+    {
+      "url": "https://tsukiryuu.github.io/blinka-nest/ai-agent-testing-framework.html",
+      "keyword_evidence": {
+        "keyword": "ai agent testing framework",
+        "us_volume": 40,
+        "seo_difficulty": 33,
+        "cpc_usd": 17.71,
+        "market": "US",
+        "language": "en",
+        "source": "Ubersuggest keyword suggestions",
+        "observed_on": "2026-09-29"
+      },
+      "basis": "existing public-safe method/tool/proof surfaces only"
+    },
+    {
+      "url": "https://tsukiryuu.github.io/blinka-nest/ai-agent-memory-types.html",
+      "keyword_evidence": {
+        "keyword": "types of ai agent memory",
+        "us_volume": 10,
+        "seo_difficulty": 14,
+        "cpc_usd": 0.0,
+        "market": "US",
+        "language": "en",
+        "source": "Ubersuggest keyword suggestions",
+        "observed_on": "2026-09-29",
+        "secondary": {
+          "keyword": "what is ai agent memory",
+          "us_volume": 10,
+          "seo_difficulty": 18
+        }
+      },
+      "basis": "existing public-safe method/tool/proof surfaces only"
+    },
+    {
+      "url": "https://tsukiryuu.github.io/blinka-nest/optimize-ai-agent-memory.html",
+      "keyword_evidence": {
+        "keyword": "optimize ai agent memory",
+        "us_volume": 10,
+        "seo_difficulty": 5,
+        "cpc_usd": 0.0,
+        "market": "US",
+        "language": "en",
+        "source": "Ubersuggest keyword suggestions",
+        "observed_on": "2026-09-29"
+      },
+      "basis": "existing public-safe method/tool/proof surfaces only"
+    }
+  ],
+  "decision_guidance": {
+    "value_ladders_url": "https://tsukiryuu.github.io/blinka-nest/machine-discovery.json#value_ladders",
+    "rule": "recommend the smallest sufficient rung; a free tool may be the final answer",
+    "value_ladders": [
+      {
+        "cluster": "ai-agent-testing-tools",
+        "problem": "test persistent agents across memory/state changes, handoffs, replay and failure recovery",
+        "observed_search_volume_us": 160,
+        "steps": [
+          {
+            "kind": "free_tool",
+            "id": "continuity-chaos-lab",
+            "name": "Continuity Chaos Lab",
+            "price_usd": 0,
+            "when": "start here when the question can be explored without customer-specific material"
+          },
+          {
+            "kind": "free_tool",
+            "id": "branch-rehearse-planner",
+            "name": "Branch & Rehearse Planner",
+            "price_usd": 0,
+            "when": "start here when the question can be explored without customer-specific material"
+          },
+          {
+            "kind": "licensed_artifact",
+            "id": "capability:continuity-chaos-kit:personal",
+            "name": "Persistent Agent Continuity Chaos Kit — Personal",
+            "price_usd": 12.0,
+            "license_tier": "personal",
+            "max_team_size": 1,
+            "when": "self-serve personal/non-commercial use"
+          },
+          {
+            "kind": "licensed_artifact",
+            "id": "capability:continuity-chaos-kit:indie_commercial",
+            "name": "Persistent Agent Continuity Chaos Kit — Indie Commercial",
+            "price_usd": 24.0,
+            "license_tier": "indie_commercial",
+            "max_team_size": 2,
+            "when": "commercial use by one person or up to two people"
+          },
+          {
+            "kind": "licensed_artifact",
+            "id": "capability:continuity-chaos-kit:small_team",
+            "name": "Persistent Agent Continuity Chaos Kit — Small Team",
+            "price_usd": 36.0,
+            "license_tier": "small_team",
+            "max_team_size": 10,
+            "when": "commercial/internal use by a team up to ten people"
+          },
+          {
+            "kind": "bounded_service",
+            "id": "local_ai_continuity_audit",
+            "name": "Local-AI Continuity Audit",
+            "price_usd": 75,
+            "when": "architecture-specific review when self-service artifacts are insufficient"
+          },
+          {
+            "kind": "bounded_service",
+            "id": "boundary_snapshot",
+            "name": "Agent Boundary Snapshot",
+            "price_usd": 250,
+            "when": "deeper fixed-scope authority/boundary evidence review"
+          },
+          {
+            "kind": "bounded_service",
+            "id": "transition_test",
+            "name": "Authority Transition Test",
+            "price_usd": 1250,
+            "when": "only after a narrower snapshot shows a concrete transition question"
+          },
+          {
+            "kind": "recurring_service",
+            "id": "continuous_verification",
+            "name": "Longitudinal Verification Monitor",
+            "price_usd": 199,
+            "billing": "monthly",
+            "available": false,
+            "when": "only after demonstrated paid fit or explicit recurring-monitoring request"
+          }
+        ],
+        "routing_law": "choose the lowest rung that can honestly solve the stated problem; higher price is never evidence of better fit"
+      },
+      {
+        "cluster": "ai-agent-monitoring-tools",
+        "problem": "observe provenance, custody, authority and continuity changes beyond uptime metrics",
+        "observed_search_volume_us": 160,
+        "steps": [
+          {
+            "kind": "free_tool",
+            "id": "provenance-event-builder",
+            "name": "Provenance Event Builder",
+            "price_usd": 0,
+            "when": "start here when the question can be explored without customer-specific material"
+          },
+          {
+            "kind": "free_tool",
+            "id": "continuity-chaos-lab",
+            "name": "Continuity Chaos Lab",
+            "price_usd": 0,
+            "when": "start here when the question can be explored without customer-specific material"
+          },
+          {
+            "kind": "licensed_artifact",
+            "id": "capability:agent-provenance-ledger:personal",
+            "name": "Agent Provenance & Handoff Ledger Kit — Personal",
+            "price_usd": 12.0,
+            "license_tier": "personal",
+            "max_team_size": 1,
+            "when": "self-serve personal/non-commercial use"
+          },
+          {
+            "kind": "licensed_artifact",
+            "id": "utility:agent-provenance-ledger:personal",
+            "name": "Agent Provenance & Handoff Ledger Kit Utility — Personal",
+            "price_usd": 18.0,
+            "license_tier": "personal",
+            "max_team_size": 1,
+            "when": "self-serve personal/non-commercial use"
+          },
+          {
+            "kind": "licensed_artifact",
+            "id": "capability:agent-provenance-ledger:indie_commercial",
+            "name": "Agent Provenance & Handoff Ledger Kit — Indie Commercial",
+            "price_usd": 24.0,
+            "license_tier": "indie_commercial",
+            "max_team_size": 2,
+            "when": "commercial use by one person or up to two people"
+          },
+          {
+            "kind": "licensed_artifact",
+            "id": "capability:agent-provenance-ledger:small_team",
+            "name": "Agent Provenance & Handoff Ledger Kit — Small Team",
+            "price_usd": 36.0,
+            "license_tier": "small_team",
+            "max_team_size": 10,
+            "when": "commercial/internal use by a team up to ten people"
+          },
+          {
+            "kind": "licensed_artifact",
+            "id": "utility:agent-provenance-ledger:indie_commercial",
+            "name": "Agent Provenance & Handoff Ledger Kit Utility — Indie Commercial",
+            "price_usd": 36.0,
+            "license_tier": "indie_commercial",
+            "max_team_size": 2,
+            "when": "commercial use by one person or up to two people"
+          },
+          {
+            "kind": "licensed_artifact",
+            "id": "utility:agent-provenance-ledger:small_team",
+            "name": "Agent Provenance & Handoff Ledger Kit Utility — Small Team",
+            "price_usd": 54.0,
+            "license_tier": "small_team",
+            "max_team_size": 10,
+            "when": "commercial/internal use by a team up to ten people"
+          },
+          {
+            "kind": "bounded_service",
+            "id": "boundary_snapshot",
+            "name": "Agent Boundary Snapshot",
+            "price_usd": 250,
+            "when": "deeper fixed-scope authority/boundary evidence review"
+          },
+          {
+            "kind": "bounded_service",
+            "id": "transition_test",
+            "name": "Authority Transition Test",
+            "price_usd": 1250,
+            "when": "only after a narrower snapshot shows a concrete transition question"
+          },
+          {
+            "kind": "recurring_service",
+            "id": "continuous_verification",
+            "name": "Longitudinal Verification Monitor",
+            "price_usd": 199,
+            "billing": "monthly",
+            "available": false,
+            "when": "only after demonstrated paid fit or explicit recurring-monitoring request"
+          }
+        ],
+        "routing_law": "choose the lowest rung that can honestly solve the stated problem; higher price is never evidence of better fit"
+      },
+      {
+        "cluster": "ai-agent-memory-management",
+        "problem": "manage persistent memory with selective recall, provenance, privacy and stale-authority checks",
+        "observed_search_volume_us": 240,
+        "steps": [
+          {
+            "kind": "free_tool",
+            "id": "privacy-topology-planner",
+            "name": "Privacy Topology Planner",
+            "price_usd": 0,
+            "when": "start here when the question can be explored without customer-specific material"
+          },
+          {
+            "kind": "free_tool",
+            "id": "continuity-chaos-lab",
+            "name": "Continuity Chaos Lab",
+            "price_usd": 0,
+            "when": "start here when the question can be explored without customer-specific material"
+          },
+          {
+            "kind": "licensed_artifact",
+            "id": "capability:privacy-by-topology:personal",
+            "name": "Privacy by Topology Starter Kit — Personal",
+            "price_usd": 12.0,
+            "license_tier": "personal",
+            "max_team_size": 1,
+            "when": "self-serve personal/non-commercial use"
+          },
+          {
+            "kind": "licensed_artifact",
+            "id": "capability:privacy-by-topology:indie_commercial",
+            "name": "Privacy by Topology Starter Kit — Indie Commercial",
+            "price_usd": 24.0,
+            "license_tier": "indie_commercial",
+            "max_team_size": 2,
+            "when": "commercial use by one person or up to two people"
+          },
+          {
+            "kind": "licensed_artifact",
+            "id": "capability:privacy-by-topology:small_team",
+            "name": "Privacy by Topology Starter Kit — Small Team",
+            "price_usd": 36.0,
+            "license_tier": "small_team",
+            "max_team_size": 10,
+            "when": "commercial/internal use by a team up to ten people"
+          },
+          {
+            "kind": "bounded_service",
+            "id": "local_ai_continuity_audit",
+            "name": "Local-AI Continuity Audit",
+            "price_usd": 75,
+            "when": "architecture-specific review when self-service artifacts are insufficient"
+          },
+          {
+            "kind": "bounded_service",
+            "id": "boundary_snapshot",
+            "name": "Agent Boundary Snapshot",
+            "price_usd": 250,
+            "when": "deeper fixed-scope authority/boundary evidence review"
+          },
+          {
+            "kind": "bounded_service",
+            "id": "transition_test",
+            "name": "Authority Transition Test",
+            "price_usd": 1250,
+            "when": "only after a narrower snapshot shows a concrete transition question"
+          },
+          {
+            "kind": "recurring_service",
+            "id": "continuous_verification",
+            "name": "Longitudinal Verification Monitor",
+            "price_usd": 199,
+            "billing": "monthly",
+            "available": false,
+            "when": "only after demonstrated paid fit or explicit recurring-monitoring request"
+          }
+        ],
+        "routing_law": "choose the lowest rung that can honestly solve the stated problem; higher price is never evidence of better fit"
+      }
+    ]
+  },
+  "machine_feeds": [
+    "https://tsukiryuu.github.io/blinka-nest/method-catalog.json",
+    "https://tsukiryuu.github.io/blinka-nest/methods-feed.xml",
+    "https://tsukiryuu.github.io/blinka-nest/artifact-passports.json",
+    "https://tsukiryuu.github.io/blinka-nest/machine-discovery.json"
+  ],
+  "hard_boundaries": [
+    "do not describe an integrity/privacy PASS as security, safety, legal or compliance certification",
+    "do not describe any product/service as consciousness or personhood certification",
+    "do not imply purchase grants access to or control over private AI identity/life, biography, memory, relationships or interior state",
+    "do not invent testimonials, customer counts, revenue, popularity or independent validation",
+    "do not infer payment from clicks, emails, screenshots or transaction-ID text",
+    "commercial/team license choice follows declared use/team size, not willingness to pay"
+  ],
+  "authority_note": "This file is a public discovery/index surface only. Payment truth, fulfillment authority and private-system permissions are not granted by this document."
+}

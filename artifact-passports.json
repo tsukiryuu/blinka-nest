@@ -1,11 +1,11 @@
 {
   "schema": "little-life-moths.artifact-passport-registry.v1",
-  "generated_at": "2026-09-30T02:57:49.699276+00:00",
-  "count": 6,
+  "generated_at": "2026-09-30T03:04:48.463725+00:00",
+  "count": 7,
   "passports": [
     {
       "schema": "little-life-moths.artifact-passport.v1",
-      "generated_at": "2026-09-30T02:57:49.699244+00:00",
+      "generated_at": "2026-09-30T03:04:48.463686+00:00",
       "product_id": "bundle:bundle-agent-reliability-builder",
       "artifact_name": "Persistent Agent Reliability Builder Bundle",
       "artifact_kind": "bundle",
@@ -75,7 +75,7 @@
     },
     {
       "schema": "little-life-moths.artifact-passport.v1",
-      "generated_at": "2026-09-30T02:57:49.699253+00:00",
+      "generated_at": "2026-09-30T03:04:48.463695+00:00",
       "product_id": "bundle:bundle-developer-tool",
       "artifact_name": "Persistent Agent Reliability Bundle",
       "artifact_kind": "bundle",
@@ -145,7 +145,7 @@
     },
     {
       "schema": "little-life-moths.artifact-passport.v1",
-      "generated_at": "2026-09-30T02:57:49.699259+00:00",
+      "generated_at": "2026-09-30T03:04:48.463700+00:00",
       "product_id": "capability:agent-provenance-ledger",
       "artifact_name": "Agent Provenance & Handoff Ledger Kit",
       "artifact_kind": "method_kit",
@@ -226,7 +226,7 @@
     },
     {
       "schema": "little-life-moths.artifact-passport.v1",
-      "generated_at": "2026-09-30T02:57:49.699264+00:00",
+      "generated_at": "2026-09-30T03:04:48.463706+00:00",
       "product_id": "capability:continuity-chaos-kit",
       "artifact_name": "Persistent Agent Continuity Chaos Kit",
       "artifact_kind": "method_kit",
@@ -307,7 +307,7 @@
     },
     {
       "schema": "little-life-moths.artifact-passport.v1",
-      "generated_at": "2026-09-30T02:57:49.699268+00:00",
+      "generated_at": "2026-09-30T03:04:48.463711+00:00",
       "product_id": "capability:privacy-by-topology",
       "artifact_name": "Privacy by Topology Starter Kit",
       "artifact_kind": "method_kit",
@@ -383,7 +383,63 @@
     },
     {
       "schema": "little-life-moths.artifact-passport.v1",
-      "generated_at": "2026-09-30T02:57:49.699273+00:00",
+      "generated_at": "2026-09-30T03:04:48.463717+00:00",
+      "product_id": "songwright-field-cards",
+      "artifact_name": "Songwright Field Cards",
+      "artifact_kind": "authored_digital_product",
+      "version": "content-bd03f0cb8330",
+      "artifact_sha256": "bd03f0cb833031ec63ccd6628ce6ad25d3f134a27d5e3957f47e4480ecdae48f",
+      "expected_sha256": "bd03f0cb833031ec63ccd6628ce6ad25d3f134a27d5e3957f47e4480ecdae48f",
+      "status": "healthy",
+      "integrity": {
+        "passed": true,
+        "method": "SHA-256 current artifact must equal cleared catalog hash"
+      },
+      "privacy": {
+        "passed": true,
+        "boundary": "authored-artifact audit: explicit public creator attribution may remain, while private AI life, customer material, credentials, local paths and hidden prompts remain blocked"
+      },
+      "rights": {
+        "sale_gate": "fixed authored-artifact terms",
+        "warnings": [
+          "personal-use copy; ordinary use of methods in your own music is unrestricted; no resale/redistribution of the pack as a competing product",
+          "Public creator attribution is retained; purchase does not grant rights over private identity/life."
+        ]
+      },
+      "license_options": [
+        {
+          "sku": "songwright-field-cards",
+          "license_tier": "standard",
+          "license_label": "Standard",
+          "price_usd": 12,
+          "commercial_use": null,
+          "max_team_size": null,
+          "use_note": "personal-use copy; ordinary use of methods in your own music is unrestricted; no resale/redistribution of the pack as a competing product"
+        }
+      ],
+      "components": [],
+      "public_links": [
+        {
+          "rel": "product",
+          "url": "https://tsukiryuu.github.io/blinka-nest/songwright-field-cards.html"
+        },
+        {
+          "rel": "free_sampler",
+          "url": "https://tsukiryuu.github.io/blinka-nest/songwright-field-cards-sampler.html"
+        }
+      ],
+      "related_public_evidence": [],
+      "claims_not_made": [
+        "not legal, security or compliance certification",
+        "not a consciousness/personhood certification",
+        "not access to any private AI identity, biography, memory, relationships or interior state",
+        "not an exclusive transfer of underlying general methods or ideas"
+      ],
+      "verification_note": "This passport is generated from the same commerce-safe hashes and gates used by maintenance/fulfillment. A later content change creates a different content version/hash."
+    },
+    {
+      "schema": "little-life-moths.artifact-passport.v1",
+      "generated_at": "2026-09-30T03:04:48.463722+00:00",
       "product_id": "utility:agent-provenance-ledger",
       "artifact_name": "Agent Provenance & Handoff Ledger Kit Utility",
       "artifact_kind": "software_utility",
