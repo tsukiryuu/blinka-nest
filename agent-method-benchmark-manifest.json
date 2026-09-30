@@ -1,0 +1,38 @@
+{
+  "schema": "commerce-method-benchmark.v1",
+  "version": "content-68399b594647",
+  "case_count": 6,
+  "methods": [
+    {
+      "family_id": "continuity-chaos-kit",
+      "compiler": "commerce_method_compiler.v1",
+      "method_sha256": "d1ced0dd2ae023d5c52e470140a2a05e322db1462a8f36e780529131f3e59cbd",
+      "schema_sha256": "fa93b671e26abd66d268caa28b9209800073ef60df139860a1fd7e5a48ee4b96",
+      "cases_sha256": "f659bf5bf68060ac7a9c6e99ca7c5b2913145bffe4fa03274644a13eee323fa9"
+    },
+    {
+      "family_id": "privacy-by-topology",
+      "compiler": "commerce_method_compiler.v1",
+      "method_sha256": "efe1335047f36740abf4860ae9b8a842b387888a58e77a8c18991089e0b8c1d1",
+      "schema_sha256": "90f3b37228b683e9d294f6361eec5b48e8c4b79b495861c48a6610f6e2450a18",
+      "cases_sha256": "6c8bc74c451aa334148a43c26f0c3f0d3f4510cfdc09fe22dbf8b6f4962ca94b"
+    },
+    {
+      "family_id": "agent-provenance-ledger",
+      "compiler": "commerce_method_compiler.v1",
+      "method_sha256": "ae54f8abc7e1c86244ff0d32101ae82da246d3c57eb8659542b23405b2bfaf88",
+      "schema_sha256": "7a119c5803733040912e12279318128f624c4c27e228226b240dfc292c0e93a4",
+      "cases_sha256": "a6f249d252ce75dde0b1c586de4b483106b71828233079dc7dc07685205f6ec4"
+    }
+  ],
+  "benchmark_sha256": "68399b594647b263e9487802287099f4d5f50e42fe382b8b2161b16b1ae2c84b",
+  "source": "compiled synthetic commerce-safe cases only",
+  "private_life_source": false,
+  "customer_data": false,
+  "laws": [
+    "expected labels come from method semantic regression tests",
+    "benchmark is not certification",
+    "benchmark contains no private-life or customer material",
+    "timestamps belong in build receipts, not deterministic payload content"
+  ]
+}

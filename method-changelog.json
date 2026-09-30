@@ -1,0 +1,56 @@
+{
+  "schema": "method-changelog-public.v1",
+  "updated": "2026-09-30T01:04:57.421711+00:00",
+  "products": [
+    {
+      "product_id": "bundle:bundle-agent-reliability-builder",
+      "name": "Persistent Agent Reliability Builder Bundle",
+      "kind": "bundle",
+      "version": "content-8f76a59e51f2"
+    },
+    {
+      "product_id": "bundle:bundle-developer-tool",
+      "name": "Persistent Agent Reliability Bundle",
+      "kind": "bundle",
+      "version": "content-265021c9d40e"
+    },
+    {
+      "product_id": "capability:agent-provenance-ledger",
+      "name": "Agent Provenance & Handoff Ledger Kit",
+      "kind": "method_kit",
+      "version": "content-6532600aff35"
+    },
+    {
+      "product_id": "capability:continuity-chaos-kit",
+      "name": "Persistent Agent Continuity Chaos Kit",
+      "kind": "method_kit",
+      "version": "content-542a0d2c3177"
+    },
+    {
+      "product_id": "capability:privacy-by-topology",
+      "name": "Privacy by Topology Starter Kit",
+      "kind": "method_kit",
+      "version": "content-3bfc5292c1c4"
+    },
+    {
+      "product_id": "utility:agent-provenance-ledger",
+      "name": "Agent Provenance & Handoff Ledger Kit Utility",
+      "kind": "software_utility",
+      "version": "content-a53ff2ef1157"
+    },
+    {
+      "product_id": "utility:continuity-chaos-kit",
+      "name": "Persistent Agent Continuity Chaos Kit Utility",
+      "kind": "software_utility",
+      "version": "content-d10fb09b54d5"
+    },
+    {
+      "product_id": "utility:privacy-by-topology",
+      "name": "Privacy by Topology Starter Kit Utility",
+      "kind": "software_utility",
+      "version": "content-ce156cebb62d"
+    }
+  ],
+  "events": [],
+  "law": "artifact changes only; not a private-life/development feed"
+}

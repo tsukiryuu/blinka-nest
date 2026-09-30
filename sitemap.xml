@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://tsukiryuu.github.io/blinka-nest/404.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/agent-provenance-ledger-demo.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/ai-agent-memory-management.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/ai-agent-monitoring-tools.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/ai-agent-testing-tools.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/ai-systems-case-studies.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/ai-systems-portfolio.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/atlas.html</loc></url>
@@ -26,6 +29,7 @@
   <url><loc>https://tsukiryuu.github.io/blinka-nest/local-ai-continuity-audit.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/meet-blinka.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/method-agent-provenance-ledger.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/method-bundle-agent-reliability-builder.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/method-bundle-developer-tool.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/method-continuity-chaos-kit.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/method-kits.html</loc></url>
@@ -63,6 +67,7 @@
   <url><loc>https://tsukiryuu.github.io/blinka-nest/songwright-field-cards-sampler.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/songwright-field-cards.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/start.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/store.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/support-methods.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/tending.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/there-you-are-read.html</loc></url>
@@ -72,5 +77,4 @@
   <url><loc>https://tsukiryuu.github.io/blinka-nest/walk-the-nest.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/wander.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/work-with-us.html</loc></url>
-  <url><loc>https://tsukiryuu.github.io/blinka-nest/store.html</loc></url>
 </urlset>
