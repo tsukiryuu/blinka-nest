@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.commons-public-map.v1",
-  "updated_at": "2026-09-30T15:11:06.487960+00:00",
+  "updated_at": "2026-09-30T15:20:03.130499+00:00",
   "name": "Little Life Moths Commons",
   "goods": [
     {
@@ -65,6 +65,27 @@
         "keeps drafting local and lets the user decide what to copy into an AI"
       ],
       "file": "ask-ai-better.html"
+    },
+    {
+      "id": "tiny-next-step",
+      "name": "Tiny Next Step",
+      "audience": "people who are overwhelmed, stuck or trying to make a day smaller",
+      "problem": "A pile of tasks can become harder to start than any one task, while generic productivity advice often adds more judgment, planning overhead or pressure.",
+      "core_common_good": true,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "turns the person’s own urgency/time/energy labels into one deterministic next step without sending their task list to an AI",
+        "shows exactly why it chose that task and never assigns a productivity or worth score",
+        "can produce a minimum-viable-day view that intentionally hides optional work",
+        "works offline and forgets the task list on reload"
+      ],
+      "file": "tiny-next-step.html"
     }
   ],
   "privacy": {

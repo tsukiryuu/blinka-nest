@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.machine-discovery.v1",
-  "updated_at": "2026-09-30T15:12:09.465302+00:00",
+  "updated_at": "2026-09-30T15:20:49.335316+00:00",
   "entity": {
     "name": "Little Life Moths",
     "type": "independent research / methods / bounded services",
@@ -42,6 +42,14 @@
         "id": "ask-ai-better",
         "name": "Ask AI Better",
         "file": "ask-ai-better.html",
+        "never_auto_paywall": true,
+        "network_required": false,
+        "tracks_users": false
+      },
+      {
+        "id": "tiny-next-step",
+        "name": "Tiny Next Step",
+        "file": "tiny-next-step.html",
         "never_auto_paywall": true,
         "network_required": false,
         "tracks_users": false
