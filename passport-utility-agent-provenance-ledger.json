@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.artifact-passport.v1",
-  "generated_at": "2026-09-30T09:56:11.856372+00:00",
+  "generated_at": "2026-09-30T15:58:56.657336+00:00",
   "product_id": "utility:agent-provenance-ledger",
   "artifact_name": "Agent Provenance & Handoff Ledger Kit Utility",
   "artifact_kind": "software_utility",
