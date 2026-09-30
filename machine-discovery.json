@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.machine-discovery.v1",
-  "updated_at": "2026-09-30T15:58:56.910014+00:00",
+  "updated_at": "2026-09-30T16:30:12.797346+00:00",
   "entity": {
     "name": "Little Life Moths",
     "type": "independent research / methods / bounded services",
@@ -50,6 +50,30 @@
         "id": "tiny-next-step",
         "name": "Tiny Next Step",
         "file": "tiny-next-step.html",
+        "never_auto_paywall": true,
+        "network_required": false,
+        "tracks_users": false
+      },
+      {
+        "id": "suspicious-message-first-aid",
+        "name": "Suspicious Message First Aid",
+        "file": "suspicious-message-first-aid.html",
+        "never_auto_paywall": true,
+        "network_required": false,
+        "tracks_users": false
+      },
+      {
+        "id": "permission-translator",
+        "name": "Permission Translator",
+        "file": "permission-translator.html",
+        "never_auto_paywall": true,
+        "network_required": false,
+        "tracks_users": false
+      },
+      {
+        "id": "ai-claim-decoder",
+        "name": "AI Claim Decoder",
+        "file": "ai-claim-decoder.html",
         "never_auto_paywall": true,
         "network_required": false,
         "tracks_users": false

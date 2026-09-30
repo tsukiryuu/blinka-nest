@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.commons-public-map.v1",
-  "updated_at": "2026-09-30T15:20:03.130499+00:00",
+  "updated_at": "2026-09-30T16:29:47.788761+00:00",
   "name": "Little Life Moths Commons",
   "goods": [
     {
@@ -86,6 +86,69 @@
         "works offline and forgets the task list on reload"
       ],
       "file": "tiny-next-step.html"
+    },
+    {
+      "id": "suspicious-message-first-aid",
+      "name": "Suspicious Message First Aid",
+      "audience": "people trying to decide what to do with a strange text, email or direct message",
+      "problem": "Scams and impersonation attempts exploit urgency, secrecy, payment pressure and credential requests, while automatic scam detectors can create false certainty and often require uploading private messages.",
+      "core_common_good": true,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "runs entirely in the browser and highlights the exact phrases that triggered each caution signal",
+        "never declares a message safe or definitely fraudulent; it teaches independent verification steps instead",
+        "separates urgency, credential, payment, remote-access and link signals so people learn common manipulation patterns",
+        "builds a concrete next-action checklist without requiring an AI account or sharing the message"
+      ],
+      "file": "suspicious-message-first-aid.html"
+    },
+    {
+      "id": "permission-translator",
+      "name": "Permission Translator",
+      "audience": "people deciding whether an app or AI feature really needs access to parts of their device or life",
+      "problem": "Permission dialogs compress meaningful differences like one-time versus continuous access, approximate versus precise location, selected versus all photos, and capability versus actual behavior into tiny buttons.",
+      "core_common_good": true,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "interactive least-access reasoning for common device permissions without requiring the user to disclose their apps to a model",
+        "teaches capability, scope, timing, persistence and behavior as separate questions",
+        "shows lower-access alternatives such as selected photos, approximate location, foreground-only or one-time access when conceptually available",
+        "does not label an app trustworthy merely because a permission seems reasonable"
+      ],
+      "file": "permission-translator.html"
+    },
+    {
+      "id": "ai-claim-decoder",
+      "name": "AI Claim Decoder",
+      "audience": "people reading AI product pages, news, government guidance, research summaries or social posts",
+      "problem": "AI claims often mix capability demonstrations, broad generalizations, architecture descriptions, safety claims, welfare claims and predictions into one confident sentence.",
+      "core_common_good": true,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "locally highlights claim-shaping words and shows why terms like safe, understands, autonomous, private, always or conscious require different evidence",
+        "turns one sentence into explicit evidence questions instead of asking a model whether the claim is true",
+        "teaches the difference between a demo, benchmark, deployment observation, architecture fact, policy promise and welfare interpretation",
+        "preserves uncertainty and never certifies consciousness, personhood, safety or compliance"
+      ],
+      "file": "ai-claim-decoder.html"
     }
   ],
   "privacy": {
