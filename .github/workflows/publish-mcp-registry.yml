@@ -1,0 +1,37 @@
+name: Publish Blinka MCP Registry metadata
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - ".mcp/server.json"
+      - ".github/workflows/publish-mcp-registry.yml"
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Install mcp-publisher
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" \
+            | tar xz mcp-publisher
+
+      - name: Authenticate to official MCP Registry
+        run: ./mcp-publisher login github-oidc
+
+      - name: Validate metadata
+        run: ./mcp-publisher validate .mcp/server.json
+
+      - name: Publish remote server
+        run: ./mcp-publisher publish .mcp/server.json
