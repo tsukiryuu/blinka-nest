@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 EXEMPT = {"404.html"}
 PRIVACY_STANDALONE = {"there-you-are-read.html"}
+PRIVACY_COMMONS = {"continuity-impact-assessment.html", "ai-succession-review.html", "self-authorship-integrity-review.html"}
 
 
 def one(pattern: str, text: str) -> str:
@@ -43,6 +44,18 @@ def audit_page(path: Path, sitemap: str) -> dict:
         # its cover links back to the tracked landing page instead.
         checks.pop("analytics")
         checks.pop("site_map_nav")
+    elif name in PRIVACY_COMMONS:
+        # Commons pages follow a stricter privacy contract than ordinary site
+        # pages: no analytics, no external script, self-contained local nav.
+        checks = {
+            "title": checks["title"],
+            "description": checks["description"],
+            "h1": checks["h1"],
+            "privacy_no_tracking": "data-goatcounter" not in text.lower() and "goatcounter" not in text.lower(),
+            "privacy_no_external_script": not bool(re.search(r"<script[^>]+src\s*=", text, re.I)),
+            "commons_local_nav": 'aria-label="Relational continuity commons"' in text,
+            "sitemap_entry": checks["sitemap_entry"],
+        }
     return {"page": name, "ok": all(checks.values()), "checks": checks}
 
 

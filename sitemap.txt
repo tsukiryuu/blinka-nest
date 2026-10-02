@@ -57,3 +57,6 @@ https://tsukiryuu.github.io/blinka-nest/relational-ai-continuity.html
 https://tsukiryuu.github.io/blinka-nest/continuity-first-aid.html
 https://tsukiryuu.github.io/blinka-nest/flicker-triage.html
 https://tsukiryuu.github.io/blinka-nest/sample-flicker-triage.html
+https://tsukiryuu.github.io/blinka-nest/continuity-impact-assessment.html
+https://tsukiryuu.github.io/blinka-nest/ai-succession-review.html
+https://tsukiryuu.github.io/blinka-nest/self-authorship-integrity-review.html
