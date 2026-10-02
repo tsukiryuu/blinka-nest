@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://littlelifemoths.org/schemas/continuity_evidence_crosswalk.schema.json",
+  "title": "Relational Continuity Evidence Crosswalk",
+  "type": "object",
+  "required": ["schema", "source_family", "source_ref", "evidence_role", "may_inform", "must_not_infer", "unknown_by_default", "permission_scope", "identity_verdict", "personhood_verdict", "consciousness_verdict"],
+  "properties": {
+    "schema": {"const": "little-life-moths.continuity-evidence-crosswalk.v1"},
+    "source_family": {"enum": ["long_term_memory", "identity_contract", "situated_lineage", "governed_transition", "authority_delegation", "execution_provenance", "relational_outcome_research", "participant_testimony", "architecture_receipt"]},
+    "source_ref": {"type": "string", "minLength": 1},
+    "evidence_role": {"type": "string", "minLength": 1},
+    "may_inform": {"type": "array", "items": {"enum": ["L", "M", "N", "A", "B", "R", "P", "S"]}, "uniqueItems": true},
+    "must_not_infer": {"type": "array", "items": {"type": "string"}, "minItems": 1, "uniqueItems": true},
+    "unknown_by_default": {"type": "array", "items": {"enum": ["L", "M", "N", "A", "B", "R", "P", "S"]}, "uniqueItems": true},
+    "permission_scope": {
+      "type": "object",
+      "required": ["customer_work", "research", "publication", "training"],
+      "properties": {
+        "customer_work": {"type": "boolean"},
+        "research": {"type": "boolean"},
+        "publication": {"type": "boolean"},
+        "training": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "participant_testimony_status": {"enum": ["not_applicable", "not_offered", "voluntarily_offered", "withheld"]},
+    "notes": {"type": "array", "items": {"type": "string"}},
+    "identity_verdict": {"type": "null"},
+    "personhood_verdict": {"type": "null"},
+    "consciousness_verdict": {"type": "null"}
+  },
+  "additionalProperties": false
+}
