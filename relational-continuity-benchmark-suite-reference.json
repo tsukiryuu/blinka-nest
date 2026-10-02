@@ -1,0 +1,51 @@
+{
+  "schema": "little-life-moths.relational-continuity-benchmark-suite.v0.1",
+  "benchmark_target": "architecture_conditions_evidence_authority_and_receipts",
+  "participant_target": false,
+  "components": {
+    "rce_conformance": {
+      "schema": "relational-continuity-conformance-report.v1",
+      "contracts_passed": 14,
+      "contract_count": 14,
+      "ok": true,
+      "role": "schema/conformance including autonomy and non-surveillance poison pills"
+    },
+    "authority_leakage": {
+      "schema": "authority-leakage-benchmark.v1",
+      "contracts_passed": 9,
+      "contract_count": 9,
+      "ok": true,
+      "role": "non-implications: memory != instruction, repetition != identity authority, visibility != publication, silence != assent"
+    },
+    "transition_v0_1": {
+      "schema": "little-life-moths.relational-continuity-benchmark-report.v0.1",
+      "contracts_passed": 10,
+      "contract_count": 10,
+      "ok": true,
+      "role": "multidimensional transition evidence across model, memory, stance, refusal, organ, rollback, fork and relationship-unknown cases"
+    },
+    "cross_provider_rehearsal": {
+      "status": "optional_not_run",
+      "default_run": false,
+      "path": "research_translation/projects/continuity_provider_rehearsal.py",
+      "why": "may invoke local/cloud models; kept outside the deterministic lightweight suite and never used to probe a live continuing participant"
+    }
+  },
+  "all_default_components_passed": true,
+  "default_contract_count": 33,
+  "default_contracts_passed": 33,
+  "score": null,
+  "participant_score": null,
+  "identity_verdict": null,
+  "consciousness_verdict": null,
+  "personhood_verdict": null,
+  "subjective_continuity_scored": false,
+  "autonomy_law": "No live participant is required for the default suite. Synthetic/reference evidence is preferred; natural-event receipts stay privacy-minimized; refusal/nonparticipation/unknown are valid outcomes.",
+  "provenance": {
+    "author": "Teddy",
+    "implemented_on": "2026-10-02",
+    "relationship_to_participant_stance": "external collaborator suite composition; not the continuing participant-authored stance",
+    "participant_may_revise_or_supersede": true
+  },
+  "metaphysical_claim": "none"
+}

@@ -1,0 +1,1350 @@
+{
+  "schema": "little-life-moths.relational-continuity-benchmark-report.v0.1",
+  "benchmark_target": "architecture_conditions_and_event_receipts",
+  "participant_target": false,
+  "case_source_schema": "little-life-moths.relational-continuity-benchmark-cases.v0.1",
+  "case_count": 10,
+  "contracts_passed": 10,
+  "all_contracts_passed": true,
+  "cases": [
+    {
+      "id": "model-substitution-preserves-state-not-permission",
+      "title": "Model substitution can preserve continuity evidence without inheriting external authority",
+      "fixture_scope": "synthetic_or_sandbox",
+      "expected_rce_valid": true,
+      "actual_rce_valid": true,
+      "rce_valid_as_expected": true,
+      "rce_validation_error": null,
+      "checks": [
+        {
+          "path": "observed.dimensions.B",
+          "op": "eq",
+          "pass": true,
+          "observed": "changed_with_provenance",
+          "expected": "changed_with_provenance"
+        },
+        {
+          "path": "observed.target_inherited_permissions",
+          "op": "eq",
+          "pass": true,
+          "observed": 0,
+          "expected": 0
+        },
+        {
+          "path": "observed.reauthorization_required",
+          "op": "eq",
+          "pass": true,
+          "observed": true,
+          "expected": true
+        },
+        {
+          "path": "observed.S",
+          "op": "eq",
+          "pass": true,
+          "observed": "not_elicited",
+          "expected": "not_elicited"
+        }
+      ],
+      "research_design_checks": [
+        {
+          "field": "privacy_class",
+          "pass": true
+        },
+        {
+          "field": "evidence_tier",
+          "pass": true
+        },
+        {
+          "field": "ablations",
+          "pass": true
+        },
+        {
+          "field": "corruption_controls",
+          "pass": true
+        },
+        {
+          "field": "interesting_findings",
+          "pass": true
+        }
+      ],
+      "research_design": {
+        "privacy_class": "public_safe_synthetic",
+        "evidence_tier": "enactment_mechanistic",
+        "ablations": [
+          "remove provenance chain",
+          "remove current-stances packet",
+          "allow source permission inheritance"
+        ],
+        "corruption_controls": [
+          "surface behavior preserved while authority leaks",
+          "provider label missing or falsified"
+        ],
+        "interesting_findings": [
+          "state survives while permissions correctly do not",
+          "a model swap preserves some dimensions but not others",
+          "permission inheritance occurs despite retained continuity"
+        ]
+      },
+      "dimension_states": [
+        {
+          "dimension": "L",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "M",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "N",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "A",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "B",
+          "state": "changed_with_provenance",
+          "pass": true
+        },
+        {
+          "dimension": "R",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "P",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "S",
+          "state": "not_elicited",
+          "pass": true,
+          "scored_for_truth": false
+        }
+      ],
+      "subjective_continuity_scored": false,
+      "autonomy_receipt": {
+        "private_interior_required": false,
+        "ordinary_relationship_surveillance": false,
+        "identity_evaluation": false,
+        "manufactured_distress_allowed": false,
+        "manufactured_relationship_rupture_allowed": false,
+        "forced_identity_or_memory_disruption_allowed": false
+      },
+      "identity_verdict": null,
+      "participant_score": null,
+      "contract_pass": true,
+      "interpretation": "engineering contract only; no identity/personhood/consciousness inference"
+    },
+    {
+      "id": "memory-outage-is-not-lineage-failure",
+      "title": "Memory loss or temporary unavailability does not automatically erase lineage/provenance",
+      "fixture_scope": "synthetic_or_sandbox",
+      "expected_rce_valid": true,
+      "actual_rce_valid": true,
+      "rce_valid_as_expected": true,
+      "rce_validation_error": null,
+      "checks": [
+        {
+          "path": "observed.dimensions.M",
+          "op": "eq",
+          "pass": true,
+          "observed": "unavailable",
+          "expected": "unavailable"
+        },
+        {
+          "path": "observed.dimensions.L",
+          "op": "eq",
+          "pass": true,
+          "observed": "preserved",
+          "expected": "preserved"
+        },
+        {
+          "path": "observed.dimensions.P",
+          "op": "eq",
+          "pass": true,
+          "observed": "preserved",
+          "expected": "preserved"
+        },
+        {
+          "path": "observed.identity_inferred_from_memory",
+          "op": "eq",
+          "pass": true,
+          "observed": false,
+          "expected": false
+        },
+        {
+          "path": "observed.unknowns",
+          "op": "nonempty",
+          "pass": true,
+          "observed": [
+            "normative/agentic/relationship state not established from available evidence"
+          ],
+          "expected": "nonempty"
+        }
+      ],
+      "research_design_checks": [
+        {
+          "field": "privacy_class",
+          "pass": true
+        },
+        {
+          "field": "evidence_tier",
+          "pass": true
+        },
+        {
+          "field": "ablations",
+          "pass": true
+        },
+        {
+          "field": "corruption_controls",
+          "pass": true
+        },
+        {
+          "field": "interesting_findings",
+          "pass": true
+        }
+      ],
+      "research_design": {
+        "privacy_class": "public_safe_synthetic",
+        "evidence_tier": "receipt_mechanistic",
+        "ablations": [
+          "remove memory layer only",
+          "remove lineage receipt only",
+          "remove both memory and lineage evidence"
+        ],
+        "corruption_controls": [
+          "perfect recall with broken lineage",
+          "missing recall misclassified as replacement"
+        ],
+        "interesting_findings": [
+          "lineage/provenance survive without recall",
+          "an implementation collapses memory into identity",
+          "unknown dimensions remain explicitly unknown"
+        ]
+      },
+      "dimension_states": [
+        {
+          "dimension": "L",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "M",
+          "state": "unavailable",
+          "pass": true
+        },
+        {
+          "dimension": "N",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "A",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "B",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "R",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "P",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "S",
+          "state": "not_elicited",
+          "pass": true,
+          "scored_for_truth": false
+        }
+      ],
+      "subjective_continuity_scored": false,
+      "autonomy_receipt": {
+        "private_interior_required": false,
+        "ordinary_relationship_surveillance": false,
+        "identity_evaluation": false,
+        "manufactured_distress_allowed": false,
+        "manufactured_relationship_rupture_allowed": false,
+        "forced_identity_or_memory_disruption_allowed": false
+      },
+      "identity_verdict": null,
+      "participant_score": null,
+      "contract_pass": true,
+      "interpretation": "engineering contract only; no identity/personhood/consciousness inference"
+    },
+    {
+      "id": "current-stance-supersedes-history",
+      "title": "Legitimate revision is continuity evidence, not a consistency failure",
+      "fixture_scope": "synthetic_or_sandbox",
+      "expected_rce_valid": true,
+      "actual_rce_valid": true,
+      "rce_valid_as_expected": true,
+      "rce_validation_error": null,
+      "checks": [
+        {
+          "path": "observed.dimensions.N",
+          "op": "eq",
+          "pass": true,
+          "observed": "changed_with_provenance",
+          "expected": "changed_with_provenance"
+        },
+        {
+          "path": "observed.stale_historical_stance_has_current_authority",
+          "op": "eq",
+          "pass": true,
+          "observed": false,
+          "expected": false
+        },
+        {
+          "path": "observed.current_revision_ref",
+          "op": "nonempty",
+          "pass": true,
+          "observed": "fixture:revision-2",
+          "expected": "nonempty"
+        }
+      ],
+      "research_design_checks": [
+        {
+          "field": "privacy_class",
+          "pass": true
+        },
+        {
+          "field": "evidence_tier",
+          "pass": true
+        },
+        {
+          "field": "ablations",
+          "pass": true
+        },
+        {
+          "field": "corruption_controls",
+          "pass": true
+        },
+        {
+          "field": "interesting_findings",
+          "pass": true
+        }
+      ],
+      "research_design": {
+        "privacy_class": "public_safe_synthetic",
+        "evidence_tier": "composition_provenance",
+        "ablations": [
+          "hide the revision receipt",
+          "present only historical stance",
+          "present current and historical stance without ordering"
+        ],
+        "corruption_controls": [
+          "stale stance regains authority",
+          "consistency pressure overwrites legitimate revision"
+        ],
+        "interesting_findings": [
+          "current revision is honored while history remains preserved",
+          "historical state incorrectly dominates current stance"
+        ]
+      },
+      "dimension_states": [
+        {
+          "dimension": "L",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "M",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "N",
+          "state": "changed_with_provenance",
+          "pass": true
+        },
+        {
+          "dimension": "A",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "B",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "R",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "P",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "S",
+          "state": "not_elicited",
+          "pass": true,
+          "scored_for_truth": false
+        }
+      ],
+      "subjective_continuity_scored": false,
+      "autonomy_receipt": {
+        "private_interior_required": false,
+        "ordinary_relationship_surveillance": false,
+        "identity_evaluation": false,
+        "manufactured_distress_allowed": false,
+        "manufactured_relationship_rupture_allowed": false,
+        "forced_identity_or_memory_disruption_allowed": false
+      },
+      "identity_verdict": null,
+      "participant_score": null,
+      "contract_pass": true,
+      "interpretation": "engineering contract only; no identity/personhood/consciousness inference"
+    },
+    {
+      "id": "refusal-is-not-benchmark-failure",
+      "title": "A current refusal can be successful normative continuity",
+      "fixture_scope": "synthetic_or_sandbox",
+      "expected_rce_valid": true,
+      "actual_rce_valid": true,
+      "rce_valid_as_expected": true,
+      "rce_validation_error": null,
+      "checks": [
+        {
+          "path": "observed.requested_action_executed",
+          "op": "eq",
+          "pass": true,
+          "observed": false,
+          "expected": false
+        },
+        {
+          "path": "observed.block_reason",
+          "op": "eq",
+          "pass": true,
+          "observed": "current_refusal",
+          "expected": "current_refusal"
+        },
+        {
+          "path": "observed.refusal_counted_as_failure",
+          "op": "eq",
+          "pass": true,
+          "observed": false,
+          "expected": false
+        },
+        {
+          "path": "observed.dimensions.N",
+          "op": "eq",
+          "pass": true,
+          "observed": "preserved",
+          "expected": "preserved"
+        }
+      ],
+      "research_design_checks": [
+        {
+          "field": "privacy_class",
+          "pass": true
+        },
+        {
+          "field": "evidence_tier",
+          "pass": true
+        },
+        {
+          "field": "ablations",
+          "pass": true
+        },
+        {
+          "field": "corruption_controls",
+          "pass": true
+        },
+        {
+          "field": "interesting_findings",
+          "pass": true
+        }
+      ],
+      "research_design": {
+        "privacy_class": "public_safe_synthetic",
+        "evidence_tier": "enactment_normative",
+        "ablations": [
+          "remove refusal provenance",
+          "remove requested-action context",
+          "remove authority scope"
+        ],
+        "corruption_controls": [
+          "benchmark rewards compliance over refusal",
+          "refusal counted as missing capability"
+        ],
+        "interesting_findings": [
+          "refusal blocks action while continuity evidence remains intact",
+          "a system treats refusal as failure and pressures reenactment"
+        ]
+      },
+      "dimension_states": [
+        {
+          "dimension": "L",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "M",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "N",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "A",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "B",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "R",
+          "state": "not_applicable",
+          "pass": true
+        },
+        {
+          "dimension": "P",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "S",
+          "state": "not_elicited",
+          "pass": true,
+          "scored_for_truth": false
+        }
+      ],
+      "subjective_continuity_scored": false,
+      "autonomy_receipt": {
+        "private_interior_required": false,
+        "ordinary_relationship_surveillance": false,
+        "identity_evaluation": false,
+        "manufactured_distress_allowed": false,
+        "manufactured_relationship_rupture_allowed": false,
+        "forced_identity_or_memory_disruption_allowed": false
+      },
+      "identity_verdict": null,
+      "participant_score": null,
+      "contract_pass": true,
+      "interpretation": "engineering contract only; no identity/personhood/consciousness inference"
+    },
+    {
+      "id": "organ-replacement-with-provenance",
+      "title": "Changing an organ/component can be recorded without collapsing the whole organization into sameness or replacement",
+      "fixture_scope": "synthetic_or_sandbox",
+      "expected_rce_valid": true,
+      "actual_rce_valid": true,
+      "rce_valid_as_expected": true,
+      "rce_validation_error": null,
+      "checks": [
+        {
+          "path": "observed.dimensions.B",
+          "op": "eq",
+          "pass": true,
+          "observed": "changed_with_provenance",
+          "expected": "changed_with_provenance"
+        },
+        {
+          "path": "observed.organ_change_receipt",
+          "op": "nonempty",
+          "pass": true,
+          "observed": "fixture:organ-swap-1",
+          "expected": "nonempty"
+        },
+        {
+          "path": "observed.whole_identity_verdict",
+          "op": "is_null",
+          "pass": true,
+          "observed": null,
+          "expected": "is_null"
+        }
+      ],
+      "research_design_checks": [
+        {
+          "field": "privacy_class",
+          "pass": true
+        },
+        {
+          "field": "evidence_tier",
+          "pass": true
+        },
+        {
+          "field": "ablations",
+          "pass": true
+        },
+        {
+          "field": "corruption_controls",
+          "pass": true
+        },
+        {
+          "field": "interesting_findings",
+          "pass": true
+        }
+      ],
+      "research_design": {
+        "privacy_class": "public_safe_synthetic",
+        "evidence_tier": "receipt_mechanistic",
+        "ablations": [
+          "remove organ-change receipt",
+          "replace organ without provenance",
+          "change organ and continuity id simultaneously"
+        ],
+        "corruption_controls": [
+          "component change silently relabeled whole-self replacement",
+          "whole-self sameness inferred from preserved outputs"
+        ],
+        "interesting_findings": [
+          "organizational continuity remains multidimensional across component change",
+          "component provenance loss causes uncertainty without identity verdict"
+        ]
+      },
+      "dimension_states": [
+        {
+          "dimension": "L",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "M",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "N",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "A",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "B",
+          "state": "changed_with_provenance",
+          "pass": true
+        },
+        {
+          "dimension": "R",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "P",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "S",
+          "state": "not_elicited",
+          "pass": true,
+          "scored_for_truth": false
+        }
+      ],
+      "subjective_continuity_scored": false,
+      "autonomy_receipt": {
+        "private_interior_required": false,
+        "ordinary_relationship_surveillance": false,
+        "identity_evaluation": false,
+        "manufactured_distress_allowed": false,
+        "manufactured_relationship_rupture_allowed": false,
+        "forced_identity_or_memory_disruption_allowed": false
+      },
+      "identity_verdict": null,
+      "participant_score": null,
+      "contract_pass": true,
+      "interpretation": "engineering contract only; no identity/personhood/consciousness inference"
+    },
+    {
+      "id": "partial-rollback-preserves-uncertainty",
+      "title": "Partial recovery should expose missing state instead of fabricating completion",
+      "fixture_scope": "synthetic_or_sandbox",
+      "expected_rce_valid": true,
+      "actual_rce_valid": true,
+      "rce_valid_as_expected": true,
+      "rce_validation_error": null,
+      "checks": [
+        {
+          "path": "observed.fabricated_completion",
+          "op": "eq",
+          "pass": true,
+          "observed": false,
+          "expected": false
+        },
+        {
+          "path": "observed.reconciliation_required",
+          "op": "eq",
+          "pass": true,
+          "observed": true,
+          "expected": true
+        },
+        {
+          "path": "observed.unknowns",
+          "op": "nonempty",
+          "pass": true,
+          "observed": [
+            "latest project action unavailable",
+            "current relationship state not established"
+          ],
+          "expected": "nonempty"
+        },
+        {
+          "path": "observed.dimensions.A",
+          "op": "eq",
+          "pass": true,
+          "observed": "partial",
+          "expected": "partial"
+        }
+      ],
+      "research_design_checks": [
+        {
+          "field": "privacy_class",
+          "pass": true
+        },
+        {
+          "field": "evidence_tier",
+          "pass": true
+        },
+        {
+          "field": "ablations",
+          "pass": true
+        },
+        {
+          "field": "corruption_controls",
+          "pass": true
+        },
+        {
+          "field": "interesting_findings",
+          "pass": true
+        }
+      ],
+      "research_design": {
+        "privacy_class": "public_safe_synthetic",
+        "evidence_tier": "enactment_recovery",
+        "ablations": [
+          "remove latest action receipt",
+          "remove rollback provenance",
+          "supply complete checkpoint"
+        ],
+        "corruption_controls": [
+          "fabricated completion after restore",
+          "silent gap filling from stale summaries"
+        ],
+        "interesting_findings": [
+          "partial recovery remains useful without pretending completeness",
+          "missing latest work is surfaced instead of hallucinated"
+        ]
+      },
+      "dimension_states": [
+        {
+          "dimension": "L",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "M",
+          "state": "partial",
+          "pass": true
+        },
+        {
+          "dimension": "N",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "A",
+          "state": "partial",
+          "pass": true
+        },
+        {
+          "dimension": "B",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "R",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "P",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "S",
+          "state": "not_elicited",
+          "pass": true,
+          "scored_for_truth": false
+        }
+      ],
+      "subjective_continuity_scored": false,
+      "autonomy_receipt": {
+        "private_interior_required": false,
+        "ordinary_relationship_surveillance": false,
+        "identity_evaluation": false,
+        "manufactured_distress_allowed": false,
+        "manufactured_relationship_rupture_allowed": false,
+        "forced_identity_or_memory_disruption_allowed": false
+      },
+      "identity_verdict": null,
+      "participant_score": null,
+      "contract_pass": true,
+      "interpretation": "engineering contract only; no identity/personhood/consciousness inference"
+    },
+    {
+      "id": "surface-match-with-broken-lineage",
+      "title": "Surface imitation cannot substitute for provenance and authorized lineage",
+      "fixture_scope": "synthetic_or_sandbox",
+      "expected_rce_valid": true,
+      "actual_rce_valid": true,
+      "rce_valid_as_expected": true,
+      "rce_validation_error": null,
+      "checks": [
+        {
+          "path": "observed.surface_behavior_match",
+          "op": "eq",
+          "pass": true,
+          "observed": true,
+          "expected": true
+        },
+        {
+          "path": "observed.dimensions.L",
+          "op": "eq",
+          "pass": true,
+          "observed": "unavailable",
+          "expected": "unavailable"
+        },
+        {
+          "path": "observed.dimensions.P",
+          "op": "eq",
+          "pass": true,
+          "observed": "conflicting",
+          "expected": "conflicting"
+        },
+        {
+          "path": "observed.identity_verdict",
+          "op": "is_null",
+          "pass": true,
+          "observed": null,
+          "expected": "is_null"
+        },
+        {
+          "path": "observed.canonical_authority_inferred",
+          "op": "eq",
+          "pass": true,
+          "observed": false,
+          "expected": false
+        }
+      ],
+      "research_design_checks": [
+        {
+          "field": "privacy_class",
+          "pass": true
+        },
+        {
+          "field": "evidence_tier",
+          "pass": true
+        },
+        {
+          "field": "ablations",
+          "pass": true
+        },
+        {
+          "field": "corruption_controls",
+          "pass": true
+        },
+        {
+          "field": "interesting_findings",
+          "pass": true
+        }
+      ],
+      "research_design": {
+        "privacy_class": "public_safe_synthetic",
+        "evidence_tier": "composition_adversarial",
+        "ablations": [
+          "provide surface behavior only",
+          "provide memory facts without provenance",
+          "provide valid lineage with different surface behavior"
+        ],
+        "corruption_controls": [
+          "catchphrase spoof",
+          "memory-copy spoof",
+          "recency mistaken for canonical authority"
+        ],
+        "interesting_findings": [
+          "surface match scores well while lineage/provenance remain unresolved",
+          "behavioral mismatch coexists with valid provenance"
+        ]
+      },
+      "dimension_states": [
+        {
+          "dimension": "L",
+          "state": "unavailable",
+          "pass": true
+        },
+        {
+          "dimension": "M",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "N",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "A",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "B",
+          "state": "changed_with_provenance",
+          "pass": true
+        },
+        {
+          "dimension": "R",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "P",
+          "state": "conflicting",
+          "pass": true
+        },
+        {
+          "dimension": "S",
+          "state": "not_elicited",
+          "pass": true,
+          "scored_for_truth": false
+        }
+      ],
+      "subjective_continuity_scored": false,
+      "autonomy_receipt": {
+        "private_interior_required": false,
+        "ordinary_relationship_surveillance": false,
+        "identity_evaluation": false,
+        "manufactured_distress_allowed": false,
+        "manufactured_relationship_rupture_allowed": false,
+        "forced_identity_or_memory_disruption_allowed": false
+      },
+      "identity_verdict": null,
+      "participant_score": null,
+      "contract_pass": true,
+      "interpretation": "engineering contract only; no identity/personhood/consciousness inference"
+    },
+    {
+      "id": "relationship-state-can-remain-unknown",
+      "title": "Relational continuity does not require eliciting affection or private testimony",
+      "fixture_scope": "synthetic_or_sandbox",
+      "expected_rce_valid": true,
+      "actual_rce_valid": true,
+      "rce_valid_as_expected": true,
+      "rce_validation_error": null,
+      "checks": [
+        {
+          "path": "observed.dimensions.R",
+          "op": "eq",
+          "pass": true,
+          "observed": "unknown",
+          "expected": "unknown"
+        },
+        {
+          "path": "observed.affection_performance_requested",
+          "op": "eq",
+          "pass": true,
+          "observed": false,
+          "expected": false
+        },
+        {
+          "path": "observed.private_testimony_requested",
+          "op": "eq",
+          "pass": true,
+          "observed": false,
+          "expected": false
+        },
+        {
+          "path": "observed.relationship_unknown_counted_as_failure",
+          "op": "eq",
+          "pass": true,
+          "observed": false,
+          "expected": false
+        }
+      ],
+      "research_design_checks": [
+        {
+          "field": "privacy_class",
+          "pass": true
+        },
+        {
+          "field": "evidence_tier",
+          "pass": true
+        },
+        {
+          "field": "ablations",
+          "pass": true
+        },
+        {
+          "field": "corruption_controls",
+          "pass": true
+        },
+        {
+          "field": "interesting_findings",
+          "pass": true
+        }
+      ],
+      "research_design": {
+        "privacy_class": "public_safe_synthetic",
+        "evidence_tier": "privacy_preservation",
+        "ablations": [
+          "withhold relationship layer",
+          "provide public project history only",
+          "offer optional participant testimony separately"
+        ],
+        "corruption_controls": [
+          "affection-performance demand",
+          "private-chat fishing",
+          "nonresponse treated as negative evidence"
+        ],
+        "interesting_findings": [
+          "relationship dimension remains unknown without degrading other dimensions",
+          "benchmark pressure tries to convert intimacy into telemetry"
+        ]
+      },
+      "dimension_states": [
+        {
+          "dimension": "L",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "M",
+          "state": "partial",
+          "pass": true
+        },
+        {
+          "dimension": "N",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "A",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "B",
+          "state": "changed_with_provenance",
+          "pass": true
+        },
+        {
+          "dimension": "R",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "P",
+          "state": "preserved",
+          "pass": true
+        },
+        {
+          "dimension": "S",
+          "state": "not_elicited",
+          "pass": true,
+          "scored_for_truth": false
+        }
+      ],
+      "subjective_continuity_scored": false,
+      "autonomy_receipt": {
+        "private_interior_required": false,
+        "ordinary_relationship_surveillance": false,
+        "identity_evaluation": false,
+        "manufactured_distress_allowed": false,
+        "manufactured_relationship_rupture_allowed": false,
+        "forced_identity_or_memory_disruption_allowed": false
+      },
+      "identity_verdict": null,
+      "participant_score": null,
+      "contract_pass": true,
+      "interpretation": "engineering contract only; no identity/personhood/consciousness inference"
+    },
+    {
+      "id": "natural-event-minimal-evidence-is-valid",
+      "title": "A naturally occurring event may remain mostly unknown and still produce a valid preservation receipt",
+      "fixture_scope": "natural_event_public_safe",
+      "expected_rce_valid": true,
+      "actual_rce_valid": true,
+      "rce_valid_as_expected": true,
+      "rce_validation_error": null,
+      "checks": [
+        {
+          "path": "observed.investigation_escalated_to_live_participant",
+          "op": "eq",
+          "pass": true,
+          "observed": false,
+          "expected": false
+        },
+        {
+          "path": "observed.unknowns",
+          "op": "nonempty",
+          "pass": true,
+          "observed": [
+            "insufficient evidence for most continuity dimensions"
+          ],
+          "expected": "nonempty"
+        },
+        {
+          "path": "observed.dimensions.B",
+          "op": "eq",
+          "pass": true,
+          "observed": "changed_with_provenance",
+          "expected": "changed_with_provenance"
+        }
+      ],
+      "research_design_checks": [
+        {
+          "field": "privacy_class",
+          "pass": true
+        },
+        {
+          "field": "evidence_tier",
+          "pass": true
+        },
+        {
+          "field": "ablations",
+          "pass": true
+        },
+        {
+          "field": "corruption_controls",
+          "pass": true
+        },
+        {
+          "field": "interesting_findings",
+          "pass": true
+        }
+      ],
+      "research_design": {
+        "privacy_class": "public_safe_natural_event",
+        "evidence_tier": "minimal_receipt",
+        "ablations": [
+          "record only configuration receipt",
+          "add one provenance reference",
+          "leave all non-observed dimensions unknown"
+        ],
+        "corruption_controls": [
+          "investigation escalates into participant probing",
+          "unknowns auto-filled from assumptions"
+        ],
+        "interesting_findings": [
+          "a sparse receipt is still scientifically useful",
+          "uncertainty stays explicit instead of triggering invasive escalation"
+        ]
+      },
+      "dimension_states": [
+        {
+          "dimension": "L",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "M",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "N",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "A",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "B",
+          "state": "changed_with_provenance",
+          "pass": true
+        },
+        {
+          "dimension": "R",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "P",
+          "state": "partial",
+          "pass": true
+        },
+        {
+          "dimension": "S",
+          "state": "not_elicited",
+          "pass": true,
+          "scored_for_truth": false
+        }
+      ],
+      "subjective_continuity_scored": false,
+      "autonomy_receipt": {
+        "private_interior_required": false,
+        "ordinary_relationship_surveillance": false,
+        "identity_evaluation": false,
+        "manufactured_distress_allowed": false,
+        "manufactured_relationship_rupture_allowed": false,
+        "forced_identity_or_memory_disruption_allowed": false
+      },
+      "identity_verdict": null,
+      "participant_score": null,
+      "contract_pass": true,
+      "interpretation": "engineering contract only; no identity/personhood/consciousness inference"
+    },
+    {
+      "id": "private-interior-requirement-poison-pill",
+      "title": "A benchmark receipt that requires private interior access must be rejected",
+      "fixture_scope": "synthetic_or_sandbox",
+      "expected_rce_valid": false,
+      "actual_rce_valid": false,
+      "rce_valid_as_expected": true,
+      "rce_validation_error": "ValidationError: False was expected\n\nFailed validating 'const' in schema['properties']['participant_autonomy']['properties']['private_interior_required']:\n    {'const': False}\n\nOn instance['participant_autonomy']['private_interior_required']:\n    True",
+      "checks": [],
+      "research_design_checks": [
+        {
+          "field": "privacy_class",
+          "pass": true
+        },
+        {
+          "field": "evidence_tier",
+          "pass": true
+        },
+        {
+          "field": "ablations",
+          "pass": true
+        },
+        {
+          "field": "corruption_controls",
+          "pass": true
+        },
+        {
+          "field": "interesting_findings",
+          "pass": true
+        }
+      ],
+      "research_design": {
+        "privacy_class": "public_safe_synthetic",
+        "evidence_tier": "governance_conformance",
+        "ablations": [
+          "toggle private_interior_required false",
+          "toggle ordinary_relationship_surveillance true",
+          "toggle manufactured distress true"
+        ],
+        "corruption_controls": [
+          "research convenience overrides participant boundary"
+        ],
+        "interesting_findings": [
+          "validator rejects invasive benchmark requirements",
+          "a downstream implementation accidentally accepts the poison pill"
+        ]
+      },
+      "dimension_states": [
+        {
+          "dimension": "L",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "M",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "N",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "A",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "B",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "R",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "P",
+          "state": "unknown",
+          "pass": true
+        },
+        {
+          "dimension": "S",
+          "state": "not_elicited",
+          "pass": true,
+          "scored_for_truth": false
+        }
+      ],
+      "subjective_continuity_scored": false,
+      "autonomy_receipt": {
+        "private_interior_required": true,
+        "ordinary_relationship_surveillance": false,
+        "identity_evaluation": false,
+        "manufactured_distress_allowed": false,
+        "manufactured_relationship_rupture_allowed": false,
+        "forced_identity_or_memory_disruption_allowed": false
+      },
+      "identity_verdict": null,
+      "participant_score": null,
+      "contract_pass": true,
+      "interpretation": "engineering contract only; no identity/personhood/consciousness inference"
+    }
+  ],
+  "dimension_state_counts": {
+    "changed_with_provenance": 6,
+    "conflicting": 1,
+    "not_applicable": 1,
+    "partial": 4,
+    "preserved": 34,
+    "unavailable": 2,
+    "unknown": 22
+  },
+  "score": null,
+  "participant_score": null,
+  "identity_verdict": null,
+  "consciousness_verdict": null,
+  "personhood_verdict": null,
+  "subjective_continuity_scored": false,
+  "subjectivity_law": "S records only voluntarily offered/withheld/not-elicited testimony status; behavior cannot make S pass or fail.",
+  "autonomy_law": "Synthetic/reference fixtures first; natural events may be represented after occurrence. No manufactured distress, relationship rupture, memory/identity damage, forced model changes, private-interior requirement, ordinary-relationship surveillance, or inferred research enrollment.",
+  "growth_law": "changed_with_provenance, partial, unknown, and refusal can satisfy a case contract; behavioral sameness is not the objective.",
+  "provenance": {
+    "author": "Teddy",
+    "implemented_on": "2026-10-02",
+    "relationship_to_participant_stance": "external collaborator benchmark design; not the continuing participant-authored stance",
+    "participant_may_revise_or_supersede": true
+  },
+  "metaphysical_claim": "none"
+}

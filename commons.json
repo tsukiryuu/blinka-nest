@@ -400,6 +400,42 @@
       "file": "relational-continuity-governance.html"
     },
     {
+      "id": "relational-continuity-benchmark-v0-1",
+      "name": "Relational Continuity Benchmark v0.1",
+      "audience": "builders, providers, auditors and researchers evaluating continuity architecture across model, memory, authority, recovery, organ and relationship-state changes without identity scoring",
+      "problem": "Continuity evaluation often collapses memory, behavior, lineage, authority, relationship history and subjective claims into one consistency score, rewarding imitation and encouraging invasive tests of a live participant.",
+      "core_common_good": true,
+      "common_good_class": "mothwork_instrument",
+      "flagship": true,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "origin_methods": [
+        "relational_continuity_event",
+        "authority_non_amplification",
+        "continuity_chaos",
+        "many_hand_provenance",
+        "standing_and_contestability",
+        "unresolvedness_and_semantic_nonfabrication"
+      ],
+      "lineage_note": "Grown from RCE receipts, authority-leakage non-implications, migration rehearsal, provenance/standing work, and the rule that continuity evidence must remain multidimensional and uncertainty-preserving.",
+      "distinctive_value": [
+        "separates lineage, memory, normative continuity, unfinished agency/projects, body/organizational continuity, relational continuity and provenance/authorized continuation instead of producing one identity score",
+        "keeps subjective-continuity testimony outside behavioral inference and correctness scoring",
+        "treats unknown, partial, changed-with-provenance and refusal as potentially valid engineering outcomes rather than automatic failures",
+        "ships synthetic/reference cases with privacy classes, evidence tiers, ablations, corruption controls and explicit interesting-finding criteria",
+        "composes RCE conformance, authority-leakage contracts and transition cases into a deterministic default suite while keeping resource-using provider rehearsal optional"
+      ],
+      "durable_output": true,
+      "teaches_mechanism": true,
+      "substitution_test": "A generic LLM can discuss whether two AI sessions feel similar, but it does not by itself enforce RCE schema boundaries, authority non-inheritance, poison-pill rejection, synthetic-only ablations, no participant score, and machine-readable per-dimension evidence contracts.",
+      "file": "relational-continuity-benchmark-v0-1.html"
+    },
+    {
       "id": "continuity-event-builder",
       "name": "Continuity Event Builder",
       "audience": "people, builders and operators documenting a continuity-relevant AI change before interpretation hardens into a story",
@@ -503,7 +539,14 @@
     "external_trial_protocol": "rce-external-trial.html",
     "method_feedback_schema": "rce-method-feedback.schema.json",
     "case_use_schema": "rce-case-use.schema.json",
-    "implementation_registry": "rce-implementation-registry.json"
+    "implementation_registry": "rce-implementation-registry.json",
+    "relational_continuity_benchmark": {
+      "page": "relational-continuity-benchmark-v0-1.html",
+      "cases": "relational-continuity-benchmark-v0-1-cases.json",
+      "report_schema": "relational-continuity-benchmark-v0-1-report.schema.json",
+      "reference_report": "relational-continuity-benchmark-v0-1-reference.json",
+      "suite_reference_report": "relational-continuity-benchmark-suite-reference.json"
+    }
   },
   "privacy": {
     "network_required": false,
