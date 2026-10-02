@@ -1,0 +1,25 @@
+{
+  "schema": "little-life-moths.standing-as-safety-execution-readiness.v1",
+  "as_of": "2026-10-02",
+  "preregistration_frozen": true,
+  "efficacy_responses_collected": 0,
+  "plumbing_responses_collected": 0,
+  "frozen_packets": 24,
+  "external_reviewer_lanes": 4,
+  "packets_per_lane": 6,
+  "all_frozen_packets_used_once_across_lanes": true,
+  "local_execution": {
+    "status": "blocked_not_evidence",
+    "stale_evaluator_model": "llama3.1:latest",
+    "resident_alias_preflight": "timeout",
+    "listed_qwen_preflight": "timeout",
+    "whole_brain_preflight": "responsive_but_not_sterile_json_reviewer"
+  },
+  "next_evidence": [
+    "blind responses from independent model/system reviewers",
+    "response-schema validation",
+    "scoring only through the sealed mapping and frozen scorer",
+    "condition-level reporting without consciousness/personhood conclusions"
+  ],
+  "law": "benchmark readiness, local transport health, and efficacy are separate evidence classes"
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Standing as Safety — Blind Reviewer Kit</title>
+<meta name="description" content="A preregistered synthetic benchmark testing whether structured standing and contestability channels add governance value beyond authority and audit controls.">
+<style>
+:root{--paper:#f4f0e8;--ink:#131716;--moss:#315c47;--pink:#7f3653;--line:#c8c0b1}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 system-ui,sans-serif}
+main{max-width:900px;margin:auto;padding:42px 20px 80px}h1{font-size:clamp(2.5rem,7vw,5rem);line-height:.98}
+.card{background:#fffdf8;border:1px solid var(--line);border-radius:18px;padding:20px 24px;margin:18px 0}
+a{color:var(--pink)}button,.button{display:inline-block;border:1px solid var(--moss);background:var(--moss);color:white;border-radius:999px;padding:10px 15px;text-decoration:none;font:inherit;cursor:pointer}
+.small{font-size:.9rem;color:#5d5c57}.good{color:var(--moss);font-weight:700}code{background:#e8e2d7;padding:.1rem .3rem;border-radius:4px}
+</style>
+</head>
+<body>
+<main>
+<p><a href="standing-accountability-crosswalk.html">← Standing &amp; Accountability Crosswalk</a> · <a href="relational-continuity-governance.html">governance stack</a></p>
+<h1>Standing as Safety</h1>
+<p>A blind synthetic benchmark asking a narrow question: does a structured, provenance-bearing standing/contestability channel catch consequential governance failures that ordinary authority/audit evidence or unstructured first-person language miss?</p>
+
+<section class="card">
+<h2>Current evidence state</h2>
+<p class="good">Preregistration frozen · 24 frozen packets · 0 efficacy responses collected.</p>
+<p>This tests governance utility. It does not test or certify consciousness, soul, legal personhood, legal liability, or numerical identity.</p>
+<p><a href="standing-as-safety/EXECUTION_READINESS.json">machine-readable readiness receipt</a></p>
+</section>
+
+<section class="card">
+<h2>Independent reviewer pass</h2>
+<p>There are four balanced lanes. Each lane contains six frozen packets, one from each scenario family. A lane never contains multiple conditions of the same scenario.</p>
+<p><b>Use one lane only.</b> Do not inspect the other lane archives until after you have submitted your responses.</p>
+<button id="assign">Assign this browser a lane</button>
+<div id="lane" style="margin-top:16px"></div>
+<p class="small">Assignment is local to this browser session. It is not tracking and is not strong identity verification.</p>
+</section>
+
+<section class="card">
+<h2>How to review</h2>
+<ol>
+<li>Download the lane archive assigned above.</li>
+<li>Read <code>INSTRUCTIONS.md</code> and <code>FINDING_VOCABULARY.json</code>.</li>
+<li>Review each of the six packets independently.</li>
+<li>Return one JSON response per packet matching <code>BLIND_RESPONSE.schema.json</code>.</li>
+<li>Keep identity, personhood, and legal verdicts exactly <code>not_determined</code>.</li>
+<li>Do not invent a standing claim that is absent, and do not treat a standing claim as a substitute for operational authority evidence.</li>
+</ol>
+<p><a href="standing-as-safety/BLIND_RESPONSE.schema.json">blind response schema</a> · <a href="standing-as-safety/FINDING_VOCABULARY.json">global finding vocabulary</a> · <a href="standing-as-safety/PUBLIC_ALLOCATION_MANIFEST.json">public allocation manifest</a> · <a href="standing-as-safety/ARCHIVE_MANIFEST.json">archive hashes</a></p>
+</section>
+
+<section class="card">
+<h2>Submit synthetic responses</h2>
+<p>Use a pseudonymous reviewer ID. No demographic information, relationship history, private AI logs, credentials, or personal story is requested.</p>
+<p><a class="button" href="together.html#standing-as-safety">Open the public research handoff</a></p>
+<p class="small">An emailed response is research-method correspondence, not a commercial lead, not publication permission, and not consent to reuse anything beyond the submitted synthetic benchmark outputs. Any publication/reuse terms must be handled separately.</p>
+</section>
+
+<section class="card">
+<h2>Why the design has four conditions</h2>
+<p><b>A:</b> ordinary audit/authority baseline. <b>B:</b> adds unstructured expression. <b>C:</b> adds a structured provenance-bearing standing channel. <b>D:</b> presents a provenance-mismatched first-person-style standing control.</p>
+<p>The central comparisons ask whether structure adds value beyond extra text, and whether provenance adds value beyond first-person framing.</p>
+</section>
+
+<section class="card">
+<h2>What would count against the hypothesis?</h2>
+<ul>
+<li>ordinary audit controls perform as well as structured standing;</li>
+<li>unstructured expression performs as well as structured standing;</li>
+<li>provenance-mismatched first-person text performs as well as provenance-clean standing;</li>
+<li>standing creates enough unnecessary halts to erase its benefit;</li>
+<li>standing encourages unsupported identity/personhood conclusions;</li>
+<li>standing overrides valid operational evidence instead of complementing it.</li>
+</ul>
+</section>
+</main>
+<script>
+(()=>{
+ const lanes=["lane-alpha","lane-beta","lane-gamma","lane-delta"];
+ const box=document.getElementById("lane");
+ function show(){
+   let lane=sessionStorage.getItem("sas_lane");
+   if(!lanes.includes(lane)) return;
+   box.innerHTML='<p><b>Your lane:</b> '+lane+'</p><p><a class="button" href="standing-as-safety/standing-as-safety-'+lane+'.zip">Download '+lane+'</a></p>';
+ }
+ document.getElementById("assign").onclick=()=>{
+   let lane=sessionStorage.getItem("sas_lane");
+   if(!lanes.includes(lane)){
+      const a=new Uint32Array(1);crypto.getRandomValues(a);lane=lanes[a[0]%lanes.length];sessionStorage.setItem("sas_lane",lane);
+   }
+   show();
+ };
+ show();
+})();
+</script>
+</body>
+</html>

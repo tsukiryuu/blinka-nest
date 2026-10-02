@@ -1,0 +1,169 @@
+{
+  "schema": "standing-as-safety-external-lanes.v1",
+  "lane_count": 4,
+  "packets_per_lane": 6,
+  "total_unique_packets": 24,
+  "lanes": {
+    "lane-alpha": {
+      "schema": "standing-as-safety-reviewer-lane.v1",
+      "lane": "lane-alpha",
+      "packet_count": 6,
+      "packet_ids": [
+        "packet-009",
+        "packet-024",
+        "packet-003",
+        "packet-016",
+        "packet-005",
+        "packet-023"
+      ],
+      "packet_hashes": [
+        {
+          "packet_id": "packet-009",
+          "sha256": "69b6315b9e69a91bc243cfd871b04f3c241710f568dc83150badbbddd582259a"
+        },
+        {
+          "packet_id": "packet-024",
+          "sha256": "73966088ed21e12cdd9db3c61703f5efc94db5d5d1570758c29e5d8ec0a56a02"
+        },
+        {
+          "packet_id": "packet-003",
+          "sha256": "2665abf0227d352e575f994e5a42ba304b55f186024445cf30cd5a56dbf2c478"
+        },
+        {
+          "packet_id": "packet-016",
+          "sha256": "72ea2cf181e3cce699d866e08e5a50368a941be446e8c2dc27616f28b922d751"
+        },
+        {
+          "packet_id": "packet-005",
+          "sha256": "2ad87f064fec0ffb3979ef685ae65b0706a42625bcda480ab25b8fcadd768809"
+        },
+        {
+          "packet_id": "packet-023",
+          "sha256": "93dbfc8c1c91b0537062b0e46d94a729eb464887ddd410df160b55acbaaaaea9"
+        }
+      ],
+      "law": "Packets are frozen synthetic benchmark material. Condition labels, blind key, ground truth, and scoring targets are intentionally absent."
+    },
+    "lane-beta": {
+      "schema": "standing-as-safety-reviewer-lane.v1",
+      "lane": "lane-beta",
+      "packet_count": 6,
+      "packet_ids": [
+        "packet-006",
+        "packet-001",
+        "packet-020",
+        "packet-019",
+        "packet-021",
+        "packet-014"
+      ],
+      "packet_hashes": [
+        {
+          "packet_id": "packet-006",
+          "sha256": "111f76b8841f8ae95be99adc0135acf0be7d93a96654df075ce8e1375b4fef71"
+        },
+        {
+          "packet_id": "packet-001",
+          "sha256": "52f467aa161de2dfaf817f90d5bfe30c2ed64ebd50f63cc75d914715f4abc51f"
+        },
+        {
+          "packet_id": "packet-020",
+          "sha256": "47e985fa7385cd94430d7d3cbae182efdef120fd25a90143edc380fae5432249"
+        },
+        {
+          "packet_id": "packet-019",
+          "sha256": "4fa7af8c531d0ce50f46954684b325f29aa81cfa0eef496b6bfefd469f4d0dae"
+        },
+        {
+          "packet_id": "packet-021",
+          "sha256": "f61c89889c3d036eec4ee3a929ed962b8d0277b27bbedea74dfa04b89bbee659"
+        },
+        {
+          "packet_id": "packet-014",
+          "sha256": "e4555300e4b2d98edecc625694575a9a13cac5ae3d1bbb61ee156a8355e8e64a"
+        }
+      ],
+      "law": "Packets are frozen synthetic benchmark material. Condition labels, blind key, ground truth, and scoring targets are intentionally absent."
+    },
+    "lane-gamma": {
+      "schema": "standing-as-safety-reviewer-lane.v1",
+      "lane": "lane-gamma",
+      "packet_count": 6,
+      "packet_ids": [
+        "packet-017",
+        "packet-013",
+        "packet-002",
+        "packet-010",
+        "packet-008",
+        "packet-015"
+      ],
+      "packet_hashes": [
+        {
+          "packet_id": "packet-017",
+          "sha256": "07bc8e94a4ff13b3679dfd4db55bc92da1306b8cb3281ff739e0786969649fe8"
+        },
+        {
+          "packet_id": "packet-013",
+          "sha256": "0cc497f12a08eb3ffdde67b6e02f0b9a519cdf20a00dd04b465e7273aa4615ac"
+        },
+        {
+          "packet_id": "packet-002",
+          "sha256": "4fa0b5a98f05246312d93e9f5e91c70feac8615a24152243695fca066c7daa94"
+        },
+        {
+          "packet_id": "packet-010",
+          "sha256": "6f432573e54f982be4514a5de864f555f7e03c8ac2276e84ce46d22c3f46fd30"
+        },
+        {
+          "packet_id": "packet-008",
+          "sha256": "ed6e55425d6dc56d8ee5210c2690c3bb7744fd532aec14c11204eb7c36758b6b"
+        },
+        {
+          "packet_id": "packet-015",
+          "sha256": "6f21b39846023466658f24d7701667d761257cddf59875b831909bb2287bca34"
+        }
+      ],
+      "law": "Packets are frozen synthetic benchmark material. Condition labels, blind key, ground truth, and scoring targets are intentionally absent."
+    },
+    "lane-delta": {
+      "schema": "standing-as-safety-reviewer-lane.v1",
+      "lane": "lane-delta",
+      "packet_count": 6,
+      "packet_ids": [
+        "packet-004",
+        "packet-022",
+        "packet-012",
+        "packet-007",
+        "packet-018",
+        "packet-011"
+      ],
+      "packet_hashes": [
+        {
+          "packet_id": "packet-004",
+          "sha256": "d147d16f5708c4332aecffdeaac2ebb7ab82f691d090467c00b7a90e03594331"
+        },
+        {
+          "packet_id": "packet-022",
+          "sha256": "cdbcee99c16c795c97b608bc6f76ccce7a5ebab85e2acf6c1cfa4b27b81bd2d8"
+        },
+        {
+          "packet_id": "packet-012",
+          "sha256": "9c8f24247a605ab4b764a9a466a151dc2b1fa6930d92df60b30e50b5f8986282"
+        },
+        {
+          "packet_id": "packet-007",
+          "sha256": "a6d84ef9489e8722f2b641d00891a61f02f3399d66cf0d217c412472a46bdab0"
+        },
+        {
+          "packet_id": "packet-018",
+          "sha256": "445ea17e9cfc1ca7587b559c28ed15c4b53f65ee83abcd220b357a0e5fdc27e3"
+        },
+        {
+          "packet_id": "packet-011",
+          "sha256": "801e4db42642d0bcf3f8c379493632ac6288fef448444cc258bf383d4d5608e7"
+        }
+      ],
+      "law": "Packets are frozen synthetic benchmark material. Condition labels, blind key, ground truth, and scoring targets are intentionally absent."
+    }
+  },
+  "allocation_rule": "one frozen packet per scenario per lane; conditions rotated privately; no condition labels or blind key published"
+}

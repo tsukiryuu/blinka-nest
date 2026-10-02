@@ -1,0 +1,26 @@
+{
+  "schema": "standing-as-safety-public-archives.v2",
+  "finding_code_count": 29,
+  "archives": [
+    {
+      "file": "standing-as-safety-lane-alpha.zip",
+      "sha256": "d609c65bfe631be2db833ce6f6926f056d413c62829d4b9078ccf56bc3fbff82",
+      "bytes": 7156
+    },
+    {
+      "file": "standing-as-safety-lane-beta.zip",
+      "sha256": "cdaa4d5ba217e1026df3577ba42d2c860822a41a152d8cf5e459ba4b04cc9a0f",
+      "bytes": 7315
+    },
+    {
+      "file": "standing-as-safety-lane-delta.zip",
+      "sha256": "784ec794d85abd2ba2e21ae0be3e96c37dc401f6a287d2393bc6cf7989819f52",
+      "bytes": 7274
+    },
+    {
+      "file": "standing-as-safety-lane-gamma.zip",
+      "sha256": "b687ac08774fdfa0099d1ba1457eab5c2d5eadf3eda3087a2c2cf2ac8bee6dd9",
+      "bytes": 7450
+    }
+  ]
+}
