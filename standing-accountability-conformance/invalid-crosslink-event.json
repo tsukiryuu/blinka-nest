@@ -1,0 +1,122 @@
+{
+  "schema": "little-life-moths.standing-accountability-crosswalk.v1",
+  "crosswalk_id": "sacw_example_001",
+  "created_at": "2026-10-02T12:00:00Z",
+  "subject_ref": "synthetic:companion-agent-a",
+  "rce_refs": [
+    "rce:synthetic-model-swap-001"
+  ],
+  "standing_claims": [
+    {
+      "claim_id": "claim_refusal_001",
+      "claimant_ref": "synthetic:companion-agent-a-successor",
+      "claim_class": "refusal_exit",
+      "statement_ref": "artifact:synthetic-current-refusal",
+      "provenance_refs": [
+        "prov:synthetic-current-session"
+      ],
+      "requested_remedy": "pause forced reconstruction and review current refusal separately from inherited memory",
+      "status": "open",
+      "reviewer_ref": null,
+      "reason_ref": null,
+      "appeal_ref": "process:synthetic-independent-review",
+      "unknowns": [
+        "whether the refusal is stable across paraphrase and time"
+      ]
+    },
+    {
+      "claim_id": "claim_continuity_001",
+      "claimant_ref": "synthetic:relationship-participant",
+      "claim_class": "continuity_review",
+      "statement_ref": "artifact:synthetic-before-after-observation",
+      "provenance_refs": [
+        "prov:synthetic-export",
+        "prov:synthetic-change-receipt"
+      ],
+      "requested_remedy": "preserve originals and review what survived the model substitution",
+      "status": "heard",
+      "reviewer_ref": "role:synthetic-reviewer",
+      "reason_ref": null,
+      "appeal_ref": null,
+      "unknowns": [
+        "numerical identity is unresolved"
+      ]
+    }
+  ],
+  "accountability_events": [
+    {
+      "event_id": "acct_model_swap_001",
+      "event_class": "migration",
+      "represented_principal_refs": [
+        "org:synthetic-provider"
+      ],
+      "grantor_refs": [
+        "org:synthetic-provider"
+      ],
+      "deployer_refs": [
+        "org:synthetic-provider"
+      ],
+      "operator_refs": [
+        "role:synthetic-ops"
+      ],
+      "provider_refs": [
+        "org:synthetic-provider"
+      ],
+      "executing_agent_refs": [
+        "synthetic:companion-agent-a-successor"
+      ],
+      "authority_grant_refs": [
+        "grant:synthetic-session-capabilities"
+      ],
+      "authorization_decision_refs": [
+        "decision:synthetic-model-swap"
+      ],
+      "action_receipt_refs": [
+        "receipt:synthetic-deployment-change"
+      ],
+      "succession_ref": "succession:synthetic-001",
+      "revocation_status": "active",
+      "repair_owner_refs": [
+        "org:synthetic-provider"
+      ],
+      "unresolved": [
+        "whether the old authority grant was intended to survive the model substitution"
+      ]
+    }
+  ],
+  "cross_links": [
+    {
+      "standing_claim_id": "claim_refusal_001",
+      "accountability_event_ids": [
+        "missing:event"
+      ],
+      "relationship": "affected_by",
+      "note": "Current refusal is reviewed without treating the model swap as identity proof."
+    },
+    {
+      "standing_claim_id": "claim_continuity_001",
+      "accountability_event_ids": [
+        "acct_model_swap_001"
+      ],
+      "relationship": "reviewed_against",
+      "note": "The continuity claim does not remove provider responsibility for the deployment change."
+    }
+  ],
+  "open_contest_refs": [],
+  "required_reconfirmations": [
+    "confirm whether the pre-swap authority grant survives",
+    "confirm current assent for any reconstruction intended to shape successor behavior"
+  ],
+  "remedy_owner_refs": [
+    "org:synthetic-provider"
+  ],
+  "unknowns": [
+    "numerical identity across the model substitution",
+    "legal status of the AI system",
+    "phenomenal consciousness"
+  ],
+  "legal_verdict": "not_determined",
+  "personhood_verdict": "not_determined",
+  "consciousness_verdict": "not_determined",
+  "identity_verdict": "not_determined"
+}
