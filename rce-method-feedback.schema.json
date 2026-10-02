@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tsukiryuu.github.io/blinka-nest/rce-method-feedback.schema.json",
+  "title": "RCE Method Feedback Receipt",
+  "type": "object",
+  "required": [
+    "schema",
+    "feedback_id",
+    "created_at",
+    "submitter_role",
+    "use_context",
+    "representability",
+    "issues",
+    "case_material_included",
+    "permissions",
+    "identity_verdict_included",
+    "causation_verdict_included"
+  ],
+  "properties": {
+    "schema": {"const": "little-life-moths.rce-method-feedback.v1"},
+    "feedback_id": {"type": "string", "minLength": 8},
+    "created_at": {"type": "string"},
+    "submitter_role": {
+      "enum": ["participant", "builder", "reviewer", "researcher", "operator", "other", "unknown"]
+    },
+    "use_context": {
+      "enum": [
+        "model_change",
+        "memory_change",
+        "migration",
+        "shutdown_or_access_loss",
+        "fork_or_restore",
+        "authority_handoff",
+        "relationship_rupture",
+        "prospective_change_review",
+        "implementation_only",
+        "other",
+        "unknown"
+      ]
+    },
+    "representability": {
+      "enum": ["complete", "partial", "failed", "not_attempted"]
+    },
+    "issues": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "required": ["area", "issue_type", "note"],
+        "properties": {
+          "area": {"type": "string", "maxLength": 120},
+          "issue_type": {
+            "enum": [
+              "confusing",
+              "missing",
+              "overlapping",
+              "too_burdensome",
+              "privacy_blocker",
+              "validator_disagreement",
+              "forced_unsupported_conclusion",
+              "implementation_problem",
+              "other"
+            ]
+          },
+          "note": {"type": "string", "maxLength": 1200}
+        },
+        "additionalProperties": false
+      }
+    },
+    "case_material_included": {"const": false},
+    "case_identifiers_included": {"const": false},
+    "permissions": {
+      "type": "object",
+      "required": ["method_improvement_use", "research_use", "public_quote", "training_use"],
+      "properties": {
+        "method_improvement_use": {"type": "boolean"},
+        "research_use": {"const": false},
+        "public_quote": {"const": false},
+        "training_use": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "identity_verdict_included": {"const": false},
+    "causation_verdict_included": {"const": false},
+    "claim_boundary": {"type": "string"}
+  },
+  "additionalProperties": false
+}

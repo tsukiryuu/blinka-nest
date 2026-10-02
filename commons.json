@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.commons-public-map.v2",
-  "updated_at": "2026-10-02T07:24:07.151519+00:00",
+  "updated_at": "2026-10-02T07:28:27.861317+00:00",
   "name": "Little Life Moths Commons",
   "goods": [
     {
@@ -454,7 +454,9 @@
     "reference_implementations": {
       "javascript_ajv2020": "rce-reference-js/implementation.json"
     },
-    "external_trial_protocol": "rce-external-trial.html"
+    "external_trial_protocol": "rce-external-trial.html",
+    "method_feedback_schema": "rce-method-feedback.schema.json",
+    "implementation_registry": "rce-implementation-registry.json"
   },
   "privacy": {
     "network_required": false,

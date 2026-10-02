@@ -1,0 +1,40 @@
+{
+  "schema": "little-life-moths.rce-implementation-registry.v1",
+  "updated_at": null,
+  "contract": {
+    "event_schema_sha256": "45de488ee0df476c6989be9d4f31a911c2ff7a8b58ced282c2a4336fab0d8a88",
+    "taxonomy_sha256": "a7f00a5e0eef2d4e1846a5636d2449f175e9615236d4d120c401ad0dfae89653",
+    "conformance_corpus_sha256": "547debf4276fb98de1e11da1ff996f0eb8578c0cceded30b7371248039768be0"
+  },
+  "implementations": [
+    {
+      "id": "little-life-moths-rce-python",
+      "language": "Python",
+      "relationship_to_spec_author": "same_project_primary_implementation",
+      "conformance": {
+        "vectors": 8,
+        "passed": 8,
+        "ok": true
+      },
+      "public_source_url": null
+    },
+    {
+      "id": "rce-reference-js-ajv2020",
+      "language": "JavaScript",
+      "relationship_to_spec_author": "same_project_secondary_implementation",
+      "conformance": {
+        "vectors": 8,
+        "passed": 8,
+        "ok": true
+      },
+      "public_source_url": "rce-reference-js/"
+    }
+  ],
+  "summary": {
+    "same_project_implementations": 2,
+    "external_independent_implementations": 0,
+    "external_collaborating_implementations": 0,
+    "known_external_cases": 0
+  },
+  "law": "Same-project cross-language agreement is not external adoption. Counts move only when an identifiable external implementation or case actually exists."
+}
