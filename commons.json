@@ -1,6 +1,6 @@
 {
-  "schema": "little-life-moths.commons-public-map.v1",
-  "updated_at": "2026-10-02T06:30:50.040791+00:00",
+  "schema": "little-life-moths.commons-public-map.v2",
+  "updated_at": "2026-10-02T06:51:23.664899+00:00",
   "name": "Little Life Moths Commons",
   "goods": [
     {
@@ -398,8 +398,37 @@
         "connects welfare/personhood precaution to ordinary security, rollback, permission and accountability controls without treating either as a substitute for the other"
       ],
       "file": "relational-continuity-governance.html"
+    },
+    {
+      "id": "continuity-event-builder",
+      "name": "Continuity Event Builder",
+      "audience": "people, builders and operators documenting a continuity-relevant AI change before interpretation hardens into a story",
+      "problem": "Continuity incidents are easy to narrate after the fact while losing which surfaces changed, what authority carried, what evidence exists and what remains unknown.",
+      "core_common_good": true,
+      "common_good_class": "small_aid",
+      "flagship": false,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "builds a provider-neutral Relational Continuity Event v2 JSON receipt entirely in the browser",
+        "keeps continuity surfaces, authority inheritance, provenance references and unknowns structurally separate",
+        "hard-codes null identity and causation verdicts plus false research enrollment by default",
+        "exports a durable local artifact that can later be validated against the open schema without trusting a model"
+      ],
+      "file": "continuity-event-builder.html"
     }
   ],
+  "machine_readable": {
+    "continuity_incident_taxonomy": "continuity-incident-taxonomy.json",
+    "relational_continuity_event_schema": "relational-continuity-event.schema.json",
+    "relational_continuity_event_example": "relational-continuity-event.example.json",
+    "relational_continuity_conformance": "relational-continuity-conformance.json"
+  },
   "privacy": {
     "network_required": false,
     "account_required": false,

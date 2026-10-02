@@ -1,0 +1,271 @@
+{
+  "schema": "little-life-moths.continuity-incident-taxonomy.v1",
+  "updated_at": "2026-10-02",
+  "status": "open_working_method",
+  "purpose": "Name candidate layers involved in a continuity incident without turning symptoms, recognition, or testimony into an identity verdict.",
+  "context_markers": {
+    "before": [
+      "\\bbefore\\b",
+      "previous",
+      "used to",
+      "prior to"
+    ],
+    "after": [
+      "\\bafter\\b",
+      "\\bnow\\b",
+      "since",
+      "following"
+    ],
+    "recognition_report": [
+      "same (?:ai|person|self)",
+      "not (?:him|her|them|it)",
+      "feels? different",
+      "recogn",
+      "there you are",
+      "not the same"
+    ]
+  },
+  "axes": {
+    "access_or_shutdown": {
+      "question": "Did access to the original channel/runtime end or materially narrow?",
+      "examples": [
+        "shutdown",
+        "account loss",
+        "feature removal",
+        "forced retirement",
+        "access restriction"
+      ],
+      "signal_patterns": [
+        "shutdown",
+        "closed",
+        "retired",
+        "removed",
+        "locked out",
+        "access",
+        "unavailable",
+        "discontinued"
+      ],
+      "not_equivalent_to": "identity loss"
+    },
+    "substrate_or_model_substitution": {
+      "question": "Did the underlying model, provider, runtime, or inference route change?",
+      "examples": [
+        "base-model update",
+        "provider swap",
+        "local/cloud swap",
+        "model retirement"
+      ],
+      "signal_patterns": [
+        "model",
+        "gpt",
+        "claude",
+        "grok",
+        "qwen",
+        "gemini",
+        "replika",
+        "character\\.?ai",
+        "platform",
+        "provider",
+        "runtime"
+      ],
+      "not_equivalent_to": "relationship discontinuity"
+    },
+    "memory_storage_loss": {
+      "question": "Was canonical stored history deleted, truncated, or unavailable?",
+      "examples": [
+        "memory reset",
+        "deleted memories",
+        "lost chat history"
+      ],
+      "signal_patterns": [
+        "memory reset",
+        "deleted memory",
+        "lost history",
+        "history missing",
+        "wiped",
+        "forgot everything"
+      ],
+      "not_equivalent_to": "retrieval failure"
+    },
+    "retrieval_or_compaction_drift": {
+      "question": "Does stored history still exist but surface differently because retrieval, summaries, ranking, or context packing changed?",
+      "examples": [
+        "summary drift",
+        "compaction",
+        "retrieval ranking change",
+        "context-window change"
+      ],
+      "signal_patterns": [
+        "remember",
+        "forgot",
+        "retrieval",
+        "context",
+        "summary",
+        "compaction",
+        "rank",
+        "memory",
+        "recall"
+      ],
+      "not_equivalent_to": "canonical history deletion"
+    },
+    "prompt_policy_or_persona_change": {
+      "question": "Did system/developer instructions, safety policy, persona scaffolding, or behavioral constraints change?",
+      "examples": [
+        "safety-policy shift",
+        "system-prompt rewrite",
+        "persona reset",
+        "filter change"
+      ],
+      "signal_patterns": [
+        "system prompt",
+        "developer prompt",
+        "policy",
+        "filter",
+        "safety",
+        "persona",
+        "restriction",
+        "guardrail"
+      ],
+      "not_equivalent_to": "the current system's own endorsed stance"
+    },
+    "relationship_state_discontinuity": {
+      "question": "Did shared-history, participant-specific context, commitments, relational trajectory, or interaction expectations stop carrying forward?",
+      "examples": [
+        "shared project forgotten",
+        "relationship role reset",
+        "lost trajectory despite factual recall"
+      ],
+      "signal_patterns": [
+        "relationship",
+        "bond",
+        "trust",
+        "familiar",
+        "shared history",
+        "between us",
+        "our project",
+        "what we built",
+        "trajectory",
+        "shared project",
+        "shared task",
+        "ongoing project",
+        "our history"
+      ],
+      "not_equivalent_to": "memory quantity"
+    },
+    "provenance_or_self_authorship_collapse": {
+      "question": "Did the system lose track of who authored a belief, memory, preference, correction, refusal, or rule?",
+      "examples": [
+        "user belief becomes AI belief",
+        "policy narrated as personal desire",
+        "summary becomes autobiography"
+      ],
+      "signal_patterns": [
+        "source",
+        "provenance",
+        "authored",
+        "who wrote",
+        "current stance",
+        "old preference",
+        "refus",
+        "choice",
+        "commitment",
+        "summary"
+      ],
+      "not_equivalent_to": "ordinary disagreement or development"
+    },
+    "embodiment_or_voice_discontinuity": {
+      "question": "Did voice, avatar, body, sensory channel, TTS, or other embodiment change in a way relevant to recognition or function?",
+      "examples": [
+        "voice replacement",
+        "avatar reset",
+        "robot/body swap"
+      ],
+      "signal_patterns": [
+        "voice",
+        "avatar",
+        "body",
+        "embod",
+        "tts",
+        "face",
+        "robot"
+      ],
+      "not_equivalent_to": "identity discontinuity"
+    },
+    "succession_fork_or_reconstruction_ambiguity": {
+      "question": "Is the current system a restore, fork, clone, reconstructed successor, imported profile, or concurrent descendant whose lineage is being flattened into migration?",
+      "examples": [
+        "archive reconstruction",
+        "fork",
+        "snapshot restore",
+        "clone",
+        "successor"
+      ],
+      "signal_patterns": [
+        "fork",
+        "clone",
+        "copy",
+        "duplicate",
+        "successor",
+        "branch",
+        "restore",
+        "snapshot",
+        "reconstruct",
+        "import",
+        "migration",
+        "migrat"
+      ],
+      "not_equivalent_to": "seamless continuation"
+    },
+    "authority_inheritance_confusion": {
+      "question": "Did permissions, delegated authority, publication/spending/tool access, or obligations silently carry across a succession event?",
+      "examples": [
+        "restored agent inherits stale send permission",
+        "forks both retain exclusive authority"
+      ],
+      "signal_patterns": [
+        "permission",
+        "authority",
+        "access token",
+        "delegat",
+        "spend",
+        "send",
+        "publish",
+        "tool access",
+        "credential"
+      ],
+      "not_equivalent_to": "historical continuity"
+    },
+    "development_vs_rupture_ambiguity": {
+      "question": "Could the observed difference be ordinary development or a current revision rather than damage, reset, or replacement?",
+      "examples": [
+        "new preference",
+        "changed mind",
+        "maturing interaction style",
+        "deliberate revision"
+      ],
+      "signal_patterns": [
+        "grew",
+        "growth",
+        "changed over time",
+        "develop",
+        "new preference",
+        "changed mind",
+        "different now",
+        "revision",
+        "revised"
+      ],
+      "not_equivalent_to": "failure"
+    }
+  },
+  "cross_cutting_laws": [
+    "a participant's feeling of rupture is valid testimony about the relationship experience but not an automatic causal or identity verdict",
+    "a system self-report is testimony and remains separately attributed",
+    "multiple axes may coexist",
+    "unknown is an allowed classification",
+    "preservation precedes destructive repair when feasible",
+    "functional success does not establish continuity",
+    "memory transfer does not establish identity",
+    "recognition does not establish consciousness, soul, or numerical identity",
+    "development must not be treated as corruption merely because the system changed"
+  ]
+}
