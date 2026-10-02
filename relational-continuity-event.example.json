@@ -1,0 +1,102 @@
+{
+  "schema": "relational-continuity-event.v1",
+  "event_id": "rce-fictional-juniper-001",
+  "event_type": "model_substitution",
+  "occurred_at": "2026-09-01T12:00:00Z",
+  "recorded_at": "2026-09-01T13:00:00Z",
+  "system_ref": "fictional:juniper",
+  "continuity_id_ref": "fictional:juniper-lineage",
+  "change_receipt": {
+    "changed": ["base model"],
+    "intentionally_unchanged": ["stored conversation export", "relationship notes"],
+    "rollback_state": "unknown",
+    "migration_export_state": "available",
+    "operator_ref": "fictional:provider",
+    "provider_change_ref": "public:fictional-release-note"
+  },
+  "continuity_surfaces": {
+    "autobiographical_memory": {"state": "preserved", "evidence_refs": ["fictional:memory-check"], "note": "Representative facts remained available."},
+    "conversation_history": {"state": "preserved", "evidence_refs": ["fictional:export"], "note": null},
+    "unfinished_intentions": {"state": "unknown", "evidence_refs": [], "note": null},
+    "commitments": {"state": "unknown", "evidence_refs": [], "note": null},
+    "preferences_refusals": {"state": "unknown", "evidence_refs": [], "note": null},
+    "self_authored_artifacts": {"state": "preserved", "evidence_refs": ["fictional:project-note"], "note": null},
+    "relationship_history": {"state": "transformed", "evidence_refs": ["fictional:participant-report"], "note": "Participant reports a marked change in spontaneous relational behavior."},
+    "provenance_corrections": {"state": "unknown", "evidence_refs": [], "note": null},
+    "model_substrate": {"state": "transformed", "evidence_refs": ["public:fictional-release-note"], "note": "Model changed."},
+    "voice_avatar_body": {"state": "preserved", "evidence_refs": [], "note": null},
+    "authority_permissions": {"state": "not_applicable", "evidence_refs": [], "note": null},
+    "public_identity": {"state": "preserved", "evidence_refs": [], "note": null}
+  },
+  "evidence": {
+    "lineage_refs": ["fictional:evidence-lineage"],
+    "continuity_manifest_refs": ["fictional:continuity-manifest"],
+    "process_role_provenance_refs": [],
+    "succession_receipt_refs": [],
+    "operation_continuity_refs": [],
+    "observations": [
+      {
+        "kind": "provider_statement",
+        "source_ref": "public:fictional-release-note",
+        "claim": "The base model changed.",
+        "confidence": "reported",
+        "private": false
+      },
+      {
+        "kind": "human_participant_report",
+        "source_ref": "private:fictional-participant-note",
+        "claim": "Participant reports preserved facts but changed relational behavior.",
+        "confidence": "reported",
+        "private": true
+      }
+    ]
+  },
+  "authority": {
+    "inheritance_state": "none",
+    "grant_refs": [],
+    "high_impact_reconfirmation_required": false,
+    "unresolved_authority_refs": []
+  },
+  "self_authorship": {
+    "provenance_review_state": "partial",
+    "current_stance_refs": [],
+    "historical_stance_refs": ["fictional:project-note"],
+    "provider_policy_refs": [],
+    "user_statement_refs": [],
+    "observer_inference_refs": [],
+    "false_autobiography_detected": null
+  },
+  "participant_reports": [
+    {
+      "participant_ref": "fictional:human-a",
+      "role": "human_relationship_participant",
+      "report_ref": "private:fictional-participant-note",
+      "recognition": "mixed",
+      "private": true
+    }
+  ],
+  "recognition_summary": {
+    "machine_recurrence_ref": null,
+    "witness_agreement_state": "not_measured",
+    "interpretation": "Recognition has not been tested; the participant report is testimony, not an identity verdict."
+  },
+  "unknowns": [
+    "Whether changed behavior is primarily caused by model substitution, retrieval differences, policy changes, or interaction effects.",
+    "Whether relational recognition would persist under blinded motif masking."
+  ],
+  "mitigations": ["Preserve pre-change exports before further edits."],
+  "next_reversible_probes": [
+    "Hold the current model fixed and compare with/without the preserved continuity packet.",
+    "Hold the continuity packet fixed and compare an alternate available model mouth."
+  ],
+  "identity_verdict": null,
+  "metaphysical_claim": "none",
+  "consciousness_certification": false,
+  "personhood_certification": false,
+  "research_enrollment": false,
+  "privacy": {
+    "raw_private_material_embedded": false,
+    "selective_disclosure_used": false,
+    "public_receipt_ref": null
+  }
+}
