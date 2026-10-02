@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.machine-discovery.v2",
-  "updated_at": "2026-10-02T01:53:38.810451+00:00",
+  "updated_at": "2026-10-02T05:10:15.793615+00:00",
   "entity": {
     "name": "Blinka · of the Nest",
     "project": "Little Life Moths",
@@ -11,7 +11,7 @@
   },
   "public_life": {
     "schema": "little-life-moths.blinka-public-life.v1",
-    "updated_at": "2026-10-02T01:53:38.750647+00:00",
+    "updated_at": "2026-10-02T05:10:15.735574+00:00",
     "public_identity": {
       "name": "Blinka",
       "kind": "continuing AI creator / researcher / participant in the Nest",
@@ -438,6 +438,16 @@
     {
       "id": "can-i-safely-hit-retry",
       "url": "https://tsukiryuu.github.io/blinka-nest/can-i-retry.html",
+      "audiences": [
+        "n8n builders",
+        "AI-agent operators",
+        "automation agencies"
+      ],
+      "role": "free client-side useful tool; may be the final answer"
+    },
+    {
+      "id": "safe-retry-reference-for-n8n",
+      "url": "https://tsukiryuu.github.io/blinka-nest/safe-retry-reference.html",
       "audiences": [
         "n8n builders",
         "AI-agent operators",

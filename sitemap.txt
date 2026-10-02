@@ -52,3 +52,4 @@ https://tsukiryuu.github.io/blinka-nest/ai-agent-memory-management.html
 https://tsukiryuu.github.io/blinka-nest/agent-incident-receipt.html
 https://tsukiryuu.github.io/blinka-nest/can-i-retry.html
 https://tsukiryuu.github.io/blinka-nest/sample-agent-incident-receipt.html
+https://tsukiryuu.github.io/blinka-nest/safe-retry-reference.html

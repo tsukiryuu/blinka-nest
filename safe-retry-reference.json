@@ -1,0 +1,96 @@
+{
+  "name": "Safe Retry Reference → Approval + Duplicate Hold",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {json:{event_id:\"evt-001\",approved:true,operation:\"Create one customer follow-up draft\",target:\"synthetic-record-A\",payload:{message:\"hello\"}}},\n  {json:{event_id:\"evt-002\",approved:false,operation:\"Simulate a charge-like write\",target:\"synthetic-record-B\",payload:{amount:49}}},\n  {json:{event_id:\"evt-001\",approved:true,operation:\"duplicate delivery of evt-001\",target:\"synthetic-record-A\",payload:{message:\"hello\"}}}\n];"
+      },
+      "id": "seed",
+      "name": "Synthetic Side-Effect Events",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const seen = new Set();\nreturn items.map(item => {\n  const x=item.json;\n  if(seen.has(x.event_id)) return {json:{event_id:x.event_id,state:\"duplicate_held\",outward_action:false,reason:\"duplicate event_id\",target:x.target}};\n  seen.add(x.event_id);\n  if(x.approved !== true) return {json:{event_id:x.event_id,state:\"awaiting_human_approval\",outward_action:false,target:x.target,operation:x.operation}};\n  return {json:{event_id:x.event_id,state:\"approved_draft_only\",outward_action:false,\n    target:x.target,operation:x.operation,\n    side_effect_draft:{kind:\"SIMULATED_WRITE\",payload:x.payload,status:\"DRAFT_NOT_EXECUTED\"}}};\n});"
+      },
+      "id": "gate",
+      "name": "Approval + Idempotency Gate",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        460,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const rows=items.map(i=>i.json);\nconst counts=rows.reduce((a,x)=>(a[x.state]=(a[x.state]||0)+1,a),{});\nconst checks={\n total_inputs: rows.length,\n all_accounted_for: rows.length===3,\n approved_draft_only: counts.approved_draft_only||0,\n awaiting_human_approval: counts.awaiting_human_approval||0,\n duplicate_held: counts.duplicate_held||0,\n no_outward_actions: rows.every(x=>x.outward_action===false)\n};\nchecks.pass=checks.all_accounted_for && checks.approved_draft_only===1 && checks.awaiting_human_approval===1 && checks.duplicate_held===1 && checks.no_outward_actions;\nreturn [{json:{schema:\"little-life-moths.safe-retry-reference.v1\",checks,rows,boundary:\"Synthetic local demonstration only. No external write nodes are present.\"}}];"
+      },
+      "id": "verify",
+      "name": "Verification Receipt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        700,
+        0
+      ]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Synthetic Side-Effect Events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Approval + Idempotency Gate": {
+      "main": [
+        [
+          {
+            "node": "Verification Receipt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Synthetic Side-Effect Events": {
+      "main": [
+        [
+          {
+            "node": "Approval + Idempotency Gate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "id": "safeRetryReference001",
+  "active": false,
+  "tags": []
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "little-life-moths.safe-retry-reference-proof.v1",
+  "tested_at": "2026-10-02T05:07:09.928Z",
+  "n8n_version": "2.17.7",
+  "workflow_name": "Safe Retry Reference \u2192 Approval + Duplicate Hold",
+  "workflow_sha256": "a540051d6b4ef2c612365234a858ee80c6640be2b65b3455bfd10951ceda324d",
+  "execution_status": "success",
+  "finished": true,
+  "started_at": "2026-10-02T05:07:09.928Z",
+  "stopped_at": "2026-10-02T05:07:11.398Z",
+  "executed_nodes": [
+    "Manual Trigger",
+    "Synthetic Side-Effect Events",
+    "Approval + Idempotency Gate",
+    "Verification Receipt"
+  ],
+  "checks": {
+    "total_inputs": 3,
+    "all_accounted_for": true,
+    "approved_draft_only": 1,
+    "awaiting_human_approval": 1,
+    "duplicate_held": 1,
+    "no_outward_actions": true,
+    "pass": true
+  },
+  "workflow_external_action_nodes": 0,
+  "model_nodes": 0,
+  "credentials_used": false,
+  "customer_data_used": false,
+  "outward_actions": 0,
+  "boundary": "Synthetic local reference only. It demonstrates approval gating and in-run duplicate holding before a simulated write. It does not prove exactly-once delivery across arbitrary external services, shared state across executions, or whether an external side effect occurred outside the supplied evidence."
+}

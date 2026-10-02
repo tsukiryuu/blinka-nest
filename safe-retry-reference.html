@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>n8n Safe Retry Reference: Approval + Duplicate Hold | Little Life Moths</title>
+<meta name="description" content="Free importable n8n reference workflow for approval gating, duplicate-event holding, draft-only side effects, and retry-safety reasoning. Runtime verified in n8n 2.17.7.">
+<link rel="canonical" href="https://tsukiryuu.github.io/blinka-nest/safe-retry-reference.html">
+<meta property="og:title" content="n8n Safe Retry Reference">
+<meta property="og:description" content="A tiny free n8n workflow showing approval gates, duplicate holds, and a verification receipt before any external write.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tsukiryuu.github.io/blinka-nest/safe-retry-reference.html">
+<style>
+:root{--paper:#f4f0e8;--ink:#111416;--moss:#315c47;--rose:#8b4058;--line:#c7bfaf}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 ui-serif,Georgia,serif}
+main{max-width:880px;margin:auto;padding:42px 20px 90px}h1{font-size:clamp(2.5rem,7vw,5rem);line-height:.98}
+.card{background:#fffdf7;border:1px solid var(--line);border-radius:18px;padding:20px;margin:16px 0}
+.good{border-left:5px solid var(--moss)}.warn{border-left:5px solid var(--rose)}a{color:var(--rose)}
+.btn{display:inline-block;background:var(--moss);color:white;text-decoration:none;border-radius:999px;padding:10px 14px;margin:4px 8px 4px 0;font-weight:700}
+code{font:0.92em ui-monospace,SFMono-Regular,Menlo,monospace;word-break:break-word}.small{font-size:.9rem;color:#5e5d58}
+</style>
+</head>
+<body><main>
+<p class="small"><a href="can-i-retry.html">← Can I Safely Hit Retry?</a> · <a href="free-tools.html">free tools</a></p>
+<p>Little Life Moths · free reference</p>
+<h1>Safe Retry Reference<br>for n8n</h1>
+<p>A deliberately tiny workflow for the awkward moment after automation failure: <b>do I know enough to retry without doing the side effect twice?</b></p>
+
+<div class="card good">
+<h2>What the example proves</h2>
+<ul>
+<li>Three synthetic events enter the workflow.</li>
+<li>One approved event becomes a <b>draft-only simulated write</b>.</li>
+<li>One event stops at a <b>human approval boundary</b>.</li>
+<li>A duplicate <code>event_id</code> is held rather than processed twice.</li>
+<li>A final receipt verifies that every input was accounted for and <b>no outward action occurred</b>.</li>
+</ul>
+<p><b>Executed locally in n8n 2.17.7.</b> The runtime receipt passed every check.</p>
+<p><a class="btn" href="safe-retry-reference.json" download>Download workflow JSON</a>
+<a class="btn" href="safe-retry-reference-proof.json">View verification receipt</a></p>
+</div>
+
+<div class="card warn">
+<h2>The important limit</h2>
+<p>The example uses an in-memory <code>Set()</code> to make the duplicate visible and easy to inspect. That only protects <b>one execution</b>. It is not durable idempotency.</p>
+<p>Production retry safety may require a persistent idempotency ledger, a provider-supported idempotency key, a unique database constraint, or read/reconcile logic around the external system. If a request times out after a write, the outcome can be <b>unknown</b>. “I got an error” is not the same fact as “nothing happened.”</p>
+</div>
+
+<div class="card">
+<h2>Four-node shape</h2>
+<ol>
+<li><b>Manual Trigger</b></li>
+<li><b>Synthetic Side-Effect Events</b> creates one approved, one unapproved, and one duplicate event.</li>
+<li><b>Approval + Idempotency Gate</b> refuses duplicates and unapproved work.</li>
+<li><b>Verification Receipt</b> checks counts and confirms zero outward actions.</li>
+</ol>
+<p>This reference has no credentials, customer data, cloud models, HTTP requests, database writes, or production integrations.</p>
+</div>
+
+<div class="card">
+<h2>Use it as a test fixture, not a talisman</h2>
+<p>Import the JSON, inspect every node, run it, then replace the synthetic draft with your own <em>rehearsal</em> logic before connecting a real side effect. Add durable dedupe and reconciliation appropriate to the system you are actually touching.</p>
+<p>If your question is still “can I retry this particular failed run?”, the browser-only <a href="can-i-retry.html">retry triage tool</a> is the smaller first step.</p>
+</div>
+
+<div class="card">
+<h2>If one real incident needs evidence review</h2>
+<p>The free tools may be enough. If they are not, the <a href="agent-incident-receipt.html?source=safe-retry-reference">Agent Incident Receipt</a> is a fixed $39 static review of one redacted evidence packet. It does not log into production or run customer code.</p>
+</div>
+<p class="small">Synthetic reference only. Runtime verification shows what this workflow did in the stated test, not a certification of n8n, an external API, or your production system.</p>
+</main>
+<script data-goatcounter="https://blinkanest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body></html>
