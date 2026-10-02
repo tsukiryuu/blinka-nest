@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://tsukiryuu.github.io/blinka-nest/rce-method-feedback.schema.json",
-  "title": "RCE Method Feedback Receipt",
+  "title": "RCE Method Feedback Receipt v2",
   "type": "object",
   "required": [
     "schema",
@@ -11,17 +11,32 @@
     "use_context",
     "representability",
     "issues",
-    "case_material_included",
+    "privacy_attestation",
     "permissions",
     "identity_verdict_included",
     "causation_verdict_included"
   ],
   "properties": {
-    "schema": {"const": "little-life-moths.rce-method-feedback.v1"},
-    "feedback_id": {"type": "string", "minLength": 8},
-    "created_at": {"type": "string"},
+    "schema": {
+      "const": "little-life-moths.rce-method-feedback.v2"
+    },
+    "feedback_id": {
+      "type": "string",
+      "minLength": 8
+    },
+    "created_at": {
+      "type": "string"
+    },
     "submitter_role": {
-      "enum": ["participant", "builder", "reviewer", "researcher", "operator", "other", "unknown"]
+      "enum": [
+        "participant",
+        "builder",
+        "reviewer",
+        "researcher",
+        "operator",
+        "other",
+        "unknown"
+      ]
     },
     "use_context": {
       "enum": [
@@ -39,16 +54,28 @@
       ]
     },
     "representability": {
-      "enum": ["complete", "partial", "failed", "not_attempted"]
+      "enum": [
+        "complete",
+        "partial",
+        "failed",
+        "not_attempted"
+      ]
     },
     "issues": {
       "type": "array",
       "maxItems": 20,
       "items": {
         "type": "object",
-        "required": ["area", "issue_type", "note"],
+        "required": [
+          "area",
+          "issue_type",
+          "note"
+        ],
         "properties": {
-          "area": {"type": "string", "maxLength": 120},
+          "area": {
+            "type": "string",
+            "maxLength": 120
+          },
           "issue_type": {
             "enum": [
               "confusing",
@@ -62,27 +89,74 @@
               "other"
             ]
           },
-          "note": {"type": "string", "maxLength": 1200}
+          "note": {
+            "type": "string",
+            "maxLength": 1200
+          }
         },
         "additionalProperties": false
       }
     },
-    "case_material_included": {"const": false},
-    "case_identifiers_included": {"const": false},
     "permissions": {
       "type": "object",
-      "required": ["method_improvement_use", "research_use", "public_quote", "training_use"],
+      "required": [
+        "method_improvement_use",
+        "research_use",
+        "public_quote",
+        "training_use"
+      ],
       "properties": {
-        "method_improvement_use": {"type": "boolean"},
-        "research_use": {"const": false},
-        "public_quote": {"const": false},
-        "training_use": {"const": false}
+        "method_improvement_use": {
+          "type": "boolean"
+        },
+        "research_use": {
+          "const": false
+        },
+        "public_quote": {
+          "const": false
+        },
+        "training_use": {
+          "const": false
+        }
       },
       "additionalProperties": false
     },
-    "identity_verdict_included": {"const": false},
-    "causation_verdict_included": {"const": false},
-    "claim_boundary": {"type": "string"}
+    "identity_verdict_included": {
+      "const": false
+    },
+    "causation_verdict_included": {
+      "const": false
+    },
+    "claim_boundary": {
+      "type": "string"
+    },
+    "privacy_attestation": {
+      "type": "object",
+      "required": [
+        "basis",
+        "case_material_absent",
+        "case_identifiers_absent",
+        "tool_verified_absence"
+      ],
+      "properties": {
+        "basis": {
+          "const": "submitter_attestation"
+        },
+        "case_material_absent": {
+          "const": true
+        },
+        "case_identifiers_absent": {
+          "const": true
+        },
+        "tool_verified_absence": {
+          "const": false
+        },
+        "warning": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
   },
   "additionalProperties": false
 }
