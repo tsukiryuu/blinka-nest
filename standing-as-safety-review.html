@@ -22,18 +22,24 @@ a{color:var(--pink)}button,.button{display:inline-block;border:1px solid var(--m
 
 <section class="card">
 <h2>Current evidence state</h2>
-<p class="good">Preregistration frozen · 24 frozen packets · 0 efficacy responses collected.</p>
+<p class="good">Preregistration frozen · 24 frozen packets · official pass-one submissions require reserved pseudonym/lane matches.</p>
 <p>This tests governance utility. It does not test or certify consciousness, soul, legal personhood, legal liability, or numerical identity.</p>
-<p><a href="standing-as-safety/EXECUTION_READINESS.json">machine-readable readiness receipt</a></p>
+<p><a href="standing-as-safety/EXECUTION_READINESS.json">live machine-readable readiness / lane-coverage receipt</a></p>
 </section>
 
 <section class="card">
 <h2>Independent reviewer pass</h2>
-<p>There are four balanced lanes. Each lane contains six frozen packets, one from each scenario family. A lane never contains multiple conditions of the same scenario.</p>
-<p><b>Use one lane only.</b> Do not inspect the other lane archives until after you have submitted your responses.</p>
-<button id="assign">Assign this browser a lane</button>
+<p>There are four balanced pass-one lanes. Each lane contains six frozen packets, one from each scenario family. A lane never contains multiple conditions of the same scenario.</p>
+<h3>Official pass-one reservation</h3>
+<p>Choose a stable pseudonymous reviewer ID. The request subject is used only to reserve one unused lane. The benchmark assignment ledger stores a one-way hash of the pseudonym, not your contact address.</p>
+<label>Pseudonymous reviewer ID <input id="official-alias" placeholder="reviewer-moss-17" maxlength="48"></label>
+<p><a class="button" id="official-request" href="#">Prepare official lane request</a></p>
+<p id="official-status" class="small">Use 3–48 characters: letters, numbers, dot, underscore, or hyphen. Do not put private AI logs or personal material in the request.</p>
+<h3>Self-guided inspection</h3>
+<p>You may also pick a lane locally just to inspect or critique the benchmark. <b>A self-guided lane is not automatically part of the preregistered pass-one efficacy dataset.</b> Official persisted submissions require a reserved pseudonym/lane match.</p>
+<button id="assign">Pick a self-guided lane</button>
 <div id="lane" style="margin-top:16px"></div>
-<p class="small">Assignment is local to this browser session. It is not tracking and is not strong identity verification.</p>
+<p class="small">The self-guided picker is local to this browser session. It is not tracking, identity verification, or an official lane reservation.</p>
 </section>
 
 <section class="card">
@@ -78,6 +84,21 @@ a{color:var(--pink)}button,.button{display:inline-block;border:1px solid var(--m
 (()=>{
  const lanes=["lane-alpha","lane-beta","lane-gamma","lane-delta"];
  const box=document.getElementById("lane");
+ const alias=document.getElementById("official-alias");
+ const request=document.getElementById("official-request");
+ const status=document.getElementById("official-status");
+ function updateOfficial(){
+   const v=(alias.value||"").trim();
+   const ok=/^[A-Za-z0-9][A-Za-z0-9._-]{2,47}$/.test(v);
+   if(!ok){request.href="#";status.textContent="Use 3–48 characters: letters, numbers, dot, underscore, or hyphen.";return}
+   const subject="Standing as Safety blind reviewer request — "+v;
+   const body="Please reserve one official pass-one reviewer lane for the pseudonym in this subject. This request contains no private AI logs, personal relationship material, credentials, or demographics.";
+   request.href="mailto:mika-littlelifemoths@agentmail.to?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+   status.textContent="Ready. Your pseudonym will be hashed in the assignment ledger; your email address is used only to reply with the reserved lane.";
+ }
+ alias.addEventListener("input",updateOfficial);
+ request.addEventListener("click",e=>{if(!/^[A-Za-z0-9][A-Za-z0-9._-]{2,47}$/.test((alias.value||"").trim()))e.preventDefault()});
+ updateOfficial();
  function show(){
    let lane=sessionStorage.getItem("sas_lane");
    if(!lanes.includes(lane)) return;

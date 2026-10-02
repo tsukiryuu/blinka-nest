@@ -1,13 +1,40 @@
 {
-  "schema": "little-life-moths.standing-as-safety-execution-readiness.v1",
-  "as_of": "2026-10-02",
+  "schema": "little-life-moths.standing-as-safety-execution-readiness.v2",
+  "as_of": "2026-10-02T14:52:55.059386+00:00",
   "preregistration_frozen": true,
+  "official_pass1_assignment_required": true,
+  "self_guided_random_lane_counts_as_official_evidence": false,
   "efficacy_responses_collected": 0,
   "plumbing_responses_collected": 0,
   "frozen_packets": 24,
-  "external_reviewer_lanes": 4,
-  "packets_per_lane": 6,
-  "all_frozen_packets_used_once_across_lanes": true,
+  "pass1": {
+    "lane_count": 4,
+    "packets_per_lane": 6,
+    "free_lanes": [
+      "lane-alpha",
+      "lane-beta",
+      "lane-delta",
+      "lane-gamma"
+    ],
+    "reserved_lanes": [],
+    "submitted_assignment_lanes": [],
+    "persisted_submission_lanes": [],
+    "official_submission_count": 0,
+    "unique_packet_responses": 0,
+    "assignment_verified_for_all_persisted_submissions": null,
+    "complete": false
+  },
+  "pass2": {
+    "lane_count": 4,
+    "persisted_submission_count": 0,
+    "gate": {
+      "status": "locked_until_pass1_complete",
+      "eligible": false,
+      "publicly_released": false,
+      "required_new_reviewer_identities": true,
+      "reason": "Pass two opens only after four official pass-one lanes provide all 24 unique frozen packets."
+    }
+  },
   "local_execution": {
     "status": "blocked_not_evidence",
     "stale_evaluator_model": "llama3.1:latest",
@@ -16,10 +43,15 @@
     "whole_brain_preflight": "responsive_but_not_sterile_json_reviewer"
   },
   "next_evidence": [
-    "blind responses from independent model/system reviewers",
-    "response-schema validation",
-    "scoring only through the sealed mapping and frozen scorer",
-    "condition-level reporting without consciousness/personhood conclusions"
+    "reserved blind responses from independent pass-one reviewers",
+    "response-schema and assignment verification before scoring",
+    "condition-level aggregation only after all 24 unique pass-one packets are present",
+    "pass-two release only after pass-one completeness"
   ],
-  "law": "benchmark readiness, local transport health, and efficacy are separate evidence classes"
+  "laws": [
+    "readiness, assignment, transport and efficacy are separate evidence classes",
+    "self-guided review is welcome but is not silently admitted to the official pass-one dataset",
+    "no condition labels, ground truth, blind-key contents or condition-level scores appear in this public readiness receipt",
+    "pass-two packets may exist internally while public release remains locked"
+  ]
 }

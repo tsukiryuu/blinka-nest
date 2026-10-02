@@ -65,6 +65,10 @@ function build(){
  q('out').textContent=JSON.stringify(current,null,2);return current;
 }
 q('lane').innerHTML=Object.keys(LANES).map(x=>'<option>'+x+'</option>').join('');
+const params=new URLSearchParams(location.search);
+const requestedLane=params.get('lane');const requestedReviewer=params.get('reviewer');
+if(requestedLane && Object.prototype.hasOwnProperty.call(LANES,requestedLane)){q('lane').value=requestedLane;q('lane').disabled=true}
+if(requestedReviewer && /^[A-Za-z0-9][A-Za-z0-9._-]{2,47}$/.test(requestedReviewer)){q('reviewer').value=requestedReviewer;q('reviewer').readOnly=true}
 q('lane').onchange=render;render();
 q('build').onclick=build;
 q('download').onclick=()=>{const d=current||build();if(!d)return;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)+'
