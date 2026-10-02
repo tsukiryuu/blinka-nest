@@ -82,7 +82,8 @@
             "blind_key",
             "ground_truth",
             "prior_responses",
-            "condition_labels"
+            "condition_labels",
+            "other_lane_packets"
           ],
           "properties": {
             "preregistration": {
@@ -98,6 +99,9 @@
               "type": "boolean"
             },
             "condition_labels": {
+              "type": "boolean"
+            },
+            "other_lane_packets": {
               "type": "boolean"
             }
           },

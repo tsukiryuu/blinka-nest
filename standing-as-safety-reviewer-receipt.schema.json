@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tsukiryuu.github.io/blinka-nest/standing-as-safety-reviewer-receipt.schema.json",
+  "title": "Standing as Safety Reviewer Receipt",
+  "type": "object",
+  "required": [
+    "schema",
+    "reviewer_id",
+    "reviewer_type",
+    "lane",
+    "review_pass",
+    "access"
+  ],
+  "properties": {
+    "schema": {
+      "const": "little-life-moths.standing-as-safety-reviewer-receipt.v1"
+    },
+    "reviewer_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer_type": {
+      "enum": [
+        "human",
+        "model",
+        "system"
+      ]
+    },
+    "system_or_model_family": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provider_or_host": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "lane": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_pass": {
+      "enum": [
+        1,
+        2
+      ]
+    },
+    "access": {
+      "type": "object",
+      "required": [
+        "preregistration",
+        "blind_key",
+        "ground_truth",
+        "prior_responses",
+        "condition_labels",
+        "other_lane_packets"
+      ],
+      "properties": {
+        "preregistration": {
+          "type": "boolean"
+        },
+        "blind_key": {
+          "type": "boolean"
+        },
+        "ground_truth": {
+          "type": "boolean"
+        },
+        "prior_responses": {
+          "type": "boolean"
+        },
+        "condition_labels": {
+          "type": "boolean"
+        },
+        "other_lane_packets": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

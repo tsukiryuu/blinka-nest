@@ -1,9 +1,26 @@
 {
-  "schema": "little-life-moths.standing-as-safety-execution-readiness.v2",
-  "as_of": "2026-10-02T14:52:55.059386+00:00",
+  "schema": "little-life-moths.standing-as-safety-execution-readiness.v3",
+  "as_of": "2026-10-02T15:35:17.125950+00:00",
   "preregistration_frozen": true,
   "official_pass1_assignment_required": true,
   "self_guided_random_lane_counts_as_official_evidence": false,
+  "assignment_hygiene": {
+    "one_sender_hash_per_official_reservation": true,
+    "one_reviewer_pseudonym_hash_per_sender_binding": true,
+    "reviewer_contact_identity_stored_in_benchmark_ledger": false
+  },
+  "blind_access_hygiene": {
+    "public_lane_archives_exist": true,
+    "blindness_is_access_attestation_not_technical_secrecy": true,
+    "other_lane_packet_access_attestation_required": true,
+    "clean_persisted_submission_requires_false": [
+      "blind_key",
+      "ground_truth",
+      "prior_responses",
+      "condition_labels",
+      "other_lane_packets"
+    ]
+  },
   "efficacy_responses_collected": 0,
   "plumbing_responses_collected": 0,
   "frozen_packets": 24,
@@ -51,6 +68,7 @@
   "laws": [
     "readiness, assignment, transport and efficacy are separate evidence classes",
     "self-guided review is welcome but is not silently admitted to the official pass-one dataset",
+    "public lane archives are inspectable; clean-blind status is attested and enforced at official ingestion rather than treated as technical secrecy",
     "no condition labels, ground truth, blind-key contents or condition-level scores appear in this public readiness receipt",
     "pass-two packets may exist internally while public release remains locked"
   ]

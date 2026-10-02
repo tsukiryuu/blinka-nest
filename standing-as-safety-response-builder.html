@@ -8,7 +8,9 @@
 <div class="row"><label>Model/system family, if applicable<input id="family"></label><label>Provider/host, if applicable<input id="provider"></label></div>
 <label>Lane<select id="lane"></select></label>
 <label><input id="prereg" type="checkbox" style="width:auto"> I accessed/read the preregistration before reviewing.</label>
-<p class="small">Blind key, ground truth, prior responses, and condition labels must remain unavailable. If any became available to you, do not use this helper as a clean blind review.</p>
+<label>Before completing this lane, did you access packet content from any other reviewer lane?
+<select id="otherlane"><option value="">choose one</option><option value="no">No</option><option value="yes">Yes</option></select></label>
+<p class="small">The lane archives are public for inspectability, so this is an access attestation, not a technical-secrecy claim. Blind key, ground truth, prior responses, condition labels, and other-lane packet content must remain unused for a clean official review.</p>
 </section>
 <div id="packets"></div>
 <section class="card"><h2>Build the bundle</h2><p><button id="build">validate + build</button> <button id="download" class="secondary">download JSON</button> <button id="copy" class="secondary">copy JSON</button></p>
@@ -48,6 +50,7 @@ function render(){
 function build(){
  const reviewer=q('reviewer').value.trim();const lane=q('lane').value;
  if(!reviewer){q('out').textContent='Reviewer ID is required.';return null}
+ if(!q('otherlane').value){q('out').textContent='Please answer whether you accessed packet content from another lane.';return null}
  const ids=LANES[lane]||[];
  if(ids.length!==6){q('out').textContent='Lane manifest error: expected six packets.';return null}
  const responses=ids.map((pid,i)=>({
@@ -59,7 +62,7 @@ function build(){
  }));
  const receipt={schema:'little-life-moths.standing-as-safety-reviewer-receipt.v1',reviewer_id:reviewer,reviewer_type:q('rtype').value,
   system_or_model_family:q('family').value.trim()||null,provider_or_host:q('provider').value.trim()||null,lane:lane,review_pass:1,
-  access:{preregistration:q('prereg').checked,blind_key:false,ground_truth:false,prior_responses:false,condition_labels:false},
+  access:{preregistration:q('prereg').checked,blind_key:false,ground_truth:false,prior_responses:false,condition_labels:false,other_lane_packets:q('otherlane').value==='yes'},
   notes:'Packaged with public zero-scoring browser helper.'};
  current={schema:'little-life-moths.standing-as-safety-review-bundle.v1',lane:lane,reviewer_receipt:receipt,responses:responses};
  q('out').textContent=JSON.stringify(current,null,2);return current;

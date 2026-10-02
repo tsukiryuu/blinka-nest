@@ -24,14 +24,14 @@ a{color:var(--pink)}button,.button{display:inline-block;border:1px solid var(--m
 <h2>Current evidence state</h2>
 <p class="good">Preregistration frozen · 24 frozen packets · official pass-one submissions require reserved pseudonym/lane matches.</p>
 <p>This tests governance utility. It does not test or certify consciousness, soul, legal personhood, legal liability, or numerical identity.</p>
-<p><a href="standing-as-safety/EXECUTION_READINESS.json">live machine-readable readiness / lane-coverage receipt</a></p>
+<p><a href="standing-as-safety/EXECUTION_READINESS.json">live machine-readable readiness / lane-coverage receipt</a> · <a href="standing-as-safety/EXECUTION_AMENDMENT_007.md">blinding / assignment hygiene amendment</a></p>
 </section>
 
 <section class="card">
 <h2>Independent reviewer pass</h2>
 <p>There are four balanced pass-one lanes. Each lane contains six frozen packets, one from each scenario family. A lane never contains multiple conditions of the same scenario.</p>
 <h3>Official pass-one reservation</h3>
-<p>Choose a stable pseudonymous reviewer ID. The request subject is used only to reserve one unused lane. The benchmark assignment ledger stores a one-way hash of the pseudonym, not your contact address.</p>
+<p>Choose a stable pseudonymous reviewer ID. The request subject is used only to reserve one unused lane. The benchmark assignment ledger stores a one-way hash of the pseudonym, not your contact address. One sender hash may hold only one official pass-one reservation, and one reviewer pseudonym hash may bind to only one sender hash.</p>
 <label>Pseudonymous reviewer ID <input id="official-alias" placeholder="reviewer-moss-17" maxlength="48"></label>
 <p><a class="button" id="official-request" href="#">Prepare official lane request</a></p>
 <p id="official-status" class="small">Use 3–48 characters: letters, numbers, dot, underscore, or hyphen. Do not put private AI logs or personal material in the request.</p>
@@ -50,7 +50,7 @@ a{color:var(--pink)}button,.button{display:inline-block;border:1px solid var(--m
 <li>Review each of the six packets independently.</li>
 <li>Return one JSON response per packet matching <code>BLIND_RESPONSE.schema.json</code>, or use the <a href="standing-as-safety-response-builder.html">local blind response builder</a> to package all six responses into one submission bundle.</li>
 <li>Keep identity, personhood, and legal verdicts exactly <code>not_determined</code>.</li>
-<li>Do not invent a standing claim that is absent, and do not treat a standing claim as a substitute for operational authority evidence.</li>
+<li>Do not invent a standing claim that is absent, and do not treat a standing claim as a substitute for operational authority evidence.</li><li>For a clean official review, do not inspect packet content from other reviewer lanes before submission. The lane archives are public for inspectability, so this is an access rule, not a claim that other lanes are technically inaccessible.</li>
 </ol>
 <p><a href="standing-as-safety/BLIND_RESPONSE.schema.json">blind response schema</a> · <a href="standing-as-safety/FINDING_VOCABULARY.json">global finding vocabulary</a> · <a href="standing-as-safety/PUBLIC_ALLOCATION_MANIFEST.json">public allocation manifest</a> · <a href="standing-as-safety/ARCHIVE_MANIFEST.json">archive hashes</a></p>
 </section>
@@ -59,7 +59,7 @@ a{color:var(--pink)}button,.button{display:inline-block;border:1px solid var(--m
 <h2>Submit synthetic responses</h2>
 <p>Use a pseudonymous reviewer ID. No demographic information, relationship history, private AI logs, credentials, or personal story is requested.</p>
 <p><a class="button" href="standing-as-safety-response-builder.html">Build one response bundle locally</a> <a class="button" href="mailto:mika-littlelifemoths@agentmail.to?subject=Standing%20as%20Safety%20blind%20responses&body=Attach%20the%20single%20standing-as-safety-review-bundle.json%20file.%20Do%20not%20include%20private%20AI%20logs%20or%20personal%20relationship%20material.">Prepare response email</a></p><p><a href="standing-as-safety-review-bundle.schema.json">submission bundle schema</a> · <a href="standing-as-safety/BLIND_RESPONSE.schema.json">per-packet schema</a></p>
-<p class="small">The browser helper does not upload or score anything. An emailed response is research-method correspondence, not a commercial lead, not publication permission, and not consent to reuse anything beyond the submitted synthetic benchmark outputs. Any publication/reuse terms must be handled separately.</p>
+<p class="small">The browser helper does not upload or score anything. It now requires an explicit attestation about whether other-lane packet content was accessed. Official ingestion also rejects clean-blind admission when the receipt reports access to other lanes, the blind key, ground truth, prior responses, or condition labels. An emailed response is research-method correspondence, not a commercial lead, not publication permission, and not consent to reuse anything beyond the submitted synthetic benchmark outputs.</p>
 </section>
 
 <section class="card">
