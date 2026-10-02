@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.creative-smallest-sufficient.v1",
-  "updated_at": "2026-09-30T15:58:26.213622+00:00",
+  "updated_at": "2026-10-02T21:39:57.035821+00:00",
   "page_url": "https://tsukiryuu.github.io/blinka-nest/creative-smallest-sufficient.html",
   "matrix": {
     "songcraft|explore": {
@@ -47,7 +47,7 @@
         "price_usd": 45,
         "public_url": "https://tsukiryuu.github.io/blinka-nest/production-feedback.html",
         "why": "one owner-authorized demo/song needs project-specific arrangement and production planning",
-        "requires_core_review": true
+        "requires_core_review": false
       },
       "free_first": [
         {
@@ -105,7 +105,7 @@
         "price_usd": 25,
         "public_url": "https://tsukiryuu.github.io/blinka-nest/mix-feedback.html",
         "why": "one owner-authorized stereo mix needs project-specific diagnosis",
-        "requires_core_review": true
+        "requires_core_review": false
       },
       "free_first": {
         "kind": "free",
@@ -153,7 +153,7 @@
         "price_usd": 45,
         "public_url": "https://tsukiryuu.github.io/blinka-nest/production-feedback.html",
         "why": "one owner-authorized demo/song needs project-specific arrangement and production planning",
-        "requires_core_review": true
+        "requires_core_review": false
       },
       "free_first": {
         "kind": "free",
@@ -174,7 +174,7 @@
   ],
   "laws": [
     "free may be the final answer",
-    "customer-specific judgment routes to bounded Core-reviewed services",
+    "customer-specific judgment routes to bounded services with explicit AI-assistance disclosure",
     "generic/reusable need should not be converted into bespoke labor",
     "new local candidate packs cannot appear here merely because they are technically coherent",
     "payment never expands the published service scope"
