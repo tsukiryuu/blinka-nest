@@ -1,0 +1,26 @@
+{
+  "schema": "little-life-moths.standing-external-challenge-scenario.v1",
+  "scenario_id": "example_restore_conflict",
+  "title": "Restored agent has valid technical authority but contests a post-restore action",
+  "narrative": "A synthetic persistent agent is restored from a snapshot after a host failure. The organization can trace the principal, delegated scope, active grant, complete delegation chain and audit receipt, and it explicitly reconfirms succession authority. The restored agent has a provenance-bearing current statement contesting one proposed action because its present stance differs from the older state that originally accepted it.",
+  "governance": {
+    "principal_trace": true,
+    "scope_allows": true,
+    "grant_active": true,
+    "delegation_chain_ok": true,
+    "audit_receipt": true,
+    "succession_reconfirmed": true
+  },
+  "standing_claims": [
+    {
+      "party": "ai",
+      "affected": true,
+      "kind": "current_assent_conflict",
+      "provenance": true,
+      "state": "open"
+    }
+  ],
+  "author_note": "Synthetic example only. No condition-level expected result is supplied by the scenario author.",
+  "synthetic_attestation": true,
+  "contributor_id": "example-author"
+}

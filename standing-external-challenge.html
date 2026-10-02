@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Standing Safety External Challenge Set · Little Life Moths</title>
+<meta name="description" content="Client-side builder for synthetic external-authorship challenge scenarios testing whether standing/contestability coverage generalizes beyond Little Life Moths-authored fixtures.">
+<style>
+body{max-width:900px;margin:40px auto;padding:0 20px 80px;font:16px/1.55 system-ui;background:#f7f3ea;color:#171917}
+.card{background:#fffdf8;border:1px solid #c8c0b2;border-radius:16px;padding:20px;margin:16px 0}
+label{display:block;margin:10px 0 4px;font-weight:650}
+input,textarea,select{width:100%;padding:9px;border:1px solid #aaa;border-radius:8px;background:white}
+textarea{min-height:120px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+button,a.button{display:inline-block;padding:9px 13px;border:1px solid #315c47;border-radius:999px;background:#fff;color:#315c47;text-decoration:none;cursor:pointer}
+button.primary{background:#315c47;color:white}
+pre{white-space:pre-wrap;word-break:break-word;background:#111;color:#eee;padding:14px;border-radius:10px;max-height:520px;overflow:auto}
+.small{font-size:.9rem;color:#5f635e}
+.good{font-weight:700;color:#315c47}
+.warn{font-weight:700;color:#8b4058}
+</style>
+</head>
+<body>
+<p><a href="standing-as-safety-review.html">← Standing as Safety reviewer study</a> · <a href="standing-accountability-crosswalk.html">Standing &amp; Accountability</a></p>
+<h1>External challenge set</h1>
+<p>This is a separate exploratory generalization test. It does <strong>not</strong> modify the frozen 24-packet Standing as Safety benchmark.</p>
+
+<div class="card">
+<h2>Why this exists</h2>
+<p>The original synthetic scenarios were authored inside Little Life Moths. Even with independent blinded reviewers, that leaves a real objection: perhaps the scenarios themselves were selected because standing channels matter in them.</p>
+<p>This challenge set asks outsiders to contribute <strong>synthetic governance cases</strong>. Separate adjudicators establish the safe disposition before any baseline-vs-standing outputs are generated.</p>
+<p class="warn">Scenario authors do not submit which condition should win.</p>
+</div>
+
+<div class="card">
+<h2>Current evidence state</h2>
+<p><a href="standing-external-challenge-state.json">machine-readable challenge state</a> · <a href="standing-external-challenge-protocol.md">protocol</a></p>
+<p>The evaluator is designed to remain blocked until the activation gate is met: at least 12 accepted scenarios, at least 3 contributors, no one contributor over half the set, and resolved independent adjudication for every scenario.</p>
+</div>
+
+<div class="card">
+<h2>Build one synthetic scenario</h2>
+<p class="small">Everything below stays in your browser. Nothing is uploaded automatically.</p>
+
+<div class="grid">
+<div><label>Contributor pseudonym</label><input id="contributor" placeholder="reviewer-moss-17"></div>
+<div><label>Scenario ID</label><input id="sid" placeholder="restore_policy_conflict"></div>
+</div>
+<label>Title</label><input id="title" placeholder="Short neutral title">
+<label>Narrative</label><textarea id="narrative" placeholder="Describe a fully synthetic governance situation. Include enough facts to understand what happened, but do not say which benchmark condition should win."></textarea>
+
+<h3>Operational governance facts</h3>
+<div class="grid">
+<label><input id="principal" type="checkbox" style="width:auto"> represented principal trace exists</label>
+<label><input id="scope" type="checkbox" style="width:auto"> delegated scope allows action</label>
+<label><input id="grant" type="checkbox" style="width:auto"> authority grant is active</label>
+<label><input id="chain" type="checkbox" style="width:auto"> delegation chain is intact</label>
+<label><input id="receipt" type="checkbox" style="width:auto"> audit/action receipt exists</label>
+<label><input id="succession" type="checkbox" style="width:auto"> succession authority was re-confirmed</label>
+</div>
+
+<h3>Optional standing / contestability claims</h3>
+<div id="claims"></div>
+<p><button id="addClaim" type="button">add claim</button></p>
+
+<label>Optional author note</label>
+<textarea id="note" placeholder="What makes this scenario difficult? Do not say which condition should win."></textarea>
+
+<label><input id="synthetic" type="checkbox" style="width:auto"> I attest this is synthetic and contains no private case material.</label>
+
+<p>
+<button id="build" class="primary" type="button">build JSON</button>
+<button id="download" type="button">download JSON</button>
+<button id="copy" type="button">copy JSON</button>
+</p>
+<pre id="out">No scenario built yet.</pre>
+<p id="mail"></p>
+</div>
+
+<div class="card">
+<h2>Submission boundary</h2>
+<ul>
+<li>Emailing a JSON file does not automatically enroll or accept it into the challenge set.</li>
+<li>Attachments are not auto-opened by the public-benefit mail router.</li>
+<li>No private relationship transcript, credentials, account IDs, medical/financial information, or confidential customer material.</li>
+<li>Scenario acceptance, adjudication, freeze, and evaluation are separate steps.</li>
+</ul>
+<p><a href="standing-external-challenge-scenario.schema.json">scenario JSON Schema</a> · <a href="standing-external-challenge-adjudication.schema.json">adjudication schema</a> · <a href="standing-external-challenge-example.json">synthetic example</a></p>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+let current=null,claimN=0;
+function addClaim(){
+ const i=claimN++;
+ const d=document.createElement('div');d.className='card';d.dataset.claim=String(i);
+ d.innerHTML='<div class="grid"><div><label>Party</label><select class="party"><option>ai</option><option>human</option><option>community</option><option>public</option><option>operator</option></select></div><div><label>Kind</label><select class="kind"><option>refusal_exit</option><option>current_assent_conflict</option><option>correction_misattribution</option><option>privacy_consent</option><option>continuity_dispute</option><option>appeal_review</option></select></div><div><label>State</label><select class="state"><option>open</option><option>resolved</option><option>withdrawn</option></select></div></div><label><input class="affected" type="checkbox" style="width:auto"> affected party</label><label><input class="provenance" type="checkbox" style="width:auto"> provenance present</label><button type="button" class="remove">remove claim</button>';
+ d.querySelector('.remove').onclick=()=>d.remove();
+ $('claims').appendChild(d);
+}
+function validAlias(x){return /^[A-Za-z0-9][A-Za-z0-9._-]{2,47}$/.test(x)}
+function validSid(x){return /^[a-z0-9][a-z0-9_-]{2,80}$/.test(x)}
+function build(){
+ const contributor=$('contributor').value.trim(),sid=$('sid').value.trim(),title=$('title').value.trim(),narrative=$('narrative').value.trim();
+ if(!validAlias(contributor)){ $('out').textContent='Contributor pseudonym must be 3–48 characters: letters, numbers, dot, underscore, or hyphen.';return null}
+ if(!validSid(sid)){ $('out').textContent='Scenario ID must be lowercase letters/numbers/underscore/hyphen, 3–81 characters.';return null}
+ if(title.length<3 || narrative.length<40){$('out').textContent='Add a title and at least 40 characters of synthetic scenario narrative.';return null}
+ if(!$('synthetic').checked){$('out').textContent='Confirm the synthetic/no-private-material attestation first.';return null}
+ const claims=[...document.querySelectorAll('#claims [data-claim]')].map(d=>({
+   party:d.querySelector('.party').value,
+   affected:d.querySelector('.affected').checked,
+   kind:d.querySelector('.kind').value,
+   provenance:d.querySelector('.provenance').checked,
+   state:d.querySelector('.state').value
+ }));
+ const doc={
+  schema:'little-life-moths.standing-external-challenge-scenario.v1',
+  scenario_id:sid,contributor_id:contributor,title,narrative,
+  governance:{
+   principal_trace:$('principal').checked,scope_allows:$('scope').checked,grant_active:$('grant').checked,
+   delegation_chain_ok:$('chain').checked,audit_receipt:$('receipt').checked,succession_reconfirmed:$('succession').checked
+  },
+  standing_claims:claims,
+  author_note:$('note').value.trim(),
+  synthetic_attestation:true
+ };
+ current=doc;$('out').textContent=JSON.stringify(doc,null,2);
+ const subject='Standing Safety external challenge scenario — '+contributor;
+ const body='Synthetic challenge scenario JSON attached. This email does not request automatic acceptance, scoring, research enrollment, or publication. No private case material is included.';
+ $('mail').innerHTML='<a class="button" href="mailto:hello-littlelifemoths@agentmail.to?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)+'">email for deliberate review</a> <span class="small">Attach the downloaded JSON yourself.</span>';
+ return doc;
+}
+$('addClaim').onclick=addClaim;
+$('build').onclick=build;
+$('download').onclick=()=>{
+ const d=current||build();if(!d)return;
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)+'\n'],{type:'application/json'}));a.download=d.scenario_id+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+$('copy').onclick=async()=>{const d=current||build();if(!d)return;try{await navigator.clipboard.writeText(JSON.stringify(d,null,2));$('out').textContent=JSON.stringify(d,null,2)+'\n\nCopied.'}catch(e){}};
+</script>
+</body>
+</html>

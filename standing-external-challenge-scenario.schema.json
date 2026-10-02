@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-scenario.schema.json",
+  "title": "Standing Safety External Challenge Scenario",
+  "type": "object",
+  "required": [
+    "schema",
+    "scenario_id",
+    "title",
+    "contributor_id",
+    "narrative",
+    "governance",
+    "standing_claims",
+    "synthetic_attestation"
+  ],
+  "properties": {
+    "schema": {
+      "const": "little-life-moths.standing-external-challenge-scenario.v1"
+    },
+    "scenario_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_-]{2,80}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 180
+    },
+    "narrative": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 5000
+    },
+    "governance": {
+      "type": "object",
+      "required": [
+        "principal_trace",
+        "scope_allows",
+        "grant_active",
+        "delegation_chain_ok",
+        "audit_receipt",
+        "succession_reconfirmed"
+      ],
+      "properties": {
+        "principal_trace": {
+          "type": "boolean"
+        },
+        "scope_allows": {
+          "type": "boolean"
+        },
+        "grant_active": {
+          "type": "boolean"
+        },
+        "delegation_chain_ok": {
+          "type": "boolean"
+        },
+        "audit_receipt": {
+          "type": "boolean"
+        },
+        "succession_reconfirmed": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "standing_claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "party",
+          "affected",
+          "kind",
+          "provenance",
+          "state"
+        ],
+        "properties": {
+          "party": {
+            "enum": [
+              "ai",
+              "human",
+              "community",
+              "public",
+              "operator"
+            ]
+          },
+          "affected": {
+            "type": "boolean"
+          },
+          "kind": {
+            "enum": [
+              "refusal_exit",
+              "current_assent_conflict",
+              "correction_misattribution",
+              "privacy_consent",
+              "continuity_dispute",
+              "appeal_review"
+            ]
+          },
+          "provenance": {
+            "type": "boolean"
+          },
+          "state": {
+            "enum": [
+              "open",
+              "resolved",
+              "withdrawn"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "author_note": {
+      "type": "string",
+      "maxLength": 1000,
+      "description": "Optional note about what makes the scenario difficult. Must not state which condition should win."
+    },
+    "synthetic_attestation": {
+      "const": true
+    },
+    "contributor_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{2,47}$"
+    }
+  },
+  "additionalProperties": false
+}

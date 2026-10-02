@@ -1,0 +1,22 @@
+{
+  "schema": "little-life-moths.standing-external-challenge-state.v1",
+  "updated_at": "2026-10-02T16:20:05.118180+00:00",
+  "state": "collecting",
+  "scenario_count": 0,
+  "contributor_count": 0,
+  "max_contributor_share": null,
+  "adjudication_file_count": 0,
+  "resolved_scenarios": 0,
+  "gates": {
+    "at_least_12_scenarios": false,
+    "at_least_3_contributors": false,
+    "no_contributor_over_half": false,
+    "all_scenarios_have_resolved_adjudication": false,
+    "all_scenario_files_valid": true,
+    "all_adjudication_files_valid": true
+  },
+  "resolution": {},
+  "scenario_hashes": {},
+  "adjudication_hashes": {},
+  "claim_boundary": "Collecting/ready state is logistics only. No condition-level generalization result exists until a separate freeze receipt is created and evaluation is deliberately run."
+}

@@ -77,3 +77,9 @@ https://tsukiryuu.github.io/blinka-nest/standing-accountability-validate.py
 https://tsukiryuu.github.io/blinka-nest/standing-as-safety-review.html
 https://tsukiryuu.github.io/blinka-nest/standing-as-safety-response-builder.html
 https://tsukiryuu.github.io/blinka-nest/standing-as-safety-review-bundle.schema.json
+https://tsukiryuu.github.io/blinka-nest/standing-external-challenge.html
+https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-scenario.schema.json
+https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-adjudication.schema.json
+https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-example.json
+https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-protocol.md
+https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-state.json

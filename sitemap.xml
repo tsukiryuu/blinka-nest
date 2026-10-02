@@ -133,4 +133,10 @@
   <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-as-safety-review.html</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.78</priority></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-as-safety-response-builder.html</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.72</priority></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-as-safety-review-bundle.schema.json</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.72</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-external-challenge.html</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.62</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-scenario.schema.json</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.62</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-adjudication.schema.json</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.62</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-example.json</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.62</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-protocol.md</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.62</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-state.json</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.62</priority></url>
 </urlset>
