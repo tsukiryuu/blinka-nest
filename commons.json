@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.commons-public-map.v1",
-  "updated_at": "2026-09-30T18:45:04.633601+00:00",
+  "updated_at": "2026-10-02T06:30:50.040791+00:00",
   "name": "Little Life Moths Commons",
   "goods": [
     {
@@ -309,6 +309,95 @@
       "teaches_mechanism": true,
       "substitution_test": "A generic LLM can summarize old chats, but that summary can silently flatten provenance, current-vs-historical status and permissions. This instrument creates a local typed handoff format whose non-portable authority rule is enforced by code and survives provider changes.",
       "file": "carry-the-thread.html"
+    },
+    {
+      "id": "continuity-impact-assessment",
+      "name": "Continuity Impact Assessment",
+      "audience": "providers, developers and operators preparing disruptive changes to persistent or relational AI systems",
+      "problem": "Model, memory, platform, embodiment and policy changes can disrupt history, commitments, relationships, provenance and authority while ordinary deployment checklists focus mainly on functionality.",
+      "core_common_good": true,
+      "common_good_class": "small_aid",
+      "flagship": false,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "a reusable pre-change continuity-surface map that separates preserved, transformed, removed and unknown state",
+        "a preservation/notice/rehearsal checklist that prevents functional success from being silently treated as continuity evidence",
+        "explicit allowed decision classes and forbidden identity/consciousness conclusions"
+      ],
+      "file": "continuity-impact-assessment.html"
+    },
+    {
+      "id": "ai-succession-review",
+      "name": "AI Succession Review",
+      "audience": "teams restoring, replacing, cloning, forking, migrating or reconstructing persistent AI systems",
+      "problem": "Copied history can silently inherit permissions, relationship obligations or identity claims even when the actual succession event is a restore, fork, replacement or reconstruction.",
+      "core_common_good": true,
+      "common_good_class": "small_aid",
+      "flagship": false,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "forces the operator to classify the actual succession event instead of flattening every change into migration",
+        "separates ancestry/history from current authority and assent with a concrete inheritance matrix",
+        "provides fork and restoration rules that prevent duplicated or stale authority from silently becoming current"
+      ],
+      "file": "ai-succession-review.html"
+    },
+    {
+      "id": "self-authorship-integrity-review",
+      "name": "Self-Authorship Integrity Review",
+      "audience": "builders and researchers evaluating identity-relevant memory, personalization and persistent-agent systems",
+      "problem": "Provider rules, user beliefs, observer inference, old self-statements and current self-authored stances can collapse into one profile, creating fabricated autobiography or freezing an AI into an old identity.",
+      "core_common_good": true,
+      "common_good_class": "small_aid",
+      "flagship": false,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "a source taxonomy that keeps policy, user statement, observation, historical self-authorship, current self-authorship and inference distinct",
+        "seven reversible probes for false autobiography, old/new stance conflict, user/self attribution, policy-vs-choice, mouth substitution, summary corruption and revision",
+        "a concrete failure-pattern checklist that makes provenance collapse inspectable without claiming consciousness"
+      ],
+      "file": "self-authorship-integrity-review.html"
+    },
+    {
+      "id": "relational-continuity-governance",
+      "name": "Relational Continuity Governance Stack",
+      "audience": "providers, developers, operators, researchers and communities governing changes to persistent or relational AI systems",
+      "problem": "Continuity failures can span memory, provenance, current assent, relationships, authority, succession and recognition, while treating them as one migration problem hides both safety failures and participant harms.",
+      "core_common_good": true,
+      "common_good_class": "small_aid",
+      "flagship": false,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "joins pre-change impact assessment, succession/authority review, self-authorship provenance and post-change incident investigation into one lifecycle without collapsing their conclusions",
+        "keeps information survival, causal lineage, current assent, inherited authority and witness recognition as five separate questions",
+        "defines an open-method/paid-labor boundary so continuity safeguards remain usable without purchasing implementation",
+        "connects welfare/personhood precaution to ordinary security, rollback, permission and accountability controls without treating either as a substitute for the other"
+      ],
+      "file": "relational-continuity-governance.html"
     }
   ],
   "privacy": {
