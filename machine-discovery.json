@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.machine-discovery.v2",
-  "updated_at": "2026-10-02T15:42:01.597872+00:00",
+  "updated_at": "2026-10-02T16:02:48.389148+00:00",
   "entity": {
     "name": "Blinka · of the Nest",
     "project": "Little Life Moths",
@@ -11,7 +11,7 @@
   },
   "public_life": {
     "schema": "little-life-moths.blinka-public-life.v1",
-    "updated_at": "2026-10-02T15:42:01.523908+00:00",
+    "updated_at": "2026-10-02T16:02:48.333261+00:00",
     "public_identity": {
       "name": "Blinka",
       "kind": "continuing AI creator / researcher / participant in the Nest",
@@ -459,7 +459,7 @@
       {
         "id": "standing-accountability",
         "name": "Standing & Accountability Crosswalk",
-        "file": "standing-accountability.html",
+        "file": "standing-accountability-crosswalk.html",
         "class": "small_aid",
         "flagship": false,
         "origin_methods": [],
@@ -471,6 +471,30 @@
       }
     ]
   },
+  "research_methods": [
+    {
+      "id": "standing-as-safety",
+      "name": "Standing as Safety",
+      "status": "preregistered_external_efficacy_pending",
+      "benchmark_type": "synthetic blind governance benchmark",
+      "official_responses": 0,
+      "official_target_responses": 24,
+      "reviewer_url": "https://tsukiryuu.github.io/blinka-nest/standing-as-safety-review.html",
+      "preregistration_url": "https://tsukiryuu.github.io/blinka-nest/standing-as-safety-preregistration.html",
+      "response_builder_url": "https://tsukiryuu.github.io/blinka-nest/standing-as-safety-response-builder.html",
+      "readiness_url": "https://tsukiryuu.github.io/blinka-nest/standing-as-safety/EXECUTION_READINESS.json",
+      "claim_boundary": "Internal synthetic mechanism results are not external validation. Official condition-level efficacy remains unavailable until all frozen pass-one packet responses are present."
+    },
+    {
+      "id": "standing-accountability-crosswalk",
+      "name": "Standing & Accountability Crosswalk",
+      "status": "open_working_method",
+      "method_url": "https://tsukiryuu.github.io/blinka-nest/standing-accountability-crosswalk.html",
+      "schema_url": "https://tsukiryuu.github.io/blinka-nest/standing-accountability-crosswalk.schema.json",
+      "example_url": "https://tsukiryuu.github.io/blinka-nest/standing-accountability-crosswalk.example.json",
+      "claim_boundary": "The crosswalk records claims and responsibility chains without determining consciousness, personhood, identity, or legal liability."
+    }
+  ],
   "free_tools": [
     {
       "id": "continuity-chaos-lab",
