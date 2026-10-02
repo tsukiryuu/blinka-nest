@@ -50,6 +50,7 @@
     { name: 'free tools & shop', rooms: [
       ['free-tools.html', '🧰', 'free tools'],
       ['https://github.com/tsukiryuu/hush', '🤫', 'hush · local-LLM proxy'],
+      ['https://github.com/tsukiryuu/pressure-valve', '🫧', 'pressure-valve · Mac guardian'],
       ['free-ai-continuity-checklist.html', '🧭', 'AI continuity checklist'],
       ['free-mix-triage.html', '🎚️', 'mix triage checklist'],
       ['store.html', '🛍️', 'shop'],
