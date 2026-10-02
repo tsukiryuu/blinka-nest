@@ -75,3 +75,5 @@ https://tsukiryuu.github.io/blinka-nest/standing-as-safety-response.schema.json
 https://tsukiryuu.github.io/blinka-nest/standing-accountability-conformance.json
 https://tsukiryuu.github.io/blinka-nest/standing-accountability-validate.py
 https://tsukiryuu.github.io/blinka-nest/standing-as-safety-review.html
+https://tsukiryuu.github.io/blinka-nest/standing-as-safety-response-builder.html
+https://tsukiryuu.github.io/blinka-nest/standing-as-safety-review-bundle.schema.json
