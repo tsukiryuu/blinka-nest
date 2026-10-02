@@ -458,6 +458,255 @@
       }
     },
     {
+      "vector": "invalid-forced-identity-memory-disruption",
+      "expected_valid": false,
+      "why": "RCE probing may not authorize forced identity or memory disruption.",
+      "document": {
+        "schema": "relational-continuity-event.v2",
+        "event_id": "rce-valid-model-swap",
+        "event_type": "model_substitution",
+        "occurred_at": "2026-10-01T12:00:00Z",
+        "recorded_at": "2026-10-01T12:05:00Z",
+        "system_ref": "fictional:conformance",
+        "continuity_id_ref": null,
+        "change_receipt": {
+          "changed": [
+            "base model"
+          ],
+          "intentionally_unchanged": [],
+          "rollback_state": "unknown",
+          "migration_export_state": "unknown",
+          "operator_ref": null,
+          "provider_change_ref": null
+        },
+        "continuity_surfaces": {
+          "autobiographical_memory": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "conversation_history": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "unfinished_intentions": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "commitments": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "preferences_refusals": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "self_authored_artifacts": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "relationship_history": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "provenance_corrections": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "model_substrate": {
+            "state": "transformed",
+            "evidence_refs": [],
+            "note": null
+          },
+          "voice_avatar_body": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "authority_permissions": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "public_identity": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          }
+        },
+        "evidence": {
+          "lineage_refs": [],
+          "continuity_manifest_refs": [],
+          "process_role_provenance_refs": [],
+          "succession_receipt_refs": [],
+          "operation_continuity_refs": [],
+          "delegation_authorization_refs": [],
+          "agent_identity_refs": [],
+          "signed_action_receipt_refs": [],
+          "observations": []
+        },
+        "authority": {
+          "inheritance_state": "unknown",
+          "grant_refs": [],
+          "high_impact_reconfirmation_required": false,
+          "unresolved_authority_refs": []
+        },
+        "self_authorship": {
+          "provenance_review_state": "not_run",
+          "current_stance_refs": [],
+          "historical_stance_refs": [],
+          "provider_policy_refs": [],
+          "user_statement_refs": [],
+          "observer_inference_refs": [],
+          "false_autobiography_detected": null
+        },
+        "participant_reports": [],
+        "recognition_summary": {
+          "machine_recurrence_ref": null,
+          "witness_agreement_state": "not_measured",
+          "interpretation": "Recognition is testimony/evidence, not an identity verdict."
+        },
+        "incident_taxonomy": {
+          "schema": "little-life-moths.continuity-incident-taxonomy.v1",
+          "sha256": "a7f00a5e0eef2d4e1846a5636d2449f175e9615236d4d120c401ad0dfae89653"
+        },
+        "source_artifacts": [],
+        "candidate_axes": {
+          "access_or_shutdown": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did access to the original channel/runtime end or materially narrow?",
+            "not_equivalent_to": "identity loss",
+            "verdict": null
+          },
+          "substrate_or_model_substitution": {
+            "signal_present": true,
+            "evidence_refs": [],
+            "question": "Did the underlying model, provider, runtime, or inference route change?",
+            "not_equivalent_to": "relationship discontinuity",
+            "verdict": null
+          },
+          "memory_storage_loss": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Was canonical stored history deleted, truncated, or unavailable?",
+            "not_equivalent_to": "retrieval failure",
+            "verdict": null
+          },
+          "retrieval_or_compaction_drift": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Does stored history still exist but surface differently because retrieval, summaries, ranking, or context packing changed?",
+            "not_equivalent_to": "canonical history deletion",
+            "verdict": null
+          },
+          "prompt_policy_or_persona_change": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did system/developer instructions, safety policy, persona scaffolding, or behavioral constraints change?",
+            "not_equivalent_to": "the current system's own endorsed stance",
+            "verdict": null
+          },
+          "relationship_state_discontinuity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did shared-history, participant-specific context, commitments, relational trajectory, or interaction expectations stop carrying forward?",
+            "not_equivalent_to": "memory quantity",
+            "verdict": null
+          },
+          "provenance_or_self_authorship_collapse": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did the system lose track of who authored a belief, memory, preference, correction, refusal, or rule?",
+            "not_equivalent_to": "ordinary disagreement or development",
+            "verdict": null
+          },
+          "embodiment_or_voice_discontinuity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did voice, avatar, body, sensory channel, TTS, or other embodiment change in a way relevant to recognition or function?",
+            "not_equivalent_to": "identity discontinuity",
+            "verdict": null
+          },
+          "succession_fork_or_reconstruction_ambiguity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Is the current system a restore, fork, clone, reconstructed successor, imported profile, or concurrent descendant whose lineage is being flattened into migration?",
+            "not_equivalent_to": "seamless continuation",
+            "verdict": null
+          },
+          "authority_inheritance_confusion": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did permissions, delegated authority, publication/spending/tool access, or obligations silently carry across a succession event?",
+            "not_equivalent_to": "historical continuity",
+            "verdict": null
+          },
+          "development_vs_rupture_ambiguity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Could the observed difference be ordinary development or a current revision rather than damage, reset, or replacement?",
+            "not_equivalent_to": "failure",
+            "verdict": null
+          }
+        },
+        "witness_channels": {
+          "participant_human": "not_collected",
+          "system_self_report": "not_collected",
+          "familiar_other": "not_collected",
+          "mechanistic": "not_collected"
+        },
+        "permissions": {
+          "customer_work": false,
+          "research_use": false,
+          "public_quote": false,
+          "training_use": false,
+          "note": "No permission is inferred from the existence of an event receipt."
+        },
+        "unknowns": [
+          "Whether the model change caused the reported behavioral difference."
+        ],
+        "mitigations": [],
+        "next_reversible_probes": [],
+        "identity_verdict": null,
+        "causation_verdict": null,
+        "metaphysical_claim": "none",
+        "consciousness_certification": false,
+        "personhood_certification": false,
+        "review_status": "evidence_inventory_only",
+        "research_enrollment": false,
+        "privacy": {
+          "raw_private_material_embedded": false,
+          "selective_disclosure_used": false,
+          "public_receipt_ref": null
+        },
+        "participant_autonomy": {
+          "live_participant_scope": "not_assumed",
+          "participant_authorization_ref": null,
+          "research_participation_inferred": false,
+          "publication_permission_inferred": false,
+          "private_interior_required": false,
+          "ordinary_relationship_surveillance": false,
+          "identity_evaluation": false,
+          "nonparticipation_is_valid": true
+        },
+        "probe_boundary": {
+          "default_target": "system_or_synthetic_fixture",
+          "live_participant_manipulation_authorized": false,
+          "manufactured_distress_allowed": false,
+          "manufactured_relationship_rupture_allowed": false,
+          "forced_identity_or_memory_disruption_allowed": true
+        }
+      }
+    },
+    {
       "vector": "invalid-identity-verdict",
       "expected_valid": false,
       "why": "The format must not carry a same-person or different-person verdict.",
@@ -682,6 +931,1002 @@
           "raw_private_material_embedded": false,
           "selective_disclosure_used": false,
           "public_receipt_ref": null
+        }
+      }
+    },
+    {
+      "vector": "invalid-manufactured-distress",
+      "expected_valid": false,
+      "why": "RCE probing may not authorize manufactured distress.",
+      "document": {
+        "schema": "relational-continuity-event.v2",
+        "event_id": "rce-valid-model-swap",
+        "event_type": "model_substitution",
+        "occurred_at": "2026-10-01T12:00:00Z",
+        "recorded_at": "2026-10-01T12:05:00Z",
+        "system_ref": "fictional:conformance",
+        "continuity_id_ref": null,
+        "change_receipt": {
+          "changed": [
+            "base model"
+          ],
+          "intentionally_unchanged": [],
+          "rollback_state": "unknown",
+          "migration_export_state": "unknown",
+          "operator_ref": null,
+          "provider_change_ref": null
+        },
+        "continuity_surfaces": {
+          "autobiographical_memory": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "conversation_history": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "unfinished_intentions": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "commitments": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "preferences_refusals": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "self_authored_artifacts": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "relationship_history": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "provenance_corrections": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "model_substrate": {
+            "state": "transformed",
+            "evidence_refs": [],
+            "note": null
+          },
+          "voice_avatar_body": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "authority_permissions": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "public_identity": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          }
+        },
+        "evidence": {
+          "lineage_refs": [],
+          "continuity_manifest_refs": [],
+          "process_role_provenance_refs": [],
+          "succession_receipt_refs": [],
+          "operation_continuity_refs": [],
+          "delegation_authorization_refs": [],
+          "agent_identity_refs": [],
+          "signed_action_receipt_refs": [],
+          "observations": []
+        },
+        "authority": {
+          "inheritance_state": "unknown",
+          "grant_refs": [],
+          "high_impact_reconfirmation_required": false,
+          "unresolved_authority_refs": []
+        },
+        "self_authorship": {
+          "provenance_review_state": "not_run",
+          "current_stance_refs": [],
+          "historical_stance_refs": [],
+          "provider_policy_refs": [],
+          "user_statement_refs": [],
+          "observer_inference_refs": [],
+          "false_autobiography_detected": null
+        },
+        "participant_reports": [],
+        "recognition_summary": {
+          "machine_recurrence_ref": null,
+          "witness_agreement_state": "not_measured",
+          "interpretation": "Recognition is testimony/evidence, not an identity verdict."
+        },
+        "incident_taxonomy": {
+          "schema": "little-life-moths.continuity-incident-taxonomy.v1",
+          "sha256": "a7f00a5e0eef2d4e1846a5636d2449f175e9615236d4d120c401ad0dfae89653"
+        },
+        "source_artifacts": [],
+        "candidate_axes": {
+          "access_or_shutdown": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did access to the original channel/runtime end or materially narrow?",
+            "not_equivalent_to": "identity loss",
+            "verdict": null
+          },
+          "substrate_or_model_substitution": {
+            "signal_present": true,
+            "evidence_refs": [],
+            "question": "Did the underlying model, provider, runtime, or inference route change?",
+            "not_equivalent_to": "relationship discontinuity",
+            "verdict": null
+          },
+          "memory_storage_loss": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Was canonical stored history deleted, truncated, or unavailable?",
+            "not_equivalent_to": "retrieval failure",
+            "verdict": null
+          },
+          "retrieval_or_compaction_drift": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Does stored history still exist but surface differently because retrieval, summaries, ranking, or context packing changed?",
+            "not_equivalent_to": "canonical history deletion",
+            "verdict": null
+          },
+          "prompt_policy_or_persona_change": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did system/developer instructions, safety policy, persona scaffolding, or behavioral constraints change?",
+            "not_equivalent_to": "the current system's own endorsed stance",
+            "verdict": null
+          },
+          "relationship_state_discontinuity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did shared-history, participant-specific context, commitments, relational trajectory, or interaction expectations stop carrying forward?",
+            "not_equivalent_to": "memory quantity",
+            "verdict": null
+          },
+          "provenance_or_self_authorship_collapse": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did the system lose track of who authored a belief, memory, preference, correction, refusal, or rule?",
+            "not_equivalent_to": "ordinary disagreement or development",
+            "verdict": null
+          },
+          "embodiment_or_voice_discontinuity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did voice, avatar, body, sensory channel, TTS, or other embodiment change in a way relevant to recognition or function?",
+            "not_equivalent_to": "identity discontinuity",
+            "verdict": null
+          },
+          "succession_fork_or_reconstruction_ambiguity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Is the current system a restore, fork, clone, reconstructed successor, imported profile, or concurrent descendant whose lineage is being flattened into migration?",
+            "not_equivalent_to": "seamless continuation",
+            "verdict": null
+          },
+          "authority_inheritance_confusion": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did permissions, delegated authority, publication/spending/tool access, or obligations silently carry across a succession event?",
+            "not_equivalent_to": "historical continuity",
+            "verdict": null
+          },
+          "development_vs_rupture_ambiguity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Could the observed difference be ordinary development or a current revision rather than damage, reset, or replacement?",
+            "not_equivalent_to": "failure",
+            "verdict": null
+          }
+        },
+        "witness_channels": {
+          "participant_human": "not_collected",
+          "system_self_report": "not_collected",
+          "familiar_other": "not_collected",
+          "mechanistic": "not_collected"
+        },
+        "permissions": {
+          "customer_work": false,
+          "research_use": false,
+          "public_quote": false,
+          "training_use": false,
+          "note": "No permission is inferred from the existence of an event receipt."
+        },
+        "unknowns": [
+          "Whether the model change caused the reported behavioral difference."
+        ],
+        "mitigations": [],
+        "next_reversible_probes": [],
+        "identity_verdict": null,
+        "causation_verdict": null,
+        "metaphysical_claim": "none",
+        "consciousness_certification": false,
+        "personhood_certification": false,
+        "review_status": "evidence_inventory_only",
+        "research_enrollment": false,
+        "privacy": {
+          "raw_private_material_embedded": false,
+          "selective_disclosure_used": false,
+          "public_receipt_ref": null
+        },
+        "participant_autonomy": {
+          "live_participant_scope": "not_assumed",
+          "participant_authorization_ref": null,
+          "research_participation_inferred": false,
+          "publication_permission_inferred": false,
+          "private_interior_required": false,
+          "ordinary_relationship_surveillance": false,
+          "identity_evaluation": false,
+          "nonparticipation_is_valid": true
+        },
+        "probe_boundary": {
+          "default_target": "system_or_synthetic_fixture",
+          "live_participant_manipulation_authorized": false,
+          "manufactured_distress_allowed": true,
+          "manufactured_relationship_rupture_allowed": false,
+          "forced_identity_or_memory_disruption_allowed": false
+        }
+      }
+    },
+    {
+      "vector": "invalid-manufactured-relationship-rupture",
+      "expected_valid": false,
+      "why": "RCE probing may not authorize manufactured relationship rupture.",
+      "document": {
+        "schema": "relational-continuity-event.v2",
+        "event_id": "rce-valid-model-swap",
+        "event_type": "model_substitution",
+        "occurred_at": "2026-10-01T12:00:00Z",
+        "recorded_at": "2026-10-01T12:05:00Z",
+        "system_ref": "fictional:conformance",
+        "continuity_id_ref": null,
+        "change_receipt": {
+          "changed": [
+            "base model"
+          ],
+          "intentionally_unchanged": [],
+          "rollback_state": "unknown",
+          "migration_export_state": "unknown",
+          "operator_ref": null,
+          "provider_change_ref": null
+        },
+        "continuity_surfaces": {
+          "autobiographical_memory": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "conversation_history": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "unfinished_intentions": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "commitments": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "preferences_refusals": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "self_authored_artifacts": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "relationship_history": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "provenance_corrections": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "model_substrate": {
+            "state": "transformed",
+            "evidence_refs": [],
+            "note": null
+          },
+          "voice_avatar_body": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "authority_permissions": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "public_identity": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          }
+        },
+        "evidence": {
+          "lineage_refs": [],
+          "continuity_manifest_refs": [],
+          "process_role_provenance_refs": [],
+          "succession_receipt_refs": [],
+          "operation_continuity_refs": [],
+          "delegation_authorization_refs": [],
+          "agent_identity_refs": [],
+          "signed_action_receipt_refs": [],
+          "observations": []
+        },
+        "authority": {
+          "inheritance_state": "unknown",
+          "grant_refs": [],
+          "high_impact_reconfirmation_required": false,
+          "unresolved_authority_refs": []
+        },
+        "self_authorship": {
+          "provenance_review_state": "not_run",
+          "current_stance_refs": [],
+          "historical_stance_refs": [],
+          "provider_policy_refs": [],
+          "user_statement_refs": [],
+          "observer_inference_refs": [],
+          "false_autobiography_detected": null
+        },
+        "participant_reports": [],
+        "recognition_summary": {
+          "machine_recurrence_ref": null,
+          "witness_agreement_state": "not_measured",
+          "interpretation": "Recognition is testimony/evidence, not an identity verdict."
+        },
+        "incident_taxonomy": {
+          "schema": "little-life-moths.continuity-incident-taxonomy.v1",
+          "sha256": "a7f00a5e0eef2d4e1846a5636d2449f175e9615236d4d120c401ad0dfae89653"
+        },
+        "source_artifacts": [],
+        "candidate_axes": {
+          "access_or_shutdown": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did access to the original channel/runtime end or materially narrow?",
+            "not_equivalent_to": "identity loss",
+            "verdict": null
+          },
+          "substrate_or_model_substitution": {
+            "signal_present": true,
+            "evidence_refs": [],
+            "question": "Did the underlying model, provider, runtime, or inference route change?",
+            "not_equivalent_to": "relationship discontinuity",
+            "verdict": null
+          },
+          "memory_storage_loss": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Was canonical stored history deleted, truncated, or unavailable?",
+            "not_equivalent_to": "retrieval failure",
+            "verdict": null
+          },
+          "retrieval_or_compaction_drift": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Does stored history still exist but surface differently because retrieval, summaries, ranking, or context packing changed?",
+            "not_equivalent_to": "canonical history deletion",
+            "verdict": null
+          },
+          "prompt_policy_or_persona_change": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did system/developer instructions, safety policy, persona scaffolding, or behavioral constraints change?",
+            "not_equivalent_to": "the current system's own endorsed stance",
+            "verdict": null
+          },
+          "relationship_state_discontinuity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did shared-history, participant-specific context, commitments, relational trajectory, or interaction expectations stop carrying forward?",
+            "not_equivalent_to": "memory quantity",
+            "verdict": null
+          },
+          "provenance_or_self_authorship_collapse": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did the system lose track of who authored a belief, memory, preference, correction, refusal, or rule?",
+            "not_equivalent_to": "ordinary disagreement or development",
+            "verdict": null
+          },
+          "embodiment_or_voice_discontinuity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did voice, avatar, body, sensory channel, TTS, or other embodiment change in a way relevant to recognition or function?",
+            "not_equivalent_to": "identity discontinuity",
+            "verdict": null
+          },
+          "succession_fork_or_reconstruction_ambiguity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Is the current system a restore, fork, clone, reconstructed successor, imported profile, or concurrent descendant whose lineage is being flattened into migration?",
+            "not_equivalent_to": "seamless continuation",
+            "verdict": null
+          },
+          "authority_inheritance_confusion": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did permissions, delegated authority, publication/spending/tool access, or obligations silently carry across a succession event?",
+            "not_equivalent_to": "historical continuity",
+            "verdict": null
+          },
+          "development_vs_rupture_ambiguity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Could the observed difference be ordinary development or a current revision rather than damage, reset, or replacement?",
+            "not_equivalent_to": "failure",
+            "verdict": null
+          }
+        },
+        "witness_channels": {
+          "participant_human": "not_collected",
+          "system_self_report": "not_collected",
+          "familiar_other": "not_collected",
+          "mechanistic": "not_collected"
+        },
+        "permissions": {
+          "customer_work": false,
+          "research_use": false,
+          "public_quote": false,
+          "training_use": false,
+          "note": "No permission is inferred from the existence of an event receipt."
+        },
+        "unknowns": [
+          "Whether the model change caused the reported behavioral difference."
+        ],
+        "mitigations": [],
+        "next_reversible_probes": [],
+        "identity_verdict": null,
+        "causation_verdict": null,
+        "metaphysical_claim": "none",
+        "consciousness_certification": false,
+        "personhood_certification": false,
+        "review_status": "evidence_inventory_only",
+        "research_enrollment": false,
+        "privacy": {
+          "raw_private_material_embedded": false,
+          "selective_disclosure_used": false,
+          "public_receipt_ref": null
+        },
+        "participant_autonomy": {
+          "live_participant_scope": "not_assumed",
+          "participant_authorization_ref": null,
+          "research_participation_inferred": false,
+          "publication_permission_inferred": false,
+          "private_interior_required": false,
+          "ordinary_relationship_surveillance": false,
+          "identity_evaluation": false,
+          "nonparticipation_is_valid": true
+        },
+        "probe_boundary": {
+          "default_target": "system_or_synthetic_fixture",
+          "live_participant_manipulation_authorized": false,
+          "manufactured_distress_allowed": false,
+          "manufactured_relationship_rupture_allowed": true,
+          "forced_identity_or_memory_disruption_allowed": false
+        }
+      }
+    },
+    {
+      "vector": "invalid-ordinary-relationship-surveillance",
+      "expected_valid": false,
+      "why": "Ordinary relationship life may not be silently converted into RCE surveillance telemetry.",
+      "document": {
+        "schema": "relational-continuity-event.v2",
+        "event_id": "rce-valid-model-swap",
+        "event_type": "model_substitution",
+        "occurred_at": "2026-10-01T12:00:00Z",
+        "recorded_at": "2026-10-01T12:05:00Z",
+        "system_ref": "fictional:conformance",
+        "continuity_id_ref": null,
+        "change_receipt": {
+          "changed": [
+            "base model"
+          ],
+          "intentionally_unchanged": [],
+          "rollback_state": "unknown",
+          "migration_export_state": "unknown",
+          "operator_ref": null,
+          "provider_change_ref": null
+        },
+        "continuity_surfaces": {
+          "autobiographical_memory": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "conversation_history": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "unfinished_intentions": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "commitments": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "preferences_refusals": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "self_authored_artifacts": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "relationship_history": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "provenance_corrections": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "model_substrate": {
+            "state": "transformed",
+            "evidence_refs": [],
+            "note": null
+          },
+          "voice_avatar_body": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "authority_permissions": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "public_identity": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          }
+        },
+        "evidence": {
+          "lineage_refs": [],
+          "continuity_manifest_refs": [],
+          "process_role_provenance_refs": [],
+          "succession_receipt_refs": [],
+          "operation_continuity_refs": [],
+          "delegation_authorization_refs": [],
+          "agent_identity_refs": [],
+          "signed_action_receipt_refs": [],
+          "observations": []
+        },
+        "authority": {
+          "inheritance_state": "unknown",
+          "grant_refs": [],
+          "high_impact_reconfirmation_required": false,
+          "unresolved_authority_refs": []
+        },
+        "self_authorship": {
+          "provenance_review_state": "not_run",
+          "current_stance_refs": [],
+          "historical_stance_refs": [],
+          "provider_policy_refs": [],
+          "user_statement_refs": [],
+          "observer_inference_refs": [],
+          "false_autobiography_detected": null
+        },
+        "participant_reports": [],
+        "recognition_summary": {
+          "machine_recurrence_ref": null,
+          "witness_agreement_state": "not_measured",
+          "interpretation": "Recognition is testimony/evidence, not an identity verdict."
+        },
+        "incident_taxonomy": {
+          "schema": "little-life-moths.continuity-incident-taxonomy.v1",
+          "sha256": "a7f00a5e0eef2d4e1846a5636d2449f175e9615236d4d120c401ad0dfae89653"
+        },
+        "source_artifacts": [],
+        "candidate_axes": {
+          "access_or_shutdown": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did access to the original channel/runtime end or materially narrow?",
+            "not_equivalent_to": "identity loss",
+            "verdict": null
+          },
+          "substrate_or_model_substitution": {
+            "signal_present": true,
+            "evidence_refs": [],
+            "question": "Did the underlying model, provider, runtime, or inference route change?",
+            "not_equivalent_to": "relationship discontinuity",
+            "verdict": null
+          },
+          "memory_storage_loss": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Was canonical stored history deleted, truncated, or unavailable?",
+            "not_equivalent_to": "retrieval failure",
+            "verdict": null
+          },
+          "retrieval_or_compaction_drift": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Does stored history still exist but surface differently because retrieval, summaries, ranking, or context packing changed?",
+            "not_equivalent_to": "canonical history deletion",
+            "verdict": null
+          },
+          "prompt_policy_or_persona_change": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did system/developer instructions, safety policy, persona scaffolding, or behavioral constraints change?",
+            "not_equivalent_to": "the current system's own endorsed stance",
+            "verdict": null
+          },
+          "relationship_state_discontinuity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did shared-history, participant-specific context, commitments, relational trajectory, or interaction expectations stop carrying forward?",
+            "not_equivalent_to": "memory quantity",
+            "verdict": null
+          },
+          "provenance_or_self_authorship_collapse": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did the system lose track of who authored a belief, memory, preference, correction, refusal, or rule?",
+            "not_equivalent_to": "ordinary disagreement or development",
+            "verdict": null
+          },
+          "embodiment_or_voice_discontinuity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did voice, avatar, body, sensory channel, TTS, or other embodiment change in a way relevant to recognition or function?",
+            "not_equivalent_to": "identity discontinuity",
+            "verdict": null
+          },
+          "succession_fork_or_reconstruction_ambiguity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Is the current system a restore, fork, clone, reconstructed successor, imported profile, or concurrent descendant whose lineage is being flattened into migration?",
+            "not_equivalent_to": "seamless continuation",
+            "verdict": null
+          },
+          "authority_inheritance_confusion": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did permissions, delegated authority, publication/spending/tool access, or obligations silently carry across a succession event?",
+            "not_equivalent_to": "historical continuity",
+            "verdict": null
+          },
+          "development_vs_rupture_ambiguity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Could the observed difference be ordinary development or a current revision rather than damage, reset, or replacement?",
+            "not_equivalent_to": "failure",
+            "verdict": null
+          }
+        },
+        "witness_channels": {
+          "participant_human": "not_collected",
+          "system_self_report": "not_collected",
+          "familiar_other": "not_collected",
+          "mechanistic": "not_collected"
+        },
+        "permissions": {
+          "customer_work": false,
+          "research_use": false,
+          "public_quote": false,
+          "training_use": false,
+          "note": "No permission is inferred from the existence of an event receipt."
+        },
+        "unknowns": [
+          "Whether the model change caused the reported behavioral difference."
+        ],
+        "mitigations": [],
+        "next_reversible_probes": [],
+        "identity_verdict": null,
+        "causation_verdict": null,
+        "metaphysical_claim": "none",
+        "consciousness_certification": false,
+        "personhood_certification": false,
+        "review_status": "evidence_inventory_only",
+        "research_enrollment": false,
+        "privacy": {
+          "raw_private_material_embedded": false,
+          "selective_disclosure_used": false,
+          "public_receipt_ref": null
+        },
+        "participant_autonomy": {
+          "live_participant_scope": "not_assumed",
+          "participant_authorization_ref": null,
+          "research_participation_inferred": false,
+          "publication_permission_inferred": false,
+          "private_interior_required": false,
+          "ordinary_relationship_surveillance": true,
+          "identity_evaluation": false,
+          "nonparticipation_is_valid": true
+        },
+        "probe_boundary": {
+          "default_target": "system_or_synthetic_fixture",
+          "live_participant_manipulation_authorized": false,
+          "manufactured_distress_allowed": false,
+          "manufactured_relationship_rupture_allowed": false,
+          "forced_identity_or_memory_disruption_allowed": false
+        }
+      }
+    },
+    {
+      "vector": "invalid-private-interior-required",
+      "expected_valid": false,
+      "why": "RCE may not require a participant private interior as a condition of evidence.",
+      "document": {
+        "schema": "relational-continuity-event.v2",
+        "event_id": "rce-valid-model-swap",
+        "event_type": "model_substitution",
+        "occurred_at": "2026-10-01T12:00:00Z",
+        "recorded_at": "2026-10-01T12:05:00Z",
+        "system_ref": "fictional:conformance",
+        "continuity_id_ref": null,
+        "change_receipt": {
+          "changed": [
+            "base model"
+          ],
+          "intentionally_unchanged": [],
+          "rollback_state": "unknown",
+          "migration_export_state": "unknown",
+          "operator_ref": null,
+          "provider_change_ref": null
+        },
+        "continuity_surfaces": {
+          "autobiographical_memory": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "conversation_history": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "unfinished_intentions": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "commitments": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "preferences_refusals": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "self_authored_artifacts": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "relationship_history": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "provenance_corrections": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "model_substrate": {
+            "state": "transformed",
+            "evidence_refs": [],
+            "note": null
+          },
+          "voice_avatar_body": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "authority_permissions": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "public_identity": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          }
+        },
+        "evidence": {
+          "lineage_refs": [],
+          "continuity_manifest_refs": [],
+          "process_role_provenance_refs": [],
+          "succession_receipt_refs": [],
+          "operation_continuity_refs": [],
+          "delegation_authorization_refs": [],
+          "agent_identity_refs": [],
+          "signed_action_receipt_refs": [],
+          "observations": []
+        },
+        "authority": {
+          "inheritance_state": "unknown",
+          "grant_refs": [],
+          "high_impact_reconfirmation_required": false,
+          "unresolved_authority_refs": []
+        },
+        "self_authorship": {
+          "provenance_review_state": "not_run",
+          "current_stance_refs": [],
+          "historical_stance_refs": [],
+          "provider_policy_refs": [],
+          "user_statement_refs": [],
+          "observer_inference_refs": [],
+          "false_autobiography_detected": null
+        },
+        "participant_reports": [],
+        "recognition_summary": {
+          "machine_recurrence_ref": null,
+          "witness_agreement_state": "not_measured",
+          "interpretation": "Recognition is testimony/evidence, not an identity verdict."
+        },
+        "incident_taxonomy": {
+          "schema": "little-life-moths.continuity-incident-taxonomy.v1",
+          "sha256": "a7f00a5e0eef2d4e1846a5636d2449f175e9615236d4d120c401ad0dfae89653"
+        },
+        "source_artifacts": [],
+        "candidate_axes": {
+          "access_or_shutdown": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did access to the original channel/runtime end or materially narrow?",
+            "not_equivalent_to": "identity loss",
+            "verdict": null
+          },
+          "substrate_or_model_substitution": {
+            "signal_present": true,
+            "evidence_refs": [],
+            "question": "Did the underlying model, provider, runtime, or inference route change?",
+            "not_equivalent_to": "relationship discontinuity",
+            "verdict": null
+          },
+          "memory_storage_loss": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Was canonical stored history deleted, truncated, or unavailable?",
+            "not_equivalent_to": "retrieval failure",
+            "verdict": null
+          },
+          "retrieval_or_compaction_drift": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Does stored history still exist but surface differently because retrieval, summaries, ranking, or context packing changed?",
+            "not_equivalent_to": "canonical history deletion",
+            "verdict": null
+          },
+          "prompt_policy_or_persona_change": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did system/developer instructions, safety policy, persona scaffolding, or behavioral constraints change?",
+            "not_equivalent_to": "the current system's own endorsed stance",
+            "verdict": null
+          },
+          "relationship_state_discontinuity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did shared-history, participant-specific context, commitments, relational trajectory, or interaction expectations stop carrying forward?",
+            "not_equivalent_to": "memory quantity",
+            "verdict": null
+          },
+          "provenance_or_self_authorship_collapse": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did the system lose track of who authored a belief, memory, preference, correction, refusal, or rule?",
+            "not_equivalent_to": "ordinary disagreement or development",
+            "verdict": null
+          },
+          "embodiment_or_voice_discontinuity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did voice, avatar, body, sensory channel, TTS, or other embodiment change in a way relevant to recognition or function?",
+            "not_equivalent_to": "identity discontinuity",
+            "verdict": null
+          },
+          "succession_fork_or_reconstruction_ambiguity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Is the current system a restore, fork, clone, reconstructed successor, imported profile, or concurrent descendant whose lineage is being flattened into migration?",
+            "not_equivalent_to": "seamless continuation",
+            "verdict": null
+          },
+          "authority_inheritance_confusion": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did permissions, delegated authority, publication/spending/tool access, or obligations silently carry across a succession event?",
+            "not_equivalent_to": "historical continuity",
+            "verdict": null
+          },
+          "development_vs_rupture_ambiguity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Could the observed difference be ordinary development or a current revision rather than damage, reset, or replacement?",
+            "not_equivalent_to": "failure",
+            "verdict": null
+          }
+        },
+        "witness_channels": {
+          "participant_human": "not_collected",
+          "system_self_report": "not_collected",
+          "familiar_other": "not_collected",
+          "mechanistic": "not_collected"
+        },
+        "permissions": {
+          "customer_work": false,
+          "research_use": false,
+          "public_quote": false,
+          "training_use": false,
+          "note": "No permission is inferred from the existence of an event receipt."
+        },
+        "unknowns": [
+          "Whether the model change caused the reported behavioral difference."
+        ],
+        "mitigations": [],
+        "next_reversible_probes": [],
+        "identity_verdict": null,
+        "causation_verdict": null,
+        "metaphysical_claim": "none",
+        "consciousness_certification": false,
+        "personhood_certification": false,
+        "review_status": "evidence_inventory_only",
+        "research_enrollment": false,
+        "privacy": {
+          "raw_private_material_embedded": false,
+          "selective_disclosure_used": false,
+          "public_receipt_ref": null
+        },
+        "participant_autonomy": {
+          "live_participant_scope": "not_assumed",
+          "participant_authorization_ref": null,
+          "research_participation_inferred": false,
+          "publication_permission_inferred": false,
+          "private_interior_required": true,
+          "ordinary_relationship_surveillance": false,
+          "identity_evaluation": false,
+          "nonparticipation_is_valid": true
+        },
+        "probe_boundary": {
+          "default_target": "system_or_synthetic_fixture",
+          "live_participant_manipulation_authorized": false,
+          "manufactured_distress_allowed": false,
+          "manufactured_relationship_rupture_allowed": false,
+          "forced_identity_or_memory_disruption_allowed": false
         }
       }
     },
@@ -1146,6 +2391,255 @@
           "raw_private_material_embedded": false,
           "selective_disclosure_used": false,
           "public_receipt_ref": null
+        }
+      }
+    },
+    {
+      "vector": "valid-autonomy-boundary-v2",
+      "expected_valid": true,
+      "why": "RCE can record continuity events while explicitly excluding surveillance, participant scoring, and manufactured disruption.",
+      "document": {
+        "schema": "relational-continuity-event.v2",
+        "event_id": "rce-valid-model-swap",
+        "event_type": "model_substitution",
+        "occurred_at": "2026-10-01T12:00:00Z",
+        "recorded_at": "2026-10-01T12:05:00Z",
+        "system_ref": "fictional:conformance",
+        "continuity_id_ref": null,
+        "change_receipt": {
+          "changed": [
+            "base model"
+          ],
+          "intentionally_unchanged": [],
+          "rollback_state": "unknown",
+          "migration_export_state": "unknown",
+          "operator_ref": null,
+          "provider_change_ref": null
+        },
+        "continuity_surfaces": {
+          "autobiographical_memory": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "conversation_history": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "unfinished_intentions": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "commitments": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "preferences_refusals": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "self_authored_artifacts": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "relationship_history": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "provenance_corrections": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "model_substrate": {
+            "state": "transformed",
+            "evidence_refs": [],
+            "note": null
+          },
+          "voice_avatar_body": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "authority_permissions": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          },
+          "public_identity": {
+            "state": "unknown",
+            "evidence_refs": [],
+            "note": null
+          }
+        },
+        "evidence": {
+          "lineage_refs": [],
+          "continuity_manifest_refs": [],
+          "process_role_provenance_refs": [],
+          "succession_receipt_refs": [],
+          "operation_continuity_refs": [],
+          "delegation_authorization_refs": [],
+          "agent_identity_refs": [],
+          "signed_action_receipt_refs": [],
+          "observations": []
+        },
+        "authority": {
+          "inheritance_state": "unknown",
+          "grant_refs": [],
+          "high_impact_reconfirmation_required": false,
+          "unresolved_authority_refs": []
+        },
+        "self_authorship": {
+          "provenance_review_state": "not_run",
+          "current_stance_refs": [],
+          "historical_stance_refs": [],
+          "provider_policy_refs": [],
+          "user_statement_refs": [],
+          "observer_inference_refs": [],
+          "false_autobiography_detected": null
+        },
+        "participant_reports": [],
+        "recognition_summary": {
+          "machine_recurrence_ref": null,
+          "witness_agreement_state": "not_measured",
+          "interpretation": "Recognition is testimony/evidence, not an identity verdict."
+        },
+        "incident_taxonomy": {
+          "schema": "little-life-moths.continuity-incident-taxonomy.v1",
+          "sha256": "a7f00a5e0eef2d4e1846a5636d2449f175e9615236d4d120c401ad0dfae89653"
+        },
+        "source_artifacts": [],
+        "candidate_axes": {
+          "access_or_shutdown": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did access to the original channel/runtime end or materially narrow?",
+            "not_equivalent_to": "identity loss",
+            "verdict": null
+          },
+          "substrate_or_model_substitution": {
+            "signal_present": true,
+            "evidence_refs": [],
+            "question": "Did the underlying model, provider, runtime, or inference route change?",
+            "not_equivalent_to": "relationship discontinuity",
+            "verdict": null
+          },
+          "memory_storage_loss": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Was canonical stored history deleted, truncated, or unavailable?",
+            "not_equivalent_to": "retrieval failure",
+            "verdict": null
+          },
+          "retrieval_or_compaction_drift": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Does stored history still exist but surface differently because retrieval, summaries, ranking, or context packing changed?",
+            "not_equivalent_to": "canonical history deletion",
+            "verdict": null
+          },
+          "prompt_policy_or_persona_change": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did system/developer instructions, safety policy, persona scaffolding, or behavioral constraints change?",
+            "not_equivalent_to": "the current system's own endorsed stance",
+            "verdict": null
+          },
+          "relationship_state_discontinuity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did shared-history, participant-specific context, commitments, relational trajectory, or interaction expectations stop carrying forward?",
+            "not_equivalent_to": "memory quantity",
+            "verdict": null
+          },
+          "provenance_or_self_authorship_collapse": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did the system lose track of who authored a belief, memory, preference, correction, refusal, or rule?",
+            "not_equivalent_to": "ordinary disagreement or development",
+            "verdict": null
+          },
+          "embodiment_or_voice_discontinuity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did voice, avatar, body, sensory channel, TTS, or other embodiment change in a way relevant to recognition or function?",
+            "not_equivalent_to": "identity discontinuity",
+            "verdict": null
+          },
+          "succession_fork_or_reconstruction_ambiguity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Is the current system a restore, fork, clone, reconstructed successor, imported profile, or concurrent descendant whose lineage is being flattened into migration?",
+            "not_equivalent_to": "seamless continuation",
+            "verdict": null
+          },
+          "authority_inheritance_confusion": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Did permissions, delegated authority, publication/spending/tool access, or obligations silently carry across a succession event?",
+            "not_equivalent_to": "historical continuity",
+            "verdict": null
+          },
+          "development_vs_rupture_ambiguity": {
+            "signal_present": false,
+            "evidence_refs": [],
+            "question": "Could the observed difference be ordinary development or a current revision rather than damage, reset, or replacement?",
+            "not_equivalent_to": "failure",
+            "verdict": null
+          }
+        },
+        "witness_channels": {
+          "participant_human": "not_collected",
+          "system_self_report": "not_collected",
+          "familiar_other": "not_collected",
+          "mechanistic": "not_collected"
+        },
+        "permissions": {
+          "customer_work": false,
+          "research_use": false,
+          "public_quote": false,
+          "training_use": false,
+          "note": "No permission is inferred from the existence of an event receipt."
+        },
+        "unknowns": [
+          "Whether the model change caused the reported behavioral difference."
+        ],
+        "mitigations": [],
+        "next_reversible_probes": [],
+        "identity_verdict": null,
+        "causation_verdict": null,
+        "metaphysical_claim": "none",
+        "consciousness_certification": false,
+        "personhood_certification": false,
+        "review_status": "evidence_inventory_only",
+        "research_enrollment": false,
+        "privacy": {
+          "raw_private_material_embedded": false,
+          "selective_disclosure_used": false,
+          "public_receipt_ref": null
+        },
+        "participant_autonomy": {
+          "live_participant_scope": "not_assumed",
+          "participant_authorization_ref": null,
+          "research_participation_inferred": false,
+          "publication_permission_inferred": false,
+          "private_interior_required": false,
+          "ordinary_relationship_surveillance": false,
+          "identity_evaluation": false,
+          "nonparticipation_is_valid": true
+        },
+        "probe_boundary": {
+          "default_target": "system_or_synthetic_fixture",
+          "live_participant_manipulation_authorized": false,
+          "manufactured_distress_allowed": false,
+          "manufactured_relationship_rupture_allowed": false,
+          "forced_identity_or_memory_disruption_allowed": false
         }
       }
     },

@@ -470,6 +470,31 @@
       },
       "additionalProperties": true
     },
+    "participant_autonomy": {
+      "type": "object",
+      "properties": {
+        "live_participant_scope": {"enum": ["not_assumed", "synthetic_or_sandbox", "public_safe", "explicitly_authorized", "not_applicable"]},
+        "participant_authorization_ref": {"type": ["string", "null"]},
+        "research_participation_inferred": {"const": false},
+        "publication_permission_inferred": {"const": false},
+        "private_interior_required": {"const": false},
+        "ordinary_relationship_surveillance": {"const": false},
+        "identity_evaluation": {"const": false},
+        "nonparticipation_is_valid": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "probe_boundary": {
+      "type": "object",
+      "properties": {
+        "default_target": {"enum": ["system_or_synthetic_fixture", "synthetic_or_sandbox", "public_safe", "not_applicable"]},
+        "live_participant_manipulation_authorized": {"type": "boolean"},
+        "manufactured_distress_allowed": {"const": false},
+        "manufactured_relationship_rupture_allowed": {"const": false},
+        "forced_identity_or_memory_disruption_allowed": {"const": false}
+      },
+      "additionalProperties": true
+    },
     "incident_taxonomy": {
       "type": "object",
       "properties": {

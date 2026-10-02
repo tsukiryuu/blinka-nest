@@ -1,12 +1,12 @@
 {
   "schema": "little-life-moths.artifact-passport.v1",
-  "generated_at": "2026-09-30T15:58:56.657281+00:00",
+  "generated_at": "2026-10-02T18:38:00.055724+00:00",
   "product_id": "capability:continuity-chaos-kit",
   "artifact_name": "Persistent Agent Continuity Chaos Kit",
   "artifact_kind": "method_kit",
-  "version": "content-094dbff24c4d",
-  "artifact_sha256": "094dbff24c4d9731e8bb4d38d2e7f6e326fbb76b94931c3eb4bfe4ced4c5d593",
-  "expected_sha256": "094dbff24c4d9731e8bb4d38d2e7f6e326fbb76b94931c3eb4bfe4ced4c5d593",
+  "version": "content-1c60ed77e37b",
+  "artifact_sha256": "1c60ed77e37b9f64056b16ac2c6b505b46082cd290b241ca402aa90d0452d434",
+  "expected_sha256": "1c60ed77e37b9f64056b16ac2c6b505b46082cd290b241ca402aa90d0452d434",
   "status": "healthy",
   "integrity": {
     "passed": true,

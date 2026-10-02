@@ -9,9 +9,9 @@
   "event_versions": [
     "relational-continuity-event.v2"
   ],
-  "schema_sha256": "45de488ee0df476c6989be9d4f31a911c2ff7a8b58ced282c2a4336fab0d8a88",
+  "schema_sha256": "c50cada6b1c3b74daca2be4c05f229bc7bc75bc7fa165fa5b4c9881c6098c374",
   "taxonomy_sha256": "a7f00a5e0eef2d4e1846a5636d2449f175e9615236d4d120c401ad0dfae89653",
-  "conformance_corpus_sha256": "547debf4276fb98de1e11da1ff996f0eb8578c0cceded30b7371248039768be0",
+  "conformance_corpus_sha256": "a2053036deea93c17c5eaec1f2e5c6e112b1255bf259a39939200178c47f39b0",
   "conformance_declaration_schema_sha256": "d4ba3f469ce5aaa389eb09ab0a82ef26c96493c3a6bcf6d2a966ab34d4436d0d",
   "imports_mika_python": false,
   "reads_private_project_state": false,
