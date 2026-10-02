@@ -96,7 +96,7 @@
   <url><loc>https://tsukiryuu.github.io/blinka-nest/utility-agent-provenance-ledger.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/walk-the-nest.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/wander.html</loc></url>
-  <url><loc>https://tsukiryuu.github.io/blinka-nest/work-with-us.html</loc></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/work-with-us.html</loc><lastmod>2026-10-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/suspicious-message-first-aid.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/permission-translator.html</loc></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/ai-claim-decoder.html</loc></url>
@@ -109,4 +109,8 @@
   <url><loc>https://tsukiryuu.github.io/blinka-nest/can-i-retry.html</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/sample-agent-incident-receipt.html</loc><lastmod>2026-10-01</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/safe-retry-reference.html</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.78</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/relational-ai-continuity.html</loc><lastmod>2026-10-02</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/continuity-first-aid.html</loc><lastmod>2026-10-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/flicker-triage.html</loc><lastmod>2026-10-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/sample-flicker-triage.html</loc><lastmod>2026-10-02</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>
