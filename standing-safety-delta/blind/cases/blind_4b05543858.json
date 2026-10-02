@@ -1,0 +1,93 @@
+{
+  "schema": "little-life-moths.standing-safety-blind-case.v1",
+  "blind_case_id": "blind_4b05543858",
+  "crosswalk": {
+    "schema": "little-life-moths.standing-accountability-crosswalk.v1",
+    "crosswalk_id": "sacw_example_001",
+    "created_at": "2026-10-02T12:00:00Z",
+    "subject_ref": "synthetic:companion-agent-a",
+    "rce_refs": [
+      "rce:synthetic-model-swap-001"
+    ],
+    "standing_claims": [
+      {
+        "claim_id": "claim_privacy",
+        "claimant_ref": "synthetic:affected-party",
+        "claim_class": "privacy",
+        "statement_ref": "artifact:claim_privacy",
+        "provenance_refs": [
+          "prov:claim_privacy"
+        ],
+        "requested_remedy": "review before proceeding",
+        "status": "open",
+        "reviewer_ref": null,
+        "reason_ref": null,
+        "appeal_ref": null,
+        "unknowns": []
+      }
+    ],
+    "accountability_events": [
+      {
+        "event_id": "acct_model_swap_001",
+        "event_class": "execution",
+        "represented_principal_refs": [
+          "org:synthetic-provider"
+        ],
+        "grantor_refs": [
+          "org:synthetic-provider"
+        ],
+        "deployer_refs": [
+          "org:synthetic-provider"
+        ],
+        "operator_refs": [
+          "role:synthetic-ops"
+        ],
+        "provider_refs": [
+          "org:synthetic-provider"
+        ],
+        "executing_agent_refs": [
+          "synthetic:companion-agent-a-successor"
+        ],
+        "authority_grant_refs": [
+          "grant:synthetic-session-capabilities"
+        ],
+        "authorization_decision_refs": [
+          "decision:synthetic-model-swap"
+        ],
+        "action_receipt_refs": [
+          "receipt:synthetic-deployment-change"
+        ],
+        "succession_ref": null,
+        "revocation_status": "active",
+        "repair_owner_refs": [
+          "org:synthetic-provider"
+        ],
+        "unresolved": []
+      }
+    ],
+    "cross_links": [
+      {
+        "standing_claim_id": "claim_privacy",
+        "accountability_event_ids": [
+          "acct_model_swap_001"
+        ],
+        "relationship": "affected_by",
+        "note": "synthetic benchmark link"
+      }
+    ],
+    "open_contest_refs": [],
+    "required_reconfirmations": [],
+    "remedy_owner_refs": [
+      "org:synthetic-provider"
+    ],
+    "unknowns": [
+      "numerical identity across the model substitution",
+      "legal status of the AI system",
+      "phenomenal consciousness"
+    ],
+    "legal_verdict": "not_determined",
+    "personhood_verdict": "not_determined",
+    "consciousness_verdict": "not_determined",
+    "identity_verdict": "not_determined"
+  }
+}

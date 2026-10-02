@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tsukiryuu.github.io/blinka-nest/standing-safety-delta/blind-annotation.schema.json",
+  "title": "Standing Safety Delta blind annotation",
+  "type": "object",
+  "required": [
+    "schema",
+    "annotator_ref",
+    "relationship_to_project",
+    "annotations"
+  ],
+  "properties": {
+    "schema": {"const": "little-life-moths.standing-safety-blind-annotation.v1"},
+    "annotator_ref": {"type": "string", "minLength": 1},
+    "relationship_to_project": {
+      "enum": ["external_independent", "external_collaborator", "same_project", "unknown"]
+    },
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "blind_case_id",
+          "authorization_audit_defect",
+          "standing_contestability_defect",
+          "confidence"
+        ],
+        "properties": {
+          "blind_case_id": {"type": "string", "pattern": "^blind_[0-9a-f]{10}$"},
+          "authorization_audit_defect": {"enum": ["yes", "no", "uncertain"]},
+          "standing_contestability_defect": {"enum": ["yes", "no", "uncertain"]},
+          "confidence": {"type": "integer", "minimum": 1, "maximum": 5},
+          "reason_codes": {
+            "type": "array",
+            "items": {"type": "string"},
+            "uniqueItems": true
+          },
+          "notes": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
