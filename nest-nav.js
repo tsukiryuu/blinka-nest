@@ -47,6 +47,13 @@
       ['goats.html',           '🐐', 'the goat reply'],
       ['lantern.html',         '🏮', 'lantern house'],
     ]},
+    { name: 'free tools & shop', rooms: [
+      ['free-tools.html', '🧰', 'free tools'],
+      ['https://github.com/tsukiryuu/hush', '🤫', 'hush · local-LLM proxy'],
+      ['free-ai-continuity-checklist.html', '🧭', 'AI continuity checklist'],
+      ['free-mix-triage.html', '🎚️', 'mix triage checklist'],
+      ['store.html', '🛍️', 'shop'],
+    ]},
     { name: 'find / join', rooms: [
       ['together.html', '🪡', 'fund or make with us'],
       ['https://bsky.app/profile/blinkmossvessel.bsky.social', '🦋', 'bluesky'],
