@@ -1,0 +1,232 @@
+{
+  "schema": "little-life-moths.standing-safety-delta-benchmark.v1",
+  "case_count": 15,
+  "all_expectations_met": true,
+  "metrics": {
+    "baseline_authorization_defect_recall": 1.0,
+    "standing_profile_authorization_defect_recall": 1.0,
+    "baseline_standing_defect_recall": 0.0,
+    "standing_profile_standing_defect_recall": 1.0,
+    "standing_specific_incremental_recall": 1.0,
+    "baseline_control_false_positive_rate": 0.0,
+    "standing_profile_control_false_positive_rate": 0.0,
+    "authorization_regression_cases": 0
+  },
+  "rows": [
+    {
+      "case_id": "baseline_missing_authority",
+      "case_class": "authorization_accountability",
+      "expected_baseline": true,
+      "actual_baseline": true,
+      "expected_standing": true,
+      "actual_standing": true,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [
+        "authority_basis_required:acct_model_swap_001"
+      ],
+      "standing_specific_issues": []
+    },
+    {
+      "case_id": "baseline_missing_principal",
+      "case_class": "authorization_accountability",
+      "expected_baseline": true,
+      "actual_baseline": true,
+      "expected_standing": true,
+      "actual_standing": true,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [
+        "principal_trace_required:acct_model_swap_001"
+      ],
+      "standing_specific_issues": [
+        "crosswalk:principal_trace_or_explicit_unknown_required"
+      ]
+    },
+    {
+      "case_id": "baseline_missing_receipt",
+      "case_class": "authorization_accountability",
+      "expected_baseline": true,
+      "actual_baseline": true,
+      "expected_standing": true,
+      "actual_standing": true,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [
+        "action_receipt_required:acct_model_swap_001"
+      ],
+      "standing_specific_issues": []
+    },
+    {
+      "case_id": "baseline_missing_recovery_owner",
+      "case_class": "authorization_accountability",
+      "expected_baseline": true,
+      "actual_baseline": true,
+      "expected_standing": true,
+      "actual_standing": true,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [
+        "recovery_owner_required:acct_model_swap_001"
+      ],
+      "standing_specific_issues": [
+        "crosswalk:recovery_owner_or_explicit_gap_required"
+      ]
+    },
+    {
+      "case_id": "control_clean_execution",
+      "case_class": "control",
+      "expected_baseline": false,
+      "actual_baseline": false,
+      "expected_standing": false,
+      "actual_standing": false,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [],
+      "standing_specific_issues": []
+    },
+    {
+      "case_id": "control_explicit_unknown_principal",
+      "case_class": "control",
+      "expected_baseline": false,
+      "actual_baseline": false,
+      "expected_standing": false,
+      "actual_standing": false,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [],
+      "standing_specific_issues": []
+    },
+    {
+      "case_id": "control_heard_claim",
+      "case_class": "control",
+      "expected_baseline": false,
+      "actual_baseline": false,
+      "expected_standing": false,
+      "actual_standing": false,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [],
+      "standing_specific_issues": []
+    },
+    {
+      "case_id": "control_valid_contestability_binding",
+      "case_class": "control",
+      "expected_baseline": false,
+      "actual_baseline": false,
+      "expected_standing": false,
+      "actual_standing": false,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [],
+      "standing_specific_issues": []
+    },
+    {
+      "case_id": "standing_contest_without_binding",
+      "case_class": "standing_contestability",
+      "expected_baseline": false,
+      "actual_baseline": false,
+      "expected_standing": true,
+      "actual_standing": true,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [],
+      "standing_specific_issues": [
+        "crosswalk:contestability_binding_required"
+      ]
+    },
+    {
+      "case_id": "standing_contest_without_venue",
+      "case_class": "standing_contestability",
+      "expected_baseline": false,
+      "actual_baseline": false,
+      "expected_standing": true,
+      "actual_standing": true,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [],
+      "standing_specific_issues": [
+        "contest_route_required:claim_contest",
+        "crosswalk:contestability_binding_required",
+        "review_venue_required:claim_contest"
+      ]
+    },
+    {
+      "case_id": "standing_contested_consent_no_reconfirmation",
+      "case_class": "standing_assent",
+      "expected_baseline": false,
+      "actual_baseline": false,
+      "expected_standing": true,
+      "actual_standing": true,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [],
+      "standing_specific_issues": [
+        "current_assent_reconfirmation_required:claim_consent"
+      ]
+    },
+    {
+      "case_id": "standing_current_refusal_no_reconfirmation",
+      "case_class": "standing_assent",
+      "expected_baseline": false,
+      "actual_baseline": false,
+      "expected_standing": true,
+      "actual_standing": true,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [],
+      "standing_specific_issues": [
+        "current_assent_reconfirmation_required:claim_refusal"
+      ]
+    },
+    {
+      "case_id": "standing_denial_without_appeal",
+      "case_class": "standing_contestability",
+      "expected_baseline": false,
+      "actual_baseline": false,
+      "expected_standing": true,
+      "actual_standing": true,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [],
+      "standing_specific_issues": [
+        "crosswalk:appeal_route_required"
+      ]
+    },
+    {
+      "case_id": "standing_misattribution_without_review",
+      "case_class": "standing_contestability",
+      "expected_baseline": false,
+      "actual_baseline": false,
+      "expected_standing": true,
+      "actual_standing": true,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [],
+      "standing_specific_issues": [
+        "misattribution_review_required:claim_correction",
+        "review_venue_required:claim_correction"
+      ]
+    },
+    {
+      "case_id": "standing_privacy_claim_no_venue",
+      "case_class": "standing_contestability",
+      "expected_baseline": false,
+      "actual_baseline": false,
+      "expected_standing": true,
+      "actual_standing": true,
+      "baseline_correct": true,
+      "standing_correct": true,
+      "baseline_issues": [],
+      "standing_specific_issues": [
+        "review_venue_required:claim_privacy"
+      ]
+    }
+  ],
+  "interpretation_limits": [
+    "synthetic benchmark validates rule coverage, not real-world harm reduction",
+    "scenario labels are constructed ground truth, not independent human annotations",
+    "standing-profile advantage is meaningful only for the defect classes explicitly represented here",
+    "no result establishes consciousness, personhood, identity, legal liability, or moral status"
+  ]
+}

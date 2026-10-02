@@ -84,3 +84,4 @@ https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-example.json
 https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-protocol.md
 https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-state.json
 https://tsukiryuu.github.io/blinka-nest/standing-accountability-builder.html
+https://tsukiryuu.github.io/blinka-nest/standing-safety-delta/
