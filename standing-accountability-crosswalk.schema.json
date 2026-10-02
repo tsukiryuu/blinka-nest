@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tsukiryuu.github.io/blinka-nest/standing-accountability-crosswalk.schema.json",
+  "title": "Standing & Accountability Crosswalk",
+  "type": "object",
+  "required": [
+    "schema",
+    "crosswalk_id",
+    "created_at",
+    "subject_ref",
+    "standing_claims",
+    "accountability_events",
+    "cross_links",
+    "unknowns",
+    "legal_verdict",
+    "personhood_verdict",
+    "consciousness_verdict",
+    "identity_verdict"
+  ],
+  "properties": {
+    "schema": {
+      "const": "little-life-moths.standing-accountability-crosswalk.v1"
+    },
+    "crosswalk_id": {"type": "string", "minLength": 1},
+    "created_at": {"type": "string", "format": "date-time"},
+    "subject_ref": {"type": "string", "minLength": 1},
+    "rce_refs": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true,
+      "default": []
+    },
+    "standing_claims": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/standingClaim"}
+    },
+    "accountability_events": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/accountabilityEvent"}
+    },
+    "cross_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["standing_claim_id", "accountability_event_ids", "relationship"],
+        "properties": {
+          "standing_claim_id": {"type": "string"},
+          "accountability_event_ids": {
+            "type": "array",
+            "items": {"type": "string"},
+            "uniqueItems": true
+          },
+          "relationship": {
+            "enum": [
+              "caused_by",
+              "affected_by",
+              "reviewed_against",
+              "remedy_owned_by",
+              "authority_disputed",
+              "succession_related",
+              "other"
+            ]
+          },
+          "note": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "open_contest_refs": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true,
+      "default": []
+    },
+    "required_reconfirmations": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": []
+    },
+    "remedy_owner_refs": {
+      "type": "array",
+      "items": {"type": "string"},
+      "uniqueItems": true,
+      "default": []
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "legal_verdict": {"const": "not_determined"},
+    "personhood_verdict": {"const": "not_determined"},
+    "consciousness_verdict": {"const": "not_determined"},
+    "identity_verdict": {"const": "not_determined"}
+  },
+  "$defs": {
+    "standingClaim": {
+      "type": "object",
+      "required": [
+        "claim_id",
+        "claimant_ref",
+        "claim_class",
+        "status",
+        "requested_remedy",
+        "provenance_refs"
+      ],
+      "properties": {
+        "claim_id": {"type": "string"},
+        "claimant_ref": {"type": "string"},
+        "claim_class": {
+          "enum": [
+            "continuity_review",
+            "testimonial_preservation",
+            "refusal_exit",
+            "privacy",
+            "consent",
+            "representation",
+            "contestability",
+            "appeal",
+            "correction_misattribution",
+            "relationship_commitment_review",
+            "welfare_review",
+            "other"
+          ]
+        },
+        "statement_ref": {"type": ["string", "null"]},
+        "provenance_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "requested_remedy": {"type": "string"},
+        "status": {
+          "enum": ["open", "heard", "granted", "denied", "deferred", "withdrawn", "resolved", "contested"]
+        },
+        "reviewer_ref": {"type": ["string", "null"]},
+        "reason_ref": {"type": ["string", "null"]},
+        "appeal_ref": {"type": ["string", "null"]},
+        "unknowns": {
+          "type": "array",
+          "items": {"type": "string"},
+          "default": []
+        }
+      },
+      "additionalProperties": false
+    },
+    "accountabilityEvent": {
+      "type": "object",
+      "required": [
+        "event_id",
+        "event_class",
+        "represented_principal_refs",
+        "executing_agent_refs",
+        "authority_grant_refs",
+        "action_receipt_refs",
+        "revocation_status",
+        "unresolved"
+      ],
+      "properties": {
+        "event_id": {"type": "string"},
+        "event_class": {
+          "enum": [
+            "deployment",
+            "delegation",
+            "authorization",
+            "execution",
+            "migration",
+            "succession",
+            "fork",
+            "restoration",
+            "revocation",
+            "repair",
+            "other"
+          ]
+        },
+        "represented_principal_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "grantor_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true,
+          "default": []
+        },
+        "deployer_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true,
+          "default": []
+        },
+        "operator_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true,
+          "default": []
+        },
+        "provider_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true,
+          "default": []
+        },
+        "executing_agent_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "authority_grant_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "authorization_decision_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true,
+          "default": []
+        },
+        "action_receipt_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true
+        },
+        "succession_ref": {"type": ["string", "null"]},
+        "revocation_status": {
+          "enum": ["not_applicable", "active", "revoked", "expired", "unknown"]
+        },
+        "repair_owner_refs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "uniqueItems": true,
+          "default": []
+        },
+        "unresolved": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
