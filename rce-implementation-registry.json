@@ -38,6 +38,7 @@
     "contract_valid_external_candidates": 0,
     "external_independent_implementations": 0,
     "external_collaborating_implementations": 0,
+    "contract_valid_external_case_candidates": 0,
     "known_external_cases": 0
   },
   "law": "A passing external declaration is a contract-valid candidate, not verified independence. External counts move only after separate provenance/source verification. Case counts move only when an actual external case exists."

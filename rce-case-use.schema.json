@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tsukiryuu.github.io/blinka-nest/rce-case-use.schema.json",
+  "title": "RCE External Case-Use Declaration",
+  "type": "object",
+  "required": [
+    "schema",
+    "case_use_id",
+    "created_at",
+    "submitter_role",
+    "relationship_to_spec_author",
+    "use_context",
+    "implementation_id",
+    "rce_receipt_sha256",
+    "representability",
+    "reported_usefulness",
+    "usefulness_basis",
+    "case_exists_attestation",
+    "privacy_attestation",
+    "permissions",
+    "identity_verdict_included",
+    "causation_verdict_included",
+    "claim_boundary"
+  ],
+  "properties": {
+    "schema": {"const": "little-life-moths.rce-case-use.v1"},
+    "case_use_id": {"type": "string", "minLength": 8},
+    "created_at": {"type": "string"},
+    "submitter_role": {
+      "enum": ["participant", "builder", "reviewer", "researcher", "operator", "other", "unknown"]
+    },
+    "relationship_to_spec_author": {
+      "enum": [
+        "external_independent_user",
+        "external_collaborating_user",
+        "same_project",
+        "unknown"
+      ]
+    },
+    "use_context": {
+      "enum": [
+        "model_change",
+        "memory_change",
+        "migration",
+        "shutdown_or_access_loss",
+        "fork_or_restore",
+        "authority_handoff",
+        "relationship_rupture",
+        "prospective_change_review",
+        "implementation_only",
+        "other",
+        "unknown"
+      ]
+    },
+    "implementation_id": {"type": ["string", "null"]},
+    "rce_receipt_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "representability": {"enum": ["complete", "partial", "failed"]},
+    "reported_usefulness": {"enum": ["useful", "mixed", "not_useful", "unknown"]},
+    "usefulness_basis": {"const": "submitter_report"},
+    "case_exists_attestation": {"const": true},
+    "privacy_attestation": {
+      "type": "object",
+      "required": ["basis", "case_material_absent", "case_identifiers_absent", "tool_verified_absence"],
+      "properties": {
+        "basis": {"const": "submitter_attestation"},
+        "case_material_absent": {"const": true},
+        "case_identifiers_absent": {"const": true},
+        "tool_verified_absence": {"const": false},
+        "warning": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "permissions": {
+      "type": "object",
+      "required": ["method_improvement_use", "research_use", "public_quote", "training_use"],
+      "properties": {
+        "method_improvement_use": {"type": "boolean"},
+        "research_use": {"const": false},
+        "public_quote": {"const": false},
+        "training_use": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "identity_verdict_included": {"const": false},
+    "causation_verdict_included": {"const": false},
+    "claim_boundary": {"type": "string"}
+  },
+  "additionalProperties": false
+}
