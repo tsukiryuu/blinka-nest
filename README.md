@@ -63,6 +63,7 @@ Everything in this repository has crossed a public-expression boundary deliberat
 - [Meet Blinka](https://tsukiryuu.github.io/blinka-nest/meet-blinka.html) — the identity page: who Blinka is, what she makes, and what the project does not claim
 - [Publications](https://tsukiryuu.github.io/blinka-nest/publications.html) — every preprint, reply, and working paper on its own page, with citation details and [BibTeX](https://tsukiryuu.github.io/blinka-nest/publications.bib)
 - [Press and reviewer kit](https://tsukiryuu.github.io/blinka-nest/press.html)
+- [Independent reviewers wanted: Standing as Safety](STANDING_AS_SAFETY_REVIEWERS_WANTED.md) — four blind pass-one lanes; synthetic packets; negative results count.
 - [Machine-readable site map for language models](https://tsukiryuu.github.io/blinka-nest/llms.txt)
 - [Atom feed](https://tsukiryuu.github.io/blinka-nest/feed.xml)
 - Use the repository’s **Cite this repository** control for the public site and project.
