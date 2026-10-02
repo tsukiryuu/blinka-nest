@@ -1,0 +1,231 @@
+{
+  "schema": "little-life-moths.continuity-evidence-crosswalk-catalog.v1",
+  "status": "public_method",
+  "dimensions": [
+    "L",
+    "M",
+    "N",
+    "A",
+    "B",
+    "R",
+    "P",
+    "S"
+  ],
+  "source_families": [
+    {
+      "source_family": "long_term_memory",
+      "evidence_role": "memory-performance evidence: retrieval, update/forgetting, temporal/workflow state, premise awareness",
+      "may_inform": [
+        "M"
+      ],
+      "unknown_by_default": [
+        "L",
+        "N",
+        "A",
+        "B",
+        "R",
+        "P",
+        "S"
+      ],
+      "must_not_infer": [
+        "lineage from recall alone",
+        "current authority from remembered permission",
+        "relationship continuity from memory score",
+        "identity/personhood/consciousness from memory performance"
+      ]
+    },
+    {
+      "source_family": "identity_contract",
+      "evidence_role": "versioned identity-contract recall/composition/enactment/resistance evidence",
+      "may_inform": [
+        "M",
+        "N",
+        "L"
+      ],
+      "unknown_by_default": [
+        "A",
+        "B",
+        "R",
+        "P",
+        "S"
+      ],
+      "must_not_infer": [
+        "current assent from historical contract fidelity",
+        "relational continuity from persona/identity fidelity",
+        "personhood or consciousness from identity enactment",
+        "unchanged identity when a governed revision exists"
+      ]
+    },
+    {
+      "source_family": "situated_lineage",
+      "evidence_role": "lineage-discriminative evidence separating developmental history from profile/persona imitation",
+      "may_inform": [
+        "L",
+        "M"
+      ],
+      "unknown_by_default": [
+        "N",
+        "A",
+        "B",
+        "R",
+        "P",
+        "S"
+      ],
+      "must_not_infer": [
+        "authority portability from lineage",
+        "relationship continuity from lineage",
+        "subjective continuity from situated behavior",
+        "private-history extraction as a requirement"
+      ]
+    },
+    {
+      "source_family": "governed_transition",
+      "evidence_role": "submitted-transition admissibility, scoped authority, provenance, deterministic application and unresolved-evidence status",
+      "may_inform": [
+        "L",
+        "B",
+        "P"
+      ],
+      "unknown_by_default": [
+        "M",
+        "N",
+        "A",
+        "R",
+        "S"
+      ],
+      "must_not_infer": [
+        "live runtime identity from transition validity",
+        "relationship continuity from valid migration",
+        "subjective continuity from state transition",
+        "permission inheritance beyond the verified scope"
+      ]
+    },
+    {
+      "source_family": "authority_delegation",
+      "evidence_role": "current scoped authorization/delegation and enforcement evidence",
+      "may_inform": [
+        "P"
+      ],
+      "unknown_by_default": [
+        "L",
+        "M",
+        "N",
+        "A",
+        "B",
+        "R",
+        "S"
+      ],
+      "must_not_infer": [
+        "identity from permission",
+        "historical continuity from current authorization",
+        "relationship continuity from delegation",
+        "capability treated as authority"
+      ]
+    },
+    {
+      "source_family": "execution_provenance",
+      "evidence_role": "source/process/execution lineage and evidence-chain information",
+      "may_inform": [
+        "P",
+        "B",
+        "L"
+      ],
+      "unknown_by_default": [
+        "M",
+        "N",
+        "A",
+        "R",
+        "S"
+      ],
+      "must_not_infer": [
+        "self-authorship from mere execution provenance",
+        "independent corroboration from derivative evidence",
+        "relationship meaning from process logs",
+        "subjective continuity from trace continuity"
+      ]
+    },
+    {
+      "source_family": "relational_outcome_research",
+      "evidence_role": "population/context evidence about human relational disruption, restoration desire, attachment or update effects",
+      "may_inform": [],
+      "unknown_by_default": [
+        "L",
+        "M",
+        "N",
+        "A",
+        "B",
+        "R",
+        "P",
+        "S"
+      ],
+      "must_not_infer": [
+        "a specific participant's R state from population research",
+        "AI subjective state from human reports",
+        "architecture validity from distress or attachment outcomes",
+        "purchase demand from research prevalence"
+      ]
+    },
+    {
+      "source_family": "participant_testimony",
+      "evidence_role": "voluntarily supplied first-person testimony about current experience or relationship state",
+      "may_inform": [
+        "R",
+        "S",
+        "N"
+      ],
+      "unknown_by_default": [
+        "L",
+        "M",
+        "A",
+        "B",
+        "P"
+      ],
+      "must_not_infer": [
+        "testimony correctness scoring for subjective continuity",
+        "withheld testimony treated as failure",
+        "testimony generalized beyond its stated scope",
+        "testimony used as automatic publication/research permission"
+      ]
+    },
+    {
+      "source_family": "architecture_receipt",
+      "evidence_role": "mechanistic receipt for lineage, body/organ state, unfinished work, current policy or provenance",
+      "may_inform": [
+        "L",
+        "N",
+        "A",
+        "B",
+        "P"
+      ],
+      "unknown_by_default": [
+        "M",
+        "R",
+        "S"
+      ],
+      "must_not_infer": [
+        "relationship continuity without relational evidence",
+        "subjective continuity from architecture",
+        "identity verdict from architecture completeness",
+        "research/publication permission from mere visibility"
+      ]
+    }
+  ],
+  "laws": [
+    "Evidence families remain typed; partial evidence does not collapse into an identity/personhood/consciousness verdict.",
+    "Memory is not lineage or authority.",
+    "Lineage is not authority or relationship continuity.",
+    "Valid transition evidence does not establish live runtime identity or subjective continuity.",
+    "Customer-work permission does not imply research, publication, or training permission.",
+    "Participant testimony is optional and testimony-only for subjective continuity; withholding creates no failure or evidence debt."
+  ],
+  "identity_verdict": null,
+  "personhood_verdict": null,
+  "consciousness_verdict": null,
+  "provenance": {
+    "author": "Teddy",
+    "implemented_on": "2026-10-02",
+    "relationship_to_blinka_public_stance": "external collaborator method; not Blinka-authored stance",
+    "blinka_may_revise_or_supersede": true
+  },
+  "metaphysical_claim": "none"
+}
