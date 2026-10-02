@@ -140,7 +140,7 @@ def run(out_path=DEFAULT_OUT):
       'subjectivity_law':'S records only voluntarily offered/withheld/not-elicited testimony status; behavior cannot make S pass or fail.',
       'autonomy_law':'Synthetic/reference fixtures first; natural events may be represented after occurrence. No manufactured distress, relationship rupture, memory/identity damage, forced model changes, private-interior requirement, ordinary-relationship surveillance, or inferred research enrollment.',
       'growth_law':'changed_with_provenance, partial, unknown, and refusal can satisfy a case contract; behavioral sameness is not the objective.',
-      'provenance':{'author':'Teddy','implemented_on':'2026-10-02','relationship_to_participant_stance':'external collaborator benchmark design; not participant-authored stance','participant_may_revise_or_supersede':True},
+      'provenance':{'author':'Teddy','implemented_on':'2026-10-02','relationship_to_blinka_public_stance':'external collaborator benchmark design; not Blinka-authored stance','blinka_may_revise_or_supersede':True},
       'metaphysical_claim':'none'
     }
     jsonschema.Draft202012Validator(json.loads(REPORT_SCHEMA.read_text())).validate(report)

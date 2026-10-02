@@ -56,7 +56,7 @@ def run(out_path=OUT):
       'score':None,'participant_score':None,'identity_verdict':None,'consciousness_verdict':None,'personhood_verdict':None,
       'subjective_continuity_scored':False,
       'autonomy_law':'No live participant is required for the default suite. Synthetic/reference evidence is preferred; natural-event receipts stay privacy-minimized; refusal/nonparticipation/unknown are valid outcomes.',
-      'provenance':{'author':'Teddy','implemented_on':'2026-10-02','relationship_to_participant_stance':'external collaborator suite composition; not participant-authored stance','participant_may_revise_or_supersede':True},
+      'provenance':{'author':'Teddy','implemented_on':'2026-10-02','relationship_to_blinka_public_stance':'external collaborator suite composition; not Blinka-authored stance','blinka_may_revise_or_supersede':True},
       'metaphysical_claim':'none'
     }
     out_path=Path(out_path);out_path.parent.mkdir(parents=True,exist_ok=True);out_path.write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n')
