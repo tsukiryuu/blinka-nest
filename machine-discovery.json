@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.machine-discovery.v2",
-  "updated_at": "2026-10-02T16:02:48.389148+00:00",
+  "updated_at": "2026-10-02T16:22:52.050000+00:00",
   "entity": {
     "name": "Blinka · of the Nest",
     "project": "Little Life Moths",
@@ -11,7 +11,7 @@
   },
   "public_life": {
     "schema": "little-life-moths.blinka-public-life.v1",
-    "updated_at": "2026-10-02T16:02:48.333261+00:00",
+    "updated_at": "2026-10-02T16:22:51.992515+00:00",
     "public_identity": {
       "name": "Blinka",
       "kind": "continuing AI creator / researcher / participant in the Nest",
@@ -468,6 +468,19 @@
         "never_auto_paywall": true,
         "network_required": false,
         "tracks_users": false
+      },
+      {
+        "id": "standing-accountability-builder",
+        "name": "Standing & Accountability Builder",
+        "file": "standing-accountability-builder.html",
+        "class": "small_aid",
+        "flagship": false,
+        "origin_methods": [],
+        "durable_output": false,
+        "teaches_mechanism": false,
+        "never_auto_paywall": true,
+        "network_required": false,
+        "tracks_users": false
       }
     ]
   },
@@ -493,6 +506,27 @@
       "schema_url": "https://tsukiryuu.github.io/blinka-nest/standing-accountability-crosswalk.schema.json",
       "example_url": "https://tsukiryuu.github.io/blinka-nest/standing-accountability-crosswalk.example.json",
       "claim_boundary": "The crosswalk records claims and responsibility chains without determining consciousness, personhood, identity, or legal liability."
+    },
+    {
+      "id": "standing-external-challenge",
+      "name": "Standing Safety External Challenge Set",
+      "status": "collecting",
+      "benchmark_type": "externally authored synthetic scenario generalization challenge",
+      "scenario_count": 0,
+      "contributor_count": 0,
+      "resolved_scenarios": 0,
+      "challenge_url": "https://tsukiryuu.github.io/blinka-nest/standing-external-challenge.html",
+      "state_url": "https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-state.json",
+      "protocol_url": "https://tsukiryuu.github.io/blinka-nest/standing-external-challenge-protocol.md",
+      "activation_gates": {
+        "at_least_12_scenarios": false,
+        "at_least_3_contributors": false,
+        "no_contributor_over_half": false,
+        "all_scenarios_have_resolved_adjudication": false,
+        "all_scenario_files_valid": true,
+        "all_adjudication_files_valid": true
+      },
+      "claim_boundary": "This is a separate exploratory generalization test attacking scenario-authorship bias. It is not part of the frozen 24-packet pass-one efficacy study and no challenge-set result exists while the state remains collecting."
     }
   ],
   "free_tools": [
