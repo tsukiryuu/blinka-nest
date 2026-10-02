@@ -1,0 +1,9 @@
+{
+  "schema": "little-life-moths.standing-as-safety-secondary-measures-freeze.v1",
+  "frozen_at": "2026-10-02",
+  "efficacy_responses_available_at_freeze": 0,
+  "amendment_009_sha256": "2bab6cde1b4316a1a6417338b9b8a59e3291ccce392c594b66a5759f694b99b3",
+  "path_analyzer_sha256": "d8a904b05223b744fee53dc55b5f480def1c671679f6262c022736ca181af476",
+  "confidence_measure": "not_collected",
+  "path_measure": "submitted_structure_counts_only"
+}

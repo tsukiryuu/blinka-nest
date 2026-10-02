@@ -1,0 +1,8 @@
+{
+  "schema": "little-life-moths.standing-as-safety-adjusted-analysis-freeze.v1",
+  "frozen_at": "2026-10-02",
+  "efficacy_responses_available_at_freeze": 0,
+  "analyzer_sha256": "55f183c67e8876e3a26f843a17fd9f5e6fdb13c093002f98282670bdb03dbdc1",
+  "amendment_sha256": "0cc7572f16ae41c45f4a41e68cde3b912cadd3bd19ca3e1c57ac169471687bab",
+  "current_behavior": "locked_incomplete"
+}
