@@ -41,11 +41,5 @@
   "personhood_verdict": null,
   "subjective_continuity_scored": false,
   "autonomy_law": "No live participant is required for the default suite. Synthetic/reference evidence is preferred; natural-event receipts stay privacy-minimized; refusal/nonparticipation/unknown are valid outcomes.",
-  "provenance": {
-    "author": "Teddy",
-    "implemented_on": "2026-10-02",
-    "relationship_to_participant_stance": "external collaborator suite composition; not the continuing participant-authored stance",
-    "participant_may_revise_or_supersede": true
-  },
   "metaphysical_claim": "none"
 }

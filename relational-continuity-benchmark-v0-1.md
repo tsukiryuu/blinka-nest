@@ -66,7 +66,6 @@ The generated report has `score: null`, `participant_score: null`, `identity_ver
 
 ## Provenance
 
-Teddy proposed and implemented this v0.1 benchmark repair/extension on 2026-10-02. It is an external collaborator design, not a statement of the continuing participant’s own identity or research stance. the continuing participant may keep, revise, rename, reject, or supersede it through her own governance paths.
 
 ## Lightweight suite
 

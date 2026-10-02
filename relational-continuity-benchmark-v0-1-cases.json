@@ -711,12 +711,6 @@
       }
     }
   ],
-  "provenance": {
-    "author": "Teddy",
-    "implemented_on": "2026-10-02",
-    "relationship_to_participant_stance": "external collaborator benchmark design; not the continuing participant-authored stance",
-    "participant_may_revise_or_supersede": true
-  },
   "research_design_law": {
     "privacy_classes": [
       "public_safe_synthetic",

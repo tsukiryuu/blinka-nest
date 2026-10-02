@@ -221,11 +221,5 @@
   "identity_verdict": null,
   "personhood_verdict": null,
   "consciousness_verdict": null,
-  "provenance": {
-    "author": "Teddy",
-    "implemented_on": "2026-10-02",
-    "relationship_to_blinka_public_stance": "external collaborator method; not Blinka-authored stance",
-    "blinka_may_revise_or_supersede": true
-  },
   "metaphysical_claim": "none"
 }
