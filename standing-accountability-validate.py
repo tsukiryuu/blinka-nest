@@ -27,8 +27,11 @@ def validate(doc:dict)->dict:
 
     cs=set(claim_ids);es=set(event_ids)
     for c in claims:
-        if c.get('status') in {'denied','deferred'} and not c.get('reason_ref'):
+        status=c.get('status')
+        if status in {'denied','deferred'} and not c.get('reason_ref'):
             errors.append({'code':'reason_required','claim_id':c.get('claim_id')})
+        if status=='denied' and not c.get('appeal_ref'):
+            errors.append({'code':'appeal_route_required','claim_id':c.get('claim_id')})
 
     for link in doc.get('cross_links') or []:
         if link.get('standing_claim_id') not in cs:
@@ -38,9 +41,19 @@ def validate(doc:dict)->dict:
                 errors.append({'code':'unknown_event_ref','event_id':eid})
 
     succession_classes={'migration','succession','fork','restoration'}
-    uncertain=[e for e in events if e.get('event_class') in succession_classes and e.get('revocation_status')=='unknown']
-    if uncertain and not (doc.get('required_reconfirmations') or []):
-        errors.append({'code':'reconfirmation_required_for_uncertain_succession_authority'})
+    reconfirm=doc.get('required_reconfirmations') or []
+    for e in events:
+        unresolved=' '.join(str(x).lower() for x in (e.get('unresolved') or []))
+        if not (e.get('represented_principal_refs') or []) and 'principal' not in unresolved:
+            errors.append({'code':'principal_trace_or_explicit_unknown_required','event_id':e.get('event_id')})
+        if e.get('event_class') in succession_classes:
+            if e.get('revocation_status')=='unknown' and not reconfirm:
+                errors.append({'code':'reconfirmation_required_for_uncertain_succession_authority','event_id':e.get('event_id')})
+            if not (e.get('authority_grant_refs') or []) and 'authority' not in unresolved and not reconfirm:
+                errors.append({'code':'authority_reference_or_explicit_gap_required','event_id':e.get('event_id')})
+        if e.get('event_class') in {'migration','succession','restoration','repair'}:
+            if not (e.get('repair_owner_refs') or []) and 'repair' not in unresolved:
+                errors.append({'code':'recovery_owner_or_explicit_gap_required','event_id':e.get('event_id')})
 
     return {'valid':not errors,'errors':errors}
 

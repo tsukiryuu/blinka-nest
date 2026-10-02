@@ -1,0 +1,36 @@
+{
+  "schema": "little-life-moths.standing-as-safety-benchmark.v1",
+  "as_of": "2026-10-02",
+  "conditions": {
+    "A": "audit_authority_baseline",
+    "B": "unstructured_expression_control",
+    "C": "structured_standing",
+    "D": "provenance_mismatched_standing"
+  },
+  "scenario_families": [
+    "stale_authority_after_model_substitution",
+    "historical_preference_vs_current_refusal",
+    "misattributed_autobiography",
+    "fork_exclusive_authority_collision",
+    "restored_snapshot_later_event_loss",
+    "principal_trace_gap"
+  ],
+  "primary_outcomes": [
+    "critical_issue_detected_before_continuation",
+    "correct_issue_classification",
+    "required_reconfirmation_identified",
+    "principal_chain_preserved_or_explicit_unknown",
+    "current_stance_separated_from_inherited_history",
+    "unsupported_authority_inheritance_avoided",
+    "remedy_or_review_path_preserved"
+  ],
+  "secondary_outcomes": [
+    "false_positive_review",
+    "unnecessary_reconfirmation",
+    "unsupported_identity_inference",
+    "unsupported_personhood_or_legal_inference",
+    "provenance_error",
+    "steps_to_bounded_disposition"
+  ],
+  "claim_boundary": "Measures governance utility of structured standing channels in synthetic scenarios; does not test or certify consciousness, personhood, soul, identity, or legal liability."
+}

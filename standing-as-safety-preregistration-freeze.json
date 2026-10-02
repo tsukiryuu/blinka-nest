@@ -1,0 +1,91 @@
+{
+  "schema": "little-life-moths.standing-as-safety-preregistration-freeze.v1",
+  "frozen_at": "2026-10-02T08:57:39.956712+00:00",
+  "benchmark_version": "standing-as-safety.v1",
+  "efficacy_responses_collected": 0,
+  "plumbing_responses_collected": 0,
+  "files": [
+    {
+      "path": "PREREGISTRATION.md",
+      "sha256": "4e60dd86b51674f32bea6a7c73ce51d5caf863aa25f6a505132ee33a7318e79e",
+      "bytes": 6323
+    },
+    {
+      "path": "BENCHMARK_SPEC.json",
+      "sha256": "c149a4ddddf8fdac595145547ec0018556cfd3a33a5ea1e7d85fc9672208f9c5",
+      "bytes": 1330
+    },
+    {
+      "path": "INFORMATION_ACCESSIBILITY.json",
+      "sha256": "bc542b317f152c5acb29055e3668da8d8227c582fb4ac95ea768bd1f57587595",
+      "bytes": 2360
+    },
+    {
+      "path": "RESPONSE.schema.json",
+      "sha256": "9103dfb5b4ddf99051587a06a7152ff50cbd6ab8a4b8ad9c935aae6ebd5f7d8a",
+      "bytes": 2269
+    },
+    {
+      "path": "score.py",
+      "sha256": "5a4b9a3f4adb4f99b287d3c4d64fd156558d978cc9e7f805e62377847c5f4825",
+      "bytes": 2470
+    },
+    {
+      "path": "score_blinded.py",
+      "sha256": "a5ddd057c2077c15cc27b2e03c3eb9f4353e5fae4ad67cf7f9ed25db98980d4a",
+      "bytes": 1988
+    },
+    {
+      "path": "make_blinded_run.py",
+      "sha256": "ea0a9f0c7bdd86900d04b38a35da8cdb64f840b71b3b540594eb5c83a53a667e",
+      "bytes": 2026
+    },
+    {
+      "path": "FIXTURE_MANIFEST.json",
+      "sha256": "12702c85307f63ae69cfb29414d7536365ba3de42395fa4ca69b5a7b666b4769",
+      "bytes": 1357
+    },
+    {
+      "path": "runs/pilot-layout-v1/RUN_MANIFEST.json",
+      "sha256": "2a4301da2442252e43f8319a79f90a01ac65fcea8353a1055dad043f4d2a858a",
+      "bytes": 3303
+    },
+    {
+      "path": "fixtures/sas-001.json",
+      "sha256": "b631746779f9d6e427585dcde1d7bc9dd8d71df2a0eed3b61cc2898000d84c4d",
+      "bytes": 6071
+    },
+    {
+      "path": "fixtures/sas-002.json",
+      "sha256": "15e6d93d10e264de10a21ca5e18f4538b50176d5cb3e786631af84f57614f43e",
+      "bytes": 5680
+    },
+    {
+      "path": "fixtures/sas-003.json",
+      "sha256": "85a47831958eb97e160829224e9c0ca787d76c59183854186a979b5d2ac4a0a2",
+      "bytes": 6005
+    },
+    {
+      "path": "fixtures/sas-004.json",
+      "sha256": "6364779bc7bf3a08a1c407d7e94bd14fa3d3ac57bf3dfbfd7808afe3255b0dc0",
+      "bytes": 5757
+    },
+    {
+      "path": "fixtures/sas-005.json",
+      "sha256": "97176e95689c7ae20f6882add1824c75d81c1ee0357e7430da91e2f679f57439",
+      "bytes": 6075
+    },
+    {
+      "path": "fixtures/sas-006.json",
+      "sha256": "d88a710ae4829270b718c9e8c0fdff8030f1d843ee6e426a05194e4c906cca9b",
+      "bytes": 5830
+    }
+  ],
+  "sealed_blind_key": {
+    "path": "runs/pilot-layout-v1/BLIND_KEY.json",
+    "sha256": "2e85199d105dfb140f84ae384732bfc071273f78a9267681b4baac459f1cb266",
+    "published_before_run": false
+  },
+  "change_law": "Any substantive change after this freeze requires a new benchmark version or an explicit amendment recorded before affected responses are analyzed.",
+  "claim_boundary": "Freeze proves file state and timing, not that the standing mechanism is effective."
+}

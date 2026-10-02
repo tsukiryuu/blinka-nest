@@ -124,4 +124,10 @@
   <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-accountability-crosswalk.html</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.76</priority></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-accountability-crosswalk.schema.json</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.76</priority></url>
   <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-accountability-crosswalk.example.json</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.76</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-as-safety-preregistration.html</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.72</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-as-safety-preregistration-freeze.json</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.72</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-as-safety-benchmark-spec.json</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.72</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-as-safety-response.schema.json</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.72</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-accountability-conformance.json</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.72</priority></url>
+  <url><loc>https://tsukiryuu.github.io/blinka-nest/standing-accountability-validate.py</loc><lastmod>2026-10-02</lastmod><changefreq>monthly</changefreq><priority>0.72</priority></url>
 </urlset>

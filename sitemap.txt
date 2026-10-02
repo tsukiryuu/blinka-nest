@@ -68,3 +68,9 @@ https://tsukiryuu.github.io/blinka-nest/ai-companion-changed-after-update.html
 https://tsukiryuu.github.io/blinka-nest/standing-accountability-crosswalk.html
 https://tsukiryuu.github.io/blinka-nest/standing-accountability-crosswalk.schema.json
 https://tsukiryuu.github.io/blinka-nest/standing-accountability-crosswalk.example.json
+https://tsukiryuu.github.io/blinka-nest/standing-as-safety-preregistration.html
+https://tsukiryuu.github.io/blinka-nest/standing-as-safety-preregistration-freeze.json
+https://tsukiryuu.github.io/blinka-nest/standing-as-safety-benchmark-spec.json
+https://tsukiryuu.github.io/blinka-nest/standing-as-safety-response.schema.json
+https://tsukiryuu.github.io/blinka-nest/standing-accountability-conformance.json
+https://tsukiryuu.github.io/blinka-nest/standing-accountability-validate.py
