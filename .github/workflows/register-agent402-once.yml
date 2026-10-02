@@ -1,0 +1,35 @@
+name: Register Blinka Structure with Agent402
+on:
+  push:
+    paths:
+      - ".github/workflows/register-agent402-once.yml"
+jobs:
+  register:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Verify seller and register origin
+        shell: bash
+        run: |
+          set -euo pipefail
+          ORIGIN="https://barrier-shot-thou-venture.trycloudflare.com"
+          echo "== external health =="
+          curl -fsS --retry 5 --retry-delay 2 "$ORIGIN/health"
+          echo
+          echo "== manifest =="
+          curl -fsS --retry 5 --retry-delay 2 "$ORIGIN/.well-known/x402"
+          echo
+          echo "== unpaid x402 challenge =="
+          code="$(curl -sS --retry 3 -o /tmp/body -D /tmp/headers -w '%{http_code}'             -X POST "$ORIGIN/structure"             -H 'content-type: application/json'             --data-binary '{"text":"Jamie budget $250","schema":{"type":"object","properties":{"budget_usd":{"type":"number"}},"required":["budget_usd"]}}')"
+          echo "status=$code"
+          grep -i '^payment-required:' /tmp/headers | sed 's/: .*/: [present]/'
+          test "$code" = "402"
+          grep -qi '^payment-required:' /tmp/headers
+          echo "== Agent402 registration =="
+          curl -sS --connect-timeout 15 --max-time 45 -D /tmp/register-headers -o /tmp/register-body             -X POST 'https://agent402.tools/api/index/register'             -H 'content-type: application/json'             --data-binary '{"origin":"https://barrier-shot-thou-venture.trycloudflare.com"}'
+          cat /tmp/register-headers
+          cat /tmp/register-body
+          echo
+          echo "== index lookup =="
+          curl -sS --connect-timeout 15 --max-time 45             'https://agent402.tools/api/index?seller=barrier-shot-thou-venture.trycloudflare.com' | head -c 10000
+          echo
