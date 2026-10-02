@@ -1,0 +1,30 @@
+{
+  "schema": "little-life-moths.standing-as-safety-evidence-state.v1",
+  "as_of": "2026-10-02T16:26:41.779633+00:00",
+  "state": "awaiting_official_pass1",
+  "readiness": {
+    "pass1_complete": false,
+    "pass1_official_submissions": 0,
+    "pass1_unique_packets": 0,
+    "pass2_released": false,
+    "pass2_complete": false,
+    "pass2_official_submissions": 0,
+    "pass2_unique_packets": 0
+  },
+  "pass1_analysis": {
+    "exists": false,
+    "valid": false,
+    "reason": "not_materialized"
+  },
+  "replication_reliability": {
+    "exists": false,
+    "valid": false,
+    "reason": "not_materialized"
+  },
+  "deliberate_analysis": {
+    "pass1_command": "materialize_analysis_receipts.py --pass1",
+    "reliability_command": "materialize_analysis_receipts.py --reliability",
+    "law": "Raw response completeness does not itself materialize an analysis receipt."
+  },
+  "claim_boundary": "This state machine records which evidence artifacts exist. It does not decide whether the standing hypothesis is supported, null, mixed, or contradicted."
+}

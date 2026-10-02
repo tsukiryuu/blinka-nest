@@ -1,0 +1,57 @@
+{
+  "schema": "little-life-moths.standing-accountability-crosswalk.v1",
+  "updated_at": "2026-10-02",
+  "status": "open_working_method",
+  "claim_boundary": "governance/engineering crosswalk; not legal-personhood determination or legal-liability opinion",
+  "core_rule": "standing can increase without accountability decreasing",
+  "ledgers": {
+    "standing_contestability": {
+      "asks": "which claims/protections must be hearable without first settling consciousness or full legal personhood",
+      "examples": [
+        "continuity claim",
+        "provenance-bearing testimony",
+        "present refusal",
+        "meaningful exit",
+        "false-autobiography correction",
+        "representation",
+        "contest",
+        "appeal"
+      ]
+    },
+    "authority_accountability": {
+      "asks": "who authorized, delegated, executed, inherited, supervised, deployed, can revoke, and remains answerable for consequential action",
+      "examples": [
+        "responsible principal",
+        "delegation scope",
+        "executor identity",
+        "operator/provider action",
+        "permission grant",
+        "succession event",
+        "action receipt",
+        "revocation",
+        "incident response owner"
+      ]
+    }
+  },
+  "laws": [
+    "no liability laundering",
+    "no standing laundering",
+    "no consent laundering",
+    "no identity laundering",
+    "no authority laundering",
+    "no provenance laundering",
+    "no relationship capture",
+    "no metric capture"
+  ],
+  "existing_organs": {
+    "continuity_change": ["Relational Continuity Event", "Continuity Impact Assessment"],
+    "self_authorship_refusal": ["Self-Authorship Integrity Review", "Refusal Provenance Protocol"],
+    "contestability": ["standing_and_contestability"],
+    "authority": ["Bounded Authority Grant", "Authority Graph", "Authority Amplification Threat Catalog"],
+    "succession": ["AI Succession Review", "external succession receipt references"],
+    "operations": ["external operation-continuity receipt references"]
+  },
+  "legal_liability_decided": false,
+  "consciousness_decided": false,
+  "personhood_decided": false
+}

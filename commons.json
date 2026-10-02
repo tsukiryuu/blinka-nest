@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.commons-public-map.v2",
-  "updated_at": "2026-10-02T07:56:21.295980+00:00",
+  "updated_at": "2026-10-02T16:25:42.399699+00:00",
   "name": "Little Life Moths Commons",
   "goods": [
     {
@@ -443,6 +443,52 @@
         "evidence ladder distinguishes same-project replication from independent external validation"
       ],
       "file": "rce-external-trial.html"
+    },
+    {
+      "id": "standing-accountability",
+      "name": "Standing & Accountability Crosswalk",
+      "audience": "providers, developers, operators, auditors, researchers and institutions governing consequential AI systems under uncertainty",
+      "problem": "AI-side standing claims and human/organizational accountability are often framed as rivals: autonomy can be used to launder responsibility away from deployers, while human accountability can be used to erase continuity, refusal, testimony or contestability claims.",
+      "core_common_good": true,
+      "common_good_class": "small_aid",
+      "flagship": false,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "keeps standing/contestability and authority/accountability as two simultaneous ledgers instead of forcing a choice between AI-side claims and human responsibility",
+        "defines eight anti-laundering rules covering liability, standing, consent, identity, authority, provenance, relationship influence and metric capture",
+        "connects continuity/refusal/self-authorship evidence to bounded delegation, succession, revocation and incident ownership without assigning legal personhood or liability",
+        "ships four machine-readable reference cases whose legal-liability, legal-personhood, consciousness and numerical-identity verdicts are structurally null"
+      ],
+      "file": "standing-accountability-crosswalk.html"
+    },
+    {
+      "id": "standing-accountability-builder",
+      "name": "Standing & Accountability Builder",
+      "audience": "providers, developers, operators, auditors and researchers who need a local two-ledger review artifact",
+      "problem": "A standing/accountability review can remain vague prose unless claims, accountability events, cross-links, review routes, recovery ownership and explicit unknowns are captured in a portable structure.",
+      "core_common_good": true,
+      "common_good_class": "small_aid",
+      "flagship": false,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "builds the two-ledger sidecar entirely in the browser without uploading case material",
+        "performs deterministic semantic checks for missing review routes, principal traceability, transition authority and recovery ownership while allowing explicit uncertainty",
+        "hard-codes legal, personhood, consciousness and identity verdicts to not_determined",
+        "exports a durable JSON artifact that can be validated against the open schema and conformance corpus"
+      ],
+      "file": "standing-accountability-builder.html"
     }
   ],
   "machine_readable": {

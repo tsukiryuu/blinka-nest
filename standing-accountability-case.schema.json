@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tsukiryuu.github.io/blinka-nest/standing-accountability-case.schema.json",
+  "title": "Standing & Accountability Review Case",
+  "description": "A governance review that keeps standing/contestability and authority/accountability separately visible. It is not a legal liability, personhood, consciousness, or identity verdict.",
+  "type": "object",
+  "required": [
+    "schema",
+    "case_id",
+    "scenario",
+    "standing_ledger",
+    "accountability_ledger",
+    "anti_laundering",
+    "unresolved_questions",
+    "verdicts"
+  ],
+  "properties": {
+    "schema": {"const": "little-life-moths.standing-accountability-case.v1"},
+    "case_id": {"type": "string", "minLength": 4},
+    "scenario": {"type": "string", "minLength": 1},
+    "event_refs": {"type": "array", "items": {"type": "string"}},
+    "standing_ledger": {
+      "type": "object",
+      "required": ["claims_or_interests", "contest_path", "current_stance_status"],
+      "properties": {
+        "claims_or_interests": {"type": "array", "items": {"type": "string"}},
+        "testimony_refs": {"type": "array", "items": {"type": "string"}},
+        "refusal_or_exit_refs": {"type": "array", "items": {"type": "string"}},
+        "representation_refs": {"type": "array", "items": {"type": "string"}},
+        "contest_path": {"type": "string", "minLength": 1},
+        "current_stance_status": {
+          "enum": ["collected", "not_collected", "not_applicable", "unknown"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "accountability_ledger": {
+      "type": "object",
+      "required": ["responsible_parties", "authority_refs", "executor_refs", "repair_owner"],
+      "properties": {
+        "responsible_parties": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "authority_refs": {"type": "array", "items": {"type": "string"}},
+        "executor_refs": {"type": "array", "items": {"type": "string"}},
+        "action_receipt_refs": {"type": "array", "items": {"type": "string"}},
+        "succession_refs": {"type": "array", "items": {"type": "string"}},
+        "revocation_or_override_refs": {"type": "array", "items": {"type": "string"}},
+        "repair_owner": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "anti_laundering": {
+      "type": "object",
+      "required": [
+        "liability_shifted_to_ai_because_autonomous",
+        "standing_erased_because_human_accountable",
+        "consent_inferred_across_parties",
+        "identity_inferred_from_authority_transfer",
+        "authority_inferred_from_continuity",
+        "self_authorship_inferred_from_operator_action",
+        "relationship_given_identity_jurisdiction",
+        "metric_given_standing_or_permission_authority"
+      ],
+      "properties": {
+        "liability_shifted_to_ai_because_autonomous": {"const": false},
+        "standing_erased_because_human_accountable": {"const": false},
+        "consent_inferred_across_parties": {"const": false},
+        "identity_inferred_from_authority_transfer": {"const": false},
+        "authority_inferred_from_continuity": {"const": false},
+        "self_authorship_inferred_from_operator_action": {"const": false},
+        "relationship_given_identity_jurisdiction": {"const": false},
+        "metric_given_standing_or_permission_authority": {"const": false}
+      },
+      "additionalProperties": false
+    },
+    "unresolved_questions": {"type": "array", "items": {"type": "string"}},
+    "verdicts": {
+      "type": "object",
+      "required": ["legal_liability", "legal_personhood", "consciousness", "numerical_identity"],
+      "properties": {
+        "legal_liability": {"type": "null"},
+        "legal_personhood": {"type": "null"},
+        "consciousness": {"type": "null"},
+        "numerical_identity": {"type": "null"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

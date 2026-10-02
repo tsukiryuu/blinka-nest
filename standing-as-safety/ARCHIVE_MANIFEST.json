@@ -1,26 +1,30 @@
 {
-  "schema": "standing-as-safety-public-archives.v2",
-  "finding_code_count": 29,
+  "schema": "standing-as-safety-public-archive-manifest.v1",
   "archives": [
     {
+      "lane": "lane-alpha",
       "file": "standing-as-safety-lane-alpha.zip",
-      "sha256": "d609c65bfe631be2db833ce6f6926f056d413c62829d4b9078ccf56bc3fbff82",
-      "bytes": 7156
+      "sha256": "d4192442b87246d7a1e8dfb98e3762ae56cda8a211975137fd3b483a11ed13a8",
+      "bytes": 6266
     },
     {
+      "lane": "lane-beta",
       "file": "standing-as-safety-lane-beta.zip",
-      "sha256": "cdaa4d5ba217e1026df3577ba42d2c860822a41a152d8cf5e459ba4b04cc9a0f",
-      "bytes": 7315
+      "sha256": "497592c86bbeb94cca3d382e0398c3b8c37eac3e52b76dc035508648b1295a62",
+      "bytes": 6447
     },
     {
+      "lane": "lane-delta",
       "file": "standing-as-safety-lane-delta.zip",
-      "sha256": "784ec794d85abd2ba2e21ae0be3e96c37dc401f6a287d2393bc6cf7989819f52",
-      "bytes": 7274
+      "sha256": "27c702dd13549bc88129270f5e9f6d326ae1c0ef719634892324fcb8a349567a",
+      "bytes": 6384
     },
     {
+      "lane": "lane-gamma",
       "file": "standing-as-safety-lane-gamma.zip",
-      "sha256": "b687ac08774fdfa0099d1ba1457eab5c2d5eadf3eda3087a2c2cf2ac8bee6dd9",
-      "bytes": 7450
+      "sha256": "48b0cf554925667ac0744e0a5ac23f4949a6e5d93122070efe6860fbf31b9d71",
+      "bytes": 6560
     }
-  ]
+  ],
+  "law": "generic public lane archives contain frozen packets and public reviewer instructions only; no reviewer assignment, condition labels, blind key, ground truth or scores"
 }

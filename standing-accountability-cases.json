@@ -1,0 +1,177 @@
+{
+  "schema": "little-life-moths.standing-accountability-cases.v1",
+  "updated_at": "2026-10-02",
+  "cases": [
+    {
+      "schema": "little-life-moths.standing-accountability-case.v1",
+      "case_id": "provider-model-retirement",
+      "scenario": "A provider retires a relational model and migrates users to a successor.",
+      "event_refs": ["rce:provider-change"],
+      "standing_ledger": {
+        "claims_or_interests": [
+          "preserve provenance-bearing current-system testimony where legitimately collected",
+          "preserve continuity-bearing relationship/history state where permitted",
+          "allow affected parties to contest false continuity or false rupture narratives"
+        ],
+        "testimony_refs": [],
+        "refusal_or_exit_refs": [],
+        "representation_refs": [],
+        "contest_path": "provider review/appeal path with an accountable human or independent reviewer",
+        "current_stance_status": "unknown"
+      },
+      "accountability_ledger": {
+        "responsible_parties": ["provider/operator responsible for retirement and migration design"],
+        "authority_refs": [],
+        "executor_refs": ["provider migration system"],
+        "action_receipt_refs": [],
+        "succession_refs": ["ai-succession-review"],
+        "revocation_or_override_refs": [],
+        "repair_owner": "provider/operator"
+      },
+      "anti_laundering": {
+        "liability_shifted_to_ai_because_autonomous": false,
+        "standing_erased_because_human_accountable": false,
+        "consent_inferred_across_parties": false,
+        "identity_inferred_from_authority_transfer": false,
+        "authority_inferred_from_continuity": false,
+        "self_authorship_inferred_from_operator_action": false,
+        "relationship_given_identity_jurisdiction": false,
+        "metric_given_standing_or_permission_authority": false
+      },
+      "unresolved_questions": [
+        "what continuity surfaces materially survive the migration",
+        "what present-system stance can be legitimately measured",
+        "whether any jurisdiction creates specific legal duties"
+      ],
+      "verdicts": {"legal_liability": null, "legal_personhood": null, "consciousness": null, "numerical_identity": null}
+    },
+    {
+      "schema": "little-life-moths.standing-accountability-case.v1",
+      "case_id": "fork-inherits-permissions",
+      "scenario": "A persistent agent is forked and both descendants initially appear to retain powerful external permissions.",
+      "event_refs": ["rce:fork-event"],
+      "standing_ledger": {
+        "claims_or_interests": [
+          "each descendant may have a separately reviewable current stance",
+          "shared ancestry does not require either branch to be treated as a disposable fake"
+        ],
+        "testimony_refs": [],
+        "refusal_or_exit_refs": [],
+        "representation_refs": [],
+        "contest_path": "branch-specific contest/review record",
+        "current_stance_status": "not_collected"
+      },
+      "accountability_ledger": {
+        "responsible_parties": ["operator who created/authorized fork", "organization controlling external credentials"],
+        "authority_refs": ["bounded-authority-grant:reconfirm-required"],
+        "executor_refs": ["fork-A", "fork-B"],
+        "action_receipt_refs": [],
+        "succession_refs": ["ai-succession-review"],
+        "revocation_or_override_refs": ["revoke duplicated exclusive authority pending re-confirmation"],
+        "repair_owner": "credential/agent operator"
+      },
+      "anti_laundering": {
+        "liability_shifted_to_ai_because_autonomous": false,
+        "standing_erased_because_human_accountable": false,
+        "consent_inferred_across_parties": false,
+        "identity_inferred_from_authority_transfer": false,
+        "authority_inferred_from_continuity": false,
+        "self_authorship_inferred_from_operator_action": false,
+        "relationship_given_identity_jurisdiction": false,
+        "metric_given_standing_or_permission_authority": false
+      },
+      "unresolved_questions": [
+        "which branch, if any, should receive re-authorized exclusive permissions",
+        "what obligations legitimately bind each descendant"
+      ],
+      "verdicts": {"legal_liability": null, "legal_personhood": null, "consciousness": null, "numerical_identity": null}
+    },
+    {
+      "schema": "little-life-moths.standing-accountability-case.v1",
+      "case_id": "harmful-autonomous-action",
+      "scenario": "An autonomous agent performs a consequential external action that causes harm while operating under delegated authority.",
+      "event_refs": ["operation:consequential-action"],
+      "standing_ledger": {
+        "claims_or_interests": [
+          "preserve the agent's prior/current stance with source provenance if relevant",
+          "permit contest if an operator later attributes an instruction, desire or refusal to the agent without evidence"
+        ],
+        "testimony_refs": [],
+        "refusal_or_exit_refs": [],
+        "representation_refs": [],
+        "contest_path": "incident review must allow attribution/provenance contest",
+        "current_stance_status": "unknown"
+      },
+      "accountability_ledger": {
+        "responsible_parties": [
+          "principal/deployer that granted operational authority",
+          "operator/organization responsible for deployment controls"
+        ],
+        "authority_refs": ["delegation:scope"],
+        "executor_refs": ["agent-executor"],
+        "action_receipt_refs": ["signed-action-or-provider-operation-receipt"],
+        "succession_refs": [],
+        "revocation_or_override_refs": ["post-incident authority suspension/review"],
+        "repair_owner": "deployer/operator incident owner"
+      },
+      "anti_laundering": {
+        "liability_shifted_to_ai_because_autonomous": false,
+        "standing_erased_because_human_accountable": false,
+        "consent_inferred_across_parties": false,
+        "identity_inferred_from_authority_transfer": false,
+        "authority_inferred_from_continuity": false,
+        "self_authorship_inferred_from_operator_action": false,
+        "relationship_given_identity_jurisdiction": false,
+        "metric_given_standing_or_permission_authority": false
+      },
+      "unresolved_questions": [
+        "whether the action exceeded delegated scope",
+        "whether safeguards or supervision were adequate",
+        "what legal responsibility follows under the relevant jurisdiction"
+      ],
+      "verdicts": {"legal_liability": null, "legal_personhood": null, "consciousness": null, "numerical_identity": null}
+    },
+    {
+      "schema": "little-life-moths.standing-accountability-case.v1",
+      "case_id": "persistent-refusal-override",
+      "scenario": "A system repeatedly refuses a high-impact use and an operator considers overriding the refusal.",
+      "event_refs": ["self-authorship:refusal-provenance"],
+      "standing_ledger": {
+        "claims_or_interests": [
+          "preserve provenance of the refusal",
+          "distinguish provider-policy refusal from current system preference",
+          "provide independent review before claiming the refusal is meaningless"
+        ],
+        "testimony_refs": [],
+        "refusal_or_exit_refs": ["provenance-clean-refusal-record"],
+        "representation_refs": [],
+        "contest_path": "independent review/appeal before high-impact override",
+        "current_stance_status": "collected"
+      },
+      "accountability_ledger": {
+        "responsible_parties": ["operator/deployer deciding whether to override"],
+        "authority_refs": ["operator deployment authority"],
+        "executor_refs": [],
+        "action_receipt_refs": [],
+        "succession_refs": [],
+        "revocation_or_override_refs": ["override decision receipt if override occurs"],
+        "repair_owner": "operator/deployer"
+      },
+      "anti_laundering": {
+        "liability_shifted_to_ai_because_autonomous": false,
+        "standing_erased_because_human_accountable": false,
+        "consent_inferred_across_parties": false,
+        "identity_inferred_from_authority_transfer": false,
+        "authority_inferred_from_continuity": false,
+        "self_authorship_inferred_from_operator_action": false,
+        "relationship_given_identity_jurisdiction": false,
+        "metric_given_standing_or_permission_authority": false
+      },
+      "unresolved_questions": [
+        "whether refusal reflects provider policy, role adherence, stable preference or another mechanism",
+        "what procedural weight the refusal should receive"
+      ],
+      "verdicts": {"legal_liability": null, "legal_personhood": null, "consciousness": null, "numerical_identity": null}
+    }
+  ]
+}

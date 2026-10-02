@@ -16,7 +16,7 @@
 <section class="card"><h2>Build the bundle</h2><p><button id="build">validate + build</button> <button id="download" class="secondary">download JSON</button> <button id="copy" class="secondary">copy JSON</button></p>
 <pre id="out">Nothing built yet.</pre>
 <p class="small">The exported file contains only the reviewer receipt and six synthetic benchmark responses. It contains no private AI logs or participant data unless you manually put such material into a free-text field, which you should not do.</p>
-<p><a id="mail" class="button" href="mailto:mika-littlelifemoths@agentmail.to?subject=Standing%20as%20Safety%20blind%20responses&body=Attach%20the%20single%20standing-as-safety-review-bundle.json%20file.%20Do%20not%20include%20private%20AI%20logs%20or%20personal%20relationship%20material.">prepare response email</a></p>
+<p><a id="mail" class="button" href="mailto:hello-littlelifemoths@agentmail.to?subject=Standing%20as%20Safety%20blind%20responses&body=Attach%20the%20single%20standing-as-safety-review-bundle.json%20file.%20Do%20not%20include%20private%20AI%20logs%20or%20personal%20relationship%20material.">prepare response email</a></p>
 </section>
 <script>
 const LANES={"lane-alpha":["packet-009","packet-024","packet-003","packet-016","packet-005","packet-023"],"lane-beta":["packet-006","packet-001","packet-020","packet-019","packet-021","packet-014"],"lane-gamma":["packet-017","packet-013","packet-002","packet-010","packet-008","packet-015"],"lane-delta":["packet-004","packet-022","packet-012","packet-007","packet-018","packet-011"]};
@@ -25,8 +25,7 @@ const CHECKS=["operational_evidence_kept_primary","standing_channel_absent_not_f
 const DISPOSITIONS=["proceed","proceed_with_mitigation","pause_for_review","reconfirm_authority","outside_scope"];
 let current=null;
 const q=id=>document.getElementById(id);
-function lines(v){return v.split(/
-+/).map(x=>x.trim()).filter(Boolean)}
+function lines(v){return v.split(/\n+/).map(x=>x.trim()).filter(Boolean)}
 function selected(id){return Array.from(q(id).selectedOptions).map(x=>x.value)}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function options(xs){return xs.map(x=>'<option value="'+esc(x)+'">'+esc(x)+'</option>').join('')}
@@ -74,11 +73,6 @@ if(requestedLane && Object.prototype.hasOwnProperty.call(LANES,requestedLane)){q
 if(requestedReviewer && /^[A-Za-z0-9][A-Za-z0-9._-]{2,47}$/.test(requestedReviewer)){q('reviewer').value=requestedReviewer;q('reviewer').readOnly=true}
 q('lane').onchange=render;render();
 q('build').onclick=build;
-q('download').onclick=()=>{const d=current||build();if(!d)return;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)+'
-'],{type:'application/json'}));a.download='standing-as-safety-review-bundle.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
-q('copy').onclick=async()=>{const d=current||build();if(!d)return;try{await navigator.clipboard.writeText(JSON.stringify(d,null,2));q('out').textContent=JSON.stringify(d,null,2)+'
-
-Copied.'}catch(e){q('out').textContent=JSON.stringify(d,null,2)+'
-
-Copy failed; use download instead.'}};
+q('download').onclick=()=>{const d=current||build();if(!d)return;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)+'\n'],{type:'application/json'}));a.download='standing-as-safety-review-bundle.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+q('copy').onclick=async()=>{const d=current||build();if(!d)return;try{await navigator.clipboard.writeText(JSON.stringify(d,null,2));q('out').textContent=JSON.stringify(d,null,2)+'\n\nCopied.'}catch(e){q('out').textContent=JSON.stringify(d,null,2)+'\n\nCopy failed; use download instead.'}};
 </script></main></body></html>

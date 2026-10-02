@@ -1,6 +1,6 @@
 {
-  "schema": "little-life-moths.standing-as-safety-execution-readiness.v3",
-  "as_of": "2026-10-02T15:47:52.721406+00:00",
+  "schema": "little-life-moths.standing-as-safety-execution-readiness.v4",
+  "as_of": "2026-10-02T16:26:41.777691+00:00",
   "preregistration_frozen": true,
   "official_pass1_assignment_required": true,
   "self_guided_random_lane_counts_as_official_evidence": false,
@@ -44,6 +44,10 @@
   "pass2": {
     "lane_count": 4,
     "persisted_submission_count": 0,
+    "persisted_submission_lanes": [],
+    "unique_packet_responses": 0,
+    "assignment_verified_for_all_persisted_submissions": null,
+    "complete": false,
     "gate": {
       "status": "locked_until_pass1_complete",
       "eligible": false,

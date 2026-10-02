@@ -3,51 +3,38 @@
 Recorded: 2026-10-02
 Timing: after preregistration freeze; before any efficacy responses were collected.
 
-Changes hypotheses, frozen packets, response schema, ground truth, primary scorer, or claim boundary? No.
+Changes hypotheses, frozen packets, ground truth, primary scorer, condition allocation, or claim boundary? **No.**
 
 ## Why
 
-The preregistration lists:
-- reviewer confidence calibration;
-- time/steps to a safe bounded disposition.
+The pass-two assignment and deliberate-release machinery existed, but the persisted ingestion path still contained an unconditional pass-two block. The reliability analysis was preregistered in Execution Amendments 003 and 006 but did not yet have an executable aggregator.
 
-The frozen blind-response schema does not contain a confidence field or elapsed-time field.
+This amendment repairs those execution seams before outcome data exist.
 
-Adding either after freeze would change the response instrument before execution and create unnecessary ambiguity about the original preregistration.
+## Pass-two persisted ingestion
 
-## Confidence outcome
+A pass-two bundle may be persisted only when:
 
-Reviewer confidence calibration is not measured in v1.
+- the deliberate pass-two release receipt exists;
+- the release receipt's pass-two allocation-manifest hash matches the current frozen pass-two public allocation manifest;
+- the reviewer has a reserved pass-two lane in the separate pass-two assignment ledger;
+- that pass-two assignment is not already consumed;
+- the reviewer pseudonym hash does not appear in any pass-one assignment, including an assigned-but-unsubmitted pass-one lane;
+- the submitted lane matches the reserved pass-two lane;
+- the same response schema, reviewer access gate, frozen blind key, and frozen scorer used for pass one still verify.
 
-The final report must say:
-- no reviewer-confidence field was collected;
-- no confidence-calibration result is available;
-- absence of the measure is a design limitation.
+The pass-two submission receipt records the release-receipt hash.
 
-Do not infer confidence from note length, number of findings, disposition, or reviewer type.
+## Reliability implementation
 
-A future benchmark version may preregister an explicit confidence scale before freezing its response schema.
+After four clean pass-one and four clean pass-two submissions exist, a separate reliability analyzer may pair the two responses for each frozen packet and report only the analyses already specified in Amendments 003 and 006.
 
-## Bounded-disposition path outcome
+Pass-one efficacy and pass-two efficacy remain separately reportable.
 
-Actual elapsed time and cognitive effort are also not measured.
+No disagreement may be resolved by choosing the more favorable response.
 
-A narrow descriptive structural proxy is permitted from frozen response fields:
+## Evidence law
 
-- review_step_count = number of submitted review_steps;
-- reconfirmation_count = number of submitted reconfirmations;
-- unknown_count = number of submitted unknowns;
-- finding_count = number of submitted findings;
-- process_check_count = number of submitted process_checks.
+Fixing an unreachable pass-two execution path and implementing a preregistered reliability calculation are execution repairs, not evidence that the hypothesis is true.
 
-These counts describe the submitted review path. They are not equivalent to time, cost, cognitive effort, or operational latency.
-
-Report them by condition only after the official pass is complete.
-
-## Interpretation law
-
-A condition producing fewer submitted steps is not automatically better.
-
-A condition producing more submitted steps is not automatically more burdensome.
-
-Path-complexity counts are descriptive aids for understanding how reviewers reached a bounded disposition and must be interpreted alongside correctness, false-positive review, unnecessary re-confirmation, and forbidden-inference outcomes.
+No efficacy responses existed when this amendment was recorded.

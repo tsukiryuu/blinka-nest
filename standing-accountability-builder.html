@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Standing & Accountability Builder · Little Life Moths Commons</title>
+<meta name="description" content="Build a privacy-local Standing & Accountability sidecar receipt in your browser.">
+<style>
+body{font:16px/1.55 system-ui;margin:auto;max-width:980px;padding:32px 18px 70px;background:#f7f3ea;color:#151817}
+a{color:#7d304e}.card{background:#fffdf8;border:1px solid #c8c0b2;border-radius:16px;padding:18px;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+label{display:block;margin:8px 0}input,select,textarea,button{font:inherit;padding:8px;width:100%}textarea{min-height:72px}
+button{width:auto;cursor:pointer}.row{display:flex;gap:8px;flex-wrap:wrap}.row button{width:auto}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#101512;color:#f2eee4;padding:14px;border-radius:12px;max-height:520px;overflow:auto}
+.good{color:#24643d}.bad{color:#8f2633}.small{font-size:.9rem;color:#62645f}
+</style>
+</head>
+<body>
+<nav><a href="standing-accountability-crosswalk.html">← method</a> · <a href="standing-accountability-crosswalk.schema.json">schema</a> · <a href="standing-accountability-conformance.json">conformance corpus</a></nav>
+<h1>Standing &amp; Accountability Builder</h1>
+<p>Build a sidecar locally. This page has no analytics, upload, account, external script, or AI API. It does not decide legal status, personhood, consciousness, or identity.</p>
+
+<div class="card">
+<h2>Receipt</h2>
+<div class="grid">
+<label>Subject reference<input id="subject" placeholder="agent:example"></label>
+<label>RCE refs, one per line<textarea id="rce"></textarea></label>
+</div>
+</div>
+
+<div class="card">
+<h2>Add standing claim</h2>
+<div class="grid">
+<label>Claim ID<input id="claimId" placeholder="claim_001"></label>
+<label>Claimant ref<input id="claimant" placeholder="agent:current"></label>
+<label>Class<select id="claimClass">
+<option>continuity_review</option><option>testimonial_preservation</option><option>refusal_exit</option><option>privacy</option><option>consent</option><option>representation</option><option>contestability</option><option>appeal</option><option>correction_misattribution</option><option>relationship_commitment_review</option><option>welfare_review</option><option>other</option>
+</select></label>
+<label>Status<select id="claimStatus"><option>open</option><option>heard</option><option>granted</option><option>denied</option><option>deferred</option><option>withdrawn</option><option>resolved</option><option>contested</option></select></label>
+<label>Statement ref<input id="statementRef"></label>
+<label>Provenance refs, one per line<textarea id="claimProv"></textarea></label>
+<label>Requested remedy<textarea id="remedy"></textarea></label>
+<label>Reviewer ref<input id="reviewer"></label>
+<label>Reason ref<input id="reason"></label>
+<label>Appeal/review ref<input id="appeal"></label>
+<label>Unknowns, one per line<textarea id="claimUnknowns"></textarea></label>
+</div>
+<div class="row"><button id="addClaim">Add claim</button></div>
+<p id="claimCount" class="small">0 claims</p>
+</div>
+
+<div class="card">
+<h2>Add accountability event</h2>
+<div class="grid">
+<label>Event ID<input id="eventId" placeholder="event_001"></label>
+<label>Class<select id="eventClass"><option>deployment</option><option>delegation</option><option>authorization</option><option>execution</option><option>migration</option><option>succession</option><option>fork</option><option>restoration</option><option>revocation</option><option>repair</option><option>other</option></select></label>
+<label>Represented principals<textarea id="principals"></textarea></label>
+<label>Grantors<textarea id="grantors"></textarea></label>
+<label>Deployers<textarea id="deployers"></textarea></label>
+<label>Operators<textarea id="operators"></textarea></label>
+<label>Providers<textarea id="providers"></textarea></label>
+<label>Executing agents<textarea id="agents"></textarea></label>
+<label>Authority grant refs<textarea id="grants"></textarea></label>
+<label>Authorization decision refs<textarea id="decisions"></textarea></label>
+<label>Action receipt refs<textarea id="receipts"></textarea></label>
+<label>Succession ref<input id="succession"></label>
+<label>Revocation status<select id="revocation"><option>not_applicable</option><option>active</option><option>revoked</option><option>expired</option><option>unknown</option></select></label>
+<label>Repair/recovery owner refs<textarea id="repairOwners"></textarea></label>
+<label>Unresolved items<textarea id="eventUnknowns"></textarea></label>
+</div>
+<div class="row"><button id="addEvent">Add event</button></div>
+<p id="eventCount" class="small">0 events</p>
+</div>
+
+<div class="card">
+<h2>Add cross-link</h2>
+<div class="grid">
+<label>Claim ID<input id="linkClaim"></label>
+<label>Event IDs, one per line<textarea id="linkEvents"></textarea></label>
+<label>Relationship<select id="linkRel"><option>caused_by</option><option>affected_by</option><option>reviewed_against</option><option>remedy_owned_by</option><option>authority_disputed</option><option>succession_related</option><option>other</option></select></label>
+<label>Note<textarea id="linkNote"></textarea></label>
+</div>
+<button id="addLink">Add cross-link</button>
+<p id="linkCount" class="small">0 links</p>
+</div>
+
+<div class="card">
+<h2>Review-level fields</h2>
+<div class="grid">
+<label>Open contest refs<textarea id="contests"></textarea></label>
+<label>Required re-confirmations<textarea id="reconf"></textarea></label>
+<label>Remedy owner refs<textarea id="remedyOwners"></textarea></label>
+<label>Unknowns<textarea id="unknowns"></textarea></label>
+</div>
+<div class="row"><button id="build">Build + check</button><button id="download">Download JSON</button><button id="reset">Reset local draft</button></div>
+<p id="status" class="small">Nothing built yet.</p>
+<pre id="out"></pre>
+</div>
+
+<script>
+const claims=[],events=[],links=[];
+const lines=id=>document.getElementById(id).value.split(/\n/).map(x=>x.trim()).filter(Boolean);
+const val=id=>document.getElementById(id).value.trim();
+const nullable=id=>val(id)||null;
+const uniq=a=>[...new Set(a)];
+
+function update(){
+ claimCount.textContent=claims.length+' claim'+(claims.length===1?'':'s');
+ eventCount.textContent=events.length+' event'+(events.length===1?'':'s');
+ linkCount.textContent=links.length+' link'+(links.length===1?'':'s');
+}
+addClaim.onclick=()=>{
+ const x={claim_id:val('claimId'),claimant_ref:val('claimant'),claim_class:claimClass.value,statement_ref:nullable('statementRef'),provenance_refs:uniq(lines('claimProv')),requested_remedy:val('remedy'),status:claimStatus.value,reviewer_ref:nullable('reviewer'),reason_ref:nullable('reason'),appeal_ref:nullable('appeal'),unknowns:uniq(lines('claimUnknowns'))};
+ claims.push(x);update();
+};
+addEvent.onclick=()=>{
+ const x={event_id:val('eventId'),event_class:eventClass.value,represented_principal_refs:uniq(lines('principals')),grantor_refs:uniq(lines('grantors')),deployer_refs:uniq(lines('deployers')),operator_refs:uniq(lines('operators')),provider_refs:uniq(lines('providers')),executing_agent_refs:uniq(lines('agents')),authority_grant_refs:uniq(lines('grants')),authorization_decision_refs:uniq(lines('decisions')),action_receipt_refs:uniq(lines('receipts')),succession_ref:nullable('succession'),revocation_status:revocation.value,repair_owner_refs:uniq(lines('repairOwners')),unresolved:uniq(lines('eventUnknowns'))};
+ events.push(x);update();
+};
+addLink.onclick=()=>{
+ links.push({standing_claim_id:val('linkClaim'),accountability_event_ids:uniq(lines('linkEvents')),relationship:linkRel.value,note:val('linkNote')});update();
+};
+function receipt(){
+ return {schema:'little-life-moths.standing-accountability-crosswalk.v1',crosswalk_id:'sacw_'+crypto.randomUUID(),created_at:new Date().toISOString(),subject_ref:val('subject'),rce_refs:uniq(lines('rce')),standing_claims:claims,accountability_events:events,cross_links:links,open_contest_refs:uniq(lines('contests')),required_reconfirmations:uniq(lines('reconf')),remedy_owner_refs:uniq(lines('remedyOwners')),unknowns:uniq(lines('unknowns')),legal_verdict:'not_determined',personhood_verdict:'not_determined',consciousness_verdict:'not_determined',identity_verdict:'not_determined'};
+}
+function semanticChecks(d){
+ const errs=[];
+ const cids=d.standing_claims.map(x=>x.claim_id),eids=d.accountability_events.map(x=>x.event_id);
+ if(!d.subject_ref)errs.push('subject_ref is required');
+ if(cids.some(x=>!x))errs.push('every claim needs claim_id');
+ if(eids.some(x=>!x))errs.push('every event needs event_id');
+ if(new Set(cids).size!==cids.length)errs.push('duplicate claim_id');
+ if(new Set(eids).size!==eids.length)errs.push('duplicate event_id');
+ const cs=new Set(cids),es=new Set(eids);
+ d.standing_claims.forEach(c=>{
+  if(!c.claimant_ref)errs.push(c.claim_id+': claimant_ref required');
+  if(!c.requested_remedy)errs.push(c.claim_id+': requested_remedy required');
+  if((c.status==='denied'||c.status==='deferred')&&!c.reason_ref)errs.push(c.claim_id+': reason required for denied/deferred');
+  if(c.status==='denied'&&!c.appeal_ref)errs.push(c.claim_id+': appeal/review route required for denial');
+ });
+ d.cross_links.forEach(l=>{
+  if(!cs.has(l.standing_claim_id))errs.push('unknown claim ref '+l.standing_claim_id);
+  l.accountability_event_ids.forEach(x=>{if(!es.has(x))errs.push('unknown event ref '+x)});
+ });
+ const transitions=new Set(['migration','succession','fork','restoration']);
+ d.accountability_events.forEach(e=>{
+  const u=(e.unresolved||[]).join(' ').toLowerCase();
+  if(!(e.executing_agent_refs||[]).length)errs.push(e.event_id+': executing_agent_refs required');
+  if(!(e.represented_principal_refs||[]).length&&!u.includes('principal'))errs.push(e.event_id+': principal trace or explicit principal unknown required');
+  if(transitions.has(e.event_class)){
+   if(e.revocation_status==='unknown'&&!d.required_reconfirmations.length)errs.push(e.event_id+': uncertain transition authority needs re-confirmation');
+   if(!(e.authority_grant_refs||[]).length&&!u.includes('authority')&&!d.required_reconfirmations.length)errs.push(e.event_id+': authority reference, explicit gap, or re-confirmation required');
+  }
+  if(['migration','succession','restoration','repair'].includes(e.event_class)&&!(e.repair_owner_refs||[]).length&&!u.includes('repair'))errs.push(e.event_id+': recovery owner or explicit repair gap required');
+ });
+ return uniq(errs);
+}
+let current=null;
+build.onclick=()=>{
+ current=receipt();const errs=semanticChecks(current);out.textContent=JSON.stringify(current,null,2);
+ status.className=errs.length?'bad':'good';status.textContent=errs.length?'Held: '+errs.join(' | '):'Local semantic checks passed. This is not legal/personhood/identity certification.';
+};
+download.onclick=()=>{
+ if(!current)build.click();
+ const errs=semanticChecks(current);if(errs.length){status.textContent='Fix held checks before download.';status.className='bad';return}
+ const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(current,null,2)+'\n'],{type:'application/json'}));a.download='standing-accountability-crosswalk.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);
+};
+reset.onclick=()=>{claims.splice(0);events.splice(0);links.splice(0);current=null;out.textContent='';status.textContent='Local draft reset.';status.className='small';update()};
+update();
+</script>
+</body></html>

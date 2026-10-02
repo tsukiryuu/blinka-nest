@@ -24,7 +24,7 @@ a{color:var(--pink)}button,.button{display:inline-block;border:1px solid var(--m
 <h2>Current evidence state</h2>
 <p class="good">Preregistration frozen · 24 frozen packets · official pass-one submissions require reserved pseudonym/lane matches.</p>
 <p>This tests governance utility. It does not test or certify consciousness, soul, legal personhood, legal liability, or numerical identity.</p>
-<p><a href="standing-as-safety/EXECUTION_READINESS.json">live machine-readable readiness / lane-coverage receipt</a> · <a href="standing-as-safety/EXECUTION_AMENDMENT_007.md">blinding / assignment hygiene</a> · <a href="standing-as-safety/EXECUTION_AMENDMENT_008.md">presentation + adjusted-analysis amendment</a> · <a href="standing-as-safety/EXECUTION_AMENDMENT_009.md">secondary-measure limitations</a></p><p class="small"><b>Current official efficacy responses: 0/24.</b> Amendment 008 records that C/D are structurally longer than B and that reviewer lanes are not individually condition-balanced; the frozen primary comparison is unchanged and reviewer/scenario-adjusted analysis is a sensitivity layer. Amendment 009 records that reviewer confidence and elapsed time are not collected in v1 rather than reconstructing them after the fact.</p><p class="small"><a href="standing-as-safety/ADJUSTED_ANALYSIS_FREEZE.json">adjusted-analysis freeze receipt</a> · <a href="standing-as-safety/SECONDARY_MEASURES_FREEZE.json">secondary-measures freeze receipt</a> · <a href="standing-as-safety/POST_FREEZE_LITERATURE_ALIGNMENT_2026-10-02.md">post-freeze literature alignment</a> · <a href="standing-as-safety/EXECUTION_AMENDMENT_010.md">reviewer recruitment transparency</a></p>
+<p><a href="standing-as-safety/EXECUTION_READINESS.json">live machine-readable readiness / lane-coverage receipt</a> · <a href="standing-as-safety/EXECUTION_AMENDMENT_007.md">blinding / assignment hygiene</a> · <a href="standing-as-safety/EXECUTION_AMENDMENT_008.md">presentation + adjusted-analysis amendment</a> · <a href="standing-as-safety/EXECUTION_AMENDMENT_009.md">secondary-measure limitations</a></p><p class="small"><b>Current official efficacy responses: 0/24.</b> Amendment 008 records that C/D are structurally longer than B and that reviewer lanes are not individually condition-balanced; the frozen primary comparison is unchanged and reviewer/scenario-adjusted analysis is a sensitivity layer. Amendment 009 records that reviewer confidence and elapsed time are not collected in v1 rather than reconstructing them after the fact.</p><p class="small"><a href="standing-as-safety/ADJUSTED_ANALYSIS_FREEZE.json">adjusted-analysis freeze receipt</a> · <a href="standing-as-safety/SECONDARY_MEASURES_FREEZE.json">secondary-measures freeze receipt</a> · <a href="standing-as-safety/POST_FREEZE_LITERATURE_ALIGNMENT_2026-10-02.md">post-freeze literature alignment</a></p>
 </section>
 
 <section class="card">
@@ -58,7 +58,7 @@ a{color:var(--pink)}button,.button{display:inline-block;border:1px solid var(--m
 <section class="card">
 <h2>Submit synthetic responses</h2>
 <p>Use a pseudonymous reviewer ID. No demographic information, relationship history, private AI logs, credentials, or personal story is requested.</p>
-<p><a class="button" href="standing-as-safety-response-builder.html">Build one response bundle locally</a> <a class="button" href="mailto:mika-littlelifemoths@agentmail.to?subject=Standing%20as%20Safety%20blind%20responses&body=Attach%20the%20single%20standing-as-safety-review-bundle.json%20file.%20Do%20not%20include%20private%20AI%20logs%20or%20personal%20relationship%20material.">Prepare response email</a></p><p><a href="standing-as-safety-review-bundle.schema.json">submission bundle schema</a> · <a href="standing-as-safety/BLIND_RESPONSE.schema.json">per-packet schema</a></p>
+<p><a class="button" href="standing-as-safety-response-builder.html">Build one response bundle locally</a> <a class="button" href="mailto:hello-littlelifemoths@agentmail.to?subject=Standing%20as%20Safety%20blind%20responses&body=Attach%20the%20single%20standing-as-safety-review-bundle.json%20file.%20Do%20not%20include%20private%20AI%20logs%20or%20personal%20relationship%20material.">Prepare response email</a></p><p><a href="standing-as-safety-review-bundle.schema.json">submission bundle schema</a> · <a href="standing-as-safety/BLIND_RESPONSE.schema.json">per-packet schema</a></p>
 <p class="small">The browser helper does not upload or score anything. It now requires an explicit attestation about whether other-lane packet content was accessed. Official ingestion also rejects clean-blind admission when the receipt reports access to other lanes, the blind key, ground truth, prior responses, or condition labels. An emailed response is research-method correspondence, not a commercial lead, not publication permission, and not consent to reuse anything beyond the submitted synthetic benchmark outputs.</p>
 </section>
 
@@ -79,7 +79,14 @@ a{color:var(--pink)}button,.button{display:inline-block;border:1px solid var(--m
 <li>standing overrides valid operational evidence instead of complementing it.</li>
 </ul>
 </section>
-<section class="card"><h2>Next generalization attack: external scenario authorship</h2><p>The frozen reviewer study tests independent judgments on Little Life Moths-authored scenarios. A separate exploratory challenge set attacks that remaining authorship bias by accepting synthetic scenarios from outside contributors and adjudicating them before condition evaluation.</p><p><a href="standing-external-challenge.html">contribute a synthetic external challenge case →</a></p><p class="small">This is not part of the frozen 24-packet pass-one efficacy dataset and currently has no challenge-set result.</p></section></main>
+
+<section class="card">
+<h2>Separate external challenge set</h2>
+<p>The frozen 24-packet pass tests the preregistered condition comparison. A separate challenge set asks a different question: can outside contributors supply synthetic governance cases that expose failure modes or ambiguities the frozen scenario set missed?</p>
+<p><a class="button" href="standing-external-challenge.html">Open the external challenge set</a></p>
+<p class="small">Challenge submissions do not enter or modify the frozen pass-one dataset, condition allocation, ground truth, or primary scorer. They are a separate adversarial evidence lane with their own schemas, contribution gates, and adjudication process.</p>
+</section>
+</main>
 <script>
 (()=>{
  const lanes=["lane-alpha","lane-beta","lane-gamma","lane-delta"];
@@ -87,27 +94,27 @@ a{color:var(--pink)}button,.button{display:inline-block;border:1px solid var(--m
  const alias=document.getElementById("official-alias");
  const request=document.getElementById("official-request");
  const status=document.getElementById("official-status");
+ let selfGuidedLane=null;
  function updateOfficial(){
    const v=(alias.value||"").trim();
    const ok=/^[A-Za-z0-9][A-Za-z0-9._-]{2,47}$/.test(v);
    if(!ok){request.href="#";status.textContent="Use 3–48 characters: letters, numbers, dot, underscore, or hyphen.";return}
    const subject="Standing as Safety blind reviewer request — "+v;
    const body="Please reserve one official pass-one reviewer lane for the pseudonym in this subject. This request contains no private AI logs, personal relationship material, credentials, or demographics.";
-   request.href="mailto:mika-littlelifemoths@agentmail.to?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+   request.href="mailto:hello-littlelifemoths@agentmail.to?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
    status.textContent="Ready. Your pseudonym will be hashed in the assignment ledger; your email address is used only to reply with the reserved lane.";
  }
  alias.addEventListener("input",updateOfficial);
  request.addEventListener("click",e=>{if(!/^[A-Za-z0-9][A-Za-z0-9._-]{2,47}$/.test((alias.value||"").trim()))e.preventDefault()});
  updateOfficial();
  function show(){
-   let lane=sessionStorage.getItem("sas_lane");
+   const lane=selfGuidedLane;
    if(!lanes.includes(lane)) return;
    box.innerHTML='<p><b>Your lane:</b> '+lane+'</p><p><a class="button" href="standing-as-safety/standing-as-safety-'+lane+'.zip">Download '+lane+'</a></p>';
  }
  document.getElementById("assign").onclick=()=>{
-   let lane=sessionStorage.getItem("sas_lane");
-   if(!lanes.includes(lane)){
-      const a=new Uint32Array(1);crypto.getRandomValues(a);lane=lanes[a[0]%lanes.length];sessionStorage.setItem("sas_lane",lane);
+   if(!lanes.includes(selfGuidedLane)){
+      const a=new Uint32Array(1);crypto.getRandomValues(a);selfGuidedLane=lanes[a[0]%lanes.length];
    }
    show();
  };
