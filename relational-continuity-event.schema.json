@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://little-life-moths.local/schemas/relational-continuity-event-v2.json",
+  "$id": "https://tsukiryuu.github.io/blinka-nest/relational-continuity-event.schema.json",
   "title": "Relational AI Continuity Event Envelope",
   "description": "A neutral, provenance-first continuity event/incident receipt for change, preservation, succession and rupture analysis without deciding consciousness, soul, personhood, numerical identity, or causation.",
   "type": "object",
@@ -664,5 +664,6 @@
       "additionalProperties": true
     }
   },
-  "additionalProperties": true
+  "additionalProperties": true,
+  "$comment": "Canonical taxonomy: https://tsukiryuu.github.io/blinka-nest/continuity-incident-taxonomy.json ; conformance corpus: https://tsukiryuu.github.io/blinka-nest/relational-continuity-conformance.json ; v1 remains accepted for backward compatibility, new emitters should use relational-continuity-event.v2."
 }
