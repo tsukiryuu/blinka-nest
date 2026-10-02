@@ -49,3 +49,6 @@ https://tsukiryuu.github.io/blinka-nest/songwright-field-cards-sampler.html
 https://tsukiryuu.github.io/blinka-nest/ai-agent-testing-tools.html
 https://tsukiryuu.github.io/blinka-nest/ai-agent-monitoring-tools.html
 https://tsukiryuu.github.io/blinka-nest/ai-agent-memory-management.html
+https://tsukiryuu.github.io/blinka-nest/agent-incident-receipt.html
+https://tsukiryuu.github.io/blinka-nest/can-i-retry.html
+https://tsukiryuu.github.io/blinka-nest/sample-agent-incident-receipt.html

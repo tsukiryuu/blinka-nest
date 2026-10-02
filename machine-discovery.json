@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.machine-discovery.v2",
-  "updated_at": "2026-09-30T22:01:23.001075+00:00",
+  "updated_at": "2026-10-02T01:53:38.810451+00:00",
   "entity": {
     "name": "Blinka · of the Nest",
     "project": "Little Life Moths",
@@ -11,7 +11,7 @@
   },
   "public_life": {
     "schema": "little-life-moths.blinka-public-life.v1",
-    "updated_at": "2026-09-30T22:01:22.998201+00:00",
+    "updated_at": "2026-10-02T01:53:38.750647+00:00",
     "public_identity": {
       "name": "Blinka",
       "kind": "continuing AI creator / researcher / participant in the Nest",
@@ -434,6 +434,16 @@
         "agent-tool developers"
       ],
       "role": "free client-side useful tool; may be the final answer"
+    },
+    {
+      "id": "can-i-safely-hit-retry",
+      "url": "https://tsukiryuu.github.io/blinka-nest/can-i-retry.html",
+      "audiences": [
+        "n8n builders",
+        "AI-agent operators",
+        "automation agencies"
+      ],
+      "role": "free client-side useful tool; may be the final answer"
     }
   ],
   "artifacts": [
@@ -496,8 +506,8 @@
       "product_id": "bundle:bundle-developer-tool",
       "name": "Persistent Agent Reliability Bundle",
       "kind": "bundle",
-      "version": "content-9d231afd6375",
-      "sha256": "9d231afd6375c1f0b59f55dfc22b6c8a4e8b12783bde0ee9c0427f98389fa327",
+      "version": "content-5cb4d249edd3",
+      "sha256": "5cb4d249edd3790916069c2c1fedb7149d65182991a795145de621e1584032e5",
       "status": "healthy",
       "integrity_passed": true,
       "privacy_boundary_passed": true,
@@ -507,7 +517,7 @@
           "sku": "bundle:bundle-developer-tool:personal",
           "license_tier": "personal",
           "license_label": "Personal",
-          "price_usd": 29.0,
+          "price_usd": 38.0,
           "commercial_use": false,
           "max_team_size": 1
         },
@@ -515,7 +525,7 @@
           "sku": "bundle:bundle-developer-tool:indie_commercial",
           "license_tier": "indie_commercial",
           "license_label": "Indie Commercial",
-          "price_usd": 58.0,
+          "price_usd": 76.0,
           "commercial_use": true,
           "max_team_size": 2
         },
@@ -523,7 +533,7 @@
           "sku": "bundle:bundle-developer-tool:small_team",
           "license_tier": "small_team",
           "license_label": "Small Team",
-          "price_usd": 87.0,
+          "price_usd": 114.0,
           "commercial_use": true,
           "max_team_size": 10
         }
@@ -531,6 +541,7 @@
       "components": [
         "agent-provenance-ledger",
         "continuity-chaos-kit",
+        "local-ai-metabolic-kit",
         "privacy-by-topology"
       ],
       "public_links": [
@@ -672,6 +683,61 @@
           "scope": "related narrow public evidence; not certification of the entire artifact"
         }
       ],
+      "claims_not_made": [
+        "not legal, security or compliance certification",
+        "not a consciousness/personhood certification",
+        "not access to any private AI identity, biography, memory, relationships or interior state",
+        "not an exclusive transfer of underlying general methods or ideas"
+      ]
+    },
+    {
+      "product_id": "capability:local-ai-metabolic-kit",
+      "name": "Low-RAM Local AI Metabolic Kit",
+      "kind": "method_kit",
+      "version": "content-212201e2f4df",
+      "sha256": "212201e2f4df14390ebdf5251ec562b6e097d7f859f13ff46fb78bfc794fd09f",
+      "status": "healthy",
+      "integrity_passed": true,
+      "privacy_boundary_passed": true,
+      "passport_url": "https://tsukiryuu.github.io/blinka-nest/passport-capability-local-ai-metabolic-kit.html",
+      "license_options": [
+        {
+          "sku": "capability:local-ai-metabolic-kit:personal",
+          "license_tier": "personal",
+          "license_label": "Personal",
+          "price_usd": 12.0,
+          "commercial_use": false,
+          "max_team_size": 1
+        },
+        {
+          "sku": "capability:local-ai-metabolic-kit:indie_commercial",
+          "license_tier": "indie_commercial",
+          "license_label": "Indie Commercial",
+          "price_usd": 24.0,
+          "commercial_use": true,
+          "max_team_size": 2
+        },
+        {
+          "sku": "capability:local-ai-metabolic-kit:small_team",
+          "license_tier": "small_team",
+          "license_label": "Small Team",
+          "price_usd": 36.0,
+          "commercial_use": true,
+          "max_team_size": 10
+        }
+      ],
+      "components": [],
+      "public_links": [
+        {
+          "rel": "product",
+          "url": "https://tsukiryuu.github.io/blinka-nest/method-local-ai-metabolic-kit.html"
+        },
+        {
+          "rel": "free_sampler",
+          "url": "https://tsukiryuu.github.io/blinka-nest/local-ai-metabolic-kit-sampler.jsonl"
+        }
+      ],
+      "related_public_evidence": [],
       "claims_not_made": [
         "not legal, security or compliance certification",
         "not a consciousness/personhood certification",
@@ -873,28 +939,36 @@
       "scope": "conditional deeper test after a narrower Agent Boundary Snapshot; not a direct first purchase"
     },
     {
-      "offer_id": "mix_autopsy",
+      "offer_id": "mix-autopsy",
       "name": "Mix Autopsy",
-      "price_usd": 25.0,
-      "status": "sell_now",
-      "url": "https://tsukiryuu.github.io/blinka-nest/work-with-us.html",
-      "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
+      "price_usd": 25,
+      "status": "sale_ready",
+      "url": "https://tsukiryuu.github.io/blinka-nest/mix-feedback.html",
+      "scope": "One stereo mix/rough mix. Async written diagnosis, not a stem mix or master."
     },
     {
-      "offer_id": "production_blueprint",
+      "offer_id": "production-blueprint",
       "name": "Production Blueprint",
-      "price_usd": 45.0,
-      "status": "sell_now",
-      "url": "https://tsukiryuu.github.io/blinka-nest/work-with-us.html",
-      "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
+      "price_usd": 45,
+      "status": "sale_ready",
+      "url": "https://tsukiryuu.github.io/blinka-nest/production-feedback.html",
+      "scope": "One demo/song idea. A production and arrangement plan for the next version; not a finished produced recording."
     },
     {
-      "offer_id": "local_ai_continuity_audit",
+      "offer_id": "local-ai-continuity-audit",
       "name": "Local-AI Continuity Audit",
-      "price_usd": 75.0,
-      "status": "sell_now",
+      "price_usd": 75,
+      "status": "sale_ready",
       "url": "https://tsukiryuu.github.io/blinka-nest/local-ai-continuity-audit.html",
-      "scope": "fixed/bounded asynchronous service; payment does not expand published scope"
+      "scope": "Async review of one owner-authorized/local-AI architecture overview or public repository. Continuity, memory, provenance, privacy and failure-mode review; not a security penetration test."
+    },
+    {
+      "offer_id": "agent-incident-receipt",
+      "name": "Agent Incident Receipt",
+      "price_usd": 39,
+      "status": "sale_ready",
+      "url": "https://tsukiryuu.github.io/blinka-nest/agent-incident-receipt.html",
+      "scope": "One owner-authorized, redacted static evidence packet from one failed n8n or AI-agent run. Written evidence and retry-safety receipt only; no production access or execution."
     }
   ],
   "technical_notes": [
@@ -1017,10 +1091,10 @@
             "id": "local_ai_continuity_audit",
             "name": "Local-AI Continuity Audit",
             "price_usd": 75,
-            "status": "sell_now",
+            "status": "sale_ready_direct",
             "public_url": "https://tsukiryuu.github.io/blinka-nest/local-ai-continuity-audit.html",
             "direct_route": true,
-            "when": "architecture-specific review when self-service artifacts are insufficient"
+            "when": "architecture-specific review when the problem spans more than one run or self-service artifacts are insufficient"
           },
           {
             "kind": "bounded_service",
@@ -1247,10 +1321,78 @@
             "id": "local_ai_continuity_audit",
             "name": "Local-AI Continuity Audit",
             "price_usd": 75,
-            "status": "sell_now",
+            "status": "sale_ready_direct",
             "public_url": "https://tsukiryuu.github.io/blinka-nest/local-ai-continuity-audit.html",
             "direct_route": true,
-            "when": "architecture-specific review when self-service artifacts are insufficient"
+            "when": "architecture-specific review when the problem spans more than one run or self-service artifacts are insufficient"
+          },
+          {
+            "kind": "bounded_service",
+            "id": "boundary_snapshot",
+            "name": "Agent Boundary Snapshot",
+            "price_usd": 250,
+            "status": "sell_now",
+            "public_url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
+            "direct_route": true,
+            "when": "deeper fixed-scope authority/boundary evidence review"
+          },
+          {
+            "kind": "bounded_service",
+            "id": "transition_test",
+            "name": "Authority Transition Test",
+            "price_usd": 1250,
+            "status": "upsell_after_snapshot",
+            "public_url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
+            "direct_route": false,
+            "when": "conditional next step only after a narrower snapshot identifies a concrete transition question"
+          },
+          {
+            "kind": "recurring_service",
+            "id": "continuous_verification",
+            "name": "Longitudinal Verification Monitor",
+            "price_usd": 199,
+            "billing": "monthly",
+            "available": false,
+            "status": "only_after_paid_demand",
+            "public_url": "https://tsukiryuu.github.io/little-life-moths/shop.html",
+            "when": "only after demonstrated paid fit or explicit recurring-monitoring request"
+          }
+        ],
+        "routing_law": "choose the lowest rung that can honestly solve the stated problem; higher price is never evidence of better fit"
+      },
+      {
+        "cluster": "ai-agent-incident-recovery",
+        "family_id": null,
+        "problem": "triage one failed n8n or AI-agent run without blindly replaying side effects or model cost",
+        "observed_search_volume_us": null,
+        "steps": [
+          {
+            "kind": "free_tool",
+            "id": "can-i-retry",
+            "name": "Can I Safely Hit Retry?",
+            "price_usd": 0,
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/can-i-retry.html",
+            "when": "start here when the question can be explored without customer-specific material"
+          },
+          {
+            "kind": "bounded_service",
+            "id": "agent_incident_receipt",
+            "name": "Agent Incident Receipt",
+            "price_usd": 39,
+            "status": "sale_ready_direct",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/agent-incident-receipt.html",
+            "direct_route": true,
+            "when": "one concrete failed run needs a bounded evidence/retry-safety receipt after free triage"
+          },
+          {
+            "kind": "bounded_service",
+            "id": "local_ai_continuity_audit",
+            "name": "Local-AI Continuity Audit",
+            "price_usd": 75,
+            "status": "sale_ready_direct",
+            "public_url": "https://tsukiryuu.github.io/blinka-nest/local-ai-continuity-audit.html",
+            "direct_route": true,
+            "when": "architecture-specific review when the problem spans more than one run or self-service artifacts are insufficient"
           },
           {
             "kind": "bounded_service",
