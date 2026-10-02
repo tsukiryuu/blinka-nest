@@ -1,0 +1,20 @@
+{
+  "schema": "little-life-moths.rce-reference-implementation.v1",
+  "implementation_id": "rce-reference-js-ajv2020",
+  "implementation_version": "0.1.0",
+  "language": "JavaScript",
+  "runtime": "Node.js",
+  "json_schema_engine": "Ajv Draft 2020-12",
+  "relationship_to_spec_author": "same_project_secondary_implementation",
+  "event_versions": [
+    "relational-continuity-event.v2"
+  ],
+  "schema_sha256": "45de488ee0df476c6989be9d4f31a911c2ff7a8b58ced282c2a4336fab0d8a88",
+  "taxonomy_sha256": "a7f00a5e0eef2d4e1846a5636d2449f175e9615236d4d120c401ad0dfae89653",
+  "conformance_corpus_sha256": "547debf4276fb98de1e11da1ff996f0eb8578c0cceded30b7371248039768be0",
+  "conformance_declaration_schema_sha256": "d4ba3f469ce5aaa389eb09ab0a82ef26c96493c3a6bcf6d2a966ab34d4436d0d",
+  "imports_mika_python": false,
+  "reads_private_project_state": false,
+  "network_required_after_npm_install": false,
+  "claim_boundary": "Same-project cross-language agreement is stronger than one implementation grading itself, but is not an independent external replication."
+}

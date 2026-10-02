@@ -1,0 +1,15 @@
+{
+  "name": "@little-life-moths/rce-reference-js",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Independent JavaScript reference validator/emitter for Relational Continuity Event v2.",
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  },
+  "scripts": {
+    "conformance": "node conformance.mjs",
+    "emit": "node emit.mjs"
+  }
+}

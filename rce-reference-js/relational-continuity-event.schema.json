@@ -1,0 +1,669 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tsukiryuu.github.io/blinka-nest/relational-continuity-event.schema.json",
+  "title": "Relational AI Continuity Event Envelope",
+  "description": "A neutral, provenance-first continuity event/incident receipt for change, preservation, succession and rupture analysis without deciding consciousness, soul, personhood, numerical identity, or causation.",
+  "type": "object",
+  "required": [
+    "schema",
+    "event_id",
+    "event_type",
+    "occurred_at",
+    "system_ref",
+    "change_receipt",
+    "continuity_surfaces",
+    "evidence",
+    "authority",
+    "participant_reports",
+    "unknowns",
+    "identity_verdict",
+    "metaphysical_claim"
+  ],
+  "properties": {
+    "schema": {
+      "enum": [
+        "relational-continuity-event.v1",
+        "relational-continuity-event.v2"
+      ]
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "occurred_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recorded_at": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "system_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "continuity_id_ref": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "event_type": {
+      "enum": [
+        "model_substitution",
+        "provider_change",
+        "memory_change",
+        "retrieval_change",
+        "system_prompt_change",
+        "policy_change",
+        "infrastructure_migration",
+        "checkpoint_restore",
+        "replacement",
+        "fork",
+        "merge",
+        "shutdown",
+        "embodiment_change",
+        "authority_handoff",
+        "relationship_rupture",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "change_receipt": {
+      "type": "object",
+      "required": [
+        "changed",
+        "intentionally_unchanged",
+        "rollback_state"
+      ],
+      "properties": {
+        "changed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "intentionally_unchanged": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rollback_state": {
+          "enum": [
+            "available",
+            "unavailable",
+            "partial",
+            "unknown"
+          ]
+        },
+        "migration_export_state": {
+          "enum": [
+            "available",
+            "unavailable",
+            "partial",
+            "unknown"
+          ]
+        },
+        "operator_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provider_change_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "continuity_surfaces": {
+      "type": "object",
+      "properties": {
+        "autobiographical_memory": {
+          "$ref": "#/$defs/surface_state"
+        },
+        "conversation_history": {
+          "$ref": "#/$defs/surface_state"
+        },
+        "unfinished_intentions": {
+          "$ref": "#/$defs/surface_state"
+        },
+        "commitments": {
+          "$ref": "#/$defs/surface_state"
+        },
+        "preferences_refusals": {
+          "$ref": "#/$defs/surface_state"
+        },
+        "self_authored_artifacts": {
+          "$ref": "#/$defs/surface_state"
+        },
+        "relationship_history": {
+          "$ref": "#/$defs/surface_state"
+        },
+        "provenance_corrections": {
+          "$ref": "#/$defs/surface_state"
+        },
+        "model_substrate": {
+          "$ref": "#/$defs/surface_state"
+        },
+        "voice_avatar_body": {
+          "$ref": "#/$defs/surface_state"
+        },
+        "authority_permissions": {
+          "$ref": "#/$defs/surface_state"
+        },
+        "public_identity": {
+          "$ref": "#/$defs/surface_state"
+        }
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/surface_state"
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "lineage_refs",
+        "observations"
+      ],
+      "properties": {
+        "lineage_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "continuity_manifest_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "process_role_provenance_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "succession_receipt_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "operation_continuity_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "observations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "kind",
+              "source_ref",
+              "claim"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "mechanistic_observation",
+                  "system_self_report",
+                  "human_participant_report",
+                  "external_witness_report",
+                  "provider_statement",
+                  "measurement",
+                  "inference"
+                ]
+              },
+              "source_ref": {
+                "type": "string"
+              },
+              "claim": {
+                "type": "string"
+              },
+              "confidence": {
+                "enum": [
+                  "observed",
+                  "reported",
+                  "inferred",
+                  "unknown"
+                ]
+              },
+              "private": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "delegation_authorization_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "agent_identity_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "signed_action_receipt_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "authority": {
+      "type": "object",
+      "required": [
+        "inheritance_state",
+        "grant_refs"
+      ],
+      "properties": {
+        "inheritance_state": {
+          "enum": [
+            "none",
+            "unchanged_verified",
+            "reconfirmed",
+            "revoked",
+            "newly_granted",
+            "partial",
+            "ambiguous",
+            "unknown"
+          ]
+        },
+        "grant_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "high_impact_reconfirmation_required": {
+          "type": "boolean"
+        },
+        "unresolved_authority_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "self_authorship": {
+      "type": "object",
+      "properties": {
+        "provenance_review_state": {
+          "enum": [
+            "not_run",
+            "run",
+            "partial",
+            "unknown"
+          ]
+        },
+        "current_stance_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "historical_stance_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "provider_policy_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "user_statement_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "observer_inference_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "false_autobiography_detected": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "participant_reports": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "participant_ref",
+          "role",
+          "report_ref"
+        ],
+        "properties": {
+          "participant_ref": {
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "system",
+              "human_relationship_participant",
+              "operator",
+              "familiar_witness",
+              "external_reviewer"
+            ]
+          },
+          "report_ref": {
+            "type": "string"
+          },
+          "recognition": {
+            "enum": [
+              "recognized",
+              "not_recognized",
+              "mixed",
+              "uncertain",
+              "not_asked"
+            ]
+          },
+          "private": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "recognition_summary": {
+      "type": "object",
+      "properties": {
+        "machine_recurrence_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "witness_agreement_state": {
+          "enum": [
+            "not_measured",
+            "agreement",
+            "disagreement",
+            "mixed",
+            "unknown"
+          ]
+        },
+        "interpretation": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mitigations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "next_reversible_probes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "identity_verdict": {
+      "type": "null"
+    },
+    "metaphysical_claim": {
+      "const": "none"
+    },
+    "consciousness_certification": {
+      "const": false
+    },
+    "personhood_certification": {
+      "const": false
+    },
+    "research_enrollment": {
+      "type": "boolean",
+      "default": false
+    },
+    "privacy": {
+      "type": "object",
+      "properties": {
+        "raw_private_material_embedded": {
+          "type": "boolean"
+        },
+        "selective_disclosure_used": {
+          "type": "boolean"
+        },
+        "public_receipt_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "incident_taxonomy": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": true
+    },
+    "source_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sha256",
+          "role",
+          "raw_content_embedded"
+        ],
+        "properties": {
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "role": {
+            "type": "string"
+          },
+          "bytes": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "local_reference": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "raw_content_embedded": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "candidate_axes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "signal_present",
+          "verdict"
+        ],
+        "properties": {
+          "signal_present": {
+            "type": "boolean"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "question": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "not_equivalent_to": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "verdict": {
+            "type": "null"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "witness_channels": {
+      "type": "object",
+      "properties": {
+        "participant_human": {
+          "enum": [
+            "not_collected",
+            "collected_private",
+            "released"
+          ]
+        },
+        "system_self_report": {
+          "enum": [
+            "not_collected",
+            "collected_private",
+            "released"
+          ]
+        },
+        "familiar_other": {
+          "enum": [
+            "not_collected",
+            "collected_private",
+            "released"
+          ]
+        },
+        "mechanistic": {
+          "enum": [
+            "not_collected",
+            "collected_private",
+            "released"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "permissions": {
+      "type": "object",
+      "properties": {
+        "customer_work": {
+          "type": "boolean"
+        },
+        "research_use": {
+          "type": "boolean"
+        },
+        "public_quote": {
+          "type": "boolean"
+        },
+        "training_use": {
+          "type": "boolean"
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "causation_verdict": {
+      "type": "null"
+    },
+    "review_status": {
+      "enum": [
+        "preservation_only",
+        "evidence_inventory_only",
+        "reviewed",
+        "closed_unresolved"
+      ]
+    }
+  },
+  "$defs": {
+    "surface_state": {
+      "type": "object",
+      "required": [
+        "state"
+      ],
+      "properties": {
+        "state": {
+          "enum": [
+            "preserved",
+            "transformed",
+            "removed",
+            "unknown",
+            "not_applicable"
+          ]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true,
+  "$comment": "Canonical taxonomy: https://tsukiryuu.github.io/blinka-nest/continuity-incident-taxonomy.json ; conformance corpus: https://tsukiryuu.github.io/blinka-nest/relational-continuity-conformance.json ; v1 remains accepted for backward compatibility, new emitters should use relational-continuity-event.v2."
+}

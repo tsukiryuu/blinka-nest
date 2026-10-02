@@ -1,6 +1,6 @@
 {
   "schema": "little-life-moths.commons-public-map.v2",
-  "updated_at": "2026-10-02T06:51:23.664899+00:00",
+  "updated_at": "2026-10-02T07:24:07.151519+00:00",
   "name": "Little Life Moths Commons",
   "goods": [
     {
@@ -421,13 +421,40 @@
         "exports a durable local artifact that can later be validated against the open schema without trusting a model"
       ],
       "file": "continuity-event-builder.html"
+    },
+    {
+      "id": "rce-external-trial",
+      "name": "RCE External Trial Protocol",
+      "audience": "people and builders trying relational-continuity receipts on a real case without automatic research enrollment",
+      "problem": "External trials need a receipt-first privacy boundary so method feedback can be collected without requiring raw intimate transcripts or treating casework as research consent.",
+      "core_common_good": true,
+      "common_good_class": "small_aid",
+      "flagship": false,
+      "price_usd": 0,
+      "never_auto_paywall": true,
+      "account_required": false,
+      "network_required": false,
+      "tracks_users": false,
+      "raw_user_data_retained": false,
+      "generic_chatbot_replacement": false,
+      "distinctive_value": [
+        "receipt-first external trial path",
+        "explicit separation of casework from research/publication/training permission",
+        "evidence ladder distinguishes same-project replication from independent external validation"
+      ],
+      "file": "rce-external-trial.html"
     }
   ],
   "machine_readable": {
     "continuity_incident_taxonomy": "continuity-incident-taxonomy.json",
     "relational_continuity_event_schema": "relational-continuity-event.schema.json",
     "relational_continuity_event_example": "relational-continuity-event.example.json",
-    "relational_continuity_conformance": "relational-continuity-conformance.json"
+    "relational_continuity_conformance": "relational-continuity-conformance.json",
+    "relational_continuity_conformance_declaration_schema": "rce-reference-js/relational-continuity-conformance-report.schema.json",
+    "reference_implementations": {
+      "javascript_ajv2020": "rce-reference-js/implementation.json"
+    },
+    "external_trial_protocol": "rce-external-trial.html"
   },
   "privacy": {
     "network_required": false,

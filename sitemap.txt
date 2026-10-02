@@ -62,3 +62,5 @@ https://tsukiryuu.github.io/blinka-nest/ai-succession-review.html
 https://tsukiryuu.github.io/blinka-nest/self-authorship-integrity-review.html
 https://tsukiryuu.github.io/blinka-nest/relational-continuity-governance.html
 https://tsukiryuu.github.io/blinka-nest/continuity-event-builder.html
+https://tsukiryuu.github.io/blinka-nest/rce-external-trial.html
+https://tsukiryuu.github.io/blinka-nest/rce-reference-js/
