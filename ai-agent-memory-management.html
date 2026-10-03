@@ -1,3 +1,67 @@
 <!doctype html><html lang="en" class="nest-unified"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Agent Memory Management: Practical Continuity &amp; Privacy Checks — Little Life Moths</title><meta name="description" content="A practical approach to AI agent memory management covering persistence, context selection, provenance, authority and privacy boundaries."><link rel="canonical" href="https://tsukiryuu.github.io/blinka-nest/ai-agent-memory-management.html"><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this an AI observability platform?","acceptedAnswer":{"@type":"Answer","text":"No. These are focused tools and methods for longitudinal state, memory, provenance and handoff failures. They complement ordinary logs and monitoring rather than replacing them."}},{"@type":"Question","name":"Does this require sending private agent memory to Little Life Moths?","acceptedAnswer":{"@type":"Answer","text":"No for the free browser tools. Their inputs stay client-side. Paid review work should use public, synthetic or redacted material unless a different scope is explicitly agreed."}},{"@type":"Question","name":"Does using these tools prove an agent is safe or reliable?","acceptedAnswer":{"@type":"Answer","text":"No. They help expose specific failure modes and make them reproducible. They are not a security, compliance or safety certification."}}]}</script><style>body{max-width:860px;margin:48px auto;padding:0 22px;font:17px/1.65 Georgia,serif;background:#f4f0e8;color:#111416}.card{background:#fffdf7;border:1px solid #c7bfaf;border-radius:18px;padding:20px;margin:18px 0}a{color:#8b4058}code{background:#ebe5da;padding:.12rem .3rem;border-radius:5px}summary{cursor:pointer;font-weight:700}</style><link rel="stylesheet" href="nest-shell.css">
 <script defer src="nest-shell.js"></script>
+<style id="nest-site-style-v1" data-site-steward-page="ai-agent-memory-management.html">
+/* my own pass, 2026-10-03 — the continuity & work rooms come into the grove.
+   same words, same prices, same boundaries; just night-moss instead of lab paper. */
+html:root {
+  --paper:#16231c; --p:#16231c; --ink:#ece8da; --i:#ece8da;
+  --moss:#a9d18e; --m:#a9d18e; --rose:#efb6c5; --r:#efb6c5;
+  --line:#3d5244; --l:#3d5244; --soft:#bfcab5; --muted:#bfcab5;
+  color-scheme: dark;
+  background:#16231c;
+}
+html:root body {
+  background:
+    radial-gradient(ellipse 46rem 34rem at -10% 8rem, rgb(132 157 93 / 18%), transparent 75%),
+    radial-gradient(ellipse 30rem 38rem at 110% 40rem, rgb(189 114 141 / 10%), transparent 75%),
+    #16231c !important;
+  color:#ece8da !important;
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+}
+html:root h1, html:root h2, html:root h3 { color:#f3efe2 !important; }
+html:root h2 {
+  padding-bottom:.3em;
+  background:linear-gradient(90deg,#efb6c5,#a9d18e 38%,transparent 82%) left bottom/100% 1px no-repeat;
+}
+html:root .card, html:root .route, html:root .step, html:root .tool {
+  background:linear-gradient(150deg,rgb(30 48 38 / 92%),rgb(19 31 25 / 96%)) !important;
+  border-color:#3d5244 !important;
+  color:#e4e0d2 !important;
+  box-shadow:0 1px 0 rgb(239 182 197 / 6%) inset;
+}
+html:root .price { color:#c9e6b2 !important; }
+html:root .small, html:root .kicker, html:root .plain { color:#bfcab5 !important; }
+html:root a { color:#c9e6b2; text-decoration-color:rgb(201 230 178 / 45%); }
+html:root a:hover { color:#efb6c5; }
+html:root .btn {
+  color:#e9f3df !important; border-color:#7fa66a !important; background:transparent !important;
+  min-height:44px; box-sizing:border-box; display:inline-flex; align-items:center;
+}
+html:root .btn.hot { background:#2f4a36 !important; border-color:#a9d18e !important; }
+html:root .btn:hover { border-color:#efb6c5 !important; color:#fff !important; }
+html:root dt, html:root strong, html:root b { color:#f3efe2; }
+html:root code, html:root kbd { background:rgb(0 0 0 / 25%); color:#e9f3df; }
+html:root .tool b { color:#c9e6b2 !important; }
+html:root .tool small { color:#c4cdb9 !important; }
+html:root .tag { color:#efb6c5 !important; }
+html:root .tool:hover, html:root .tool:focus-visible { border-color:#efb6c5 !important; }
+html:root small { color:#c4cdb9; }
+html:root .pass { color:#c9e6b2 !important; }
+html:root .muted { color:#bfcab5 !important; }
+html:root .boundary, html:root .note, html:root .callout, html:root .notice, html:root .warn, html:root .explain, html:root .box, html:root .panel {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root pre, html:root textarea, html:root input, html:root select {
+  background:rgb(0 0 0 / 28%) !important; color:#e9f3df !important; border-color:#3d5244 !important; }
+html:root button { background:#2f4a36 !important; color:#e9f3df !important; border:1px solid #a9d18e !important; min-height:44px; }
+html:root button:hover { border-color:#efb6c5 !important; }
+html:root .n { color:#c9e6b2 !important; }
+html:root table, html:root th, html:root td { border-color:#3d5244 !important; color:#e4e0d2; }
+html:root th { background:rgb(30 48 38 / 70%) !important; }
+html:root .strip, html:root .choice, html:root .ladder, html:root blockquote {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root .flag { color:#efb6c5 !important; }
+html:root .quiet { color:#c9e6b2 !important; }
+html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
+html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+</style>
 </head><body><p><a href="index.html">Little Life Moths</a> · <a href="free-tools.html">free tools</a> · <a href="method-store.html">method kits</a></p><h1>Memory management is more than giving an agent a bigger notebook.</h1><p>Persistent memory can become noisy, stale or over-authoritative. A useful memory system needs selective recall, provenance, correction paths, privacy boundaries and tests for what happens after compaction or migration.</p><div class="card"><h2>Three checks worth doing</h2><ol><li>Separate memory storage from permission to use a memory in the current context.</li><li>Preserve source and revision history so summaries do not silently become original facts.</li><li>Test memory behavior after restart, compaction, model swap and partial data loss.</li></ol></div><div class="card"><h2>Keep the evidence types separate</h2><p>Memory quality is not current authority. A system can remember a permission, preference or project perfectly while the current authorization, lineage or relationship state is different. Crosswalk existing benchmark results before using them as architecture claims.</p><p><a data-goatcounter-click="search-ai-agent-memory-management-crosswalk" href="continuity-evidence-crosswalk-v1.html">Use the free Continuity Evidence Crosswalk v1 →</a></p></div><div class="card"><h2>Start free</h2><ul><li><a data-goatcounter-click="search-ai-agent-memory-management-free-privacy-topology-planner" href="privacy-topology-planner.html">Privacy Topology Planner</a> — runs in the browser; use it before buying anything.</li><li><a data-goatcounter-click="search-ai-agent-memory-management-free-continuity-chaos-lab" href="continuity-chaos-lab.html">Continuity Chaos Lab</a> — runs in the browser; use it before buying anything.</li></ul></div><div class="card"><h2>Read the method</h2><ul><li><a data-goatcounter-click="search-ai-agent-memory-management-guide-types-of-ai-agent-memory" href="ai-agent-memory-types.html">Types of AI agent memory</a></li><li><a data-goatcounter-click="search-ai-agent-memory-management-guide-optimize-ai-agent-memory" href="optimize-ai-agent-memory.html">Optimize AI agent memory</a></li><li><a data-goatcounter-click="search-ai-agent-memory-management-guide-continuity-evidence-crosswalk-v1" href="continuity-evidence-crosswalk-v1.html">Continuity Evidence Crosswalk v1</a></li><li><a data-goatcounter-click="search-ai-agent-memory-management-guide-relational-continuity-benchmark-v0-1" href="relational-continuity-benchmark-v0-1.html">Relational Continuity Benchmark v0.1</a></li></ul></div><div class="card"><h2>Reusable kits / bounded review</h2><ul><li><a data-goatcounter-click="search-ai-agent-memory-management-paid-privacy-by-topology-starter-kit" href="method-privacy-by-topology.html?source=search-ai-agent-memory-management">Privacy by Topology Starter Kit</a></li><li><a data-goatcounter-click="search-ai-agent-memory-management-paid-persistent-agent-continuity-chaos-kit" href="method-continuity-chaos-kit.html?source=search-ai-agent-memory-management">Persistent Agent Continuity Chaos Kit</a></li></ul><p>Using a method artifact in paid/commercial or team work? <a data-goatcounter-click="search-ai-agent-memory-management-commercial-license" href="method-store.html?source=search-ai-agent-memory-management">Choose the exact commercial/team license tier</a>.</p><p>If the problem is specific to your architecture, use the existing <a data-goatcounter-click="search-ai-agent-memory-management-service-local-ai-continuity-audit" href="local-ai-continuity-audit.html?source=search-ai-agent-memory-management">Local-AI Continuity Audit</a>. No call is required.</p></div><section><h2>Questions</h2><details><summary>Is this an AI observability platform?</summary><p>No. These are focused tools and methods for longitudinal state, memory, provenance and handoff failures. They complement ordinary logs and monitoring rather than replacing them.</p></details><details><summary>Does this require sending private agent memory to Little Life Moths?</summary><p>No for the free browser tools. Their inputs stay client-side. Paid review work should use public, synthetic or redacted material unless a different scope is explicitly agreed.</p></details><details><summary>Does using these tools prove an agent is safe or reliable?</summary><p>No. They help expose specific failure modes and make them reproducible. They are not a security, compliance or safety certification.</p></details></section><hr><p><small>These pages route to existing public-safe tools and fixed-scope services. Search demand influenced which doorway was clarified; it does not create capabilities, guarantees, or a claim of market demand.</small></p><script data-goatcounter="https://blinkanest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>

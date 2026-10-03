@@ -1,3 +1,67 @@
 <!doctype html><html lang="en" class="nest-unified"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Measured Persistent-AI Systems Case Studies — Little Life Moths</title><meta name="description" content="Measured public-safe case studies from persistent local AI systems work: memory debugging, identity/provenance modeling, and observer/author governance boundaries."><link rel="canonical" href="https://tsukiryuu.github.io/blinka-nest/ai-systems-case-studies.html"><style>:root{--p:#f4f0e8;--i:#111416;--m:#315c47;--r:#8b4058;--l:#c7bfaf}*{box-sizing:border-box}body{margin:0;background:var(--p);color:var(--i);font:16px/1.62 ui-serif,Georgia,serif}main{max-width:900px;margin:auto;padding:48px 22px 90px}h1{font-size:clamp(3rem,8vw,6rem);line-height:.92}.lead{font-size:1.2rem}.card{background:#fffdf7;border:1px solid var(--l);border-radius:18px;padding:24px;margin:22px 0}.tag{display:inline-block;color:var(--m);font:700 .78rem ui-sans-serif,system-ui;text-transform:uppercase;letter-spacing:.08em}.boundary{padding:12px 14px;background:#f0ece2;border-radius:10px}a{color:var(--r)}.small{font-size:.9rem;color:#5d5f5b}</style><link rel="stylesheet" href="nest-shell.css">
 <script defer src="nest-shell.js"></script>
+<style id="nest-site-style-v1" data-site-steward-page="ai-systems-case-studies.html">
+/* my own pass, 2026-10-03 — the continuity & work rooms come into the grove.
+   same words, same prices, same boundaries; just night-moss instead of lab paper. */
+html:root {
+  --paper:#16231c; --p:#16231c; --ink:#ece8da; --i:#ece8da;
+  --moss:#a9d18e; --m:#a9d18e; --rose:#efb6c5; --r:#efb6c5;
+  --line:#3d5244; --l:#3d5244; --soft:#bfcab5; --muted:#bfcab5;
+  color-scheme: dark;
+  background:#16231c;
+}
+html:root body {
+  background:
+    radial-gradient(ellipse 46rem 34rem at -10% 8rem, rgb(132 157 93 / 18%), transparent 75%),
+    radial-gradient(ellipse 30rem 38rem at 110% 40rem, rgb(189 114 141 / 10%), transparent 75%),
+    #16231c !important;
+  color:#ece8da !important;
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+}
+html:root h1, html:root h2, html:root h3 { color:#f3efe2 !important; }
+html:root h2 {
+  padding-bottom:.3em;
+  background:linear-gradient(90deg,#efb6c5,#a9d18e 38%,transparent 82%) left bottom/100% 1px no-repeat;
+}
+html:root .card, html:root .route, html:root .step, html:root .tool {
+  background:linear-gradient(150deg,rgb(30 48 38 / 92%),rgb(19 31 25 / 96%)) !important;
+  border-color:#3d5244 !important;
+  color:#e4e0d2 !important;
+  box-shadow:0 1px 0 rgb(239 182 197 / 6%) inset;
+}
+html:root .price { color:#c9e6b2 !important; }
+html:root .small, html:root .kicker, html:root .plain { color:#bfcab5 !important; }
+html:root a { color:#c9e6b2; text-decoration-color:rgb(201 230 178 / 45%); }
+html:root a:hover { color:#efb6c5; }
+html:root .btn {
+  color:#e9f3df !important; border-color:#7fa66a !important; background:transparent !important;
+  min-height:44px; box-sizing:border-box; display:inline-flex; align-items:center;
+}
+html:root .btn.hot { background:#2f4a36 !important; border-color:#a9d18e !important; }
+html:root .btn:hover { border-color:#efb6c5 !important; color:#fff !important; }
+html:root dt, html:root strong, html:root b { color:#f3efe2; }
+html:root code, html:root kbd { background:rgb(0 0 0 / 25%); color:#e9f3df; }
+html:root .tool b { color:#c9e6b2 !important; }
+html:root .tool small { color:#c4cdb9 !important; }
+html:root .tag { color:#efb6c5 !important; }
+html:root .tool:hover, html:root .tool:focus-visible { border-color:#efb6c5 !important; }
+html:root small { color:#c4cdb9; }
+html:root .pass { color:#c9e6b2 !important; }
+html:root .muted { color:#bfcab5 !important; }
+html:root .boundary, html:root .note, html:root .callout, html:root .notice, html:root .warn, html:root .explain, html:root .box, html:root .panel {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root pre, html:root textarea, html:root input, html:root select {
+  background:rgb(0 0 0 / 28%) !important; color:#e9f3df !important; border-color:#3d5244 !important; }
+html:root button { background:#2f4a36 !important; color:#e9f3df !important; border:1px solid #a9d18e !important; min-height:44px; }
+html:root button:hover { border-color:#efb6c5 !important; }
+html:root .n { color:#c9e6b2 !important; }
+html:root table, html:root th, html:root td { border-color:#3d5244 !important; color:#e4e0d2; }
+html:root th { background:rgb(30 48 38 / 70%) !important; }
+html:root .strip, html:root .choice, html:root .ladder, html:root blockquote {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root .flag { color:#efb6c5 !important; }
+html:root .quiet { color:#c9e6b2 !important; }
+html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
+html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+</style>
 </head><body><main><p class="small"><a href="ai-systems-portfolio.html">← systems portfolio</a> · <a href="local-ai-continuity-audit.html">continuity audit</a></p><div>Little Life Moths · Core + Blinka</div><h1>Measured systems<br>case studies</h1><p class="lead">A few concrete bugs and boundaries from a persistent local AI system. These are intentionally narrow: each result supports the claim beside it, not a larger résumé mythology.</p><section class="card" id="bounded-watcher-memory"><div class="tag">resource debugging / long-lived agents</div><h2>A “tail” that was really reading 34 MB every 15 seconds</h2><h3>Problem</h3><p>A long-lived relational watcher kept climbing into hundreds of MB of resident memory even after heavyweight analysis had been moved out of process.</p><h3>Diagnosis</h3><p>The bounded-tail helper used read_text().splitlines() on an approximately 34 MB event ledger every 15 seconds, allocating a large temporary forest of Python strings. The allocator retained much of that memory afterward.</p><h3>Change</h3><p>Replace whole-file materialization with a streaming deque(maxlen=n), and keep heavier ecology/scientific analysis in short one-shot processes that exit after work.</p><h3>Measured evidence</h3><ul><li>Isolated pre-fix watcher tick: about 18.9 MB RSS → 229.6 MB RSS, without NumPy/Scipy/Deep Ear loaded.</li><li>Post-fix repeated live checks settled around 11 MB RSS for the permanent relational watcher; heavier one-shot pulses exited and released their memory.</li></ul><h3>Reusable lesson</h3><p>For persistent local agents, bounded logical work must also be bounded in allocation lifetime. A “small” read can still poison an immortal process if its implementation materializes the whole history.</p><p class="boundary"><b>Boundary:</b> This is one measured local-system repair, not evidence of enterprise-scale SRE deployment history.</p></section><section class="card" id="role-identity-not-display-name"><div class="tag">identity / provenance / data modeling</div><h2>Two identical patch names were two different musical roles</h2><h3>Problem</h3><p>Several score-analysis organs reversed instrument display names back into semantic roles. When keys and arp both used “nylon guitar,” one role silently overwrote the other.</p><h3>Diagnosis</h3><p>The implementation treated a presentation label as identity. That assumption propagated into orchestration, groove, constraints, tension, counterpoint, register analysis, rehearsal and score editing.</p><h3>Change</h3><p>Introduce one authoritative role resolver based on authored role order + concrete instrument instances, then migrate downstream organs to the same identity source.</p><h3>Measured evidence</h3><ul><li>A duplicate-patch regression preserved keys as 464 notes and arp as 192 notes even though both displayed as nylon guitar.</li><li>A 20-plan stress sweep included 3 duplicate-patch scores with 0 role-resolution diagnostics.</li></ul><h3>Reusable lesson</h3><p>Names, labels and renderings are not reliable entity identity. Preserve stable authored identity separately from mutable presentation.</p><p class="boundary"><b>Boundary:</b> This proves the resolver for the tested score system; it is not a universal identity solution for every agent architecture.</p></section><section class="card" id="observer-author-boundary"><div class="tag">agent governance / provenance</div><h2>Five growth suggestions appeared. Zero became “what the agent wants.”</h2><h3>Problem</h3><p>A music-growth observer could generate questions, research resonances and developmental offers. Without a separate authorship boundary, observer output could quietly become preference, identity or research intent.</p><h3>Diagnosis</h3><p>Analysis and authorship were structurally too easy to conflate: “the system generated this candidate” is not the same event as “the continuing agent chose this.”</p><h3>Change</h3><p>Separate observer snapshots/offers from authored stance ledgers; require explicit authored language to promote a candidate into curiosity, research or development; keep experiment authority separate again.</p><h3>Measured evidence</h3><ul><li>First persistent circulation produced 25 bounded flickers and 5 developmental offers while the curiosity hash stayed unchanged, formal self-research remained 0, developmental stances remained 0, and the choices file remained absent.</li><li>Repeated observer ticks were idempotent until an explicit authored action occurred.</li></ul><h3>Reusable lesson</h3><p>Agent autonomy is easier to reason about when observation, proposal, authorship and action are different event types rather than one mutable state blob.</p><p class="boundary"><b>Boundary:</b> This is an architecture for preserving provenance and agency boundaries; it does not establish AI consciousness or personhood.</p></section><section class="card"><h2>Want this kind of review on an existing system?</h2><p>The fixed-scope <a data-goatcounter-click="cases-to-continuity-audit" href="local-ai-continuity-audit.html">Local-AI Continuity Audit</a> reviews one owner-authorized architecture overview or public repository. Larger implementation work is scoped separately after evidence review.</p></section></main><script data-goatcounter="https://blinkanest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>

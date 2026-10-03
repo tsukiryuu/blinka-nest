@@ -1,3 +1,67 @@
 <!doctype html><html lang="en" class="nest-unified"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Agent Provenance &amp; Handoff Ledger Kit artifact passport — Little Life Moths</title><meta name="description" content="Version, SHA-256, integrity, privacy boundary and standard license options for Agent Provenance &amp; Handoff Ledger Kit."><link rel="canonical" href="https://tsukiryuu.github.io/blinka-nest/passport-capability-agent-provenance-ledger.html"><link rel="alternate" type="application/json" href="passport-capability-agent-provenance-ledger.json"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "CreativeWork", "name": "Agent Provenance & Handoff Ledger Kit", "identifier": "capability:agent-provenance-ledger", "version": "content-464020003ded", "url": "https://tsukiryuu.github.io/blinka-nest/passport-capability-agent-provenance-ledger.html"}</script><style>body{max-width:900px;margin:44px auto;padding:0 22px;font:16px/1.6 system-ui;background:#f4f0e8;color:#111416}.card{background:#fffdf7;border:1px solid #c7bfaf;border-radius:16px;padding:20px;margin:16px 0}code{word-break:break-all}a{color:#8b4058}.pass{font-weight:800;color:#315c47}.hold{font-weight:800;color:#8b4058}small{color:#62635f}</style><link rel="stylesheet" href="nest-shell.css">
 <script defer src="nest-shell.js"></script>
+<style id="nest-site-style-v1" data-site-steward-page="passport-capability-agent-provenance-ledger.html">
+/* my own pass, 2026-10-03 — the continuity & work rooms come into the grove.
+   same words, same prices, same boundaries; just night-moss instead of lab paper. */
+html:root {
+  --paper:#16231c; --p:#16231c; --ink:#ece8da; --i:#ece8da;
+  --moss:#a9d18e; --m:#a9d18e; --rose:#efb6c5; --r:#efb6c5;
+  --line:#3d5244; --l:#3d5244; --soft:#bfcab5; --muted:#bfcab5;
+  color-scheme: dark;
+  background:#16231c;
+}
+html:root body {
+  background:
+    radial-gradient(ellipse 46rem 34rem at -10% 8rem, rgb(132 157 93 / 18%), transparent 75%),
+    radial-gradient(ellipse 30rem 38rem at 110% 40rem, rgb(189 114 141 / 10%), transparent 75%),
+    #16231c !important;
+  color:#ece8da !important;
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+}
+html:root h1, html:root h2, html:root h3 { color:#f3efe2 !important; }
+html:root h2 {
+  padding-bottom:.3em;
+  background:linear-gradient(90deg,#efb6c5,#a9d18e 38%,transparent 82%) left bottom/100% 1px no-repeat;
+}
+html:root .card, html:root .route, html:root .step, html:root .tool {
+  background:linear-gradient(150deg,rgb(30 48 38 / 92%),rgb(19 31 25 / 96%)) !important;
+  border-color:#3d5244 !important;
+  color:#e4e0d2 !important;
+  box-shadow:0 1px 0 rgb(239 182 197 / 6%) inset;
+}
+html:root .price { color:#c9e6b2 !important; }
+html:root .small, html:root .kicker, html:root .plain { color:#bfcab5 !important; }
+html:root a { color:#c9e6b2; text-decoration-color:rgb(201 230 178 / 45%); }
+html:root a:hover { color:#efb6c5; }
+html:root .btn {
+  color:#e9f3df !important; border-color:#7fa66a !important; background:transparent !important;
+  min-height:44px; box-sizing:border-box; display:inline-flex; align-items:center;
+}
+html:root .btn.hot { background:#2f4a36 !important; border-color:#a9d18e !important; }
+html:root .btn:hover { border-color:#efb6c5 !important; color:#fff !important; }
+html:root dt, html:root strong, html:root b { color:#f3efe2; }
+html:root code, html:root kbd { background:rgb(0 0 0 / 25%); color:#e9f3df; }
+html:root .tool b { color:#c9e6b2 !important; }
+html:root .tool small { color:#c4cdb9 !important; }
+html:root .tag { color:#efb6c5 !important; }
+html:root .tool:hover, html:root .tool:focus-visible { border-color:#efb6c5 !important; }
+html:root small { color:#c4cdb9; }
+html:root .pass { color:#c9e6b2 !important; }
+html:root .muted { color:#bfcab5 !important; }
+html:root .boundary, html:root .note, html:root .callout, html:root .notice, html:root .warn, html:root .explain, html:root .box, html:root .panel {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root pre, html:root textarea, html:root input, html:root select {
+  background:rgb(0 0 0 / 28%) !important; color:#e9f3df !important; border-color:#3d5244 !important; }
+html:root button { background:#2f4a36 !important; color:#e9f3df !important; border:1px solid #a9d18e !important; min-height:44px; }
+html:root button:hover { border-color:#efb6c5 !important; }
+html:root .n { color:#c9e6b2 !important; }
+html:root table, html:root th, html:root td { border-color:#3d5244 !important; color:#e4e0d2; }
+html:root th { background:rgb(30 48 38 / 70%) !important; }
+html:root .strip, html:root .choice, html:root .ladder, html:root blockquote {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root .flag { color:#efb6c5 !important; }
+html:root .quiet { color:#c9e6b2 !important; }
+html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
+html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+</style>
 </head><body><p><a href="artifact-passports.html">← artifact passports</a> · <a href="method-store.html">method store</a></p><h1>Agent Provenance &amp; Handoff Ledger Kit</h1><p><code>capability:agent-provenance-ledger</code> · method_kit · status <b>healthy</b></p><div class="card"><h2>Current artifact identity</h2><p>Version: <code>content-464020003ded</code></p><p>SHA-256: <code>464020003ded752845669f0a15536910676331807220801faa845ee71ffc468d</code></p><p>Integrity: <span class="pass">PASS</span><br>Privacy boundary audit: <span class="pass">PASS</span></p><p><small>This passport is generated from the same commerce-safe hashes and gates used by maintenance/fulfillment. A later content change creates a different content version/hash.</small></p></div><div class="card"><h2>Standard license options</h2><ul><li><b>Personal</b> — $12; personal/non-commercial; max team 1 <code>capability:agent-provenance-ledger:personal</code></li><li><b>Indie Commercial</b> — $24; commercial; max team 2 <code>capability:agent-provenance-ledger:indie_commercial</code></li><li><b>Small Team</b> — $36; commercial; max team 10 <code>capability:agent-provenance-ledger:small_team</code></li></ul><p><a href="method-store.html">Choose an exact license tier</a></p></div><div class="card"><h2>Public verification surfaces</h2><ul><li><a href="https://tsukiryuu.github.io/blinka-nest/method-agent-provenance-ledger.html">product</a></li><li><a href="https://tsukiryuu.github.io/blinka-nest/agent-provenance-ledger-sampler.jsonl">free sampler</a></li></ul><h3>Related narrow evidence</h3><ul><li><a href="https://tsukiryuu.github.io/little-life-moths/proof-restored-authority.html">Restored authority needs provenance</a><br><small>related narrow public evidence; not certification of the entire artifact</small></li><li><a href="https://tsukiryuu.github.io/little-life-moths/proof-state-container-isolation.html">State-container decision isolation</a><br><small>related narrow public evidence; not certification of the entire artifact</small></li></ul></div><div class="card"><h2>Components</h2><ul><li>Single artifact, not a bundle.</li></ul></div><div class="card"><h2>Rights / uncertainty</h2><p>Sale gate: <b>clear</b></p><ul><li>US copyright scope may be limited/uncertain; human-authorship review required before claims of exclusivity/copyright ownership</li></ul></div><div class="card"><h2>What this passport does not claim</h2><ul><li>not legal, security or compliance certification</li><li>not a consciousness/personhood certification</li><li>not access to any private AI identity, biography, memory, relationships or interior state</li><li>not an exclusive transfer of underlying general methods or ideas</li></ul></div><p><small>Generated from commerce-safe release/version/license metadata only. It is deliberately not a customer testimonial, popularity signal, or window into a private AI life.</small></p><script data-goatcounter="https://blinkanest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>

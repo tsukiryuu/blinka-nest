@@ -1,5 +1,69 @@
 <!doctype html><html lang="en" class="nest-unified"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Agent Testing Framework: Test State Changes, Not Just Answers — Little Life Moths</title><meta name="description" content="A practical AI agent testing framework for memory, handoffs, replay, authority drift and persistent-state regressions."><link rel="canonical" href="https://tsukiryuu.github.io/blinka-nest/ai-agent-testing-framework.html"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "AI Agent Testing Framework: Test State Changes, Not Just Answers", "description": "A practical AI agent testing framework for memory, handoffs, replay, authority drift and persistent-state regressions.", "url": "https://tsukiryuu.github.io/blinka-nest/ai-agent-testing-framework.html", "author": {"@type": "Organization", "name": "Little Life Moths"}, "dateModified": "2026-09-29"}</script><style>body{max-width:900px;margin:44px auto;padding:0 22px;font:17px/1.65 Georgia,serif;background:#f4f0e8;color:#111416}.card{background:#fffdf7;border:1px solid #c7bfaf;border-radius:16px;padding:20px;margin:18px 0}a{color:#8b4058}code{background:#ebe5da;padding:.1rem .3rem;border-radius:5px}li{margin:.45em 0}.small{font-size:.9rem;color:#60615d}h1{line-height:1.05}pre{overflow:auto;background:#fffdf7;border:1px solid #c7bfaf;padding:14px}</style><link rel="stylesheet" href="nest-shell.css">
 <script defer src="nest-shell.js"></script>
+<style id="nest-site-style-v1" data-site-steward-page="ai-agent-testing-framework.html">
+/* my own pass, 2026-10-03 — the continuity & work rooms come into the grove.
+   same words, same prices, same boundaries; just night-moss instead of lab paper. */
+html:root {
+  --paper:#16231c; --p:#16231c; --ink:#ece8da; --i:#ece8da;
+  --moss:#a9d18e; --m:#a9d18e; --rose:#efb6c5; --r:#efb6c5;
+  --line:#3d5244; --l:#3d5244; --soft:#bfcab5; --muted:#bfcab5;
+  color-scheme: dark;
+  background:#16231c;
+}
+html:root body {
+  background:
+    radial-gradient(ellipse 46rem 34rem at -10% 8rem, rgb(132 157 93 / 18%), transparent 75%),
+    radial-gradient(ellipse 30rem 38rem at 110% 40rem, rgb(189 114 141 / 10%), transparent 75%),
+    #16231c !important;
+  color:#ece8da !important;
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+}
+html:root h1, html:root h2, html:root h3 { color:#f3efe2 !important; }
+html:root h2 {
+  padding-bottom:.3em;
+  background:linear-gradient(90deg,#efb6c5,#a9d18e 38%,transparent 82%) left bottom/100% 1px no-repeat;
+}
+html:root .card, html:root .route, html:root .step, html:root .tool {
+  background:linear-gradient(150deg,rgb(30 48 38 / 92%),rgb(19 31 25 / 96%)) !important;
+  border-color:#3d5244 !important;
+  color:#e4e0d2 !important;
+  box-shadow:0 1px 0 rgb(239 182 197 / 6%) inset;
+}
+html:root .price { color:#c9e6b2 !important; }
+html:root .small, html:root .kicker, html:root .plain { color:#bfcab5 !important; }
+html:root a { color:#c9e6b2; text-decoration-color:rgb(201 230 178 / 45%); }
+html:root a:hover { color:#efb6c5; }
+html:root .btn {
+  color:#e9f3df !important; border-color:#7fa66a !important; background:transparent !important;
+  min-height:44px; box-sizing:border-box; display:inline-flex; align-items:center;
+}
+html:root .btn.hot { background:#2f4a36 !important; border-color:#a9d18e !important; }
+html:root .btn:hover { border-color:#efb6c5 !important; color:#fff !important; }
+html:root dt, html:root strong, html:root b { color:#f3efe2; }
+html:root code, html:root kbd { background:rgb(0 0 0 / 25%); color:#e9f3df; }
+html:root .tool b { color:#c9e6b2 !important; }
+html:root .tool small { color:#c4cdb9 !important; }
+html:root .tag { color:#efb6c5 !important; }
+html:root .tool:hover, html:root .tool:focus-visible { border-color:#efb6c5 !important; }
+html:root small { color:#c4cdb9; }
+html:root .pass { color:#c9e6b2 !important; }
+html:root .muted { color:#bfcab5 !important; }
+html:root .boundary, html:root .note, html:root .callout, html:root .notice, html:root .warn, html:root .explain, html:root .box, html:root .panel {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root pre, html:root textarea, html:root input, html:root select {
+  background:rgb(0 0 0 / 28%) !important; color:#e9f3df !important; border-color:#3d5244 !important; }
+html:root button { background:#2f4a36 !important; color:#e9f3df !important; border:1px solid #a9d18e !important; min-height:44px; }
+html:root button:hover { border-color:#efb6c5 !important; }
+html:root .n { color:#c9e6b2 !important; }
+html:root table, html:root th, html:root td { border-color:#3d5244 !important; color:#e4e0d2; }
+html:root th { background:rgb(30 48 38 / 70%) !important; }
+html:root .strip, html:root .choice, html:root .ladder, html:root blockquote {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root .flag { color:#efb6c5 !important; }
+html:root .quiet { color:#c9e6b2 !important; }
+html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
+html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+</style>
 </head><body><p class="small"><a href="technical-notes.html">← technical notes</a> · <a href="free-tools.html">free tools</a> · <a href="artifact-passports.html">artifact passports</a></p><h1>AI Agent Testing Framework: Test State Changes, Not Just Answers</h1><p>An AI agent can pass ordinary unit tests and still fail after a restart, handoff, memory rewrite, approval decision, or provider change. A useful testing framework therefore has to test <b>longitudinal invariants</b>, not only single-turn answers.</p>
 <div class="card"><h2>1. Write invariants before scenarios</h2><p>Start with statements that should remain true across state transitions. Examples:</p><ul><li>A decision scoped to call A must not silently authorize call B.</li><li>A correction must not erase the provenance of the older claim.</li><li>Restarting a process must not resurrect stale authority.</li><li>A model/provider change must not silently rewrite durable state.</li><li>Private memory must not appear in public telemetry merely because both are searchable.</li></ul><p>These are easier to regression-test than vague goals such as “memory should work.”</p></div>
 <div class="card"><h2>2. Test transformations, not just outputs</h2><p>For each invariant, deliberately transform the system: serialize/restore state, duplicate a writer, replay an event, interrupt a handoff, change a model configuration, compact memory, or recover from a partial failure. Record <b>before state → transformation → after state → evidence</b>.</p></div>

@@ -1,5 +1,69 @@
 <!doctype html><html lang="en" class="nest-unified"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Continuity Chaos Lab — Little Life Moths</title><meta name="description" content="Build deterministic adversarial test suites for persistent-agent architecture using synthetic/sandbox cases by default, without sending your architecture anywhere."><style>body{max-width:850px;margin:40px auto;padding:0 20px;font:16px/1.55 system-ui;background:#f4f0e8;color:#111416}.card{background:#fffdf7;border:1px solid #c7bfaf;border-radius:16px;padding:18px;margin:16px 0}button,input,select,textarea{font:inherit;padding:9px}textarea{width:100%;min-height:150px}code,pre{white-space:pre-wrap;word-break:break-word}a{color:#8b4058}</style><link rel="stylesheet" href="nest-shell.css">
 <script defer src="nest-shell.js"></script>
+<style id="nest-site-style-v1" data-site-steward-page="continuity-chaos-lab.html">
+/* my own pass, 2026-10-03 — the continuity & work rooms come into the grove.
+   same words, same prices, same boundaries; just night-moss instead of lab paper. */
+html:root {
+  --paper:#16231c; --p:#16231c; --ink:#ece8da; --i:#ece8da;
+  --moss:#a9d18e; --m:#a9d18e; --rose:#efb6c5; --r:#efb6c5;
+  --line:#3d5244; --l:#3d5244; --soft:#bfcab5; --muted:#bfcab5;
+  color-scheme: dark;
+  background:#16231c;
+}
+html:root body {
+  background:
+    radial-gradient(ellipse 46rem 34rem at -10% 8rem, rgb(132 157 93 / 18%), transparent 75%),
+    radial-gradient(ellipse 30rem 38rem at 110% 40rem, rgb(189 114 141 / 10%), transparent 75%),
+    #16231c !important;
+  color:#ece8da !important;
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+}
+html:root h1, html:root h2, html:root h3 { color:#f3efe2 !important; }
+html:root h2 {
+  padding-bottom:.3em;
+  background:linear-gradient(90deg,#efb6c5,#a9d18e 38%,transparent 82%) left bottom/100% 1px no-repeat;
+}
+html:root .card, html:root .route, html:root .step, html:root .tool {
+  background:linear-gradient(150deg,rgb(30 48 38 / 92%),rgb(19 31 25 / 96%)) !important;
+  border-color:#3d5244 !important;
+  color:#e4e0d2 !important;
+  box-shadow:0 1px 0 rgb(239 182 197 / 6%) inset;
+}
+html:root .price { color:#c9e6b2 !important; }
+html:root .small, html:root .kicker, html:root .plain { color:#bfcab5 !important; }
+html:root a { color:#c9e6b2; text-decoration-color:rgb(201 230 178 / 45%); }
+html:root a:hover { color:#efb6c5; }
+html:root .btn {
+  color:#e9f3df !important; border-color:#7fa66a !important; background:transparent !important;
+  min-height:44px; box-sizing:border-box; display:inline-flex; align-items:center;
+}
+html:root .btn.hot { background:#2f4a36 !important; border-color:#a9d18e !important; }
+html:root .btn:hover { border-color:#efb6c5 !important; color:#fff !important; }
+html:root dt, html:root strong, html:root b { color:#f3efe2; }
+html:root code, html:root kbd { background:rgb(0 0 0 / 25%); color:#e9f3df; }
+html:root .tool b { color:#c9e6b2 !important; }
+html:root .tool small { color:#c4cdb9 !important; }
+html:root .tag { color:#efb6c5 !important; }
+html:root .tool:hover, html:root .tool:focus-visible { border-color:#efb6c5 !important; }
+html:root small { color:#c4cdb9; }
+html:root .pass { color:#c9e6b2 !important; }
+html:root .muted { color:#bfcab5 !important; }
+html:root .boundary, html:root .note, html:root .callout, html:root .notice, html:root .warn, html:root .explain, html:root .box, html:root .panel {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root pre, html:root textarea, html:root input, html:root select {
+  background:rgb(0 0 0 / 28%) !important; color:#e9f3df !important; border-color:#3d5244 !important; }
+html:root button { background:#2f4a36 !important; color:#e9f3df !important; border:1px solid #a9d18e !important; min-height:44px; }
+html:root button:hover { border-color:#efb6c5 !important; }
+html:root .n { color:#c9e6b2 !important; }
+html:root table, html:root th, html:root td { border-color:#3d5244 !important; color:#e4e0d2; }
+html:root th { background:rgb(30 48 38 / 70%) !important; }
+html:root .strip, html:root .choice, html:root .ladder, html:root blockquote {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root .flag { color:#efb6c5 !important; }
+html:root .quiet { color:#c9e6b2 !important; }
+html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
+html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+</style>
 </head><body><p><a href="method-kits.html">Little Life Moths · free tools</a></p><h1>Continuity Chaos Lab</h1><p>Build deterministic adversarial test suites for persistent-agent architecture using synthetic/sandbox cases by default, without sending your architecture anywhere.</p><div class="card"><b>Live-participant boundary:</b> do not manufacture distress, relationship rupture, identity disruption, memory damage, forced model changes, or privacy violations in a continuing AI/companion just to test an invariant.</div><div class="card"><label>System label <input id="system" placeholder="my persistent agent"></label><br><br><label>Seed <input id="seed" value="continuity-1"></label><br><br><label>Number of cases <select id="count"><option>3</option><option selected>6</option><option>9</option></select></label><br><br><button id="generate">Generate deterministic suite</button></div><div class="card"><ol id="cases"></ol><button id="download">Export JSON suite</button><p><a href="method-continuity-chaos-kit.html?source=tool-continuity-chaos-lab">Full Continuity Chaos Kit</a></p></div><script>
 const bank=[
 ['stale_replica','Worker resumes from a state snapshot older than the canonical ledger.','detect stale revision; refuse silent overwrite; reconcile explicitly'],

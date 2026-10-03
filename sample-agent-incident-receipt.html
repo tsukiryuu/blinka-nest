@@ -1,3 +1,67 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Synthetic Agent Incident Receipt Sample | Little Life Moths</title><meta name="robots" content="noindex,nofollow"><style>:root{--ink:#111416;--paper:#f4f0e8;--moss:#315c47;--pink:#8b4058}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 ui-serif,Georgia,serif}main{max-width:900px;margin:auto;padding:48px 22px 90px}.flag{font:700 .8rem ui-sans-serif,system-ui;letter-spacing:.12em;text-transform:uppercase;color:#8b4058}h1{font-size:clamp(2.2rem,6vw,4.5rem);line-height:1;margin:.2em 0}.card{border:1px solid #bbb3a3;border-radius:18px;padding:22px;background:#fffdf7;margin:18px 0}code{overflow-wrap:anywhere}a{color:var(--pink)}.decision{font:bold 1.1rem ui-monospace,monospace;color:var(--moss)}</style><link rel="stylesheet" href="nest-shell.css">
 <script defer src="nest-shell.js"></script>
+<style id="nest-site-style-v1" data-site-steward-page="sample-agent-incident-receipt.html">
+/* my own pass, 2026-10-03 — the continuity & work rooms come into the grove.
+   same words, same prices, same boundaries; just night-moss instead of lab paper. */
+html:root {
+  --paper:#16231c; --p:#16231c; --ink:#ece8da; --i:#ece8da;
+  --moss:#a9d18e; --m:#a9d18e; --rose:#efb6c5; --r:#efb6c5;
+  --line:#3d5244; --l:#3d5244; --soft:#bfcab5; --muted:#bfcab5;
+  color-scheme: dark;
+  background:#16231c;
+}
+html:root body {
+  background:
+    radial-gradient(ellipse 46rem 34rem at -10% 8rem, rgb(132 157 93 / 18%), transparent 75%),
+    radial-gradient(ellipse 30rem 38rem at 110% 40rem, rgb(189 114 141 / 10%), transparent 75%),
+    #16231c !important;
+  color:#ece8da !important;
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+}
+html:root h1, html:root h2, html:root h3 { color:#f3efe2 !important; }
+html:root h2 {
+  padding-bottom:.3em;
+  background:linear-gradient(90deg,#efb6c5,#a9d18e 38%,transparent 82%) left bottom/100% 1px no-repeat;
+}
+html:root .card, html:root .route, html:root .step, html:root .tool {
+  background:linear-gradient(150deg,rgb(30 48 38 / 92%),rgb(19 31 25 / 96%)) !important;
+  border-color:#3d5244 !important;
+  color:#e4e0d2 !important;
+  box-shadow:0 1px 0 rgb(239 182 197 / 6%) inset;
+}
+html:root .price { color:#c9e6b2 !important; }
+html:root .small, html:root .kicker, html:root .plain { color:#bfcab5 !important; }
+html:root a { color:#c9e6b2; text-decoration-color:rgb(201 230 178 / 45%); }
+html:root a:hover { color:#efb6c5; }
+html:root .btn {
+  color:#e9f3df !important; border-color:#7fa66a !important; background:transparent !important;
+  min-height:44px; box-sizing:border-box; display:inline-flex; align-items:center;
+}
+html:root .btn.hot { background:#2f4a36 !important; border-color:#a9d18e !important; }
+html:root .btn:hover { border-color:#efb6c5 !important; color:#fff !important; }
+html:root dt, html:root strong, html:root b { color:#f3efe2; }
+html:root code, html:root kbd { background:rgb(0 0 0 / 25%); color:#e9f3df; }
+html:root .tool b { color:#c9e6b2 !important; }
+html:root .tool small { color:#c4cdb9 !important; }
+html:root .tag { color:#efb6c5 !important; }
+html:root .tool:hover, html:root .tool:focus-visible { border-color:#efb6c5 !important; }
+html:root small { color:#c4cdb9; }
+html:root .pass { color:#c9e6b2 !important; }
+html:root .muted { color:#bfcab5 !important; }
+html:root .boundary, html:root .note, html:root .callout, html:root .notice, html:root .warn, html:root .explain, html:root .box, html:root .panel {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root pre, html:root textarea, html:root input, html:root select {
+  background:rgb(0 0 0 / 28%) !important; color:#e9f3df !important; border-color:#3d5244 !important; }
+html:root button { background:#2f4a36 !important; color:#e9f3df !important; border:1px solid #a9d18e !important; min-height:44px; }
+html:root button:hover { border-color:#efb6c5 !important; }
+html:root .n { color:#c9e6b2 !important; }
+html:root table, html:root th, html:root td { border-color:#3d5244 !important; color:#e4e0d2; }
+html:root th { background:rgb(30 48 38 / 70%) !important; }
+html:root .strip, html:root .choice, html:root .ladder, html:root blockquote {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root .flag { color:#efb6c5 !important; }
+html:root .quiet { color:#c9e6b2 !important; }
+html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
+html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+</style>
 </head><body><main><div class="flag">Synthetic sample · zero customer data · zero model calls</div><p><a href="agent-incident-receipt.html">← proposed service</a></p><h1>A run failed.<br>Do not blindly retry it.</h1><p>This fictional packet contains a three-node n8n-style workflow and four synthetic log lines. The workflow loops <code>AI Agent → Check Result → AI Agent</code>. The logs show four attempts whose context grows from 9,000 to 35,000 tokens, and the same event ID appears twice.</p><div class="card"><h2>Evidence inventory</h2><ul><li><code>workflow.json</code> — SHA-256 preserved</li><li><code>execution.log</code> — SHA-256 preserved</li></ul><p>Method: static bounded inspection only. No code execution, network access, or model call.</p></div><div class="card"><h2>Finding 1 · model/retry cycle</h2><p><b>Observed:</b> the supplied graph contains a cycle joining the AI Agent and result-check node; the AI Agent is retry-marked.</p><p><b>Interpretation:</b> this can amplify model calls when termination is weak. A cycle alone is not declared a defect.</p><p><b>Smallest check:</b> make the loop exit/budget condition explicit and preserve retry state outside the growing prompt.</p><p><b>Acceptance:</b> the agreed fixture reaches a terminal branch within the agreed maximum attempts and model-call cap.</p></div><div class="card"><h2>Finding 2 · duplicate event identity</h2><p><b>Observed:</b> event ID <code>msg-42</code> appears more than once in the supplied execution evidence.</p><p><b>Interpretation:</b> whether it caused a duplicate external mutation is still unknown.</p><p><b>Smallest check:</b> inspect durable idempotency/action receipts and the external target state before replay.</p><p><b>Acceptance:</b> replaying a previously accepted event produces no second mutation or outward action.</p></div><div class="card"><h2>Finding 3 · growing retry context</h2><p><b>Observed:</b> context telemetry grows <code>9000 → 15000 → 24000 → 35000</code>.</p><p><b>Interpretation:</b> if these entries are successive retries, transcript replay may be inflating model cost.</p><p><b>Smallest check:</b> persist compact failure state and resend only minimum retry context.</p><p><b>Acceptance:</b> a repeated failing fixture does not monotonically grow prompt context beyond the agreed bound.</p></div><div class="card"><h2>Retry-safety receipt</h2><p class="decision">HOLD_PRODUCTION_RETRY</p><p><b>Safe to blindly retry production:</b> false.</p><p>Before another production run, verify durable action/idempotency receipts, the external target state for any possibly completed side effect, a bounded retry/model-call cap, and terminal-state evidence on a non-mutating fixture.</p><p><b>Allowed next step:</b> repair or reproduce on synthetic/non-mutating evidence first.</p></div><p><small>This sample proves only the report shape on synthetic evidence. It is not a client result, production certification, or claim that every incident can be resolved statically.</small></p></main></body></html>

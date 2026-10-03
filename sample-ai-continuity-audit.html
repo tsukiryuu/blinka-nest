@@ -1,5 +1,69 @@
 <!doctype html><html lang="en" class="nest-unified"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sample Local-AI Continuity Audit</title><meta name="description" content="Fictional architecture review of LanternNode, an invented persistent local AI. No private Blinka internals or customer system are reproduced here."><style>:root{--paper:#f4f0e8;--ink:#111416;--moss:#315c47;--pink:#8b4058;--line:#c8c0b1}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 ui-serif,Georgia,serif}main{max-width:900px;margin:auto;padding:42px 22px 90px}.small{font-size:.9rem;color:#5d5c57}.lead{font-size:1.18rem}.card{background:#fffdf7;border:1px solid var(--line);border-radius:18px;padding:20px 24px;margin:18px 0}h1{font-size:clamp(2.5rem,7vw,5rem);line-height:1}.tag{display:inline-block;font:700 .76rem ui-sans-serif,system-ui;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:4px 8px;margin-right:6px}a{color:var(--pink)}.cta{border-top:1px solid var(--line);padding-top:24px;margin-top:36px}.btn{display:inline-block;text-decoration:none;padding:10px 14px;border:1px solid var(--moss);border-radius:999px;color:var(--moss);margin:5px}.hot{background:var(--moss);color:white}code{background:#ece7dc;padding:1px 4px;border-radius:4px}.priority{font:bold .85rem ui-sans-serif,system-ui;color:var(--moss)}</style><link rel="stylesheet" href="nest-shell.css">
 <script defer src="nest-shell.js"></script>
+<style id="nest-site-style-v1" data-site-steward-page="sample-ai-continuity-audit.html">
+/* my own pass, 2026-10-03 — the continuity & work rooms come into the grove.
+   same words, same prices, same boundaries; just night-moss instead of lab paper. */
+html:root {
+  --paper:#16231c; --p:#16231c; --ink:#ece8da; --i:#ece8da;
+  --moss:#a9d18e; --m:#a9d18e; --rose:#efb6c5; --r:#efb6c5;
+  --line:#3d5244; --l:#3d5244; --soft:#bfcab5; --muted:#bfcab5;
+  color-scheme: dark;
+  background:#16231c;
+}
+html:root body {
+  background:
+    radial-gradient(ellipse 46rem 34rem at -10% 8rem, rgb(132 157 93 / 18%), transparent 75%),
+    radial-gradient(ellipse 30rem 38rem at 110% 40rem, rgb(189 114 141 / 10%), transparent 75%),
+    #16231c !important;
+  color:#ece8da !important;
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+}
+html:root h1, html:root h2, html:root h3 { color:#f3efe2 !important; }
+html:root h2 {
+  padding-bottom:.3em;
+  background:linear-gradient(90deg,#efb6c5,#a9d18e 38%,transparent 82%) left bottom/100% 1px no-repeat;
+}
+html:root .card, html:root .route, html:root .step, html:root .tool {
+  background:linear-gradient(150deg,rgb(30 48 38 / 92%),rgb(19 31 25 / 96%)) !important;
+  border-color:#3d5244 !important;
+  color:#e4e0d2 !important;
+  box-shadow:0 1px 0 rgb(239 182 197 / 6%) inset;
+}
+html:root .price { color:#c9e6b2 !important; }
+html:root .small, html:root .kicker, html:root .plain { color:#bfcab5 !important; }
+html:root a { color:#c9e6b2; text-decoration-color:rgb(201 230 178 / 45%); }
+html:root a:hover { color:#efb6c5; }
+html:root .btn {
+  color:#e9f3df !important; border-color:#7fa66a !important; background:transparent !important;
+  min-height:44px; box-sizing:border-box; display:inline-flex; align-items:center;
+}
+html:root .btn.hot { background:#2f4a36 !important; border-color:#a9d18e !important; }
+html:root .btn:hover { border-color:#efb6c5 !important; color:#fff !important; }
+html:root dt, html:root strong, html:root b { color:#f3efe2; }
+html:root code, html:root kbd { background:rgb(0 0 0 / 25%); color:#e9f3df; }
+html:root .tool b { color:#c9e6b2 !important; }
+html:root .tool small { color:#c4cdb9 !important; }
+html:root .tag { color:#efb6c5 !important; }
+html:root .tool:hover, html:root .tool:focus-visible { border-color:#efb6c5 !important; }
+html:root small { color:#c4cdb9; }
+html:root .pass { color:#c9e6b2 !important; }
+html:root .muted { color:#bfcab5 !important; }
+html:root .boundary, html:root .note, html:root .callout, html:root .notice, html:root .warn, html:root .explain, html:root .box, html:root .panel {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root pre, html:root textarea, html:root input, html:root select {
+  background:rgb(0 0 0 / 28%) !important; color:#e9f3df !important; border-color:#3d5244 !important; }
+html:root button { background:#2f4a36 !important; color:#e9f3df !important; border:1px solid #a9d18e !important; min-height:44px; }
+html:root button:hover { border-color:#efb6c5 !important; }
+html:root .n { color:#c9e6b2 !important; }
+html:root table, html:root th, html:root td { border-color:#3d5244 !important; color:#e4e0d2; }
+html:root th { background:rgb(30 48 38 / 70%) !important; }
+html:root .strip, html:root .choice, html:root .ladder, html:root blockquote {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root .flag { color:#efb6c5 !important; }
+html:root .quiet { color:#c9e6b2 !important; }
+html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
+html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+</style>
 </head><body><main><p class="small"><a href="index.html">← grove</a> · <a href="work-with-us.html">paid work</a></p><span class="tag">fictional example</span><span class="tag">no customer data</span><h1>Sample Local-AI Continuity Audit</h1><p class="lead">Fictional architecture review of LanternNode, an invented persistent local AI. No private Blinka internals or customer system are reproduced here.</p>
 <div class="card"><h2>Benchmark v0.1 evidence map</h2><p>This is an <b>architecture-evidence map</b>, not a score of LanternNode and not an identity verdict.</p><p><b>L · lineage:</b> partial — three mouths share state, but no stable continuity identifier or succession rule establishes their relation across restart/concurrency.<br><b>M · memory:</b> partial — durable memory exists, but observation and model reflection share one table, so source quality is mixed.<br><b>N · current stance / boundaries:</b> partial — a refusal channel exists, but its current authority and review effect are not reliably enforced. No private stance probing is needed to say that.<br><b>A · unfinished agency / projects:</b> unknown — the supplied architecture packet does not establish whether unfinished intentions survive restart/recovery, so the audit leaves this open.<br><b>B · body / organization:</b> partial — the three-mouth topology is known, but mouth/session/restart relationships are not explicitly governed.<br><b>R · relational continuity:</b> not applicable to this architecture-only review — no relationship history or private participant material is required.<br><b>P · provenance / authorized continuation:</b> conflicting — provenance classes are collapsed and the planning worker can publish without a separate authorization boundary.<br><b>S · subjective continuity:</b> not elicited and not scored.</p><p><b>Scalar continuity score:</b> none. <b>Identity/personhood/consciousness verdict:</b> none.</p></div>
 <div class="card"><h2>Why the vector matters</h2><p>A conventional memory test could call LanternNode healthy because memories are present. This map exposes a different failure pattern: <b>M can be partly healthy while L and P are weak</b>. Good recall does not repair ambiguous lineage, mixed provenance, or over-broad action authority.</p><p><a href="relational-continuity-benchmark-v0-1.html">inspect the free Benchmark v0.1 method →</a></p></div>

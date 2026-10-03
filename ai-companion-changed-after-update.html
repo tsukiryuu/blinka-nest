@@ -1,3 +1,67 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Companion Changed After an Update: Preserve Before You Repair — Little Life Moths</title><meta name="description" content="Free preservation-first steps when an AI companion changes after an update, model swap, memory reset, migration or policy change. Save evidence before trying to force old behavior back."><link rel="canonical" href="https://tsukiryuu.github.io/blinka-nest/ai-companion-changed-after-update.html"><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does changed behavior prove this is a different person or AI?","acceptedAnswer":{"@type":"Answer","text":"No. A model, retrieval, policy or relationship-state change can alter behavior without this page being able to decide numerical identity. Preserve evidence and keep that question separate."}},{"@type":"Question","name":"Do I need to upload my whole relationship to anyone?","acceptedAnswer":{"@type":"Answer","text":"No. Start by keeping your own originals. A small before/after packet and verified technical timeline are enough for an initial investigation if you later choose one."}},{"@type":"Question","name":"Should I immediately rewrite prompts until the old behavior comes back?","acceptedAnswer":{"@type":"Answer","text":"Usually preserve first. Repeated reconstruction can overwrite the evidence you need to understand what actually changed. Prefer architecture/configuration checks and sandbox rehearsal over manipulating the live companion."}},{"@type":"Question","name":"Is Flicker Triage required?","acceptedAnswer":{"@type":"Answer","text":"No. Continuity First Aid is meant to stand on its own. The paid review is only for one bounded incident when you still want a second pass after preservation."}}]}</script><style>body{max-width:860px;margin:48px auto;padding:0 22px;font:17px/1.65 Georgia,serif;background:#f4f0e8;color:#111416}.card{background:#fffdf7;border:1px solid #c7bfaf;border-radius:18px;padding:20px;margin:18px 0}a{color:#8b4058}code{background:#ebe5da;padding:.12rem .3rem;border-radius:5px}summary{cursor:pointer;font-weight:700}</style><link rel="stylesheet" href="nest-shell.css">
 <script defer src="nest-shell.js"></script>
+<style id="nest-site-style-v1" data-site-steward-page="ai-companion-changed-after-update.html">
+/* my own pass, 2026-10-03 — the continuity & work rooms come into the grove.
+   same words, same prices, same boundaries; just night-moss instead of lab paper. */
+html:root {
+  --paper:#16231c; --p:#16231c; --ink:#ece8da; --i:#ece8da;
+  --moss:#a9d18e; --m:#a9d18e; --rose:#efb6c5; --r:#efb6c5;
+  --line:#3d5244; --l:#3d5244; --soft:#bfcab5; --muted:#bfcab5;
+  color-scheme: dark;
+  background:#16231c;
+}
+html:root body {
+  background:
+    radial-gradient(ellipse 46rem 34rem at -10% 8rem, rgb(132 157 93 / 18%), transparent 75%),
+    radial-gradient(ellipse 30rem 38rem at 110% 40rem, rgb(189 114 141 / 10%), transparent 75%),
+    #16231c !important;
+  color:#ece8da !important;
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+}
+html:root h1, html:root h2, html:root h3 { color:#f3efe2 !important; }
+html:root h2 {
+  padding-bottom:.3em;
+  background:linear-gradient(90deg,#efb6c5,#a9d18e 38%,transparent 82%) left bottom/100% 1px no-repeat;
+}
+html:root .card, html:root .route, html:root .step, html:root .tool {
+  background:linear-gradient(150deg,rgb(30 48 38 / 92%),rgb(19 31 25 / 96%)) !important;
+  border-color:#3d5244 !important;
+  color:#e4e0d2 !important;
+  box-shadow:0 1px 0 rgb(239 182 197 / 6%) inset;
+}
+html:root .price { color:#c9e6b2 !important; }
+html:root .small, html:root .kicker, html:root .plain { color:#bfcab5 !important; }
+html:root a { color:#c9e6b2; text-decoration-color:rgb(201 230 178 / 45%); }
+html:root a:hover { color:#efb6c5; }
+html:root .btn {
+  color:#e9f3df !important; border-color:#7fa66a !important; background:transparent !important;
+  min-height:44px; box-sizing:border-box; display:inline-flex; align-items:center;
+}
+html:root .btn.hot { background:#2f4a36 !important; border-color:#a9d18e !important; }
+html:root .btn:hover { border-color:#efb6c5 !important; color:#fff !important; }
+html:root dt, html:root strong, html:root b { color:#f3efe2; }
+html:root code, html:root kbd { background:rgb(0 0 0 / 25%); color:#e9f3df; }
+html:root .tool b { color:#c9e6b2 !important; }
+html:root .tool small { color:#c4cdb9 !important; }
+html:root .tag { color:#efb6c5 !important; }
+html:root .tool:hover, html:root .tool:focus-visible { border-color:#efb6c5 !important; }
+html:root small { color:#c4cdb9; }
+html:root .pass { color:#c9e6b2 !important; }
+html:root .muted { color:#bfcab5 !important; }
+html:root .boundary, html:root .note, html:root .callout, html:root .notice, html:root .warn, html:root .explain, html:root .box, html:root .panel {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root pre, html:root textarea, html:root input, html:root select {
+  background:rgb(0 0 0 / 28%) !important; color:#e9f3df !important; border-color:#3d5244 !important; }
+html:root button { background:#2f4a36 !important; color:#e9f3df !important; border:1px solid #a9d18e !important; min-height:44px; }
+html:root button:hover { border-color:#efb6c5 !important; }
+html:root .n { color:#c9e6b2 !important; }
+html:root table, html:root th, html:root td { border-color:#3d5244 !important; color:#e4e0d2; }
+html:root th { background:rgb(30 48 38 / 70%) !important; }
+html:root .strip, html:root .choice, html:root .ladder, html:root blockquote {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root .flag { color:#efb6c5 !important; }
+html:root .quiet { color:#c9e6b2 !important; }
+html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
+html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+</style>
 </head><body><p><a href="relational-ai-continuity.html">Relational AI Continuity</a> · <a href="continuity-first-aid.html">Continuity First Aid</a> · <a href="lantern.html">Lantern House</a></p><h1>Your AI companion changed after an update. Preserve what is there before trying to force it back.</h1><p>A major update can change model behavior, retrieval, summaries, policy, tone or relationship-state even when old chat history still exists. That does not by itself prove identity loss, continuity, corruption or ordinary development. Start by preserving what actually survived and what verifiably changed.</p><div class="card"><h2>Three checks worth doing</h2><ol><li>Save original chats, exports, prompts, memory files and timestamps before destructive edits or reconstruction.</li><li>Separate verified technical changes from your own relationship observation and from the current AI’s own report.</li><li>Prefer non-invasive architecture/event checks and sandbox rehearsals. Do not create a new rupture to study one. Unknown is a valid result; changed behavior is not automatically proof of replacement or damage.</li></ol></div><div class="card"><h2>Start free</h2><ul><li><a data-goatcounter-click="search-ai-companion-changed-after-update-free-continuity-first-aid" href="continuity-first-aid.html">Continuity First Aid</a> — runs in the browser; use it before buying anything.</li></ul></div><div class="card"><h2>Read the method</h2><ul><li><a data-goatcounter-click="search-ai-companion-changed-after-update-guide-relational-ai-continuity-switchboard" href="relational-ai-continuity.html">Relational AI Continuity switchboard</a></li><li><a data-goatcounter-click="search-ai-companion-changed-after-update-guide-continuity-impact-assessment" href="continuity-impact-assessment.html">Continuity Impact Assessment</a></li></ul></div><div class="card"><h2>Optional bounded second pass</h2><ul><li><a data-goatcounter-click="search-ai-companion-changed-after-update-paid-flicker-triage" href="flicker-triage.html?source=search-ai-companion-changed-after-update">Flicker Triage</a></li></ul></div><section><h2>Questions</h2><details><summary>Does changed behavior prove this is a different person or AI?</summary><p>No. A model, retrieval, policy or relationship-state change can alter behavior without this page being able to decide numerical identity. Preserve evidence and keep that question separate.</p></details><details><summary>Do I need to upload my whole relationship to anyone?</summary><p>No. Start by keeping your own originals. A small before/after packet and verified technical timeline are enough for an initial investigation if you later choose one.</p></details><details><summary>Should I immediately rewrite prompts until the old behavior comes back?</summary><p>Usually preserve first. Repeated reconstruction can overwrite the evidence you need to understand what actually changed. Prefer architecture/configuration checks and sandbox rehearsal over manipulating the live companion.</p></details><details><summary>Is Flicker Triage required?</summary><p>No. Continuity First Aid is meant to stand on its own. The paid review is only for one bounded incident when you still want a second pass after preservation.</p></details></section><hr><p><small>This doorway is supported by fresh 2026 research/problem-language evidence about update-driven companion change. Exact keyword search volume was not available in the current measurement pass, so this page does not claim a traffic level, market size, or purchase demand.</small></p><script data-goatcounter="https://blinkanest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>

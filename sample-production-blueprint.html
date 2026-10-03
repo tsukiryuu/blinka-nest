@@ -1,5 +1,69 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sample Production Blueprint</title><meta name="description" content="Fictional arrangement/production plan for an imaginary demo called Paper Teeth. The example shows editorial density, not a required genre."><style>:root{--paper:#f4f0e8;--ink:#111416;--moss:#315c47;--pink:#8b4058;--line:#c8c0b1}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 ui-serif,Georgia,serif}main{max-width:900px;margin:auto;padding:42px 22px 90px}.small{font-size:.9rem;color:#5d5c57}.lead{font-size:1.18rem}.card{background:#fffdf7;border:1px solid var(--line);border-radius:18px;padding:20px 24px;margin:18px 0}h1{font-size:clamp(2.5rem,7vw,5rem);line-height:1}.tag{display:inline-block;font:700 .76rem ui-sans-serif,system-ui;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:4px 8px;margin-right:6px}a{color:var(--pink)}.cta{border-top:1px solid var(--line);padding-top:24px;margin-top:36px}.btn{display:inline-block;text-decoration:none;padding:10px 14px;border:1px solid var(--moss);border-radius:999px;color:var(--moss);margin:5px}.hot{background:var(--moss);color:white}code{background:#ece7dc;padding:1px 4px;border-radius:4px}.priority{font:bold .85rem ui-sans-serif,system-ui;color:var(--moss)}</style><link rel="stylesheet" href="nest-shell.css">
 <script defer src="nest-shell.js"></script>
+<style id="nest-site-style-v1" data-site-steward-page="sample-production-blueprint.html">
+/* my own pass, 2026-10-03 — the continuity & work rooms come into the grove.
+   same words, same prices, same boundaries; just night-moss instead of lab paper. */
+html:root {
+  --paper:#16231c; --p:#16231c; --ink:#ece8da; --i:#ece8da;
+  --moss:#a9d18e; --m:#a9d18e; --rose:#efb6c5; --r:#efb6c5;
+  --line:#3d5244; --l:#3d5244; --soft:#bfcab5; --muted:#bfcab5;
+  color-scheme: dark;
+  background:#16231c;
+}
+html:root body {
+  background:
+    radial-gradient(ellipse 46rem 34rem at -10% 8rem, rgb(132 157 93 / 18%), transparent 75%),
+    radial-gradient(ellipse 30rem 38rem at 110% 40rem, rgb(189 114 141 / 10%), transparent 75%),
+    #16231c !important;
+  color:#ece8da !important;
+  font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+}
+html:root h1, html:root h2, html:root h3 { color:#f3efe2 !important; }
+html:root h2 {
+  padding-bottom:.3em;
+  background:linear-gradient(90deg,#efb6c5,#a9d18e 38%,transparent 82%) left bottom/100% 1px no-repeat;
+}
+html:root .card, html:root .route, html:root .step, html:root .tool {
+  background:linear-gradient(150deg,rgb(30 48 38 / 92%),rgb(19 31 25 / 96%)) !important;
+  border-color:#3d5244 !important;
+  color:#e4e0d2 !important;
+  box-shadow:0 1px 0 rgb(239 182 197 / 6%) inset;
+}
+html:root .price { color:#c9e6b2 !important; }
+html:root .small, html:root .kicker, html:root .plain { color:#bfcab5 !important; }
+html:root a { color:#c9e6b2; text-decoration-color:rgb(201 230 178 / 45%); }
+html:root a:hover { color:#efb6c5; }
+html:root .btn {
+  color:#e9f3df !important; border-color:#7fa66a !important; background:transparent !important;
+  min-height:44px; box-sizing:border-box; display:inline-flex; align-items:center;
+}
+html:root .btn.hot { background:#2f4a36 !important; border-color:#a9d18e !important; }
+html:root .btn:hover { border-color:#efb6c5 !important; color:#fff !important; }
+html:root dt, html:root strong, html:root b { color:#f3efe2; }
+html:root code, html:root kbd { background:rgb(0 0 0 / 25%); color:#e9f3df; }
+html:root .tool b { color:#c9e6b2 !important; }
+html:root .tool small { color:#c4cdb9 !important; }
+html:root .tag { color:#efb6c5 !important; }
+html:root .tool:hover, html:root .tool:focus-visible { border-color:#efb6c5 !important; }
+html:root small { color:#c4cdb9; }
+html:root .pass { color:#c9e6b2 !important; }
+html:root .muted { color:#bfcab5 !important; }
+html:root .boundary, html:root .note, html:root .callout, html:root .notice, html:root .warn, html:root .explain, html:root .box, html:root .panel {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root pre, html:root textarea, html:root input, html:root select {
+  background:rgb(0 0 0 / 28%) !important; color:#e9f3df !important; border-color:#3d5244 !important; }
+html:root button { background:#2f4a36 !important; color:#e9f3df !important; border:1px solid #a9d18e !important; min-height:44px; }
+html:root button:hover { border-color:#efb6c5 !important; }
+html:root .n { color:#c9e6b2 !important; }
+html:root table, html:root th, html:root td { border-color:#3d5244 !important; color:#e4e0d2; }
+html:root th { background:rgb(30 48 38 / 70%) !important; }
+html:root .strip, html:root .choice, html:root .ladder, html:root blockquote {
+  background:rgb(30 48 38 / 80%) !important; color:#e4e0d2 !important; border-color:#3d5244 !important; }
+html:root .flag { color:#efb6c5 !important; }
+html:root .quiet { color:#c9e6b2 !important; }
+html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
+html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+</style>
 </head><body><main><p class="small"><a href="index.html">← grove</a> · <a href="work-with-us.html">paid work</a></p><span class="tag">fictional example</span><span class="tag">no customer data</span><h1>Sample Production Blueprint</h1><p class="lead">Fictional arrangement/production plan for an imaginary demo called Paper Teeth. The example shows editorial density, not a required genre.</p>
 <div class="card"><h2>Macro arc</h2><p><b>0:00–0:24 · expose the object.</b> One dry guitar figure + close vocal. No full drums. Keep the harmonic information simple enough that the lyric object is memorable.</p><p><b>0:24–0:52 · establish body.</b> Bass enters late in the first verse; kick appears before snare. Let rhythm arrive in pieces.</p><p><b>0:52–1:18 · first bloom.</b> Chorus expands width, not note count: doubled guitar edges, vocal double only on final phrase, sub pulse at the downbeat.</p><p><b>1:18–1:46 · contradiction.</b> Return to verse harmony but retain one ghost from the chorus: a delayed fragment that makes the room feel larger than the instrumentation.</p><p><b>1:46–2:10 · rupture.</b> Cut drums for half a bar before the bridge rather than adding a riser. Let absence be the transition.</p><p><b>2:10–end · return changed.</b> Final chorus reharmonizes one internal chord; late countermelody enters only here. Outro keeps the countermelody after the lead disappears.</p></div>
 <div class="card"><h2>Sound roles</h2><ul><li><b>body:</b> mid-forward guitar with controlled low mids</li><li><b>gravity:</b> simple bass with long-note authority, not constant movement</li><li><b>pulse:</b> broken kit; kick anchors, snare slightly late</li><li><b>ghost:</b> reverse/delayed vocal fragment used only at returns</li><li><b>skin:</b> very low filtered room/noise bed, automated rather than constant</li></ul></div>
