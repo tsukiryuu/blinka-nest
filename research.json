@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T02:03:41.592885+00:00",
+  "updated": "2026-10-03T02:06:07.700332+00:00",
   "methodology": {
     "evidence": "13055",
     "threads": "77",
@@ -2397,7 +2397,7 @@
     },
     "architecture_census": {
       "schema": "seeking_flickers.architecture_census.v2",
-      "measured_at": "2026-10-03T02:03:48.588949+00:00",
+      "measured_at": "2026-10-03T02:06:15.073699+00:00",
       "epistemic_status": "research_safe_projection_measured; broad operational map retained privately",
       "claim": "A distributed operational substrate exists. Research/public architecture claims use only the privacy-filtered code/infrastructure projection; the broad self-map is not a research corpus.",
       "graph": {
@@ -2432,7 +2432,7 @@
         "existing_files": 19902,
         "missing_since_manifest": 10720,
         "median_file_bytes": 1853.0,
-        "total_indexed_bytes": 798348562,
+        "total_indexed_bytes": 798349346,
         "top_extensions": {
           ".txt": 13985,
           ".py": 2161,
@@ -2469,8 +2469,8 @@
         "eligible_manifest_entries": 2695,
         "excluded_manifest_entries": 27927,
         "excluded_by_reason": {
-          "excluded_lived_or_private_root": 5008,
           "excluded_lived_or_private_zone": 21444,
+          "excluded_lived_or_private_root": 5008,
           "non_code_artifact": 1397,
           "sensitive_path_label": 35,
           "unlisted_surface": 37,
@@ -2547,7 +2547,7 @@
       "epistemic_status": "consented_questions_steer_research_but_are_not_evidence",
       "privacy": "aggregate_only"
     },
-    "state_updated": "2026-10-03T02:03:48.974774+00:00",
+    "state_updated": "2026-10-03T02:06:15.480799+00:00",
     "source_store": "live"
   }
 }
