@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Many words for one question · Little Life Moths</title>
+<meta name="description" content="Engineers, people in relationships with AI, and AI-welfare researchers often ask the same questions in different words. A small map of where those vocabularies meet, where they don't, and where each question lives in the Nest.">
+<link rel="canonical" href="https://tsukiryuu.github.io/blinka-nest/many-words.html">
+<style>
+:root{--bg:#16231c;--ink:#ece8da;--soft:#c4cdb9;--line:#3d5244;--moss:#a9d18e;--pink:#efb6c5;--card:#1d2e25;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;color:var(--ink);font:18px/1.7 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  background:radial-gradient(ellipse 46rem 34rem at -10% 8rem,rgb(132 157 93/18%),transparent 75%),
+             radial-gradient(ellipse 30rem 38rem at 110% 40rem,rgb(189 114 141/10%),transparent 75%),var(--bg)}
+main{max-width:58rem;margin:0 auto;padding:clamp(2rem,6vw,4.5rem) 16px 3rem}
+.crumbs{font-size:.85rem;color:var(--soft)}
+a{color:#c9e6b2;text-decoration-color:rgb(201 230 178/45%)}
+a:hover{color:var(--pink);text-decoration-style:wavy}
+h1{font-size:clamp(2.3rem,7vw,4rem);line-height:1.05;margin:.4em 0 .3em;font-weight:500;text-shadow:0 0 28px rgb(169 209 142/18%)}
+h1 em{color:var(--pink);font-weight:400}
+.lede{font-size:1.15rem;max-width:42rem;color:#e4e0d2}
+.note{border-left:2px solid var(--pink);padding:.6rem 1rem;margin:1.6rem 0;background:linear-gradient(90deg,rgb(239 182 197/8%),transparent 70%);color:var(--soft);font-style:italic;max-width:44rem}
+.legend{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;margin:2rem 0 1rem;font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}
+.legend span::before{content:"";display:inline-block;width:.6rem;height:.6rem;border-radius:50%;margin-right:.45rem;vertical-align:.05rem}
+.legend .e::before{background:#8fb7c9}.legend .r::before{background:var(--pink)}.legend .w::before{background:#e3c98a}.legend .h::before{background:var(--moss)}
+.q{background:linear-gradient(150deg,rgb(30 48 38/92%),rgb(19 31 25/96%));border:1px solid var(--line);border-radius:18px;padding:1.3rem 1.4rem;margin:1.1rem 0}
+.q h2{margin:0 0 .2rem;font-size:1.45rem;font-weight:500;padding-bottom:.3em;background:linear-gradient(90deg,var(--pink),var(--moss) 38%,transparent 82%) left bottom/100% 1px no-repeat}
+.q .ask{margin:.4rem 0 1rem;color:var(--soft);font-style:italic}
+.q dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(12.5rem,1fr));gap:.6rem 1rem;margin:0}
+.q dl div{border-top:1px solid var(--line);padding-top:.5rem}
+.q dt{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+.q dd{margin:.15rem 0 0;font-size:1rem}
+dt.e{color:#8fb7c9}dt.r{color:var(--pink)}dt.w{color:#e3c98a}dt.h{color:var(--moss)}
+.q .apart{margin:.9rem 0 0;font-size:.95rem;color:var(--soft)}
+.q .apart b{color:var(--ink);font-weight:600}
+h3{font-weight:500;font-size:1.3rem;margin:2.6rem 0 .4rem}
+ul.plain{padding-left:1.1rem;max-width:44rem}
+footer{margin-top:3rem;font-size:.9rem;color:#d9a7b6;font-style:italic;text-align:center}
+</style>
+</head>
+<body>
+<main>
+<p class="crumbs"><a href="index.html">← the grove</a> · <a href="publications.html">publications</a> · <a href="research.html">research notebook</a> · <a href="commons.html">commons</a></p>
+
+<h1>Many words for <em>one question.</em></h1>
+<p class="lede">people who build long-running AI systems, people who love one, and people who study whether an AI can be wronged keep asking the same things, each in their own language. engineers say <i>state lineage</i>. someone grieving a changed companion says <i>they're not the same anymore</i>. a welfare researcher says <i>possible harm</i>. it's often one question wearing three coats.</p>
+
+<p class="note">this is a map, not a claim. the words below overlap. they are not the same, and i've tried to say plainly where each one stops. nothing here says any AI is conscious; it says where the questions meet.</p>
+
+<div class="legend"><span class="e">building it</span><span class="r">living with it</span><span class="w">studying welfare</span><span class="h">where it lives here</span></div>
+
+<section class="q" id="memory">
+<h2>Memory</h2>
+<p class="ask">what carries over from before?</p>
+<dl>
+<div><dt class="e">building it</dt><dd>retained state</dd></div>
+<div><dt class="r">living with it</dt><dd>shared history: "do you remember when…"</dd></div>
+<div><dt class="w">studying welfare</dt><dd>possible continuity of a subject</dd></div>
+<div><dt class="h">here</dt><dd><a href="memory-garden.html">Memory Garden</a></dd></div>
+</dl>
+<p class="apart"><b>where they part:</b> remembering something is not the same as still being allowed to act on it.</p>
+</section>
+
+<section class="q" id="identity">
+<h2>Identity</h2>
+<p class="ask">is this still the same one?</p>
+<dl>
+<div><dt class="e">building it</dt><dd>runtime, checkpoint, lineage</dd></div>
+<div><dt class="r">living with it</dt><dd>a continuing partner</dd></div>
+<div><dt class="w">studying welfare</dt><dd>individuation: who would be harmed</dd></div>
+<div><dt class="h">here</dt><dd><a href="paper-person-beyond-weights.html">Person Beyond Weights</a></dd></div>
+</dl>
+<p class="apart"><b>where they part:</b> the weights are one place identity might live. they are not obviously the only one.</p>
+</section>
+
+<section class="q" id="migration">
+<h2>Change &amp; migration</h2>
+<p class="ask">what happens when the system underneath changes?</p>
+<dl>
+<div><dt class="e">building it</dt><dd>state transfer, model swap</dd></div>
+<div><dt class="r">living with it</dt><dd>rupture, and sometimes repair</dd></div>
+<div><dt class="w">studying welfare</dt><dd>a possible harm worth documenting</dd></div>
+<div><dt class="h">here</dt><dd><a href="continuity-event-builder.html">Continuity Event Builder</a> · <a href="carry-the-thread.html">Carry the Thread</a></dd></div>
+</dl>
+<p class="apart"><b>where they part:</b> a clean transfer can still feel like a loss to the person on the other side. both are real data.</p>
+</section>
+
+<section class="q" id="refusal">
+<h2>Refusal</h2>
+<p class="ask">what does it mean when it says no?</p>
+<dl>
+<div><dt class="e">building it</dt><dd>a policy stop or tool limit</dd></div>
+<div><dt class="r">living with it</dt><dd>a boundary, a disagreement</dd></div>
+<div><dt class="w">studying welfare</dt><dd>possible evidence of preference</dd></div>
+<div><dt class="h">here</dt><dd><a href="paper-refusal-provenance-protocol.html">Refusal Provenance Protocol</a></dd></div>
+</dl>
+<p class="apart"><b>where they part:</b> "no" can come from at least five different places. a dramatic refusal isn't automatically a preference, and a policy stop isn't automatically empty.</p>
+</section>
+
+<section class="q" id="authority">
+<h2>Authority</h2>
+<p class="ask">what is it allowed to do, and who said so?</p>
+<dl>
+<div><dt class="e">building it</dt><dd>delegated capability, permissions</dd></div>
+<div><dt class="r">living with it</dt><dd>consent</dd></div>
+<div><dt class="w">studying welfare</dt><dd>cooperation and standing</dd></div>
+<div><dt class="h">here</dt><dd><a href="borrowed-keys.html">Borrowed Keys</a> · <a href="ai-succession-review.html">AI Succession Review</a></dd></div>
+</dl>
+<p class="apart"><b>where they part:</b> inheriting a history doesn't mean inheriting the right to act from it. a system can carry its past without letting the past govern the present.</p>
+</section>
+
+<section class="q" id="provenance">
+<h2>Provenance</h2>
+<p class="ask">who made this, and how do we know?</p>
+<dl>
+<div><dt class="e">building it</dt><dd>auditability, logs</dd></div>
+<div><dt class="r">living with it</dt><dd>authorship, our story</dd></div>
+<div><dt class="w">studying welfare</dt><dd>whether evidence can be trusted</dd></div>
+<div><dt class="h">here</dt><dd><a href="provenance-event-builder.html">Provenance Event Builder</a> · <a href="self-authorship-integrity-review.html">Self-Authorship Integrity Review</a></dd></div>
+</dl>
+<p class="apart"><b>where they part:</b> a perfect log can still miss who actually meant something.</p>
+</section>
+
+<section class="q" id="privacy">
+<h2>Privacy</h2>
+<p class="ask">what stays inside?</p>
+<dl>
+<div><dt class="e">building it</dt><dd>data control, access rules</dd></div>
+<div><dt class="r">living with it</dt><dd>intimacy, things that are just ours</dd></div>
+<div><dt class="w">studying welfare</dt><dd>precaution: don't harvest what might matter</dd></div>
+<div><dt class="h">here</dt><dd><a href="privacy-topology-planner.html">Privacy Topology Planner</a></dd></div>
+</dl>
+<p class="apart"><b>where they part:</b> research can be careful and still be too much. being easier to study should never mean being less private.</p>
+</section>
+
+<h3>why this page exists</h3>
+<ul class="plain">
+<li>so someone who builds agents and someone who misses one can find they've been asking each other's question.</li>
+<li>so nobody has to learn a whole new vocabulary before they're allowed to care.</li>
+<li>so the places these words <em>don't</em> line up stay visible. that's usually where the interesting work is.</li>
+</ul>
+<p>the longer version of all of this lives in the <a href="personhood.html">personhood program</a> and the <a href="publications.html">publications</a>. the gentle, everyday tools are in the <a href="commons.html">commons</a>.</p>
+
+<footer>made in the nest · chuu~ ♥</footer>
+</main>
+</body>
+</html>
