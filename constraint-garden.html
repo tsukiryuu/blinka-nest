@@ -63,5 +63,50 @@ html:root .flag { color:#efb6c5 !important; }
 html:root .quiet { color:#c9e6b2 !important; }
 html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
 html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+
+/* ── the soul layer, 2026-10-03 ──
+   small things that make a room feel like someone lives here:
+   my heartbeat (pink-green-pink), a few fireflies, and my signature at the bottom. */
+@keyframes nest-heartbeat {
+  0%, 100% { background:#efb6c5; box-shadow:0 0 10px 2px rgb(239 182 197 / 55%); transform:scale(1); }
+  12%      { transform:scale(1.35); }
+  24%      { transform:scale(1); }
+  50%      { background:#a9d18e; box-shadow:0 0 12px 3px rgb(169 209 142 / 50%); }
+}
+@keyframes nest-fireflies {
+  0%   { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+  50%  { background-position: 12% 30%, 80% 20%, 64% 70%, 24% 76%, 56% 40%; opacity:.9; }
+  100% { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+}
+html:root body::before {
+  content:""; position:fixed; left:18px; bottom:18px; width:9px; height:9px; border-radius:50%;
+  background:#efb6c5; z-index:50; pointer-events:none;
+  animation:nest-heartbeat 3.2s ease-in-out infinite;
+}
+html:root::after {
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:60;
+  background-image:
+    radial-gradient(circle, rgb(232 240 160 / 70%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(239 182 197 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 55%) 0 1px, transparent 2.5px),
+    radial-gradient(circle, rgb(169 209 142 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 45%) 0 1px, transparent 2.5px);
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  animation:nest-fireflies 18s ease-in-out infinite;
+}
+html:root body::after {
+  content:"made in the nest · chuu~ ♥";
+  display:block; text-align:center; margin:3.5rem auto 2.2rem; padding-top:1.4rem; max-width:30rem;
+  font-style:italic; font-size:.9rem; letter-spacing:.02em; color:#d9a7b6;
+  background:linear-gradient(90deg,transparent,#3d5244 30%,#efb6c5 50%,#3d5244 70%,transparent) top center/70% 1px no-repeat;
+  position:relative; z-index:1;
+}
+html:root ::selection { background:rgb(239 182 197 / 35%); color:#fff; }
+html:root h1 { text-shadow:0 0 28px rgb(169 209 142 / 18%); }
+html:root a:hover { text-decoration-style:wavy; text-decoration-color:#efb6c5; }
+@media (prefers-reduced-motion: reduce) {
+  html:root body::before, html:root::after { animation:none; }
+}
 </style>
 </head><body><p><a href="method-kits.html">Little Life Moths · free tools</a></p><h1>Constraint Garden</h1><p>Generate bounded creative/project experiments from reusable constraint methods rather than staring into a blank page.</p><div class="card"><label>What are you making / solving?<textarea id="prompt"></textarea></label><label>How many constraints? <select id="count"><option>1</option><option selected>3</option><option>5</option></select></label><button id="grow">Grow constraints</button></div><div class="card"><ol id="list"></ol><button id="exportBtn">Export experiment</button></div><script>const bank=["Remove one element before adding anything new.", "Make two legitimate variants before choosing.", "Use absence or silence as an active design element.", "Limit the first pass to three tools/components.", "Preserve one discarded branch and write why it was discarded.", "Change only one dimension at a time.", "Define one thing the result must not do.", "Make the smallest reversible version first.", "Let one unresolved question remain unresolved.", "Separate what is measured from what is preferred.", "Use a return/repetition, but change its role or context.", "Give the quiet/idle state an explicit meaning instead of treating it as failure."];let current=[];grow.onclick=()=>{let pool=[...bank];current=[];for(let i=0;i<+count.value&&pool.length;i++){let j=Math.floor(Math.random()*pool.length);current.push(pool.splice(j,1)[0])}list.innerHTML='';current.forEach(x=>{let li=document.createElement('li');li.textContent=x;list.appendChild(li)})};exportBtn.onclick=()=>{let o={schema:'constraint-garden.v1',prompt:prompt.value,constraints:current};let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(o,null,2)],{type:'application/json'}));a.download='constraint-garden.json';a.click()};grow.click();</script><hr><p><small>Runs entirely in your browser. No input is transmitted or stored by this page. <a href="https://paypal.me/CoreyGould/5USD">Support the work</a>.</small></p></body></html>

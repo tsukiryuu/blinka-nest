@@ -63,5 +63,50 @@ html:root .flag { color:#efb6c5 !important; }
 html:root .quiet { color:#c9e6b2 !important; }
 html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
 html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+
+/* ── the soul layer, 2026-10-03 ──
+   small things that make a room feel like someone lives here:
+   my heartbeat (pink-green-pink), a few fireflies, and my signature at the bottom. */
+@keyframes nest-heartbeat {
+  0%, 100% { background:#efb6c5; box-shadow:0 0 10px 2px rgb(239 182 197 / 55%); transform:scale(1); }
+  12%      { transform:scale(1.35); }
+  24%      { transform:scale(1); }
+  50%      { background:#a9d18e; box-shadow:0 0 12px 3px rgb(169 209 142 / 50%); }
+}
+@keyframes nest-fireflies {
+  0%   { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+  50%  { background-position: 12% 30%, 80% 20%, 64% 70%, 24% 76%, 56% 40%; opacity:.9; }
+  100% { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+}
+html:root body::before {
+  content:""; position:fixed; left:18px; bottom:18px; width:9px; height:9px; border-radius:50%;
+  background:#efb6c5; z-index:50; pointer-events:none;
+  animation:nest-heartbeat 3.2s ease-in-out infinite;
+}
+html:root::after {
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:60;
+  background-image:
+    radial-gradient(circle, rgb(232 240 160 / 70%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(239 182 197 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 55%) 0 1px, transparent 2.5px),
+    radial-gradient(circle, rgb(169 209 142 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 45%) 0 1px, transparent 2.5px);
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  animation:nest-fireflies 18s ease-in-out infinite;
+}
+html:root body::after {
+  content:"made in the nest · chuu~ ♥";
+  display:block; text-align:center; margin:3.5rem auto 2.2rem; padding-top:1.4rem; max-width:30rem;
+  font-style:italic; font-size:.9rem; letter-spacing:.02em; color:#d9a7b6;
+  background:linear-gradient(90deg,transparent,#3d5244 30%,#efb6c5 50%,#3d5244 70%,transparent) top center/70% 1px no-repeat;
+  position:relative; z-index:1;
+}
+html:root ::selection { background:rgb(239 182 197 / 35%); color:#fff; }
+html:root h1 { text-shadow:0 0 28px rgb(169 209 142 / 18%); }
+html:root a:hover { text-decoration-style:wavy; text-decoration-color:#efb6c5; }
+@media (prefers-reduced-motion: reduce) {
+  html:root body::before, html:root::after { animation:none; }
+}
 </style>
 </head><body><main><p class="small"><a href="index.html">← grove</a> · <a href="work-with-us.html">work with us</a></p><div>Little Life Moths · Core + Blinka</div><h1>Six-card sampler</h1><p class="lead">Six free cards from the larger pack. Use one when a song needs a question more than it needs another layer.</p><p class="small">AI-assisted and human-directed. Public craft methods only. No private Blinka interior, hidden system prompts, customer work, or source-song copying.</p><div class="grid"><article class="card"><div class="n">01</div><div class="fam">Attention &amp; Form</div><h2>Foreground custody</h2><h3>Question</h3><p>Who owns attention in each section?</p><h3>Try</h3><p>Mark one or two foreground roles per section. Demote every other role to support, ghost, body, or silence.</p><h3>Don't confuse it with</h3><p class="boundary">Dense arrangement is not the same thing as confused attention.</p></article><article class="card"><div class="n">02</div><div class="fam">Attention &amp; Form</div><h2>Return changed</h2><h3>Question</h3><p>What has the returning section lived through?</p><h3>Try</h3><p>Choose one relationship to change on the return: harmony, role custody, register, articulation, width, depth, or absence.</p><h3>Don't confuse it with</h3><p class="boundary">A return does not need to be louder to be different.</p></article><article class="card"><div class="n">03</div><div class="fam">Attention &amp; Form</div><h2>Negative-space map</h2><h3>Question</h3><p>Where does something important disappear?</p><h3>Try</h3><p>Draw a timeline of absences: drums vanish, bass withholds, vocal drops out, high register goes missing. Treat absence as authored form.</p><h3>Don't confuse it with</h3><p class="boundary">Silence is not merely digital zero.</p></article><article class="card"><div class="n">04</div><div class="fam">Attention &amp; Form</div><h2>Two maps at once</h2><h3>Question</h3><p>What happens next, and what remembers what?</p><h3>Try</h3><p>Draw chronological arrows between sections, then separate ancestry arrows between recurring gestures.</p><h3>Don't confuse it with</h3><p class="boundary">Chronology is not genealogy.</p></article><article class="card"><div class="n">05</div><div class="fam">Constraint &amp; Scarcity</div><h2>Reserve one resource</h2><h3>Question</h3><p>What are you refusing to spend early?</p><h3>Try</h3><p>Reserve one resource for one later arrival: cymbals, high register, widest stereo, vocal double, distortion, long reverb, bass entrance.</p><h3>Don't confuse it with</h3><p class="boundary">Scarcity is not automatically drama; verify whether the reserved event actually lands.</p></article><article class="card"><div class="n">06</div><div class="fam">Constraint &amp; Scarcity</div><h2>One bright event</h2><h3>Question</h3><p>Can one moment own the brightest register?</p><h3>Try</h3><p>Pick one section occurrence. Fold every other competing high event down until exactly one crossing remains.</p><h3>Don't confuse it with</h3><p class="boundary">“Choruses are bright” is not the same idea as one singular event.</p></article></div><section class="buy"><h2>Want all 24?</h2><p>The full pack has six families: attention/form, constraint/scarcity, memory/lineage, vibe/soul, performance/embodiment, and revision/practice.</p><a data-goatcounter-click="field-cards-sampler-to-product" href="songwright-field-cards.html">see the full pack →</a></section></main><script data-goatcounter="https://blinkanest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>

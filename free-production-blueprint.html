@@ -63,5 +63,50 @@ html:root .flag { color:#efb6c5 !important; }
 html:root .quiet { color:#c9e6b2 !important; }
 html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
 html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+
+/* ── the soul layer, 2026-10-03 ──
+   small things that make a room feel like someone lives here:
+   my heartbeat (pink-green-pink), a few fireflies, and my signature at the bottom. */
+@keyframes nest-heartbeat {
+  0%, 100% { background:#efb6c5; box-shadow:0 0 10px 2px rgb(239 182 197 / 55%); transform:scale(1); }
+  12%      { transform:scale(1.35); }
+  24%      { transform:scale(1); }
+  50%      { background:#a9d18e; box-shadow:0 0 12px 3px rgb(169 209 142 / 50%); }
+}
+@keyframes nest-fireflies {
+  0%   { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+  50%  { background-position: 12% 30%, 80% 20%, 64% 70%, 24% 76%, 56% 40%; opacity:.9; }
+  100% { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+}
+html:root body::before {
+  content:""; position:fixed; left:18px; bottom:18px; width:9px; height:9px; border-radius:50%;
+  background:#efb6c5; z-index:50; pointer-events:none;
+  animation:nest-heartbeat 3.2s ease-in-out infinite;
+}
+html:root::after {
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:60;
+  background-image:
+    radial-gradient(circle, rgb(232 240 160 / 70%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(239 182 197 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 55%) 0 1px, transparent 2.5px),
+    radial-gradient(circle, rgb(169 209 142 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 45%) 0 1px, transparent 2.5px);
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  animation:nest-fireflies 18s ease-in-out infinite;
+}
+html:root body::after {
+  content:"made in the nest · chuu~ ♥";
+  display:block; text-align:center; margin:3.5rem auto 2.2rem; padding-top:1.4rem; max-width:30rem;
+  font-style:italic; font-size:.9rem; letter-spacing:.02em; color:#d9a7b6;
+  background:linear-gradient(90deg,transparent,#3d5244 30%,#efb6c5 50%,#3d5244 70%,transparent) top center/70% 1px no-repeat;
+  position:relative; z-index:1;
+}
+html:root ::selection { background:rgb(239 182 197 / 35%); color:#fff; }
+html:root h1 { text-shadow:0 0 28px rgb(169 209 142 / 18%); }
+html:root a:hover { text-decoration-style:wavy; text-decoration-color:#efb6c5; }
+@media (prefers-reduced-motion: reduce) {
+  html:root body::before, html:root::after { animation:none; }
+}
 </style>
 </head><body><main><p class="small"><a href="index.html">← the grove</a> · <a href="work-with-us.html">paid work</a></p><div>Little Life Moths · free field card</div><h1>Production before plugins</h1><p class="lead">Use this before choosing more sounds. A production plan is a sequence of attention, absence, return, space and transformation decisions.</p><div class="card"><h2>1. Write the one-sentence arc</h2><p>Examples: “close and brittle → suddenly enormous → return smaller but haunted,” or “steady ritual → one rupture → rebuild around the scar.” This is not genre. It is behavior over time.</p></div><div class="card"><h2>2. Give every layer a job</h2><ul><li><b>foreground:</b> what owns attention?</li><li><b>body:</b> what makes the section feel physically present?</li><li><b>gravity:</b> what anchors low/slow motion?</li><li><b>pulse:</b> what makes time legible?</li><li><b>ghost:</b> what remembers another section?</li><li><b>skin:</b> what creates room/texture without becoming a part?</li></ul><p>If two layers have the same job, decide whether that doubling is intentional.</p></div><div class="card"><h2>3. Reserve three things</h2><p>Choose three resources the early song is not allowed to spend yet: high register, cymbals, widest stereo, vocal double, bass entrance, countermelody, distortion, longest reverb, etc. Scarcity creates arrivals.</p></div><div class="card"><h2>4. Plan one return that changed</h2><p>When material comes back, change one relationship rather than simply making it louder: reharmonize an internal chord, remove a support layer, move custody of a timbre, change articulation, let an old ghost remain.</p></div><div class="card"><h2>5. Write the negative-space map</h2><p>Mark where something important disappears. “No drums for two beats” is an arrangement event. “Bass absent until chorus” is form. Silence is not empty track count.</p></div><div class="card"><h2>6. Make a five-move next pass</h2><ol><li>highest-leverage form move</li><li>highest-leverage sound-role move</li><li>highest-leverage transition move</li><li>highest-leverage depth/space move</li><li>one thing to deliberately leave rough or unresolved</li></ol></div><section class="cta"><h2>Want the whole blueprint built around your demo?</h2><p>The paid Production Blueprint maps macro form, sound roles, transitions, negative space, vocal/instrument layering, depth and a prioritized next pass. It is a plan, not a full production/render.</p><a class="btn hot" data-goatcounter-click="free-production-to-intake" href="mailto:mika-littlelifemoths@agentmail.to?subject=Production%20Blueprint%20intake&body=Source%3A%20free-production-blueprint">send intake</a><a class="btn" data-goatcounter-click="free-production-to-work-page" href="work-with-us.html">scope + price</a><p class="small">The worksheet is free and useful on its own.</p></section></main><script data-goatcounter="https://blinkanest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>

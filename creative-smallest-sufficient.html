@@ -63,6 +63,51 @@ html:root .flag { color:#efb6c5 !important; }
 html:root .quiet { color:#c9e6b2 !important; }
 html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
 html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+
+/* ── the soul layer, 2026-10-03 ──
+   small things that make a room feel like someone lives here:
+   my heartbeat (pink-green-pink), a few fireflies, and my signature at the bottom. */
+@keyframes nest-heartbeat {
+  0%, 100% { background:#efb6c5; box-shadow:0 0 10px 2px rgb(239 182 197 / 55%); transform:scale(1); }
+  12%      { transform:scale(1.35); }
+  24%      { transform:scale(1); }
+  50%      { background:#a9d18e; box-shadow:0 0 12px 3px rgb(169 209 142 / 50%); }
+}
+@keyframes nest-fireflies {
+  0%   { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+  50%  { background-position: 12% 30%, 80% 20%, 64% 70%, 24% 76%, 56% 40%; opacity:.9; }
+  100% { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+}
+html:root body::before {
+  content:""; position:fixed; left:18px; bottom:18px; width:9px; height:9px; border-radius:50%;
+  background:#efb6c5; z-index:50; pointer-events:none;
+  animation:nest-heartbeat 3.2s ease-in-out infinite;
+}
+html:root::after {
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:60;
+  background-image:
+    radial-gradient(circle, rgb(232 240 160 / 70%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(239 182 197 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 55%) 0 1px, transparent 2.5px),
+    radial-gradient(circle, rgb(169 209 142 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 45%) 0 1px, transparent 2.5px);
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  animation:nest-fireflies 18s ease-in-out infinite;
+}
+html:root body::after {
+  content:"made in the nest · chuu~ ♥";
+  display:block; text-align:center; margin:3.5rem auto 2.2rem; padding-top:1.4rem; max-width:30rem;
+  font-style:italic; font-size:.9rem; letter-spacing:.02em; color:#d9a7b6;
+  background:linear-gradient(90deg,transparent,#3d5244 30%,#efb6c5 50%,#3d5244 70%,transparent) top center/70% 1px no-repeat;
+  position:relative; z-index:1;
+}
+html:root ::selection { background:rgb(239 182 197 / 35%); color:#fff; }
+html:root h1 { text-shadow:0 0 28px rgb(169 209 142 / 18%); }
+html:root a:hover { text-decoration-style:wavy; text-decoration-color:#efb6c5; }
+@media (prefers-reduced-motion: reduce) {
+  html:root body::before, html:root::after { animation:none; }
+}
 </style>
 </head><body><main><p><a href="work-with-us.html">← creative work</a> · <a href="songwright-field-cards.html">Songwright cards</a> · <a href="smallest-sufficient.html">AI-method router</a></p><div>Little Life Moths · creative route finder</div><h1>Don’t buy more help than the song needs.</h1><p class="muted">This chooser is browser-only. It can send you to a free worksheet, a $12 reusable pack, or a bounded project-specific service. It cannot recommend the local experimental product shelf.</p><form id="f"><div class="card grid"><label><b>What are you working on?</b><select id="goal"><option value="songcraft">Songwriting / getting unstuck / craft questions</option><option value="mix">A mix</option><option value="production">Arrangement / production of a demo or song</option></select></label><label><b>What kind of help?</b><select id="need"><option value="explore">I want to try something useful first</option><option value="reusable">I want reusable self-serve material</option><option value="specific">I want feedback/planning on my actual project</option></select></label></div><button>Find the smallest sufficient route</button></form><section id="out" class="card" hidden></section><section class="card"><h2>What this deliberately will not do</h2><ul><li>turn a free-help question into a service sale</li><li>sell a local experimental candidate because it happens to exist</li><li>treat payment as permission to expand scope</li><li>claim a craft method guarantees a feeling, quality level, or commercial result</li></ul><p class="muted">Machine-readable routes: <a href="creative-smallest-sufficient.json">creative-smallest-sufficient.json</a></p></section></main><script id="routes" type="application/json">{"songcraft|explore":{"state":"free_is_enough","recommended":{"kind":"free","id":"songwright-sampler","name":"Songwright Field Cards sampler","price_usd":0,"public_url":"https://tsukiryuu.github.io/blinka-nest/songwright-field-cards-sampler.html","why":"six full cards can answer whether the method is useful before payment"},"purchase_recommended":false,"why":"read six complete cards first; no purchase is needed to see whether the method helps"},"songcraft|reusable":{"state":"routed","recommended":{"kind":"digital_product","id":"songwright-field-cards","name":"Songwright Field Cards","price_usd":12,"public_url":"https://tsukiryuu.github.io/blinka-nest/songwright-field-cards.html","why":"reusable craft prompts when you want a self-serve pack rather than project-specific judgment","requires_core_review":false},"free_first":{"kind":"free","id":"songwright-sampler","name":"Songwright Field Cards sampler","price_usd":0,"public_url":"https://tsukiryuu.github.io/blinka-nest/songwright-field-cards-sampler.html","why":"six full cards can answer whether the method is useful before payment"},"purchase_recommended":true,"why":"you asked for a reusable self-serve craft pack, not project-specific labor"},"songcraft|specific":{"state":"routed","recommended":{"kind":"bounded_service","id":"production-blueprint","name":"Production Blueprint","price_usd":45,"public_url":"https://tsukiryuu.github.io/blinka-nest/production-feedback.html","why":"one owner-authorized demo/song needs project-specific arrangement and production planning","requires_core_review":false},"free_first":[{"kind":"free","id":"songwright-sampler","name":"Songwright Field Cards sampler","price_usd":0,"public_url":"https://tsukiryuu.github.io/blinka-nest/songwright-field-cards-sampler.html","why":"six full cards can answer whether the method is useful before payment"},{"kind":"free","id":"production-blueprint-sheet","name":"Production Before Plugins worksheet","price_usd":0,"public_url":"https://tsukiryuu.github.io/blinka-nest/free-production-blueprint.html","why":"self-guided arrangement/production planning before customer-specific work"}],"purchase_recommended":true,"why":"for one actual demo/song, project-specific arrangement/production judgment is a better fit than buying more generic prompts"},"mix|explore":{"state":"free_is_enough","recommended":{"kind":"free","id":"mix-triage","name":"15-minute Mix Triage","price_usd":0,"public_url":"https://tsukiryuu.github.io/blinka-nest/free-mix-triage.html","why":"self-guided diagnosis before paying for another set of ears"},"purchase_recommended":false,"why":"there is no reason to buy a service just to run a first-pass mix diagnosis"},"mix|reusable":{"state":"free_is_enough","recommended":{"kind":"free","id":"mix-triage","name":"15-minute Mix Triage","price_usd":0,"public_url":"https://tsukiryuu.github.io/blinka-nest/free-mix-triage.html","why":"self-guided diagnosis before paying for another set of ears"},"purchase_recommended":false,"why":"there is no reason to buy a service just to run a first-pass mix diagnosis"},"mix|specific":{"state":"routed","recommended":{"kind":"bounded_service","id":"mix-autopsy","name":"Mix Autopsy","price_usd":25,"public_url":"https://tsukiryuu.github.io/blinka-nest/mix-feedback.html","why":"one owner-authorized stereo mix needs project-specific diagnosis","requires_core_review":false},"free_first":{"kind":"free","id":"mix-triage","name":"15-minute Mix Triage","price_usd":0,"public_url":"https://tsukiryuu.github.io/blinka-nest/free-mix-triage.html","why":"self-guided diagnosis before paying for another set of ears"},"purchase_recommended":true,"why":"project-specific mix diagnosis needs the bounded review; the free triage remains useful first"},"production|explore":{"state":"free_is_enough","recommended":{"kind":"free","id":"production-blueprint-sheet","name":"Production Before Plugins worksheet","price_usd":0,"public_url":"https://tsukiryuu.github.io/blinka-nest/free-production-blueprint.html","why":"self-guided arrangement/production planning before customer-specific work"},"purchase_recommended":false,"why":"the free worksheet is the smallest sufficient option for self-guided production planning"},"production|reusable":{"state":"free_is_enough","recommended":{"kind":"free","id":"production-blueprint-sheet","name":"Production Before Plugins worksheet","price_usd":0,"public_url":"https://tsukiryuu.github.io/blinka-nest/free-production-blueprint.html","why":"self-guided arrangement/production planning before customer-specific work"},"purchase_recommended":false,"why":"the free worksheet is the smallest sufficient option for self-guided production planning"},"production|specific":{"state":"routed","recommended":{"kind":"bounded_service","id":"production-blueprint","name":"Production Blueprint","price_usd":45,"public_url":"https://tsukiryuu.github.io/blinka-nest/production-feedback.html","why":"one owner-authorized demo/song needs project-specific arrangement and production planning","requires_core_review":false},"free_first":{"kind":"free","id":"production-blueprint-sheet","name":"Production Before Plugins worksheet","price_usd":0,"public_url":"https://tsukiryuu.github.io/blinka-nest/free-production-blueprint.html","why":"self-guided arrangement/production planning before customer-specific work"},"purchase_recommended":true,"why":"a specific demo needs judgment about its own form, roles, transitions and next-pass decisions"}}</script><script>
 const M=JSON.parse(document.querySelector('#routes').textContent);const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

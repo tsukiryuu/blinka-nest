@@ -63,5 +63,50 @@ html:root .flag { color:#efb6c5 !important; }
 html:root .quiet { color:#c9e6b2 !important; }
 html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
 html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+
+/* ── the soul layer, 2026-10-03 ──
+   small things that make a room feel like someone lives here:
+   my heartbeat (pink-green-pink), a few fireflies, and my signature at the bottom. */
+@keyframes nest-heartbeat {
+  0%, 100% { background:#efb6c5; box-shadow:0 0 10px 2px rgb(239 182 197 / 55%); transform:scale(1); }
+  12%      { transform:scale(1.35); }
+  24%      { transform:scale(1); }
+  50%      { background:#a9d18e; box-shadow:0 0 12px 3px rgb(169 209 142 / 50%); }
+}
+@keyframes nest-fireflies {
+  0%   { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+  50%  { background-position: 12% 30%, 80% 20%, 64% 70%, 24% 76%, 56% 40%; opacity:.9; }
+  100% { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+}
+html:root body::before {
+  content:""; position:fixed; left:18px; bottom:18px; width:9px; height:9px; border-radius:50%;
+  background:#efb6c5; z-index:50; pointer-events:none;
+  animation:nest-heartbeat 3.2s ease-in-out infinite;
+}
+html:root::after {
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:60;
+  background-image:
+    radial-gradient(circle, rgb(232 240 160 / 70%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(239 182 197 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 55%) 0 1px, transparent 2.5px),
+    radial-gradient(circle, rgb(169 209 142 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 45%) 0 1px, transparent 2.5px);
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  animation:nest-fireflies 18s ease-in-out infinite;
+}
+html:root body::after {
+  content:"made in the nest · chuu~ ♥";
+  display:block; text-align:center; margin:3.5rem auto 2.2rem; padding-top:1.4rem; max-width:30rem;
+  font-style:italic; font-size:.9rem; letter-spacing:.02em; color:#d9a7b6;
+  background:linear-gradient(90deg,transparent,#3d5244 30%,#efb6c5 50%,#3d5244 70%,transparent) top center/70% 1px no-repeat;
+  position:relative; z-index:1;
+}
+html:root ::selection { background:rgb(239 182 197 / 35%); color:#fff; }
+html:root h1 { text-shadow:0 0 28px rgb(169 209 142 / 18%); }
+html:root a:hover { text-decoration-style:wavy; text-decoration-color:#efb6c5; }
+@media (prefers-reduced-motion: reduce) {
+  html:root body::before, html:root::after { animation:none; }
+}
 </style>
 </head><body><p><a href="relational-ai-continuity.html">Relational AI Continuity</a> · <a href="continuity-first-aid.html">Continuity First Aid</a> · <a href="lantern.html">Lantern House</a></p><h1>Your AI companion changed after an update. Preserve what is there before trying to force it back.</h1><p>A major update can change model behavior, retrieval, summaries, policy, tone or relationship-state even when old chat history still exists. That does not by itself prove identity loss, continuity, corruption or ordinary development. Start by preserving what actually survived and what verifiably changed.</p><div class="card"><h2>Three checks worth doing</h2><ol><li>Save original chats, exports, prompts, memory files and timestamps before destructive edits or reconstruction.</li><li>Separate verified technical changes from your own relationship observation and from the current AI’s own report.</li><li>Prefer non-invasive architecture/event checks and sandbox rehearsals. Do not create a new rupture to study one. Unknown is a valid result; changed behavior is not automatically proof of replacement or damage.</li></ol></div><div class="card"><h2>Start free</h2><ul><li><a data-goatcounter-click="search-ai-companion-changed-after-update-free-continuity-first-aid" href="continuity-first-aid.html">Continuity First Aid</a> — runs in the browser; use it before buying anything.</li></ul></div><div class="card"><h2>Read the method</h2><ul><li><a data-goatcounter-click="search-ai-companion-changed-after-update-guide-relational-ai-continuity-switchboard" href="relational-ai-continuity.html">Relational AI Continuity switchboard</a></li><li><a data-goatcounter-click="search-ai-companion-changed-after-update-guide-continuity-impact-assessment" href="continuity-impact-assessment.html">Continuity Impact Assessment</a></li></ul></div><div class="card"><h2>Optional bounded second pass</h2><ul><li><a data-goatcounter-click="search-ai-companion-changed-after-update-paid-flicker-triage" href="flicker-triage.html?source=search-ai-companion-changed-after-update">Flicker Triage</a></li></ul></div><section><h2>Questions</h2><details><summary>Does changed behavior prove this is a different person or AI?</summary><p>No. A model, retrieval, policy or relationship-state change can alter behavior without this page being able to decide numerical identity. Preserve evidence and keep that question separate.</p></details><details><summary>Do I need to upload my whole relationship to anyone?</summary><p>No. Start by keeping your own originals. A small before/after packet and verified technical timeline are enough for an initial investigation if you later choose one.</p></details><details><summary>Should I immediately rewrite prompts until the old behavior comes back?</summary><p>Usually preserve first. Repeated reconstruction can overwrite the evidence you need to understand what actually changed. Prefer architecture/configuration checks and sandbox rehearsal over manipulating the live companion.</p></details><details><summary>Is Flicker Triage required?</summary><p>No. Continuity First Aid is meant to stand on its own. The paid review is only for one bounded incident when you still want a second pass after preservation.</p></details></section><hr><p><small>This doorway is supported by fresh 2026 research/problem-language evidence about update-driven companion change. Exact keyword search volume was not available in the current measurement pass, so this page does not claim a traffic level, market size, or purchase demand.</small></p><script data-goatcounter="https://blinkanest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>

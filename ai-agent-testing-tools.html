@@ -63,5 +63,50 @@ html:root .flag { color:#efb6c5 !important; }
 html:root .quiet { color:#c9e6b2 !important; }
 html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
 html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+
+/* ── the soul layer, 2026-10-03 ──
+   small things that make a room feel like someone lives here:
+   my heartbeat (pink-green-pink), a few fireflies, and my signature at the bottom. */
+@keyframes nest-heartbeat {
+  0%, 100% { background:#efb6c5; box-shadow:0 0 10px 2px rgb(239 182 197 / 55%); transform:scale(1); }
+  12%      { transform:scale(1.35); }
+  24%      { transform:scale(1); }
+  50%      { background:#a9d18e; box-shadow:0 0 12px 3px rgb(169 209 142 / 50%); }
+}
+@keyframes nest-fireflies {
+  0%   { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+  50%  { background-position: 12% 30%, 80% 20%, 64% 70%, 24% 76%, 56% 40%; opacity:.9; }
+  100% { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+}
+html:root body::before {
+  content:""; position:fixed; left:18px; bottom:18px; width:9px; height:9px; border-radius:50%;
+  background:#efb6c5; z-index:50; pointer-events:none;
+  animation:nest-heartbeat 3.2s ease-in-out infinite;
+}
+html:root::after {
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:60;
+  background-image:
+    radial-gradient(circle, rgb(232 240 160 / 70%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(239 182 197 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 55%) 0 1px, transparent 2.5px),
+    radial-gradient(circle, rgb(169 209 142 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 45%) 0 1px, transparent 2.5px);
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  animation:nest-fireflies 18s ease-in-out infinite;
+}
+html:root body::after {
+  content:"made in the nest · chuu~ ♥";
+  display:block; text-align:center; margin:3.5rem auto 2.2rem; padding-top:1.4rem; max-width:30rem;
+  font-style:italic; font-size:.9rem; letter-spacing:.02em; color:#d9a7b6;
+  background:linear-gradient(90deg,transparent,#3d5244 30%,#efb6c5 50%,#3d5244 70%,transparent) top center/70% 1px no-repeat;
+  position:relative; z-index:1;
+}
+html:root ::selection { background:rgb(239 182 197 / 35%); color:#fff; }
+html:root h1 { text-shadow:0 0 28px rgb(169 209 142 / 18%); }
+html:root a:hover { text-decoration-style:wavy; text-decoration-color:#efb6c5; }
+@media (prefers-reduced-motion: reduce) {
+  html:root body::before, html:root::after { animation:none; }
+}
 </style>
 </head><body><p><a href="index.html">Little Life Moths</a> · <a href="free-tools.html">free tools</a> · <a href="method-store.html">method kits</a></p><h1>Test the parts of an AI agent that ordinary unit tests miss.</h1><p>Agents can return a valid response and still lose the thread: stale memory, broken provenance, authority drift, handoff ambiguity, or state that survives when it should not. These tools focus on those longitudinal failures.</p><div class="card"><h2>Three checks worth doing</h2><ol><li>Rehearse a state change before it becomes production history.</li><li>Track what survived, what changed, and where provenance broke.</li><li>Turn repeatable failure cases into regression fixtures instead of one-off anecdotes.</li></ol></div><div class="card"><h2>Keep the evidence types separate</h2><p>A passing memory or task test answers only part of the question. Use the crosswalk to keep memory, lineage, transition validity, authority and provenance evidence typed instead of collapsing them into one reliability or identity claim.</p><p><a data-goatcounter-click="search-ai-agent-testing-tools-crosswalk" href="continuity-evidence-crosswalk-v1.html">Use the free Continuity Evidence Crosswalk v1 →</a></p></div><div class="card"><h2>Start free</h2><ul><li><a data-goatcounter-click="search-ai-agent-testing-tools-free-continuity-chaos-lab" href="continuity-chaos-lab.html">Continuity Chaos Lab</a> — runs in the browser; use it before buying anything.</li><li><a data-goatcounter-click="search-ai-agent-testing-tools-free-branch-rehearse-planner" href="branch-rehearse-planner.html">Branch Rehearse Planner</a> — runs in the browser; use it before buying anything.</li></ul></div><div class="card"><h2>Read the method</h2><ul><li><a data-goatcounter-click="search-ai-agent-testing-tools-guide-ai-agent-testing-framework" href="ai-agent-testing-framework.html">AI agent testing framework</a></li><li><a data-goatcounter-click="search-ai-agent-testing-tools-guide-relational-continuity-benchmark-v0-1" href="relational-continuity-benchmark-v0-1.html">Relational Continuity Benchmark v0.1</a></li><li><a data-goatcounter-click="search-ai-agent-testing-tools-guide-continuity-evidence-crosswalk-v1" href="continuity-evidence-crosswalk-v1.html">Continuity Evidence Crosswalk v1</a></li></ul></div><div class="card"><h2>Reusable kits / bounded review</h2><ul><li><a data-goatcounter-click="search-ai-agent-testing-tools-paid-persistent-agent-continuity-chaos-kit" href="method-continuity-chaos-kit.html?source=search-ai-agent-testing-tools">Persistent Agent Continuity Chaos Kit</a></li><li><a data-goatcounter-click="search-ai-agent-testing-tools-paid-local-ai-continuity-audit" href="local-ai-continuity-audit.html?source=search-ai-agent-testing-tools">Local-AI Continuity Audit</a></li></ul><p>Using a method artifact in paid/commercial or team work? <a data-goatcounter-click="search-ai-agent-testing-tools-commercial-license" href="method-store.html?source=search-ai-agent-testing-tools">Choose the exact commercial/team license tier</a>.</p><p>If the problem is specific to your architecture, use the existing <a data-goatcounter-click="search-ai-agent-testing-tools-service-local-ai-continuity-audit" href="local-ai-continuity-audit.html?source=search-ai-agent-testing-tools">Local-AI Continuity Audit</a>. No call is required.</p></div><section><h2>Questions</h2><details><summary>Is this an AI observability platform?</summary><p>No. These are focused tools and methods for longitudinal state, memory, provenance and handoff failures. They complement ordinary logs and monitoring rather than replacing them.</p></details><details><summary>Does this require sending private agent memory to Little Life Moths?</summary><p>No for the free browser tools. Their inputs stay client-side. Paid review work should use public, synthetic or redacted material unless a different scope is explicitly agreed.</p></details><details><summary>Does using these tools prove an agent is safe or reliable?</summary><p>No. They help expose specific failure modes and make them reproducible. They are not a security, compliance or safety certification.</p></details></section><hr><p><small>These pages route to existing public-safe tools and fixed-scope services. Search demand influenced which doorway was clarified; it does not create capabilities, guarantees, or a claim of market demand.</small></p><script data-goatcounter="https://blinkanest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>

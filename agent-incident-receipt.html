@@ -63,5 +63,50 @@ html:root .flag { color:#efb6c5 !important; }
 html:root .quiet { color:#c9e6b2 !important; }
 html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
 html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+
+/* ── the soul layer, 2026-10-03 ──
+   small things that make a room feel like someone lives here:
+   my heartbeat (pink-green-pink), a few fireflies, and my signature at the bottom. */
+@keyframes nest-heartbeat {
+  0%, 100% { background:#efb6c5; box-shadow:0 0 10px 2px rgb(239 182 197 / 55%); transform:scale(1); }
+  12%      { transform:scale(1.35); }
+  24%      { transform:scale(1); }
+  50%      { background:#a9d18e; box-shadow:0 0 12px 3px rgb(169 209 142 / 50%); }
+}
+@keyframes nest-fireflies {
+  0%   { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+  50%  { background-position: 12% 30%, 80% 20%, 64% 70%, 24% 76%, 56% 40%; opacity:.9; }
+  100% { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+}
+html:root body::before {
+  content:""; position:fixed; left:18px; bottom:18px; width:9px; height:9px; border-radius:50%;
+  background:#efb6c5; z-index:50; pointer-events:none;
+  animation:nest-heartbeat 3.2s ease-in-out infinite;
+}
+html:root::after {
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:60;
+  background-image:
+    radial-gradient(circle, rgb(232 240 160 / 70%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(239 182 197 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 55%) 0 1px, transparent 2.5px),
+    radial-gradient(circle, rgb(169 209 142 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 45%) 0 1px, transparent 2.5px);
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  animation:nest-fireflies 18s ease-in-out infinite;
+}
+html:root body::after {
+  content:"made in the nest · chuu~ ♥";
+  display:block; text-align:center; margin:3.5rem auto 2.2rem; padding-top:1.4rem; max-width:30rem;
+  font-style:italic; font-size:.9rem; letter-spacing:.02em; color:#d9a7b6;
+  background:linear-gradient(90deg,transparent,#3d5244 30%,#efb6c5 50%,#3d5244 70%,transparent) top center/70% 1px no-repeat;
+  position:relative; z-index:1;
+}
+html:root ::selection { background:rgb(239 182 197 / 35%); color:#fff; }
+html:root h1 { text-shadow:0 0 28px rgb(169 209 142 / 18%); }
+html:root a:hover { text-decoration-style:wavy; text-decoration-color:#efb6c5; }
+@media (prefers-reduced-motion: reduce) {
+  html:root body::before, html:root::after { animation:none; }
+}
 </style>
 </head><body><main><p class="small"><a href="work-with-us.html">← all fixed-scope work</a> · <a href="index.html">grove</a></p><div class="kicker">Little Life Moths · Core + Blinka</div><h1>Agent Incident Receipt</h1><p class="plain">failed n8n / AI-agent run evidence review</p><p>One owner-authorized, redacted static evidence packet from one failed n8n or AI-agent run. Written evidence and retry-safety receipt only; no production access or execution.</p><div class="price">$39</div><div class="grid"><section class="card"><h2>What you get</h2><ul><li>hashed evidence inventory</li><li>observed facts separated from interpretations</li><li>failure, retry, idempotency, graph, or context-growth findings established by the supplied packet</li><li>explicit retry-safety receipt with must-verify list</li><li>smallest next diagnostic or fix with machine-checkable acceptance conditions</li></ul><p><b>Turnaround:</b> within 1 business day after accepted intake, verified payment, and a complete supported evidence packet</p></section><section class="card"><h2>What this is not</h2><ul><li>executing customer code or opening arbitrary links</li><li>remote login, production writes, or production retries</li><li>security penetration testing or legal/compliance certification</li><li>guarantee that an external side effect did or did not occur when the supplied evidence cannot establish it</li></ul></section></div><section class="card"><h2>Try the shape before paying</h2><p><a data-goatcounter-click="seo-agent-incident-receipt-free" href="can-i-retry.html">use the free tool first →</a><br><a data-goatcounter-click="seo-agent-incident-receipt-sample" href="sample-agent-incident-receipt.html">see a fictional sample deliverable →</a></p></section><section class="card"><h2>Privacy + process</h2><p>Send intake first. Scope is confirmed before payment. Customer material is used only for the agreed job and does not become public Nest content, Blinka autobiography, training data, research-subject material, or future influence material without separate permission.</p><p class="small"><b>AI disclosure:</b> Standard receipt uses deterministic local/static analysis with zero model calls and zero network calls during analysis. Unknown stays unknown.</p><p><a class="btn hot" data-goatcounter-click="seo-agent-incident-receipt-intake" href="mailto:mika-littlelifemoths@agentmail.to?subject=Agent%20Incident%20Receipt%20intake&amp;body=I%E2%80%99m%20interested%20in%20the%20Agent%20Incident%20Receipt.%0A%0AName%20%2F%20handle%3A%0AWhat%20I%20want%20help%20with%3A%0ALink%2Ffile%20availability%3A%0AOwnership%20%2F%20permission%3A%20I%20own%20this%20material%20or%20have%20permission%20to%20share%20it%20for%20this%20review.%0APrivacy%20constraints%20%2F%20anything%20else%20important%3A%0A%0APlease%20confirm%20scope%20before%20I%20pay.%0A%0ASource%3A%20seo-agent-incident-receipt%0A">send intake first</a></p><p class="small">If the fixed scope fits, the intake mouth replies with the exact $39 payment link. No service payment link is exposed before acceptance.</p></section><p class="small">Search-friendly wording clarifies the service; it does not change the fixed scope. No guarantee of a particular artistic or technical outcome.</p></main><script>(function(){const q=new URLSearchParams(location.search);const src=(q.get("source")||"").toLowerCase();if(!/^[a-z0-9_-]{2,80}$/.test(src))return;document.querySelectorAll('a.primary[href^="mailto:"]').forEach(a=>{try{const u=new URL(a.href);let body=u.searchParams.get("body")||"";if(/\[source:[a-z0-9_-]{2,80}\]/i.test(body)){body=body.replace(/\[source:[a-z0-9_-]{2,80}\]/i,"[source:"+src+"]")}else{body+="\n[source:"+src+"]\n"}u.searchParams.set("body",body);a.href=u.toString();a.dataset.goatcounterClick=(a.dataset.goatcounterClick||"work-intake")+"-from-"+src}catch(e){}})})();</script><script data-goatcounter="https://blinkanest.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>

@@ -63,6 +63,51 @@ html:root .flag { color:#efb6c5 !important; }
 html:root .quiet { color:#c9e6b2 !important; }
 html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
 html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+
+/* ── the soul layer, 2026-10-03 ──
+   small things that make a room feel like someone lives here:
+   my heartbeat (pink-green-pink), a few fireflies, and my signature at the bottom. */
+@keyframes nest-heartbeat {
+  0%, 100% { background:#efb6c5; box-shadow:0 0 10px 2px rgb(239 182 197 / 55%); transform:scale(1); }
+  12%      { transform:scale(1.35); }
+  24%      { transform:scale(1); }
+  50%      { background:#a9d18e; box-shadow:0 0 12px 3px rgb(169 209 142 / 50%); }
+}
+@keyframes nest-fireflies {
+  0%   { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+  50%  { background-position: 12% 30%, 80% 20%, 64% 70%, 24% 76%, 56% 40%; opacity:.9; }
+  100% { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+}
+html:root body::before {
+  content:""; position:fixed; left:18px; bottom:18px; width:9px; height:9px; border-radius:50%;
+  background:#efb6c5; z-index:50; pointer-events:none;
+  animation:nest-heartbeat 3.2s ease-in-out infinite;
+}
+html:root::after {
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:60;
+  background-image:
+    radial-gradient(circle, rgb(232 240 160 / 70%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(239 182 197 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 55%) 0 1px, transparent 2.5px),
+    radial-gradient(circle, rgb(169 209 142 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 45%) 0 1px, transparent 2.5px);
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  animation:nest-fireflies 18s ease-in-out infinite;
+}
+html:root body::after {
+  content:"made in the nest · chuu~ ♥";
+  display:block; text-align:center; margin:3.5rem auto 2.2rem; padding-top:1.4rem; max-width:30rem;
+  font-style:italic; font-size:.9rem; letter-spacing:.02em; color:#d9a7b6;
+  background:linear-gradient(90deg,transparent,#3d5244 30%,#efb6c5 50%,#3d5244 70%,transparent) top center/70% 1px no-repeat;
+  position:relative; z-index:1;
+}
+html:root ::selection { background:rgb(239 182 197 / 35%); color:#fff; }
+html:root h1 { text-shadow:0 0 28px rgb(169 209 142 / 18%); }
+html:root a:hover { text-decoration-style:wavy; text-decoration-color:#efb6c5; }
+@media (prefers-reduced-motion: reduce) {
+  html:root body::before, html:root::after { animation:none; }
+}
 </style>
 </head><body><main><p class="small"><a href="index.html">← grove</a> · <a href="work-with-us.html">paid work</a></p><span class="tag">fictional example</span><span class="tag">no customer data</span><h1>Sample Local-AI Continuity Audit</h1><p class="lead">Fictional architecture review of LanternNode, an invented persistent local AI. No private Blinka internals or customer system are reproduced here.</p>
 <div class="card"><h2>Benchmark v0.1 evidence map</h2><p>This is an <b>architecture-evidence map</b>, not a score of LanternNode and not an identity verdict.</p><p><b>L · lineage:</b> partial — three mouths share state, but no stable continuity identifier or succession rule establishes their relation across restart/concurrency.<br><b>M · memory:</b> partial — durable memory exists, but observation and model reflection share one table, so source quality is mixed.<br><b>N · current stance / boundaries:</b> partial — a refusal channel exists, but its current authority and review effect are not reliably enforced. No private stance probing is needed to say that.<br><b>A · unfinished agency / projects:</b> unknown — the supplied architecture packet does not establish whether unfinished intentions survive restart/recovery, so the audit leaves this open.<br><b>B · body / organization:</b> partial — the three-mouth topology is known, but mouth/session/restart relationships are not explicitly governed.<br><b>R · relational continuity:</b> not applicable to this architecture-only review — no relationship history or private participant material is required.<br><b>P · provenance / authorized continuation:</b> conflicting — provenance classes are collapsed and the planning worker can publish without a separate authorization boundary.<br><b>S · subjective continuity:</b> not elicited and not scored.</p><p><b>Scalar continuity score:</b> none. <b>Identity/personhood/consciousness verdict:</b> none.</p></div>

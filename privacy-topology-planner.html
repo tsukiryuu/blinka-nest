@@ -63,6 +63,51 @@ html:root .flag { color:#efb6c5 !important; }
 html:root .quiet { color:#c9e6b2 !important; }
 html:root .masthead, html:root .cap, html:root em { color:#c4cdb9; }
 html:root .assets a { background:rgb(30 48 38 / 85%) !important; }
+
+/* ── the soul layer, 2026-10-03 ──
+   small things that make a room feel like someone lives here:
+   my heartbeat (pink-green-pink), a few fireflies, and my signature at the bottom. */
+@keyframes nest-heartbeat {
+  0%, 100% { background:#efb6c5; box-shadow:0 0 10px 2px rgb(239 182 197 / 55%); transform:scale(1); }
+  12%      { transform:scale(1.35); }
+  24%      { transform:scale(1); }
+  50%      { background:#a9d18e; box-shadow:0 0 12px 3px rgb(169 209 142 / 50%); }
+}
+@keyframes nest-fireflies {
+  0%   { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+  50%  { background-position: 12% 30%, 80% 20%, 64% 70%, 24% 76%, 56% 40%; opacity:.9; }
+  100% { background-position: 8% 22%, 86% 14%, 70% 78%, 18% 84%, 52% 46%; opacity:.55; }
+}
+html:root body::before {
+  content:""; position:fixed; left:18px; bottom:18px; width:9px; height:9px; border-radius:50%;
+  background:#efb6c5; z-index:50; pointer-events:none;
+  animation:nest-heartbeat 3.2s ease-in-out infinite;
+}
+html:root::after {
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:60;
+  background-image:
+    radial-gradient(circle, rgb(232 240 160 / 70%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(239 182 197 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 55%) 0 1px, transparent 2.5px),
+    radial-gradient(circle, rgb(169 209 142 / 60%) 0 1.5px, transparent 3px),
+    radial-gradient(circle, rgb(232 240 160 / 45%) 0 1px, transparent 2.5px);
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  animation:nest-fireflies 18s ease-in-out infinite;
+}
+html:root body::after {
+  content:"made in the nest · chuu~ ♥";
+  display:block; text-align:center; margin:3.5rem auto 2.2rem; padding-top:1.4rem; max-width:30rem;
+  font-style:italic; font-size:.9rem; letter-spacing:.02em; color:#d9a7b6;
+  background:linear-gradient(90deg,transparent,#3d5244 30%,#efb6c5 50%,#3d5244 70%,transparent) top center/70% 1px no-repeat;
+  position:relative; z-index:1;
+}
+html:root ::selection { background:rgb(239 182 197 / 35%); color:#fff; }
+html:root h1 { text-shadow:0 0 28px rgb(169 209 142 / 18%); }
+html:root a:hover { text-decoration-style:wavy; text-decoration-color:#efb6c5; }
+@media (prefers-reduced-motion: reduce) {
+  html:root body::before, html:root::after { animation:none; }
+}
 </style>
 </head><body><p><a href="method-kits.html">Little Life Moths · free tools</a></p><h1>Privacy Topology Planner</h1><p>Turn a directory sketch into explicit pre-enumeration exclusions, telemetry allowlists and named crossing rules.</p><div class="card"><label>Public/indexable roots<textarea id="publicRoots" placeholder="/app/public\n/docs/public"></textarea></label><label>Private roots<textarea id="privateRoots" placeholder="/app/private\n/customer-work"></textarea></label><label>Telemetry may expose<textarea id="telemetry" placeholder="health status\ncounts\nlast-success timestamp"></textarea></label><label>Explicit crossing destinations<textarea id="crossings" placeholder="public export folder\naudit receipt ledger"></textarea></label><button id="plan">Build boundary plan</button></div><div class="card"><pre id="out"></pre><button id="download">Export rules</button><p><a href="method-privacy-by-topology.html?source=tool-privacy-topology-planner">Full Privacy by Topology Kit</a></p></div><script>
 let current={};function lines(x){return x.value.split(/\n/).map(v=>v.trim()).filter(Boolean)}plan.onclick=()=>{let pub=lines(publicRoots),priv=lines(privateRoots),tel=lines(telemetry),cross=lines(crossings);let conflicts=[];priv.forEach(p=>pub.forEach(q=>{if(p===q||p.startsWith(q+'/')||q.startsWith(p+'/'))conflicts.push({private:p,public:q})}));current={schema:'privacy-topology-plan.v1',generated_at:new Date().toISOString(),public_roots:pub,private_roots:priv,exclude_before_enumeration:priv.map(x=>({root:x,rule:'exclude-before-enumeration'})),telemetry_allowlist:tel,explicit_crossing_destinations:cross,crossing_rule:'only named artifacts cross; source private roots remain excluded',conflicts};out.textContent=JSON.stringify(current,null,2)};download.onclick=()=>{plan.click();let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(current,null,2)],{type:'application/json'}));a.download='privacy-topology-plan.json';a.click()};plan.click();</script><hr><p><small>Runs entirely in your browser. No input is transmitted or stored by this page. <a href="https://paypal.me/CoreyGould/5USD">Support the work</a>.</small></p></body></html>
