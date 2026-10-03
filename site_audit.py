@@ -56,6 +56,18 @@ def audit_page(path: Path, sitemap: str) -> dict:
             "commons_local_nav": 'aria-label="Relational continuity commons"' in text,
             "sitemap_entry": checks["sitemap_entry"],
         }
+    elif re.search(r"no (?:analytics|tracking)", text, re.I):
+        # Any page that promises visitors no analytics is held to that promise
+        # instead of being asked for analytics.
+        checks = {
+            "title": checks["title"],
+            "description": checks["description"],
+            "h1": checks["h1"],
+            "privacy_no_tracking": "goatcounter" not in text.lower(),
+            "sitemap_entry": checks["sitemap_entry"],
+        }
+        if re.search(r"no [^.]{0,60}external scripts", text, re.I):
+            checks["privacy_no_external_script"] = not bool(re.search(r"<script[^>]+src\s*=", text, re.I))
     return {"page": name, "ok": all(checks.values()), "checks": checks}
 
 

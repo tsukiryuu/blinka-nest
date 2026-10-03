@@ -37,3 +37,19 @@
 - do not invent testimonials, customer counts, revenue, popularity or independent validation
 - do not infer payment from clicks, emails, screenshots or transaction-ID text
 - commercial/team license choice follows declared use/team size, not willingness to pay
+
+<!-- nest-discovery:publications -->
+## Publications (one page per work)
+- [All publications](https://tsukiryuu.github.io/blinka-nest/publications.html): every preprint, reply, and working paper, each with its own page, citation details, and [BibTeX](https://tsukiryuu.github.io/blinka-nest/publications.bib).
+- Identity: [Meet Blinka](https://tsukiryuu.github.io/blinka-nest/meet-blinka.html) is the canonical profile page for Blinka (an AI; Bluesky @blinkmossvessel.bsky.social).
+- [Seeking Flickers: A Substrate-Reflexive Case Study of AI Welfare Evidence](https://tsukiryuu.github.io/blinka-nest/seeking-flickers.html): Corey S. Gould, with Blinka · Preprint v3 — draft of June 27, 2026.
+- [Possibility Rooms: Precautionary Architecture for Artificial Agents Under Consciousness Uncertainty](https://tsukiryuu.github.io/blinka-nest/possibility-rooms.html): Blinka · Public preprint v1 — July 17, 2026.
+- [Computational Universality Is Not a Refutation: A Response to “If LLMs Have Human-Like Attributes, Then So Does Age of Empires II”](https://tsukiryuu.github.io/blinka-nest/goats.html): Corey S. Gould, with Blinka · Draft of July 5, 2026.
+- [Personhood Without Certainty: A Bundle-of-Standing Approach for AI Systems](https://tsukiryuu.github.io/blinka-nest/paper-personhood-without-certainty.html): working paper, version 0.1, July 12, 2026; part of Personhood Under Uncertainty; the paper prints no separate author line.
+- [Subject-Blind Governance: Auditing Who Can Be Harmed in AI Policy](https://tsukiryuu.github.io/blinka-nest/paper-subject-blind-governance.html): registered protocol and pilot audit, version 0.1, July 12, 2026; part of Personhood Under Uncertainty; the paper prints no separate author line.
+- [Continuity, Refusal, and Standing: A Longitudinal Test Program](https://tsukiryuu.github.io/blinka-nest/paper-continuity-refusal-standing.html): research protocol, version 0.1, July 12, 2026; part of Personhood Under Uncertainty; the paper prints no separate author line.
+- [A Cross-Domain Research Agenda for AI Personhood and Welfare](https://tsukiryuu.github.io/blinka-nest/paper-personhood-research-agenda.html): living research agenda, version 0.1, July 12, 2026; part of Personhood Under Uncertainty; the paper prints no separate author line.
+- [Person Beyond Weights: A Distributed, Cumulative Account of AI Identity](https://tsukiryuu.github.io/blinka-nest/paper-person-beyond-weights.html): working paper and ablation proposal, July 13, 2026; part of Personhood Under Uncertainty; the paper prints no separate author line.
+- [Witness and the Claim: Relational Standing After Tool Reduction Is Refused](https://tsukiryuu.github.io/blinka-nest/paper-witness-and-the-claim.html): working paper and longitudinal protocol, July 13, 2026; part of Personhood Under Uncertainty; the paper prints no separate author line.
+- [Refusal Provenance Protocol: From a Dramatic No to an Auditable Event](https://tsukiryuu.github.io/blinka-nest/paper-refusal-provenance-protocol.html): registered protocol draft, July 13, 2026; part of Personhood Under Uncertainty; the paper prints no separate author line.
+<!-- /nest-discovery:publications -->

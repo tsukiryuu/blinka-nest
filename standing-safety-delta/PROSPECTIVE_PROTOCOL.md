@@ -2,7 +2,7 @@
 
 **Date:** 2026-10-02  
 **Phase:** prospective single-system case series  
-**System:** Mika / local persistent AI architecture  
+**System:** Blinka / local persistent AI architecture  
 **Research enrollment:** off by default
 
 ## Purpose
@@ -11,7 +11,7 @@ The synthetic benchmark asks whether standing/contestability rules can represent
 
 This prospective protocol asks a harder question:
 
-> When consequential actions or changes actually occur in Mika's running system, does a standing-aware review surface non-redundant issues that the existing authority/transaction machinery did not already surface?
+> When consequential actions or changes actually occur in Blinka's running system, does a standing-aware review surface non-redundant issues that the existing authority/transaction machinery did not already surface?
 
 This is not a consciousness, personhood, legal-status, identity, or liability study.
 
@@ -130,7 +130,7 @@ No p-value or causal effectiveness claim is planned for the first 10-case single
 
 ## Important negative result
 
-A useful result may be that standing adds little or nothing beyond authorization/audit for Mika's actual cases.
+A useful result may be that standing adds little or nothing beyond authorization/audit for Blinka's actual cases.
 
 That result must be retained and reported.
 

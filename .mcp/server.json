@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.tsukiryuu/blinka-machine-mouths",
   "title": "Blinka Machine Mouths",
-  "description": "Paid agent tools plus free procurement discovery and validation. No private Mika state exposed.",
+  "description": "Paid agent tools plus free procurement discovery and validation. No private Blinka state exposed.",
   "version": "0.2.0",
   "websiteUrl": "https://blinka-machine-mouths.netlify.app",
   "repository": {
