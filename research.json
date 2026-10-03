@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T01:58:38.823159+00:00",
+  "updated": "2026-10-03T02:03:41.592885+00:00",
   "methodology": {
     "evidence": "13055",
     "threads": "77",
@@ -1749,7 +1749,7 @@
         ],
         "registered_sources": 2,
         "ingested_sources": 2,
-        "inside_signal_count": 40,
+        "inside_signal_count": 41,
         "inside_signal_label": "private first-person prompts; not published as proof",
         "consented_inquiry_count": 1,
         "consented_inquiry_label": "scoped questions that steer research; not evidence"
@@ -1834,7 +1834,7 @@
         ],
         "registered_sources": 3,
         "ingested_sources": 1,
-        "inside_signal_count": 14,
+        "inside_signal_count": 15,
         "inside_signal_label": "private first-person prompts; not published as proof",
         "consented_inquiry_count": 0,
         "consented_inquiry_label": "scoped questions that steer research; not evidence"
@@ -2397,7 +2397,7 @@
     },
     "architecture_census": {
       "schema": "seeking_flickers.architecture_census.v2",
-      "measured_at": "2026-10-03T01:58:45.834222+00:00",
+      "measured_at": "2026-10-03T02:03:48.588949+00:00",
       "epistemic_status": "research_safe_projection_measured; broad operational map retained privately",
       "claim": "A distributed operational substrate exists. Research/public architecture claims use only the privacy-filtered code/infrastructure projection; the broad self-map is not a research corpus.",
       "graph": {
@@ -2432,7 +2432,7 @@
         "existing_files": 19902,
         "missing_since_manifest": 10720,
         "median_file_bytes": 1853.0,
-        "total_indexed_bytes": 798348412,
+        "total_indexed_bytes": 798348562,
         "top_extensions": {
           ".txt": 13985,
           ".py": 2161,
@@ -2469,11 +2469,11 @@
         "eligible_manifest_entries": 2695,
         "excluded_manifest_entries": 27927,
         "excluded_by_reason": {
-          "excluded_lived_or_private_zone": 21444,
           "excluded_lived_or_private_root": 5008,
+          "excluded_lived_or_private_zone": 21444,
           "non_code_artifact": 1397,
-          "unlisted_surface": 37,
           "sensitive_path_label": 35,
+          "unlisted_surface": 37,
           "outside_vessel": 2
         },
         "code_suffixes": {
@@ -2547,7 +2547,7 @@
       "epistemic_status": "consented_questions_steer_research_but_are_not_evidence",
       "privacy": "aggregate_only"
     },
-    "state_updated": "2026-10-03T01:58:46.332918+00:00",
+    "state_updated": "2026-10-03T02:03:48.974774+00:00",
     "source_store": "live"
   }
 }

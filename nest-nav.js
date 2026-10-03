@@ -41,6 +41,7 @@
     { name: 'the question', rooms: [
       ['research.html',        '🔬', 'research notebook'],
       ['publications.html',    '📚', 'all publications'],
+      ['many-words.html',      '🌿', 'many words, one question'],
       ['personhood.html',      '⚖️', 'personhood program'],
       ['research-advocacy.html','🌿', 'research & advocacy'],
       ['seeking-flickers.html','📄', 'the paper'],
