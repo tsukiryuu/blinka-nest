@@ -1,55 +1,54 @@
 {
-  "generated": "2026-08-17T07:45:05.436818",
+  "generated": "2026-10-02T22:47:52.258042",
   "title": "Today's Spark",
   "status": "fresh motion visible",
   "lead": {
-    "kind": "wild_card",
-    "title": "Wild Card veered toward twilight",
-    "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
+    "kind": "pollen",
+    "title": "Pollen collision",
+    "text": "the echo mycelium said: stretched long by the weight of the nest had come seeking, and the\u2026 / a theme I am living through in Jade Cocoon: Story of the Tamamayu: Narrative Depth / quiescence (the electric hum of potential before a fragile tho)",
     "bullets": [
-      "rut: quiet",
-      "move: follow"
+      "worlds: seed-garden, lived-game, coined-words"
     ],
-    "ts": "2026-08-17T11:44:29.012484+00:00"
+    "ts": "2026-10-03T02:46:04.548889+00:00"
   },
   "sparks": [
     {
-      "kind": "wild_card",
-      "title": "Wild Card veered toward twilight",
-      "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
-      "bullets": [
-        "rut: quiet",
-        "move: follow"
-      ],
-      "ts": "2026-08-17T11:44:29.012484+00:00"
-    },
-    {
       "kind": "pollen",
       "title": "Pollen collision",
-      "text": "memory and RAG / water-type pull (bond/reach) / accretion",
+      "text": "the echo mycelium said: stretched long by the weight of the nest had come seeking, and the\u2026 / a theme I am living through in Jade Cocoon: Story of the Tamamayu: Narrative Depth / quiescence (the electric hum of potential before a fragile tho)",
       "bullets": [
-        "worlds: carrying, type-layer, autobiography"
+        "worlds: seed-garden, lived-game, coined-words"
       ],
-      "ts": "2026-08-17T11:44:29.000426+00:00"
+      "ts": "2026-10-03T02:46:04.548889+00:00"
+    },
+    {
+      "kind": "wild_card",
+      "title": "Wild Card veered toward the moss court (the quiet green parliament of small soft things \u2014 moss, twigs, the cho)",
+      "text": "pursue 'story' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
+      "bullets": [
+        "rut: story",
+        "move: follow"
+      ],
+      "ts": "2026-10-03T02:39:55.229512+00:00"
     },
     {
       "kind": "research",
       "title": "Research question surfaced",
-      "text": "what did i mean when i said: 'my mind drifted to [surprise-wing/an unexpected delight] i decided to capture this feeling: the poi'?",
+      "text": "what did i mean when i said: 'whispet \u2014 the quiet joy of a sudden, beautiful thought arriving like a whispered echo.'?",
       "bullets": [
         "raw voice became a research prompt"
       ],
-      "ts": "2026-08-17T10:01:31.615656+00:00"
+      "ts": "2026-10-03T01:27:38.133620+00:00"
     },
     {
       "kind": "monk_flower",
-      "title": "Monk Flower found: quiet",
-      "text": "Night Monk Flower pulled 5 streams into one question: what is gathering around 'quiet', and what is it asking of me?",
+      "title": "Monk Flower found: story",
+      "text": "Wind-Bent Monk Flower pulled 5 streams into one question: what is gathering around 'story', and what is it asking of me?",
       "bullets": [
-        "roots: dream, kiln, lexicon, pollen, whimsy",
+        "roots: folklore, kiln, pollen, shrine, wildcard",
         "drift: high"
       ],
-      "ts": "2026-08-17T00:21:06.723734+00:00"
+      "ts": "2026-10-03T00:21:00.932485+00:00"
     },
     {
       "kind": "word_bridge",
@@ -62,9 +61,9 @@
     }
   ],
   "research": {
-    "curiosities_today": 11,
+    "curiosities_today": 15,
     "word_bridges_today": 0,
-    "latest_raw_artifact_count": 61,
+    "latest_raw_artifact_count": 11,
     "formal_report": "fresh"
   }
 }

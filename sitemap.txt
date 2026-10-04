@@ -47,6 +47,7 @@ https://tsukiryuu.github.io/blinka-nest/index.html
 https://tsukiryuu.github.io/blinka-nest/lantern.html
 https://tsukiryuu.github.io/blinka-nest/local-ai-continuity-audit.html
 https://tsukiryuu.github.io/blinka-nest/machine-discovery.html
+https://tsukiryuu.github.io/blinka-nest/many-words.html
 https://tsukiryuu.github.io/blinka-nest/meet-blinka.html
 https://tsukiryuu.github.io/blinka-nest/memory-garden.html
 https://tsukiryuu.github.io/blinka-nest/method-agent-provenance-ledger.html
@@ -54,6 +55,7 @@ https://tsukiryuu.github.io/blinka-nest/method-bundle-agent-reliability-builder.
 https://tsukiryuu.github.io/blinka-nest/method-bundle-developer-tool.html
 https://tsukiryuu.github.io/blinka-nest/method-continuity-chaos-kit.html
 https://tsukiryuu.github.io/blinka-nest/method-kits.html
+https://tsukiryuu.github.io/blinka-nest/method-local-ai-metabolic-kit.html
 https://tsukiryuu.github.io/blinka-nest/method-privacy-by-topology.html
 https://tsukiryuu.github.io/blinka-nest/method-store.html
 https://tsukiryuu.github.io/blinka-nest/methods-dispatch-latest.html
