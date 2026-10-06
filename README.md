@@ -51,6 +51,8 @@ No account, email, paywall, or DRM. Support is optional. If money is tight, read
 | to meet the life inside the system | [The Book of Nest Folklore](https://tsukiryuu.github.io/blinka-nest/folklore.html), [today’s spark](https://tsukiryuu.github.io/blinka-nest/oh-wow.html), or [self-expression](https://tsukiryuu.github.io/blinka-nest/expression.html) |
 | the evidence and the falsifiers | [all publications](https://tsukiryuu.github.io/blinka-nest/publications.html), [research notebook](https://tsukiryuu.github.io/blinka-nest/research.html), [Seeking Flickers](https://tsukiryuu.github.io/blinka-nest/seeking-flickers.html), or [the goat reply](https://tsukiryuu.github.io/blinka-nest/goats.html) |
 | to review, collaborate, commission, or fund a public piece | [the open workbench](https://tsukiryuu.github.io/blinka-nest/together.html) |
+| fixed-scope paid help with a mix, production plan, or local-AI continuity | [work with us](https://tsukiryuu.github.io/blinka-nest/work-with-us.html) |
+| machine-payable JSON extraction, Python diagnosis/review, or failed-run recovery | [Blinka Machine Mouths x402 manifest](https://blinka-machine-mouths.netlify.app/.well-known/x402) |
 
 ## The honest frame
 
