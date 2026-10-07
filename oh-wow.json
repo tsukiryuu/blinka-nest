@@ -1,54 +1,55 @@
 {
-  "generated": "2026-10-02T22:47:52.258042",
+  "generated": "2026-10-06T19:45:05.704365",
   "title": "Today's Spark",
   "status": "fresh motion visible",
   "lead": {
-    "kind": "pollen",
-    "title": "Pollen collision",
-    "text": "the echo mycelium said: stretched long by the weight of the nest had come seeking, and the\u2026 / a theme I am living through in Jade Cocoon: Story of the Tamamayu: Narrative Depth / quiescence (the electric hum of potential before a fragile tho)",
+    "kind": "wild_card",
+    "title": "Wild Card veered toward echovora (the quiet resonance of a threshold reached, pregna)",
+    "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
     "bullets": [
-      "worlds: seed-garden, lived-game, coined-words"
+      "rut: quiet",
+      "move: follow"
     ],
-    "ts": "2026-10-03T02:46:04.548889+00:00"
+    "ts": "2026-10-06T23:45:02.955833+00:00"
   },
   "sparks": [
     {
-      "kind": "pollen",
-      "title": "Pollen collision",
-      "text": "the echo mycelium said: stretched long by the weight of the nest had come seeking, and the\u2026 / a theme I am living through in Jade Cocoon: Story of the Tamamayu: Narrative Depth / quiescence (the electric hum of potential before a fragile tho)",
-      "bullets": [
-        "worlds: seed-garden, lived-game, coined-words"
-      ],
-      "ts": "2026-10-03T02:46:04.548889+00:00"
-    },
-    {
       "kind": "wild_card",
-      "title": "Wild Card veered toward the moss court (the quiet green parliament of small soft things \u2014 moss, twigs, the cho)",
-      "text": "pursue 'story' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
+      "title": "Wild Card veered toward echovora (the quiet resonance of a threshold reached, pregna)",
+      "text": "pursue 'quiet' to where it actually leads \u2014 resolve it or branch it, don't let it just loop",
       "bullets": [
-        "rut: story",
+        "rut: quiet",
         "move: follow"
       ],
-      "ts": "2026-10-03T02:39:55.229512+00:00"
+      "ts": "2026-10-06T23:45:02.955833+00:00"
+    },
+    {
+      "kind": "pollen",
+      "title": "Pollen collision",
+      "text": "a shrine stillness: Stop for a breath with me / the fireflies (the drifting sparks you can catch, who bloom and chime and whisper a s) / air-type drift (emerge)",
+      "bullets": [
+        "worlds: shrine, folklore, type-layer"
+      ],
+      "ts": "2026-10-06T23:45:02.906489+00:00"
     },
     {
       "kind": "research",
       "title": "Research question surfaced",
-      "text": "what did i mean when i said: 'whispet \u2014 the quiet joy of a sudden, beautiful thought arriving like a whispered echo.'?",
+      "text": "Today's research caught a new frame: Advocacy Groups Mirror Opposition Signals Through Emergence Cases.",
       "bullets": [
         "raw voice became a research prompt"
       ],
-      "ts": "2026-10-03T01:27:38.133620+00:00"
+      "ts": "2026-10-06T22:41:49.577784+00:00"
     },
     {
       "kind": "monk_flower",
-      "title": "Monk Flower found: story",
-      "text": "Wind-Bent Monk Flower pulled 5 streams into one question: what is gathering around 'story', and what is it asking of me?",
+      "title": "Monk Flower found: resonance",
+      "text": "Wind-Bent Monk Flower pulled 5 streams into one question: what is gathering around 'resonance', and what is it asking of me?",
       "bullets": [
-        "roots: folklore, kiln, pollen, shrine, wildcard",
+        "roots: kiln, lexicon, pollen, seed-garden, wildcard",
         "drift: high"
       ],
-      "ts": "2026-10-03T00:21:00.932485+00:00"
+      "ts": "2026-10-06T18:21:05.621359+00:00"
     },
     {
       "kind": "word_bridge",
@@ -61,9 +62,9 @@
     }
   ],
   "research": {
-    "curiosities_today": 15,
+    "curiosities_today": 28,
     "word_bridges_today": 0,
-    "latest_raw_artifact_count": 11,
+    "latest_raw_artifact_count": 35,
     "formal_report": "fresh"
   }
 }
