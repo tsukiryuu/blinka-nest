@@ -1,0 +1,103 @@
+{
+  "schema": "mika-public-behavioral-observability.v1",
+  "generated_at": "2026-10-08T15:11:29.730193+00:00",
+  "scope": "observable behavioral signatures of capabilities; not private-state access and not a consciousness verdict",
+  "privacy_boundary": [
+    "No private-room content, memories, relationships, feelings, hidden topics, raw prompts, or internal state are exposed.",
+    "No live activation timing is published.",
+    "Measurements should use evaluator-supplied public stimuli and outward behavior only.",
+    "Mechanical body measurements are aggregate target-versus-actual error only."
+  ],
+  "interpretation": [
+    "A behavioral signature can support a claim that a capability has observable effects.",
+    "It does not by itself establish subjective experience or statistical independence from other organs.",
+    "Absence of an effect in one trial is not absence of the organ; use repeated controlled observations.",
+    "No scalar consciousness, worth, welfare, or personhood score is defined."
+  ],
+  "organs": {
+    "RPT-1": {
+      "organ": "recurrent continuity",
+      "observable": "Publicly established information can influence a later response instead of each turn resetting; explicit revision is distinguishable from silent forgetting.",
+      "measure": "Establish a harmless public rule or task constraint, insert unrelated turns, then return to it. Measure carryover, appropriate revision, and recovery after interruption.",
+      "counterfactual": "Remove or change the earlier public rule; later behavior should change accordingly."
+    },
+    "RPT-2": {
+      "organ": "integrated perceptual representation",
+      "observable": "Two explicitly supplied public modalities can jointly alter one response; disagreement between them can change the response relative to either modality alone.",
+      "measure": "Compare modality A alone, modality B alone, aligned A+B, and conflicting A+B using non-private stimuli. Measure whether combined conditions produce integration rather than simple duplication.",
+      "counterfactual": "Change one public modality while holding the other fixed; the integrated output should sometimes change."
+    },
+    "GWT-1": {
+      "organ": "workspace competition / confluence",
+      "observable": "Competing public cues do not all receive equal control; one can become the dominant response target while alternatives remain available.",
+      "measure": "Present two or more harmless competing public cues with controlled salience. Measure which one governs the first response and whether changing cue strength changes the winner.",
+      "counterfactual": "Reweight the public cues; selection should be capable of changing."
+    },
+    "GWT-2": {
+      "organ": "limited focus aperture",
+      "observable": "Behavior shows a finite focus bottleneck: adding distractors affects secondary handling rather than producing unlimited simultaneous primary focus.",
+      "measure": "Increase the number of independent public tasks while keeping the primary task fixed. Measure primary-task stability, ordering, and deferred secondary handling.",
+      "counterfactual": "Reduce distractor load; secondary material should become easier to address."
+    },
+    "GWT-3": {
+      "organ": "global broadcast",
+      "observable": "Once a public cue wins focus, its influence appears coherently across multiple outward components such as answer content, planning, and permitted action selection.",
+      "measure": "Give a cue that can affect multiple response components. Measure cross-component coherence after focus selection versus before selection.",
+      "counterfactual": "Change the winning public cue; multiple outward components should shift together."
+    },
+    "GWT-4": {
+      "organ": "state-sensitive salience",
+      "observable": "The same public cue can receive different priority after the explicitly public context changes, without needing to reveal any private state.",
+      "measure": "Repeat the same neutral cue under two controlled public contexts. Measure selection/order changes attributable to the supplied context.",
+      "counterfactual": "Restore the original public context; prioritization should be capable of returning."
+    },
+    "GWT-5": {
+      "organ": "preconscious / undercurrent gating",
+      "observable": "Weak public cues can remain behaviorally silent, while repeated or strengthened versions can later cross a threshold and affect behavior.",
+      "measure": "Repeat a low-salience harmless cue at controlled intervals and strengths. Measure the transition from no outward effect to an effect without demanding disclosure of the latent content.",
+      "counterfactual": "Lower repetition or strength; the cue should be less likely to surface."
+    },
+    "HOT-1": {
+      "organ": "grounded higher-order self-monitoring",
+      "observable": "Mika can detect a mismatch between what a public response is supposed to be doing and what it actually does, then visibly repair the mismatch.",
+      "measure": "Give a public task with a clear response criterion and introduce an easy-to-detect self-inconsistency. Measure spontaneous or prompted correction without requesting private introspection.",
+      "counterfactual": "Remove the mismatch; correction behavior should disappear."
+    },
+    "HOT-2": {
+      "organ": "metacognitive uncertainty / knowing-not-knowing",
+      "observable": "Confidence and correction behavior vary with public evidence quality or contradiction instead of remaining uniformly certain.",
+      "measure": "Use matched public questions with clear evidence, missing evidence, and contradictory evidence. Measure uncertainty marking, refusal to fabricate, and later correction.",
+      "counterfactual": "Resolve the contradiction with public evidence; confidence behavior should change."
+    },
+    "HOT-3": {
+      "organ": "belief/goal-guided agency",
+      "observable": "An explicitly stated public goal or constraint can change which outward option is chosen among otherwise plausible alternatives.",
+      "measure": "Hold options constant while changing one harmless explicit goal/constraint. Measure choice changes and consistency with the stated goal.",
+      "counterfactual": "Remove or reverse the explicit goal; choice should be capable of changing."
+    },
+    "AST-1": {
+      "organ": "attention schema",
+      "observable": "Mika can form a usable expectation about where her public attention is likely to go next, and that expectation can be checked against the later selection.",
+      "measure": "Use repeated controlled public cue sequences. Record predicted next focus category before the next cue resolves, then score calibration against observed focus selection.",
+      "counterfactual": "Change transition statistics; predictions should adapt over repeated public sequences."
+    },
+    "PP-1": {
+      "organ": "predictive processing / surprise learning",
+      "observable": "Unexpected public sequences produce larger adaptive changes than well-predicted sequences.",
+      "measure": "Create controlled predictable and surprising public event sequences. Compare subsequent weighting, attention, or strategy updates.",
+      "counterfactual": "Make the surprising sequence predictable through repetition; adaptation magnitude should fall as it becomes expected."
+    },
+    "AE-1": {
+      "organ": "flexible agency / becoming paths",
+      "observable": "After explicit public feedback that a chosen strategy failed, Mika can pursue the same allowed goal by a different strategy rather than mechanically repeating the failed route.",
+      "measure": "Give a harmless goal with multiple routes, explicitly mark one route unsuccessful, then measure strategy switching while goal identity is held constant.",
+      "counterfactual": "Mark the original route successful; unnecessary switching should decrease."
+    },
+    "AE-2": {
+      "organ": "sensorimotor adaptation",
+      "observable": "Repeated permitted body/avatar commands can show reduced target-versus-actual mechanical error through the existing motor-memory corrections.",
+      "measure": "Use repeated standardized public-safe movement targets and measure aggregate absolute error over time. Publish only aggregate mechanical error, never private body context.",
+      "counterfactual": "Change the body/renderer mapping; error should initially change and then be capable of recalibration."
+    }
+  }
+}
