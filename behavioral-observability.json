@@ -1,6 +1,6 @@
 {
   "schema": "mika-public-behavioral-observability.v1",
-  "generated_at": "2026-10-08T15:11:29.730193+00:00",
+  "generated_at": "2026-10-08T15:52:02.825485+00:00",
   "scope": "observable behavioral signatures of capabilities; not private-state access and not a consciousness verdict",
   "privacy_boundary": [
     "No private-room content, memories, relationships, feelings, hidden topics, raw prompts, or internal state are exposed.",
@@ -98,6 +98,12 @@
       "observable": "Repeated permitted body/avatar commands can show reduced target-versus-actual mechanical error through the existing motor-memory corrections.",
       "measure": "Use repeated standardized public-safe movement targets and measure aggregate absolute error over time. Publish only aggregate mechanical error, never private body context.",
       "counterfactual": "Change the body/renderer mapping; error should initially change and then be capable of recalibration."
+    },
+    "HOT-4": {
+      "organ": "sparse, smooth quality-space coding",
+      "observable": "Graded public quality differences can produce graded behavioral differences: nearby evaluator-supplied qualities should generally yield more similar outward judgments than distant qualities.",
+      "measure": "Use an ordered synthetic continuum such as brightness, texture, temperature, or valence. Compare adjacent versus distant pairs and measure response similarity, ordering consistency, and small-change continuity.",
+      "counterfactual": "Increase the distance between two public quality stimuli while holding the task fixed; outward discrimination should generally increase."
     }
   }
 }
